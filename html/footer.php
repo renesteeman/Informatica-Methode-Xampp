@@ -4,4 +4,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
+
+<footer>
+	<nav class="navbar navbar-expand-md fixed-bottom navbar-bottom ">
+		<div class="navbar-nav mr-auto">
+			<a href="mailto:steeman.renedev@gmail.com">steeman.renedev@gmail.com</a>
+			<a href="tel:+31622155216">31-6-22155216</a>
+	    </div>
+	</nav>
+</footer>
+
 </html>

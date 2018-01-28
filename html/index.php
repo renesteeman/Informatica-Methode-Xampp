@@ -23,7 +23,7 @@ include('header.php');
 				Keuze H5 web development
 			</li>
 			<li>
-				H6 Project managment
+				H6 Project management
 			</li>
 			<li>
 				H7 Project uitvoeren

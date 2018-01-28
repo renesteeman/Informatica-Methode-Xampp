@@ -1,5 +1,6 @@
 body
-	background-color: #e6e6e6
+	background-color: #a6a6a6
+	background-image: url(../images/GreyNoise.png)
 
 a:hover
 	color: #C8DCFF
@@ -11,11 +12,15 @@ a
 
 .navbar
 	background-color: rgba(70, 85, 110, 0.9)
+	background-image: url(../images/BlueNoise.png)
 	text-shadow: 2px 2px 2px #141a1f
+	line-height: 2em
 
 .top-navbar
-	background-color: rgba(190, 35, 40, 0.9)
-	text-shadow: 2px 2px 2px #971c20
+	background-color: rgba(195, 70, 60, 0.9)
+	background-image: url(../images/RedNoise.png)
+	text-shadow: 2px 2px 2px #9c3730
+	line-height: 3em
 
 .navbar-nav
 	padding-left: 12vw
@@ -33,14 +38,39 @@ a
 	font-size: 2em
 
 .navbar-bottom
-	background-color: rgba(70, 85, 110, 0.9)
+	margin-top: 2em
 
 .navbar-bottom>div>a
 	padding-right: 2em
 
+.main
+	padding-left: 12vw
+	padding-top: 2em
+	margin-left: 0
+
+.main>ul
+	padding-left: 0
+	border: 5px solid #56647A
+	border-radius: 8px
+	width: 80vw
+	background-color: #cccccc
+	background-image: url(../images/WhiteNoise.png)
+
+.main>ul>li
+	font-size: 2em
+	list-style-type: none
+	padding-top: 1em
+	padding-bottom: 1em
+	padding-left: 1em
+
 @media(max-width:768px)
 	.navbar-nav
-		padding-left: 2vw
-
-	.navbar-nav-top
 		padding-left: 4vw
+
+	.main
+		padding-top: 1em
+		padding-left: 4vw
+
+	.main>ul>li
+		padding-left: 0.5em
+		padding-top: 0.5em

@@ -6,7 +6,7 @@
 </body>
 
 <footer>
-	<nav class="navbar navbar-expand-md fixed-bottom navbar-bottom ">
+	<nav class="navbar navbar-expand-md navbar-bottom">
 		<div class="navbar-nav mr-auto">
 			<a href="mailto:steeman.renedev@gmail.com">steeman.renedev@gmail.com</a>
 			<a href="tel:+31622155216">31-6-22155216</a>

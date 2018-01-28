@@ -12,25 +12,25 @@
 
     <title>Informatica</title>
   </head>
-  <body>
+  <header>
+	  <!-- navbar -->
+	  <nav class="navbar navbar-expand-md top-navbar">
+			  <div class="navbar-nav navbar-nav-top">
+				  <div class="nav-item top-nav" href="#">Informatica</div>
+			  </div>
+	  </nav>
 
-	<!-- navbar -->
-	<nav class="navbar navbar-expand-md top-navbar">
-  	    	<div class="navbar-nav navbar-nav-top">
-  	    		<div class="nav-item top-nav" href="#">Informatica</div>
-  			</div>
-	</nav>
+	  <nav class="navbar navbar-expand-md">
+		  <div class="navbar-nav mr-auto">
+			  <a class="nav-item" href="index.html">startpagina</a>
+		  </div>
 
-	<nav class="navbar navbar-expand-md">
-		<div class="navbar-nav mr-auto">
-			<a class="nav-item" href="index.html">startpagina</a>
-	    </div>
+		  <div class="navbar-nav mr-auto">
+		  </div>
 
-		<div class="navbar-nav mr-auto">
-		</div>
+		  <div class="navbar-nav ml-auto">
+			 <a class="nav-item" href="account.html">Hello Debugger</a>
+		 </div>
 
-        <div class="navbar-nav ml-auto">
-           <a class="nav-item" href="account.html">Hello Debugger</a>
-	   </div>
-
-	</nav>
+	  </nav>
+  </header>

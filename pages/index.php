@@ -1,9 +1,35 @@
 <?php
 include('../php/header.php');
+include('../php/DB_connect.php');
 ?>
 
 
 <body>
+
+	<div class="debug">
+		<?php
+
+			$sql = "SELECT *
+						FROM account";
+
+			$result = $conn->query($sql);
+
+	if ($result->num_rows > 0) {
+
+	    while($row = $result->fetch_assoc()) {
+	        echo $row["usr_name"];
+			echo "--".$row["psw"];
+			echo "--".$row["school"];
+			echo "</br>";
+	    }
+
+	} else {
+	    echo "0 results";
+	}
+
+
+		?>
+	</div>
 
 	<div class="main">
 		<ul>

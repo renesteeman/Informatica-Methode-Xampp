@@ -2,7 +2,7 @@
 include('../php/DB_connect.php');
 
 //kies het aantal te crearen accounts
-$accountsToCreate = 5;
+$accountsToCreate = 1;
 
 //set school
 $school = "Bernardinus";
@@ -44,6 +44,13 @@ for ($j = 0; $j<$accountsToCreate; $j++){
 	//TODO check if usr_name exists
 	$usr_name = rand(0,20).rand(0,20).rand(0,20).rand(0,20).rand(0,20);
 
+	//check if usr_name is already in use
+	$sql = mysqli_query($conn, "SELECT usr_name FROM account WHERE usr_name=$usr_name");
+
+	while (mysqli_num_rows($sql) != 0){
+		$usr_name = rand(0,20).rand(0,20).rand(0,20).rand(0,20).rand(0,20);
+	}
+
 	//add the username and password (unhashed) into an array to display when the accounts are added
 	array_push($usr_names, $usr_name);
 	array_push($passwords, $psw);
@@ -60,10 +67,9 @@ for ($j = 0; $j<$accountsToCreate; $j++){
 	    echo "Error: " . $sql . "<br>" . $conn->error."</br>";
 	}
 
-
 }
 
-echo $accountsCreated." accounts created </br>";
+echo $accountsCreated." account(s) created </br>";
 
 for ($k=0; $k<count($usr_names);$k++){
 	echo "Username = ".$usr_names[$k]." Password = ".$passwords[$k]."</br>";

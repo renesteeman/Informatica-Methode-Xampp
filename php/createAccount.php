@@ -31,22 +31,16 @@ for ($i=0; $i<20; $i++){
 
 //create username
 $usr_name = rand(0,20).rand(0,20).rand(0,20).rand(0,20).rand(0,20);
-$usr_name = (string)$usr_name;
 
 //set school
 $school = "Bernardinus";
 
-echo $psw."</br>";
-echo $usr_name."</br>";
-echo $school."</br>";
-
 //hash password
 $psw = password_hash($psw, PASSWORD_DEFAULT);
 echo $psw."</br>";
-$psw = (string)$psw;
 
 //insert account into DB
-$sql = "INSERT INTO account (usr_name, psw, school) VALUES ($usr_name, 'test' , $school)";
+$sql = "INSERT INTO account (usr_name, psw, school) VALUES ('$usr_name', '$psw' , '$school')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";

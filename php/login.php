@@ -28,7 +28,12 @@ if (mysqli_query($conn, $sql)) {
 
 //check psw
 if(password_verify($psw, $rightpsw)){
-	echo "Loged in <br />";
+	echo "Logged in <br />";
+
+	header("Location: ../pages/index.php");
+
+	echo "Error redirecting";
+   exit;
 
 } else {
 	echo "False login <br />";

@@ -35,8 +35,11 @@
 
 				session_start();
 
+				//if logged in say hello, else give the option to login
 				if (isset($_SESSION["usr_name"])){
 					echo '<div class="nav-item a">Hello '.$_SESSION["usr_name"].'</div> ';
+					echo '<form action="../php/logout.php"><button type="submit" class="logout">(logout)</button></form>';
+
 				} else {
 					echo ' <div class="nav-item a" data-toggle="modal" data-target="#LoginModal">login</div> ';
 				}

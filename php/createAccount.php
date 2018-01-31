@@ -2,7 +2,7 @@
 include('../php/DB_connect.php');
 
 //kies het aantal te crearen accounts
-$accountsToCreate = 1;
+$accountsToCreate = 5;
 
 //set school
 $school = "Bernardinus";
@@ -41,7 +41,6 @@ for ($j = 0; $j<$accountsToCreate; $j++){
 	}
 
 	//create username
-	//TODO check if usr_name exists
 	$usr_name = rand(0,20).rand(0,20).rand(0,20).rand(0,20).rand(0,20);
 
 	//check if usr_name is already in use

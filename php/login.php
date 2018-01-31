@@ -1,28 +1,39 @@
 <?php
+include('../php/DB_connect.php');
+
+//function to check and clean input
+function check_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 
 //get given login data
-$usr_name = mysqli_real_escape_string($conn, check_input($_POST['usr_name']));
-$psw = mysqli_real_escape_string($conn, check_input($_POST['psw']));
-
-//hash
-$psw = password_hash($psw, PASSWORD_DEFAULT);
+$usr_name = mysqli_real_escape_string($conn, check_input($_POST['username']));
+$psw = mysqli_real_escape_string($conn, check_input($_POST['password']));
 
 //get psw for $usr_name
-$sql = "SELECT psw FROM account WHERE name='$usr_name'";
+$sql = "SELECT psw FROM account WHERE usr_name='$usr_name'";
 
 if (mysqli_query($conn, $sql)) {
 
 	$result = mysqli_query($conn, $sql);
 	$result = mysqli_fetch_assoc($result);
-	$rightpsw = $result['password'];
+	$rightpsw = $result['psw'];
 
+} else {
+	echo "Error with sql execution, please report to admin </br>";
 }
 
 //check psw
-if(password_verify($psw, $righpsw)){
+if(password_verify($psw, $rightpsw)){
 	echo "Loged in <br />";
+
 } else {
 	echo "False login <br />";
+	echo "Recieved password: ".$psw."</br>";
+	echo "Recieved username: ".$usr_name."</br>";
 }
 
 ?>

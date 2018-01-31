@@ -31,8 +31,18 @@
 		  </div>
 
 		  <div class="navbar-nav ml-auto">
-			<!--<a class="nav-item" href="account.html">Hello Debugger</a>--->
-			<div class="nav-item a" data-toggle="modal" data-target="#LoginModal">Hello Debugger</div>
+			<?php
+
+				session_start();
+
+				if (isset($_SESSION["usr_name"])){
+					echo '<div class="nav-item a">Hello '.$_SESSION["usr_name"].'</div> ';
+				} else {
+					echo ' <div class="nav-item a" data-toggle="modal" data-target="#LoginModal">login</div> ';
+				}
+
+			?>
+
 		 </div>
 
 		 <!-- Login modal -->

@@ -9,22 +9,6 @@ include('../php/header.php');
 	<div class="debug">
 		<?php
 
-			$sql = "SELECT * FROM account";
-
-			$result = $conn->query($sql);
-
-			if ($result->num_rows > 0) {
-
-			    while($row = $result->fetch_assoc()) {
-			        echo $row["usr_name"];
-					echo "--".$row["psw"];
-					echo "--".$row["school"];
-					echo "</br>";
-			    }
-
-			} else {
-			    echo "0 results";
-			}
 
 
 		?>

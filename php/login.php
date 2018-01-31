@@ -30,6 +30,10 @@ if (mysqli_query($conn, $sql)) {
 if(password_verify($psw, $rightpsw)){
 	echo "Logged in <br />";
 
+	//start session with username
+	session_start();
+	$_SESSION["usr_name"] = $usr_name;
+
 	header("Location: ../pages/index.php");
 
 	echo "Error redirecting";

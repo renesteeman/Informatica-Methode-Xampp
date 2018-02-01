@@ -21,27 +21,23 @@ include('../php/header.php');
 				<a href="H1.php">H1 Werking computer</a>
 			</li>
 			<li>
-				H2 Logica
+				<a href="H2.php">H2 Logica</a>
 			</li>
 			<li>
-				H3 Programmeren
+				<a href="H3.php">H3 Programmeren</a>
 			</li>
 			<li>
-				Keuze H4 arduino
+				<a href="H4.php">H4 Arduino (keuze)</a>
 			</li>
 			<li>
-				Keuze H5 web development
+				<a href="H5.php">H5 Web development (keuze)</a>
 			</li>
 			<li>
-				H6 Project management
+				<a href="H6.php">H6 Project management</a>
 			</li>
 			<li>
-				H7 Project uitvoeren
+				<a href="H7.php">H7 Project uitvoeren</a>
 			</li>
-
-
-			
-
 
 		</ul>
 	</div>

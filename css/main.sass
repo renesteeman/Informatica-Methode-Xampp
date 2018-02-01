@@ -4,14 +4,21 @@ html
 body
 	background-color: #a6a6a6
 	background-image: url(../images/GreyNoise.png)
+	color: rgb(40,40,40)
 
 a:hover
-	color: #C8DCFF
+	color: rgb(200, 200, 200)
 	text-decoration: none
 
 a
 	color: rgb(240, 240, 240)
 	text-decoration: none
+
+.main a
+	color: rgb(40,40,40)
+
+.main a:hover
+	color: rgb(80,80,80)
 
 .form-control:focus
 	box-shadow: 0 0 0 .2rem rgba(70, 85, 110, 0.9)
@@ -54,21 +61,6 @@ a
 	padding-top: 2em
 	margin-left: 0
 
-.main>ul
-	padding-left: 0
-	border: 5px solid #56647A
-	border-radius: 8px
-	width: 80vw
-	background-color: #cccccc
-	background-image: url(../images/WhiteNoise.png)
-
-.main>ul>li
-	font-size: 2em
-	list-style-type: none
-	padding-top: 1em
-	padding-bottom: 1em
-	padding-left: 1em
-
 .modal
 	text-shadow: none
 	background-color: #8c8c8c
@@ -86,12 +78,6 @@ a
 	background-color: rgba(195, 70, 60, 0.9)
 	background-image: url(../images/RedNoise.png)
 
-.modal>.modal-dialog>.modal-content>.modal-header
-
-.modal>.modal-dialog>.modal-content>.modal-body
-
-.modal>.modal-dialog>.modal-content>.modal-footer
-
 .logout
 	background: none
 	border: none
@@ -100,7 +86,8 @@ a
 	text-shadow: 2px 2px 2px #141a1f
 
 .logout:hover
-	color: #C8DCFF
+	color: rgb(200, 200, 200)
+	cursor: pointer
 
 .debug
 	background-color: rgba(40,200,40, 0.5)

@@ -8,6 +8,7 @@ session_unset();
 // destroy the session
 session_destroy();
 
+//redirect to main page
 header("Location: ../pages/index.php");
 
 echo "Error redirecting";

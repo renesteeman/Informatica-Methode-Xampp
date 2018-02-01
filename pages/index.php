@@ -3,6 +3,7 @@ include('../php/DB_connect.php');
 include('../php/header.php');
 ?>
 
+<link rel="stylesheet" href="../css/index.min.css">
 
 <body>
 
@@ -17,7 +18,7 @@ include('../php/header.php');
 	<div class="main">
 		<ul>
 			<li>
-				H1 Werking computer
+				<a href="H1.php">H1 Werking computer</a>
 			</li>
 			<li>
 				H2 Logica

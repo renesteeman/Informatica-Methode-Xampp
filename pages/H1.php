@@ -3,6 +3,43 @@ include('../php/DB_connect.php');
 include('../php/header.php');
 ?>
 
+<link rel="stylesheet" href="../css/index.min.css">
+
+<body>
+
+	<div class="debug">
+		<?php
+
+
+
+		?>
+	</div>
+
+	<div class="main">
+		<ul>
+			<li>
+				<a href="H1_1.php">§1</a>
+			</li>
+			<li>
+				<a href="H1_2.php">§2</a>
+			</li>
+			<li>
+				<a href="H1_3.php">§3</a>
+			</li>
+			<li>
+				<a href="H1_4.php">§4</a>
+			</li>
+			<li>
+				<a href="H1_5.php">§5</a>
+			</li>
+			<li>
+				<a href="H1_6.php">§6</a>
+			</li>
+		</ul>
+	</div>
+
+</body>
+
 
 <?php
 include('../php/footer.php');

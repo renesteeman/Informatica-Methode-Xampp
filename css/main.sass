@@ -1,10 +1,14 @@
 html
 	font-family: 'Roboto', sans-serif
+	position: relative
+	min-height: 100%
 
 body
 	background-color: #a6a6a6
 	background-image: url(../images/GreyNoise.png)
 	color: rgb(40,40,40)
+	line-height: 2em
+	margin-bottom: 60px
 
 a:hover
 	color: rgb(200, 200, 200)
@@ -13,6 +17,11 @@ a:hover
 a
 	color: rgb(240, 240, 240)
 	text-decoration: none
+
+.main
+	padding-left: 12vw
+	padding-top: 2em
+	margin-left: 0
 
 .main a
 	color: rgb(40,40,40)
@@ -50,16 +59,21 @@ a
 	color: rgb(240, 240, 240)
 	font-size: 2em
 
+.container
+	padding-left: 0
+	padding-right: 0
+	margin-left: 0
+	margin-right: 0
+
 .navbar-bottom
-	margin-top: 2em
+	height: 3em
+	position: absolute
+	bottom: 0
+	width: 100%
+	line-height: 2em
 
 .navbar-bottom>div>a
 	padding-right: 2em
-
-.main
-	padding-left: 12vw
-	padding-top: 2em
-	margin-left: 0
 
 .modal
 	text-shadow: none

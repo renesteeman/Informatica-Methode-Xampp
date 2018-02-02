@@ -14,6 +14,9 @@ include('../php/header.php');
 	</div>
 
 	<div class="main">
+		<div class="title">
+			Hoofdstukken
+		</div>
 		<ul>
 			<li>
 				<a href="H1.php">H1 Werking computer</a>

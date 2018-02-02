@@ -16,21 +16,16 @@
   </head>
   <header>
 	  <!-- navbar -->
-	  <nav class="navbar navbar-expand-md top-navbar">
-			  <div class="navbar-nav navbar-nav-top">
-				  <div class="nav-item top-nav">Informatica</div>
-			  </div>
+	  <nav class="top-navbar">
+			<div class="top-nav">Informatica</div>
 	  </nav>
 
 	  <nav class="navbar navbar-expand-md">
-		  <div class="navbar-nav mr-auto">
-			  <a class="nav-item" href="index.php">startpagina</a>
+		  <div class="navbar-nav">
+			  <a href="index.php">startpagina</a>
 		  </div>
 
-		  <div class="navbar-nav mr-auto">
-		  </div>
-
-		  <div class="navbar-nav ml-auto">
+		  <div class="ml-auto">
 			<?php
 
 				session_start();
@@ -41,7 +36,7 @@
 					echo '<form action="../php/logout.php"><button type="submit" class="logout">(logout)</button></form>';
 
 				} else {
-					echo ' <div class="nav-item a" data-toggle="modal" data-target="#LoginModal">login</div> ';
+					echo ' <div class="nav-item a login" data-toggle="modal" data-target="#LoginModal">login</div> ';
 				}
 
 			?>

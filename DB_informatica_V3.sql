@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 02 feb 2018 om 21:27
+-- Gegenereerd op: 02 feb 2018 om 22:19
 -- Serverversie: 10.1.28-MariaDB
 -- PHP-versie: 7.1.11
 
@@ -51,7 +51,30 @@ INSERT INTO `account` (`id`, `usr_name`, `psw`, `school`, `function`, `creation_
 (7, '122016180', '$2y$10$QJ7L9UTszeoGPv0OSeCgYO/A1M4XY/qS5eT9Ss7Qf9t2Jr3cZm6O6', 'Bernardinus', 'leerling', '2018-02-02'),
 (8, '964197', '$2y$10$nqA5Y.ZoQ7ZUfq/hiLg3o.q1g.ptQVD7kYc.nF2WOk5CrDF60T3r2', 'Bernardinus', 'leerling', '2018-02-02'),
 (9, '711111011', '$2y$10$caqPoyuaFMiQeejwlGbbCuKHNgVpIvlZXAqrQaJUIv0R.tNY5jJ3y', 'Bernardinus', 'leerling', '2018-02-02'),
-(10, '7121114', '$2y$10$fwyKBve6RlDXBXvj9xBmQ.VDPd00.kdMr6vFpb/g93FpthMsIf8fa', 'Bernardinus', 'leerling', '2018-02-02');
+(10, '7121114', '$2y$10$fwyKBve6RlDXBXvj9xBmQ.VDPd00.kdMr6vFpb/g93FpthMsIf8fa', 'Bernardinus', 'leerling', '2018-02-02'),
+(11, 'test', '123', 'BC', 'tester', NULL),
+(12, 'test', '123', 'test', 'tester', NULL),
+(13, 'test', '123', 'test', 'tester', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `group`
+--
+
+CREATE TABLE `group` (
+  `id` int(11) NOT NULL,
+  `school` tinytext COLLATE utf8mb4_bin NOT NULL,
+  `klas` tinytext COLLATE utf8mb4_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `group`
+--
+
+INSERT INTO `group` (`id`, `school`, `klas`) VALUES
+(10, 'Bernardinus', 'H51'),
+(11, 'Bernardinus', 'H52');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -64,6 +87,12 @@ ALTER TABLE `account`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexen voor tabel `group`
+--
+ALTER TABLE `group`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
@@ -71,7 +100,13 @@ ALTER TABLE `account`
 -- AUTO_INCREMENT voor een tabel `account`
 --
 ALTER TABLE `account`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT voor een tabel `group`
+--
+ALTER TABLE `group`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

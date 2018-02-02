@@ -3,8 +3,6 @@ include('../php/DB_connect.php');
 include('../php/header.php');
 ?>
 
-<link rel="stylesheet" href="../css/index.min.css">
-
 <body>
 
 	<div class="debug">

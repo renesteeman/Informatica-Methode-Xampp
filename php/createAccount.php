@@ -7,6 +7,12 @@ $accountsToCreate = 5;
 //set school
 $school = "Bernardinus";
 
+//leerling, leeraar of overig?
+$function = "leerling";
+
+//get and set time
+$date = date("Y-m-d H:i:s");
+
 //create password
 $letters = array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
 $numbers = array("1","2","3","4","5","6","7","8","9","0");
@@ -58,7 +64,7 @@ for ($j = 0; $j<$accountsToCreate; $j++){
 	$psw = password_hash($psw, PASSWORD_DEFAULT);
 
 	//insert account into DB
-	$sql = "INSERT INTO account (usr_name, psw, school) VALUES ('$usr_name', '$psw' , '$school')";
+	$sql = "INSERT INTO account (usr_name, psw, school, function, creation_date) VALUES ('$usr_name', '$psw' , '$school', '$function', '$date')";
 
 	if ($conn->query($sql) === TRUE) {
 	    $accountsCreated++;

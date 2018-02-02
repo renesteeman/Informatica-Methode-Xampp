@@ -3,19 +3,20 @@ include('../php/DB_connect.php');
 include('../php/header.php');
 ?>
 
-<link rel="stylesheet" href="../css/index.min.css">
+<link rel="stylesheet" href="../css/chapter.min.css">
 
 <body>
 
 	<div class="debug">
 		<?php
 
-
-
 		?>
 	</div>
 
 	<div class="main">
+		<div class="title">
+			H1
+		</div>
 		<ul>
 			<li>
 				<a href="H1_1.php">§1</a>

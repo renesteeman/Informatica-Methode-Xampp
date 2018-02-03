@@ -25,14 +25,14 @@
 			  <a href="index.php">startpagina</a>
 		  </div>
 
-		  <div class="ml-auto">
+		  <div class="ml-auto login_form">
 			<?php
 
 				session_start();
 
 				//if logged in say hello, else give the option to login
 				if (isset($_SESSION["usr_name"])){
-					echo '<div class="nav-item a">Hello '.$_SESSION["usr_name"].'</div> ';
+					echo '<form action="../php/account_settings.php"><button type="submit" class="logout">Hello '.$_SESSION["usr_name"].'</button></form>';
 					echo '<form action="../php/logout.php"><button type="submit" class="logout">(logout)</button></form>';
 
 				} else {

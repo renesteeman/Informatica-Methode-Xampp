@@ -9,9 +9,6 @@ function check_input($data) {
 	return $data;
 }
 
-
-
-
 //get given login data
 $usr_name = mysqli_real_escape_string($conn, check_input($_POST['username']));
 $psw = mysqli_real_escape_string($conn, check_input($_POST['password']));

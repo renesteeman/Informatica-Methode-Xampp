@@ -7,6 +7,9 @@ $accountsToCreate = 5;
 //set school
 $school = "Bernardinus";
 
+//klas
+$klas = "H51";
+
 //leerling, leeraar of overig?
 $function = "leerling";
 
@@ -64,7 +67,7 @@ for ($j = 0; $j<$accountsToCreate; $j++){
 	$psw = password_hash($psw, PASSWORD_DEFAULT);
 
 	//insert account into DB
-	$sql = "INSERT INTO account (usr_name, psw, school, function, creation_date) VALUES ('$usr_name', '$psw' , '$school', '$function', '$date')";
+	$sql = "INSERT INTO account (usr_name, psw, school, function, creation_date, klas) VALUES ('$usr_name', '$psw' , '$school', '$function', '$date', '$klas')";
 
 	if ($conn->query($sql) === TRUE) {
 	    $accountsCreated++;
@@ -74,7 +77,7 @@ for ($j = 0; $j<$accountsToCreate; $j++){
 
 }
 
-echo $accountsCreated." account(s) created </br>";
+echo $accountsCreated." account(s) created for ".$school." ".$klas."</br>";
 
 for ($k=0; $k<count($usr_names);$k++){
 	echo "Username = ".$usr_names[$k]." Password = ".$passwords[$k]."</br>";

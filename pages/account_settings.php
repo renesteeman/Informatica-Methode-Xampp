@@ -26,15 +26,15 @@ include('../php/header.php');
 			</div>
 			<div class="form-group">
 				<label for="">New email address: </label>
-				<input type="email" class="form-control" placeholder="New email" name="email" maxlength="255">
+				<input type="email" class="form-control" placeholder="New email" name="new_email" maxlength="255">
 			</div>
 			<div class="form-group">
 				<label for="">New password: </label>
-				<input type="password" class="form-control" placeholder="New password" name="new_psw" maxlength="255">
+				<input type="password" class="form-control" placeholder="New password" name="new_psw" maxlength="255" pattern=".{5,}" oninvalid="this.setCustomValidity('Please use a minimum of 5 characters')">
 			</div>
 			<div class="form-group">
 				<label for="">Comfirm new password: </label>
-				<input type="password" class="form-control" placeholder="New password" name="new_psw_confirm" maxlength="255">
+				<input type="password" class="form-control" placeholder="New password" name="new_psw_confirm" maxlength="255" pattern=".{5,}" oninvalid="this.setCustomValidity('Please use a minimum of 5 characters')">
 			</div>
 
 			<div class="form-group">

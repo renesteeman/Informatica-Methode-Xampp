@@ -28,7 +28,7 @@ $new_psw = mysqli_real_escape_string($conn, check_input_heavy($_POST['new_psw'])
 $new_psw_confirm = mysqli_real_escape_string($conn, check_input_heavy($_POST['new_psw_confirm']));
 
 //get psw for $usr_name
-$sql = "SELECT psw FROM account WHERE usr_name='$usr_name'";
+$sql = "SELECT psw FROM accounts WHERE usr_name='$usr_name'";
 
 if (mysqli_query($conn, $sql)) {
 
@@ -46,12 +46,12 @@ if(password_verify($psw, $rightpsw)){
 
 	if($new_usr_name){
 
-		$sql = "SELECT usr_name FROM account where usr_name = '$usr_name' ";
+		$sql = "SELECT usr_name FROM accounts where usr_name = '$usr_name' ";
 		$result = mysqli_query($conn, $sql);
 
 		if (mysqli_num_rows($result) = 0){
 
-			$sql = "UPDATE account SET usr_name = '$new_usr_name' WHERE usr_name = '$usr_name' ";
+			$sql = "UPDATE accounts SET usr_name = '$new_usr_name' WHERE usr_name = '$usr_name' ";
 
 			if (mysqli_query($conn, $sql)) {
 
@@ -69,7 +69,7 @@ if(password_verify($psw, $rightpsw)){
 	}
 
 	if($new_email){
-		$sql = "UPDATE account SET email = '$new_email' WHERE usr_name = '$usr_name' ";
+		$sql = "UPDATE accounts SET email = '$new_email' WHERE usr_name = '$usr_name' ";
 
 		if (mysqli_query($conn, $sql)) {
 
@@ -86,7 +86,7 @@ if(password_verify($psw, $rightpsw)){
 			//hash password
 			$new_psw = password_hash($new_psw, PASSWORD_DEFAULT);
 
-			$sql = "UPDATE account SET psw = '$new_psw' WHERE usr_name = '$usr_name' ";
+			$sql = "UPDATE accounts SET psw = '$new_psw' WHERE usr_name = '$usr_name' ";
 
 			if (mysqli_query($conn, $sql)) {
 

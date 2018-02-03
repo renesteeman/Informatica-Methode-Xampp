@@ -14,7 +14,7 @@ $usr_name = mysqli_real_escape_string($conn, check_input($_POST['username']));
 $psw = mysqli_real_escape_string($conn, check_input($_POST['password']));
 
 //get psw for $usr_name
-$sql = "SELECT psw FROM account WHERE usr_name='$usr_name'";
+$sql = "SELECT psw FROM accounts WHERE usr_name='$usr_name'";
 
 if (mysqli_query($conn, $sql)) {
 

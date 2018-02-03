@@ -1,0 +1,7 @@
+light grey #bfbfbf
+grey #a6a6a6
+dark grey #8c8c8c
+white rgb(240, 240, 240)
+dark white rgb(200, 200, 200)
+blue rgba(70, 85, 110, 0.9)
+red rgba(195, 70, 60, 0.9)

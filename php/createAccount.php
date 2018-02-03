@@ -16,7 +16,7 @@ $date = date("Y-m-d H:i:s");
 //create password
 $letters = array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
 $numbers = array("1","2","3","4","5","6","7","8","9","0");
-$specials = array("!","@","#","$","%","&","?");
+$specials = array("!","@","#","$","%","?");
 
 $accountsCreated = 0;
 
@@ -40,7 +40,7 @@ for ($j = 0; $j<$accountsToCreate; $j++){
 			$psw.=$number;
 
 		} else {
-			$ran2 = rand(0,6);
+			$ran2 = rand(0,5);
 			$special = $specials[$ran2];
 			$psw.=$special;
 		}

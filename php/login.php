@@ -3,11 +3,14 @@ include('../php/DB_connect.php');
 
 //function to check and clean input
 function check_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
+	$data = trim($data, " ");
+	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+	return $data;
 }
+
+
+
 
 //get given login data
 $usr_name = mysqli_real_escape_string($conn, check_input($_POST['username']));
@@ -41,8 +44,6 @@ if(password_verify($psw, $rightpsw)){
 
 } else {
 	echo "False login <br />";
-	echo "Recieved password: ".$psw."</br>";
-	echo "Recieved username: ".$usr_name."</br>";
 }
 
 ?>

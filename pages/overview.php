@@ -16,14 +16,15 @@ include('../php/header.php');
 	<div class="main">
 		<div class="title">
 			<select class="overview-toggle">
-				<option>Class</option>
-				<option>Group</option>
+				<option>Klassen</option>
+				<option>Groepen</option>
 			</select>
-			Overview
+			overzicht
 		</div>
 
 		<div class="main-content">
 
+		IF Groepen
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="table-responsive">
@@ -73,7 +74,36 @@ include('../php/header.php');
 				</div>
 			</div>
 
+		IF Klassen
 
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="table-responsive">
+					<table summary="This table shows how to create responsive tables using Bootstrap's default functionality" class="table table-bordered table-hover">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col" class="number">#</th>
+							<th scope="col" class="klas">Klas</th>
+							<th scope="col" class="leden">Leden</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1 (make auto increment)</td>
+							<td>H51 (klas(sen) waar de leden in zitten)</td>
+							<td>namen (mensen die in deze klas zitten)</td>
+						</tr>
+
+						<tr>
+							<td>2</td>
+							<td>H51</td>
+							<td>KoffieAddict18, Heil koffie, René, Zuivering?, Lars, Murica</td>
+						</tr>
+					</tbody>
+					</table>
+				</div><!--end of .table-responsive-->
+			</div>
+		</div>
 
 
 		</div>

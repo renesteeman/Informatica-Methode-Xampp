@@ -45,21 +45,30 @@ if(password_verify($psw, $rightpsw)){
 	echo "Right psw <br />";
 
 	if($new_usr_name){
-		$sql = "UPDATE account SET usr_name = '$new_usr_name' WHERE usr_name = ' ".$_SESSION['usr_name']." ' ";
 
-		if (mysqli_query($conn, $sql)) {
+		$sql = "SELECT usr_name FROM account where usr_name = '$usr_name' ";
 
-			echo "New username has been set </br>";
+		if (!mysqli_query($conn, $sql){
+
+			$sql = "UPDATE account SET usr_name = '$new_usr_name' WHERE usr_name = '$usr_name' ";
+
+			if (mysqli_query($conn, $sql)) {
+
+				$_SESSION["usr_name"] = $new_usr_name;
+				echo "New username has been set </br>";
+
+			} else {
+				echo "Error with sql execution, please report to admin </br>";
+			}
 
 		} else {
-			echo "Error with sql execution, please report to admin </br>";
+			echo "Username already taken";
 		}
 
-		$_SESSION["usr_name"] = $new_usr_name;
 	}
 
 	if($new_email){
-		$sql = "UPDATE account SET email = '$new_email' WHERE usr_name = ' ".$_SESSION['usr_name']." ' ";
+		$sql = "UPDATE account SET email = '$new_email' WHERE usr_name = '$usr_name' ";
 
 		if (mysqli_query($conn, $sql)) {
 
@@ -73,7 +82,7 @@ if(password_verify($psw, $rightpsw)){
 	if($new_psw && $new_psw_confirm){
 		if($new_psw == $new_psw_confirm){
 
-			$sql = "UPDATE account SET psw = '$new_psw' WHERE usr_name = ' ".$_SESSION['usr_name']." ' ";
+			$sql = "UPDATE account SET psw = '$new_psw' WHERE usr_name = '$usr_name' ";
 
 			if (mysqli_query($conn, $sql)) {
 

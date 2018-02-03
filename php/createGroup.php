@@ -2,20 +2,35 @@
 include('../php/DB_connect.php');
 
 //set school
-$school = "Bernardinus";
+$school = "BC";
 
 //set klas
-$klas = "H52";
+$klas = "A51";
 
-//insert group into DB
+$sql = "SELECT klas FROM `group` WHERE school='$school' ";
+$result = mysqli_query($conn, $sql);
 
-$sql = "INSERT INTO `group` (`id`, `school`, `klas`) VALUES (NULL, '$school', '$klas');";
+$resultArray = array();
 
-if ($conn->query($sql) === TRUE) {
-	echo "Group created for ".$school." ".$klas;
-} else {
-	echo "Error: " . $sql . "<br>" . $conn->error."</br>";
+while($row = mysqli_fetch_assoc($result)) {
+	array_push($resultArray, $row['klas']);
 }
+
+if (!in_array($klas, $resultArray)){
+	//insert group into DB
+	$sql = "INSERT INTO `group` (`id`, `school`, `klas`) VALUES (NULL, '$school', '$klas');";
+
+	if ($conn->query($sql) === TRUE) {
+		echo "Group created for ".$school." ".$klas;
+	} else {
+		echo "Error: " . $sql . "<br>" . $conn->error."</br>";
+	}
+
+} else {
+	echo "Klas bestaat al voor deze school </br>";
+}
+
+
 
 $conn->close();
 

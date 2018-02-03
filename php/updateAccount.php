@@ -47,8 +47,10 @@ if(password_verify($psw, $rightpsw)){
 	if($new_usr_name){
 
 		$sql = "SELECT usr_name FROM account where usr_name = '$usr_name' ";
+		$result = mysqli_query($conn, $sql);
+		$answer = mysqli_fetch_row($result);
 
-		if (!mysqli_query($conn, $sql){
+		if (mysqli_num_rows($result) != 0){
 
 			$sql = "UPDATE account SET usr_name = '$new_usr_name' WHERE usr_name = '$usr_name' ";
 
@@ -62,7 +64,7 @@ if(password_verify($psw, $rightpsw)){
 			}
 
 		} else {
-			echo "Username already taken";
+			echo "Username already taken </br>";
 		}
 
 	}
@@ -81,6 +83,9 @@ if(password_verify($psw, $rightpsw)){
 
 	if($new_psw && $new_psw_confirm){
 		if($new_psw == $new_psw_confirm){
+
+			//hash password
+			$new_psw = password_hash($new_psw, PASSWORD_DEFAULT);
 
 			$sql = "UPDATE account SET psw = '$new_psw' WHERE usr_name = '$usr_name' ";
 

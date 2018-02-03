@@ -32,7 +32,7 @@
 
 				//if logged in say hello, else give the option to login
 				if (isset($_SESSION["usr_name"])){
-					echo '<form action="../php/account_settings.php"><button type="submit" class="logout">Hello '.$_SESSION["usr_name"].'</button></form>';
+					echo '<form action="../pages/account_settings.php"><button type="submit" class="logout">Hello '.$_SESSION["usr_name"].'</button></form>';
 					echo '<form action="../php/logout.php"><button type="submit" class="logout">(logout)</button></form>';
 
 				} else {

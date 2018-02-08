@@ -19,7 +19,7 @@ include('../php/header.php');
 		</div>
 		<ul>
 			<li>
-				<a href="H1.php">H1 Werking computer</a>
+				<a href="H1/H1.php">H1 Werking computer</a>
 			</li>
 			<li>
 				<a href="H2.php">H2 Logica</a>

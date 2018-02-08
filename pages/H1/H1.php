@@ -3,6 +3,7 @@ include('../../php/DB_connect.php');
 include('../../php/header.php');
 ?>
 
+<link rel="stylesheet" href="../../css/main.min.css">
 <link rel="stylesheet" href="../../css/chapter.min.css">
 
 <body>

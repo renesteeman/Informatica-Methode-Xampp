@@ -3,7 +3,7 @@ include '../DB_connect.php';
 
 $studentInfo;
 
-$statement = 'SELECT * FROM `group` ORDER BY `klas`';
+$statement = 'SELECT * FROM `user_info` ORDER BY `klas`';
 if ($query = mysqli_query($conn, $statement)) {
   while($fetch = mysqli_fetch_assoc($query)) {
     $klas = $fetch['klas'];

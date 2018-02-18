@@ -18,14 +18,17 @@
 			<div>PLANNER</div>
 		</div>
 
-		<div class="welcome">
-			<div>
-				Hi User sdhfgasdggdasgasdsadfhjgdsaerhhadf
-			</div>
-			<div>
-				logout
+		<div class="empty">
+			<div class="welcome">
+				<div>
+					Hi User sdhfgasdggdasgasdsadfhjgdsaerhhadf
+				</div>
+				<div>
+					logout
+				</div>
 			</div>
 		</div>
+
 	</div>
 
 </header>
@@ -45,14 +48,48 @@
 	</div>
 
 	<div class="chapter-tiles">
-		<div class="tile">H1</div>
-		<div class="tile">H2</div>
-		<div class="tile">H3</div>
-		<div class="tile">H4</div>
-		<div class="tile">H5</div>
-		<div class="tile">H6</div>
-		<div class="tile">H7</div>
-		<div class="tile">H8</div>
+		<div class="tile">
+			<div class="tile-content">
+				H1 Werking computer
+			</div>
+		</div>
+
+		<div class="tile">
+			<div class="tile-content">
+				H2 Logica
+			</div>
+		</div>
+
+		<div class="tile">
+			<div class="tile-content">
+				H3 Programmeren
+			</div>
+		</div>
+
+		<div class="tile">
+			<div class="tile-content">
+				H4 Arduino
+			</div>
+		</div>
+
+		<div class="tile">
+			<div class="tile-content">
+				H5 Web development
+			</div>
+		</div>
+
+		<div class="tile">
+			<div class="tile-content">
+				H6 Project management
+			</div>
+		</div>
+
+		<div class="tile">
+			<div class="tile-content">
+				H7 Project uitvoeren
+			</div>
+		</div>
+
 	</div>
 
 

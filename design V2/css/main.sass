@@ -19,6 +19,9 @@ body
 	background-color: $blue
 	color: $white
 	width: 100%
+	box-shadow: 0 5px 20px darken($white, 50%)
+	position: relative
+	z-index: 50
 
 	h1
 		text-align: center
@@ -63,6 +66,9 @@ body
 	color: $white
 	padding-top: 1em
 	padding-bottom: 1em
+	box-shadow: 0 5px 20px darken($white, 50%)
+	position: relative
+	z-index: 30
 
 	h3
 		margin: 0
@@ -85,11 +91,20 @@ body
 		width: 15em
 		box-shadow: 6px 6px 8px darken($white, 20%)
 		transition: background .5s ease-out
+		overflow: hidden
+		border-radius: 4px
 
 		.tile-content
 			text-align: center
 
 	.tile:hover
 		background-position: 15em
-
 		//background: linear-gradient(to bottom right, darken($blue-green, 20%), darken($green, 20%))
+
+	.tile:before
+		width: 15em
+		height: 15em
+		content: ""
+		position: absolute
+		box-shadow: inset 0 0 0 15px rgba(250,250,250,0.1)
+		filter: blur(10px)

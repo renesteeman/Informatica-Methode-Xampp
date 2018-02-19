@@ -1,9 +1,14 @@
+//sizes
+$large: 992px
+$medium: 768px
+
 //colors
-$blue: rgb(0, 30, 70)
+$blue: rgb(20, 60, 90)
+$blue-green: rgb(20, 90, 100)
 $white: rgb(230, 230, 230)
 $grey: rgb(190, 190, 190)
 $red: rgb(160, 30, 30)
-$blue-green: rgb(60, 150, 100)
+$green-blue: rgb(60, 150, 100)
 $green: rgb(0, 130, 70)
 
 //general
@@ -19,6 +24,7 @@ body
 	background-color: $blue
 	color: $white
 	width: 100%
+	background: linear-gradient(to bottom right, $blue, $blue-green)
 	box-shadow: 0 5px 20px darken($white, 50%)
 	position: relative
 	z-index: 50
@@ -27,7 +33,6 @@ body
 		text-align: center
 		font-size: 3em
 		margin: 0
-		background-color: $blue
 		padding-top: 10px
 		padding-bottom: 10px
 
@@ -51,6 +56,7 @@ body
 			bottom: 4em
 			height: auto
 
+//title
 .title
 	background-color: $grey
 	padding-top: 1em
@@ -60,6 +66,7 @@ body
 		margin: 0
 		margin-left: 20%
 
+//bar
 .bar
 	background-color: $blue
 	text-align: center
@@ -69,22 +76,25 @@ body
 	box-shadow: 0 5px 20px darken($white, 50%)
 	position: relative
 	z-index: 30
+	background: linear-gradient(to bottom right, $blue, $blue-green)
 
 	h3
 		margin: 0
 		font-size: 3em
 
+//titles
 .chapter-tiles
 	margin-left: 20%
 	margin-right: 20%
-	margin-top: 20px
+	margin-top: 40px
+	margin-bottom: 50px
 	display: grid
 	grid-template-columns: auto auto auto auto
 	grid-gap: 2em
 
 	.tile
-		background-color: $blue-green
-		background: linear-gradient(to bottom right, $blue-green, $green)
+		background-color: $green-blue
+		background: linear-gradient(to bottom right, $green-blue, $green)
 		background-size: 15em
 		height: 15em
 		line-height: 15em
@@ -99,7 +109,7 @@ body
 
 	.tile:hover
 		background-position: 15em
-		//background: linear-gradient(to bottom right, darken($blue-green, 20%), darken($green, 20%))
+		//background: linear-gradient(to bottom right, darken($green-blue, 20%), darken($green, 20%))
 
 	.tile:before
 		width: 15em
@@ -108,3 +118,14 @@ body
 		position: absolute
 		box-shadow: inset 0 0 0 15px rgba(250,250,250,0.1)
 		filter: blur(10px)
+
+@media (max-width: $large)
+	.navigation
+		.empty
+			height: auto
+			.welcome
+				text-align:	left
+				margin-right: 0
+				margin-left: 1em
+				padding-bottom: 1em
+				position: static

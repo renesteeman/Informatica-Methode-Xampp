@@ -92,5 +92,56 @@
 
 	</div>
 
+	<div class="bar">
+		<h3>
+			Bonus hoofdstukken
+		</h3>
+	</div>
+
+	<div class="chapter-tiles">
+		<div class="tile">
+			<div class="tile-content">
+				H1 Werking computer
+			</div>
+		</div>
+
+		<div class="tile">
+			<div class="tile-content">
+				H2 Logica
+			</div>
+		</div>
+
+		<div class="tile">
+			<div class="tile-content">
+				H3 Programmeren
+			</div>
+		</div>
+
+		<div class="tile">
+			<div class="tile-content">
+				H4 Arduino
+			</div>
+		</div>
+
+		<div class="tile">
+			<div class="tile-content">
+				H5 Web development
+			</div>
+		</div>
+
+		<div class="tile">
+			<div class="tile-content">
+				H6 Project management
+			</div>
+		</div>
+
+		<div class="tile">
+			<div class="tile-content">
+				H7 Project uitvoeren
+			</div>
+		</div>
+
+	</div>
+
 
 </body>

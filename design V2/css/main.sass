@@ -29,7 +29,6 @@ a
 a:hover
 	color: $grey
 
-
 //navigation
 .navigation
 	background-color: $blue
@@ -140,10 +139,11 @@ a:hover
 	#menuToggle
 		display: block
 		position: relative
-		top: 50px
-		left: 50px
+		top: 0px
+		left: 5%
 		z-index: 100
 		user-select: none
+		padding-bottom: 1em
 
 		input
 			display: block
@@ -169,35 +169,32 @@ a:hover
 			transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),	background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease
 
 		span:first-child
-
 			transform-origin: 0% 0%
 
-
 		span:nth-last-child(2)
-
 			transform-origin: 0% 100%
 
 		input:checked ~ span
-
 			opacity: 1
 			transform: rotate(45deg) translate(-2px, -1px)
 			background: #232323
 
 		input:checked ~ span:nth-last-child(3)
-
 			opacity: 0
 			transform: rotate(0deg) scale(0.2, 0.2)
 
 		input:checked ~ span:nth-last-child(2)
-
 			transform: rotate(-45deg) translate(0, -1px)
 
 		input:checked ~ ul
-
 			transform: none
 
 		.welcome
 			color: black
+			padding-top: 2em
+
+			div:last-child
+				padding-top: 1em
 
 	#menu
 

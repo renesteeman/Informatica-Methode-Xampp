@@ -20,9 +20,9 @@
 		<div class="nav-wide">
 
 			<div class="nav-bar">
-				<div>HOME</div>
-				<div>OVERVIEW</div>
-				<div>PLANNER</div>
+				<a href="#">HOME</a>
+				<a href="#">OVERVIEW</a>
+				<a href="#">PLANNER</a>
 			</div>
 
 			<div class="empty">
@@ -37,17 +37,21 @@
 			</div>
 		</div>
 
-		<div id="menuToggle">
-			<input type="checkbox" />
+		<div class="nav-burger">
+			<div class="burger-icon">
 
-				<span></span>
-			    <span></span>
-			    <span></span>
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
 
-			<ul id="menu">
-				<a href="#"><li>HOME</li></a>
-				<a href="#"><li>OVERVIEW</li></a>
-				<a href="#"><li>PLANNER</li></a>
+			</div>
+
+			<div class="burger-content">
+				<div class="nav-bar">
+					<a href="#">HOME</a>
+					<a href="#">OVERVIEW</a>
+					<a href="#">PLANNER</a>
+				</div>
 
 				<div class="welcome">
 					<div>
@@ -57,9 +61,7 @@
 						logout
 					</div>
 				</div>
-				
-			</ul>
-
+			</div>
 		</div>
 	</div>
 

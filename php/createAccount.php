@@ -53,9 +53,9 @@ for ($j = 0; $j<$accountsToCreate; $j++){
 	$usr_name = rand(0,20).rand(0,20).rand(0,20).rand(0,20).rand(0,20);
 
 	//check if usr_name is already in use
-	$sql = mysqli_query($conn,"SELECT usr_name FROM account WHERE usr_name=$usr_name");
+	$sql = mysqli_query($conn, "SELECT usr_name FROM accounts WHERE usr_name=$usr_name");
 
-	while (mysqli_num_rows($sql) != 0) {
+	while (mysqli_num_rows($sql) != 0){
 		$usr_name = rand(0,20).rand(0,20).rand(0,20).rand(0,20).rand(0,20);
 	}
 
@@ -67,7 +67,7 @@ for ($j = 0; $j<$accountsToCreate; $j++){
 	$psw = password_hash($psw, PASSWORD_DEFAULT);
 
 	//insert account into DB
-	$sql = "INSERT INTO account (usr_name, psw, school, function, creation_date) VALUES ('$usr_name', '$psw' , '$school', '$function', '$date')";
+	$sql = "INSERT INTO accounts (usr_name, psw, school, function, creation_date, klas) VALUES ('$usr_name', '$psw' , '$school', '$function', '$date', '$klas')";
 
 	if ($conn->query($sql) === TRUE) {
 	    $accountsCreated++;

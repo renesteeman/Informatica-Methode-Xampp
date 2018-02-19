@@ -1,34 +1,66 @@
 <head>
-	<link rel="stylesheet" href="./css/main.min.css">
-
+	<!-- external includes -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- internal includes -->
+	<link rel="stylesheet" href="./css/main.min.css">
+	<script src="scripts/UI.js"></script>
 
     <title>Informatica</title>
 <head>
 
 <header>
 	<div class="navigation">
+
 		<h1>
 			INFORCA
 		</h1>
 
-		<div class="nav-bar">
-			<div>HOME</div>
-			<div>OVERVIEW</div>
-			<div>PLANNER</div>
-		</div>
+		<div class="nav-wide">
 
-		<div class="empty">
-			<div class="welcome">
-				<div>
-					Hi User sdhfgasdggdasgasdsadfhjgdsaerhhadf
-				</div>
-				<div>
-					logout
+			<div class="nav-bar">
+				<div>HOME</div>
+				<div>OVERVIEW</div>
+				<div>PLANNER</div>
+			</div>
+
+			<div class="empty">
+				<div class="welcome">
+					<div>
+						Hi User sdhfgasdggdasgasdsadfhjgdsaerhhadf
+					</div>
+					<div>
+						logout
+					</div>
 				</div>
 			</div>
 		</div>
 
+		<div id="menuToggle">
+			<input type="checkbox" />
+
+				<span></span>
+			    <span></span>
+			    <span></span>
+
+			<ul id="menu">
+				<a href="#"><li>HOME</li></a>
+				<a href="#"><li>OVERVIEW</li></a>
+				<a href="#"><li>PLANNER</li></a>
+
+				<div class="welcome">
+					<div>
+						Hi User sdhfgasdggdasgasdsadfhjgdsaerhhadf
+					</div>
+					<div>
+						logout
+					</div>
+				</div>
+				
+			</ul>
+
+		</div>
 	</div>
 
 </header>

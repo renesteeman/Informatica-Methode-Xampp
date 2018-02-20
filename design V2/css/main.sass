@@ -1,6 +1,7 @@
 //sizes
-$large: 992px
-$medium: 768px
+$xlarge: 1480px
+$large: 1000px
+$medium: 740px
 
 //colors
 $blue: rgb(20, 60, 90)
@@ -132,8 +133,42 @@ a:hover
 		box-shadow: inset 0 0 0 15px rgba(250,250,250,0.1)
 		filter: blur(10px)
 
+.bar-large
+	background-color: $blue
+	color: $white
+	padding-top: 1em
+	padding-bottom: 1em
+	box-shadow: 0 5px 20px darken($white, 50%)
+	position: relative
+	z-index: 30
+	background: linear-gradient(to bottom right, $blue, $blue-green)
+	padding-left: 20%
+	font-size: 1.5em
+
+	.contact
+		max-width: 80%
+
+	.contact-info
+		padding-top: 0.5em
+
+		a
+			color: darken($grey, 20%)
+
+		a:hover
+			color: $white
+
+		#mail
+			float: right
+			margin-right: 20%
+
+
+@media (max-width: $xlarge)
+	.chapter-tiles
+		grid-template-columns: auto auto auto
+
 @media (max-width: $large)
 	.navigation
+		background-attachment: fixed
 		.nav-wide
 			display: none
 
@@ -166,6 +201,7 @@ a:hover
 			left: -0.5em
 			background-color: $blue
 			background: linear-gradient(to bottom right, $blue, $blue-green)
+			background-attachment: fixed
 			padding-top: 2em
 			padding-left: 2.5em
 			width: 100%
@@ -205,3 +241,10 @@ a:hover
 					color: $white
 					display: block
 					text-align: left
+
+	.chapter-tiles
+		grid-template-columns: auto auto
+
+@media (max-width: $medium)
+	.chapter-tiles
+		grid-template-columns: auto

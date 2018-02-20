@@ -84,7 +84,18 @@
 	<div class="chapter-tiles">
 		<div class="tile">
 			<div class="tile-content">
-				H1 Werking computer
+				<div class="tile-chapter">
+					H1 Werking computer
+				</div>
+				<div class="tile-paragraphs">
+					<ol>
+						<ul>§1 Het binair systeem</ul>
+						<ul>§2 Binair rekenen</ul>
+						<ul>§3 Gates</ul>
+						<ul>§4 Onderdelen van een computer</ul>
+						<ul>§5 Software en het OS</ul>
+					</ol>
+				</div>
 			</div>
 		</div>
 

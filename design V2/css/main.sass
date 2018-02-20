@@ -122,8 +122,37 @@ a:hover
 		.tile-content
 			text-align: center
 
+			.tile-paragraphs
+				display: none
+
 	.tile:hover
 		background-position: 15em
+
+	.tile.active
+		transition: none
+		background: linear-gradient(to bottom right, $green-blue, $green)
+		width: 60vw
+		height: auto
+
+		.tile-chapter
+			display: none
+
+		.tile-paragraphs
+			display: block
+
+			ol
+				padding-top: 2em
+				padding-bottom: 2em
+				text-align: left
+				margin-left: 20%
+
+
+				ul
+					line-height: 1.5em
+					font-size: 1.5em
+
+	.tile.active:hover
+		background-position: 0
 
 	.tile:before
 		width: 15em

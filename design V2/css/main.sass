@@ -114,7 +114,7 @@ a:hover
 		height: 15em
 		line-height: 15em
 		width: 15em
-		box-shadow: 6px 6px 8px darken($white, 20%)
+
 		transition: background .5s ease-out
 		overflow: hidden
 		border-radius: 4px
@@ -274,6 +274,23 @@ a:hover
 	.chapter-tiles
 		grid-template-columns: auto auto
 
+		.tile.active
+			.tile-content
+				.tile-paragraphs
+					ol
+						margin-left: 5%
+
 @media (max-width: $medium)
 	.chapter-tiles
 		grid-template-columns: auto
+
+		.tile.active
+			.tile-content
+				.tile-paragraphs
+					ol
+						margin-left: 0
+						padding-left: 1em
+
+						ul
+							padding-left: 0
+							padding-top: 1em

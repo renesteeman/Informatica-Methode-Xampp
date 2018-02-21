@@ -114,8 +114,8 @@ a:hover
 		height: 15em
 		line-height: 15em
 		width: 15em
-
-		transition: background .5s ease-out
+		box-shadow: inset 0 0 0 0 darken($white, 10%), 6px 6px 8px darken($white, 20%)
+		transition: background .5s ease-out, box-shadow 0.5s ease-in-out
 		overflow: hidden
 		border-radius: 4px
 
@@ -126,7 +126,7 @@ a:hover
 				display: none
 
 	.tile:hover
-		background-position: 15em
+		box-shadow: inset 0 0 0 6px darken($white, 10%), 4px 4px 8px darken($white, 20%)
 
 	.tile.active
 		transition: none

@@ -7,20 +7,20 @@
 	<link rel="stylesheet" href="./css/main.min.css">
 	<script src="scripts/UI.js"></script>
 
-    <title>Informatica</title>
+    <title>Inforca</title>
 <head>
 
 <header>
 	<div class="navigation">
 
 		<h1>
-			INFORCA
+			<a href="../index.php">INFORCA</a>
 		</h1>
 
 		<div class="nav-wide">
 
 			<div class="nav-bar">
-				<a href="#">HOME</a>
+				<a href="../index.php">HOME</a>
 				<a href="#">OVERVIEW</a>
 				<a href="#">PLANNER</a>
 			</div>

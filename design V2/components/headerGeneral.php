@@ -28,7 +28,7 @@
 			<div class="empty">
 				<div class="welcome">
 					<div>
-						Hi User sdhfgasdggdasgasdsadfhjgdsaerhhadf
+						<a href="./account.php" >Hi User sdhfgasdggdasgasdsadfhjgdsaerhhadf</a>
 					</div>
 					<div>
 						logout

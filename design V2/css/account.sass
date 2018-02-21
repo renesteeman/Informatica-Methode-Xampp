@@ -1,0 +1,52 @@
+@import "variables.sass"
+
+.login
+	height: 65%
+	margin-left: 20%
+	margin-top: 40px
+	width: 60%
+	margin-bottom: 40px
+	background-color: $grey
+	box-shadow: inset 0 0 0 0 darken($white, 10%), 6px 6px 8px darken($white, 20%)
+	border-radius: 4px
+	color: $blue
+	background: linear-gradient(to bottom right, $green-blue, $green)
+
+	input
+		font-size: 2em
+		margin-bottom: 1em
+		margin-top: 1em
+		margin-left: 1em
+		position: relative
+		bottom: 20px
+		padding: 12px 12px
+		border-radius: 4px
+		height: 2em
+		box-shadow: 4px 4px 8px darken($green-blue, 20%)
+
+	input:not([type=submit])
+		border: none
+		border-bottom: 2px solid $blue-green
+
+	input:not([type=submit]):focus
+		border: 3px solid $grey
+
+	input:not([type=submit])::placeholder
+
+
+	input[type=submit]
+		margin-left: 3.1em
+		background-color: $white
+		border: none
+
+
+	ul
+		list-style: none
+
+	img
+		width: 4em
+		height: 4em
+
+	.loginForm
+		padding-top: 2em
+		padding-left: 2em

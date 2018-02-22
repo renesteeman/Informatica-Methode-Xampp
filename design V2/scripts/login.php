@@ -11,9 +11,9 @@
 
 	//get given login data
 	$username = mysqli_real_escape_string($conn, check_input($_POST['username']));
-	$psw = mysqli_real_escape_string($conn, check_input($_POST['password']));
+	$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
 
-	//get psw for $usr_name
+	//get password for $username
 	$sql = "SELECT password FROM users WHERE username='$username";
 
 	if (mysqli_query($conn, $sql)) {
@@ -32,7 +32,7 @@
 
 		//start session with username
 		session_start();
-		$_SESSION["usr_name"] = $username;
+		$_SESSION["username"] = $username;
 
 		header("Location: ../pages/index.php");
 

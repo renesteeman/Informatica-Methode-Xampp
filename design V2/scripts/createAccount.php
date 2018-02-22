@@ -4,17 +4,13 @@
 	//kies het aantal te crearen accounts
 	$accountsToCreate = 5;
 
-	//set school
-	$school = "Bernardinus";
-
-	//klas
-	$klas = "H51";
-
-	//leerling, leeraar of overig?
-	$function = "leerling";
-
-	//get and set time
-	$date = date("Y-m-d H:i:s");
+	//info to set
+	//username and password are set below
+	$school = "Testers college";
+	$functie = "leerling";
+	$creation_date = date("Y-m-d");
+	$expire_date = date('Y-m-d',strtotime(date("Y-m-d", mktime()) . " + 365 day"));
+	$klas = "";
 
 	//create password
 	$letters = array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
@@ -23,11 +19,11 @@
 
 	$accountsCreated = 0;
 
-	$usr_names = array();
+	$usernames = array();
 	$passwords = array();
 
 	for ($j = 0; $j<$accountsToCreate; $j++){
-		$psw = "";
+		$password = "";
 
 		for ($i=0; $i<20; $i++){
 			$ran1 = rand(0, 2);
@@ -35,39 +31,39 @@
 			if ($ran1 == 0){
 				$ran2 = rand(0,25);
 				$char = $letters[$ran2];
-				$psw.=$char;
+				$password.=$char;
 
 			} elseif ($ran1 == 1) {
 				$ran2 = rand(0,9);
 				$number = $numbers[$ran2];
-				$psw.=$number;
+				$password.=$number;
 
-			} else {
+			} elseif ($ran1 == 2) {
 				$ran2 = rand(0,5);
 				$special = $specials[$ran2];
-				$psw.=$special;
+				$password.=$special;
 			}
 		}
 
 		//create username
-		$usr_name = rand(0,20).rand(0,20).rand(0,20).rand(0,20).rand(0,20);
+		$username = rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
 
-		//check if usr_name is already in use
-		$sql = mysqli_query($conn, "SELECT usr_name FROM accounts WHERE usr_name=$usr_name");
+		//check if username is already in use
+		$sql = mysqli_query($conn, "SELECT username FROM users WHERE username=$username");
 
 		while (mysqli_num_rows($sql) != 0){
-			$usr_name = rand(0,20).rand(0,20).rand(0,20).rand(0,20).rand(0,20);
+			$username = rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
 		}
 
 		//add the username and password (unhashed) into an array to display when the accounts are added
-		array_push($usr_names, $usr_name);
-		array_push($passwords, $psw);
+		array_push($usernames, $username);
+		array_push($passwords, $password);
 
 		//hash password
-		$psw = password_hash($psw, PASSWORD_DEFAULT);
+		$password = password_hash($password, PASSWORD_DEFAULT);
 
 		//insert account into DB
-		$sql = "INSERT INTO accounts (usr_name, psw, school, function, creation_date, klas) VALUES ('$usr_name', '$psw' , '$school', '$function', '$date', '$klas')";
+		$sql = "INSERT INTO users (username, password, school, functie, creation_date, expire_date, klas) VALUES ('$username', '$password' , '$school', '$functie', '$creation_date', '$expire_date', '$klas')";
 
 		if ($conn->query($sql) === TRUE) {
 		    $accountsCreated++;
@@ -79,8 +75,8 @@
 
 	echo $accountsCreated." account(s) created for ".$school." ".$klas."</br>";
 
-	for ($k=0; $k<count($usr_names);$k++){
-		echo "Username = ".$usr_names[$k]." Password = ".$passwords[$k]."</br>";
+	for ($k=0; $k<count($usernames);$k++){
+		echo "Username = ".$usernames[$k]." Password = ".$passwords[$k]."</br>";
 	}
 
 	$conn->close();

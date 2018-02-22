@@ -9,7 +9,7 @@
 	session_destroy();
 
 	//redirect to main page
-	header("Location: ../pages/index.php");
+	header("Location: index.php");
 
 	echo "Error redirecting";
 ?>

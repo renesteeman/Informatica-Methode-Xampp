@@ -14,7 +14,7 @@
 	$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
 
 	//get password for $username
-	$sql = "SELECT password FROM users WHERE username='$username";
+	$sql = "SELECT password FROM users WHERE username='$username'";
 
 	if (mysqli_query($conn, $sql)) {
 

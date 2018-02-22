@@ -1,5 +1,5 @@
 <?php
-include('../components/headerGeneral.php');
+	include('../components/headerGeneral.php');
 ?>
 
 <body>

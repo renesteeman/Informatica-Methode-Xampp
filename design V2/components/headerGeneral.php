@@ -27,12 +27,20 @@
 
 			<div class="empty">
 				<div class="welcome">
-					<div>
-						<a href="./account.php" >Hi User sdhfgasdggdasgasdsadfhjgdsaerhhadf</a>
-					</div>
-					<div>
-						logout
-					</div>
+
+					<?php
+						session_start();
+
+						//if logged in say hello, else give the option to login
+						if (isset($_SESSION["username"])){
+							echo '<div>Hi <a href="./account.php">'.$_SESSION["username"].'</a>';
+							echo '<form action="../scripts/logoutGeneral.php"><button type="submit" class="logout">logout</button></form></div>';
+
+						} else {
+							echo ' <div><a href="account.php"> login</a></div> ';
+						}
+					?>
+
 				</div>
 			</div>
 		</div>

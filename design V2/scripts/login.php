@@ -10,29 +10,29 @@
 	}
 
 	//get given login data
-	$usr_name = mysqli_real_escape_string($conn, check_input($_POST['username']));
+	$username = mysqli_real_escape_string($conn, check_input($_POST['username']));
 	$psw = mysqli_real_escape_string($conn, check_input($_POST['password']));
 
 	//get psw for $usr_name
-	$sql = "SELECT psw FROM accounts WHERE usr_name='$usr_name'";
+	$sql = "SELECT password FROM users WHERE username='$username";
 
 	if (mysqli_query($conn, $sql)) {
 
 		$result = mysqli_query($conn, $sql);
 		$result = mysqli_fetch_assoc($result);
-		$rightpsw = $result['psw'];
+		$rightpsw = $result['password'];
 
 	} else {
 		echo "Error with sql execution, please report to admin </br>";
 	}
 
 	//check psw
-	if(password_verify($psw, $rightpsw)){
+	if(password_verify($password, $rightpsw)){
 		echo "Logged in <br />";
 
 		//start session with username
 		session_start();
-		$_SESSION["usr_name"] = $usr_name;
+		$_SESSION["usr_name"] = $username;
 
 		header("Location: ../pages/index.php");
 

@@ -1,6 +1,7 @@
 <?php
-include('../components/headerGeneral.php');
+	include('../components/headerGeneral.php');
 ?>
+
 <link rel="stylesheet" href="../css/account.min.css">
 
 <body>
@@ -18,15 +19,15 @@ include('../components/headerGeneral.php');
 	</div>
 
 	<div class="login">
-		<form class="loginForm">
+		<form class="loginForm" method="post" action="../scripts/login.php" accept-charset="UTF-8">
 			<ul>
 				<li>
 					<img class="person" src="../icons/person.svg">
-					<input type="text" placeholder="Name">
+					<input type="text" placeholder="Name" name="username" maxlength="50" required>
 				</li>
 				<li>
 					<img class="lock" src="../icons/lock.svg">
-					<input type="password" placeholder="Password">
+					<input type="password" placeholder="Password" name="password" maxlength="50" required>
 				</li>
 				<li>
 					<input type="submit" value="login">

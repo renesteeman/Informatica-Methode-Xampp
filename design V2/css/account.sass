@@ -1,7 +1,8 @@
 @import "variables.sass"
 
 .login
-	height: 65%
+	min-height: 65%
+	height: auto
 	margin-left: 20%
 	margin-top: 40px
 	width: 60%
@@ -25,6 +26,9 @@
 		box-shadow: inset 0 0 0 0 darken($white, 10%), 4px 4px 8px darken($green-blue, 20%)
 		transition: background .5s ease-out, box-shadow 0.5s ease-in-out
 
+	input:not([type=submit])::placeholder
+		color: $grey
+
 	input:not([type=submit])
 		border: none
 		border-bottom: 2px solid $blue-green
@@ -42,6 +46,36 @@
 
 	input[type=submit]:hover
 		background-color: lighten($green-blue, 20%)
+
+	select
+		font-size: 2em
+		margin-bottom: 1em
+		margin-top: 1em
+		margin-left: 1em
+		position: relative
+		bottom: 20px
+		padding: 12px 12px
+		border-radius: 4px
+		height: 2em
+		box-shadow: inset 0 0 0 0 darken($white, 10%), 4px 4px 8px darken($green-blue, 20%)
+		transition: background .5s ease-out, box-shadow 0.5s ease-in-out
+
+	select
+		color: $black
+		border: none
+		border-bottom: 2px solid $blue-green
+
+	select:focus
+		box-shadow: inset 0 0 0 6px darken($white, 10%), 4px 4px 8px darken($green-blue, 20%)
+
+	select:hover
+		box-shadow: inset 0 0 0 6px darken($white, 10%), 4px 4px 8px darken($green-blue, 20%)
+
+	option:checked
+		color: $grey
+
+	.defaultSelect
+		color: $grey
 
 	ul
 		list-style: none

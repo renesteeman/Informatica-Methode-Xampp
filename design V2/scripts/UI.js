@@ -11,4 +11,12 @@ $(document).ready(function(){
 
 	});
 
+	$("select").click(function(){
+		if($('select[name=newGroup]').val()!=''){
+			$(this).removeClass("defaultSelect");
+		} else {
+			$(this).addClass("defaultSelect");
+		}
+	});
+
 });

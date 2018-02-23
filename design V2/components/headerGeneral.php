@@ -33,8 +33,13 @@
 
 						//if logged in say hello, else give the option to login
 						if (isset($_SESSION["username"])){
-							echo '<div>Hi <a href="./account.php">'.$_SESSION["username"].'</a></div>';
-							echo '<div><a href="../scripts/logoutGeneral.php">logout</a></div>';
+							echo
+								'<div>
+									Hi <a href="./account.php">'.$_SESSION["username"].'</a>
+								</div>
+								<div>
+									<a href="../scripts/logoutGeneral.php">logout</a>
+								</div>';
 
 						} else {
 							echo ' <div><a href="account.php"> login</a></div> ';

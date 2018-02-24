@@ -30,6 +30,7 @@
 		if (isset($_SESSION["username"])){
 			//if the user is loged in, display account settings
 			echo '
+			<link rel="stylesheet" href="../css/accountSettings.min.css">
 			<div class="login">
 				<form class="loginForm" method="post" action="../scripts/login.php" accept-charset="UTF-8">
 					<ul>
@@ -73,7 +74,8 @@
 			</div>';
 		} else {
 			//if the user is not loged in, display login form
-			echo '<div class="login">
+			echo '
+			<div class="login">
 				<form class="loginForm" method="post" action="../scripts/login.php" accept-charset="UTF-8">
 					<ul>
 						<li>

@@ -15,7 +15,7 @@ $(document).ready(function(){
 		if($('select[name=newGroup]').val()!=''){
 			$(this).removeClass("defaultSelect");
 		} else {
-			$(this).addClass("defaultSelect");
+			$(this).toggleClass("defaultSelect");
 		}
 	});
 

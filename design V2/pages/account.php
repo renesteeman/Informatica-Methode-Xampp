@@ -32,27 +32,27 @@
 			echo '
 			<link rel="stylesheet" href="../css/accountSettings.min.css">
 			<div class="login">
-				<form class="loginForm" method="post" action="../scripts/login.php" accept-charset="UTF-8">
+				<form class="accountSettingsForm" method="post" action="../scripts/updateAccount.php" accept-charset="UTF-8">
 					<ul>
 						<li>
 							<label>Naam</label>
-							<input type="text" placeholder="Huidge Naam" name="username" maxlength="50" required>
+							<input type="text" placeholder="Huidge Naam" name="Nnaam" maxlength="50">
 						</li>
 						<li>
 							<label>Gebruikersnaam</label>
-							<input type="text" placeholder="Huidge username" name="username" maxlength="50" required>
+							<input type="text" placeholder="username" name="Nusername" maxlength="50">
 						</li>
 						<li>
 							<label>Nieuw wachtwoord</label>
-							<input type="password" placeholder="Nieuw wachtwoord" name="password" maxlength="50" required>
+							<input type="password" placeholder="Nieuw wachtwoord" name="Npassword" maxlength="50">
 						</li>
 						<li>
 							<label>Bevestig nieuw wachtwoord</label>
-							<input type="password" placeholder="Bevestig wachtwoord" name="password" maxlength="50" required>
+							<input type="password" placeholder="Bevestig wachtwoord" name="NpasswordConfirm" maxlength="50">
 						</li>
 						<li>
 							<label>Groep</label>
-							<select class="defaultSelect" name="newGroup">
+							<select class="defaultSelect" name="Ngroep">
 								<option value="" >Current</option>
 
 								<option value="1">Option 1</option>
@@ -64,7 +64,11 @@
 						</li>
 						<li>
 							<label>Email</label>
-							<input type="email" placeholder="Current mail" name="newEmail" maxlength="50" required>
+							<input type="email" placeholder="Current mail" name="Nemail" maxlength="50">
+						</li>
+						<li>
+							<label>Huidig wachtwoord</label>
+							<input type="password" placeholder="Huidig wachtwoord" name="password" maxlength="50" required>
 						</li>
 						<li>
 							<input type="submit" value="update">
@@ -75,6 +79,7 @@
 		} else {
 			//if the user is not loged in, display login form
 			echo '
+			<link rel="stylesheet" href="../css/accountLogin.min.css">
 			<div class="login">
 				<form class="loginForm" method="post" action="../scripts/login.php" accept-charset="UTF-8">
 					<ul>

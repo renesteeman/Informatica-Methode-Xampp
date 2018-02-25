@@ -49,7 +49,7 @@
 			//update naam
 			if(isset($_POST['Nnaam'])){
 				$Nnaam = mysqli_real_escape_string($conn, check_input($_POST['Nnaam']));
-				if($Nnaam != $Cnaam){
+				if($Nnaam != $Cnaam & $Nnaam != ''){
 					$sql = "UPDATE users SET naam='$Nnaam' WHERE username='$user'";
 					if (mysqli_query($conn, $sql)) {
 					    echo "Naam succesvol bijgewerkt </br>";
@@ -62,11 +62,12 @@
 			//update gebruikersnaam
 			if(isset($_POST['Nusername'])){
 				$Nusername = mysqli_real_escape_string($conn, check_input($_POST['Nusername']));
-				if($Nusername != $Cusername){
+				if($Nusername != $Cusername & $Nusername != ''){
 					$sql = "UPDATE users SET username='$Nusername' WHERE username='$user'";
 					if (mysqli_query($conn, $sql)) {
 					    echo "Gebruikersnaam succesvol bijgewerkt </br>";
 						$_SESSION["username"] = $Nusername;
+						$user = $Nusername;
 					} else {
 					    echo "Error updating record: " . mysqli_error($conn);
 					}
@@ -78,7 +79,7 @@
 				$Npassword = mysqli_real_escape_string($conn, check_input($_POST['Npassword']));
 				$NpasswordConfirm = mysqli_real_escape_string($conn, check_input($_POST['NpasswordConfirm']));
 
-				if($Npassword == $NpasswordConfirm){
+				if($Npassword == $NpasswordConfirm  & $Npassword != ''){
 					//hash password
 					$Npassword = password_hash($Npassword, PASSWORD_DEFAULT);
 
@@ -89,14 +90,13 @@
 					} else {
 					    echo "Error updating record: " . mysqli_error($conn);
 					}
-
 				}
 			}
 
 			//update group
 			if(isset($_POST['Ngroep'])){
 				$Ngroep = mysqli_real_escape_string($conn, check_input($_POST['Ngroep']));
-				if($Ngroep != $Cgroep){
+				if($Ngroep != $Cgroep & $Ngroep != ''){
 					$sql = "UPDATE users SET group_name='$Ngroep' WHERE username='$user'";
 					if (mysqli_query($conn, $sql)) {
 					    echo "Groep succesvol bijgewerkt </br>";
@@ -109,7 +109,7 @@
 			//update email
 			if(isset($_POST['Nemail'])){
 				$Nemail = mysqli_real_escape_string($conn, check_input($_POST['Nemail']));
-				if($Nemail != $Cemail){
+				if($Nemail != $Cemail & $Nemail != ''){
 					$sql = "UPDATE users SET email='$Nemail' WHERE username='$user'";
 					if (mysqli_query($conn, $sql)) {
 					    echo "Email succesvol bijgewerkt </br>";
@@ -118,13 +118,9 @@
 					}
 				}
 			}
-
 		} else {
 			echo "Wrong password";
 		}
-
-		//empty POST
-		$_POST = array();
 	}
 
 ?>

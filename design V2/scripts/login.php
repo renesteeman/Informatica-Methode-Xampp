@@ -36,6 +36,7 @@
 
 		header("Location: ../pages/index.php");
 
+		mysqli_close($conn);
 		echo "Error redirecting";
 	   exit;
 

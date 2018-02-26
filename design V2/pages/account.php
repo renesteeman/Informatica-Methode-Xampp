@@ -1,5 +1,6 @@
 <?php
 	include('../components/headerGeneral.php');
+	include('../scripts/DB_connect.php');
 ?>
 
 <link rel="stylesheet" href="../css/account.min.css">
@@ -29,6 +30,22 @@
 		//if logged in say hello, else give the option to login
 		if (isset($_SESSION["username"])){
 			//if the user is loged in, display account settings
+
+			$user = $_SESSION["username"];
+
+			$sql = "SELECT * FROM users WHERE username='$user'";
+
+			//get current info in order to show a 'preview'
+			if (mysqli_query($conn, $sql)) {
+				$result = mysqli_query($conn, $sql);
+				$result = mysqli_fetch_assoc($result);
+				//C stands for Current and N stands for New
+				$Cnaam = $result['naam'];
+				$Cusername = $result['username'];
+				$Cgroep = $result['group_name'];
+				$Cemail = $result['email'];
+			}
+
 			echo '
 			<link rel="stylesheet" href="../css/accountSettings.min.css">
 			<div class="login">
@@ -36,11 +53,11 @@
 					<ul>
 						<li>
 							<label>Naam</label>
-							<input type="text" placeholder="Huidge Naam" name="Nnaam" maxlength="50">
+							<input type="text" placeholder="'.$Cnaam.'"name="Nnaam" maxlength="50">
 						</li>
 						<li>
 							<label>Gebruikersnaam</label>
-							<input type="text" placeholder="username" name="Nusername" maxlength="50">
+							<input type="text" placeholder="'.$Cusername.'" name="Nusername" maxlength="50">
 						</li>
 						<li>
 							<label>Nieuw wachtwoord</label>
@@ -53,7 +70,7 @@
 						<li>
 							<label>Groep</label>
 							<select class="defaultSelect" name="Ngroep">
-								<option value="" >Current</option>
+								<option value="" >'.$Cgroep.'</option>
 
 								<option value="1">1</option>
 								<option value="2">2</option>
@@ -64,7 +81,7 @@
 						</li>
 						<li>
 							<label>Email</label>
-							<input type="email" placeholder="Current mail" name="Nemail" maxlength="50">
+							<input type="email" placeholder="'.$Cemail.'" name="Nemail" maxlength="50">
 						</li>
 						<li>
 							<label>Huidig wachtwoord</label>
@@ -76,6 +93,7 @@
 					</ul>
 				</form>
 			</div>';
+			mysqli_close($conn);
 		} else {
 			//if the user is not loged in, display login form
 			echo '

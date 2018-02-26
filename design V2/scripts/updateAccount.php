@@ -41,7 +41,6 @@
 				//C stands for Current and N stands for New
 				$Cnaam = $result['naam'];
 				$Cusername = $result['username'];
-				$Cpassword = $result['password'];
 				$Cgroep = $result['group_name'];
 				$Cemail = $result['email'];
 			}
@@ -122,5 +121,7 @@
 			echo "Wrong password";
 		}
 	}
+
+	mysqli_close($conn);
 
 ?>

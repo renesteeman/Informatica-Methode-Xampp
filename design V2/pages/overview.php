@@ -27,9 +27,9 @@
 					<td>Klas</td>
 					<td>
 						<span class="tableHeaderElement"> X leerlingen </span>
-						<span class="tableHeaderElement"> mail icon </span>
+						<span class="tableHeaderElement"> <img src="../icons/mail.svg"/> </span>
 					</td>
-					<td>collapse icon</td>
+					<td><img src="../icons/arrow.svg"/></td>
 				</tr>
 
 				<!-- table content -->

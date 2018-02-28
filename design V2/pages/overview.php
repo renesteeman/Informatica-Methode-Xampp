@@ -21,42 +21,83 @@
 
 	<div class="classOverview">
 		<table>
-			<!-- table header -->
-			<tr>
-				<td>Klas</td>
-				<td>
-					<span class="tableHeaderElement"> X leerlingen <span>
-					<span class="tableHeaderElement"> mail icon <span>
-				</td>
-				<td>collapse icon</td>
-			</tr>
+			<div class="class">
+				<!-- table header for this class-->
+				<tr class="classRow">
+					<td>Klas</td>
+					<td>
+						<span class="tableHeaderElement"> X leerlingen </span>
+						<span class="tableHeaderElement"> mail icon </span>
+					</td>
+					<td>collapse icon</td>
+				</tr>
 
-			<!-- table content -->
-			<tr>
-				<td>René</td>
-				<td>Steeman</td>
-				<td>icon</td>
-			</tr>
-			<tr>
-				<td>Luc</td>
-				<td>Tans</td>
-				<td>icon</td>
-			</tr>
-			<tr>
-				<td>AI</td>
-				<td>Robot</td>
-				<td>icon=alarm</td>
-			</tr>
-			<tr>
-				<td>AI</td>
-				<td>Robot</td>
-				<td>icon=alarm</td>
-			</tr>
-			<tr>
-				<td>AI</td>
-				<td>Robot</td>
-				<td>icon=alarm</td>
-			</tr>
+				<!-- table content -->
+				<tr>
+					<td>René</td>
+					<td>Steeman</td>
+					<td>icon</td>
+				</tr>
+				<tr>
+					<td>Luc</td>
+					<td>Tans</td>
+					<td>icon</td>
+				</tr>
+				<tr>
+					<td>AI</td>
+					<td>Robot</td>
+					<td>icon=alarm</td>
+				</tr>
+				<tr>
+					<td>AI</td>
+					<td>Robot</td>
+					<td>icon=alarm</td>
+				</tr>
+				<tr>
+					<td>AI</td>
+					<td>Robot</td>
+					<td>icon=alarm</td>
+				</tr>
+			</div>
+
+			<div class="class">
+				<!-- table header for this class-->
+				<tr class="classRow">
+					<td>Klas</td>
+					<td>
+						<span class="tableHeaderElement"> X leerlingen </span>
+						<span class="tableHeaderElement"> mail icon </span>
+					</td>
+					<td>collapse icon</td>
+				</tr>
+
+				<!-- table content -->
+				<tr>
+					<td>René</td>
+					<td>Steeman</td>
+					<td>icon</td>
+				</tr>
+				<tr>
+					<td>Luc</td>
+					<td>Tans</td>
+					<td>icon</td>
+				</tr>
+				<tr>
+					<td>AI</td>
+					<td>Robot</td>
+					<td>icon=alarm</td>
+				</tr>
+				<tr>
+					<td>AI</td>
+					<td>Robot</td>
+					<td>icon=alarm</td>
+				</tr>
+				<tr>
+					<td>AI</td>
+					<td>Robot</td>
+					<td>icon=alarm</td>
+				</tr>
+			</div>
 		</table>
 	</div>
 

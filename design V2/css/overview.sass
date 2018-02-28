@@ -4,18 +4,19 @@
 	margin-left: 20%
 
 	table
+		color: $white
 		margin-top: 2em
 		margin-bottom: 2em
 		width: 80%
 		border-collapse: collapse
-		border-top: 2px solid $grey
+		background-color: darken($green-blue, 5%)
 
 		tr:nth-child(even)
-			background-color: lighten($grey, 20%)
+			background-color: darken($green-blue, 10%)
 
 		tr
 			width: 30%
-			border: 2px solid $grey
+			border: 1px solid darken($grey, 20%)
 
 			td
 				padding-top: 0.5em
@@ -24,10 +25,12 @@
 			td:first-child
 				padding-left: 2em
 
-	tr:first-child
-
-		border: 2px solid darken($grey, 20%)
+	tr.classRow
+		background-color: $blue-green
 
 		td
 			padding-top: 1em
 			padding-bottom: 1em
+
+			.tableHeaderElement
+				margin-right: 4em

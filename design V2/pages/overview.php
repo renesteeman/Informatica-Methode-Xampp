@@ -21,85 +21,41 @@
 	</div>
 
 	<div class="classOverview">
-		<table>
+		<!-- the table as a whole -->
+		<div class="table">
+			<!-- one class-->
 			<div class="class">
 				<!-- table header for this class-->
-				<tr class="classRow">
-					<td>Klas</td>
-					<td>
-						<span class="tableHeaderElement"> X leerlingen </span>
-						<span class="tableHeaderElement"> <img src="../icons/mail.svg"/> </span>
-					</td>
-					<td><img src="../icons/arrow.svg" class="arrow"/></td>
-				</tr>
+				<div class="classHeader">
+					<span class="klas">Klas</span>
+					<span class="Nleerlingen">X leerlingen </span>
+					<span class="icons">
+						<span class="Mail image"><img src="../icons/mail.svg"/></span>
+						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+					</span>
+				</div>
 
-				<!-- table content -->
-				<tr class="classContent">
-					<td>René</td>
-					<td>Steeman</td>
-					<td>icon</td>
-				</tr>
-				<tr class="classContent">
-					<td>Luc</td>
-					<td>Tans</td>
-					<td>icon</td>
-				</tr>
-				<tr class="classContent">
-					<td>AI</td>
-					<td>Robot</td>
-					<td>icon=alarm</td>
-				</tr>
-				<tr class="classContent">
-					<td>AI</td>
-					<td>Robot</td>
-					<td>icon=alarm</td>
-				</tr>
-				<tr class="classContent">
-					<td>AI</td>
-					<td>Robot</td>
-					<td>icon=alarm</td>
-				</tr>
+				<!-- table content for this class-->
+				<div class="classContent">
+					<div class="row">
+						<span class="name">Student</span>
+						<span class="progress">icon</span>
+					</div>
+					<div class="row">
+						<span class="name">Student</span>
+						<span class="progress">icon</span>
+					</div>
+					<div class="row">
+						<span class="name">Student</span>
+						<span class="progress">icon</span>
+					</div>
+					<div class="row">
+						<span class="name">Student</span>
+						<span class="progress">icon</span>
+					</div>
+				</div>
 			</div>
-
-			<div class="class">
-				<!-- table header for this class-->
-				<tr class="classRow">
-					<td>Klas</td>
-					<td>
-						<span class="tableHeaderElement"> X leerlingen </span>
-						<span class="tableHeaderElement"> mail icon </span>
-					</td>
-					<td>collapse icon</td>
-				</tr>
-
-				<!-- table content -->
-				<tr>
-					<td>René</td>
-					<td>Steeman</td>
-					<td>icon</td>
-				</tr>
-				<tr>
-					<td>Luc</td>
-					<td>Tans</td>
-					<td>icon</td>
-				</tr>
-				<tr>
-					<td>AI</td>
-					<td>Robot</td>
-					<td>icon=alarm</td>
-				</tr>
-				<tr>
-					<td>AI</td>
-					<td>Robot</td>
-					<td>icon=alarm</td>
-				</tr>
-				<tr>
-					<td>AI</td>
-					<td>Robot</td>
-					<td>icon=alarm</td>
-				</tr>
-			</div>
-		</table>
+		</div>
 	</div>
 
 	<div class="bar">

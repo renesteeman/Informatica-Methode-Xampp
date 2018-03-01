@@ -19,17 +19,5 @@ $(document).ready(function(){
 		}
 	});
 
-	var shown = true;
-	$(".arrow").click(function () {
-
-	    if (!shown) {
-		    $('.classContent').fadeIn();
-	    }else{
-	        $('.classContent').fadeOut();
-	    }
-	    shown = !shown;
-
-	})
-
 
 });

@@ -4,7 +4,6 @@
 ?>
 
 <link rel="stylesheet" href="../css/overview.min.css">
-<script src="../scripts/UI.js"></script>
 
 <body>
 

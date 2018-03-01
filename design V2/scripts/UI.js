@@ -19,5 +19,10 @@ $(document).ready(function(){
 		}
 	});
 
+	$(".Arrow").click(function(){
 
+		$(this).parent().parent().parent().next().slideToggle();
+
+
+	});
 });

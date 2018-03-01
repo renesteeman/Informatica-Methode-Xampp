@@ -10,15 +10,18 @@
 		margin-bottom: 2em
 
 		.class
+			width: 80%
+			box-shadow: 0 5px 20px darken($white, 50%)
 
 			.classHeader
 				font-size: 2em
 				box-sizing: border-box
-				width: 80%
+				width: 100%
 				padding-left: 1em
 				padding-top: 0.5em
 				padding-bottom: 0.3em
-				background-color: lightblue
+				background-color: $blue-green
+				color: $white
 
 				span
 					display: inline-block
@@ -49,6 +52,8 @@
 					.Arrow
 						position: relative
 						left: 10%
+						transform: rotateX(180deg)
+						transition-duration: .4s
 
 
 			.classContent
@@ -57,18 +62,20 @@
 				.row
 					display: inline-block
 					box-sizing: border-box
-					width: 80%
+					width: 100%
 					padding-left: 4em
 					padding-top: 0.5em
 					padding-bottom: 0.3em
-					background-color: lightgreen
+					background-color: $green-blue
+
+					color: $white
 
 					span.name
 						width: 80%
 						display: inline-block
 
 				.row:nth-child(even)
-					background-color: $grey
+					background-color: darken($green-blue, 5%)
 
 			.classContent.active
 				display: block

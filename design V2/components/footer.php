@@ -1,3 +1,4 @@
+</div>
 <footer>
 	<div class="bar-large">
 		<div class="contact">

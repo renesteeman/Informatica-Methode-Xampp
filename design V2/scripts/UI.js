@@ -20,9 +20,7 @@ $(document).ready(function(){
 	});
 
 	$(".Arrow").click(function(){
-
 		$(this).parent().parent().parent().next().slideToggle();
-
-
+		$(this).parent().parent().parent().next().toggleClass("active");
 	});
 });

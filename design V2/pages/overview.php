@@ -4,6 +4,7 @@
 ?>
 
 <link rel="stylesheet" href="../css/overview.min.css">
+<script src="../scripts/UI.js"></script>
 
 <body>
 
@@ -29,31 +30,31 @@
 						<span class="tableHeaderElement"> X leerlingen </span>
 						<span class="tableHeaderElement"> <img src="../icons/mail.svg"/> </span>
 					</td>
-					<td><img src="../icons/arrow.svg"/></td>
+					<td><img src="../icons/arrow.svg" class="arrow"/></td>
 				</tr>
 
 				<!-- table content -->
-				<tr>
+				<tr class="classContent">
 					<td>René</td>
 					<td>Steeman</td>
 					<td>icon</td>
 				</tr>
-				<tr>
+				<tr class="classContent">
 					<td>Luc</td>
 					<td>Tans</td>
 					<td>icon</td>
 				</tr>
-				<tr>
+				<tr class="classContent">
 					<td>AI</td>
 					<td>Robot</td>
 					<td>icon=alarm</td>
 				</tr>
-				<tr>
+				<tr class="classContent">
 					<td>AI</td>
 					<td>Robot</td>
 					<td>icon=alarm</td>
 				</tr>
-				<tr>
+				<tr class="classContent">
 					<td>AI</td>
 					<td>Robot</td>
 					<td>icon=alarm</td>

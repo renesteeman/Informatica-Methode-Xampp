@@ -55,14 +55,18 @@
 								$klas = $row["klas"];
 								$username = $row["username"];
 
-								if(!in_array($klas, $klassen) ){
-									array_push($klassen, $klas);
+								//for each different class add a class dimension to the array
+								if(!array_key_exists($klas, $klassen)){
+									echo "</br>";echo "</br>";echo "</br>";
+									$klassen[$klas] = $klas;
 									print_r($klassen);
-
 									echo "</br>";echo "</br>";echo "</br>";
 								}
 
-								array_push($klassen['H51'], $resultNumber);
+								//add one entry to each class with the $resultNumber
+								$klassen[$klas]['p1'] = 'p';
+								print_r($klassen[$klas]);
+								echo "</br>";
 
 
 
@@ -70,7 +74,6 @@
 
 								//$klassen[$klas][$resultNumber] = [$naam, $username];
 								//print_r($klassen[$klas][$resultNumber][$naam]);
-								echo "</br>";
 
 						    }
 

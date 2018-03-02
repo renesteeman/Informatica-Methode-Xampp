@@ -1,13 +1,35 @@
 <?php
 	include('DB_connect.php');
 
-	//kies het aantal te crearen accounts
-	$accountsToCreate = 5;
+	//function to check and clean input
+	function check_input($data) {
+		$data = trim($data, " ");
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		return $data;
+	}
 
 	//info to set
 	//username and password are set below
-	$school = "Testers college";
-	$functie = "leerling";
+
+	//get given data
+	if(isset ($_POST['aantal'])){
+		$accountsToCreate = mysqli_real_escape_string($conn, check_input($_POST['aantal']));
+	} else {
+		//kies het aantal te crearen accounts
+		$accountsToCreate = 5;
+	}
+	if(isset ($_POST['school'])){
+		$school = mysqli_real_escape_string($conn, check_input($_POST['school']));
+	} else {
+		$school = "Testers college";
+	}
+	if(isset ($_POST['functie'])){
+			$functie = mysqli_real_escape_string($conn, check_input($_POST['functie']));
+	} else {
+		$functie = "leerling";
+	}
+
 	$creation_date = date("Y-m-d");
 	$expire_date = date('Y-m-d',strtotime(date("Y-m-d", mktime()) . " + 365 day"));
 	$klas = "";

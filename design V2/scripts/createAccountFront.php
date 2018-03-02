@@ -12,6 +12,8 @@
 		Account aantal: <input type="text" name="aantal"><br>
 		School: <input type="text" name="school"><br>
 		Functie: <input type="text" name="functie"><br>
+		Klas: <input type="text" name="klas"><br>
+		Naam: <input type="text" name="naam"><br>
 		<input type="submit" value="Submit">
 	</form>
 

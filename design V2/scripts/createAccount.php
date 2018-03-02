@@ -25,14 +25,23 @@
 		$school = "Testers college";
 	}
 	if(isset ($_POST['functie'])){
-			$functie = mysqli_real_escape_string($conn, check_input($_POST['functie']));
+		$functie = mysqli_real_escape_string($conn, check_input($_POST['functie']));
 	} else {
 		$functie = "leerling";
+	}
+	if(isset ($_POST['functie'])){
+		$klas = mysqli_real_escape_string($conn, check_input($_POST['klas']));
+	} else {
+		$klas = "";
+	}
+	if(isset ($_POST['naam'])){
+		$naam = mysqli_real_escape_string($conn, check_input($_POST['naam']));
+	} else {
+		$naam = "";
 	}
 
 	$creation_date = date("Y-m-d");
 	$expire_date = date('Y-m-d',strtotime(date("Y-m-d", mktime()) . " + 365 day"));
-	$klas = "";
 
 	//create password
 	$letters = array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
@@ -85,7 +94,7 @@
 		$password = password_hash($password, PASSWORD_DEFAULT);
 
 		//insert account into DB
-		$sql = "INSERT INTO users (username, password, school, functie, creation_date, expire_date, klas) VALUES ('$username', '$password' , '$school', '$functie', '$creation_date', '$expire_date', '$klas')";
+		$sql = "INSERT INTO users (username, password, school, functie, creation_date, expire_date, klas, naam) VALUES ('$username', '$password' , '$school', '$functie', '$creation_date', '$expire_date', '$klas', '$naam')";
 
 		if ($conn->query($sql) === TRUE) {
 		    $accountsCreated++;

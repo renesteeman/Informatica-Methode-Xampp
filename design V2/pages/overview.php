@@ -20,6 +20,78 @@
 	</div>
 
 	<div class="classOverview">
+
+		<?php
+
+			//if logged in show class
+			//TODO check if person is teacher
+			if (isset($_SESSION["username"])){
+
+				$user = $_SESSION["username"];
+
+				$sql = "SELECT school, klas FROM users WHERE username='$user'";
+
+				if (mysqli_query($conn, $sql)) {
+					//find school of teacher
+					$result = mysqli_query($conn, $sql);
+					$result = mysqli_fetch_assoc($result);
+					$school = $result['school'];
+
+					$sql = "SELECT naam, username, klas FROM `users` WHERE school='$school' AND functie='leerling'";
+
+					if (mysqli_query($conn, $sql)) {
+
+						$result = mysqli_query($conn, $sql);
+
+						if (mysqli_num_rows($result) > 0) {
+							$resultNumber = 0;
+
+						    // output data of each row of names with class
+							$klassen = array();
+
+						    while($row = mysqli_fetch_assoc($result)) {
+								$resultNumber++;
+								$naam = $row["naam"];
+								$klas = $row["klas"];
+								$username = $row["username"];
+
+								if(!in_array($klas, $klassen) ){
+									array_push($klassen, $klas);
+									print_r($klassen);
+
+									echo "</br>";echo "</br>";echo "</br>";
+								}
+
+								array_push($klassen['H51'], $resultNumber);
+
+
+
+								//array_push($klassen[$klas][$resultNumber], $naam);
+
+								//$klassen[$klas][$resultNumber] = [$naam, $username];
+								//print_r($klassen[$klas][$resultNumber][$naam]);
+								echo "</br>";
+
+						    }
+
+						} else {
+						    echo "0 results";
+						}
+
+					} else {
+						echo "Error with sql execution, please report to admin </br>";
+					}
+
+				} else {
+					echo "Error with sql execution, please report to admin </br>";
+				}
+
+			} else {
+				echo 'You are not a teacher or have no students';
+			}
+
+		?>
+
 		<!-- the table as a whole -->
 		<div class="table">
 			<!-- one class-->

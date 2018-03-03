@@ -62,7 +62,6 @@
 
 								$klassen['klas'][$klas] = $userinfo;
 
-
 						    }
 
 						} else {
@@ -72,17 +71,19 @@
 						//How many classes are there?
 						$Nclasses = count($klassen['klas']);
 
+						//put the classes in the right order
+						ksort($klassen['klas']);
+
 						//Show me these (the nice way)
 						for($i=0; $i < $Nclasses; $i++){
-							$className = $klassen['klas'][$i];
-							//print_r($klassen);
-							echo $className;
+							$AllClasses = array_keys($klassen['klas']);
+							$CurruntClass = $AllClasses[$i];
 
 							echo'
 							<div class="class">
 								<!-- table header for this class-->
 								<div class="classHeader">
-									<span class="klas">'.$className.'</span>
+									<span class="klas">'.$CurruntClass.'</span>
 									<span class="Nleerlingen">X leerlingen </span>
 									<span class="icons">
 										<span class="Mail image"><img src="../icons/mail.svg"/></span>

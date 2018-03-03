@@ -74,19 +74,23 @@
 						//put the classes in the right order
 						ksort($klassen['klas']);
 
-						print_r($klassen['klas']);
-
 						//Show me these (the nice way)
 						$AllClasses = array_keys($klassen['klas']);
+
 						for($i=0; $i < $Nclasses; $i++){
 							$CurrentClass = $AllClasses[$i];
+
+							$StudentsCurrentClass[] = $klassen['klas'][$CurrentClass];
+
+							$NStudents = array_map("count", $StudentsCurrentClass);
+							$NStudentsCurrentClass = ($NStudents[$i]);
 
 							echo'
 							<div class="class">
 								<!-- table header for this class-->
 								<div class="classHeader">
 									<span class="klas">'.$CurrentClass.'</span>
-									<span class="Nleerlingen">X leerlingen </span>
+									<span class="Nleerlingen">'.$NStudentsCurrentClass.' leerlingen </span>
 									<span class="icons">
 										<span class="Mail image"><img src="../icons/mail.svg"/></span>
 										<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
@@ -96,11 +100,7 @@
 								<!-- table content for this class-->';
 
 
-								/*$StudentsCurrentClass[] = $klassen['klas'][$CurrentClass];
-								print_r($klassen['klas']);
-								$NStudentsCurrentClass = count($StudentsCurrentClass);
-								print_r($NStudentsCurrentClass);
-								*/
+
 
 								echo '
 									<div class="classContent">

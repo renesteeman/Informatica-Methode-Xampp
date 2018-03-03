@@ -20,6 +20,8 @@
 	</div>
 
 	<div class="classOverview">
+		<!-- the table as a whole -->
+		<div class="table">
 
 		<?php
 
@@ -28,6 +30,8 @@
 			if (isset($_SESSION["username"])){
 
 				$user = $_SESSION["username"];
+
+				$klassen = array();
 
 				$sql = "SELECT school, klas FROM users WHERE username='$user'";
 
@@ -45,7 +49,6 @@
 
 						if (mysqli_num_rows($result) > 0) {
 						    // output data of each row of names with class
-							$klassen = array();
 
 						    while($row = mysqli_fetch_assoc($result)) {
 								$naam = $row["naam"];
@@ -54,31 +57,51 @@
 
 								//for each different class add a class dimension to the array
 								if(!array_key_exists($klas, $klassen)){
-									echo "</br>";echo "</br>";echo "</br>";
 									$klassen[$klas] = [];
-									print_r($klassen);
-									echo "</br>";echo "</br>";echo "</br>";
 								}
 
 								//add userinfo to right class
 								$userinfo = array($naam, $klas, $username);
 
 								$klassen[$klas][] = $userinfo;
-								print_r($klassen[$klas]);
-
-								echo "</br>";
-
-
-
-								//array_push($klassen[$klas][$resultNumber], $naam);
-
-								//$klassen[$klas][$resultNumber] = [$naam, $username];
-								//print_r($klassen[$klas][$resultNumber][$naam]);
-
 						    }
 
 						} else {
 						    echo "0 results";
+						}
+
+						//How many classes are there?
+						$Nclasses = count($klassen);
+
+						print_r ($klassen['H51']);
+
+						//Show me these (the nice way)
+						for($i=0; $i < $Nclasses; $i++){
+							//$className = $klassen[$i];
+							//echo $className;
+
+							echo'
+							<div class="class">
+								<!-- table header for this class-->
+								<div class="classHeader">
+									<span class="klas">Klas</span>
+									<span class="Nleerlingen">X leerlingen </span>
+									<span class="icons">
+										<span class="Mail image"><img src="../icons/mail.svg"/></span>
+										<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+									</span>
+								</div>
+
+								<!-- table content for this class-->
+								<div class="classContent">
+									<div class="row">
+										<span class="name">Student</span>
+										<span class="progress">icon</span>
+									</div>
+								</div>
+							</div>
+
+							';
 						}
 
 					} else {
@@ -95,8 +118,7 @@
 
 		?>
 
-		<!-- the table as a whole -->
-		<div class="table">
+
 			<!-- one class-->
 			<div class="class">
 				<!-- table header for this class-->

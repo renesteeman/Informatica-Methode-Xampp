@@ -5,13 +5,15 @@
 
 	.table
 		display: table
-		width: 100%
+		width: 80%
 		margin-top: 2em
 		margin-bottom: 2em
+		box-shadow: 0 5px 20px darken($white, 50%)
+		-webkit-backface-visibility: hidden
+
 
 		.class
-			width: 80%
-			box-shadow: 0 5px 20px darken($white, 50%)
+			width: 100%
 
 			.classHeader
 				font-size: 2em
@@ -60,7 +62,7 @@
 				display: none
 
 				.row
-					display: inline-block
+					display: block
 					box-sizing: border-box
 					width: 100%
 					padding-left: 4em

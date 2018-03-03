@@ -31,7 +31,8 @@
 
 				$user = $_SESSION["username"];
 
-				$klassen = array();
+				$klassen = [];
+				$klassen['klas'] = [];
 
 				$sql = "SELECT school, klas FROM users WHERE username='$user'";
 
@@ -56,15 +57,10 @@
 								$naam = $row["naam"];
 								$username = $row["username"];
 
-								//for each different class add a class dimension to the array
-								if(!array_key_exists($klas, $klassen)){
-									//$klassen['klas'] = [$klas];
-									array_push($klassen['klas'], [$klas]);
-									print_r($klassen['klas']);
-								}
-
 								//add userinfo to right class
 								$userinfo = array('naam'=>$naam, 'username'=>$username);
+
+								$klassen['klas']
 
 
 						    }

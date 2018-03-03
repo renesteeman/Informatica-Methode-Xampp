@@ -2,8 +2,8 @@
 
 	$klassen = [];
 	$klassen['klas'] = [];
-	$klassen['klas']['H51'] = ['NameH51', 'UsernameH51', 'StatusH51'];
-	$klassen['klas']['H52'] = ['NameH52', 'UsernameH52', 'StatusH52'];
+	$klassen['klas']['H51'] = ['name'=>'NameH51', 'username'=>'UsernameH51', 'status'=>'StatusH51'];
+	$klassen['klas']['H52'] = ['name'=>'NameH52', 'username'=>'UsernameH52', 'status'=>'StatusH52'];
 
 
 

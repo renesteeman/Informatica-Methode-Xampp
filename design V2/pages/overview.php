@@ -51,19 +51,22 @@
 						    // output data of each row of names with class
 
 						    while($row = mysqli_fetch_assoc($result)) {
-								$naam = $row["naam"];
 								$klas = $row["klas"];
+
+								$naam = $row["naam"];
 								$username = $row["username"];
 
 								//for each different class add a class dimension to the array
 								if(!array_key_exists($klas, $klassen)){
-									$klassen[$klas] = [];
+									//$klassen['klas'] = [$klas];
+									array_push($klassen['klas'], [$klas]);
+									print_r($klassen['klas']);
 								}
 
 								//add userinfo to right class
-								$userinfo = array($naam, $klas, $username);
+								$userinfo = array('naam'=>$naam, 'username'=>$username);
 
-								$klassen[$klas][] = $userinfo;
+
 						    }
 
 						} else {
@@ -72,8 +75,6 @@
 
 						//How many classes are there?
 						$Nclasses = count($klassen);
-
-						print_r ($klassen['H51']);
 
 						//Show me these (the nice way)
 						for($i=0; $i < $Nclasses; $i++){

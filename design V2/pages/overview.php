@@ -74,15 +74,15 @@
 
 						//Show me these (the nice way)
 						for($i=0; $i < $Nclasses; $i++){
-							//print_r($klassen['klas']);
-							$className = key($klassen['klas']);
+							$className = $klassen['klas'][$i];
+							//print_r($klassen);
 							echo $className;
 
 							echo'
 							<div class="class">
 								<!-- table header for this class-->
 								<div class="classHeader">
-									<span class="klas">Klas</span>
+									<span class="klas">'.$className.'</span>
 									<span class="Nleerlingen">X leerlingen </span>
 									<span class="icons">
 										<span class="Mail image"><img src="../icons/mail.svg"/></span>

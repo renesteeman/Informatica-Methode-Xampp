@@ -58,9 +58,9 @@
 								$username = $row["username"];
 
 								//add userinfo to right class
-								$userinfo = array('naam'=>$naam, 'username'=>$username);
+								$userinfo = ['naam'=>$naam, 'username'=>$username];
 
-								$klassen['klas']
+								$klassen['klas'][$klas] = $userinfo;
 
 
 						    }
@@ -70,12 +70,13 @@
 						}
 
 						//How many classes are there?
-						$Nclasses = count($klassen);
+						$Nclasses = count($klassen['klas']);
 
 						//Show me these (the nice way)
 						for($i=0; $i < $Nclasses; $i++){
-							//$className = $klassen[$i];
-							//echo $className;
+							//print_r($klassen['klas']);
+							$className = key($klassen['klas']);
+							echo $className;
 
 							echo'
 							<div class="class">

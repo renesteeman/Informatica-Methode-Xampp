@@ -127,39 +127,6 @@
 
 		?>
 
-
-			<!-- one class-->
-			<div class="class">
-				<!-- table header for this class-->
-				<div class="classHeader">
-					<span class="klas">Klas</span>
-					<span class="Nleerlingen">X leerlingen </span>
-					<span class="icons">
-						<span class="Mail image"><img src="../icons/mail.svg"/></span>
-						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
-					</span>
-				</div>
-
-				<!-- table content for this class-->
-				<div class="classContent">
-					<div class="row">
-						<span class="name">Student</span>
-						<span class="progress">icon</span>
-					</div>
-					<div class="row">
-						<span class="name">Student</span>
-						<span class="progress">icon</span>
-					</div>
-					<div class="row">
-						<span class="name">Student</span>
-						<span class="progress">icon</span>
-					</div>
-					<div class="row">
-						<span class="name">Student</span>
-						<span class="progress">icon</span>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 

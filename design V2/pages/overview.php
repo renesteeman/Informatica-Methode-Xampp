@@ -60,7 +60,7 @@
 								//add userinfo to right class
 								$userinfo = ['naam'=>$naam, 'username'=>$username];
 
-								$klassen['klas'][$klas] = $userinfo;
+								$klassen['klas'][$klas][] = $userinfo;
 
 						    }
 
@@ -74,16 +74,18 @@
 						//put the classes in the right order
 						ksort($klassen['klas']);
 
+						print_r($klassen['klas']);
+
 						//Show me these (the nice way)
+						$AllClasses = array_keys($klassen['klas']);
 						for($i=0; $i < $Nclasses; $i++){
-							$AllClasses = array_keys($klassen['klas']);
-							$CurruntClass = $AllClasses[$i];
+							$CurrentClass = $AllClasses[$i];
 
 							echo'
 							<div class="class">
 								<!-- table header for this class-->
 								<div class="classHeader">
-									<span class="klas">'.$CurruntClass.'</span>
+									<span class="klas">'.$CurrentClass.'</span>
 									<span class="Nleerlingen">X leerlingen </span>
 									<span class="icons">
 										<span class="Mail image"><img src="../icons/mail.svg"/></span>
@@ -91,16 +93,24 @@
 									</span>
 								</div>
 
-								<!-- table content for this class-->
-								<div class="classContent">
-									<div class="row">
-										<span class="name">Student</span>
-										<span class="progress">icon</span>
+								<!-- table content for this class-->';
+
+
+								/*$StudentsCurrentClass[] = $klassen['klas'][$CurrentClass];
+								print_r($klassen['klas']);
+								$NStudentsCurrentClass = count($StudentsCurrentClass);
+								print_r($NStudentsCurrentClass);
+								*/
+
+								echo '
+									<div class="classContent">
+										<div class="row">
+											<span class="name">Student</span>
+											<span class="progress">icon</span>
+										</div>
 									</div>
 								</div>
-							</div>
-
-							';
+								';
 						}
 
 					} else {

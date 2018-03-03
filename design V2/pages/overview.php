@@ -44,13 +44,10 @@
 						$result = mysqli_query($conn, $sql);
 
 						if (mysqli_num_rows($result) > 0) {
-							$resultNumber = 0;
-
 						    // output data of each row of names with class
 							$klassen = array();
 
 						    while($row = mysqli_fetch_assoc($result)) {
-								$resultNumber++;
 								$naam = $row["naam"];
 								$klas = $row["klas"];
 								$username = $row["username"];
@@ -58,14 +55,17 @@
 								//for each different class add a class dimension to the array
 								if(!array_key_exists($klas, $klassen)){
 									echo "</br>";echo "</br>";echo "</br>";
-									$klassen[$klas] = $klas;
+									$klassen[$klas] = [];
 									print_r($klassen);
 									echo "</br>";echo "</br>";echo "</br>";
 								}
 
-								//add one entry to each class with the $resultNumber
-								$klassen[$klas]['p1'] = 'p';
+								//add userinfo to right class
+								$userinfo = array($naam, $klas, $username);
+
+								$klassen[$klas][] = $userinfo;
 								print_r($klassen[$klas]);
+
 								echo "</br>";
 
 

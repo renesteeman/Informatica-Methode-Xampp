@@ -102,10 +102,17 @@
 
 
 									for($j=0; $j<$NStudentsCurrentClass; $j++){
+										$Cstudent = $StudentsCurrentClass[0][$j];
+										$CstudentName = $Cstudent['naam'];
+										$CstudentUsername = $Cstudent['username'];
+										$CstudentProgress = 0;
+										//TODO change icon style based on progres
+
 										echo '
 
 												<div class="row">
-													<span class="name">'.$j.'</span>
+													<span class="name">'.$CstudentName.'</span>
+													<span class="username">'.$CstudentUsername.'</span>
 													<span class="progress">icon</span>
 												</div>
 

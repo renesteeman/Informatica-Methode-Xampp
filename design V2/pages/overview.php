@@ -102,7 +102,7 @@
 
 
 									for($j=0; $j<$NStudentsCurrentClass; $j++){
-										$Cstudent = $StudentsCurrentClass[0][$j];
+										$Cstudent = $StudentsCurrentClass[$i][$j];
 										$CstudentName = $Cstudent['naam'];
 										$CstudentUsername = $Cstudent['username'];
 										$CstudentProgress = 0;

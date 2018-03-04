@@ -9,17 +9,62 @@
 		margin: 0
 		margin-left: 20%
 
-.bar-tall
+.bar-par-overview
 	background-color: $blue
 	text-align: center
 	color: $white
-	padding-top: 2em
-	padding-bottom: 2em
+	padding-top: 0.5em
+	padding-bottom: 0.5em
 	box-shadow: 0 5px 20px darken($white, 50%)
-	position: relative
-	z-index: 30
 	background: linear-gradient(to bottom right, $blue, $blue-green)
+
+.paragraph-tiles
+	margin-left: 20%
+	margin-right: 20%
+	margin-top: 0.5em
+	margin-bottom: 0.5em
+	font-size: 1.2em
+
+	.ptile
+		width: 2em
+		height: 2em
+		display: inline-block
+		background-color: $green
+		background: linear-gradient(to bottom right, lighten($green, 5%), $green)
+		box-shadow: 0 2px 10px darken($green, 10%)
+		text-align: center
+		line-height: 2em
+		margin-left: 0.2em
+
+	.ptile.active
+		width: 2.5em
+		height: 2.5em
+		line-height: 2.5em
+
+.bar-s
+	background-color: $blue
+	text-align: center
+	color: $white
+	padding-top: 1em
+	padding-bottom: 1em
+	box-shadow: 0 2px 10px darken($white, 50%)
+	position: relative
+	background-color: $blue-green
+	background: linear-gradient(to bottom right, lighten($blue, 5%), $blue-green)
 
 	h3
 		margin: 0
-		font-size: 3em
+		font-size: 2em
+
+.theorie
+	width: 60%
+	margin-left: 20%
+	margin-top: 2em
+	margin-bottom: 2em
+	box-shadow: 0 5px 10px darken($white, 50%)
+	background-color: lighten($white, 5%)
+
+	.theorie-content
+		padding: 1em 2em
+		text-shadow: 2px 2px 4px $grey
+		font-size: 1.5em

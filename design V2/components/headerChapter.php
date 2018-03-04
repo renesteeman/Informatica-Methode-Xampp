@@ -15,7 +15,7 @@
 	<div class="navigation">
 
 		<h1>
-			<a href="index.php">INFORCA</a>
+			<a href="../../index.php">INFORCA</a>
 		</h1>
 
 		<div class="nav-wide">
@@ -62,8 +62,8 @@
 
 			<div class="burger-content">
 				<div class="nav-bar">
-					<a href="index.php">HOME</a>
-					<a href="overview.php">OVERVIEW</a>
+					<a href="../../index.php">HOME</a>
+					<a href="../../overview.php">OVERVIEW</a>
 					<a href="#">PLANNER</a>
 				</div>
 

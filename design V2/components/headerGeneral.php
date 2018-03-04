@@ -22,7 +22,7 @@
 
 			<div class="nav-bar">
 				<a href="index.php">HOME</a>
-				<a href="#">OVERVIEW</a>
+				<a href="overview.php">OVERVIEW</a>
 				<a href="#">PLANNER</a>
 			</div>
 
@@ -62,18 +62,27 @@
 
 			<div class="burger-content">
 				<div class="nav-bar">
-					<a href="#">HOME</a>
-					<a href="#">OVERVIEW</a>
+					<a href="index.php">HOME</a>
+					<a href="overview.php">OVERVIEW</a>
 					<a href="#">PLANNER</a>
 				</div>
 
 				<div class="welcome">
-					<div>
-						Hi User sdhfgasdggdasgasdsadfhjgdsaerhhadf
-					</div>
-					<div>
-						logout
-					</div>
+					<?php
+						//if logged in say hello, else give the option to login
+						if (isset($_SESSION["username"])){
+							echo
+								'<div>
+									Hi <a href="./account.php">'.$_SESSION["username"].'</a>
+								</div>
+								<div>
+									<a href="../scripts/logoutGeneral.php">logout</a>
+								</div>';
+
+						} else {
+							echo ' <div><a href="account.php"> login</a></div> ';
+						}
+					?>
 				</div>
 			</div>
 		</div>

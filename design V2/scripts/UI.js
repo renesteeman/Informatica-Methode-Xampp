@@ -20,14 +20,10 @@ $(document).ready(function(){
 	});
 
 	$(".Arrow").click(function(){
-		$(this).parent().parent().parent().next().slideToggle();
-		$(this).parent().parent().parent().next().toggleClass("active");
+		$(this).parent().parent().next().slideToggle();
+		$(this).parent().parent().next().toggleClass("active");
 
-		if($(this).parent().parent().parent().next().hasClass("active")){
-			$(this).css("transform", "rotateX(180deg)")
-		} else {
-			$(this).css("transform", "rotateX(0deg)")
-		}
+		$(this).toggleClass("active");
 
 	});
 });

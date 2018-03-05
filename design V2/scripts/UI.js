@@ -26,4 +26,8 @@ $(document).ready(function(){
 		$(this).toggleClass("active");
 
 	});
+
+	$(".bar-s").click(function(){
+		$(this).next().slideToggle();
+	});
 });

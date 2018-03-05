@@ -50,10 +50,17 @@
 	position: relative
 	z-index: 20
 	box-shadow: 0 2px 10px darken($white, 50%)
+	transition: box-shadow 0.4s
 
 	h3
 		margin: 0
 		font-size: 2em
+
+.bar-s.active
+	box-shadow: 0 0px 0px darken($white, 50%)
+
+.bar-s.after-active
+	box-shadow: 0 4px 10px -2px darken($white, 50%)
 
 .theorie
 	width: 60%

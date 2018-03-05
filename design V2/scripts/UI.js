@@ -29,5 +29,7 @@ $(document).ready(function(){
 
 	$(".bar-s").click(function(){
 		$(this).next().slideToggle();
+		$(this).toggleClass("active");
+		$(this).next().next().toggleClass("after-active");
 	});
 });

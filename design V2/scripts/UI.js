@@ -8,7 +8,6 @@ $(document).ready(function(){
 	$(".tile").click(function(){
 		$(this).siblings().toggle();
 		$(this).toggleClass("active");
-
 	});
 
 	$("select").click(function(){
@@ -32,4 +31,6 @@ $(document).ready(function(){
 		$(this).toggleClass("active");
 		$(this).next().next().toggleClass("after-active");
 	});
+
+	$(".theorie-answers").slideToggle(0);
 });

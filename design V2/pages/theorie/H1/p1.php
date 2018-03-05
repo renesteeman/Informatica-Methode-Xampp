@@ -98,7 +98,7 @@
 			</h3>
 		</div>
 
-		<div class="theorie-content">
+		<div class="theorie-content theorie-answers">
 
 			<ol>
 				<li>

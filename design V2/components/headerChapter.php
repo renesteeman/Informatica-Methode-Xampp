@@ -6,6 +6,7 @@
 
 	<!-- internal includes -->
 	<link rel="stylesheet" href="../../../css/main.min.css">
+	<link rel="stylesheet" href="../../../css/paragraph.min.css">
 	<script src="../../../scripts/UI.js"></script>
 
     <title>Inforca</title>

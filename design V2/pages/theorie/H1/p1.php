@@ -2,8 +2,6 @@
 	include('../../../components/headerChapter.php');
 ?>
 
-<link rel="stylesheet" href="../../../css/paragraph.min.css">
-
 <body>
 
 	<div class="title-small">
@@ -19,35 +17,30 @@
 					§1
 				</span>
 			</div>
-
 			<div class="ptile">
-				<span class="ptile-content">
+				<span class="ptile-content"><a href="p2.php">
 					§2
-				</span>
+				</a></span>
 			</div>
-
 			<div class="ptile">
-				<span class="ptile-content">
+				<span class="ptile-content"><a href="p3.php">
 					§3
-				</span>
+				</a></span>
 			</div>
-
 			<div class="ptile">
-				<span class="ptile-content">
+				<span class="ptile-content"><a href="p4.php">
 					§4
-				</span>
+				</a></span>
 			</div>
-
 			<div class="ptile">
-				<span class="ptile-content">
+				<span class="ptile-content"><a href="p5.php">
 					§5
-				</span>
+				</a></span>
 			</div>
-
 			<div class="ptile">
-				<span class="ptile-content">
+				<span class="ptile-content"><a href="p6.php">
 					§6
-				</span>
+				</a></span>
 			</div>
 
 		</div>

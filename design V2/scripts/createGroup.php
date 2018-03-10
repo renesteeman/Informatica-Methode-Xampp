@@ -9,8 +9,8 @@
 	$GroepBeschrijving = "Test groep";
 	$GroepLink = "https://github.com/renesteeman/Informatica-Methode-Xampp";
 
-	//TODO School van docent
-	$GroepSchool = "Bernardinus";
+	//Set to school teacher later in the script
+	$GroepSchool = "";
 
 
 	//function to check and clean input
@@ -23,50 +23,38 @@
 
 	//get given login data if set
 	if(isset($_POST)){
-		//get given psw
-		$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
-
-		//get password for $username
-		$sql = "SELECT password FROM users WHERE username='$user'";
+		//get school from teacher
+		$sql = "SELECT school FROM users WHERE username='$user'";
 
 		if (mysqli_query($conn, $sql)) {
 
 			$result = mysqli_query($conn, $sql);
 			$result = mysqli_fetch_assoc($result);
-			$rightpsw = $result['password'];
+			$GroepSchool = $result['school'];
 
 		} else {
 			echo "Error with sql execution, please report to admin </br>";
 		}
 
-		//check password
-		if(password_verify($password, $rightpsw)){
+		$sql = "INSERT INTO groepen (naam, beschrijving, link, school) VALUES ('$GroepNaam', '$GroepBeschrijving', '$GroepLink', '$GroepSchool')";
+
+		if (mysqli_query($conn, $sql)) {
+			echo "Groep toegevoegd";
+		} else {
+			echo "Error: " . $sql . "<br>" . $conn->error."</br>";
+		}
 
 
 
+		/*TODO Get data
+		if(isset($_POST['Nnaam'])){
+			$Nnaam = mysqli_real_escape_string($conn, check_input($_POST['Nnaam']));
+		}
+		*/
 
-			/*update naam
-			if(isset($_POST['Nnaam'])){
-				$Nnaam = mysqli_real_escape_string($conn, check_input($_POST['Nnaam']));
-			}
-			*/
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	echo $GroepSchool;
 
 	$conn->close();
 

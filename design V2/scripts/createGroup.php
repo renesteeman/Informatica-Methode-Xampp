@@ -1,34 +1,70 @@
 <?php
 	include('DB_connect.php');
+	session_start();
 
-	//set school
-	$school = "BC";
+	$user = $_SESSION["username"];
 
-	//set klas
-	$klas = "A52";
+	//set info for group
+	$GroepNaam = "Test";
+	$GroepBeschrijving = "Test groep";
+	$GroepLink = "https://github.com/renesteeman/Informatica-Methode-Xampp";
 
-	$sql = "SELECT klas FROM `groups` WHERE school='$school' ";
-	$result = mysqli_query($conn, $sql);
+	//TODO School van docent
+	$GroepSchool = "Bernardinus";
 
-	$resultArray = array();
 
-	while($row = mysqli_fetch_assoc($result)) {
-		array_push($resultArray, $row['klas']);
+	//function to check and clean input
+	function check_input($data) {
+		$data = trim($data, " ");
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		return $data;
 	}
 
-	if (!in_array($klas, $resultArray)){
-		//insert group into DB
-		$sql = "INSERT INTO `groups` (`id`, `school`, `klas`) VALUES (NULL, '$school', '$klas');";
+	//get given login data if set
+	if(isset($_POST)){
+		//get given psw
+		$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
 
-		if ($conn->query($sql) === TRUE) {
-			echo "Group created for ".$school." ".$klas;
+		//get password for $username
+		$sql = "SELECT password FROM users WHERE username='$user'";
+
+		if (mysqli_query($conn, $sql)) {
+
+			$result = mysqli_query($conn, $sql);
+			$result = mysqli_fetch_assoc($result);
+			$rightpsw = $result['password'];
+
 		} else {
-			echo "Error: " . $sql . "<br>" . $conn->error."</br>";
+			echo "Error with sql execution, please report to admin </br>";
 		}
 
-	} else {
-		echo "Klas bestaat al voor deze school </br>";
+		//check password
+		if(password_verify($password, $rightpsw)){
+
+
+
+
+			/*update naam
+			if(isset($_POST['Nnaam'])){
+				$Nnaam = mysqli_real_escape_string($conn, check_input($_POST['Nnaam']));
+			}
+			*/
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

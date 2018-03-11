@@ -47,6 +47,35 @@
 		transition: background .5s ease-out, box-shadow 0.5s ease-in-out
 		resize: none
 
+	.ledenLijst
+		margin-top: 1em
+		cursor: default
+
+		.lid
+			width: 60%
+			display: inline-block
+
+		.lidUI
+			display: inline-block
+			transition: color 0.4s
+
+		.lidUI:hover
+			color: red
+			cursor: pointer
+
+	.addLid
+		input
+			width: 60%
+			display: inline-block
+
+		.plus-sign
+			display: inline-block
+			vertical-align: middle
+			height: 2em
+			padding-top: 0.2em
+			font-size: 2em
+
+
 	input:not([type=submit])::placeholder
 		color: $grey
 

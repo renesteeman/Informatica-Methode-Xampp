@@ -42,7 +42,25 @@
 				</li>
 				<li>
 					<label>Leden</label>
-					<input type="text" placeholder="Groepsleden" name="Gleden" maxlength="50">
+					<div class="ledenLijst">
+						<ul>
+							<li>
+								<span class="lid">test1</span><span class="lidUI">x</span>
+							</li>
+							<li>
+								<span class="lid">test2</span><span class="lidUI">x</span>
+							</li>
+							<li>
+								<span class="lid">test3</span><span class="lidUI">x</span>
+							</li>
+						</ul>
+					</div>
+					<div class="addLid">
+						<span class="addLid">
+							<input type="text" placeholder="Nieuw lid" name="Gleden" maxlength="50" autocomplete="off">
+						</span>
+						<span class="plus-sign">+</span>
+					</div>
 				</li>
 				<li>
 					<label>Uw wachtwoord</label>

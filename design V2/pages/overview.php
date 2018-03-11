@@ -273,8 +273,8 @@
 				//TODO check if person is teacher
 				if (isset($_SESSION["username"])){
 					echo '
-					<form class="addGroupButton" method="post" action="createGroup.php">
-						<input type="submit" value="update">
+					<form class="addGroupButton" method="post" action="../scripts/createGroupFront.php">
+						<input type="submit" value="Nieuwe groep">
 					</form>
 					';
 				}

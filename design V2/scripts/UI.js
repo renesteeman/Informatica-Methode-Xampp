@@ -43,8 +43,8 @@ $(document).ready(function(){
 
 	$(".addLidButton").click(function(){
 		var name = $(this).prev().children().val();
+		var paste = '<li><span class="lid">'+ name +'</span><span class="lidUI">x</span></li>'
 		$(this).prev().children().val('');
-		$(this).parent().prev().children().children().first().children().first().css("background-color", "red");
-		$(this).parent().prev().children().children().first().children().first().text(name);
+		$(this).parent().prev().children().first().append(paste);
 	});
 });

@@ -44,12 +44,8 @@
 					<label>Leden</label>
 					<div class="ledenLijst">
 						<ul>
-							<li>
-								<span class="lid">test1</span><span class="lidUI">x</span>
-							</li>
-							<li>
-								<span class="lid">test1</span><span class="lidUI">x</span>
-							</li>
+							
+
 						</ul>
 					</div>
 					<div class="addLid">

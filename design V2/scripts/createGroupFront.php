@@ -44,7 +44,6 @@
 					<label>Leden</label>
 					<div class="ledenLijst">
 						<ul>
-							
 
 						</ul>
 					</div>

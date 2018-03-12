@@ -47,4 +47,11 @@ $(document).ready(function(){
 		$(this).prev().children().val('');
 		$(this).parent().prev().children().first().append(paste);
 	});
+
+	$(".addLid").children().first().keypress(function(event){
+		if(event.keyCode == 13){
+			$('.addLidButton').click();
+		}
+		return event.keyCode != 13;
+	});
 });

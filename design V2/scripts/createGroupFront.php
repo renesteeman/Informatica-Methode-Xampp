@@ -48,10 +48,7 @@
 								<span class="lid">test1</span><span class="lidUI">x</span>
 							</li>
 							<li>
-								<span class="lid">test2</span><span class="lidUI">x</span>
-							</li>
-							<li>
-								<span class="lid">test3</span><span class="lidUI">x</span>
+								<span class="lid">test1</span><span class="lidUI">x</span>
 							</li>
 						</ul>
 					</div>
@@ -59,7 +56,7 @@
 						<span class="addLid">
 							<input type="text" placeholder="Nieuw lid" name="Gleden" maxlength="50" autocomplete="off">
 						</span>
-						<span class="plus-sign">+</span>
+						<span class="plus-sign addLidButton">+</span>
 					</div>
 				</li>
 				<li>

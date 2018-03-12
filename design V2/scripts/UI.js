@@ -33,4 +33,18 @@ $(document).ready(function(){
 	});
 
 	$(".theorie-answers").slideToggle(0);
+
+	$('.addLid').children().val(' ');
+	window.setTimeout(addLid, 100);
+
+	function addLid(){
+		$('.addLid').children().val('');
+	}
+
+	$(".addLidButton").click(function(){
+		var name = $(this).prev().children().val();
+		$(this).prev().children().val('');
+		$(this).parent().prev().children().children().first().children().first().css("background-color", "red");
+		$(this).parent().prev().children().children().first().children().first().text(name);
+	});
 });

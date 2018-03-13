@@ -44,7 +44,7 @@
 					<label>Leden</label>
 					<div class="ledenLijst">
 						<ul>
-
+							<li><span class="lid">gdhjo</span><span class="delete">x</span></li>
 						</ul>
 					</div>
 					<div class="addLid">

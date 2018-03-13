@@ -43,7 +43,7 @@ $(document).ready(function(){
 
 	$(".addLidButton").click(function(){
 		var name = $(this).prev().children().val();
-		var paste = '<li><span class="lid">'+ name +'</span><span class="lidUI">x</span></li>'
+		var paste = '<li><span class="lid">'+ name +'</span><span class="delete">x</span></li>'
 		$(this).prev().children().val('');
 		$(this).parent().prev().children().first().append(paste);
 	});
@@ -54,4 +54,13 @@ $(document).ready(function(){
 		}
 		return event.keyCode != 13;
 	});
+
+	$(".delete").click(function(){
+        $(this).parent().css("background-color", "red");
+    });
+
+
+
+
+
 });

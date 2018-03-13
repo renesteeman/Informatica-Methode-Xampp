@@ -55,12 +55,8 @@ $(document).ready(function(){
 		return event.keyCode != 13;
 	});
 
-	$(".delete").click(function(){
-        $(this).parent().css("background-color", "red");
-    });
-
-
-
-
+	$(document).on('click',".delete",function(){
+		$(this).parent().fadeOut();
+	});
 
 });

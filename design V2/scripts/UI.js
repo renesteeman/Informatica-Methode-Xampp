@@ -61,24 +61,24 @@ $(document).ready(function(){
 	});
 
 	$('.createGroupForm').submit(function(event){
-			event.preventDefault();
+		event.preventDefault();
 
-			$naam = "TestNaam";
-			$omschrijving = "";
-			$link = "";
-			$leden = "";
+		var naam = "TestNaam";
+		var omschrijving = "";
+		var link = "";
+		var leden = "";
 
-			//Give php the info it needs (via AJAX)
-			jqXHR = $.ajax({
-				method: "POST",
-				url: "createGroupAjax.php",
-				data: {naam: naam}
-			})
-			jqXHR.done(function( msg ) {
-					alert( "Data Saved: " + msg );
-				});
-			jqXHR.fail(function( jqXHR, textStatus ) {
-				  alert( "Request failed: " + textStatus );
-				});
+		//Give php the info it needs (via AJAX)
+		jqXHR = $.ajax({
+			method: "POST",
+			url: "createGroupAjax.php",
+			data: {naam: naam}
+		})
+		jqXHR.done(function( msg ) {
+				alert( "Data Saved: " + msg );
+			});
+		jqXHR.fail(function( jqXHR, textStatus ) {
+			  alert( "Request failed: " + textStatus );
+			});
 	});
 });

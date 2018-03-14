@@ -46,6 +46,20 @@ $(document).ready(function(){
 		var paste = '<li><span class="lid">'+ name +'</span><span class="delete">x</span></li>'
 		$(this).prev().children().val('');
 		$(this).parent().prev().children().first().append(paste);
+
+		//Give php the info it needs (via AJAX)
+		jqXHR = $.ajax({
+			method: "POST",
+			url: "createGroupAjax.php",
+			data: { name: name}
+		})
+		jqXHR.done(function( msg ) {
+				alert( "Data Saved: " + msg );
+			});
+		jqXHR.fail(function( jqXHR, textStatus ) {
+			  alert( "Request failed: " + textStatus );
+			});
+
 	});
 
 	$(".addLid").children().first().keypress(function(event){

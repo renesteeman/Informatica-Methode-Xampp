@@ -3,15 +3,8 @@
 	session_start();
 
 	$user = $_SESSION["username"];
-
-	//set info for group
-	$GroepNaam = "Test";
-	$GroepBeschrijving = "Test groep";
-	$GroepLink = "https://github.com/renesteeman/Informatica-Methode-Xampp";
-
 	//Set to school teacher later in the script
 	$GroepSchool = "";
-
 
 	//function to check and clean input
 	function check_input($data) {
@@ -35,6 +28,38 @@
 		} else {
 			echo "Error with sql execution, please report to admin </br>";
 		}
+
+		//get info
+		if(isset($_POST['Gnaam']) & $_POST['Gnaam'] != ""){
+			$GroepNaam = mysqli_real_escape_string($conn, check_input($_POST['Gnaam']));
+
+		};
+
+		if(isset($_POST['Gomschrijving']) & $_POST['Gomschrijving'] != ""){
+			$GroepNaam = mysqli_real_escape_string($conn, check_input($_POST['Gomschrijving']));
+		};
+
+		if(isset($_POST['Glink']) & $_POST['Glink'] != ""){
+			$GroepNaam = mysqli_real_escape_string($conn, check_input($_POST['Glink']));
+		};
+
+		if(isset($_POST['Gleden']) & $_POST['Gleden'] != ""){
+			$GroepNaam = mysqli_real_escape_string($conn, check_input($_POST['Gleden']));
+		};
+
+		if(isset($_POST['password']) & $_POST['password'] != ""){
+			$GroepNaam = mysqli_real_escape_string($conn, check_input($_POST['password']));
+		};
+
+		//set info for group
+		$GroepBeschrijving = "Test groep";
+		$GroepLink = "https://github.com/renesteeman/Informatica-Methode-Xampp";
+
+
+
+
+
+		//TODO only execute if the password is right
 
 		$sql = "INSERT INTO groepen (naam, beschrijving, link, school) VALUES ('$GroepNaam', '$GroepBeschrijving', '$GroepLink', '$GroepSchool')";
 

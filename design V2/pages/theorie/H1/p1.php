@@ -109,7 +109,7 @@
 	</div>
 
 	<?php
-	include('../../../components/footer.php');
+	include('../../../components/footerChapter.php');
 	?>
 
 </body>

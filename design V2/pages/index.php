@@ -124,7 +124,7 @@
 	</div>
 
 	<?php
-	include('../components/footer.php');
+	include('../components/footerGeneral.php');
 	?>
 
 </body>

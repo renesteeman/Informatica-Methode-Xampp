@@ -47,19 +47,6 @@ $(document).ready(function(){
 		$(this).prev().children().val('');
 		$(this).parent().prev().children().first().append(paste);
 
-		//Give php the info it needs (via AJAX)
-		jqXHR = $.ajax({
-			method: "POST",
-			url: "createGroupAjax.php",
-			data: { name: name}
-		})
-		jqXHR.done(function( msg ) {
-				alert( "Data Saved: " + msg );
-			});
-		jqXHR.fail(function( jqXHR, textStatus ) {
-			  alert( "Request failed: " + textStatus );
-			});
-
 	});
 
 	$(".addLid").children().first().keypress(function(event){
@@ -73,4 +60,25 @@ $(document).ready(function(){
 		$(this).parent().fadeOut();
 	});
 
+	$('.createGroupForm').submit(function(event){
+			event.preventDefault();
+
+			$naam = "TestNaam";
+			$omschrijving = "";
+			$link = "";
+			$leden = "";
+
+			//Give php the info it needs (via AJAX)
+			jqXHR = $.ajax({
+				method: "POST",
+				url: "createGroupAjax.php",
+				data: {naam: naam}
+			})
+			jqXHR.done(function( msg ) {
+					alert( "Data Saved: " + msg );
+				});
+			jqXHR.fail(function( jqXHR, textStatus ) {
+				  alert( "Request failed: " + textStatus );
+				});
+	});
 });

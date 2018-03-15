@@ -43,10 +43,12 @@ $(document).ready(function(){
 
 	$(".addLidButton").click(function(){
 		var name = $(this).prev().children().val();
-		var paste = '<li><span class="lid">'+ name +'</span><span class="delete">x</span></li>'
-		$(this).prev().children().val('');
-		$(this).parent().prev().children().first().append(paste);
-
+		if(name!=""){
+			var paste = '<li><span class="lid">'+ name +'</span><span class="delete">x</span></li>'
+			$(this).prev().children().val('');
+			$(this).parent().prev().children().first().append(paste);
+		}
+		
 	});
 
 	$(".addLid").children().first().keypress(function(event){
@@ -58,21 +60,26 @@ $(document).ready(function(){
 
 	$(document).on('click',".delete",function(){
 		$(this).parent().fadeOut();
+		$(this).parent().remove();
 	});
 
 	$('.createGroupForm').submit(function(event){
 		event.preventDefault();
 
-		var naam = "TestNaam";
-		var omschrijving = "";
-		var link = "";
-		var leden = "";
+		var naam = $('input[name=Gnaam]').val();
+		var omschrijving = $('textarea[name=Gomschrijving]').val();
+		var link = $('input[name=Glink]').val();
+
+		var leden = [];
+		$('.ledenLijst>ul>li>.lid').each(function(index){
+			leden.push($(this).text());
+		});
 
 		//Give php the info it needs (via AJAX)
 		jqXHR = $.ajax({
 			method: "POST",
 			url: "createGroupAjax.php",
-			data: {naam: naam}
+			data: {naam: naam, omschrijving: omschrijving, link: link, leden: leden}
 		})
 		jqXHR.done(function( msg ) {
 				alert( "Data Saved: " + msg );
@@ -80,5 +87,6 @@ $(document).ready(function(){
 		jqXHR.fail(function( jqXHR, textStatus ) {
 			  alert( "Request failed: " + textStatus );
 			});
+
 	});
 });

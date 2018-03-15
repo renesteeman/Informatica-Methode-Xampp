@@ -48,7 +48,7 @@ $(document).ready(function(){
 			$(this).prev().children().val('');
 			$(this).parent().prev().children().first().append(paste);
 		}
-		
+
 	});
 
 	$(".addLid").children().first().keypress(function(event){
@@ -66,27 +66,29 @@ $(document).ready(function(){
 	$('.createGroupForm').submit(function(event){
 		event.preventDefault();
 
-		var naam = $('input[name=Gnaam]').val();
-		var omschrijving = $('textarea[name=Gomschrijving]').val();
-		var link = $('input[name=Glink]').val();
+		var Gnaam = $('input[name=Gnaam]').val();
+		var Gomschrijving = $('textarea[name=Gomschrijving]').val();
+		var Glink = $('input[name=Glink]').val();
 
-		var leden = [];
+		var Gleden = [];
 		$('.ledenLijst>ul>li>.lid').each(function(index){
-			leden.push($(this).text());
+			Gleden.push($(this).text());
 		});
+
+		var password = $('input[name=password]').val();
 
 		//Give php the info it needs (via AJAX)
 		jqXHR = $.ajax({
 			method: "POST",
 			url: "createGroupAjax.php",
-			data: {naam: naam, omschrijving: omschrijving, link: link, leden: leden}
+			data: {Gnaam: Gnaam, Gomschrijving: Gomschrijving, Glink: Glink, Gleden: Gleden, password: password}
 		})
 		jqXHR.done(function( msg ) {
 				alert( "Data Saved: " + msg );
-			});
+		});
 		jqXHR.fail(function( jqXHR, textStatus ) {
 			  alert( "Request failed: " + textStatus );
-			});
+		});
 
 	});
 });

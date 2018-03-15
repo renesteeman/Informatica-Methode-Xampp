@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 04 mrt 2018 om 14:10
+-- Gegenereerd op: 15 mrt 2018 om 09:40
 -- Serverversie: 10.1.28-MariaDB
 -- PHP-versie: 7.1.11
 
@@ -21,6 +21,53 @@ SET time_zone = "+00:00";
 --
 -- Database: `inforca`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `groepen`
+--
+
+CREATE TABLE `groepen` (
+  `id` int(11) NOT NULL,
+  `naam` text COLLATE utf8_bin NOT NULL,
+  `beschrijving` text COLLATE utf8_bin NOT NULL,
+  `link` text COLLATE utf8_bin NOT NULL,
+  `school` text COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `groepen`
+--
+
+INSERT INTO `groepen` (`id`, `naam`, `beschrijving`, `link`, `school`) VALUES
+(18, 'a', 'b', 'c', 'Group');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `progressie`
+--
+
+CREATE TABLE `progressie` (
+  `userid` int(11) NOT NULL,
+  `H1` text COLLATE utf8_bin,
+  `H2` text COLLATE utf8_bin,
+  `H3` text COLLATE utf8_bin,
+  `H4` text COLLATE utf8_bin,
+  `H5` text COLLATE utf8_bin,
+  `H6` text COLLATE utf8_bin,
+  `H7` text COLLATE utf8_bin,
+  `B1` text COLLATE utf8_bin,
+  `B2` text COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `progressie`
+--
+
+INSERT INTO `progressie` (`userid`, `H1`, `H2`, `H3`, `H4`, `H5`, `H6`, `H7`, `B1`, `B2`) VALUES
+(79, '110110', '01100', '010', NULL, NULL, NULL, NULL, '1110', '');
 
 -- --------------------------------------------------------
 
@@ -102,6 +149,18 @@ INSERT INTO `users` (`id`, `naam`, `username`, `password`, `school`, `functie`, 
 --
 
 --
+-- Indexen voor tabel `groepen`
+--
+ALTER TABLE `groepen`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexen voor tabel `progressie`
+--
+ALTER TABLE `progressie`
+  ADD PRIMARY KEY (`userid`);
+
+--
 -- Indexen voor tabel `users`
 --
 ALTER TABLE `users`
@@ -110,6 +169,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
+
+--
+-- AUTO_INCREMENT voor een tabel `groepen`
+--
+ALTER TABLE `groepen`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT voor een tabel `users`

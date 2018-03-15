@@ -12,7 +12,6 @@
 	}
 
 	//info to set
-	//username and password are set below
 
 	//get given data
 	if(isset ($_POST['aantal']) & $_POST['aantal']!=""){
@@ -42,8 +41,7 @@
 	if(isset ($_POST['naam']) & $_POST['naam']!=""){
 		$naam = mysqli_real_escape_string($conn, check_input($_POST['naam']));
 	} else {
-		echo "Naam not set </br>";
-		$allSet = 0;
+		$naam = 'Person';
 	}
 
 	$creation_date = date("Y-m-d");

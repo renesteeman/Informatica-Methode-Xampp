@@ -34,6 +34,15 @@
 		//get info
 		if(isset($_POST['Gnaam']) & $_POST['Gnaam'] != ""){
 			$Gnaam = mysqli_real_escape_string($conn, check_input($_POST['Gnaam']));
+
+			//check if Gnaam is already in use
+			$sql = mysqli_query($conn, "SELECT naam FROM groepen WHERE naam='$Gnaam' and school='$Gschool'");
+
+			if (mysqli_num_rows($sql) != 0) {
+				echo "\n Groepnaam is al in gebruik.";
+ 			   $Gnaam = "";
+			};
+
 		};
 
 		if(isset($_POST['Gomschrijving']) & $_POST['Gomschrijving'] != ""){
@@ -73,7 +82,8 @@
 		//check psw
 		if(password_verify($password, $rightpsw)){
 
-			if($Gnaam != "" & $Gomschrijving != "" & $Glink != "" & $Gschool != ""){
+			if($Gnaam != "" & $Gomschrijving != "" & $Gschool != ""){
+				//create group
 				$sql = "INSERT INTO groepen (naam, beschrijving, link, school) VALUES ('$Gnaam', '$Gomschrijving', '$Glink', '$Gschool')";
 
 				if (mysqli_query($conn, $sql)) {
@@ -82,7 +92,22 @@
 					echo "Error with sql execution, please report to admin </br>";
 				}
 
-				//link student to group
+				//link students to group
+				for($i=0; $i < count($Gleden); $i++){
+					//select student
+					$studentName = $Gleden[$i];
+
+					$sql = "UPDATE users SET group_name='$Gnaam' WHERE naam='$studentName' and school='$Gschool'";
+
+					if (mysqli_query($conn, $sql)) {
+						echo "\n".$studentName." succesvol toegevoegd aan groep";
+					} else {
+						echo "\n".$studentName." bestaat niet";
+					}
+				}
+
+			} else {
+				echo "\n Niet alle informatie is ontvangen of de informatie is niet correct";
 			}
 
 		} else {

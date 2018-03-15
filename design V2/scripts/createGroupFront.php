@@ -30,11 +30,11 @@
 			<ul>
 				<li>
 					<label>Naam</label>
-					<input type="text" placeholder="Naam van de groep" name="Gnaam" maxlength="50">
+					<input type="text" placeholder="Naam van de groep" name="Gnaam" maxlength="50" required>
 				</li>
 				<li>
 					<label>Omschrijving</label>
-					<textarea type="text" placeholder="Omschrijving van de groep" name="Gomschrijving" maxlength="500"></textarea>
+					<textarea type="text" placeholder="Omschrijving van de groep" name="Gomschrijving" maxlength="500" required></textarea>
 				</li>
 				<li>
 					<label>Link</label>

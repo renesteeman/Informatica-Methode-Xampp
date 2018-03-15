@@ -84,10 +84,10 @@ $(document).ready(function(){
 			data: {Gnaam: Gnaam, Gomschrijving: Gomschrijving, Glink: Glink, Gleden: Gleden, password: password}
 		})
 		jqXHR.done(function( msg ) {
-				alert( "Data Saved: " + msg );
+			alert(msg);
 		});
 		jqXHR.fail(function( jqXHR, textStatus ) {
-			  alert( "Request failed: " + textStatus );
+		  alert( "Request failed: " + textStatus );
 		});
 
 	});

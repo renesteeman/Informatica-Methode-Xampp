@@ -21,7 +21,7 @@
 				width: 100%
 				padding-left: 1em
 				padding-top: 0.5em
-				padding-bottom: 0.3em
+				padding-bottom: 0.5em
 				background-color: $blue-green
 				color: $white
 
@@ -49,13 +49,17 @@
 						box-sizing: border-box
 
 					.Arrow
-						float: right
-						position: relative
-						transform: rotate(90deg)
-						transition: transform 0.4s
+						padding-left: 50%
+
+						img
+							transform: rotateX(0deg)
+							transition: transform 0.4s
+							transform-origin: 50% 50%
+
 
 					.Arrow.active
-						transform: rotate(0deg)
+						img
+							transform: rotateX(180deg)
 
 
 			.classContent

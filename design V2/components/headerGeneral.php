@@ -14,7 +14,7 @@
 	<div class="navigation">
 
 		<h1>
-			<a href="index.php">INFORCA</a>
+			<a href="../pages/index.php">INFORCA</a>
 		</h1>
 
 		<div class="nav-wide">

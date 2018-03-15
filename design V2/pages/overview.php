@@ -92,7 +92,6 @@
 										<span class="klas">'.$CurrentClass.'</span>
 										<span class="Nleerlingen">'.$NStudentsCurrentClass.' leerlingen </span>
 										<span class="icons">
-											<span class="Mail image"><img src="../icons/mail.svg"/></span>
 											<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
 										</span>
 									</div>

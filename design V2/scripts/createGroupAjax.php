@@ -45,18 +45,12 @@
 		};
 
 		if(isset($_POST['Gleden']) & $_POST['Gleden'] != ""){
-			$Gnaam = mysqli_real_escape_string($conn, check_input($_POST['Gleden']));
-		};
-
-		if(isset($_POST['Gleden']) & $_POST['Gleden'] != ""){
 			$Gleden = [];
 
-			for($i=0; $i<$_POST['Gleden'].count(); $i++){
+			for($i=0; $i<count($_POST['Gleden']); $i++){
 				$lid = mysqli_real_escape_string($conn, check_input($_POST['Gleden'][$i]));
-				echo $lid;
 				array_push($Gleden, $lid);
-			}
-
+			};
 		};
 
 		if(isset($_POST['password']) & $_POST['password'] != ""){
@@ -78,21 +72,18 @@
 
 		//check psw
 		if(password_verify($password, $rightpsw)){
-			echo "Right password <br />";
 
 			if($Gnaam != "" & $Gomschrijving != "" & $Glink != "" & $Gschool != ""){
 				$sql = "INSERT INTO groepen (naam, beschrijving, link, school) VALUES ('$Gnaam', '$Gomschrijving', '$Glink', '$Gschool')";
 
 				if (mysqli_query($conn, $sql)) {
-					echo "Groep toegevoegd";
+					echo "Groep succesvol toegevoegd";
 				} else {
-					echo "Error: " . $sql . "<br>" . $conn->error."</br>";
+					echo "Error with sql execution, please report to admin </br>";
 				}
 
 				//link student to group
 			}
-
-		   exit;
 
 		} else {
 			echo "Wrong password <br />";

@@ -7,7 +7,8 @@
 	<!-- internal includes -->
 	<link rel="stylesheet" href="../css/main.min.css">
 
-    <title>Inforca</title>
+  <title>Inforca</title>
+	
 <head>
 
 <header>

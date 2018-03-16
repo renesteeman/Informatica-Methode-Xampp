@@ -2,11 +2,11 @@
 
 .login
 	min-height: 65%
-	height: 30em
+	height: 15em
 	margin-left: 20%
 	margin-top: 40px
-	width: 60%
 	margin-bottom: 40px
+	width: 60%
 	background-color: $grey
 	box-shadow: inset 0 0 0 0 darken($white, 10%), 6px 6px 8px darken($white, 20%)
 	border-radius: 4px
@@ -40,3 +40,21 @@
 	.loginForm
 		padding-top: 2em
 		padding-left: 2em
+
+@media (max-width: $large)
+	.login
+		input
+			width: 60%
+			margin-left: 0.5em
+
+		.loginForm
+			padding-top: 2em
+			padding-left: 0
+
+@media (max-width: $medium)
+	.login
+		input
+			width: 80%
+
+		img
+			display: none

@@ -118,10 +118,6 @@
 
 	?>
 
-
-
-	</div>
-
 	<?php
 	include('../components/footerGeneral.php');
 	?>

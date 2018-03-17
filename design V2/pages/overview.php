@@ -176,17 +176,17 @@
 					$groepen = [];
 					$groepen['groep'] = [];
 
-					$sql = "SELECT school, groep FROM groepen WHERE school='$userSchool'";
+					$sql = "SELECT naam, beschrijving, link FROM groepen WHERE school='$userSchool'";
 
 					if (mysqli_query($conn, $sql)) {
 						//load groups
 						$result = mysqli_query($conn, $sql);
-						$result = mysqli_fetch_assoc($result);
 
 						if(mysqli_num_rows($result) > 0){
 
 							while($row = mysqli_fetch_assoc($result)) {
 								$Gnaam = $row["naam"];
+								$GBeschrijving = $row["beschrijving"];
 								$Glink = $row["link"];
 
 								//add groups to array

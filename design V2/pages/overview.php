@@ -229,9 +229,11 @@
 									<!-- table content for this class-->
 									<div class="classContent">
 
-										<div class="groepBeschrijving">
+										<div class="groepsBeschrijving">
+											<span class="groepsBeschrijvingInhoud">
 											//TODO
-											klhdkgsgjkajsdkgfhjdhgiuhjskcghniuwehrihgnjicdhnguhwepg
+											klhdkgsgjkajsdkgfhjdhgiuhjskcghniuwehrihgnjicdhnguhwepghjdhgiuhjskcghniuwehrihgnjicdhnguhwepghjdhgiuhjskcghniuwehrihgnjicdhnguhwepghjdhgiuhjskcghniuwehrihgnjicdhnguhwepghjdhgiuhjskcghniuwehrihgnjicdhnguhwepghjdhgiuhjskcghniuwehrihgnjicdhnguhwepghjdhgiuhjskcghniuwehrihgnjicdhnguhwepghjdhgiuhjskcghniuwehrihgnjicdhnguhwepg
+											</span>
 										</div>';
 
 									for($j=0; $j<$NMembersCurrentGroup; $j++){

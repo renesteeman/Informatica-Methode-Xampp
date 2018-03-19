@@ -260,8 +260,8 @@
 
 											<div class="row">
 												<span class="name">'.$CmemberName.'</span>
-												<span class="username">'.$CstudentClass.'</span>
-												<span class="username">'.$CstudentRole.'</span>
+												<span class="class">'.$CstudentClass.'</span>
+												<span class="role">'.$CstudentRole.'</span>
 											</div>
 
 										';

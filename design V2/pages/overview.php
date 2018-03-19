@@ -242,19 +242,30 @@
 										    echo $class." ";
 										};
 
-								echo'</span>
+								echo'
+									</span>
 										<span class="icons">
 											<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
 										</span>
-									</div>
+									</div>';
 
+								$CGroupdescription = $groepen['groep'][$CurrentGroupName][0]['beschrijving'];
+
+
+
+
+
+
+
+
+
+								echo '
 									<!-- table content for this class-->
 									<div class="classContent">
 
 										<div class="groepsBeschrijving">
 											<span class="groepsBeschrijvingInhoud">
-											//TODO
-											klhdkgsgjkajsdkgfhjdhgiuhjskcghniuwehrihgnjicdhnguhwepghjdhgiuhjskcghniuwehrihgnjicdhnguhwepghjdhgiuhjskcghniuwehrihgnjicdhnguhwepghjdhgiuhjskcghniuwehrihgnjicdhnguhwepghjdhgiuhjskcghniuwehrihgnjicdhnguhwepghjdhgiuhjskcghniuwehrihgnjicdhnguhwepghjdhgiuhjskcghniuwehrihgnjicdhnguhwepghjdhgiuhjskcghniuwehrihgnjicdhnguhwepg
+												'.$CGroupdescription.'
 											</span>
 										</div>';
 

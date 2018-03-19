@@ -215,8 +215,16 @@
 									$NMembersCurrentGroup = mysqli_num_rows($result);
 									$classesInGroup = [];
 
+									$studentInfoForGroup = [];
+
 									while ($row = mysqli_fetch_assoc($result)) {
 										$Cklas = $row['klas'];
+										$Cname = $row['naam'];
+										$Cfunction = $row['group_role'];
+
+										$CstudentInfoForGroup = ['naam'=>$Cname, 'klas'=>$Cklas, 'functie'=>$Cfunction];
+
+										array_push($studentInfoForGroup, $CstudentInfoForGroup);
 
 										if(!in_array($Cklas, $classesInGroup)){
 											array_push($classesInGroup, $Cklas);
@@ -251,14 +259,6 @@
 
 								$CGroupdescription = $groepen['groep'][$CurrentGroupName][0]['beschrijving'];
 
-
-
-
-
-
-
-
-
 								echo '
 									<!-- table content for this class-->
 									<div class="classContent">
@@ -270,10 +270,10 @@
 										</div>';
 
 									for($j=0; $j<$NMembersCurrentGroup; $j++){
-										//TODO
-										$CmemberName = 'naam';
-										$CstudentClass = 'klas';
-										$CstudentRole = 'functie';
+
+										$CmemberName = $studentInfoForGroup[$j]['naam'];
+										$CstudentClass = $studentInfoForGroup[$j]['klas'];
+										$CstudentRole = $studentInfoForGroup[$j]['functie'];
 
 										echo '
 

@@ -174,7 +174,6 @@
 					}
 
 					$groepen = [];
-					$groepen['groep'] = [];
 
 					$sql = "SELECT naam, beschrijving, link FROM groepen WHERE school='$userSchool'";
 
@@ -186,11 +185,13 @@
 
 							while($row = mysqli_fetch_assoc($result)) {
 								$Gnaam = $row["naam"];
-								$GBeschrijving = $row["beschrijving"];
+								$Gbeschrijving = $row["beschrijving"];
 								$Glink = $row["link"];
 
-								//add groups to array
-								$groepen['groep'][$Gnaam] = $Gnaam;
+								//add group to array
+								$groupInfo = ['beschrijving'=>$Gbeschrijving, 'link'=>$Glink];
+
+								$groepen['groep'][$Gnaam][] = $groupInfo;
 							}
 
 							//number of groups
@@ -204,13 +205,26 @@
 
 							//show these groups
 							for($i=0; $i<$Ngroepen; $i++){
-								$CurrentGroup = $AllGroups[$i];
+								$CurrentGroupName = $AllGroups[$i];
 
-								$CurrentGroupName = $groepen['groep'][$CurrentGroup];
+								$sql = "SELECT naam, klas, group_role FROM users WHERE group_name='$CurrentGroupName'";
+
+								if (mysqli_query($conn, $sql)) {
+									$result = mysqli_query($conn, $sql);
+
+									$NMembersCurrentGroup = count(mysqli_num_rows($result));
+								} else {
+									$NMembersCurrentGroup = 0;
+									echo "Geen groepsleden gevonden";
+								}
+
+
+
+
+
+
 
 								//TODO
-								$NMembersCurrentGroup = 1;
-
 								$klassen = 'H51';
 
 								echo'
@@ -218,7 +232,7 @@
 								<div class="class">
 									<!-- table header for this class-->
 									<div class="classHeader">
-										<span class="groep">'.$CurrentGroup.'</span>
+										<span class="groep">'.$CurrentGroupName.'</span>
 										<span class="Nleden">'.$NMembersCurrentGroup.' groepsleden </span>
 										<span class="klassen">'.$klassen.'</span>
 										<span class="icons">
@@ -238,19 +252,16 @@
 
 									for($j=0; $j<$NMembersCurrentGroup; $j++){
 										//TODO
-										$Cmember = 'Test';
 										$CmemberName = 'naam';
-										$CmemberKlas = 'klas';
-										$CmemberFunctie = 'functie';
-										$CstudentProgress = 0;
-										//TODO change icon style based on progres
+										$CstudentClass = 'klas';
+										$CstudentRole = 'functie';
 
 										echo '
 
 											<div class="row">
-												<span class="name">'.$CstudentName.'</span>
-												<span class="username">'.$CstudentUsername.'</span>
-												<span class="progress">icon</span>
+												<span class="name">'.$CmemberName.'</span>
+												<span class="username">'.$CstudentClass.'</span>
+												<span class="username">'.$CstudentRole.'</span>
 											</div>
 
 										';

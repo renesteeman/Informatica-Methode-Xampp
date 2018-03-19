@@ -91,4 +91,10 @@ $(document).ready(function(){
 		});
 
 	});
+
+	$(".Edit").click(function(){
+
+		window.location.href = '../scripts/editGroupFront.php';
+
+	});
 });

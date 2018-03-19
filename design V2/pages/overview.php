@@ -257,15 +257,21 @@
 										</span>
 									</div>';
 
-								$CGroupdescription = $groepen['groep'][$CurrentGroupName][0]['beschrijving'];
+								$CGroupDescription = $groepen['groep'][$CurrentGroupName][0]['beschrijving'];
+								$CGroupLink = $groepen['groep'][$CurrentGroupName][0]['link'];
 
 								echo '
 									<!-- table content for this class-->
 									<div class="classContent">
 
-										<div class="groepsBeschrijving">
-											<span class="groepsBeschrijvingInhoud">
-												'.$CGroupdescription.'
+										<div class="groepInhoud">
+											<span class="groepsBeschrijving">
+												'.$CGroupDescription.'
+											</span>
+											<span class="groepsLink">
+												<a href="'.$CGroupLink.'">
+													'.$CGroupLink.'
+												</a>
 											</span>
 										</div>';
 

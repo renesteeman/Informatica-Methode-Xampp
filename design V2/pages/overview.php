@@ -212,20 +212,22 @@
 								if (mysqli_query($conn, $sql)) {
 									$result = mysqli_query($conn, $sql);
 
-									$NMembersCurrentGroup = count(mysqli_num_rows($result));
+									$NMembersCurrentGroup = mysqli_num_rows($result);
+									$classesInGroup = [];
+
+									while ($row = mysqli_fetch_assoc($result)) {
+										$Cklas = $row['klas'];
+
+										if(!in_array($Cklas, $classesInGroup)){
+											array_push($classesInGroup, $Cklas);
+										}
+
+									}
+
 								} else {
 									$NMembersCurrentGroup = 0;
 									echo "Geen groepsleden gevonden";
 								}
-
-
-
-
-
-
-
-								//TODO
-								$klassen = 'H51';
 
 								echo'
 
@@ -234,7 +236,13 @@
 									<div class="classHeader">
 										<span class="groep">'.$CurrentGroupName.'</span>
 										<span class="Nleden">'.$NMembersCurrentGroup.' groepsleden </span>
-										<span class="klassen">'.$klassen.'</span>
+										<span class="klassen">';
+
+										foreach ($classesInGroup as $class) {
+										    echo $class." ";
+										};
+
+								echo'</span>
 										<span class="icons">
 											<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
 										</span>

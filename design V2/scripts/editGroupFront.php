@@ -45,15 +45,15 @@ $groupname = check_input($_SESSION['groupname']);
 			<ul>
 				<li>
 					<label>Nieuwe naam</label>
-					<input type="text" placeholder="Naam van de groep" name="NGnaam" maxlength="50" required>
+					<input type="text" placeholder="Nieuwe naam van de groep" name="NGnaam" maxlength="50" required>
 				</li>
 				<li>
 					<label>Nieuwe omschrijving</label>
-					<textarea type="text" placeholder="Omschrijving van de groep" name="NGomschrijving" maxlength="500" required></textarea>
+					<textarea type="text" placeholder="Nieuwe omschrijving van de groep" name="NGomschrijving" maxlength="500" required></textarea>
 				</li>
 				<li>
 					<label>Nieuwe link</label>
-					<input type="text" placeholder="Link naar bestanden" name="NGlink" maxlength="50">
+					<input type="text" placeholder="Nieuwe link naar bestanden" name="NGlink" maxlength="50">
 				</li>
 				<li>
 					<label>Leden</label>

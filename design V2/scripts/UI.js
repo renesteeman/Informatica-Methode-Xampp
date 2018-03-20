@@ -103,8 +103,7 @@ $(document).ready(function(){
 			url: '../scripts/editGroupSetSession.php',
 			data: {groupname: groupname}
 		});
-		jqXHR.done(function(msg) {
-			alert(msg);
+		jqXHR.done(function() {
 			window.location.href = '../scripts/editGroupFront.php';
 		});
 		jqXHR.fail(function( jqXHR) {

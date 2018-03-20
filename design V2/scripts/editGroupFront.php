@@ -44,27 +44,28 @@ $groupname = check_input($_SESSION['groupname']);
 		<form class="editGroupForm" method="post" action="../scripts/editGroup.php" accept-charset="UTF-8">
 			<ul>
 				<li>
-					<label>Naam</label>
-					<input type="text" placeholder="Naam van de groep" name="Gnaam" maxlength="50" required>
+					<label>Nieuwe naam</label>
+					<input type="text" placeholder="Naam van de groep" name="NGnaam" maxlength="50" required>
 				</li>
 				<li>
-					<label>Omschrijving</label>
-					<textarea type="text" placeholder="Omschrijving van de groep" name="Gomschrijving" maxlength="500" required></textarea>
+					<label>Nieuwe omschrijving</label>
+					<textarea type="text" placeholder="Omschrijving van de groep" name="NGomschrijving" maxlength="500" required></textarea>
 				</li>
 				<li>
-					<label>Link</label>
-					<input type="text" placeholder="Link naar bestanden" name="Glink" maxlength="50">
+					<label>Nieuwe link</label>
+					<input type="text" placeholder="Link naar bestanden" name="NGlink" maxlength="50">
 				</li>
 				<li>
 					<label>Leden</label>
 					<div class="ledenLijst">
 						<ul>
-
+							//TODO
+							load current members
 						</ul>
 					</div>
 					<div class="addLid">
 						<span class="addLid">
-							<input type="text" placeholder="Nieuw lid" name="Gleden" maxlength="50" autocomplete="off">
+							<input type="text" placeholder="Nieuw lid" name="NGleden" maxlength="50" autocomplete="off">
 						</span>
 						<span class="plus-sign addLidButton">+</span>
 					</div>
@@ -75,6 +76,14 @@ $groupname = check_input($_SESSION['groupname']);
 				</li>
 				<li>
 					<input type="submit" value="Bevestig">
+				</li>
+				<li>
+					<div class="center">
+					</br></br>
+						<div class="deleteButton">
+							Delete groep
+						</div>
+					</div>
 				</li>
 			</ul>
 		</form>

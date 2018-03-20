@@ -82,7 +82,7 @@ $(document).ready(function(){
 			method: "POST",
 			url: "createGroupAjax.php",
 			data: {Gnaam: Gnaam, Gomschrijving: Gomschrijving, Glink: Glink, Gleden: Gleden, password: password}
-		})
+		});
 		jqXHR.done(function( msg ) {
 			alert(msg);
 		});
@@ -94,7 +94,22 @@ $(document).ready(function(){
 
 	$(".Edit").click(function(){
 
-		window.location.href = '../scripts/editGroupFront.php';
+		var groupname = $(this).parent().parent().parent().children().first().children().first().text();
+
+
+		//sent values of group via ajax to editGroupFront.php
+		jqXHR = $.ajax({
+			method: "POST",
+			url: '../scripts/editGroupSetSession.php',
+			data: {groupname: groupname}
+		});
+		jqXHR.done(function(msg) {
+			alert(msg);
+			window.location.href = '../scripts/editGroupFront.php';
+		});
+		jqXHR.fail(function( jqXHR) {
+		  alert( "AJAX failed, contact admin" );
+		});
 
 	});
 });

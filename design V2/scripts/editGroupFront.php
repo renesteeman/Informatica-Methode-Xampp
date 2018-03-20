@@ -1,9 +1,19 @@
 <?php
-	include('../components/headerGeneral.php');
-	include('../scripts/DB_connect.php');
+include('../components/headerGeneral.php');
+include('../scripts/DB_connect.php');
+
+//function to check and clean input
+function check_input($data) {
+	$data = trim($data, " ");
+	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+	return $data;
+}
+
+$groupname = check_input($_SESSION['groupname']);
 ?>
 
-<link rel="stylesheet" href="../css/overzichtGroepAanmaken.min.css">
+<link rel="stylesheet" href="../css/editGroup.min.css">
 
 <body>
 
@@ -25,8 +35,13 @@
 		</h3>
 	</div>
 
-	<div class="createGroup">
-		<form class="createGroupForm" method="post" action="../scripts/createGroup.php" accept-charset="UTF-8">
+	<div class="editGroup">
+
+		<span id="groupName">
+			<?php echo $groupname; ?>
+		</span>
+
+		<form class="editGroupForm" method="post" action="../scripts/editGroup.php" accept-charset="UTF-8">
 			<ul>
 				<li>
 					<label>Naam</label>

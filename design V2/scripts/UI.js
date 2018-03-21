@@ -134,7 +134,8 @@ $(document).ready(function(){
 			data: {NGname: NGname, NGbeschrijving:NGbeschrijving, NGlink:NGlink, NGleden:NGleden, password:password}
 		});
 		jqXHR.done(function(msg) {
-			alert(msg);
+			window.alert(msg);
+			window.location.href = '../pages/overview.php';
 		});
 		jqXHR.fail(function( jqXHR) {
 		  alert( "AJAX failed, contact admin" );

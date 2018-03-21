@@ -45,11 +45,11 @@ $groupname = check_input($_SESSION['groupname']);
 			<ul>
 				<li>
 					<label>Nieuwe naam</label>
-					<input type="text" placeholder="Nieuwe naam van de groep" name="NGnaam" maxlength="50" required>
+					<input type="text" placeholder="Nieuwe naam van de groep" name="NGnaam" maxlength="50">
 				</li>
 				<li>
 					<label>Nieuwe omschrijving</label>
-					<textarea type="text" placeholder="Nieuwe omschrijving van de groep" name="NGomschrijving" maxlength="500" required></textarea>
+					<textarea type="text" placeholder="Nieuwe omschrijving van de groep" name="NGomschrijving" maxlength="500"></textarea>
 				</li>
 				<li>
 					<label>Nieuwe link</label>
@@ -59,8 +59,57 @@ $groupname = check_input($_SESSION['groupname']);
 					<label>Leden</label>
 					<div class="ledenLijst">
 						<ul>
-							//TODO
-							load current members
+							<?php
+
+
+							if (isset($_SESSION["username"])){
+
+								$user = $_SESSION["username"];
+
+								$sql = "SELECT school FROM users WHERE username='$user'";
+
+								if (mysqli_query($conn, $sql)) {
+									//find school of teacher
+									$result = mysqli_query($conn, $sql);
+									$result = mysqli_fetch_assoc($result);
+									$school = $result['school'];
+
+									$sql = "SELECT naam FROM users WHERE school='$school' AND group_name='$groupname' AND functie='leerling'";
+
+									if (mysqli_query($conn, $sql)) {
+
+										$result = mysqli_query($conn, $sql);
+
+										$namen=[];
+
+										if (mysqli_num_rows($result) > 0) {
+										    //save names
+										    while($row = mysqli_fetch_assoc($result)) {
+												$naam = $row["naam"];
+
+												echo '
+												<li>
+													<span class="lid">'.$naam.'</span>
+													<span class="delete">x</span>
+												</li>
+
+												';
+
+										    }
+
+										} else {
+										    echo "0 results";
+										}
+									} else {
+										echo "SQL error, contact admin";
+									}
+								} else {
+									echo "SQL error, contact admin";
+								}
+							}
+
+
+							?>
 						</ul>
 					</div>
 					<div class="addLid">
@@ -72,10 +121,10 @@ $groupname = check_input($_SESSION['groupname']);
 				</li>
 				<li>
 					<label>Uw wachtwoord</label>
-					<input type="password" placeholder="Huidig wachtwoord" name="password" maxlength="50" required>
+					<input type="password" placeholder="Huidig wachtwoord" name="password" maxlength="50">
 				</li>
 				<li>
-					<input type="submit" value="Bevestig">
+					<input type="submit" value="Bevestig" id="editGroupConfirm">
 				</li>
 				<li>
 					<div class="center">

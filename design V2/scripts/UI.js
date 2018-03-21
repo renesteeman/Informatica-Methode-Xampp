@@ -111,4 +111,37 @@ $(document).ready(function(){
 		});
 
 	});
+
+	$('.editGroupForm').submit(function(event){
+		event.preventDefault();
+	});
+
+	$("#editGroupConfirm").click(function(){
+		var NGname = $("input[name='NGnaam']").val();
+		var NGbeschrijving = $("textarea[name='NGomschrijving']").val();
+		var NGlink = $("input[name='NGlink']").val();
+		var password = $("input[name='password']").val();
+
+		var NGleden = [];
+		$('.ledenLijst>ul>li>.lid').each(function(index){
+			NGleden.push($(this).text());
+		});
+
+		//sent values of group via ajax to editGroupFront.php
+		jqXHR = $.ajax({
+			method: "POST",
+			url: '../scripts/editGroupSetSession.php',
+			data: {NGname: NGname, NGbeschrijving:NGbeschrijving, NGlink:NGlink, NGleden:NGleden, password:password}
+		});
+		jqXHR.done(function() {
+			window.location.href = '../scripts/editGroupAjax.php';
+		});
+		jqXHR.fail(function( jqXHR) {
+		  alert( "AJAX failed, contact admin" );
+		});
+	});
+
+
+
+
 });

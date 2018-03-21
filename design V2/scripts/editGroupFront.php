@@ -92,7 +92,7 @@ $groupname = mysqli_real_escape_string($conn, check_input($_SESSION['groupname']
 										    }
 
 										} else {
-										    echo "0 results";
+										    echo "Geen huidige leden";
 										}
 									} else {
 										echo "SQL error, contact admin";

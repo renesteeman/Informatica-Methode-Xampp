@@ -18,11 +18,10 @@
 	$NGnaam = mysqli_real_escape_string($conn, check_input($_POST['NGname']));
 	$NGbeschrijving = mysqli_real_escape_string($conn, check_input($_POST['NGbeschrijving']));
 	$NGlink = mysqli_real_escape_string($conn, check_input($_POST['NGlink']));
-	$NGleden = [];
+	$NGledenchecked = [];
 
 	if(isset($_POST['NGleden'])){
 		$NGledenUnChecked = $_POST['NGleden'];
-		$NGledenchecked = [];
 
 		//check array and stored filtered array
 		for($i=0;$i<count($NGledenUnChecked);$i++){
@@ -62,9 +61,47 @@
 					echo "\nNieuwe groepnaam is succesvol ingesteld";
 
 				} else {
-					echo "Error with sql execution, please report to admin";
+					echo "Error with sql execution, please report to admin (Gnaam)";
 					$error = 1;
 				}
+			}
+
+			if($NGbeschrijving!=""){
+				$sql = "UPDATE groepen SET beschrijving='$NGbeschrijving' WHERE naam='$CGnaam' AND school='$school'";
+				echo $school;
+
+				if (mysqli_query($conn, $sql)) {
+					echo "\nNieuwe groepsbeschrijving is succesvol ingesteld";
+
+				} else {
+					echo "Error with sql execution, please report to admin (Gbeschrijving)";
+					$error = 1;
+				}
+			}
+
+			if($NGlink!=""){
+				$sql = "UPDATE groepen SET link='$NGlink' WHERE naam='$CGnaam' AND school='$school'";
+
+				if (mysqli_query($conn, $sql)) {
+					echo "\nNieuwe groepslink is succesvol ingesteld";
+
+				} else {
+					echo "Error with sql execution, please report to admin (Glink)";
+					$error = 1;
+				}
+			}
+
+			if($NGledenchecked!=""){
+				print_r($NGledenchecked);
+				/*$sql = "UPDATE groepen SET link='$NGlink' WHERE naam='$CGnaam' AND school='$school'";
+
+				if (mysqli_query($conn, $sql)) {
+					echo "\nNieuwe groepslink is succesvol ingesteld";
+
+				} else {
+					echo "Error with sql execution, please report to admin (Gleden)";
+					$error = 1;
+				}*/
 			}
 
 		} else {

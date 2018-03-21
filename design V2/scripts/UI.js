@@ -130,11 +130,11 @@ $(document).ready(function(){
 		//sent values of group via ajax to editGroupFront.php
 		jqXHR = $.ajax({
 			method: "POST",
-			url: '../scripts/editGroupSetSession.php',
+			url: '../scripts/editGroupAjax.php',
 			data: {NGname: NGname, NGbeschrijving:NGbeschrijving, NGlink:NGlink, NGleden:NGleden, password:password}
 		});
-		jqXHR.done(function() {
-			window.location.href = '../scripts/editGroupAjax.php';
+		jqXHR.done(function(msg) {
+			alert(msg);
 		});
 		jqXHR.fail(function( jqXHR) {
 		  alert( "AJAX failed, contact admin" );

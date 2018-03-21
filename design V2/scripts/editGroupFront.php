@@ -10,7 +10,7 @@ function check_input($data) {
 	return $data;
 }
 
-$groupname = check_input($_SESSION['groupname']);
+$groupname = mysqli_real_escape_string($conn, check_input($_SESSION['groupname']));
 ?>
 
 <link rel="stylesheet" href="../css/editGroup.min.css">
@@ -25,13 +25,7 @@ $groupname = check_input($_SESSION['groupname']);
 
 	<div class="bar">
 		<h3>
-			<?php
-				if (isset($_SESSION["username"])){
-					echo 'Groep aanmaken';
-				} else {
-					echo 'Login';
-				}
-			?>
+			Groep aanpassen
 		</h3>
 	</div>
 

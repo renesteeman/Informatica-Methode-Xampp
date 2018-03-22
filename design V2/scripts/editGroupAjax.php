@@ -59,6 +59,8 @@
 
 				if (mysqli_query($conn, $sql)) {
 					echo "\nNieuwe groepnaam is succesvol ingesteld";
+					$_SESSION["groupname"] = $NGnaam;
+					$CGnaam = $_SESSION["groupname"];
 
 				} else {
 					echo "Error with sql execution, please report to admin (Gnaam)";
@@ -92,16 +94,25 @@
 			}
 
 			if($NGledenchecked!=""){
-				print_r($NGledenchecked);
-				/*$sql = "UPDATE groepen SET link='$NGlink' WHERE naam='$CGnaam' AND school='$school'";
+				print_r($NGledenchecked[0]);
 
-				if (mysqli_query($conn, $sql)) {
-					echo "\nNieuwe groepslink is succesvol ingesteld";
+				for($i=0; $i<count($NGledenchecked); $i++){
+					$lid = $NGledenchecked[$i];
 
-				} else {
-					echo "Error with sql execution, please report to admin (Gleden)";
-					$error = 1;
-				}*/
+					$sql = "UPDATE users SET group_name='$CGnaam' WHERE naam='$lid' AND school='$school'";
+
+					if (mysqli_query($conn, $sql)) {
+						echo "\n".$lid." is nu lid van de groep";
+
+					} else {
+						echo "Error with sql execution, please report to admin (Gleden)";
+						$error = 1;
+					}
+
+					//TODO remove group members that aren't on the list anymore (old groupmembers-new = to delete)
+
+				}
+
 			}
 
 		} else {

@@ -136,7 +136,7 @@ $(document).ready(function(){
 
 		jqXHR.done(function(msg) {
 			window.alert(msg);
-			window.location.href = '../pages/overview.php';
+			//window.location.href = '../pages/overview.php';
 		});
 
 		jqXHR.fail(function( jqXHR) {
@@ -147,7 +147,7 @@ $(document).ready(function(){
 	$('.deleteGroupButton').click(function(){
 		if (confirm("Are you sure you want to delete the group?")){
 			var password = $("input[name='password']").val();
-			
+
 			//sent values of group via ajax to editGroupFront.php
 			jqXHR = $.ajax({
 				method: "POST",

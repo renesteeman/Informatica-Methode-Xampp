@@ -32,6 +32,7 @@
 		$NGledenchecked = [];
 	}
 
+
 	//get password for $user
 	$sql = "SELECT password FROM users WHERE username='$user'";
 	if (mysqli_query($conn, $sql)) {
@@ -129,19 +130,6 @@
 	if($error==1){
 		die(header("HTTP/1.0 404 Not Found"));
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	$conn->close();
 

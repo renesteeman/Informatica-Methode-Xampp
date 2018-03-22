@@ -94,8 +94,19 @@
 			}
 
 			if($NGledenchecked!=""){
-				print_r($NGledenchecked[0]);
 
+				//delete group_name of current members
+				$sql = "UPDATE users SET group_name='' WHERE group_name='$CGnaam' AND school='$school'";
+
+				if (mysqli_query($conn, $sql)) {
+					echo "\nOude leden succesvol verwijderd";
+
+				} else {
+					echo "Error with sql execution, please report to admin (Remove old members)";
+					//$error = 1;
+				}
+
+				//set group_name for new members
 				for($i=0; $i<count($NGledenchecked); $i++){
 					$lid = $NGledenchecked[$i];
 
@@ -108,11 +119,7 @@
 						echo "Error with sql execution, please report to admin (Gleden)";
 						$error = 1;
 					}
-
-					//TODO remove group members that aren't on the list anymore (old groupmembers-new = to delete)
-
 				}
-
 			}
 
 		} else {

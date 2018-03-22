@@ -123,7 +123,7 @@ $groupname = mysqli_real_escape_string($conn, check_input($_SESSION['groupname']
 				<li>
 					<div class="center">
 					</br></br>
-						<div class="deleteButton">
+						<div class="deleteGroupButton">
 							Delete groep
 						</div>
 					</div>

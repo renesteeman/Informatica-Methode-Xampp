@@ -133,13 +133,40 @@ $(document).ready(function(){
 			url: '../scripts/editGroupAjax.php',
 			data: {NGname: NGname, NGbeschrijving:NGbeschrijving, NGlink:NGlink, NGleden:NGleden, password:password}
 		});
+
 		jqXHR.done(function(msg) {
 			window.alert(msg);
-			//window.location.href = '../pages/overview.php';
+			window.location.href = '../pages/overview.php';
 		});
+
 		jqXHR.fail(function( jqXHR) {
-		  alert( "AJAX failed, contact admin" );
+		  alert("AJAX failed, contact admin");
 		});
+	});
+
+	$('.deleteGroupButton').click(function(){
+		if (confirm("Are you sure you want to delete the group?")){
+			var password = $("input[name='password']").val();
+			
+			//sent values of group via ajax to editGroupFront.php
+			jqXHR = $.ajax({
+				method: "POST",
+				url: '../scripts/deleteGroup.php',
+				data: {password:password}
+			});
+
+			jqXHR.done(function(msg) {
+				window.alert(msg);
+				//window.location.href = '../pages/overview.php';
+			});
+
+			jqXHR.fail(function( jqXHR) {
+			  alert("AJAX failed, contact admin");
+			});
+
+		} else {
+			alert("Canceled group deletion");
+		}
 	});
 
 

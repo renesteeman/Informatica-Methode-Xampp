@@ -32,7 +32,6 @@
 		$NGledenchecked = [];
 	}
 
-
 	//get password for $user
 	$sql = "SELECT password FROM users WHERE username='$user'";
 	if (mysqli_query($conn, $sql)) {
@@ -74,7 +73,6 @@
 
 				if (mysqli_query($conn, $sql)) {
 					echo "\nNieuwe groepsbeschrijving is succesvol ingesteld";
-
 				} else {
 					echo "Error with sql execution, please report to admin (Gbeschrijving)";
 					$error = 1;
@@ -86,7 +84,6 @@
 
 				if (mysqli_query($conn, $sql)) {
 					echo "\nNieuwe groepslink is succesvol ingesteld";
-
 				} else {
 					echo "Error with sql execution, please report to admin (Glink)";
 					$error = 1;
@@ -100,10 +97,9 @@
 
 				if (mysqli_query($conn, $sql)) {
 					echo "\nOude leden succesvol verwijderd";
-
 				} else {
 					echo "Error with sql execution, please report to admin (Remove old members)";
-					//$error = 1;
+					$error = 1;
 				}
 
 				//set group_name for new members
@@ -114,7 +110,6 @@
 
 					if (mysqli_query($conn, $sql)) {
 						echo "\n".$lid." is nu lid van de groep";
-
 					} else {
 						echo "Error with sql execution, please report to admin (Gleden)";
 						$error = 1;

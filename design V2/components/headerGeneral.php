@@ -1,5 +1,8 @@
 <div class="pageContent">
 <head>
+	<!-- set charset  -->
+	<meta charset="utf-16">
+
 	<!-- external includes -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -8,7 +11,7 @@
 	<link rel="stylesheet" href="../css/main.min.css">
 
   <title>Inforca</title>
-	
+
 <head>
 
 <header>

@@ -136,7 +136,7 @@ $(document).ready(function(){
 
 		jqXHR.done(function(msg) {
 			window.alert(msg);
-			//window.location.href = '../pages/overview.php';
+			window.location.href = '../pages/overview.php';
 		});
 
 		jqXHR.fail(function( jqXHR) {
@@ -157,7 +157,7 @@ $(document).ready(function(){
 
 			jqXHR.done(function(msg) {
 				window.alert(msg);
-				//window.location.href = '../pages/overview.php';
+				window.location.href = '../pages/overview.php';
 			});
 
 			jqXHR.fail(function( jqXHR) {

@@ -24,11 +24,12 @@
 				</div>
 				<div class="tile-paragraphs">
 					<ol>
-						<ul>§1 Het binair systeem</ul>
-						<ul>§2 Binair rekenen</ul>
-						<ul>§3 Gates</ul>
-						<ul>§4 Onderdelen van een computer</ul>
-						<ul>§5 Software en het OS</ul>
+						<ul><a href="theorie/H1/p1.php">§1 Het binair systeem</ul>
+						<ul><a href="theorie/H1/p2.php">§2 Binair rekenen</a></ul>
+						<ul><a href="theorie/H1/p3.php">§3 Verbanden</a></ul>
+						<ul><a href="theorie/H1/p4.php">§4 Gates</a></ul>
+						<ul><a href="theorie/H1/p5.php">§5 onderdelen van de computer</a></ul>
+						<ul><a href="theorie/H1/p6.php">§6 Software en het OS</a></ul>
 					</ol>
 				</div>
 			</div>

@@ -13,9 +13,9 @@
 	<div class="bar-par-overview">
 		<div class="paragraph-tiles">
 			<div class="ptile active">
-				<span class="ptile-content">
+				<span class="ptile-content"><a href="p1.php">
 					§1
-				</span>
+				</a></span>
 			</div>
 			<div class="ptile">
 				<span class="ptile-content"><a href="p2.php">
@@ -35,11 +35,6 @@
 			<div class="ptile">
 				<span class="ptile-content"><a href="p5.php">
 					§5
-				</a></span>
-			</div>
-			<div class="ptile">
-				<span class="ptile-content"><a href="p6.php">
-					§6
 				</a></span>
 			</div>
 

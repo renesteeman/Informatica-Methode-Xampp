@@ -1,7 +1,7 @@
 <div class="pageContent">
 <head>
-	<meta charset="utf-16">
-	
+	<meta charset="utf-8">
+
 	<!-- external includes -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -32,6 +32,7 @@
 				<div class="welcome">
 
 					<?php
+						ini_set('session.cookie_domain','inforca.nl');
 						session_start();
 
 						//if logged in say hello, else give the option to login

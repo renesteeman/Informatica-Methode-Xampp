@@ -1,7 +1,7 @@
 <div class="pageContent">
 <head>
 	<!-- set charset  -->
-	<meta charset="utf-16">
+	<meta charset="utf-8">
 
 	<!-- external includes -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">

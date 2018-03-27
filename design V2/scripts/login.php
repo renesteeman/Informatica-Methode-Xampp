@@ -36,7 +36,7 @@
 		header("Location: ../pages/index.php");
 
 		echo "Error redirecting";
-	   exit;
+	   	die();
 
 	} else {
 		echo "False login <br />";

@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <div class="pageContent">
 <head>
 	<!-- set charset  -->
@@ -33,8 +37,6 @@
 				<div class="welcome">
 
 					<?php
-						session_start();
-
 						//if logged in say hello, else give the option to login
 						if (isset($_SESSION["username"])){
 							echo

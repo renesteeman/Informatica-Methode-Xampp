@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <div class="pageContent">
 <head>
 	<meta charset="utf-8">
@@ -32,9 +36,6 @@
 				<div class="welcome">
 
 					<?php
-						ini_set('session.cookie_domain','inforca.nl');
-						session_start();
-
 						//if logged in say hello, else give the option to login
 						if (isset($_SESSION["username"])){
 							echo

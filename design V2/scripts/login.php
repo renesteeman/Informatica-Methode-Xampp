@@ -1,5 +1,6 @@
 <?php
 	include('DB_connect.php');
+	session_start();
 
 	//function to check and clean input
 	function check_input($data) {
@@ -28,15 +29,12 @@
 
 	//check psw
 	if(password_verify($password, $rightpsw)){
-		echo "Logged in <br />";
-
 		//start session with username
-		session_start();
 		$_SESSION["username"] = $username;
+		mysqli_close($conn);
 
 		header("Location: ../pages/index.php");
 
-		mysqli_close($conn);
 		echo "Error redirecting";
 	   exit;
 

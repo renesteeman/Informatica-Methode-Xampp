@@ -1,11 +1,14 @@
+<div class="pageContent">
 <head>
+	<meta charset="utf-8">
+
 	<!-- external includes -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<!-- internal includes -->
-	<link rel="stylesheet" href="./css/main.min.css">
-	<script src="scripts/UI.js"></script>
+	<link rel="stylesheet" href="../../../css/main.min.css">
+	<link rel="stylesheet" href="../../../css/paragraph.min.css">
 
     <title>Inforca</title>
 <head>
@@ -14,25 +17,39 @@
 	<div class="navigation">
 
 		<h1>
-			<a href="../index.php">INFORCA</a>
+			<a href="../../index.php">INFORCA</a>
 		</h1>
 
 		<div class="nav-wide">
 
 			<div class="nav-bar">
-				<a href="../index.php">HOME</a>
-				<a href="#">OVERVIEW</a>
+				<a href="../../index.php">HOME</a>
+				<a href="../../overview.php">OVERVIEW</a>
 				<a href="#">PLANNER</a>
 			</div>
 
 			<div class="empty">
 				<div class="welcome">
-					<div>
-						Hi User sdhfgasdggdasgasdsadfhjgdsaerhhadf
-					</div>
-					<div>
-						logout
-					</div>
+
+					<?php
+						ini_set('session.cookie_domain','inforca.nl');
+						session_start();
+
+						//if logged in say hello, else give the option to login
+						if (isset($_SESSION["username"])){
+							echo
+								'<div>
+									Hi <a href="../../account.php">'.$_SESSION["username"].'</a>
+								</div>
+								<div>
+									<a href="../../../scripts/logoutGeneral.php">logout</a>
+								</div>';
+
+						} else {
+							echo ' not welcome ';
+						}
+					?>
+
 				</div>
 			</div>
 		</div>
@@ -48,18 +65,27 @@
 
 			<div class="burger-content">
 				<div class="nav-bar">
-					<a href="#">HOME</a>
-					<a href="#">OVERVIEW</a>
+					<a href="../../index.php">HOME</a>
+					<a href="../../overview.php">OVERVIEW</a>
 					<a href="#">PLANNER</a>
 				</div>
 
 				<div class="welcome">
-					<div>
-						Hi User sdhfgasdggdasgasdsadfhjgdsaerhhadf
-					</div>
-					<div>
-						logout
-					</div>
+					<?php
+						//if logged in say hello, else give the option to login
+						if (isset($_SESSION["username"])){
+							echo
+								'<div>
+									Hi <a href="../../account.php">'.$_SESSION["username"].'</a>
+								</div>
+								<div>
+									<a href="../../../scripts/logoutGeneral.php">logout</a>
+								</div>';
+
+						} else {
+							echo ' not welcome ';
+						}
+					?>
 				</div>
 			</div>
 		</div>

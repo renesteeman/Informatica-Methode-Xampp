@@ -97,7 +97,6 @@
 		} else {
 			//if the user is not loged in, display login form
 			echo '
-			<link rel="stylesheet" href="../css/accountLogin.min.css">
 			<div class="login">
 				<form class="loginForm" method="post" action="../scripts/login.php" accept-charset="UTF-8">
 					<ul>
@@ -119,12 +118,8 @@
 
 	?>
 
-
-
-	</div>
-
 	<?php
-	include('../components/footer.php');
+	include('../components/footerGeneral.php');
 	?>
 
 </body>

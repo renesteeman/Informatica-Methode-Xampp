@@ -1,12 +1,10 @@
 @import "variables.sass"
 
 .login
-	min-height: 65%
-	height: 30em
 	margin-left: 20%
 	margin-top: 40px
-	width: 60%
 	margin-bottom: 40px
+	width: 60%
 	background-color: $grey
 	box-shadow: inset 0 0 0 0 darken($white, 10%), 6px 6px 8px darken($white, 20%)
 	border-radius: 4px
@@ -26,26 +24,8 @@
 		box-shadow: inset 0 0 0 0 darken($white, 10%), 4px 4px 8px darken($green-blue, 20%)
 		transition: background .5s ease-out, box-shadow 0.5s ease-in-out
 
-	input:not([type=submit])::placeholder
-		color: $grey
-
-	input:not([type=submit])
-		border: none
-		border-bottom: 2px solid $blue-green
-
-	input:not([type=submit]):focus
-		box-shadow: inset 0 0 0 6px darken($white, 10%), 4px 4px 8px darken($green-blue, 20%)
-
-	input:not([type=submit]):hover
-		box-shadow: inset 0 0 0 6px darken($white, 10%), 4px 4px 8px darken($green-blue, 20%)
-
 	input[type=submit]
 		margin-left: 3.1em
-		background-color: $white
-		border: none
-
-	input[type=submit]:hover
-		background-color: lighten($green-blue, 20%)
 
 	ul
 		list-style: none
@@ -57,3 +37,30 @@
 	.loginForm
 		padding-top: 2em
 		padding-left: 2em
+
+@media (max-width: $large)
+	.login
+		input
+			width: 60%
+			margin-left: 0
+
+		input[type=submit]
+			margin-left: 0
+			width: 50%
+			min-width: 4em
+
+		.loginForm
+			padding-top: 2em
+			padding-left: 0
+
+@media (max-width: $medium)
+	.login
+		margin-left: 0.5em
+		margin-right: 0.5em
+		width: auto
+
+		input
+			width: 80%
+
+		img
+			display: none

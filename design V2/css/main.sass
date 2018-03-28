@@ -236,6 +236,9 @@ textarea:hover
 	.chapter-tiles
 		grid-template-columns: auto auto auto
 
+		.tile-content
+			font-size: 125%
+
 @media (max-width: $large)
 	.navigation
 		background-attachment: fixed
@@ -315,6 +318,9 @@ textarea:hover
 	.chapter-tiles
 		grid-template-columns: auto auto
 
+		.title-content
+			font-size: 150%
+
 		.tile.active
 			.tile-content
 				.tile-paragraphs
@@ -324,6 +330,16 @@ textarea:hover
 @media (max-width: $medium)
 	.chapter-tiles
 		grid-template-columns: auto
+
+		margin-left: 5%
+		margin-right: 5%
+
+		.tile
+			width: 100%
+			background-size: 100%
+
+		.tile-content
+			font-size: 200%
 
 		.tile.active
 			.tile-content

@@ -16,10 +16,10 @@ body
 
 footer
 	clear: both
-  position: relative
-  z-index: 10
-  height: 3em
-  margin-top: -3em
+	position: relative
+	z-index: 10
+	height: 3em
+	margin-top: -3em
 
 a
 	color: $black
@@ -126,7 +126,7 @@ a:hover
 		width: 15em
 		box-shadow: inset 0 0 0 0 darken($white, 10%), 6px 6px 8px darken($white, 20%)
 		-webkit-backface-visibility: hidden
-		transition: background .5s ease-out, box-shadow 0.5s ease-in-out
+		transition: box-shadow 0.5s ease-in-out
 		overflow: hidden
 		border-radius: 4px
 
@@ -143,7 +143,7 @@ a:hover
 		box-shadow: inset 0 0 0 6px darken($white, 10%), 4px 4px 8px darken($white, 20%)
 
 	.tile.active
-		transition: none
+		transition: box-shadow 0.5s ease-in-out
 		background: linear-gradient(to bottom right, $green-blue, $green)
 		width: 66rem
 		font-size: 125%
@@ -164,9 +164,6 @@ a:hover
 				ul
 					line-height: 1.5em
 					font-size: 1.5em
-
-	.tile.active:hover
-		background-position: 0
 
 .bar-large
 	background-color: $blue

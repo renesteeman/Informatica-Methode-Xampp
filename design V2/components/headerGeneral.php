@@ -4,8 +4,9 @@
 
 <div class="pageContent">
 <head>
-	<!-- set charset  -->
+	<!-- meta -->
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<!-- external includes -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -20,41 +21,6 @@
 
 <header>
 	<div class="navigation">
-
-		<h1>
-			<a href="../pages/index.php">INFORCA</a>
-		</h1>
-
-		<div class="nav-wide">
-
-			<div class="nav-bar">
-				<a href="../pages/index.php">HOME</a>
-				<a href="../pages/overview.php">OVERVIEW</a>
-				<a href="#">PLANNER</a>
-			</div>
-
-			<div class="empty">
-				<div class="welcome">
-
-					<?php
-						//if logged in say hello, else give the option to login
-						if (isset($_SESSION["username"])){
-							echo
-								'<div>
-									Hi <a href="./account.php">'.$_SESSION["username"].'</a>
-								</div>
-								<div>
-									<a href="../scripts/logoutGeneral.php">logout</a>
-								</div>';
-
-						} else {
-							echo ' <div><a href="account.php"> login</a></div> ';
-						}
-					?>
-
-				</div>
-			</div>
-		</div>
 
 		<div class="nav-burger">
 			<div class="burger-icon">
@@ -88,6 +54,41 @@
 							echo ' <div><a href="account.php"> login</a></div> ';
 						}
 					?>
+				</div>
+			</div>
+		</div>
+
+		<h1 class="INFORCA">
+			<a href="../pages/index.php">INFORCA</a>
+		</h1>
+
+		<div class="nav-wide">
+
+			<div class="nav-bar">
+				<a href="../pages/index.php">HOME</a>
+				<a href="../pages/overview.php">OVERVIEW</a>
+				<a href="#">PLANNER</a>
+			</div>
+
+			<div class="empty">
+				<div class="welcome">
+
+					<?php
+						//if logged in say hello, else give the option to login
+						if (isset($_SESSION["username"])){
+							echo
+								'<div>
+									Hi <a href="./account.php">'.$_SESSION["username"].'</a>
+								</div>
+								<div>
+									<a href="../scripts/logoutGeneral.php">logout</a>
+								</div>';
+
+						} else {
+							echo ' <div><a href="account.php"> login</a></div> ';
+						}
+					?>
+
 				</div>
 			</div>
 		</div>

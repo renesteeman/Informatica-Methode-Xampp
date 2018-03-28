@@ -51,6 +51,11 @@ a:hover
 		padding-top: 10px
 		padding-bottom: 10px
 
+	h1.INFORCA
+		display: inline-block
+		text-align: center
+		width: 100%
+
 	.nav-bar
 		text-align: center
 		padding-top: 10px
@@ -85,6 +90,7 @@ a:hover
 	background-color: $grey
 	padding-top: 1em
 	padding-bottom: 1em
+	display: block
 
 	h2
 		margin: 0
@@ -247,18 +253,22 @@ textarea:hover
 						padding-left: 0
 
 @media (max-width: $large)
+
 	.navigation
 		background-attachment: fixed
+
 		.nav-wide
 			display: none
+			
+		h1.INFORCA
+			width: 80%
 
 	.navigation
 		.nav-burger
-			display: block
+			display: inline-block
 			padding-bottom: 1em
 			padding-left: 2em
-			position: relative
-			bottom: 3.5em
+			padding-top: 2em
 
 			.burger-icon
 				display: inline-block

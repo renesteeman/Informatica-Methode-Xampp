@@ -4,7 +4,9 @@ session_start();
 
 <div class="pageContent">
 <head>
+	<!-- meta -->
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<!-- external includes -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -17,79 +19,79 @@ session_start();
     <title>Inforca</title>
 <head>
 
-<header>
-	<div class="navigation">
+	<header>
+		<div class="navigation">
 
-		<h1>
-			<a href="../../index.php">INFORCA</a>
-		</h1>
+			<div class="nav-burger">
+				<div class="burger-icon">
 
-		<div class="nav-wide">
-
-			<div class="nav-bar">
-				<a href="../../index.php">HOME</a>
-				<a href="../../overview.php">OVERVIEW</a>
-				<a href="#">PLANNER</a>
-			</div>
-
-			<div class="empty">
-				<div class="welcome">
-
-					<?php
-						//if logged in say hello, else give the option to login
-						if (isset($_SESSION["username"])){
-							echo
-								'<div>
-									Hi <a href="../../account.php">'.$_SESSION["username"].'</a>
-								</div>
-								<div>
-									<a href="../../../scripts/logoutGeneral.php">logout</a>
-								</div>';
-
-						} else {
-							echo ' not welcome ';
-						}
-					?>
+					<div class="bar1"></div>
+					<div class="bar2"></div>
+					<div class="bar3"></div>
 
 				</div>
+
+				<div class="burger-content">
+					<div class="nav-bar">
+						<a href="index.php">HOME</a>
+						<a href="overview.php">OVERVIEW</a>
+						<a href="#">PLANNER</a>
+					</div>
+
+					<div class="welcome">
+						<?php
+							//if logged in say hello, else give the option to login
+							if (isset($_SESSION["username"])){
+								echo
+									'<div>
+										Hi <a href="./account.php">'.$_SESSION["username"].'</a>
+									</div>
+									<div>
+										<a href="../scripts/logoutGeneral.php">logout</a>
+									</div>';
+
+							} else {
+								echo ' <div><a href="account.php"> login</a></div> ';
+							}
+						?>
+					</div>
+				</div>
 			</div>
-		</div>
 
-		<div class="nav-burger">
-			<div class="burger-icon">
+			<h1 class="INFORCA">
+				<a href="../pages/index.php">INFORCA</a>
+			</h1>
 
-				<div class="bar1"></div>
-				<div class="bar2"></div>
-				<div class="bar3"></div>
+			<div class="nav-wide">
 
-			</div>
-
-			<div class="burger-content">
 				<div class="nav-bar">
-					<a href="../../index.php">HOME</a>
-					<a href="../../overview.php">OVERVIEW</a>
+					<a href="../pages/index.php">HOME</a>
+					<a href="../pages/overview.php">OVERVIEW</a>
 					<a href="#">PLANNER</a>
 				</div>
 
-				<div class="welcome">
-					<?php
-						//if logged in say hello, else give the option to login
-						if (isset($_SESSION["username"])){
-							echo
-								'<div>
-									Hi <a href="../../account.php">'.$_SESSION["username"].'</a>
-								</div>
-								<div>
-									<a href="../../../scripts/logoutGeneral.php">logout</a>
-								</div>';
+				<div class="empty">
+					<div class="welcome">
 
-						} else {
-							echo ' not welcome ';
-						}
-					?>
+						<?php
+							//if logged in say hello, else give the option to login
+							if (isset($_SESSION["username"])){
+								echo
+									'<div>
+										Hi <a href="./account.php">'.$_SESSION["username"].'</a>
+									</div>
+									<div>
+										<a href="../scripts/logoutGeneral.php">logout</a>
+									</div>';
+
+							} else {
+								echo ' <div><a href="account.php"> login</a></div> ';
+							}
+						?>
+
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-</header>
+	</header>

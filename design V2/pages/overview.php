@@ -19,7 +19,7 @@
 		</h3>
 	</div>
 
-	<div class="Overview">
+	<div class="overzicht">
 		<!-- the table as a whole -->
 		<div class="table">
 
@@ -86,9 +86,9 @@
 								$NStudentsCurrentClass = ($NStudents[$i]);
 
 								echo'
-								<div class="class">
+								<div class="headerRow klassen">
 									<!-- table header for this class-->
-									<div class="classHeader">
+									<div class="headerRowContent">
 										<span class="klas">'.$CurrentClass.'</span>
 										<span class="Nleerlingen">'.$NStudentsCurrentClass.' leerlingen </span>
 										<span class="icons">
@@ -146,7 +146,7 @@
 		</h3>
 	</div>
 
-	<div class="Overview">
+	<div class="overzicht">
 		<!-- the table as a whole -->
 		<div class="table">
 
@@ -239,9 +239,9 @@
 
 								echo'
 
-								<div class="class">
+								<div class="headerRow groepen">
 									<!-- table header for this class-->
-									<div class="classHeader">
+									<div class="headerRowContent">
 										<span class="groep">'.$CurrentGroupName.'</span>
 										<span class="Nleden">'.$NMembersCurrentGroup.' groepsleden </span>
 										<span class="klassen">';

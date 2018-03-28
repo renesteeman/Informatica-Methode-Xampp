@@ -145,7 +145,8 @@ a:hover
 	.tile.active
 		transition: none
 		background: linear-gradient(to bottom right, $green-blue, $green)
-		width: 60vw
+		width: 66rem
+		font-size: 125%
 		height: auto
 
 		.tile-chapter
@@ -239,6 +240,16 @@ textarea:hover
 		.tile-content
 			font-size: 125%
 
+		.tile.active
+			width: 52rem
+			font-size: 110%
+
+			.tile-paragraphs
+				ol
+					margin-left: 2%
+					ul
+						padding-left: 0
+
 @media (max-width: $large)
 	.navigation
 		background-attachment: fixed
@@ -322,10 +333,14 @@ textarea:hover
 			font-size: 150%
 
 		.tile.active
+			width: 34rem
 			.tile-content
 				.tile-paragraphs
 					ol
-						margin-left: 5%
+						margin-left: 2%
+
+						ul
+							padding-left: 0
 
 @media (max-width: $medium)
 	.chapter-tiles
@@ -342,12 +357,15 @@ textarea:hover
 			font-size: 200%
 
 		.tile.active
+			width: 100%
+			line-height: 20em
+			height: 20em
+
 			.tile-content
+				font-size: 100%
+
 				.tile-paragraphs
 					ol
-						margin-left: 0
-						padding-left: 1em
-
+						margin-left: 1%
 						ul
 							padding-left: 0
-							padding-top: 1em

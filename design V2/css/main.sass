@@ -287,13 +287,13 @@ textarea:hover
 
 		.nav-burger.active
 			position: relative
-			top: -5em
-			left: -0.5em
 			background-color: $blue
 			background: linear-gradient(to bottom right, $blue, $blue-green)
 			background-attachment: fixed
 			padding-top: 2em
-			padding-left: 2.5em
+			padding-left: 2em
+			height: 100%
+			font-size: 2em
 			width: 100%
 
 			.burger-icon
@@ -310,13 +310,13 @@ textarea:hover
 					transition: 0.4s
 
 				.bar1
-					transform: rotate(-45deg) translate(-9px, 6px)
+					transform: rotate(-45deg) translate(-12px, 12px)
 
 				.bar2
 					opacity: 0
 
 				.bar3
-					transform: rotate(45deg) translate(-8px, -8px)
+					transform: rotate(45deg) translate(-12px, -12px)
 
 			.burger-content
 				z-index: 100
@@ -331,6 +331,17 @@ textarea:hover
 					color: $white
 					display: block
 					text-align: left
+
+				.nav-bar
+					a
+						margin-top: 1em
+
+				.welcome
+					margin-top: 1em
+
+					a
+						display: inline-block
+
 
 	.chapter-tiles
 		grid-template-columns: auto auto
@@ -352,7 +363,7 @@ textarea:hover
 	.bar
 		h3
 			margin-left: 20px
-			margin-right: 6px
+			margin-right: 20px
 
 	.chapter-tiles
 		grid-template-columns: auto

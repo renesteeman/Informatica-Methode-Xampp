@@ -48,28 +48,58 @@
 			//update naam
 			if(isset($_POST['Nnaam'])){
 				$Nnaam = mysqli_real_escape_string($conn, check_input($_POST['Nnaam']));
-				if($Nnaam != $Cnaam & $Nnaam != ''){
-					$sql = "UPDATE users SET naam='$Nnaam' WHERE username='$user'";
-					if (mysqli_query($conn, $sql)) {
-					    echo "Naam succesvol bijgewerkt </br>";
+
+				$sql = "SELECT naam FROM users WHERE naam='$Nnaam'";
+				if (mysqli_query($conn, $sql)) {
+
+					$result = mysqli_query($conn, $sql);
+
+					//geen account met nieuwe naam gevonden
+					if(mysqli_num_rows($result)==0){
+						if($Nnaam != $Cnaam & $Nnaam != ''){
+							$sql = "UPDATE users SET naam='$Nnaam' WHERE username='$user'";
+							if (mysqli_query($conn, $sql)) {
+							    echo "Naam succesvol bijgewerkt </br>";
+							} else {
+							    echo "SQL error report to admin";
+							}
+						}
 					} else {
-					    echo "Error updating record: " . mysqli_error($conn);
+						echo "Naam al in gebruik";
 					}
+				} else {
+					echo "SQL error report to admin";
 				}
 			}
 
 			//update gebruikersnaam
 			if(isset($_POST['Nusername'])){
 				$Nusername = mysqli_real_escape_string($conn, check_input($_POST['Nusername']));
-				if($Nusername != $Cusername & $Nusername != ''){
-					$sql = "UPDATE users SET username='$Nusername' WHERE username='$user'";
-					if (mysqli_query($conn, $sql)) {
-					    echo "Gebruikersnaam succesvol bijgewerkt </br>";
-						$_SESSION["username"] = $Nusername;
-						$user = $Nusername;
+
+				$sql = "SELECT naam FROM users WHERE username='$Nusername'";
+				if (mysqli_query($conn, $sql)) {
+
+					$result = mysqli_query($conn, $sql);
+
+					//geen account met nieuwe naam gevonden
+					if(mysqli_num_rows($result)==0){
+						if($Nusername != $Cusername & $Nusername != ''){
+							$sql = "UPDATE users SET username='$Nusername' WHERE username='$user'";
+
+							if (mysqli_query($conn, $sql)) {
+							    echo "Gebruikersnaam succesvol bijgewerkt </br>";
+								$_SESSION["username"] = $Nusername;
+								$user = $Nusername;
+
+							} else {
+							    echo "SQL error report to admin";
+							}
+						}
 					} else {
-					    echo "Error updating record: " . mysqli_error($conn);
+						echo "Gebruikersnaam al in gebruik";
 					}
+				} else {
+					echo "SQL error report to admin";
 				}
 			}
 

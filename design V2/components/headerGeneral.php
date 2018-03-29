@@ -33,8 +33,8 @@
 
 			<div class="burger-content">
 				<div class="nav-bar">
-					<a href="index.php">HOME</a>
-					<a href="overview.php">OVERVIEW</a>
+					<a href="../pages/index.php">HOME</a>
+					<a href="../pages/overview.php">OVERVIEW</a>
 					<a href="#">PLANNER</a>
 				</div>
 

@@ -97,7 +97,7 @@
 									</div>
 
 									<!-- table content for this class-->
-									<div class="classContent">';
+									<div class="rowContent">';
 
 
 									for($j=0; $j<$NStudentsCurrentClass; $j++){
@@ -263,7 +263,7 @@
 
 								echo '
 									<!-- table content for this class-->
-									<div class="classContent">
+									<div class="rowContent">
 
 										<div class="groepInhoud">
 											<span class="groepsBeschrijving">

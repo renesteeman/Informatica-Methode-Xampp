@@ -49,37 +49,9 @@
 						img
 							margin-left: 1em
 
-			.classContent
+			.rowContent
 				display: none
 				word-break: break-all
-
-				.groepInhoud
-					background-color: $blue-green
-					color: $white
-					display: block
-					box-sizing: border-box
-					-webkit-box-sizing: border-box
-					width: 100%
-					padding-left: 4em
-					padding-top: 0.5em
-					padding-bottom: 0.3em
-
-					.groepsBeschrijving
-						width: 80%
-						display: block
-
-					.groepsLink
-						width: 80%
-						display: block
-						padding-top: 0.5em
-						padding-bottom: 0.5em
-
-						a
-							color: $white
-
-						a:hover
-							color: $grey
-
 
 				.row
 					display: block
@@ -115,7 +87,7 @@
 				.row:nth-child(even)
 					background-color: darken($green-blue, 5%)
 
-			.classContent.active
+			.rowContent.active
 				display: block
 
 
@@ -154,7 +126,32 @@
 				span.klassen
 					width: 29%
 
-			.classContent
+		.groepInhoud
+			background-color: $blue-green
+			color: $white
+			display: block
+			box-sizing: border-box
+			-webkit-box-sizing: border-box
+			width: 100%
+			padding-left: 4em
+			padding-top: 0.5em
+			padding-bottom: 0.3em
+
+			.groepsBeschrijving
+				width: 80%
+				display: block
+
+			.groepsLink
+				width: 80%
+				display: block
+				padding-top: 0.5em
+				padding-bottom: 0.5em
+
+				a
+					color: $white
+
+				a:hover
+					color: $grey
 
 
 .addGroupButton

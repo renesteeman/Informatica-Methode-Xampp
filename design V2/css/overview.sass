@@ -169,18 +169,15 @@
 		background: linear-gradient(to bottom right, $green-blue, $blue-green)
 
 @media (max-width: $xlarge)
-	.Overview
+	.overzicht
 		margin-left: 5%
 		margin-right: 5%
 
 		.table
 			width: 100%
 
-@media (max-width: $large)
-	.Overview
-		.table
-			.class
-				.classHeader
+			.headerRow.klassen
+				.headerRowContent
 					span.klas
 						width: 25%
 
@@ -188,4 +185,43 @@
 						width: 45%
 						padding-right: 5%
 
+			.headerRow.groepen
+				.headerRowContent
+					span.groep
+						width: 25%
+
+					span.Nleden
+						width: 30%
+
+					span.klassen
+						width: 40%
+
 					span.icons
+						display: block
+
+@media (max-width: $large)
+	.overzicht
+		.table
+			.headerRow.klassen
+				.headerRowContent
+					span.klas
+
+					span.Nleerlingen
+
+			.headerRow.groepen
+				.headerRowContent
+					span.groep
+						width: 100%
+						display: block
+
+					span.Nleden
+						width: 100%
+						display: block
+
+					span.klassen
+						width: 100%
+						display: block
+
+					span.icons
+						width: 100%
+						display: block

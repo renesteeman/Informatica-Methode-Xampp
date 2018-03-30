@@ -15,13 +15,16 @@
 		$email = mysqli_real_escape_string($conn, check_input($_POST['email']));
 
 		//get user with this email
-		$sql = "SELECT naam FROM users WHERE email='$email'";
+		$sql = "SELECT username FROM users WHERE email='$email'";
 
 		if (mysqli_query($conn, $sql)) {
 
 			$result = mysqli_query($conn, $sql);
 
 			if (mysqli_num_rows($result)!=0) {
+
+				$result = mysqli_fetch_assoc($result);
+				$username = $result['username'];
 
 				//create password
 				$letters = array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
@@ -57,11 +60,11 @@
 				$sql = "UPDATE users SET password = '$HashedPassword' WHERE email='$email'";
 				if (mysqli_query($conn, $sql)) {
 					//send mail
-					$msg = "Hallo, uw nieuwe wachtwoord is: ".$password;
+					$msg = "Hallo, uw nieuwe wachtwoord voor uw account is: ".$password." En uw gebruikernaam is: ".$username;
 
 					$subject = "Nieuw wachtwoord";
 
-					$header = "From: noreply.inforca.nl@gmail.com";
+					$header = "From: noreply@inforca.nl";
 
 					if (mail($email, $subject, $msg, $header)) {
 						echo("<p>Email verzonden</p>");

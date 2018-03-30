@@ -59,7 +59,7 @@ session_start();
 			</div>
 
 			<h1 class="INFORCA">
-				<a href="../pages/index.php">INFORCA</a>
+				<a href="../../index.php">INFORCA</a>
 			</h1>
 
 			<div class="nav-wide">

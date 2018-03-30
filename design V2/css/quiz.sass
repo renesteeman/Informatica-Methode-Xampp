@@ -1,0 +1,117 @@
+@import "variables.sass"
+
+.title-small
+	background-color: $grey
+	padding-top: 1em
+	padding-bottom: 1em
+
+	h2
+		margin: 0
+		margin-left: 20%
+
+.quiz-bar
+	font-size: 2em
+	background-color: $blue
+	text-align: center
+	color: $white
+	padding-top: 0.5em
+	padding-bottom: 0.5em
+	box-shadow: 0 5px 20px darken($white, 50%)
+	background: linear-gradient(to bottom right, $blue, $blue-green)
+
+.bar-s
+	text-align: center
+	color: $white
+	padding-top: 1em
+	padding-bottom: 1em
+	background-color: mix($blue-green, $blue, 50%)
+	position: relative
+	z-index: 20
+	box-shadow: 0 2px 10px darken($white, 50%)
+	transition: box-shadow 0.4s
+
+	h3
+		margin: 0
+		font-size: 2em
+
+.vraag
+	width: 60%
+	min-height: 60%
+	margin-left: 20%
+	margin-top: 40px
+	background-color: lighten($white, 5%)
+	border-radius: 4px
+	box-shadow: 0 5px 10px darken($white, 50%)
+
+	.vraagInhoud
+		font-size: 2em
+		text-align: center
+		color: $white
+		padding-top: 0.8em
+		padding-bottom: 0.8em
+		background-color: mix($blue-green, $blue, 50%)
+		position: relative
+		z-index: 20
+		box-shadow: 0 2px 10px darken($white, 50%)
+		transition: box-shadow 0.4s
+
+	.antwoorden
+		margin-left: 2rem
+		padding-top: 1em
+
+		ul
+			list-style-type: none
+			margin-top: 1em
+
+			li
+				min-height: 3em
+
+		input
+			box-shadow: none
+
+
+//checkbox
+.container
+	display: block
+	position: relative
+	padding-left: 1em
+	margin-bottom: 1em
+	cursor: pointer
+	font-size: 2em
+
+.container input
+	position: absolute
+	opacity: 0
+	cursor: pointer
+
+.checkmark
+	margin-top: 0.1em
+	position: absolute
+	top: 0
+	left: 0
+	height: 0.8em
+	width: 0.8em
+	background-color: darken($white, 10%)
+
+.container:hover input ~ .checkmark
+	background-color: darken($white, 20%)
+
+.container input:checked ~ .checkmark
+	background-color: $blue-green
+
+.checkmark:after
+	content: ""
+	position: absolute
+	display: none
+
+.container input:checked ~ .checkmark:after
+	display: block
+
+.container .checkmark:after
+	left: 9px
+	top: 5px
+	width: 5px
+	height: 10px
+	border: solid white
+	border-width: 0 3px 3px 0
+	transform: rotate(45deg)

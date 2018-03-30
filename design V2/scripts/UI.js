@@ -169,7 +169,4 @@ $(document).ready(function(){
 		}
 	});
 
-
-
-
 });

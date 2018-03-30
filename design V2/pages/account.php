@@ -68,18 +68,6 @@
 							<input type="password" placeholder="Bevestig wachtwoord" name="NpasswordConfirm" maxlength="50">
 						</li>
 						<li>
-							<label>Groep</label>
-							<select class="defaultSelect" name="Ngroep">
-								<option value="" >'.$Cgroep.'</option>
-
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-							</select>
-						</li>
-						<li>
 							<label>Email</label>
 							<input type="email" placeholder="'.$Cemail.'" name="Nemail" maxlength="50">
 						</li>
@@ -110,6 +98,13 @@
 						</li>
 						<li>
 							<input type="submit" value="login">
+						</li>
+						<li>
+							<div class="resetPasswordButton">
+								<a href="../scripts/resetPswFront.php">
+									wachtwoord vergeten
+								</a>
+							</div>
 						</li>
 					</ul>
 				</form>

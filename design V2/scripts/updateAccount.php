@@ -41,7 +41,6 @@
 				//C stands for Current and N stands for New
 				$Cnaam = $result['naam'];
 				$Cusername = $result['username'];
-				$Cgroep = $result['group_name'];
 				$Cemail = $result['email'];
 			}
 
@@ -116,19 +115,6 @@
 					$sql = "UPDATE users SET password='$Npassword' WHERE username='$user'";
 					if (mysqli_query($conn, $sql)) {
 					    echo "Wachtwoord succesvol bijgewerkt </br>";
-					} else {
-					    echo "Error updating record: " . mysqli_error($conn);
-					}
-				}
-			}
-
-			//update group
-			if(isset($_POST['Ngroep'])){
-				$Ngroep = mysqli_real_escape_string($conn, check_input($_POST['Ngroep']));
-				if($Ngroep != $Cgroep & $Ngroep != ''){
-					$sql = "UPDATE users SET group_name='$Ngroep' WHERE username='$user'";
-					if (mysqli_query($conn, $sql)) {
-					    echo "Groep succesvol bijgewerkt </br>";
 					} else {
 					    echo "Error updating record: " . mysqli_error($conn);
 					}

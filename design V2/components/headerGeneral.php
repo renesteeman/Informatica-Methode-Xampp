@@ -44,14 +44,14 @@
 						if (isset($_SESSION["username"])){
 							echo
 								'<div>
-									Hi <a href="./account.php">'.$_SESSION["username"].'</a>
+									Hi <a href="../pages/account.php">'.$_SESSION["username"].'</a>
 								</div>
 								<div>
 									<a href="../scripts/logoutGeneral.php">logout</a>
 								</div>';
 
 						} else {
-							echo ' <div><a href="account.php"> login</a></div> ';
+							echo ' <div><a href="../pages/account.php"> login</a></div> ';
 						}
 					?>
 				</div>
@@ -78,14 +78,14 @@
 						if (isset($_SESSION["username"])){
 							echo
 								'<div>
-									Hi <a href="./account.php">'.$_SESSION["username"].'</a>
+									Hi <a href="../pages/account.php">'.$_SESSION["username"].'</a>
 								</div>
 								<div>
 									<a href="../scripts/logoutGeneral.php">logout</a>
 								</div>';
 
 						} else {
-							echo ' <div><a href="account.php"> login</a></div> ';
+							echo ' <div><a href="../pages/account.php"> login</a></div> ';
 						}
 					?>
 

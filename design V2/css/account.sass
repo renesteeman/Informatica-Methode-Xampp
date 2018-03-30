@@ -4,6 +4,7 @@
 	margin-left: 20%
 	margin-top: 40px
 	margin-bottom: 40px
+	padding-bottom: 1em
 	width: 60%
 	background-color: $grey
 	box-shadow: inset 0 0 0 0 darken($white, 10%), 6px 6px 8px darken($white, 20%)
@@ -37,6 +38,27 @@
 	.loginForm
 		padding-top: 2em
 		padding-left: 2em
+
+	.resetPasswordButton
+		font-size: 2em
+		width: 10.5em
+		padding: 12px 12px
+		border-radius: 4px
+		background-color: mix($red, $white, 90%)
+		box-shadow: 4px 4px 8px darken($green-blue, 20%)
+		transition: background .5s ease-out, box-shadow 0.5s ease-in-out
+		text-align: center
+		padding-top: 0.4em
+		margin-left: 3em
+		margin-bottom: 2em
+
+	.resetPasswordButton:hover
+		background-color: darken($red, 5%)
+		cursor: default
+
+		a:hover
+			color: $black
+			cursor: default
 
 @media (max-width: $large)
 	.login

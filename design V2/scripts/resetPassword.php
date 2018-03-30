@@ -1,0 +1,83 @@
+<?php
+	include('DB_connect.php');
+	session_start();
+
+	//function to check and clean input
+	function check_input($data) {
+		$data = trim($data, " ");
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		return $data;
+	}
+
+	//get given data
+	if(isset($_POST)){
+		$email = mysqli_real_escape_string($conn, check_input($_POST['email']));
+
+		//get user with this email
+		$sql = "SELECT naam FROM users WHERE email='$email'";
+
+		if (mysqli_query($conn, $sql)) {
+
+			$result = mysqli_query($conn, $sql);
+
+			if (mysqli_num_rows($result)!=0) {
+
+				//create password
+				$letters = array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
+				$numbers = array("1","2","3","4","5","6","7","8","9","0");
+				$specials = array("!","@","#","$","%","?");
+
+				$password = "";
+
+				for ($i=0; $i<20; $i++){
+					$ran1 = rand(0, 2);
+
+					if ($ran1 == 0){
+						$ran2 = rand(0,25);
+						$char = $letters[$ran2];
+						$password.=$char;
+
+					} elseif ($ran1 == 1) {
+						$ran2 = rand(0,9);
+						$number = $numbers[$ran2];
+						$password.=$number;
+
+					} elseif ($ran1 == 2) {
+						$ran2 = rand(0,5);
+						$special = $specials[$ran2];
+						$password.=$special;
+					}
+				}
+
+				//hash password
+				$HashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+				//stel nieuw wachtwoord in
+				$sql = "UPDATE users SET password = '$HashedPassword' WHERE email='$email'";
+				if (mysqli_query($conn, $sql)) {
+					//send mail
+					$msg = "Hallo, uw nieuwe wachtwoord is: ".$password;
+
+					$subject = "Nieuw wachtwoord";
+
+					$header = "From: noreply.inforca.nl@gmail.com";
+
+					if (mail($email, $subject, $msg, $header)) {
+						echo("<p>Email verzonden</p>");
+					} else {
+						echo("<p>Email delivery failed…</p>");
+					}
+
+				}
+
+			 } else {
+			 	echo "Geen account gevonden";
+			 }
+
+		} else {
+			echo "Error with sql execution, please report to admin </br>";
+		}
+	}
+
+?>

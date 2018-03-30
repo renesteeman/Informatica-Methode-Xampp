@@ -20,10 +20,10 @@
 	</div>
 
 	<div class="main">
-		<form class="accountSettingsForm" method="post" action="../scripts/updateAccount.php" accept-charset="UTF-8">
+		<form class="accountSettingsForm" method="post" action="resetPassword.php" accept-charset="UTF-8">
 
 			<label>Email</label>
-			<input type="email" placeholder="email adres"name="email" maxlength="50">
+			<input type="email" placeholder="email adres" name="email" maxlength="50" required>
 
 			<input type="submit" value="reset wachtwoord"/>
 

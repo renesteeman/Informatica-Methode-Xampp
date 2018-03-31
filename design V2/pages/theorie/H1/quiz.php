@@ -14,11 +14,12 @@
 
 	<div class="quiz-bar">
 		<!-- TODO show actual number -->
-		vraag 1/5
+		1/5 beantwoord
 	</div>
 
 	<div class="vraag">
-		<div class="vraagInhoud">
+		<!-- vraag 1-->
+		<div class="vraagBalk">
 			Wat is 1000111 binair in het hexadecimaal systeem?
 		</div>
 		<div class="antwoorden">
@@ -49,6 +50,53 @@
 				</li>
 			</ul>
 		</div>
+
+		<!-- vraag 2-->
+		<div class="vraagBalk">
+			ahdsf
+		</div>
+		<div class="antwoorden">
+			<ul>
+				<li>
+					<label class="container">113
+						<input type="checkbox" class="single-select-checkbox" id='checkbox1'>
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">80
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">71
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container" class="single-select-checkbox">4
+						<input type="checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+			</ul>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	</div>
 
 

@@ -26,6 +26,7 @@ $(document).ready(function(){
 
 	});
 
+	//paragraph
 	$(".bar-s").click(function(){
 		$(this).next().slideToggle();
 		$(this).toggleClass("active");
@@ -34,6 +35,7 @@ $(document).ready(function(){
 
 	$(".theorie-answers").slideToggle(0);
 
+	//groepen
 	$('.addLid').children().val(' ');
 	window.setTimeout(addLid, 100);
 
@@ -63,6 +65,7 @@ $(document).ready(function(){
 		$(this).parent().remove();
 	});
 
+	//create group
 	$('.createGroupForm').submit(function(event){
 		event.preventDefault();
 
@@ -92,6 +95,7 @@ $(document).ready(function(){
 
 	});
 
+	//edit group sent data
 	$(".Edit").click(function(){
 
 		var groupname = $(this).parent().parent().parent().children().first().children().first().text();
@@ -115,6 +119,7 @@ $(document).ready(function(){
 		event.preventDefault();
 	});
 
+	//edit group
 	$("#editGroupConfirm").click(function(){
 		var NGname = $("input[name='NGnaam']").val();
 		var NGbeschrijving = $("textarea[name='NGomschrijving']").val();
@@ -143,6 +148,7 @@ $(document).ready(function(){
 		});
 	});
 
+	//delete group data
 	$('.deleteGroupButton').click(function(){
 		if (confirm("Are you sure you want to delete the group?")){
 			var password = $("input[name='password']").val();
@@ -168,8 +174,28 @@ $(document).ready(function(){
 		}
 	});
 
+	//quiz
+	function updateQuizHeader(){
+		var aantalVragenBeantwoord = $('input[type=checkbox]:checked').length;
+		var aantalVragen = $('.vraagBalk').length;
+		$('.quiz-bar').html(aantalVragenBeantwoord + ' uit ' + aantalVragen + ' vragen beantwoord');
+	};
+
+	updateQuizHeader();
+
 	$('input[type="checkbox"]').on('change', function() {
-	   $('input[type="checkbox"]').not(this).prop('checked', false);
+		var checkBoxesQuestion = $(this).parent().parent().parent().find('input[type=checkbox]');
+		$(checkBoxesQuestion).not(this).prop('checked', false);
+		updateQuizHeader();
 	});
-	
+
+	$(".vraagBalk").click(function(){
+		$(this).next().slideToggle();
+		$(this).toggleClass("active");
+		$(this).next().next().toggleClass("after-active");
+	});
+
+
+
+
 });

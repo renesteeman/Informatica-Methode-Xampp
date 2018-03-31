@@ -36,14 +36,13 @@
 
 .vraag
 	width: 60%
-	min-height: 60%
 	margin-left: 20%
 	margin-top: 40px
 	background-color: lighten($white, 5%)
 	border-radius: 4px
 	box-shadow: 0 5px 10px darken($white, 50%)
 
-	.vraagInhoud
+	.vraagBalk
 		font-size: 2em
 		text-align: center
 		color: $white
@@ -54,6 +53,12 @@
 		z-index: 20
 		box-shadow: 0 2px 10px darken($white, 50%)
 		transition: box-shadow 0.4s
+
+	.vraagBalk.active
+		box-shadow: 0 0px 0px darken($white, 50%)
+
+	.vraagBalk.after-active
+		box-shadow: 0 4px 10px -2px darken($white, 50%)
 
 	.antwoorden
 		margin-left: 2rem

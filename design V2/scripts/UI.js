@@ -96,7 +96,6 @@ $(document).ready(function(){
 
 		var groupname = $(this).parent().parent().parent().children().first().children().first().text();
 
-
 		//sent values of group via ajax to editGroupFront.php
 		jqXHR = $.ajax({
 			method: "POST",
@@ -169,4 +168,8 @@ $(document).ready(function(){
 		}
 	});
 
+	$('input[type="checkbox"]').on('change', function() {
+	   $('input[type="checkbox"]').not(this).prop('checked', false);
+	});
+	
 });

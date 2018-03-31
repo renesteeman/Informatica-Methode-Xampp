@@ -3,7 +3,6 @@
 ?>
 
 <link rel="stylesheet" href="../../../css/quiz.min.css">
-<link rel="stylesheet" href="../../../scripts/UI.js">
 
 <body>
 
@@ -26,7 +25,7 @@
 			<ul>
 				<li>
 					<label class="container">113
-						<input type="checkbox" class="single-select-checkbox">
+						<input type="checkbox" class="single-select-checkbox" id='checkbox1'>
 						<span class="checkmark"></span>
 					</label>
 				</li>
@@ -44,7 +43,7 @@
 				</li>
 				<li>
 					<label class="container" class="single-select-checkbox">4
-						<input type="radio">
+						<input type="checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>

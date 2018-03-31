@@ -34,16 +34,15 @@
 		margin: 0
 		font-size: 2em
 
-.vraag
+.vragen
 	width: 60%
 	margin-left: 20%
 	margin-top: 40px
 	background-color: lighten($white, 5%)
-	border-radius: 4px
 	box-shadow: 0 5px 10px darken($white, 50%)
 
 	.vraagBalk
-		font-size: 2em
+		font-size: 1.8em
 		text-align: center
 		color: $white
 		padding-top: 0.8em
@@ -76,14 +75,12 @@
 
 
 //checkbox
-
 .container
 	display: block
 	position: relative
 	padding-left: 1em
-	margin-bottom: 1em
 	cursor: pointer
-	font-size: 2em
+	font-size: 1.5em
 
 .container input
 	position: absolute
@@ -114,10 +111,23 @@
 	display: block
 
 .container .checkmark:after
-	left: 9px
-	top: 5px
+	left: 6px
+	top: 3px
 	width: 5px
 	height: 10px
 	border: solid white
 	border-width: 0 3px 3px 0
 	transform: rotate(45deg)
+
+//submit button
+
+input[type=submit]
+	font-size: 2em
+	margin-left: 20%
+	margin-bottom: 10em
+	box-shadow: 4px 4px 8px darken($white, 20%)
+	padding: 12px 12px
+	border-radius: 4px
+	height: 2em
+	border: 2px solid $grey
+	transition: background .5s ease-out, box-shadow 0.5s ease-in-out

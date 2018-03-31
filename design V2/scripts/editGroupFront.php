@@ -124,7 +124,7 @@ $groupname = mysqli_real_escape_string($conn, check_input($_SESSION['groupname']
 					<div class="center">
 					</br></br>
 						<div class="deleteGroupButton">
-							Delete groep
+							Verwijder groep
 						</div>
 					</div>
 				</li>

@@ -13,11 +13,10 @@
 	</div>
 
 	<div class="quiz-bar">
-		<!-- TODO show actual number -->
-		1/5 beantwoord
+		<!-- filled in with JS -->
 	</div>
 
-	<div class="vraag">
+	<div class="vragen">
 		<!-- vraag 1-->
 		<div class="vraagBalk">
 			Wat is 1000111 binair in het hexadecimaal systeem?
@@ -99,6 +98,7 @@
 
 	</div>
 
+	<input type="submit" value="controleer"/>
 
 
 	</div>

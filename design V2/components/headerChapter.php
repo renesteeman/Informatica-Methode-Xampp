@@ -34,7 +34,7 @@ session_start();
 				<div class="burger-content">
 					<div class="nav-bar">
 						<a href="../../index.php">HOME</a>
-						<a href="../../overview.php">OVERVIEW</a>
+						<a href="../../overview.php">OVERZICHT</a>
 						<a href="#">PLANNER</a>
 					</div>
 
@@ -44,10 +44,10 @@ session_start();
 						if (isset($_SESSION["username"])){
 							echo
 								'<div>
-									Hi <a href="../../account.php">'.$_SESSION["username"].'</a>
+									Welkom <a href="../../account.php">'.$_SESSION["username"].'</a>
 								</div>
 								<div>
-									<a href="../../../scripts/logoutGeneral.php">logout</a>
+									<a href="../../../scripts/logoutGeneral.php">Log uit</a>
 								</div>';
 
 						} else {
@@ -66,7 +66,7 @@ session_start();
 
 				<div class="nav-bar">
 					<a href="../../index.php">HOME</a>
-					<a href="../../overview.php">OVERVIEW</a>
+					<a href="../../overview.php">OVERZICHT</a>
 					<a href="#">PLANNER</a>
 				</div>
 
@@ -78,10 +78,10 @@ session_start();
 							if (isset($_SESSION["username"])){
 								echo
 									'<div>
-										Hi <a href="../../account.php">'.$_SESSION["username"].'</a>
+										Welkom <a href="../../account.php">'.$_SESSION["username"].'</a>
 									</div>
 									<div>
-										<a href="../../../scripts/logoutGeneral.php">logout</a>
+										<a href="../../../scripts/logoutGeneral.php">Log uit</a>
 									</div>';
 
 							} else {

@@ -199,11 +199,32 @@ $(document).ready(function(){
 		var Nantwoorden = $(this).prev().children('.antwoorden').find('input[type="checkbox"]:checked').parent().length;
 		var antwoorden = [];
 
+		var url = window.location.href;
+		var chapterLocation = url.search("H") + 1;
+		var chapter = url.charAt(chapterLocation);
+
 		for(i=0; i<Nantwoorden;i++){
 			var antwoord = $(this).prev().children('.antwoorden').find('input[type="checkbox"]:checked').parent().eq(i).text();
 			antwoord = $.trim(antwoord);
 			antwoorden.push(antwoord);
 		}
+
+		//sent the given answers to the quiz php
+		/*
+		jqXHR = $.ajax({
+			method: "POST",
+			url: '../scripts/quiz.php',
+			data: {antwoorden: antwoorden, hoofdstuk: chapter}
+		});
+
+		jqXHR.done(function(msg) {
+			window.alert(msg);
+		});
+
+		jqXHR.fail(function( jqXHR) {
+		  alert("AJAX failed, contact admin");
+	  });
+	  */
 
 	});
 

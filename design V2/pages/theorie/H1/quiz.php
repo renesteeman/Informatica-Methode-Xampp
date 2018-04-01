@@ -19,7 +19,7 @@
 	<div class="vragen">
 		<!-- vraag 1-->
 		<div class="vraagBalk">
-			Wat is 1000111 binair in het hexadecimaal systeem?
+			Wat is 1000111 binair in het decimaal systeem?
 		</div>
 		<div class="antwoorden">
 			<ul>
@@ -98,7 +98,7 @@
 
 	</div>
 
-	<input type="submit" value="controleer"/>
+	<input type="submit" value="controleer" class="controleerAntwoordButton"/>
 
 
 	</div>

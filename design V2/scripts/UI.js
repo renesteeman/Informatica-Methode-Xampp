@@ -195,6 +195,17 @@ $(document).ready(function(){
 		$(this).next().next().toggleClass("after-active");
 	});
 
+	$('.controleerAntwoordButton').click(function(){
+		var Nantwoorden = $(this).prev().children('.antwoorden').find('input[type="checkbox"]:checked').parent().length;
+		var antwoorden = [];
+
+		for(i=0; i<Nantwoorden;i++){
+			var antwoord = $(this).prev().children('.antwoorden').find('input[type="checkbox"]:checked').parent().eq(i).text();
+			antwoord = $.trim(antwoord);
+			antwoorden.push(antwoord);
+		}
+
+	});
 
 
 

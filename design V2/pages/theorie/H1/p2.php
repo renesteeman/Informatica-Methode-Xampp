@@ -176,7 +176,7 @@
 					Delen
 
 					<ol>
-						<li>11</li>
+						<li>1</li>
 						<li>1011</li>
 					</ol>
 				</li>

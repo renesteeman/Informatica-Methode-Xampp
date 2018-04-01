@@ -196,38 +196,41 @@ $(document).ready(function(){
 	});
 
 	$('.controleerAntwoordButton').click(function(){
-		var Nantwoorden = $(this).prev().children('.antwoorden').find('input[type="checkbox"]:checked').parent().length;
+		var aantalVragenBeantwoord = $('input[type=checkbox]:checked').length;
+		var aantalVragen = $('.vraagBalk').length;
 		var antwoorden = [];
 
 		var url = window.location.href;
 		var chapterLocation = url.search("H") + 1;
 		var chapter = url.charAt(chapterLocation);
 
-		for(i=0; i<Nantwoorden;i++){
+		for(i=0; i<aantalVragenBeantwoord;i++){
 			var antwoord = $(this).prev().children('.antwoorden').find('input[type="checkbox"]:checked').parent().eq(i).text();
 			antwoord = $.trim(antwoord);
 			antwoorden.push(antwoord);
 		}
 
-		//sent the given answers to the quiz php
-		/*
-		jqXHR = $.ajax({
-			method: "POST",
-			url: '../scripts/quiz.php',
-			data: {antwoorden: antwoorden, hoofdstuk: chapter}
-		});
+		if(aantalVragen == aantalVragenBeantwoord){
+			//sent the given answers to the quiz php
+			jqXHR = $.ajax({
+				method: "POST",
+				url: '../../../scripts/quiz.php',
+				data: {antwoorden: antwoorden, hoofdstuk: chapter}
+			});
 
-		jqXHR.done(function(msg) {
-			window.alert(msg);
-		});
+			jqXHR.done(function(msg) {
+				window.alert(msg);
+			});
 
-		jqXHR.fail(function( jqXHR) {
-		  alert("AJAX failed, contact admin");
-	  });
-	  */
+			jqXHR.fail(function( jqXHR) {
+				alert("AJAX failed, contact admin");
+			});
+
+		} else {
+			alert('Beantwoord eerst alle vragen');
+		}
 
 	});
-
 
 
 });

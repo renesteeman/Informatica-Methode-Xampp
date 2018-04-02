@@ -6,13 +6,13 @@
 
 	<div class="title-small">
 		<h2>
-			H1 §1 het binair systeem
+			H2 §3 binair?
 		</h2>
 	</div>
 
 	<div class="bar-par-overview">
 		<div class="paragraph-tiles">
-			<div class="ptile active">
+			<div class="ptile">
 				<span class="ptile-content"><a href="p1.php">
 					§1
 				</a></span>
@@ -22,7 +22,7 @@
 					§2
 				</a></span>
 			</div>
-			<div class="ptile">
+			<div class="ptile active">
 				<span class="ptile-content"><a href="p3.php">
 					§3
 				</a></span>
@@ -30,11 +30,6 @@
 			<div class="ptile">
 				<span class="ptile-content"><a href="p4.php">
 					§4
-				</a></span>
-			</div>
-			<div class="ptile">
-				<span class="ptile-content"><a href="p5.php">
-					§5
 				</a></span>
 			</div>
 
@@ -49,28 +44,12 @@
 		</div>
 
 		<div class="theorie-content">
-			<p>
-				<p>
-					Een computer ‘begrijpt’ alleen 0’en en 1’en. Deze worden in de computer heen en weer gestuurd, waardoor de computer taken kan uitvoeren. Ze worden begrepen door de af- of aanwezigheid van stroom, dus een 0 of 1.
+			Een computer ‘begrijpt’ alleen 0’en en 1’en. Deze worden in de computer heen en weer gestuurd, waardoor de computer taken kan uitvoeren. Ze worden begrepen door de af- of aanwezigheid van stroom, dus een 0 of 1.
+			Een hele reeks van deze 0’en en 1’en kan een betekenis hebben, net zoals een letter of cijfer. Samen zijn ze dus nuttig.
+			In binair wordt van rechts naar links geteld. Elke 1 geeft de aanwezigheid van een getal weer en elke 0 de afwezigheid van een getal.
+			Alle 1’en samen, inclusief de ruimte ertussen, geven een volledige waarde weer. De waarde van de 1 wordt bepaald door de plek die de 1 heeft binnen de reeks. De eerste plek is 1 waard, de 2e plek is 2 waard, de 3e is 4 waard en zo blijft het zich steeds verdubbelen naarmate het verder naar links gaat.
 
-				</p>
-
-				<p>
-					Een hele reeks van deze 0’en en 1’en kan een betekenis hebben, net zoals een letter of cijfer. Samen zijn ze dus nuttig.
-				</p>
-
-				<p>
-					In binair wordt van rechts naar links geteld. Elke 1 geeft de aanwezigheid van een getal weer en elke 0 de afwezigheid van een getal.
-				</p>
-
-				<p>
-					Alle 1’en samen, inclusief de ruimte ertussen, geven een volledige waarde weer. De waarde van de 1 wordt bepaald door de plek die de 1 heeft binnen de reeks. De eerste plek is 1 waard, de 2e plek is 2 waard, de 3e is 4 waard en zo blijft het zich steeds verdubbelen naarmate het verder naar links gaat.
-				</p>
-			</p>
-			
-			<p>
-				Een voorbeeld is 01001. Als je van links naar rechts telt en alle waardes daarna bij elkaar optelt, kom je op 1+8=9 uit. Dit kan ook andersom 9=8+1, dus eerst 1 en dan 1000. Dat wordt samen 1001 (= 01001).
-			</p>
+			Een voorbeeld is 01001. Als je van links naar rechts telt en alle waardes daarna bij elkaar optelt, kom je op 1+8=9 uit. Dit kan ook andersom 9=8+1, dus eerst 1 en dan 1000. Dat wordt samen 1001 (= 01001).
 
 		</div>
 

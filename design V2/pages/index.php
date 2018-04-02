@@ -26,10 +26,9 @@
 					<ol>
 						<ul><a href="theorie/H1/p1.php">§1 Het binair systeem</ul>
 						<ul><a href="theorie/H1/p2.php">§2 Binair rekenen</a></ul>
-						<ul><a href="theorie/H1/p3.php">§3 Verbanden</a></ul>
-						<ul><a href="theorie/H1/p4.php">§4 Gates</a></ul>
-						<ul><a href="theorie/H1/p5.php">§5 onderdelen van de computer</a></ul>
-						<ul><a href="theorie/H1/p6.php">§6 Software en het OS</a></ul>
+						<ul><a href="theorie/H1/p3.php">§3 Gates</a></ul>
+						<ul><a href="theorie/H1/p4.php">§4 onderdelen van de computer</a></ul>
+						<ul><a href="theorie/H1/p5.php">§5 Software en het OS</a></ul>
 						<ul><a href="theorie/H1/quiz.php">Quiz</a></ul>
 					</ol>
 				</div>
@@ -38,7 +37,18 @@
 
 		<div class="tile">
 			<div class="tile-content">
-				H2 Logica
+				<div class="tile-chapter">
+					H2 logica
+				</div>
+				<div class="tile-paragraphs">
+					<ol>
+						<ul><a href="theorie/H2/p1.php">§1 Introductie tot logica</ul>
+						<ul><a href="theorie/H2/p2.php">§2 Visuele logica</a></ul>
+						<ul><a href="theorie/H2/p3.php">§3 Binair?</a></ul>
+						<ul><a href="theorie/H2/p4.php">§4 Logica en programmeren</a></ul>
+						<ul><a href="theorie/H2/quiz.php">Quiz</a></ul>
+					</ol>
+				</div>
 			</div>
 		</div>
 

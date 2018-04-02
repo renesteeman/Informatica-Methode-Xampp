@@ -35,7 +35,6 @@
 
 		mysqli_close($conn);
 		echo "Error redirecting";
-	   	die();
 
 	} else {
 		echo "False login <br />";

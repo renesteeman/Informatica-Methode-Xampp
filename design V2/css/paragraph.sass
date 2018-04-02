@@ -82,6 +82,7 @@
 			display: block
 			margin-top: 2em
 			margin-bottom: 2em
+			max-width: 100%
 
 		.theorieTitle
 			display: block
@@ -106,6 +107,15 @@
 			li
 				ol
 					list-style-type: lower-latin
+					ol
+						list-style-type: decimal
+
+		.MLquestionAlt
+			li
+				ol
+					list-style-type: decimal
+					ol
+						list-style-type: lower-latin
 
 @media (max-width: $large)
 	.theorie
@@ -115,6 +125,3 @@
 		.theorie-content
 			padding: 1em 0.5em
 			word-break: normal
-
-			img
-				max-width: 100%

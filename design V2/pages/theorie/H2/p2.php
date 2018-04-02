@@ -44,12 +44,21 @@
 		</div>
 
 		<div class="theorie-content">
-			Een computer ‘begrijpt’ alleen 0’en en 1’en. Deze worden in de computer heen en weer gestuurd, waardoor de computer taken kan uitvoeren. Ze worden begrepen door de af- of aanwezigheid van stroom, dus een 0 of 1.
-			Een hele reeks van deze 0’en en 1’en kan een betekenis hebben, net zoals een letter of cijfer. Samen zijn ze dus nuttig.
-			In binair wordt van rechts naar links geteld. Elke 1 geeft de aanwezigheid van een getal weer en elke 0 de afwezigheid van een getal.
-			Alle 1’en samen, inclusief de ruimte ertussen, geven een volledige waarde weer. De waarde van de 1 wordt bepaald door de plek die de 1 heeft binnen de reeks. De eerste plek is 1 waard, de 2e plek is 2 waard, de 3e is 4 waard en zo blijft het zich steeds verdubbelen naarmate het verder naar links gaat.
-
-			Een voorbeeld is 01001. Als je van links naar rechts telt en alle waardes daarna bij elkaar optelt, kom je op 1+8=9 uit. Dit kan ook andersom 9=8+1, dus eerst 1 en dan 1000. Dat wordt samen 1001 (= 01001).
+			<p>
+				De verbanden tussen sets kunnen ook visueel worden weergeven, bijvoorbeeld in de vorm van cirkels. Stel set 1 bevat 27, 3, 8, 21 en 6. Set 2 bevat 3, 0, 20, 8 en 4.
+			</p>
+			<p>
+				Set 1 &cap; 2 is dan:
+				<img src="./afbeeldingen/logic2Mul.svg" class="theorieImage" />
+			</p>
+			<p>
+				Set 1 ∪ set 2 is dan weer te geven als:
+				<img src="./afbeeldingen/logic2Add.svg" class="theorieImage" />
+			</p>
+			<p>
+				Of:
+				<img src="./afbeeldingen/logic2MulCom.svg" class="theorieImage" />
+			</p>
 
 		</div>
 
@@ -61,15 +70,12 @@
 
 		<div class="theorie-content">
 
-			<ol>
+			<ol class="MLquestion">
 				<li>
-					Hoe wordt een nul en een één door een computer begrepen?
-				</li>
-				<li>
-					Vertaal 001, 011, 1001001 naar het decimale systeem (‘normale’ getallen)
-				</li>
-				<li>
-					Vertaal 5, 20 en 40 naar binair
+					<ol>
+						<li>Teken set 1 ∪ set 2 inclusief de getallen</li>
+						<li>Teken set 1 ꓵ set 2 inclusief de getallen</li>
+					</ol>
 				</li>
 			</ol>
 
@@ -83,15 +89,13 @@
 
 		<div class="theorie-content theorie-answers">
 
-			<ol>
+			<ol class="MLquestion">
 				<li>
-					Wel stroom = 1, geen stroom = 0
-				</li>
-				<li>
-					1, 3, 73
-				</li>
-				<li>
-					101, 10100, 101000
+					Stel set 1 bevat 1, 3, 20, 6 en 400. Set 2 bevat 1, 6, 200, 8 en 4.
+					<ol>
+						<li><img src="./afbeeldingen/logic2Ans1.svg" class="theorieImage" /></li>
+						<li><img src="./afbeeldingen/logic2Ans2.svg" class="theorieImage" /></li>
+					</ol>
 				</li>
 			</ol>
 

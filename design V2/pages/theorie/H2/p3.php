@@ -44,12 +44,13 @@
 		</div>
 
 		<div class="theorie-content">
-			Een computer ‘begrijpt’ alleen 0’en en 1’en. Deze worden in de computer heen en weer gestuurd, waardoor de computer taken kan uitvoeren. Ze worden begrepen door de af- of aanwezigheid van stroom, dus een 0 of 1.
-			Een hele reeks van deze 0’en en 1’en kan een betekenis hebben, net zoals een letter of cijfer. Samen zijn ze dus nuttig.
-			In binair wordt van rechts naar links geteld. Elke 1 geeft de aanwezigheid van een getal weer en elke 0 de afwezigheid van een getal.
-			Alle 1’en samen, inclusief de ruimte ertussen, geven een volledige waarde weer. De waarde van de 1 wordt bepaald door de plek die de 1 heeft binnen de reeks. De eerste plek is 1 waard, de 2e plek is 2 waard, de 3e is 4 waard en zo blijft het zich steeds verdubbelen naarmate het verder naar links gaat.
-
-			Een voorbeeld is 01001. Als je van links naar rechts telt en alle waardes daarna bij elkaar optelt, kom je op 1+8=9 uit. Dit kan ook andersom 9=8+1, dus eerst 1 en dan 1000. Dat wordt samen 1001 (= 01001).
+			<p>
+				Een andere manier om logica te gebruiken is met booleans, oftewel ja of nee, 1 of 0.
+				Stel ik wil een witte kat met korte staart of een mannetjes kat v (v = of) een groene kat. Oftewel W(it)*K(ort)+M(an)+G(roen). X kan hier als ‘en’ gezien worden en ‘+’ als of. Stel ik vind een bruine mannetjes kat, dan kan ik dat weergeven als: 0*0+1+0=1, dus het voldoet. NB (nota bene/let op) 1+1=1, want true+true=true.
+			</p>
+			<p>
+				Een computer voert deze taken uit met de gates die in H1 besproken zijn.
+			</p>
 
 		</div>
 
@@ -61,15 +62,25 @@
 
 		<div class="theorie-content">
 
-			<ol>
+			<ol class="MLquestion">
 				<li>
-					Hoe wordt een nul en een één door een computer begrepen?
-				</li>
-				<li>
-					Vertaal 001, 011, 1001001 naar het decimale systeem (‘normale’ getallen)
-				</li>
-				<li>
-					Vertaal 5, 20 en 40 naar binair
+					Je wilt een elektrische auto of een auto op gas of een fiets.
+					<ol>
+						<li>Geef deze wens weer als expressie met letters.</li>
+						<li>Wat is de uitkomst (1 of 0) in de volgende gevallen:
+							<ol>
+								<li>
+									een tesla
+								</li>
+								<li>
+									een monster truck
+								</li>
+								<li>
+									een elektrische motor
+								</li>
+							</ol>
+						</li>
+					</ol>
 				</li>
 			</ol>
 
@@ -83,15 +94,24 @@
 
 		<div class="theorie-content theorie-answers">
 
-			<ol>
+			<ol class="MLquestion">
 				<li>
-					Wel stroom = 1, geen stroom = 0
-				</li>
-				<li>
-					1, 3, 73
-				</li>
-				<li>
-					101, 10100, 101000
+					<ol>
+						<li>E*A+s*G*A+F</li>
+						<li>
+							<ol>
+								<li>
+									1*1+1*0*1+0=1
+								</li>
+								<li>
+									0*1+0*0*1+0=0
+								</li>
+								<li>
+									1*0+1*0*0+0=0
+								</li>
+							</ol>
+						</li>
+					</ol>
 				</li>
 			</ol>
 

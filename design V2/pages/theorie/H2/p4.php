@@ -44,12 +44,15 @@
 		</div>
 
 		<div class="theorie-content">
-			Een computer ‘begrijpt’ alleen 0’en en 1’en. Deze worden in de computer heen en weer gestuurd, waardoor de computer taken kan uitvoeren. Ze worden begrepen door de af- of aanwezigheid van stroom, dus een 0 of 1.
-			Een hele reeks van deze 0’en en 1’en kan een betekenis hebben, net zoals een letter of cijfer. Samen zijn ze dus nuttig.
-			In binair wordt van rechts naar links geteld. Elke 1 geeft de aanwezigheid van een getal weer en elke 0 de afwezigheid van een getal.
-			Alle 1’en samen, inclusief de ruimte ertussen, geven een volledige waarde weer. De waarde van de 1 wordt bepaald door de plek die de 1 heeft binnen de reeks. De eerste plek is 1 waard, de 2e plek is 2 waard, de 3e is 4 waard en zo blijft het zich steeds verdubbelen naarmate het verder naar links gaat.
-
-			Een voorbeeld is 01001. Als je van links naar rechts telt en alle waardes daarna bij elkaar optelt, kom je op 1+8=9 uit. Dit kan ook andersom 9=8+1, dus eerst 1 en dan 1000. Dat wordt samen 1001 (= 01001).
+			<p>
+				Het opdelen van een probleem is erg belangrijk. Voornamelijk bij logisch nadenken en dus ook programmeren. Als je een project gaat uitvoeren moet je een groot probleem in delen kunnen hakken om te zorgen voor overzicht, zodat je weet waar je moet beginnen.
+			</p>
+			<p>
+				Stel je wilt een website gaan maken (meer hierover in H5), dan moet je eerst bedenken waarover het moet gaan, hoe het gaat het heten, hoe de structuur ervan uit moet zien, hoe het vorm gegeven moet worden, enz. Daarna kun je bijvoorbeeld de logica van de site in stukken delen, bijvoorbeeld in de talen php en javascript. Dan ga je logica indelen bij deze talen, bijvoorbeeld mails sturen via php. Dan maak je een bestaand aan, bijvoorbeeld sendMail.php en stel je hierin de logica van het programma op, eerst in het Engels of Nederlands en later in de programmeertaal, dus php.
+			</p>
+			<p>
+				De logica kan bijvoorbeeld zijn: als de gebruiker in het systeem staat voor de mail lijst en er is een nieuwe mail om te sturen, dan stuur mail naar de gebruiker. Je hakt het probleem, de mail sturen dus in kleine stukjes. Vervolgens kun je die stukjes weer gaan uitwerken.
+			</p>
 
 		</div>
 
@@ -63,13 +66,10 @@
 
 			<ol>
 				<li>
-					Hoe wordt een nul en een één door een computer begrepen?
+					Noem minimaal vijf mogelijke stappen die je volgt als je een auto wilt kopen.
 				</li>
 				<li>
-					Vertaal 001, 011, 1001001 naar het decimale systeem (‘normale’ getallen)
-				</li>
-				<li>
-					Vertaal 5, 20 en 40 naar binair
+					Je wilt een mail sturen naar klasgenoten waarvan de naam niet begint met een r, jonger zijn dan 18, ouder dan 16 en graag naar de bioscoop gaan en actiefilms leuk vinden. Noem de stappen die je kunt volgen om een mail te sturen naar deze klasgenoten, noteer minimaal 5 stappen.
 				</li>
 			</ol>
 
@@ -83,15 +83,35 @@
 
 		<div class="theorie-content theorie-answers">
 
-			<ol>
+			<ol class="MLquestionAlt">
 				<li>
-					Wel stroom = 1, geen stroom = 0
+					Juiste mogelijke stappen (er is meer mogelijk):
+					<ol>
+						<li>Kiezen tussen de verschillende soorten aandrijvingen; elektrisch, gas, benzine, diesel of op waterstof?</li>
+						<li>Kiezen hoe snel het moet zijn</li>
+						<li>Het budget bepalen</li>
+						<li>Een kleur kiezen</li>
+						<li>Bezoeken dealer</li>
+						<li>Testrit maken</li>
+						<li>Opties bekijken</li>
+						<li>Betalen</li>
+					</ol>
 				</li>
 				<li>
-					1, 3, 73
-				</li>
-				<li>
-					101, 10100, 101000
+					Juiste mogelijke stappen (er is meer mogelijk):
+					<ol>
+						<li>Schrijf alle namen op van klasgenoten</li>
+						<li>Streep de namen door van mensen waarvan de naam met r begint</li>
+						<li>Je noteert van de overige mensen de leeftijd</li>
+						<li>Je kijkt of de leeftijd van de klasgenoten tussen de 16 en 18 jaar ligt</li>
+						<li>Je vraagt aan deze mensen of ze graag naar de bioscoop gaan</li>
+						<li>De mensen die nee antwoorden streep je op de lijst door</li>
+						<li>Je vraagt aan de mensen die over zijn of ze actiefilms leuk vinden</li>
+						<li>Je vraagt aan de mensen die nog over zijn wat hun e-mailadres is</li>
+						<li>Je stelt een mail op</li>
+						<li>Je vult de adressen in van de overgebleven personen in</li>
+						<li>Je stuurt de mail</li>
+					</ol>
 				</li>
 			</ol>
 

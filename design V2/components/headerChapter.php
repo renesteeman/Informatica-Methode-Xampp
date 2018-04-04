@@ -35,7 +35,7 @@ session_start();
 					<div class="nav-bar">
 						<a href="../../index.php">HOME</a>
 						<a href="../../overview.php">OVERZICHT</a>
-						<a href="#">PLANNER</a>
+						<a href="../../planner.php">PLANNER</a>
 					</div>
 
 					<div class="welcome">
@@ -67,7 +67,7 @@ session_start();
 				<div class="nav-bar">
 					<a href="../../index.php">HOME</a>
 					<a href="../../overview.php">OVERZICHT</a>
-					<a href="#">PLANNER</a>
+					<a href="../../planner.php">PLANNER</a>
 				</div>
 
 				<div class="empty">

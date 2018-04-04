@@ -1,0 +1,77 @@
+@import "variables.sass"
+
+.items
+	margin-left: 20%
+
+	.table
+		display: inline-block
+		width: 80%
+		margin-top: 2em
+		margin-bottom: 2em
+		box-shadow: 0 5px 20px darken($white, 50%)
+		-webkit-backface-visibility: hidden
+
+		.item
+
+			.itemHeader
+				width: 100%
+				background-color: $blue-green
+				color: $white
+				font-size: 2em
+				box-sizing: border-box
+				width: 100%
+				
+				.itemHeaderContent
+					padding-left: 1em
+					padding-bottom: 0.5em
+					padding-top: 0.5em
+
+					span
+						display: inline-block
+						word-break: break-all
+
+					.datum
+						width: 20%
+
+					.naam
+						width: 60%
+
+					.icons
+						span
+							box-sizing: border-box
+							img
+								height: 1.5em
+								width: 1.5em
+								vertical-align: middle
+
+						.Arrow
+							img
+								transform: rotateX(0deg)
+								transition: transform 0.4s
+								transform-origin: 50% 50%
+
+						.Arrow.active
+							img
+								transform: rotateX(180deg)
+
+						.Edit
+							img
+								margin-left: 1em
+
+			.itemContent
+				display: none
+				word-break: break-all
+
+				.itemInhoud
+					display: block
+					box-sizing: border-box
+					width: 100%
+					padding-left: 2em
+					padding-top: 0.5em
+					padding-bottom: 0.3em
+					background-color: $green-blue
+
+					color: $white
+
+			.itemContent.active
+				display: block

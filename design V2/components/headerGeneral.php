@@ -35,7 +35,7 @@
 				<div class="nav-bar">
 					<a href="../pages/index.php">HOME</a>
 					<a href="../pages/overview.php">OVERZICHT</a>
-					<a href="#">PLANNER</a>
+					<a href="../pages/planner.php">PLANNER</a>
 				</div>
 
 				<div class="welcome">
@@ -67,7 +67,7 @@
 			<div class="nav-bar">
 				<a href="../pages/index.php">HOME</a>
 				<a href="../pages/overview.php">OVERZICHT</a>
-				<a href="#">PLANNER</a>
+				<a href="../pages/planner.php">PLANNER</a>
 			</div>
 
 			<div class="empty">

@@ -38,7 +38,7 @@
 				</li>
 				<li>
 					<label>Progressie</label>
-					<div class="ledenLijst">
+					<div class="itemLijst">
 						<ul>
 
 						</ul>

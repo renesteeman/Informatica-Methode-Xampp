@@ -232,5 +232,62 @@ $(document).ready(function(){
 
 	});
 
+	//planner
+	$('.addChapter').children().val(' ');
+	window.setTimeout(addChapter, 100);
+
+	function addChapter(){
+		$('.addChapter').children().val('');
+	}
+
+	$(".addChapterButton").click(function(){
+		var name = $(this).prev().children().val();
+		if(name!=""){
+			var paste = '<li><span class="item">'+ name +'</span><span class="delete">x</span></li>'
+			$(this).prev().children().val('');
+			$(this).parent().prev().children().first().append(paste);
+		}
+
+	});
+
+	$(".addChapter").children().first().keypress(function(event){
+		if(event.keyCode == 13){
+			$('.addChapterButton').click();
+		}
+		return event.keyCode != 13;
+	});
+
+
+	//create Item
+	/*
+	$('.createGroupForm').submit(function(event){
+		event.preventDefault();
+
+		var Gnaam = $('input[name=Gnaam]').val();
+		var Gomschrijving = $('textarea[name=Gomschrijving]').val();
+		var Glink = $('input[name=Glink]').val();
+
+		var Gleden = [];
+		$('.ledenLijst>ul>li>.lid').each(function(index){
+			Gleden.push($(this).text());
+		});
+
+		var password = $('input[name=password]').val();
+
+		//Give php the info it needs (via AJAX)
+		jqXHR = $.ajax({
+			method: "POST",
+			url: "createGroupAjax.php",
+			data: {Gnaam: Gnaam, Gomschrijving: Gomschrijving, Glink: Glink, Gleden: Gleden, password: password}
+		});
+		jqXHR.done(function( msg ) {
+			alert(msg);
+		});
+		jqXHR.fail(function( jqXHR, textStatus ) {
+		  alert( "Request failed: " + textStatus );
+		});
+
+	}); */
+
 
 });

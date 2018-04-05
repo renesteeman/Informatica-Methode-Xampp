@@ -74,9 +74,6 @@
 			//check psw
 			if(password_verify($password, $rightpsw)){
 				if($Inaam != "" & $Iomschrijving != "" & $Iklas != "" & $Iprogressie != "" & $Idatum != ""){
-
-					echo $Idatum;
-
 					//create group
 					$sql = "INSERT INTO planner (titel, beschrijving, progressie, school, klas, datum) VALUES ('$Inaam', '$Iomschrijving', '$Iprogressie', '$Ischool', '$Iklas', '$Idatum')";
 

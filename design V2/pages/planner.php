@@ -68,7 +68,7 @@
 					$Pklas = $result['klas'];
 					$Pfunctie = $result['functie'];
 
-					$sql = "SELECT titel, beschrijving, datum FROM planner WHERE school='$Pschool'";
+					$sql = "SELECT titel, beschrijving, datum, klas FROM planner WHERE school='$Pschool'";
 
 					if (mysqli_query($conn, $sql)) {
 						//get planner info
@@ -81,6 +81,36 @@
 								$Ititel = $row['titel'];
 								$Ibeschrijving = $row['beschrijving'];
 								$Idatum = date('d/m', strtotime($row['datum']));
+								$Iklas = $row['klas'];
+
+								if($Iklas == $Pklas or $Iklas == ""){
+									if($Pfunctie == "leerling"){
+										echo '
+										<div class="item">
+											<div class="itemHeader">
+												<!-- table header for this class-->
+												<div class="itemHeaderContent">
+													<span class="datum">'.$Idatum.'</span>
+													<span class="naam">'.$Ititel.'</span>
+													<span class="icons">
+														<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+													</span>
+												</div>
+
+												<!-- table content for this class-->
+												<div class="itemContent">
+
+													<div class="itemInhoud">
+														<span class="itemBeschrijving">
+															'.$Ibeschrijving.'
+														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										';
+									}
+								}
 
 								if($Pfunctie == "docent"){
 									echo '
@@ -109,33 +139,6 @@
 									</div>
 									';
 
-								}
-
-								if($Pfunctie == "leerling"){
-									echo '
-									<div class="item">
-										<div class="itemHeader">
-											<!-- table header for this class-->
-											<div class="itemHeaderContent">
-												<span class="datum">'.$Idatum.'</span>
-												<span class="naam">'.$Ititel.'</span>
-												<span class="icons">
-													<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
-												</span>
-											</div>
-
-											<!-- table content for this class-->
-											<div class="itemContent">
-
-												<div class="itemInhoud">
-													<span class="itemBeschrijving">
-														'.$Ibeschrijving.'
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-									';
 								}
 							}
 						}

@@ -37,6 +37,14 @@
 					<textarea type="text" placeholder="Omschrijving van het item" name="Iomschrijving" maxlength="500" required></textarea>
 				</li>
 				<li>
+					<label>Klas</label>
+					<input type="text" placeholder="Klas" name="Iklas" maxlength="50" required>
+				</li>
+				<li>
+					<label>Datum</label>
+					<input type="date" placeholder="Datum" name="Idatum" required>
+				</li>
+				<li>
 					<label>Progressie</label>
 					<div class="itemLijst">
 						<ul>
@@ -45,7 +53,7 @@
 					</div>
 					<div class="addChapter">
 						<span class="addChapter">
-							<input type="text" placeholder="Te maken hoofdstuk" name="Ihoofdstukken" maxlength="3" autocomplete="off">
+							<input type="text" placeholder="Te maken hoofdstuk (bv H1)" name="Ihoofdstukken" maxlength="3" autocomplete="off">
 						</span>
 						<span class="plus-sign addChapterButton">+</span>
 					</div>

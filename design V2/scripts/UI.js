@@ -259,17 +259,17 @@ $(document).ready(function(){
 
 
 	//create Item
-	/*
-	$('.createGroupForm').submit(function(event){
+	$('.createItemForm').submit(function(event){
 		event.preventDefault();
 
-		var Gnaam = $('input[name=Gnaam]').val();
-		var Gomschrijving = $('textarea[name=Gomschrijving]').val();
-		var Glink = $('input[name=Glink]').val();
+		var Inaam = $('input[name=Inaam]').val();
+		var Iomschrijving = $('textarea[name=Iomschrijving]').val();
+		var Iklas = $('input[name=Iklas]').val();
+		var Idatum = $('input[name=Idatum]').val();
 
-		var Gleden = [];
-		$('.ledenLijst>ul>li>.lid').each(function(index){
-			Gleden.push($(this).text());
+		var Iprogressie = [];
+		$('.itemLijst>ul>li>.item').each(function(index){
+			Iprogressie.push($(this).text());
 		});
 
 		var password = $('input[name=password]').val();
@@ -277,8 +277,8 @@ $(document).ready(function(){
 		//Give php the info it needs (via AJAX)
 		jqXHR = $.ajax({
 			method: "POST",
-			url: "createGroupAjax.php",
-			data: {Gnaam: Gnaam, Gomschrijving: Gomschrijving, Glink: Glink, Gleden: Gleden, password: password}
+			url: "createItemAjax.php",
+			data: {Inaam: Inaam, Iomschrijving: Iomschrijving, Iklas: Iklas, Iprogressie: Iprogressie, Idatum: Idatum, password: password}
 		});
 		jqXHR.done(function( msg ) {
 			alert(msg);
@@ -287,7 +287,7 @@ $(document).ready(function(){
 		  alert( "Request failed: " + textStatus );
 		});
 
-	}); */
+	}); 
 
 
 });

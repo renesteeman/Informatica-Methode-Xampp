@@ -11,6 +11,12 @@
 	}
 
 	$_SESSION['itemname'] =  mysqli_real_escape_string($conn, check_input($_POST['itemname']));
+	$_SESSION['itemklas'] =  mysqli_real_escape_string($conn, check_input($_POST['itemklas']));
+
+	$gegevendatum = mysqli_real_escape_string($conn, check_input($_POST['itemdatum']));
+	$year = date("Y");
+	$date = $year.'-'.substr($gegevendatum, -2, 2).'-'.substr($gegevendatum, 0, 2);
+	$_SESSION['itemdatum'] = $date;
 
 	print_r ($_SESSION);
 

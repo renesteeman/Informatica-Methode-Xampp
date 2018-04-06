@@ -292,12 +292,14 @@ $(document).ready(function(){
 	$(".editItem").click(function(){
 
 		var itemname = $(this).parent().parent().parent().children().find('.naam').text();
+		var itemklas = $(this).parent().parent().parent().children().find('.hide').text();
+		var itemdatum = $(this).parent().parent().parent().children().find('.datum').text();
 
 		//sent values of group via ajax to editGroupFront.php
 		jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/editItemSetSession.php',
-			data: {itemname: itemname}
+			data: {itemname: itemname, itemklas: itemklas, itemdatum:itemdatum}
 		});
 		jqXHR.done(function(msg) {
 			window.location.href = '../scripts/editItemFront.php';
@@ -350,13 +352,13 @@ $(document).ready(function(){
 		//sent values of group via ajax to editGroupFront.php
 		jqXHR = $.ajax({
 			method: "POST",
-			url: '../scripts/editGroupAjax.php',
+			url: '../scripts/editItemAjax.php',
 			data: {NInaam: NInaam, NIomschrijving:NIomschrijving, NIklas:NIklas, NIdatum:NIdatum, NIprogressie:NIprogressie, password:password}
 		});
 
 		jqXHR.done(function(msg) {
 			window.alert(msg);
-			window.location.href = '../pages/planner.php';
+			//window.location.href = '../pages/planner.php';
 		});
 
 		jqXHR.fail(function( jqXHR) {

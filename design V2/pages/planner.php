@@ -92,6 +92,7 @@
 												<div class="itemHeaderContent">
 													<span class="datum">'.$Idatum.'</span>
 													<span class="naam">'.$Ititel.'</span>
+													<span class="hide">'.$Iklas.'</span>
 													<span class="icons">
 														<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
 													</span>
@@ -120,6 +121,7 @@
 											<div class="itemHeaderContent">
 												<span class="datum">'.$Idatum.'</span>
 												<span class="naam">'.$Ititel.'</span>
+												<span class="hide">'.$Iklas.'</span>
 												<span class="icons">
 													<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
 													<span class="editItem image"><img src="../icons/edit.svg" class="edit"/></span>

@@ -47,7 +47,7 @@ $itemname = mysqli_real_escape_string($conn, check_input($_SESSION['itemname']))
 				</li>
 				<li>
 					<label>Nieuwe klas</label>
-					<input type="text" placeholder="Nieuwe klas waar de opdracht voor is" name="NIklas" maxlength="50">
+					<input type="text" placeholder="Nieuwe klas waar de opdracht voor is" name="NIklas" maxlength="3">
 				</li>
 				<li>
 					<label>Nieuwe datum</label>

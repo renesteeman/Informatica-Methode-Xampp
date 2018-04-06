@@ -62,12 +62,12 @@
 				$sql = "UPDATE planner SET titel='$NInaam' WHERE titel='$CInaam' AND school='$school' AND klas='$CIklas' AND datum='$CIdatum'";
 
 				if (mysqli_query($conn, $sql)) {
-					echo "\nNieuwe groepnaam is succesvol ingesteld";
+					echo "\nNieuwe naam voor opdracht is succesvol ingesteld";
 					$_SESSION["itemnaam"] = $NInaam;
 					$CInaam = $_SESSION["itemnaam"];
 
 				} else {
-					echo "Error with sql execution, please report to admin (Gnaam)";
+					echo "Error with sql execution, please report to admin";
 					$error = 1;
 				}
 			}
@@ -76,9 +76,9 @@
 				$sql = "UPDATE planner SET beschrijving='$NIomschrijving' WHERE titel='$CInaam' AND school='$school' AND klas='$CIklas' AND datum='$CIdatum'";
 
 				if (mysqli_query($conn, $sql)) {
-					echo "\nNieuwe groepsbeschrijving is succesvol ingesteld";
+					echo "\nNieuwe beschrijving voor opdracht is succesvol ingesteld";
 				} else {
-					echo "Error with sql execution, please report to admin (Gbeschrijving)";
+					echo "Error with sql execution, please report to admin";
 					$error = 1;
 				}
 			}
@@ -87,27 +87,32 @@
 				$sql = "UPDATE planner SET klas='$NIklas' WHERE titel='$CInaam' AND school='$school' AND klas='$CIklas' AND datum='$CIdatum'";
 
 				if (mysqli_query($conn, $sql)) {
-					echo "\nNieuwe groepsbeschrijving is succesvol ingesteld";
+					echo "\nNieuwe klas voor opdracht is succesvol ingesteld";
 					$_SESSION["itemklas"] = $NIklas;
 					$CIklas = $_SESSION["itemklas"];
 				} else {
-					echo "Error with sql execution, please report to admin (Gbeschrijving)";
-					$error = 1;
-				}
-			}/*
-
-			if($NIdatum!=""){
-				$sql = "UPDATE datum SET datum='$NIdatum' WHERE titel='$CInaam' AND school='$school' AND klas='$CIklas' AND datum='$CIdatum'";
-
-				if (mysqli_query($conn, $sql)) {
-					echo "\nNieuwe groepsbeschrijving is succesvol ingesteld";
-					$_SESSION["itemdatum"] = $NIdatum;
-					$CIdatum = $_SESSION["itemdatum"];
-				} else {
-					echo "Error with sql execution, please report to admin (Gbeschrijving)";
+					echo "Error with sql execution, please report to admin";
 					$error = 1;
 				}
 			}
+
+			if($NIdatum!=""){
+				$NIdatum = date("Y-m-d", strtotime($NIdatum));
+
+				echo "\n".$NIdatum."\n";
+				echo "\n".$CInaam."\n"."\n".$school."\n"."\n".$CIklas."\n"."\n".$CIdatum."\n";
+
+				$sql = "UPDATE planner SET datum='$NIdatum' WHERE titel='$CInaam' AND school='$school' AND klas='$CIklas' AND datum='$CIdatum'";
+
+				if (mysqli_query($conn, $sql)) {
+					echo "\nNieuwe datum voor opdracht is succesvol ingesteld";
+					$_SESSION["itemdatum"] = $NIdatum;
+					$CIdatum = $_SESSION["itemdatum"];
+				} else {
+					echo "Error with sql execution, please report to admin";
+					$error = 1;
+				}
+			}/*
 
 			if($NGledenchecked!=""){
 
@@ -133,7 +138,8 @@
 						echo "Error with sql execution, please report to admin (Gleden)";
 						$error = 1;
 					}
-				}*/
+				}
+			}*/
 		} else {
 			echo "Verkeerd wachtwoord";
 			$error = 1;

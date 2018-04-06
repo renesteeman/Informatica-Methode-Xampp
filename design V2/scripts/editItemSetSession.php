@@ -10,7 +10,7 @@
 		return $data;
 	}
 
-	$_SESSION['groupname'] =  mysqli_real_escape_string($conn, check_input($_POST['groupname']));
+	$_SESSION['itemname'] =  mysqli_real_escape_string($conn, check_input($_POST['itemname']));
 
 	print_r ($_SESSION);
 

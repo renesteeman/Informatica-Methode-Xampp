@@ -96,7 +96,7 @@ $(document).ready(function(){
 	});
 
 	//edit group sent data
-	$(".Edit").click(function(){
+	$(".editGroup").click(function(){
 
 		var groupname = $(this).parent().parent().parent().children().first().children().first().text();
 
@@ -257,7 +257,6 @@ $(document).ready(function(){
 		return event.keyCode != 13;
 	});
 
-
 	//create Item
 	$('.createItemForm').submit(function(event){
 		event.preventDefault();
@@ -287,7 +286,64 @@ $(document).ready(function(){
 		  alert( "Request failed: " + textStatus );
 		});
 
-	}); 
+	});
+
+	//edit item sent data
+	$(".editItem").click(function(){
+
+		var itemname = $(this).parent().parent().parent().children().find('.naam').text();
+
+		//sent values of group via ajax to editGroupFront.php
+		jqXHR = $.ajax({
+			method: "POST",
+			url: '../scripts/editItemSetSession.php',
+			data: {itemname: itemname}
+		});
+		jqXHR.done(function(msg) {
+			window.location.href = '../scripts/editItemFront.php';
+			//window.alert(msg);
+		});
+		jqXHR.fail(function( jqXHR) {
+		  alert("AJAX failed, contact admin");
+	  });
+
+	});
+
+	$('.editItemForm').submit(function(event){
+		event.preventDefault();
+	});
+
+	//edit group
+	/*
+	$("#editItemConfirm").click(function(){
+		var Inaam = $('input[name=Inaam]').val();
+		var Iomschrijving = $('textarea[name=Iomschrijving]').val();
+		var Iklas = $('input[name=Iklas]').val();
+		var Idatum = $('input[name=Idatum]').val();
+
+		var Iprogressie = [];
+		$('.itemLijst>ul>li>.item').each(function(index){
+			Iprogressie.push($(this).text());
+		});
+
+		var password = $('input[name=password]').val();
+
+		//sent values of group via ajax to editGroupFront.php
+		jqXHR = $.ajax({
+			method: "POST",
+			url: '../scripts/editGroupAjax.php',
+			data: {NGname: NGname, NGbeschrijving:NGbeschrijving, NGlink:NGlink, NGleden:NGleden, password:password}
+		});
+
+		jqXHR.done(function(msg) {
+			window.alert(msg);
+			window.location.href = '../pages/overview.php';
+		});
+
+		jqXHR.fail(function( jqXHR) {
+		  alert("AJAX failed, contact admin");
+		});
+	}); */
 
 
 });

@@ -167,7 +167,7 @@
 			if (isset($_SESSION["username"])){
 				echo '
 				<form class="addItemButton" method="post" action="../scripts/createItemFront.php">
-					<input type="submit" value="Nieuw item">
+					<input type="submit" value="Nieuwe opdracht">
 				</form>
 				';
 			}

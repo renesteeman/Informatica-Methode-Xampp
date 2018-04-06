@@ -18,6 +18,7 @@
 	$NIomschrijving = mysqli_real_escape_string($conn, check_input($_POST['NIomschrijving']));
 	$NIklas = mysqli_real_escape_string($conn, check_input($_POST['NIklas']));
 	$NIdatum = mysqli_real_escape_string($conn, check_input($_POST['NIdatum']));
+	$NIdatum = date("Y-m-d", strtotime($NIdatum));
 
 	$CInaam = $_SESSION["itemname"];
 	$CIklas = $_SESSION["itemklas"];
@@ -97,11 +98,6 @@
 			}
 
 			if($NIdatum!=""){
-				$NIdatum = date("Y-m-d", strtotime($NIdatum));
-
-				echo "\n".$NIdatum."\n";
-				echo "\n".$CInaam."\n"."\n".$school."\n"."\n".$CIklas."\n"."\n".$CIdatum."\n";
-
 				$sql = "UPDATE planner SET datum='$NIdatum' WHERE titel='$CInaam' AND school='$school' AND klas='$CIklas' AND datum='$CIdatum'";
 
 				if (mysqli_query($conn, $sql)) {
@@ -112,34 +108,24 @@
 					echo "Error with sql execution, please report to admin";
 					$error = 1;
 				}
-			}/*
+			}
 
-			if($NGledenchecked!=""){
-
-				//delete group_name of current members
-				$sql = "UPDATE users SET group_name='' WHERE group_name='$CGnaam' AND school='$school'";
+			if($NIprogressie!=""){
+				$chapters = "";
+				for($i=0; $i<count($NIprogressie);$i++){
+					$chapters .= $NIprogressie[$i].', ';
+				}
+				$sql = "UPDATE planner SET progressie='$chapters' WHERE titel='$CInaam' AND school='$school' AND klas='$CIklas' AND datum='$CIdatum'";
 
 				if (mysqli_query($conn, $sql)) {
-					echo "\nOude leden succesvol verwijderd";
+					echo "\nNieuwe hoofdstuk(ken) voor opdracht is succesvol ingesteld";
+
 				} else {
-					echo "Error with sql execution, please report to admin (Remove old members)";
+					echo "Error with sql execution, please report to admin";
 					$error = 1;
 				}
 
-				//set group_name for new members
-				for($i=0; $i<count($NGledenchecked); $i++){
-					$lid = $NGledenchecked[$i];
-
-					$sql = "UPDATE users SET group_name='$CGnaam' WHERE naam='$lid' AND school='$school'";
-
-					if (mysqli_query($conn, $sql)) {
-						echo "\n".$lid." is nu lid van de groep";
-					} else {
-						echo "Error with sql execution, please report to admin (Gleden)";
-						$error = 1;
-					}
-				}
-			}*/
+			}
 		} else {
 			echo "Verkeerd wachtwoord";
 			$error = 1;

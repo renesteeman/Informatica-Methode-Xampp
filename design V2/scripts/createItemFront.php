@@ -17,7 +17,7 @@
 		<h3>
 			<?php
 				if (isset($_SESSION["username"])){
-					echo 'Item aanmaken';
+					echo 'Opdracht aanmaken';
 				} else {
 					echo 'Login';
 				}
@@ -30,11 +30,11 @@
 			<ul>
 				<li>
 					<label>Naam</label>
-					<input type="text" placeholder="Naam van het Item" name="Inaam" maxlength="50" required>
+					<input type="text" placeholder="Naam van de opdracht" name="Inaam" maxlength="50" required>
 				</li>
 				<li>
 					<label>Omschrijving</label>
-					<textarea type="text" placeholder="Omschrijving van het item" name="Iomschrijving" maxlength="500" required></textarea>
+					<textarea type="text" placeholder="Omschrijving van de opdracht" name="Iomschrijving" maxlength="500" required></textarea>
 				</li>
 				<li>
 					<label>Klas</label>

@@ -25,7 +25,7 @@ $itemname = mysqli_real_escape_string($conn, check_input($_SESSION['itemname']))
 
 	<div class="bar">
 		<h3>
-			Item aanpassen
+			Opdracht aanpassen
 		</h3>
 	</div>
 
@@ -39,11 +39,11 @@ $itemname = mysqli_real_escape_string($conn, check_input($_SESSION['itemname']))
 			<ul>
 				<li>
 					<label>Nieuwe naam</label>
-					<input type="text" placeholder="Nieuwe naam van het item" name="NInaam" maxlength="50">
+					<input type="text" placeholder="Nieuwe naam van de opdracht" name="NInaam" maxlength="50">
 				</li>
 				<li>
 					<label>Nieuwe omschrijving</label>
-					<textarea type="text" placeholder="Nieuwe omschrijving voor het item" name="NIomschrijving" maxlength="500"></textarea>
+					<textarea type="text" placeholder="Nieuwe omschrijving voor de opdracht" name="NIomschrijving" maxlength="500"></textarea>
 				</li>
 				<li>
 					<label>Nieuwe klas</label>

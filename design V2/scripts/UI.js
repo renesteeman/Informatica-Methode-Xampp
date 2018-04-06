@@ -301,7 +301,6 @@ $(document).ready(function(){
 		});
 		jqXHR.done(function(msg) {
 			window.location.href = '../scripts/editItemFront.php';
-			//window.alert(msg);
 		});
 		jqXHR.fail(function( jqXHR) {
 		  alert("AJAX failed, contact admin");
@@ -313,17 +312,37 @@ $(document).ready(function(){
 		event.preventDefault();
 	});
 
-	//edit group
-	/*
-	$("#editItemConfirm").click(function(){
-		var Inaam = $('input[name=Inaam]').val();
-		var Iomschrijving = $('textarea[name=Iomschrijving]').val();
-		var Iklas = $('input[name=Iklas]').val();
-		var Idatum = $('input[name=Idatum]').val();
+	function addLid(){
+		$('.addItem').children().val('');
+	}
 
-		var Iprogressie = [];
+	$(".addItemButton").click(function(){
+		var name = $(this).prev().children().val();
+		if(name!=""){
+			var paste = '<li><span class="item">'+ name +'</span><span class="delete">x</span></li>'
+			$(this).prev().children().val('');
+			$(this).parent().prev().children().first().append(paste);
+		}
+
+	});
+
+	$(".addItem").children().first().keypress(function(event){
+		if(event.keyCode == 13){
+			$('.addItemButton').click();
+		}
+		return event.keyCode != 13;
+	});
+
+	//edit group
+	$("#editItemConfirm").click(function(){
+		var NInaam = $('input[name=NInaam]').val();
+		var NIomschrijving = $('textarea[name=NIomschrijving]').val();
+		var NIklas = $('input[name=NIklas]').val();
+		var NIdatum = $('input[name=NIdatum]').val();
+
+		var NIprogressie = [];
 		$('.itemLijst>ul>li>.item').each(function(index){
-			Iprogressie.push($(this).text());
+			NIprogressie.push($(this).text());
 		});
 
 		var password = $('input[name=password]').val();
@@ -332,18 +351,18 @@ $(document).ready(function(){
 		jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/editGroupAjax.php',
-			data: {NGname: NGname, NGbeschrijving:NGbeschrijving, NGlink:NGlink, NGleden:NGleden, password:password}
+			data: {NInaam: NInaam, NIomschrijving:NIomschrijving, NIklas:NIklas, NIdatum:NIdatum, NIprogressie:NIprogressie, password:password}
 		});
 
 		jqXHR.done(function(msg) {
 			window.alert(msg);
-			window.location.href = '../pages/overview.php';
+			window.location.href = '../pages/planner.php';
 		});
 
 		jqXHR.fail(function( jqXHR) {
 		  alert("AJAX failed, contact admin");
 		});
-	}); */
+	});
 
 
 });

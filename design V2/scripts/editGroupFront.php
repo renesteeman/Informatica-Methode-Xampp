@@ -85,9 +85,7 @@ $groupname = mysqli_real_escape_string($conn, check_input($_SESSION['groupname']
 												<li>
 													<span class="lid">'.$naam.'</span>
 													<span class="delete">x</span>
-												</li>
-
-												';
+												</li>';
 
 										    }
 

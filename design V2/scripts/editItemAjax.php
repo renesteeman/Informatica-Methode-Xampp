@@ -23,10 +23,6 @@
 	$CIklas = $_SESSION["itemklas"];
 	$CIdatum = $_SESSION["itemdatum"];
 
-	echo "\nCInaam = ".$CInaam;
-	echo "\nCIklas = ".$CIklas;
-	echo "\nCIdatum = ".$CIdatum;
-
 	$NIprogressie = [];
 
 	if(isset($_POST['NIprogressie'])){
@@ -62,14 +58,13 @@
 				echo "Error with sql execution, please report to admin";
 			}
 
-
 			if($NInaam!=""){
 				$sql = "UPDATE planner SET titel='$NInaam' WHERE titel='$CInaam' AND school='$school' AND klas='$CIklas' AND datum='$CIdatum'";
 
 				if (mysqli_query($conn, $sql)) {
 					echo "\nNieuwe groepnaam is succesvol ingesteld";
 					$_SESSION["itemnaam"] = $NInaam;
-					$NInaam = $_SESSION["itemnaam"];
+					$CInaam = $_SESSION["itemnaam"];
 
 				} else {
 					echo "Error with sql execution, please report to admin (Gnaam)";
@@ -77,11 +72,8 @@
 				}
 			}
 
-			/*
-
-			if($NGbeschrijving!=""){
-				$sql = "UPDATE groepen SET beschrijving='$NGbeschrijving' WHERE naam='$CGnaam' AND school='$school'";
-				echo $school;
+			if($NIomschrijving!=""){
+				$sql = "UPDATE planner SET beschrijving='$NIomschrijving' WHERE titel='$CInaam' AND school='$school' AND klas='$CIklas' AND datum='$CIdatum'";
 
 				if (mysqli_query($conn, $sql)) {
 					echo "\nNieuwe groepsbeschrijving is succesvol ingesteld";
@@ -91,13 +83,28 @@
 				}
 			}
 
-			if($NGlink!=""){
-				$sql = "UPDATE groepen SET link='$NGlink' WHERE naam='$CGnaam' AND school='$school'";
+			if($NIklas!=""){
+				$sql = "UPDATE planner SET klas='$NIklas' WHERE titel='$CInaam' AND school='$school' AND klas='$CIklas' AND datum='$CIdatum'";
 
 				if (mysqli_query($conn, $sql)) {
-					echo "\nNieuwe groepslink is succesvol ingesteld";
+					echo "\nNieuwe groepsbeschrijving is succesvol ingesteld";
+					$_SESSION["itemklas"] = $NIklas;
+					$CIklas = $_SESSION["itemklas"];
 				} else {
-					echo "Error with sql execution, please report to admin (Glink)";
+					echo "Error with sql execution, please report to admin (Gbeschrijving)";
+					$error = 1;
+				}
+			}/*
+
+			if($NIdatum!=""){
+				$sql = "UPDATE datum SET datum='$NIdatum' WHERE titel='$CInaam' AND school='$school' AND klas='$CIklas' AND datum='$CIdatum'";
+
+				if (mysqli_query($conn, $sql)) {
+					echo "\nNieuwe groepsbeschrijving is succesvol ingesteld";
+					$_SESSION["itemdatum"] = $NIdatum;
+					$CIdatum = $_SESSION["itemdatum"];
+				} else {
+					echo "Error with sql execution, please report to admin (Gbeschrijving)";
 					$error = 1;
 				}
 			}

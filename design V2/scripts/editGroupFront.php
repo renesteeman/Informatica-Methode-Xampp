@@ -29,7 +29,7 @@ $groupname = mysqli_real_escape_string($conn, check_input($_SESSION['groupname']
 		</h3>
 	</div>
 
-	<div class="editGroup">
+	<div class="editGroupPage">
 
 		<span id="groupName">
 			<?php echo $groupname; ?>

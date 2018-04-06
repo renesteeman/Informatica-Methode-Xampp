@@ -29,7 +29,7 @@ $itemname = mysqli_real_escape_string($conn, check_input($_SESSION['itemname']))
 		</h3>
 	</div>
 
-	<div class="editItem">
+	<div class="editItemPage">
 
 		<span id="itemName">
 			<?php echo $itemname; ?>
@@ -55,11 +55,9 @@ $itemname = mysqli_real_escape_string($conn, check_input($_SESSION['itemname']))
 				</li>
 				<li>
 					<label>Progressie</label>
-					<div class="ltemLijst">
+					<div class="itemLijst">
 						<ul>
 							<?php
-
-
 							if (isset($_SESSION["username"])){
 
 								$user = $_SESSION["username"];
@@ -72,28 +70,27 @@ $itemname = mysqli_real_escape_string($conn, check_input($_SESSION['itemname']))
 									$result = mysqli_fetch_assoc($result);
 									$school = $result['school'];
 
-									$sql = "SELECT naam FROM users WHERE school='$school' AND group_name='$groupname' AND functie='leerling'";
+									$sql = "SELECT progressie FROM planner WHERE school='$school' AND titel='$itemname'";
 
 									if (mysqli_query($conn, $sql)) {
 
 										$result = mysqli_query($conn, $sql);
-
-										$namen=[];
+										$row = mysqli_fetch_assoc($result);
 
 										if (mysqli_num_rows($result) > 0) {
-										    //save names
-										    while($row = mysqli_fetch_assoc($result)) {
-												$naam = $row["naam"];
+										    //save chapters
+										    $hoofdstukkenRaw = $row['progressie'];
+											$hoofdstukkenEdited = explode(", ", $hoofdstukkenRaw);
+											array_pop($hoofdstukkenEdited);
 
+											for($i=0; $i < count($hoofdstukkenEdited); $i++){
 												echo '
 												<li>
-													<span class="lid">'.$naam.'</span>
+													<span class="item">'.$hoofdstukkenEdited[$i].'</span>
 													<span class="delete">x</span>
 												</li>
-
 												';
-
-										    }
+											}
 
 										} else {
 										    echo "Geen huidige leden";

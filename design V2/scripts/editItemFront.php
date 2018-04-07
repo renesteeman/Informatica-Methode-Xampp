@@ -125,7 +125,7 @@ $itemname = mysqli_real_escape_string($conn, check_input($_SESSION['itemname']))
 					<div class="center">
 					</br></br>
 						<div class="deleteItemButton">
-							Verwijder groep
+							Verwijder item
 						</div>
 					</div>
 				</li>

@@ -11,7 +11,11 @@
 	}
 
 	$user = $_SESSION["username"];
-	$Gnaam = $_SESSION["groupname"];
+	$Inaam = $_SESSION["itemname"];
+	$Iklas = $_SESSION["itemklas"];
+	$Idatum = $_SESSION["itemdatum"];
+	$Idatum = date("Y-m-d", strtotime($Idatum));
+
 	$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
 
 	//get password for $user
@@ -31,10 +35,10 @@
 				$result = mysqli_fetch_assoc($result);
 				$school = $result['school'];
 
-				$sql = "DELETE FROM groepen WHERE naam='$Gnaam' AND school='$school'";
+				$sql = "DELETE FROM planner WHERE titel='$Inaam' AND school='$school' AND datum='$Idatum' AND klas='$Iklas'";
 
 				if (mysqli_query($conn, $sql)) {
-					echo $Gnaam." deleted";
+					echo $Inaam." is verwijderd";
 				} else {
 					echo "Error with sql execution, please report to admin (Delete group)";
 				}

@@ -281,6 +281,7 @@ $(document).ready(function(){
 		});
 		jqXHR.done(function( msg ) {
 			alert(msg);
+			window.location.href = '../pages/planner.php';
 		});
 		jqXHR.fail(function( jqXHR, textStatus ) {
 		  alert( "Request failed: " + textStatus );
@@ -335,7 +336,7 @@ $(document).ready(function(){
 		return event.keyCode != 13;
 	});
 
-	//edit group
+	//edit item
 	$("#editItemConfirm").click(function(){
 		var NInaam = $('input[name=NInaam]').val();
 		var NIomschrijving = $('textarea[name=NIomschrijving]').val();
@@ -349,7 +350,7 @@ $(document).ready(function(){
 
 		var password = $('input[name=password]').val();
 
-		//sent values of group via ajax to editGroupFront.php
+		//sent values of group via ajax to editItemFront.php
 		jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/editItemAjax.php',
@@ -358,12 +359,38 @@ $(document).ready(function(){
 
 		jqXHR.done(function(msg) {
 			window.alert(msg);
-			//window.location.href = '../pages/planner.php';
+			window.location.href = '../pages/planner.php';
 		});
 
 		jqXHR.fail(function( jqXHR) {
 		  alert("AJAX failed, contact admin");
 		});
+	});
+
+	//delete item data
+	$('.deleteItemButton').click(function(){
+		if (confirm("Weet u zeker dat u de opdracht wilt verwijderen?")){
+			var password = $("input[name='password']").val();
+
+			//sent values of group via ajax to editGroupFront.php
+			jqXHR = $.ajax({
+				method: "POST",
+				url: '../scripts/deleteItem.php',
+				data: {password:password}
+			});
+
+			jqXHR.done(function(msg) {
+				window.alert(msg);
+				window.location.href = '../pages/planner.php';
+			});
+
+			jqXHR.fail(function( jqXHR) {
+			  alert("AJAX failed, contact admin");
+			});
+
+		} else {
+			alert("Canceled group deletion");
+		}
 	});
 
 

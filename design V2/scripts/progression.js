@@ -2,7 +2,7 @@ $(document).ready(function(){
 	var timeSpent = 0;
 	var active = 1;
 	var completed = 0;
-	var aantalSeconden = 0;
+	var aantalSeconden = 60;
 
 	if(completed == 0){
 		window.onblur = function(){
@@ -55,12 +55,13 @@ $(document).ready(function(){
 				});
 
 				jqXHR.done(function(msg) {
-					window.alert(msg);
+					if(msg != ""){
+						window.alert(msg);
+					}
 				});
 
 				jqXHR.fail(function(jqXHR) {
 				  alert("AJAX failed, contact admin");
-				  alert(jqXHR.responseText);
 			  });
 
 			}

@@ -23,7 +23,7 @@
 		if (mysqli_query($conn, $sql)) {
 			echo "Group created for ".$school." ".$klas;
 		} else {
-			echo "Error: " . $sql . "<br>" . $conn->error."</br>";
+			echo "SQL error, contact admin";
 		}
 
 	} else {

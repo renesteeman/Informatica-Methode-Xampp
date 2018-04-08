@@ -38,18 +38,37 @@
 
 				$progression = $progressionPrefix.$progressionContent;
 
-				echo $progression;
+				$i = strlen($progression);
 
-				/*
+				while($i<($Nparagraphs+1)){
+					$progression .= '0';
+					$i++;
+				}
+
 				$sql = "INSERT INTO `progressie` (`userid`, `H$chapter`) VALUES ('$id', '$progression');";
 
 				if (mysqli_query($conn, $sql)) {
-					echo "Progression updated";
-				} else {
-					echo "Error: " . $sql . "<br>" . $conn->error."</br>";
-				}*/
-			} else {
 
+				} else {
+					echo "SQL error, contact admin";
+				}
+
+			} else {
+				$result = mysqli_fetch_assoc($result);
+				$Cprogression = $result['H'.$chapter];
+
+				//if progress is found
+				//update progress
+				$progression = $Cprogression;
+				$progression[$paragraph] = '1';
+
+				$sql = "UPDATE progressie SET H$chapter = '$progression' WHERE userid='$id'";
+
+				if (mysqli_query($conn, $sql)) {
+
+				} else {
+					echo "SQL error, contact admin";
+				}
 			}
 		} else {
 			echo "\nError with sql execution, please report to admin";

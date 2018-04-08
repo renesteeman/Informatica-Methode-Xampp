@@ -105,7 +105,7 @@
 			if (mysqli_query($conn, $sql)) {
 			    $accountsCreated++;
 			} else {
-			    echo "Error: " . $sql . "<br>" . $conn->error."</br>";
+			   	echo "SQL error, contact admin";
 			}
 
 		}

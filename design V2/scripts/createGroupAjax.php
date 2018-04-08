@@ -111,7 +111,7 @@
 			}
 
 		} else {
-			echo "Wrong password <br />";
+			echo "\nWrong password";
 		}
 
 	}

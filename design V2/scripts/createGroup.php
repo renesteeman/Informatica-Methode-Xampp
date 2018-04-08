@@ -20,7 +20,7 @@
 		//insert group into DB
 		$sql = "INSERT INTO `groups` (`id`, `school`, `klas`) VALUES (NULL, '$school', '$klas');";
 
-		if ($conn->query($sql) === TRUE) {
+		if (mysqli_query($conn, $sql)) {
 			echo "Group created for ".$school." ".$klas;
 		} else {
 			echo "Error: " . $sql . "<br>" . $conn->error."</br>";
@@ -29,8 +29,6 @@
 	} else {
 		echo "Klas bestaat al voor deze school </br>";
 	}
-
-
 
 	$conn->close();
 

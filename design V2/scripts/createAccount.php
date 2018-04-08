@@ -102,7 +102,7 @@
 			//insert account into DB
 			$sql = "INSERT INTO users (username, password, school, functie, creation_date, expire_date, klas, naam) VALUES ('$username', '$password' , '$school', '$functie', '$creation_date', '$expire_date', '$klas', '$naam')";
 
-			if ($conn->query($sql) === TRUE) {
+			if (mysqli_query($conn, $sql)) {
 			    $accountsCreated++;
 			} else {
 			    echo "Error: " . $sql . "<br>" . $conn->error."</br>";

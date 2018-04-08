@@ -67,7 +67,9 @@
 					array_push($Gleden, $lid);
 				};
 			}
-		};
+		} else {
+			$Gleden = [];
+		}
 
 		if(isset($_POST['password'])){
 			if($_POST['password'] != ""){

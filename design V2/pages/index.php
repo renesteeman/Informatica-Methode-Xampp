@@ -93,43 +93,31 @@
 	<div class="chapter-tiles">
 		<div class="tile">
 			<div class="tile-content">
-				H1 Werking computer
+				B1 filosofie
 			</div>
 		</div>
 
 		<div class="tile">
 			<div class="tile-content">
-				H2 Logica
+				B2 beveiliging en privacy
 			</div>
 		</div>
 
 		<div class="tile">
 			<div class="tile-content">
-				H3 Programmeren
+				B3 web+
 			</div>
 		</div>
 
 		<div class="tile">
 			<div class="tile-content">
-				H4 Arduino
+				B4 databases
 			</div>
 		</div>
 
 		<div class="tile">
 			<div class="tile-content">
-				H5 Web development
-			</div>
-		</div>
-
-		<div class="tile">
-			<div class="tile-content">
-				H6 Project management
-			</div>
-		</div>
-
-		<div class="tile">
-			<div class="tile-content">
-				H7 Project uitvoeren
+				meer in de toekomst
 			</div>
 		</div>
 

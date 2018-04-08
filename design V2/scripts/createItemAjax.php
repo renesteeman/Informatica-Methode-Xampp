@@ -34,32 +34,44 @@
 		}
 
 		//get info
-		if(isset($_POST['Inaam']) & $_POST['Inaam'] != ""){
-			$Inaam = mysqli_real_escape_string($conn, check_input($_POST['Inaam']));
+		if(isset($_POST['Inaam'])){
+			if($_POST['Inaam'] != ""){
+				$Inaam = mysqli_real_escape_string($conn, check_input($_POST['Inaam']));
+			}
 		};
 
-		if(isset($_POST['Iomschrijving']) & $_POST['Iomschrijving'] != ""){
-			$Iomschrijving = mysqli_real_escape_string($conn, check_input($_POST['Iomschrijving']));
+		if(isset($_POST['Iomschrijving'])){
+			if($_POST['Iomschrijving'] != ""){
+					$Iomschrijving = mysqli_real_escape_string($conn, check_input($_POST['Iomschrijving']));
+			}
 		};
 
-		if(isset($_POST['Iklas']) & $_POST['Iklas'] != ""){
-			$Iklas = mysqli_real_escape_string($conn, check_input($_POST['Iklas']));
+		if(isset($_POST['Iklas'])){
+			if($_POST['Iklas'] != ""){
+				$Iklas = mysqli_real_escape_string($conn, check_input($_POST['Iklas']));
+			}
 		};
 
-		if(isset($_POST['Idatum']) & $_POST['Idatum'] != ""){
-			$Idatum = mysqli_real_escape_string($conn, check_input($_POST['Idatum']));
-			$Idatum = date("Y-m-d", strtotime($Idatum));
+		if(isset($_POST['Idatum'])){
+			if($_POST['Idatum'] != ""){
+				$Idatum = mysqli_real_escape_string($conn, check_input($_POST['Idatum']));
+				$Idatum = date("Y-m-d", strtotime($Idatum));
+			}
 		};
 
-		if(isset($_POST['Iprogressie']) & $_POST['Iprogressie'] != ""){
-			for($i=0; $i<count($_POST['Iprogressie']); $i++){
-				$chapter = mysqli_real_escape_string($conn, check_input($_POST['Iprogressie'][$i]));
-				$Iprogressie .= $chapter.', ';
-			};
+		if(isset($_POST['Iprogressie'])){
+			if($_POST['Iprogressie'] != ""){
+				for($i=0; $i<count($_POST['Iprogressie']); $i++){
+					$chapter = mysqli_real_escape_string($conn, check_input($_POST['Iprogressie'][$i]));
+					$Iprogressie .= $chapter.', ';
+				};
+			}
 		};
 
-		if(isset($_POST['password']) & $_POST['password'] != ""){
-			$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
+		if(isset($_POST['password'])){
+			if($_POST['password'] != ""){
+				$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
+			}
 		};
 
 		//get password for $username
@@ -73,18 +85,18 @@
 
 			//check psw
 			if(password_verify($password, $rightpsw)){
-				if($Inaam != "" & $Iomschrijving != "" & $Iklas != "" & $Iprogressie != "" & $Idatum != ""){
+				if($Inaam != "" & $Iomschrijving != "" & $Iklas != "" & $Idatum != ""){
 					//create group
 					$sql = "INSERT INTO planner (titel, beschrijving, progressie, school, klas, datum) VALUES ('$Inaam', '$Iomschrijving', '$Iprogressie', '$Ischool', '$Iklas', '$Idatum')";
 
 					if (mysqli_query($conn, $sql)) {
 						echo "Item succesvol toegevoegd";
 					} else {
-						echo "\n Error with sql execution, please report to admin";
+						echo "\nError with sql execution, please report to admin";
 					}
 
 				} else {
-					echo "\n Niet alle informatie is ontvangen of de informatie is niet correct";
+					echo "\nNiet alle informatie is ontvangen of de informatie is niet correct";
 				}
 
 			} else {

@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 	updateTimeSpent();
 
-	function isInViewport(element) {
+	function isReached(element) {
 		var elementTop = $(element).offset().top;
 	    var elementBottom = elementTop + $(element).outerHeight();
 		console.log(elementBottom);
@@ -33,12 +33,12 @@ $(document).ready(function(){
 
 		console.log($(window).height());
 
-		return elementBottom < viewportBottom && elementBottom > viewportTop
+		return (elementBottom < viewportBottom && elementBottom > viewportTop) || (elementBottom < viewportTop)
 	}
 
 	function updateProgress(){
 		var element = $('.theorie-content');
-		if(isInViewport(element)){
+		if(isReached(element)){
 			console.log('visible');
 		}
 	}

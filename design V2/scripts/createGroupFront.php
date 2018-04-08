@@ -38,7 +38,7 @@
 				</li>
 				<li>
 					<label>Link</label>
-					<input type="text" placeholder="Link naar bestanden" name="Glink" maxlength="50">
+					<input type="text" placeholder="Link naar bestanden" name="Glink" maxlength="100">
 				</li>
 				<li>
 					<label>Leden</label>

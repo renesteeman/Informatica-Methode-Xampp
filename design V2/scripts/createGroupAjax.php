@@ -32,38 +32,47 @@
 		}
 
 		//get info
-		if(isset($_POST['Gnaam']) & $_POST['Gnaam'] != ""){
-			$Gnaam = mysqli_real_escape_string($conn, check_input($_POST['Gnaam']));
+		if(isset($_POST['Gnaam'])){
+			if($_POST['Gnaam'] != ""){
+				$Gnaam = mysqli_real_escape_string($conn, check_input($_POST['Gnaam']));
 
-			//check if Gnaam is already in use
-			$sql = mysqli_query($conn, "SELECT naam FROM groepen WHERE naam='$Gnaam' and school='$Gschool'");
+				//check if Gnaam is already in use
+				$sql = mysqli_query($conn, "SELECT naam FROM groepen WHERE naam='$Gnaam' and school='$Gschool'");
 
-			if (mysqli_num_rows($sql) != 0) {
-				echo "\n Groepnaam is al in gebruik.";
- 			   $Gnaam = "";
-			};
-
+				if (mysqli_num_rows($sql) != 0) {
+					echo "\n Groepnaam is al in gebruik.";
+	 			   $Gnaam = "";
+				};
+			}
 		};
 
-		if(isset($_POST['Gomschrijving']) & $_POST['Gomschrijving'] != ""){
-			$Gomschrijving = mysqli_real_escape_string($conn, check_input($_POST['Gomschrijving']));
+		if(isset($_POST['Gomschrijving'])){
+			if($_POST['Gomschrijving'] != ""){
+				$Gomschrijving = mysqli_real_escape_string($conn, check_input($_POST['Gomschrijving']));
+			}
 		};
 
-		if(isset($_POST['Glink']) & $_POST['Glink'] != ""){
-			$Glink = mysqli_real_escape_string($conn, check_input($_POST['Glink']));
+		if(isset($_POST['Glink'])){
+			if($_POST['Glink'] != ""){
+				$Glink = mysqli_real_escape_string($conn, check_input($_POST['Glink']));
+			}
 		};
 
-		if(isset($_POST['Gleden']) & $_POST['Gleden'] != ""){
-			$Gleden = [];
+		if(isset($_POST['Gleden'])){
+			if($_POST['Gleden'] != ""){
+				$Gleden = [];
 
-			for($i=0; $i<count($_POST['Gleden']); $i++){
-				$lid = mysqli_real_escape_string($conn, check_input($_POST['Gleden'][$i]));
-				array_push($Gleden, $lid);
-			};
+				for($i=0; $i<count($_POST['Gleden']); $i++){
+					$lid = mysqli_real_escape_string($conn, check_input($_POST['Gleden'][$i]));
+					array_push($Gleden, $lid);
+				};
+			}
 		};
 
-		if(isset($_POST['password']) & $_POST['password'] != ""){
-			$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
+		if(isset($_POST['password'])){
+			if($_POST['password'] != ""){
+				$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
+			}
 		};
 
 		//get password for $username
@@ -82,7 +91,7 @@
 		//check psw
 		if(password_verify($password, $rightpsw)){
 
-			if($Gnaam != "" & $Gomschrijving != "" & $Gschool != ""){
+			if($Gnaam != "" & $Gomschrijving != "" & $Gschool != "" & $Gleden !=""){
 				//create group
 				$sql = "INSERT INTO groepen (naam, beschrijving, link, school) VALUES ('$Gnaam', '$Gomschrijving', '$Glink', '$Gschool')";
 

@@ -88,6 +88,7 @@ $(document).ready(function(){
 		});
 		jqXHR.done(function( msg ) {
 			alert(msg);
+			window.location.href = '../pages/overview.php';
 		});
 		jqXHR.fail(function( jqXHR, textStatus ) {
 		  alert( "Request failed: " + textStatus );

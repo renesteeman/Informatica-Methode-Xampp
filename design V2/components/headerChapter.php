@@ -2,6 +2,9 @@
 session_start();
 ?>
 
+<!DOCTYPE HTML>
+<html>
+
 <div class="pageContent">
 <head>
 	<!-- meta -->

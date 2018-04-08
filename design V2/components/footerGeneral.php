@@ -12,3 +12,5 @@
 </footer>
 
 <script src="../scripts/UI.js"></script>
+
+</html>

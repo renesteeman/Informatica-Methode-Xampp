@@ -12,3 +12,6 @@
 </footer>
 
 <script src="../../../scripts/UI.js"></script>
+<script src="../../../scripts/progression.js"></script>
+
+</html>

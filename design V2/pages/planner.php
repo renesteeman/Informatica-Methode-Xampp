@@ -68,7 +68,7 @@
 					$Pklas = $result['klas'];
 					$Pfunctie = $result['functie'];
 
-					$sql = "SELECT titel, beschrijving, datum, klas FROM planner WHERE school='$Pschool'";
+					$sql = "SELECT titel, beschrijving, datum, klas FROM planner WHERE school='$Pschool' ORDER BY datum";
 
 					if (mysqli_query($conn, $sql)) {
 						//get planner info

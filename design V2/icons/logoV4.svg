@@ -16,21 +16,21 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
-   sodipodi:docname="logoV2.svg"
-   inkscape:export-filename="F:\xampp\htdocs\InformaticaMethode\design V2\icons\logo32.png"
-   inkscape:export-xdpi="4.317565"
-   inkscape:export-ydpi="4.317565">
+   sodipodi:docname="logoV4.svg"
+   inkscape:export-filename="F:\xampp\htdocs\InformaticaMethode\design V2\icons\logo64.png"
+   inkscape:export-xdpi="8.29"
+   inkscape:export-ydpi="8.29">
   <defs
      id="defs2">
     <linearGradient
        inkscape:collect="always"
        id="linearGradient4619">
       <stop
-         style="stop-color:#145564;stop-opacity:1;"
+         style="stop-color:#1c7a8e;stop-opacity:1"
          offset="0"
          id="stop4615" />
       <stop
-         style="stop-color:#6d8892;stop-opacity:1"
+         style="stop-color:#8da2aa;stop-opacity:1"
          offset="1"
          id="stop4617" />
     </linearGradient>
@@ -52,8 +52,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="370.83138"
-     inkscape:cy="388.33739"
+     inkscape:cx="193.24787"
+     inkscape:cy="381.6761"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -93,51 +93,39 @@
        x="5.6371031"
        y="105.31453"
        ry="11.077158" />
-    <g
-       id="g836"
-       transform="matrix(1.3020283,0,0,1.3020283,-29.200809,-71.210647)">
-      <rect
-         ry="0"
-         y="160.00281"
-         x="65.710312"
-         height="112.93834"
-         width="23.320601"
-         id="rect4506"
-         style="fill:#dbdbdb;fill-opacity:1;stroke:none;stroke-width:2.49373531;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      <rect
-         transform="rotate(90)"
-         ry="1.886664"
-         y="-139.89456"
-         x="160.00281"
-         height="74.184258"
-         width="12.36255"
-         id="rect4506-4"
-         style="fill:#dbdbdb;fill-opacity:1;stroke:none;stroke-width:1.47153199;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      <rect
-         transform="rotate(90)"
-         ry="1.4584382"
-         y="-123.42019"
-         x="189.2563"
-         height="57.346279"
-         width="12.36255"
-         id="rect4506-4-9"
-         style="fill:#dbdbdb;fill-opacity:1;stroke:none;stroke-width:1.29379797;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      <rect
-         ry="0"
-         y="160.00281"
-         x="65.710312"
-         height="112.93834"
-         width="11.560741"
-         id="rect4506-6"
-         style="fill:#f8f8f8;fill-opacity:1;stroke:none;stroke-width:1.75579298;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      <rect
-         ry="0"
-         y="141.08876"
-         x="65.846123"
-         height="11.910458"
-         width="11.560741"
-         id="rect4506-6-6"
-         style="fill:#f8f8f8;fill-opacity:1;stroke:none;stroke-width:0.57018638;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-    </g>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.49953699;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4506-6"
+       width="19.909548"
+       height="132.90407"
+       x="53.695354"
+       y="152.33145"
+       ry="0" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.43028331;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4506-6-9"
+       width="29.900423"
+       height="28.976595"
+       x="49.406876"
+       y="116.04157"
+       ry="0" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.94250751;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4506-6-1"
+       width="19.909548"
+       height="80.268402"
+       x="-172.24098"
+       y="66.048302"
+       ry="0"
+       transform="rotate(-90)" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.54569399;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4506-6-1-2"
+       width="19.909548"
+       height="50.823696"
+       x="-209.20583"
+       y="72.617897"
+       ry="0"
+       transform="rotate(-90)" />
   </g>
 </svg>

@@ -19,6 +19,7 @@
 	<link rel="stylesheet" href="../css/main.min.css">
 
 	<title>Inforca</title>
+	<link rel="icon" type="image/png" href="../icons/logo64.png"/>
 
 <head>
 

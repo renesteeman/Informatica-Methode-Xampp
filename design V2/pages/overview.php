@@ -23,8 +23,33 @@
 		<!-- the table as a whole -->
 		<div class="table">
 
-			<?php
 
+			<div class="headerRow klassen">
+				<!-- table header for this class-->
+				<div class="headerRowContent">
+					<span class="klas">klas</span>
+					<span class="Nleerlingen">aantal leerlingen</span>
+					<span class="icons">
+						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+					</span>
+				</div>
+
+				<!-- table content for this class-->
+				<div class="rowContent">
+
+					<div class="row">
+						<span class="name">René Steeman</span>
+						<span class="groepnaam">Inforca</span>
+						<span class="groepnaam">Leider</span>
+						<span class="gemiddelde">10,0</span>
+						<span class="progressie">icon</span>
+					</div>
+
+				</div>
+			</div>
+
+
+			<?php
 				//if logged in show class
 				//TODO check if person is teacher
 				if (isset($_SESSION["username"])){
@@ -42,7 +67,7 @@
 						$result = mysqli_fetch_assoc($result);
 						$school = $result['school'];
 
-						$sql = "SELECT naam, username, klas FROM `users` WHERE school='$school' AND functie='leerling'";
+						$sql = "SELECT id, naam, klas, group_role, group_name FROM `users` WHERE school='$school' AND functie='leerling'";
 
 						if (mysqli_query($conn, $sql)) {
 
@@ -54,11 +79,39 @@
 							    while($row = mysqli_fetch_assoc($result)) {
 									$klas = $row["klas"];
 
+									$id = $row["id"];
 									$naam = $row["naam"];
-									$username = $row["username"];
+									$klas = $row["klas"];
+									$group_role = $row["group_role"];
+									$group_name = $row["group_name"];
 
+									$userinfo = ['naam'=>$naam, 'klas'=>$klas, 'group_role'=>$group_role, 'group_name'=>$group_name];
+
+									/*
 									//add userinfo to right class
-									$userinfo = ['naam'=>$naam, 'username'=>$username];
+									$sql = "SELECT cijfer FROM `quiz` WHERE userid='$id'";
+
+									//get info from other tables
+									if (mysqli_query($conn, $sql)) {
+										$result = mysqli_query($conn, $sql);
+
+										if(mysqli_num_rows($result)>0){
+											$punten = [];
+											while($row = mysqli_fetch_assoc($result)) {
+												$punt = $row["cijfer"];
+												$punten[] = $punt;
+											}
+											print_r($punten);
+										} else {
+											echo "no rows returned";
+										}
+
+									} else {
+										echo "SQL error, alert admin";
+									} */
+
+
+
 
 									$klassen['klas'][$klas][] = $userinfo;
 
@@ -103,17 +156,20 @@
 									for($j=0; $j<$NStudentsCurrentClass; $j++){
 										$Cstudent = $StudentsCurrentClass[$i][$j];
 										$CstudentName = $Cstudent['naam'];
-										$CstudentUsername = $Cstudent['username'];
+										$CstudentGroupName = $Cstudent['group_name'];
+										$CstudentGroupRole= $Cstudent['group_role'];
 										$CstudentProgress = 0;
 										//TODO change icon style based on progres
 
 										echo '
 
-												<div class="row">
-													<span class="name">'.$CstudentName.'</span>
-													<span class="username">'.$CstudentUsername.'</span>
-													<span class="progress">icon</span>
-												</div>
+										<div class="row">
+											<span class="name">'.$CstudentName.'</span>
+											<span class="groepnaam">'.$CstudentGroupName.'</span>
+											<span class="groepnaam">'.$CstudentGroupRole.'</span>
+											<span class="gemiddelde">10,0</span>
+											<span class="progressie">icon</span>
+										</div>
 
 										';
 

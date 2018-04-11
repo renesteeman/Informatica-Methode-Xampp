@@ -23,9 +23,9 @@
 		<!-- the table as a whole -->
 		<div class="table">
 
-
+			<!--
 			<div class="headerRow klassen">
-				<!-- table header for this class-->
+				<!-- table header for this class->
 				<div class="headerRowContent">
 					<span class="klas">klas</span>
 					<span class="Nleerlingen">aantal leerlingen</span>
@@ -34,7 +34,7 @@
 					</span>
 				</div>
 
-				<!-- table content for this class-->
+				<!-- table content for this class->
 				<div class="rowContent">
 
 					<div class="row">
@@ -47,6 +47,7 @@
 
 				</div>
 			</div>
+			-->
 
 
 			<?php
@@ -85,30 +86,109 @@
 									$group_role = $row["group_role"];
 									$group_name = $row["group_name"];
 
+									//save info from user
 									$userinfo = ['naam'=>$naam, 'klas'=>$klas, 'group_role'=>$group_role, 'group_name'=>$group_name];
 
-									/*
-									//add userinfo to right class
-									$sql = "SELECT cijfer FROM `quiz` WHERE userid='$id'";
+									//get more info cijfer
+									$sql2 = "SELECT cijfer FROM `quiz` WHERE userid='$id'";
 
 									//get info from other tables
-									if (mysqli_query($conn, $sql)) {
-										$result = mysqli_query($conn, $sql);
+									if (mysqli_query($conn, $sql2)) {
+										$result2 = mysqli_query($conn, $sql2);
 
-										if(mysqli_num_rows($result)>0){
+										if(mysqli_num_rows($result2)>0){
 											$punten = [];
-											while($row = mysqli_fetch_assoc($result)) {
-												$punt = $row["cijfer"];
+											$totaalCijfers = 0;
+											$gemiddeldePunt = 0;
+
+											while($row2 = mysqli_fetch_assoc($result2)) {
+												$punt = $row2["cijfer"];
 												$punten[] = $punt;
 											}
-											print_r($punten);
-										} else {
-											echo "no rows returned";
+
+											for($i=0; $i<count($punten); $i++){
+												$totaalCijfers += $punten[$i];
+											}
+
+											$gemiddeldePunt = $totaalCijfers/count($punten);
+
+											//save the info
+											$userinfo['gemiddeldePunt'] = $gemiddeldePunt;
 										}
 
 									} else {
 										echo "SQL error, alert admin";
-									} */
+									}
+
+									//get more info progression
+									$sql3 = "SELECT H1, H2, H3, H4, H5, H6, H7 FROM `progressie` WHERE userid='$id'";
+
+									//get/calculate completed chapters
+									if (mysqli_query($conn, $sql3)) {
+										$result3 = mysqli_query($conn, $sql3);
+
+										if(mysqli_num_rows($result3)>0){
+											$hoofdstukken = [];
+											$hoofdstukkenAf = [];
+
+											while($row3 = mysqli_fetch_assoc($result3)) {
+												$hoofdstukken['H1'] = $row3["H1"];
+												$hoofdstukken['H2'] = $row3["H2"];
+												$hoofdstukken['H3'] = $row3["H3"];
+												$hoofdstukken['H4'] = $row3["H4"];
+												$hoofdstukken['H5'] = $row3["H5"];
+												$hoofdstukken['H6'] = $row3["H6"];
+												$hoofdstukken['H7'] = $row3["H7"];
+											}
+
+											for($i=1; $i<count($hoofdstukken); $i++){
+												if($hoofdstukken['H'.$i]){
+													$hoofdstuk = $hoofdstukken['H'.$i];
+													$hoofdstukLength = $hoofdstuk[0];
+													$hoofdstuk = substr($hoofdstuk, 1);
+													$hoofdstukAfTotaal = 0;
+													for($j=0; $j<$hoofdstukLength; $j++){
+														if($hoofdstuk[$j] == '1'){
+															$hoofdstukAfTotaal++;
+														}
+													}
+													if($hoofdstukAfTotaal == $hoofdstukLength){
+														$hoofdstukkenAf['H'.$i] = 1;
+													}
+													print_r($hoofdstukkenAf);
+													echo "</br>";
+
+												}
+											}
+										}
+
+									} else {
+										echo "SQL error, alert admin";
+									}
+
+									//get more info
+									$sql4 = "SELECT progressie FROM `planner` WHERE school='$school' AND klas='$klas'";
+
+									//get/calculate completed chapters
+									if (mysqli_query($conn, $sql4)) {
+										$result4 = mysqli_query($conn, $sql4);
+
+										if(mysqli_num_rows($result4)>0){
+											echo "test";
+
+											while($row3 = mysqli_fetch_assoc($result3)) {
+
+											}
+
+
+
+
+
+										}
+
+									} else {
+										echo "SQL error, alert admin";
+									}
 
 
 

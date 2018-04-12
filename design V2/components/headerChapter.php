@@ -37,11 +37,36 @@ session_start();
 				</div>
 
 				<div class="burger-content">
-					<div class="nav-bar">
-						<a href="../../index.php">HOME</a>
-						<a href="../../overview.php">OVERZICHT</a>
-						<a href="../../planner.php">PLANNER</a>
-					</div>
+					<?php
+						//if logged in say hello, else give the option to login
+						if (isset($_SESSION["username"])){
+							if ($_SESSION["functie"] == 'docent'){
+								//if a teacher is logged in
+								echo '
+								<div class="nav-bar">
+									<a href="../../../pages/index.php">HOME</a>
+									<a href="../../../pages/overview.php">OVERZICHT</a>
+									<a href="../../../pages/planner.php">PLANNER</a>
+								</div>
+								';
+							} else {
+								//if a student is logged in
+								echo '
+								<div class="nav-bar">
+									<a href="../../../pages/index.php">HOME</a>
+									<a href="../../../pages/planner.php">PLANNER</a>
+								</div>
+								';
+							}
+						} else {
+							//if user isn't logged in
+							echo '
+							<div class="nav-bar">
+								<a href="../../../pages/index.php"></a>
+							</div>
+							';
+						}
+					?>
 
 					<div class="welcome">
 						<?php
@@ -69,11 +94,36 @@ session_start();
 
 			<div class="nav-wide">
 
-				<div class="nav-bar">
-					<a href="../../index.php">HOME</a>
-					<a href="../../overview.php">OVERZICHT</a>
-					<a href="../../planner.php">PLANNER</a>
-				</div>
+				<?php
+				//if logged in say hello, else give the option to login
+				if (isset($_SESSION["username"])){
+					if ($_SESSION["functie"] == 'docent'){
+						//if a teacher is logged in
+						echo '
+						<div class="nav-bar">
+							<a href="../../../pages/index.php">HOME</a>
+							<a href="../../../pages/overview.php">OVERZICHT</a>
+							<a href="../../../pages/planner.php">PLANNER</a>
+						</div>
+						';
+					} else {
+						//if a student is logged in
+						echo '
+						<div class="nav-bar">
+							<a href="../../../pages/index.php">HOME</a>
+							<a href="../../../pages/planner.php">PLANNER</a>
+						</div>
+						';
+					}
+				} else {
+					//if user isn't logged in
+					echo '
+					<div class="nav-bar">
+						<a href="../../../pages/index.php"></a>
+					</div>
+					';
+				}
+			?>
 
 				<div class="empty">
 					<div class="welcome">

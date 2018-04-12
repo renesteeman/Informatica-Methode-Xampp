@@ -109,7 +109,7 @@ session_start();
 					} else {
 						//if a student is logged in
 						echo '
-						<div class="nav-bar">
+						<div class="nav-bar student">
 							<a href="../../../pages/index.php">HOME</a>
 							<a href="../../../pages/planner.php">PLANNER</a>
 						</div>

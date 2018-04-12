@@ -23,9 +23,9 @@
 		<!-- the table as a whole -->
 		<div class="table">
 
-			<!--
+
 			<div class="headerRow klassen">
-				<!-- table header for this class->
+				<!-- table header for this class-->
 				<div class="headerRowContent">
 					<span class="klas">klas</span>
 					<span class="Nleerlingen">aantal leerlingen</span>
@@ -34,7 +34,7 @@
 					</span>
 				</div>
 
-				<!-- table content for this class->
+				<!-- table content for this class-->
 				<div class="rowContent">
 
 					<div class="row">
@@ -42,12 +42,12 @@
 						<span class="groepnaam">Inforca</span>
 						<span class="groepnaam">Leider</span>
 						<span class="gemiddelde">10,0</span>
-						<span class="progressie">icon</span>
+						<span class="progressie"><span class="onSchedule"></span></span>
 					</div>
 
 				</div>
 			</div>
-			-->
+
 
 
 			<?php
@@ -60,7 +60,7 @@
 					$klassen = [];
 					$klassen['klas'] = [];
 
-					$sql = "SELECT school, klas FROM users WHERE username='$user'";
+					$sql = "SELECT school FROM users WHERE username='$user'";
 
 					if (mysqli_query($conn, $sql)) {
 						//find school of teacher
@@ -85,6 +85,9 @@
 									$klas = $row["klas"];
 									$group_role = $row["group_role"];
 									$group_name = $row["group_name"];
+									$gemiddeldePunt = 0;
+									$hoofdstukkenAf = [];
+									$onSchedule = 1;
 
 									//save info from user
 									$userinfo = ['naam'=>$naam, 'klas'=>$klas, 'group_role'=>$group_role, 'group_name'=>$group_name];
@@ -99,7 +102,6 @@
 										if(mysqli_num_rows($result2)>0){
 											$punten = [];
 											$totaalCijfers = 0;
-											$gemiddeldePunt = 0;
 
 											while($row2 = mysqli_fetch_assoc($result2)) {
 												$punt = $row2["cijfer"];
@@ -111,9 +113,6 @@
 											}
 
 											$gemiddeldePunt = $totaalCijfers/count($punten);
-
-											//save the info
-											$userinfo['gemiddeldePunt'] = $gemiddeldePunt;
 										}
 
 									} else {
@@ -129,7 +128,6 @@
 
 										if(mysqli_num_rows($result3)>0){
 											$hoofdstukken = [];
-											$hoofdstukkenAf = [];
 
 											while($row3 = mysqli_fetch_assoc($result3)) {
 												$hoofdstukken['H1'] = $row3["H1"];
@@ -155,9 +153,6 @@
 													if($hoofdstukAfTotaal == $hoofdstukLength){
 														$hoofdstukkenAf['H'.$i] = 1;
 													}
-													print_r($hoofdstukkenAf);
-													echo "</br>";
-
 												}
 											}
 										}
@@ -166,32 +161,37 @@
 										echo "SQL error, alert admin";
 									}
 
-									//get more info
+									//get more info chapters that should have been completed
 									$sql4 = "SELECT progressie FROM `planner` WHERE school='$school' AND klas='$klas'";
 
-									//get/calculate completed chapters
+									//get chapters that should be done
 									if (mysqli_query($conn, $sql4)) {
 										$result4 = mysqli_query($conn, $sql4);
+										$chapterToBeMade = [];
 
 										if(mysqli_num_rows($result4)>0){
-											echo "test";
-
-											while($row3 = mysqli_fetch_assoc($result3)) {
-
+											while($row4 = mysqli_fetch_assoc($result4)) {
+												$progressie = $row4['progressie'];
+												$chapterToBeMade = explode(", ", $progressie );
 											}
+										}
 
+										for($i=0; $i<count($chapterToBeMade)-1;$i++){
+											$shouldBeComplete = $chapterToBeMade[$i];
+											$shouldBeComplete = substr($shouldBeComplete, 1);
 
-
-
-
+											if(!array_key_exists("H".$shouldBeComplete, $hoofdstukkenAf)){
+												$onSchedule = 0;
+											}
 										}
 
 									} else {
 										echo "SQL error, alert admin";
 									}
 
-
-
+									//save the info
+									$userinfo['onSchedule'] = $onSchedule;
+									$userinfo['gemiddeldePunt'] = $gemiddeldePunt;
 
 									$klassen['klas'][$klas][] = $userinfo;
 
@@ -238,25 +238,40 @@
 										$CstudentName = $Cstudent['naam'];
 										$CstudentGroupName = $Cstudent['group_name'];
 										$CstudentGroupRole= $Cstudent['group_role'];
-										$CstudentProgress = 0;
-										//TODO change icon style based on progres
+										$ConSchedule = $Cstudent['onSchedule'];
+										$Caverage = $Cstudent['gemiddeldePunt'];
+
+										if($CstudentGroupName==""){
+											$CstudentGroupName = "zit niet in een groep";
+											$CstudentGroupRole = "";
+										}
 
 										echo '
 
 										<div class="row">
 											<span class="name">'.$CstudentName.'</span>
 											<span class="groepnaam">'.$CstudentGroupName.'</span>
-											<span class="groepnaam">'.$CstudentGroupRole.'</span>
-											<span class="gemiddelde">10,0</span>
-											<span class="progressie">icon</span>
-										</div>
+											<span class="groepsrol">'.$CstudentGroupRole.'</span>
+											<span class="gemiddelde">'.$Caverage.'</span>';
 
-										';
+										if($ConSchedule){
+											echo '
+											<span class="progressie">
+												<span class="onSchedule"></span>
+											</span>
+											';
+										} else {
+											echo '
+											<span class="progressie">
+												<span class="notSchedule"></span>
+											</span>
+											';
+										}
+
+										echo '</div>';
 
 									}
-
 							echo '</div></div>';
-
 							}
 
 						} else {

@@ -32,7 +32,6 @@
 		$NGledenchecked = [];
 	}
 
-
 	//get password for $user
 	$sql = "SELECT password FROM users WHERE username='$user'";
 	if (mysqli_query($conn, $sql)) {

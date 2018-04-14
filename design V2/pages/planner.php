@@ -68,6 +68,12 @@
 					$Pklas = $result['klas'];
 					$Pfunctie = $result['functie'];
 
+					if($Pfunctie == 'leerling'){
+						$sql = "SELECT titel, beschrijving, datum, klas FROM planner WHERE school='$Pschool' AND klas='$Pklas' ORDER BY datum";
+					} elseif ($Pfunctie == 'docent') {
+						$sql = "SELECT titel, beschrijving, datum, klas FROM planner WHERE school='$Pschool' ORDER BY datum";
+					}
+
 					$sql = "SELECT titel, beschrijving, datum, klas FROM planner WHERE school='$Pschool' ORDER BY datum";
 
 					if (mysqli_query($conn, $sql)) {

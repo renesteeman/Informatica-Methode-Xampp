@@ -157,13 +157,15 @@ $(document).ready(function(){
 			//sent values of group via ajax to editGroupFront.php
 			jqXHR = $.ajax({
 				method: "POST",
-				url: '../scripts/deleteGroup.php',
+				url: '../scripts/deleteGroupAjax.php',
 				data: {password:password}
 			});
 
 			jqXHR.done(function(msg) {
 				window.alert(msg);
-				window.location.href = '../pages/overview.php';
+				if(!msg.includes('error')){
+					window.location.href = '../pages/overview.php';
+				}
 			});
 
 			jqXHR.fail(function( jqXHR) {

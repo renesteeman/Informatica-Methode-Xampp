@@ -108,10 +108,16 @@
 					//select student
 					$studentName = $Gleden[$i];
 
-					$sql = "UPDATE users SET group_name='$Gnaam' WHERE naam='$studentName' and school='$Gschool'";
+					$sql = mysqli_query($conn, "SELECT naam FROM users WHERE naam='$studentName' AND school='$Gschool'");
 
-					if (mysqli_query($conn, $sql)) {
-						echo "\n".$studentName." succesvol toegevoegd aan groep";
+					if (mysqli_num_rows($sql) != 0){
+						$sql = "UPDATE users SET group_name='$Gnaam' WHERE naam='$studentName' and school='$Gschool'";
+
+						if (mysqli_query($conn, $sql)) {
+							echo "\n".$studentName." succesvol toegevoegd aan groep";
+						} else {
+							echo "\n".$studentName." bestaat niet";
+						}
 					} else {
 						echo "\n".$studentName." bestaat niet";
 					}

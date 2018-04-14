@@ -124,12 +124,25 @@
 			//update email
 			if(isset($_POST['Nemail'])){
 				$Nemail = mysqli_real_escape_string($conn, check_input($_POST['Nemail']));
-				if($Nemail != $Cemail & $Nemail != ''){
-					$sql = "UPDATE users SET email='$Nemail' WHERE username='$user'";
+
+
+				if($Nemail != '' $Cemail != '' & $Nemail != ''){
+					$sql = "SELECT naam FROM users WHERE email='$Nemail'";
 					if (mysqli_query($conn, $sql)) {
-					    echo "Email succesvol bijgewerkt </br>";
-					} else {
-					    echo "Error updating record: " . mysqli_error($conn);
+
+						$result = mysqli_query($conn, $sql);
+
+						//geen account met nieuw emailadres gevonden
+						if(mysqli_num_rows($result)==0){
+							$sql = "UPDATE users SET email='$Nemail' WHERE username='$user'";
+							if (mysqli_query($conn, $sql)) {
+							    echo "Email succesvol bijgewerkt </br>";
+							} else {
+							    echo "Error updating record: " . mysqli_error($conn);
+							}
+						} else {
+							echo "Emailadres al in gebruik \n";
+						}
 					}
 				}
 			}

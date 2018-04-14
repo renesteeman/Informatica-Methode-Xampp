@@ -55,17 +55,24 @@
 			}
 
 			if($NGnaam!=""){
-				$sql = "UPDATE groepen SET naam='$NGnaam' WHERE naam='$CGnaam' AND school='$school'";
+				//check if Gnaam is already in use
+				$sql = mysqli_query($conn, "SELECT naam FROM groepen WHERE naam='$NGnaam' and school='$NGnaam$NGnaam'");
 
-				if (mysqli_query($conn, $sql)) {
-					echo "\nNieuwe groepnaam is succesvol ingesteld";
-					$_SESSION["groupname"] = $NGnaam;
-					$CGnaam = $_SESSION["groupname"];
+				if (mysqli_num_rows($sql) != 0) {
+					echo "\n Groepnaam is al in gebruik.";
+	 			   $Gnaam = "";
+			   } else {
+				   $sql = "UPDATE groepen SET naam='$NGnaam' WHERE naam='$CGnaam' AND school='$school'";
 
-				} else {
-					echo "Error with sql execution, please report to admin (Gnaam)";
-					$error = 1;
-				}
+				   if (mysqli_query($conn, $sql)) {
+					   echo "\nNieuwe groepnaam is succesvol ingesteld";
+					   $_SESSION["groupname"] = $NGnaam;
+					   $CGnaam = $_SESSION["groupname"];
+				   } else {
+   					echo "Error with sql execution, please report to admin (Gnaam)";
+   					$error = 1;
+   					}
+			   }
 			}
 
 			if($NGbeschrijving!=""){
@@ -107,13 +114,19 @@
 				for($i=0; $i<count($NGledenchecked); $i++){
 					$lid = $NGledenchecked[$i];
 
-					$sql = "UPDATE users SET group_name='$CGnaam' WHERE naam='$lid' AND school='$school'";
+					$sql = mysqli_query($conn, "SELECT naam FROM users WHERE naam='$lid' AND school='$school'");
 
-					if (mysqli_query($conn, $sql)) {
-						echo "\n".$lid." is nu lid van de groep";
+					if (mysqli_num_rows($sql) != 0){
+						$sql = "UPDATE users SET group_name='$CGnaam' WHERE naam='$lid' AND school='$school'";
+
+						if (mysqli_query($conn, $sql)) {
+							echo "\n".$lid." is nu lid van de groep";
+						} else {
+							echo "Error with sql execution, please report to admin (Gleden)";
+							$error = 1;
+						}
 					} else {
-						echo "Error with sql execution, please report to admin (Gleden)";
-						$error = 1;
+						echo "\n".$lid." bestaat niet";
 					}
 				}
 			}

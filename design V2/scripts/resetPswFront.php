@@ -1,3 +1,7 @@
+<head>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+
 <?php
 	include('../components/headerGeneral.php');
 	include('../scripts/DB_connect.php');
@@ -24,6 +28,8 @@
 
 			<label>Email</label>
 			<input type="email" placeholder="email adres" name="email" maxlength="50" required>
+
+			<div class="g-recaptcha" data-sitekey="6Lc_J1MUAAAAAJlHeuG3e9tg0zTGAvA7bC2dgSzq"></div>
 
 			<input type="submit" value="reset wachtwoord"/>
 

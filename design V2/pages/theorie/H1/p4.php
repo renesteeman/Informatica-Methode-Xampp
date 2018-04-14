@@ -74,46 +74,47 @@
 			</p>
 
 			Afkortingen:
-			<table id="afkortingen">
+			<div class="table-wrapper">
+				<table id="afkortingen">
+					<tr>
+						<th>Afkorting</th>
+						<th>Volledige naam</th>
+						<th>Vertaling</th>
+					</tr>
 
-				<tr>
-					<th>Afkorting</th>
-					<th>Volledige naam</th>
-					<th>Vertaling</th>
-				</tr>
+					<tr>
+						<td>CPU</td>
+						<td>Central Processing Unit</td>
+						<td>Centrale processoreenheid</td>
+					</tr>
+					<tr>
+						<td>RAM</td>
+						<td>Random Accessible Memory</td>
+						<td>Willekeurig toegankelijk geheugen</td>
+					</tr>
+					<tr>
+						<td>OS</td>
+						<td>Operating System</td>
+						<td>Besturingssysteem</td>
+					</tr>
+					<tr>
+						<td>GPU</td>
+						<td>Graphics Processing Unit</td>
+						<td>Grafische processoreenheid</td>
+					</tr>
+					<tr>
+						<td>SSD</td>
+						<td>Solid State Drive</td>
+						<td>Schijf zonder bewegende delen</td>
+					</tr>
+					<tr>
+						<td>HDD</td>
+						<td>Harddisk Drive</td>
+						<td>Harde schijf</td>
+					</tr>
 
-				<tr>
-					<td>CPU</td>
-					<td>Central Processing Unit</td>
-					<td>Centrale processoreenheid</td>
-				</tr>
-				<tr>
-					<td>RAM</td>
-					<td>Random Accessible Memory</td>
-					<td>Willekeurig toegankelijk geheugen</td>
-				</tr>
-				<tr>
-					<td>OS</td>
-					<td>Operating System</td>
-					<td>Besturingssysteem</td>
-				</tr>
-				<tr>
-					<td>GPU</td>
-					<td>Graphics Processing Unit</td>
-					<td>Grafische processoreenheid</td>
-				</tr>
-				<tr>
-					<td>SSD</td>
-					<td>Solid State Drive</td>
-					<td>Schijf zonder bewegende delen</td>
-				</tr>
-				<tr>
-					<td>HDD</td>
-					<td>Harddisk Drive</td>
-					<td>Harde schijf</td>
-				</tr>
-
-			</table>
+				</table>
+			</div>
 
 		</div>
 

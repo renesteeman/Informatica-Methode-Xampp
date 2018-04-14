@@ -20,24 +20,27 @@
 		echo "Aantal not set </br>";
 		$allSet = 0;
 	}
+
 	if(isset ($_POST['school']) & $_POST['school']!=""){
 		$school = mysqli_real_escape_string($conn, check_input($_POST['school']));
 	} else {
 		echo "School not set </br>";
 		$allSet = 0;
 	}
+
 	if(isset ($_POST['functie']) & $_POST['functie']!=""){
 		$functie = mysqli_real_escape_string($conn, check_input($_POST['functie']));
 	} else {
 		echo "Functie not set </br>";
 		$allSet = 0;
 	}
+
 	if(isset ($_POST['klas']) & $_POST['klas']!=""){
 		$klas = mysqli_real_escape_string($conn, check_input($_POST['klas']));
 	} else {
-		echo "Klas not set </br>";
-		$allSet = 0;
+		$klas = "";
 	}
+
 	if(isset ($_POST['naam']) & $_POST['naam']!=""){
 		$naam = mysqli_real_escape_string($conn, check_input($_POST['naam']));
 	} else {

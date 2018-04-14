@@ -39,6 +39,15 @@
 					echo "Error with sql execution, please report to admin (Delete group)";
 				}
 
+				//delete group_name of current members
+				$sql = "UPDATE users SET group_name='' WHERE group_name='$Gnaam' AND school='$school'";
+
+				if (mysqli_query($conn, $sql)) {
+					echo "\nLeden succesvol verwijderd";
+				} else {
+					echo "Error with sql execution, please report to admin (Remove members)";
+				}
+
 			} else {
 				echo "Error with sql execution, please report to admin";
 			}

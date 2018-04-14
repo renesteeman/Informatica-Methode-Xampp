@@ -164,7 +164,7 @@ $(document).ready(function(){
 			jqXHR.done(function(msg) {
 				window.alert(msg);
 				if(!msg.includes('error')){
-					window.location.href = '../pages/overview.php';
+					//window.location.href = '../pages/overview.php';
 				}
 			});
 

@@ -74,8 +74,6 @@ $groupname = mysqli_real_escape_string($conn, check_input($_SESSION['groupname']
 
 										$result = mysqli_query($conn, $sql);
 
-										$namen=[];
-
 										if (mysqli_num_rows($result) > 0) {
 										    //save names
 										    while($row = mysqli_fetch_assoc($result)) {

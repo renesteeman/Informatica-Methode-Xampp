@@ -25,7 +25,7 @@
 
 				span
 					display: inline-block
-					word-break: break-all
+					word-wrap: break-word
 
 				.icons
 					span
@@ -234,3 +234,47 @@
 					span.icons
 						width: 100%
 						display: block
+
+@media (max-width: $medium)
+	.overzicht
+		.table
+			.headerRow.klassen
+				.rowContent
+					.row
+						padding-left: 5%
+
+						span.name
+							width: 20%
+
+						span.groepnaam
+							width: 30%
+
+						span.groepsrol
+							width: 25%
+
+						span.gemiddelde
+							width: 10%
+
+						span.progressie
+							width: 10%
+
+@media (max-width: $small)
+	.overzicht
+		.table
+			.headerRow.klassen
+				.rowContent
+					.row
+						span.name
+							width: 30%
+
+						span.groepnaam
+							width: 65%
+
+						span.groepsrol
+							width: 45%
+
+						span.gemiddelde
+							width: 25%
+
+						span.progressie
+							width: 25%

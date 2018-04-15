@@ -54,7 +54,21 @@
 
 		<div class="tile">
 			<div class="tile-content">
-				H3 Programmeren
+				<div class="tile-chapter">
+					H3 programmeren
+				</div>
+				<div class="tile-paragraphs">
+					<ol>
+						<ul><a href="theorie/H3/p1.php">§1 Introductie tot programmeertalen</ul>
+						<ul><a href="theorie/H3/p2.php">§2 Installatie</a></ul>
+						<ul><a href="theorie/H3/p3.php">§3 Variabelen</a></ul>
+						<ul><a href="theorie/H3/p4.php">§4 Rekenen met variabelen</a></ul>
+						<ul><a href="theorie/H3/p5.php">§5 Condities</a></ul>
+						<ul><a href="theorie/H3/p6.php">§6 Loops</a></ul>
+						<ul><a href="theorie/H3/p7.php">§7 Uitdaging mini-game</a></ul>
+						<ul><a href="theorie/H3/quiz.php">Quiz</a></ul>
+					</ol>
+				</div>
 			</div>
 		</div>
 

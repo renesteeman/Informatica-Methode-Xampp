@@ -42,6 +42,7 @@
 				$Cnaam = $result['naam'];
 				$Cusername = $result['username'];
 				$Cemail = $result['email'];
+				$Cgroup_role = $result['group_role'];
 			}
 
 			//update naam
@@ -55,16 +56,16 @@
 
 					//geen account met nieuwe naam gevonden
 					if(mysqli_num_rows($result)==0){
-						if($Nnaam != $Cnaam & $Nnaam != ''){
+						if($Nnaam != $Cnaam && $Nnaam != ''){
 							$sql = "UPDATE users SET naam='$Nnaam' WHERE username='$user'";
 							if (mysqli_query($conn, $sql)) {
-							    echo "Naam succesvol bijgewerkt </br>";
+							    echo "\nNaam succesvol bijgewerkt";
 							} else {
 							    echo "SQL error report to admin";
 							}
 						}
 					} else {
-						echo "Naam al in gebruik";
+						echo "\nNaam al in gebruik";
 					}
 				} else {
 					echo "SQL error report to admin";
@@ -82,11 +83,11 @@
 
 					//geen account met nieuwe naam gevonden
 					if(mysqli_num_rows($result)==0){
-						if($Nusername != $Cusername & $Nusername != ''){
+						if($Nusername != $Cusername && $Nusername != ''){
 							$sql = "UPDATE users SET username='$Nusername' WHERE username='$user'";
 
 							if (mysqli_query($conn, $sql)) {
-							    echo "Gebruikersnaam succesvol bijgewerkt </br>";
+							    echo "\nGebruikersnaam succesvol bijgewerkt";
 								$_SESSION["username"] = $Nusername;
 								$user = $Nusername;
 
@@ -95,7 +96,7 @@
 							}
 						}
 					} else {
-						echo "Gebruikersnaam al in gebruik";
+						echo "\nGebruikersnaam al in gebruik";
 					}
 				} else {
 					echo "SQL error report to admin";
@@ -107,14 +108,14 @@
 				$Npassword = mysqli_real_escape_string($conn, check_input($_POST['Npassword']));
 				$NpasswordConfirm = mysqli_real_escape_string($conn, check_input($_POST['NpasswordConfirm']));
 
-				if($Npassword == $NpasswordConfirm  & $Npassword != ''){
+				if($Npassword == $NpasswordConfirm && $Npassword != ''){
 					//hash password
 					$Npassword = password_hash($Npassword, PASSWORD_DEFAULT);
 
 					//update password
 					$sql = "UPDATE users SET password='$Npassword' WHERE username='$user'";
 					if (mysqli_query($conn, $sql)) {
-					    echo "Wachtwoord succesvol bijgewerkt </br>";
+					    echo "\nWachtwoord succesvol bijgewerkt";
 					} else {
 					    echo "Error updating record: " . mysqli_error($conn);
 					}
@@ -125,8 +126,7 @@
 			if(isset($_POST['Nemail'])){
 				$Nemail = mysqli_real_escape_string($conn, check_input($_POST['Nemail']));
 
-
-				if($Nemail != '' $Cemail != '' & $Nemail != ''){
+				if($Nemail != $Cemail && $Nemail != ''){
 					$sql = "SELECT naam FROM users WHERE email='$Nemail'";
 					if (mysqli_query($conn, $sql)) {
 
@@ -136,18 +136,34 @@
 						if(mysqli_num_rows($result)==0){
 							$sql = "UPDATE users SET email='$Nemail' WHERE username='$user'";
 							if (mysqli_query($conn, $sql)) {
-							    echo "Email succesvol bijgewerkt </br>";
+							    echo "\nEmail succesvol bijgewerkt";
 							} else {
 							    echo "Error updating record: " . mysqli_error($conn);
 							}
 						} else {
-							echo "Emailadres al in gebruik \n";
+							echo "\nEmailadres al in gebruik \n";
 						}
 					}
 				}
 			}
+
+			//update email
+			if(isset($_POST['Ngroup_role'])){
+				$Ngroup_role = mysqli_real_escape_string($conn, check_input($_POST['Ngroup_role']));
+
+				if($Ngroup_role != $Cgroup_role && $Ngroup_role != ''){
+
+					$sql = "UPDATE users SET group_role='$Ngroup_role' WHERE username='$user'";
+					if (mysqli_query($conn, $sql)) {
+					    echo "\nGroup succesvol bijgewerkt";
+					} else {
+					    echo "Error updating record: " . mysqli_error($conn);
+					}
+				}
+			}
+
 		} else {
-			echo "Wrong password";
+			echo "\nVerkeerd wachtwoord";
 		}
 	}
 

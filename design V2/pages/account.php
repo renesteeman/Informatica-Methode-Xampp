@@ -44,6 +44,7 @@
 				$Cusername = $result['username'];
 				$Cgroep = $result['group_name'];
 				$Cemail = $result['email'];
+				$Groupsrol = $result['group_role'];
 			}
 
 			echo '
@@ -70,6 +71,10 @@
 						<li>
 							<label>Email</label>
 							<input type="email" placeholder="'.$Cemail.'" name="Nemail" maxlength="50">
+						</li>
+						<li>
+							<label>Groupsrol</label>
+							<input type="text" placeholder="'.$Groupsrol.'"name="Ngroup_role" maxlength="50">
 						</li>
 						<li>
 							<label>Huidig wachtwoord</label>

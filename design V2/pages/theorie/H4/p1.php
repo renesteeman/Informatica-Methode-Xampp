@@ -98,10 +98,11 @@
 
 			<ol>
 				<li>
-
+					Stel ik heb een apparaat dat 5V gebruikt en een weerstand heeft van 2ohm, wat is het vermogen ervan?
 				</li>
 				<li>
-
+					<img src="./afbeeldingen/vraag1.svg" />
+					Bij 1 is de spanning 12V en de weerstand is 1ohm. Bij 2 is de weerstand 2ohm. Hoeveel ampère gaat er door 3?
 				</li>
 			</ol>
 
@@ -117,10 +118,16 @@
 
 			<ol>
 				<li>
+					U=5V R=2ohm</br>
+					R=U/I </br>
+					I=R/U=5/2=2.5A</br></br>
 
+					P=U*I=5*2.5=12.5W
 				</li>
 				<li>
-
+					Bij 1 hoort 12V en 1ohm, dus 12A.</br>
+					Bij 2 hoort dan 12V (het aantal J/coulomb is na de ‘splitsing’ nog niet veranderd) en 2ohm, dus 6A.</br>
+					Bij 3 hoort dan 12-6=6A, want er was 12 coulomb/s verdeeld over 2 stukken waarvan het andere stuk (2) 6 coulomb/s ontvangt.
 				</li>
 			</ol>
 

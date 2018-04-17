@@ -75,12 +75,16 @@
 
 		<div class="theorie-content">
 
-			<ol>
+			<ol class="MLquestion">
+				Waar of niet waar:
 				<li>
-
+					De weerstand van een LDR neemt toe als er meer licht op valt.
 				</li>
 				<li>
-
+					Een arduino kan (zonder aanpassingen) gebruikt worden als een desktop met windows.
+				</li>
+				<li>
+					Met PWM kan een waarde van 1 aangeven.
 				</li>
 			</ol>
 
@@ -94,12 +98,16 @@
 
 		<div class="theorie-content theorie-answers">
 
-			<ol>
+			<ol class="MLquestion">
+				Waar of niet waar:
 				<li>
-
+					Niet waar
 				</li>
 				<li>
-
+					Niet waar
+				</li>
+				<li>
+					Waar
 				</li>
 			</ol>
 

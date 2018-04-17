@@ -78,43 +78,6 @@
 
 		</div>
 
-		<div class="bar-s">
-			<h3>
-				Vragen
-			</h3>
-		</div>
-
-		<div class="theorie-content">
-
-			<ol>
-				<li>
-
-				</li>
-				<li>
-
-				</li>
-			</ol>
-
-		</div>
-
-		<div class="bar-s">
-			<h3>
-				Antwoorden
-			</h3>
-		</div>
-
-		<div class="theorie-content theorie-answers">
-
-			<ol>
-				<li>
-
-				</li>
-				<li>
-
-				</li>
-			</ol>
-
-		</div>
 	</div>
 
 	<?php

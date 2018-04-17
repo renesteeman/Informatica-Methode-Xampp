@@ -183,10 +183,13 @@ void loop() {
 
 			<ol>
 				<li>
-
+					In welke 2 onderdelen is arduino code verdeeld?
 				</li>
 				<li>
-
+					Welke waarde heeft een pin 6 na de uitvoering van: digtalWrite(12, HIGH)?
+				</li>
+				<li>
+					Hoe pauzeer je de code voor 1s?
 				</li>
 			</ol>
 
@@ -202,10 +205,13 @@ void loop() {
 
 			<ol>
 				<li>
-
+					Een setup onderdeel dat eenmalig uitgevoerd wordt en een loop die zich zo snel mogelijk blijft herhalen.
 				</li>
 				<li>
-
+					1
+				</li>
+				<li>
+					delay(1000)
 				</li>
 			</ol>
 

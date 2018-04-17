@@ -101,10 +101,10 @@ if (voorwaarde){
 
 			<ol>
 				<li>
-
+					Geef de naam van een arduino die krachtiger is dan de uno.
 				</li>
 				<li>
-
+					Hoe ziet een IF statement eruit die code uitvoert als twee waarden niet gelijk zijn aan elkaar (je mag doen alsof er al variabelen gedeclareerd zijn)?
 				</li>
 			</ol>
 
@@ -120,10 +120,16 @@ if (voorwaarde){
 
 			<ol>
 				<li>
-
+					Er zijn meerdere antwoorden mogelijk, waaronder de arduino mega.
 				</li>
 				<li>
-
+					<pre>
+						<code>
+if(waarde1 != waarde2){
+	//uit te voeren code
+}
+						</code>
+					</pre>
 				</li>
 			</ol>
 

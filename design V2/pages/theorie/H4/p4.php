@@ -66,6 +66,7 @@
 				6) Plak de volgende code in het arduino bestand</br>
 			</p>
 			<p>
+				Hoe er rekening mee dat de als de code gekopieerd wordt, het bugs kan bevatten doordat te lange tekst naar de volgende regel wordt geschoven.
 
 					<pre>
 						<code>
@@ -167,7 +168,7 @@ void loop() {
 
 			</p>
 			<p>
-				Kijk naar de comments (de tekst met // ervoor) voor de uitleg per regel. Probeer nu zelf het lampje aan en uit te laten gaan met een andere snelheid. Tip: gebruik als +pin hier pin 13 en niet de 5V pin. 
+				Kijk naar de comments (de tekst met // ervoor) voor de uitleg per regel. Probeer nu zelf het lampje aan en uit te laten gaan met een andere snelheid. Tip: gebruik als +pin hier pin 13 en niet de 5V pin.
 			</p>
 
 		</div>

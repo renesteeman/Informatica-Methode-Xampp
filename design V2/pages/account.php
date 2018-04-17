@@ -5,6 +5,12 @@
 
 <link rel="stylesheet" href="../css/account.min.css">
 
+<head>
+	<meta name="description" content="Uw account bijwerken en instellingen controleren." />
+	<meta name="keywords" content="Informatica, lesmethode, betaalbaar, duidelijk, account" />
+	<meta name="author" content="René Steeman" />
+</head>
+
 <body>
 
 	<div class="title">

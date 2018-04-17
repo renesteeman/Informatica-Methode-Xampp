@@ -2,6 +2,12 @@
 	include('../components/headerGeneral.php');
 ?>
 
+<head>
+	<meta name="description" content="Een informatica methode met structuur en keuze. Voor docenten is er een duidelijk overzicht en leerlingen kunnen zich specialiseren in wat ze interessant vinden, zonder de basis te missen." />
+	<meta name="keywords" content="Informatica, lesmethode, betaalbaar, duidelijk" />
+	<meta name="author" content="René Steeman" />
+</head>
+
 <body>
 
 	<div class="title">

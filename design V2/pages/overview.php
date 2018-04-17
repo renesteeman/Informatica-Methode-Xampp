@@ -5,6 +5,12 @@
 
 <link rel="stylesheet" href="../css/overview.min.css">
 
+<head>
+	<meta name="description" content="Een overzicht voor docenten waar alle klassen en groepen duidelijk zijn weergegeven en de progressie van leerlingen kan worden bijgehouden." />
+	<meta name="keywords" content="Informatica, lesmethode, betaalbaar, duidelijk, overzicht" />
+	<meta name="author" content="René Steeman" />
+</head>
+
 <body>
 
 	<div class="title">

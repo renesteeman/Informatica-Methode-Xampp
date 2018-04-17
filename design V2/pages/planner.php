@@ -5,6 +5,12 @@
 
 <link rel="stylesheet" href="../css/planner.min.css">
 
+<head>
+	<meta name="description" content="Een planner waarop leerlingen kunnen zien wat voor wanneer af moet zijn en docenten opdrachten kunnen toevoegen." />
+	<meta name="keywords" content="Informatica, lesmethode, betaalbaar, duidelijk, overzicht, planner" />
+	<meta name="author" content="René Steeman" />
+</head>
+
 <body>
 
 	<div class="title">

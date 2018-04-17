@@ -80,7 +80,20 @@
 
 		<div class="tile">
 			<div class="tile-content">
-				H4 Arduino
+				<div class="tile-chapter">
+					H4 arduino
+				</div>
+				<div class="tile-paragraphs">
+					<ol>
+						<ul><a href="theorie/H4/p1.php">§1 Elektriciteit</ul>
+						<ul><a href="theorie/H4/p2.php">§2 introductie tot arduino</a></ul>
+						<ul><a href="theorie/H4/p3.php">§3 Installatie van de software</a></ul>
+						<ul><a href="theorie/H4/p4.php">§4 De basis van programmeren voor arduino</a></ul>
+						<ul><a href="theorie/H4/p5.php">§5 Verder met arduino</a></ul>
+						<ul><a href="theorie/H4/p6.php">§6 Een LED met LDR</a></ul>
+						<ul><a href="theorie/H4/quiz.php">Quiz</a></ul>
+					</ol>
+				</div>
 			</div>
 		</div>
 

@@ -10,6 +10,9 @@ session_start();
 	<!-- meta -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="Moderne informatica theorie inclusief opdrachten, antwoorden en oefentoetsen." />
+	<meta name="keywords" content="Informatica, lesmethode, betaalbaar, duidelijk" />
+	<meta name="author" content="René Steeman" />
 
 	<!-- external includes -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">

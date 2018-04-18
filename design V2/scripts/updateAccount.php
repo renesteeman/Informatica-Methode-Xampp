@@ -27,7 +27,7 @@
 			$rightpsw = $result['password'];
 
 		} else {
-			echo "Error with sql execution, please report to admin </br>";
+			echo "\nError with sql execution, please report to admin";
 		}
 
 		//check password
@@ -117,7 +117,7 @@
 					if (mysqli_query($conn, $sql)) {
 					    echo "\nWachtwoord succesvol bijgewerkt";
 					} else {
-					    echo "Error updating record: " . mysqli_error($conn);
+					    echo "SQL error, report admin";
 					}
 				}
 			}
@@ -138,7 +138,7 @@
 							if (mysqli_query($conn, $sql)) {
 							    echo "\nEmail succesvol bijgewerkt";
 							} else {
-							    echo "Error updating record: " . mysqli_error($conn);
+							    echo "SQL error, report to admin";
 							}
 						} else {
 							echo "\nEmailadres al in gebruik \n";
@@ -157,7 +157,7 @@
 					if (mysqli_query($conn, $sql)) {
 					    echo "\nGroup succesvol bijgewerkt";
 					} else {
-					    echo "Error updating record: " . mysqli_error($conn);
+					    echo "SQL error, report admin";
 					}
 				}
 			}

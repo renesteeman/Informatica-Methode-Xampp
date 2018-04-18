@@ -100,7 +100,7 @@
 				if (mysqli_query($conn, $sql)) {
 					echo "Groep succesvol toegevoegd";
 				} else {
-					echo "Error with sql execution, please report to admin </br>";
+					echo "\nError with sql execution, please report to admin";
 				}
 
 				//link students to group
@@ -116,7 +116,7 @@
 						if (mysqli_query($conn, $sql)) {
 							echo "\n".$studentName." succesvol toegevoegd aan groep";
 						} else {
-							echo "\n".$studentName." bestaat niet";
+							echo "\n SQL error, report to admin";
 						}
 					} else {
 						echo "\n".$studentName." bestaat niet";

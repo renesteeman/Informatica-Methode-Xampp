@@ -34,8 +34,6 @@
 		$result = mysqli_fetch_assoc($result);
 		$userid = $result['id'];
 
-
-
 		//check if user already has a score for the quiz
 		$sql = "SELECT cijfer FROM quiz WHERE userid=$userid";
 
@@ -75,9 +73,5 @@
 	} else {
 		echo "SQL error report to admin";
 	}
-
-
-
-
 
 ?>

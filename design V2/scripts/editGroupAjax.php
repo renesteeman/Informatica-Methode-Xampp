@@ -50,7 +50,7 @@
 				$school = $result['school'];
 
 			} else {
-				echo "Error with sql execution, please report to admin";
+				echo "\nError with sql execution, please report to admin";
 			}
 
 			if($NGnaam!=""){
@@ -58,7 +58,7 @@
 				$sql = mysqli_query($conn, "SELECT naam FROM groepen WHERE naam='$NGnaam' and school='$NGnaam$NGnaam'");
 
 				if (mysqli_num_rows($sql) != 0) {
-					echo "\n Groepnaam is al in gebruik.";
+					echo "\nGroepnaam is al in gebruik.";
 	 			   $Gnaam = "";
 			   } else {
 				   $sql = "UPDATE groepen SET naam='$NGnaam' WHERE naam='$CGnaam' AND school='$school'";
@@ -68,7 +68,7 @@
 					   $_SESSION["groupname"] = $NGnaam;
 					   $CGnaam = $_SESSION["groupname"];
 				   } else {
-   					echo "Error with sql execution, please report to admin (Gnaam)";
+   					echo "\nError with sql execution, please report to admin (Gnaam)";
    					$error = 1;
    					}
 			   }
@@ -81,7 +81,7 @@
 				if (mysqli_query($conn, $sql)) {
 					echo "\nNieuwe groepsbeschrijving is succesvol ingesteld";
 				} else {
-					echo "Error with sql execution, please report to admin (Gbeschrijving)";
+					echo "\nError with sql execution, please report to admin (Gbeschrijving)";
 					$error = 1;
 				}
 			}
@@ -92,7 +92,7 @@
 				if (mysqli_query($conn, $sql)) {
 					echo "\nNieuwe groepslink is succesvol ingesteld";
 				} else {
-					echo "Error with sql execution, please report to admin (Glink)";
+					echo "\nError with sql execution, please report to admin (Glink)";
 					$error = 1;
 				}
 			}
@@ -105,7 +105,7 @@
 				if (mysqli_query($conn, $sql)) {
 					echo "\nOude leden succesvol verwijderd";
 				} else {
-					echo "Error with sql execution, please report to admin (Remove old members)";
+					echo "\nError with sql execution, please report to admin (Remove old members)";
 					$error = 1;
 				}
 
@@ -121,7 +121,7 @@
 						if (mysqli_query($conn, $sql)) {
 							echo "\n".$lid." is nu lid van de groep";
 						} else {
-							echo "Error with sql execution, please report to admin (Gleden)";
+							echo "\nError with sql execution, please report to admin (Gleden)";
 							$error = 1;
 						}
 					} else {
@@ -136,7 +136,7 @@
 		}
 
 	} else {
-		echo "Error with sql execution, please report to admin";
+		echo "\nError with sql execution, please report to admin";
 	}
 
 	if($error==1){

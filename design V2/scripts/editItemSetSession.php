@@ -18,6 +18,4 @@
 	$date = $year.'-'.substr($gegevendatum, -2, 2).'-'.substr($gegevendatum, 0, 2);
 	$_SESSION['itemdatum'] = $date;
 
-	print_r ($_SESSION);
-
 ?>

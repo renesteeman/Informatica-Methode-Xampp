@@ -12,6 +12,4 @@
 
 	$_SESSION['groupname'] =  mysqli_real_escape_string($conn, check_input($_POST['groupname']));
 
-	print_r ($_SESSION);
-
 ?>

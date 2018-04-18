@@ -36,7 +36,7 @@
 				if (mysqli_query($conn, $sql)) {
 					echo $Gnaam." deleted";
 				} else {
-					echo "Error with sql execution, please report to admin (Delete group)";
+					echo "\nError with sql execution, please report to admin (Delete group)";
 				}
 
 				//delete group_name of current members
@@ -45,17 +45,17 @@
 				if (mysqli_query($conn, $sql)) {
 					echo "\nLeden succesvol verwijderd";
 				} else {
-					echo "Error with sql execution, please report to admin (Remove members)";
+					echo "\nError with sql execution, please report to admin (Remove members)";
 				}
 
 			} else {
-				echo "Error with sql execution, please report to admin";
+				echo "\nError with sql execution, please report to admin";
 			}
 		} else {
-			echo "Wrong password";
+			echo "\nWrong password";
 		}
 	} else {
-		echo "Error with sql execution, please report to admin";
+		echo "\nError with sql execution, please report to admin";
 	}
 
 ?>

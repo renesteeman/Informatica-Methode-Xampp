@@ -68,9 +68,7 @@
 			</ul>
 		</form>
 	</div>
-
-
-
+	
 	</div>
 
 	<?php

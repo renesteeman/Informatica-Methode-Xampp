@@ -30,7 +30,7 @@
 			$Ischool = $result['school'];
 
 		} else {
-			echo "Error with sql execution, please report to admin </br>";
+			echo "\nError with sql execution, please report to admin";
 		}
 
 		//get info

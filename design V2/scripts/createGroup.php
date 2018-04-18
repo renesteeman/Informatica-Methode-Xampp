@@ -18,7 +18,7 @@
 
 	if (!in_array($klas, $resultArray)){
 		//insert group into DB
-		$sql = "INSERT INTO `groups` (`id`, `school`, `klas`) VALUES (NULL, '$school', '$klas');";
+		$sql = "INSERT INTO `groups` (school`, `klas`) VALUES ('$school', '$klas');";
 
 		if (mysqli_query($conn, $sql)) {
 			echo "Group created for ".$school." ".$klas;

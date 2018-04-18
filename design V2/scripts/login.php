@@ -33,13 +33,10 @@
 		//start session with username
 		$_SESSION["username"] = $username;
 		$_SESSION["functie"] = $functie;
-		header("Location: ../pages/index.php");
-
+		
 		mysqli_close($conn);
-		echo "Error redirecting";
-
 	} else {
-		echo "False login <br />";
+		echo "\nIncorrecte login gegevens";
 	}
 
 ?>

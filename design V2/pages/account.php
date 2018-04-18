@@ -108,7 +108,7 @@
 							<input type="password" placeholder="Password" name="password" maxlength="50" required>
 						</li>
 						<li>
-							<input type="submit" value="login">
+							<input type="submit" value="login" id="LoginButton">
 						</li>
 						<li>
 							<div class="resetPasswordButton">

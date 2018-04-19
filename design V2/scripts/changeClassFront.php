@@ -30,126 +30,91 @@
 
 			<ul>
 
+			<li>
+				<?php
+					//show classes
 
-			<?php
-				//if logged in show class
-				if (isset($_SESSION["username"])){
 
-					$user = $_SESSION["username"];
+					//if logged in show class
+					if (isset($_SESSION["username"])){
 
-					$klassen = [];
-					$klassen['klas'] = [];
+						$user = $_SESSION["username"];
 
-					$sql = "SELECT school, functie FROM users WHERE username='$user'";
+						$klassen = [];
+						$klassen['klas'] = [];
 
-					if (mysqli_query($conn, $sql)) {
-						//find school of teacher
-						$result = mysqli_query($conn, $sql);
-						$result = mysqli_fetch_assoc($result);
-						$school = $result['school'];
-						$functie = $result['functie'];
+						$sql = "SELECT school, functie FROM users WHERE username='$user'";
 
-						if($functie != 'docent'){
-							echo "U bent geen docent";
-						} else {
-							$Nclasses = 0;
+						if (mysqli_query($conn, $sql)) {
+							//find school of teacher
+							$result = mysqli_query($conn, $sql);
+							$result = mysqli_fetch_assoc($result);
+							$school = $result['school'];
 
-							$sql = "SELECT naam, klas FROM `users` WHERE school='$school' AND functie='leerling'";
+							$sql = "SELECT klas FROM users WHERE school='$school'";
 
 							if (mysqli_query($conn, $sql)) {
-
+								//find school of teacher
 								$result = mysqli_query($conn, $sql);
+								$klassen = [];
 
 								if (mysqli_num_rows($result) > 0) {
-									// output data of each row of names with class
-
 									while($row = mysqli_fetch_assoc($result)) {
-										$klas = $row["klas"];
-										$naam = $row["naam"];
-
-										//save info from user
-										$userinfo = ['naam'=>$naam, 'klas'=>$klas];
-
-										//save info
-										$klassen['klas'][$klas][] = $userinfo;
-
+										$klas = $row['klas'];
+										if(!in_array($klas, $klassen)){
+											$klassen[] = $klas;
+										}
 									}
-
-								} else {
-									echo "0 results";
 								}
 
-								//How many classes are there?
-								$Nclasses = count($klassen['klas']);
+								$Nclasses = count($klassen);
 
 								//put the classes in the right order
-								ksort($klassen['klas']);
+								ksort($klassen);
 
-								//Show me these (the nice way)
-								$AllClasses = array_keys($klassen['klas']);
-
+								//output classes as option
 								echo 'Klas: <div class="klasSelector"><select>';
-
-
-								for($i=0; $i < $Nclasses; $i++){
-									$CurrentClass = $AllClasses[$i];
+								for($i=0; $i<$Nclasses; $i++){
+									$CurrentClass = $klassen[$i];
 
 									echo'
 									<option value="'.$CurrentClass.'">'.$CurrentClass.'</option>
 									';
 
 								}
-
 								echo '</select></div>';
-
 							} else {
 								echo "SQL error, report to admin";
 							}
-
-							echo'<div class="leerlingSelector">Leerlingen:';
-
-							for($i=0; $i<$Nclasses; $i++){
-								$CurrentClass = $AllClasses[$i];
-								$StudentsCurrentClass[] = $klassen['klas'][$CurrentClass];
-								$NStudents = array_map("count", $StudentsCurrentClass);
-								$NStudentsCurrentClass = ($NStudents[$i]);
-
-								for($j=0; $j<$NStudentsCurrentClass; $j++){
-									$Cstudent = $StudentsCurrentClass[$i][$j];
-									$CstudentName = $Cstudent['naam'];
-
-									echo '
-									<div class="leerling">
-										<label class="container">'.$CstudentName.'
-											<input type="checkbox">
-											<span class="checkmark"></span>
-										</label>
-									</div>
-									';
-
-								}
-							}
-							echo '</div>';
+						} else {
+							echo "SQL error, report to admin";
 						}
-					} else {
-						echo "SQL error, report to admin";
-					}
-			   } else {
-				   echo 'U bent niet ingelogd';
-			   }
+				   } else {
+					   echo 'U bent niet ingelogd';
+				   }
 
-			?>
+				?>
+			</li>
 
-
-
+			<li>
+				<div class="leerlingSelector">Leerlingen:
+					<div class="leerling">
+						<label class="container">Naam
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+				</div>
+			</li>
+			<li>
 				Nieuwe klas:</br>
 				<input type="text" />
-
-				<li>
-					<input type="submit" value="update">
-				</li>
-			</ul>
-		</form>
+			</li>
+			<li>
+				<input type="submit" value="update">
+			</li>
+		</ul>
+	</form>
 
 	</div>
 

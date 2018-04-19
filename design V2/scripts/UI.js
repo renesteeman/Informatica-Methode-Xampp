@@ -498,6 +498,7 @@ $(document).ready(function(){
 
 		jqXHR.done(function(msg) {
 			alert(msg);
+			location.reload();
 		});
 
 		jqXHR.fail(function( jqXHR) {

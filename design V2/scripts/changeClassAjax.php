@@ -38,7 +38,7 @@
 			$sql = "UPDATE users SET klas='$Nklas' WHERE naam='$naam' AND school='$school'";
 
 			if (mysqli_query($conn, $sql)) {
-				echo "\nDe klas is voor ."$naam". succesvol aangepast";
+				echo "\nDe klas is voor ".$naam." succesvol aangepast";
 
 			} else {
 				echo "SQL error, report to admin";

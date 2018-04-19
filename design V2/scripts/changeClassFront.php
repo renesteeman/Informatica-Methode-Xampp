@@ -26,15 +26,13 @@
 	</div>
 
 	<div class="main">
-		<form class="accountSettingsForm" method="post" action="../scripts/updateAccount.php" accept-charset="UTF-8">
+		<form class="changeClass" method="post" action="../scripts/updateAccount.php" accept-charset="UTF-8">
 
 			<ul>
 
 			<li>
 				<?php
 					//show classes
-
-
 					//if logged in show class
 					if (isset($_SESSION["username"])){
 
@@ -74,6 +72,7 @@
 
 								//output classes as option
 								echo 'Klas: <div class="klasSelector"><select>';
+								echo '<option value=""></option>';
 								for($i=0; $i<$Nclasses; $i++){
 									$CurrentClass = $klassen[$i];
 
@@ -103,7 +102,7 @@
 			</li>
 			<li>
 				Nieuwe klas:</br>
-				<input type="text" />
+				<input type="text" class="Nclass" name="Nclass"/>
 			</li>
 			<li>
 				<input type="submit" value="update">

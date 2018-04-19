@@ -98,12 +98,7 @@
 
 			<li>
 				<div class="leerlingSelector">Leerlingen:
-					<div class="leerling">
-						<label class="container">Naam
-							<input type="checkbox">
-							<span class="checkmark"></span>
-						</label>
-					</div>
+					<!-- to be filled in by php with ajax -->
 				</div>
 			</li>
 			<li>

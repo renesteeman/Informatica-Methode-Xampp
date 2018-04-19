@@ -75,7 +75,6 @@
 						$school = $result['school'];
 						$functie = $result['functie'];
 
-
 						if($functie != 'docent'){
 							echo "U bent geen docent";
 						} else {

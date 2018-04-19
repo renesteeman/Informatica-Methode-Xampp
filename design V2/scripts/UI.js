@@ -443,20 +443,38 @@ $(document).ready(function(){
 		});
 
 		jqXHR.done(function(msg) {
-
 			if(msg.includes('succesvol')){
 				window.alert(msg);
 				window.location.href = '../pages/index.php';
 			} else {
 				window.alert(msg);
 			}
-
 		});
 
 		jqXHR.fail(function( jqXHR) {
 		  alert("AJAX failed, contact admin");
 		});
 	});
+
+	//update class
+	//show students that correspond to class
+	$('.klasSelector').change(function() {
+		var klas = $('.klasSelector option:selected').val();
+
+		jqXHR = $.ajax({
+			method: "POST",
+			url: '../scripts/changeClassAjaxStudents.php',
+			data: {klas: klas}
+		});
+
+		jqXHR.done(function(msg) {
+			$('.leerlingSelector').html(msg);
+		});
+
+		jqXHR.fail(function( jqXHR) {
+		  alert("AJAX failed, contact admin");
+		});
+	})
 
 
 });

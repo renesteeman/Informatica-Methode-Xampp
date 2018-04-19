@@ -15,23 +15,26 @@
 	background: linear-gradient(to bottom right, $green-blue, $green)
 
 	input
-		font-size: 2em
+		font-size: 1.5em
 		margin-bottom: 1em
 		margin-top: 1em
 		position: relative
 		bottom: 20px
 		padding: 12px 12px
 		border-radius: 4px
-		height: 2em
+		height: 1.5em
 		box-shadow: inset 0 0 0 0 darken($white, 10%), 4px 4px 8px darken($green-blue, 20%)
 		transition: background .5s ease-out, box-shadow 0.5s ease-in-out
+
+	input[type="submit"]
+		font-size: 2em
+		height: 2em
 
 	ul
 		list-style: none
 
 	//checkbox
 	.container
-		display: block
 		position: relative
 		padding-left: 1em
 		cursor: pointer
@@ -74,12 +77,15 @@
 		border-width: 0 3px 3px 0
 		transform: rotate(45deg)
 
+	input[type="checkbox"]
+		display: none
+
 	//page elements
 	.klasSelector
 
 		option
-			font-size: 2em
-			height: 2em
+			font-size: 1em
+			height: 1em
 			padding: 12px 12px
 
 	.leerlingSelector

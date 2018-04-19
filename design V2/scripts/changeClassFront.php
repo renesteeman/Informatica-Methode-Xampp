@@ -52,6 +52,8 @@
 						if($functie != 'docent'){
 							echo "U bent geen docent";
 						} else {
+							$Nclasses = 0;
+
 							$sql = "SELECT naam, klas FROM `users` WHERE school='$school' AND functie='leerling'";
 
 							if (mysqli_query($conn, $sql)) {
@@ -73,9 +75,9 @@
 
 									}
 
-							   } else {
-								   echo "0 results";
-							   }
+								} else {
+									echo "0 results";
+								}
 
 								//How many classes are there?
 								$Nclasses = count($klassen['klas']);
@@ -103,6 +105,31 @@
 							} else {
 								echo "SQL error, report to admin";
 							}
+
+							echo'<div class="leerlingSelector">Leerlingen:';
+
+							for($i=0; $i<$Nclasses; $i++){
+								$CurrentClass = $AllClasses[$i];
+								$StudentsCurrentClass[] = $klassen['klas'][$CurrentClass];
+								$NStudents = array_map("count", $StudentsCurrentClass);
+								$NStudentsCurrentClass = ($NStudents[$i]);
+
+								for($j=0; $j<$NStudentsCurrentClass; $j++){
+									$Cstudent = $StudentsCurrentClass[$i][$j];
+									$CstudentName = $Cstudent['naam'];
+
+									echo '
+									<div class="leerling">
+										<label class="container">'.$CstudentName.'
+											<input type="checkbox">
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									';
+
+								}
+							}
+							echo '</div>';
 						}
 					} else {
 						echo "SQL error, report to admin";
@@ -111,61 +138,9 @@
 				   echo 'U bent niet ingelogd';
 			   }
 
-			   /*
-				  for($j=0; $j<$NStudentsCurrentClass; $j++){
-					  $Cstudent = $StudentsCurrentClass[$i][$j];
-					  $CstudentName = $Cstudent['naam'];
-					  $CstudentGroupName = $Cstudent['group_name'];
-					  $CstudentGroupRole= $Cstudent['group_role'];
-					  $ConSchedule = $Cstudent['onSchedule'];
-					  $Caverage = $Cstudent['gemiddeldePunt'];
-
-					  if($CstudentGroupName==""){
-						  $CstudentGroupName = "zit niet in een groep";
-						  $CstudentGroupRole = "";
-					  }
-
-					  echo '
-
-					  <div class="row">
-						  <span class="name">'.$CstudentName.'</span>
-						  <span class="groepnaam">'.$CstudentGroupName.'</span>
-						  <span class="groepsrol">'.$CstudentGroupRole.'</span>
-						  <span class="gemiddelde">'.$Caverage.'</span>';
-
-					  if($ConSchedule){
-						  echo '
-						  <span class="progressie">
-							  <span class="onSchedule"></span>
-						  </span>
-						  ';
-					  } else {
-						  echo '
-						  <span class="progressie">
-							  <span class="notSchedule"></span>
-						  </span>
-						  ';
-					  } */
-
 			?>
 
 
-
-				<div class="leerlingSelector">
-					Leerlingen:
-					<div class="leerling">
-						<label class="container">L1
-							<input type="checkbox" class="single-select-checkbox">
-							<span class="checkmark"></span>
-						</label>
-					</div>
-					<div class="leerling">
-						<label class="container">L1
-							<input type="checkbox" class="single-select-checkbox">
-							<span class="checkmark"></span>
-						</label>
-					</div>
-				</div>
 
 				Nieuwe klas:</br>
 				<input type="text" />

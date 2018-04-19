@@ -1,0 +1,87 @@
+@import "variables.sass"
+
+.main
+	margin-left: 20%
+	margin-top: 40px
+	margin-bottom: 40px
+	padding-bottom: 1em
+	padding-left: 1em
+	padding-top: 1em
+	width: 60%
+	background-color: $grey
+	box-shadow: inset 0 0 0 0 darken($white, 10%), 6px 6px 8px darken($white, 20%)
+	border-radius: 4px
+	color: $black
+	background: linear-gradient(to bottom right, $green-blue, $green)
+
+	input
+		font-size: 2em
+		margin-bottom: 1em
+		margin-top: 1em
+		position: relative
+		bottom: 20px
+		padding: 12px 12px
+		border-radius: 4px
+		height: 2em
+		box-shadow: inset 0 0 0 0 darken($white, 10%), 4px 4px 8px darken($green-blue, 20%)
+		transition: background .5s ease-out, box-shadow 0.5s ease-in-out
+
+	ul
+		list-style: none
+
+	//checkbox
+	.container
+		display: block
+		position: relative
+		padding-left: 1em
+		cursor: pointer
+		font-size: 1.5em
+
+	.container input
+		position: absolute
+		opacity: 0
+		cursor: pointer
+
+	.checkmark
+		margin-top: 0.1em
+		position: absolute
+		top: 0
+		left: 0
+		height: 0.8em
+		width: 0.8em
+		background-color: $white
+
+	.container:hover input ~ .checkmark
+		background-color: $white
+
+	.container input:checked ~ .checkmark
+		background-color: $white
+
+	.checkmark:after
+		content: ""
+		position: absolute
+		display: none
+
+	.container input:checked ~ .checkmark:after
+		display: block
+
+	.container .checkmark:after
+		left: 6px
+		top: 3px
+		width: 5px
+		height: 10px
+		border: solid $blue-green
+		border-width: 0 3px 3px 0
+		transform: rotate(45deg)
+
+	//page elements
+	.klasSelector
+
+		option
+			font-size: 2em
+			height: 2em
+			padding: 12px 12px
+
+	.leerlingSelector
+		margin-top: 1em
+		margin-bottom: 1em

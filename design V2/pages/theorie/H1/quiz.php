@@ -25,7 +25,7 @@
 			<ul>
 				<li>
 					<label class="container">113
-						<input type="checkbox" class="single-select-checkbox" id='checkbox1'>
+						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
@@ -58,7 +58,7 @@
 			<ul>
 				<li>
 					<label class="container">113
-						<input type="checkbox" class="single-select-checkbox" id='checkbox1'>
+						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>

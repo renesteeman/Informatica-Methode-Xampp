@@ -42,8 +42,8 @@
 					</label>
 				</li>
 				<li>
-					<label class="container" class="single-select-checkbox">4
-						<input type="checkbox">
+					<label class="container">4
+						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
@@ -75,8 +75,8 @@
 					</label>
 				</li>
 				<li>
-					<label class="container" class="single-select-checkbox">4
-						<input type="checkbox">
+					<label class="container">4
+						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>

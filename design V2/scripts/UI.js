@@ -186,7 +186,7 @@ $(document).ready(function(){
 
 	updateQuizHeader();
 
-	$('input[type="checkbox"]').on('change', function() {
+	$('input.single-select-checkbox[type="checkbox"]').on('change', function() {
 		var checkBoxesQuestion = $(this).parent().parent().parent().find('input[type=checkbox]');
 		$(checkBoxesQuestion).not(this).prop('checked', false);
 		updateQuizHeader();

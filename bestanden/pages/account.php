@@ -87,7 +87,7 @@
 							<input type="password" placeholder="Huidig wachtwoord" name="password" maxlength="50" required>
 						</li>
 						<li>
-							<input type="submit" value="update">
+							<input type="submit" value="bijwerken">
 						</li>
 					</ul>
 				</form>

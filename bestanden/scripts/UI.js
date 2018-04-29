@@ -151,7 +151,7 @@ $(document).ready(function(){
 
 	//delete group data
 	$('.deleteGroupButton').click(function(){
-		if (confirm("Are you sure you want to delete the group?")){
+		if (confirm("Weet u zeker dat u de groep wilt verwijderen?")){
 			var password = $("input[name='password']").val();
 
 			//sent values of group via ajax to editGroupFront.php

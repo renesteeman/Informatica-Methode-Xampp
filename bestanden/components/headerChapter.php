@@ -23,7 +23,7 @@ session_start();
 	<link rel="stylesheet" href="../../../css/paragraph.min.css">
 
     <title>Inforca</title>
-	<link rel="icon" type="image/png" href="../../../icons/logo64.png"/>
+	<link rel="icon" type="image/png" href="../../../icons/icon64.png"/>
 
 <head>
 

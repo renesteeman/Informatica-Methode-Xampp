@@ -173,7 +173,7 @@ $(document).ready(function(){
 			});
 
 		} else {
-			alert("Canceled group deletion");
+			alert("Groep verwijderen is geanuleerd.");
 		}
 	});
 
@@ -392,7 +392,7 @@ $(document).ready(function(){
 			});
 
 		} else {
-			alert("Canceled group deletion");
+			alert("Opdracht verwijderen is geanuleerd.");
 		}
 	});
 

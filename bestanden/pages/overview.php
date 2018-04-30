@@ -300,6 +300,25 @@
 			?>
 
 		</div>
+
+		<?php
+
+			//if logged in show add group button
+			if (isset($_SESSION["username"])){
+				if($functie != 'docent'){
+					echo "U bent geen docent";
+				} else {
+					echo '
+					<form class="addGroupButton" method="post" action="../scripts/changeClassFront.php">
+						<input type="submit" value="Leerling(en) van klas veranderen">
+					</form>
+					';
+				}
+			}
+
+		?>
+
+
 	</div>
 
 	<div class="bar">
@@ -482,14 +501,17 @@
 
 			<?php
 
-				//if logged in show groups
-				//TODO check if person is teacher
+				//if logged in show add group button
 				if (isset($_SESSION["username"])){
-					echo '
-					<form class="addGroupButton" method="post" action="../scripts/createGroupFront.php">
-						<input type="submit" value="Nieuwe groep">
-					</form>
-					';
+					if($functie != 'docent'){
+						echo "U bent geen docent";
+					} else {
+						echo '
+						<form class="addGroupButton" method="post" action="../scripts/createGroupFront.php">
+							<input type="submit" value="Nieuwe groep">
+						</form>
+						';
+					}
 				}
 
 			?>

@@ -24,7 +24,7 @@
 	</div>
 
 	<div class="main">
-		<form class="accountSettingsForm" method="post" action="resetPassword.php" accept-charset="UTF-8">
+		<form class="restPswForm" method="post" action="resetPassword.php" accept-charset="UTF-8">
 
 			<label>Email</label>
 			<input type="email" placeholder="email adres" name="email" maxlength="50" required>

@@ -74,7 +74,7 @@
 					$HashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
 					//stel nieuw wachtwoord in
-					$sql = "UPDATE users SET password = '$HashedPassword' WHERE email='$email'";
+					$sql = "UPDATE users SET 'password' = '$HashedPassword' WHERE email='$email'";
 					if (mysqli_query($conn, $sql)) {
 						//send mail
 						$msg = "Hallo, uw nieuwe wachtwoord voor uw account is: ".$password." En uw gebruikernaam is: ".$username;

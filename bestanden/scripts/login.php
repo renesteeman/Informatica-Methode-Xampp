@@ -33,7 +33,7 @@
 		//start session with username
 		$_SESSION["username"] = $username;
 		$_SESSION["functie"] = $functie;
-		
+
 		mysqli_close($conn);
 	} else {
 		echo "\nIncorrecte login gegevens";

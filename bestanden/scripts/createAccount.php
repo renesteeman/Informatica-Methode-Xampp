@@ -44,7 +44,7 @@
 	if(isset ($_POST['naam']) & $_POST['naam']!=""){
 		$naam = mysqli_real_escape_string($conn, check_input($_POST['naam']));
 	} else {
-		$naam = 'Person';
+		$naam = '';
 	}
 
 	$creation_date = date("Y-m-d");
@@ -87,6 +87,10 @@
 
 			//create username
 			$username = rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
+
+			if($naam=''){
+				$naam = $username;
+			}
 
 			//check if username is already in use
 			$sql = mysqli_query($conn, "SELECT username FROM users WHERE username=$username");

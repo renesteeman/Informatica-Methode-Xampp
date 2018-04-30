@@ -149,3 +149,18 @@ session_start();
 	</div>
 
 </header>
+
+<?php
+
+	if (isset($_SESSION['ErrorNotLogedIn'])){
+		if($_SESSION['ErrorNotLogedIn']){
+			echo ("
+				<script>
+					alert('U bent niet ingelogd');
+				</script>
+			");
+			$_SESSION['ErrorNotLogedIn'] = 0;
+		}
+	}
+
+?>

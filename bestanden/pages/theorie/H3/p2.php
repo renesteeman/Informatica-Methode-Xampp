@@ -66,7 +66,7 @@
 				Er zijn veel manieren om python te gebruiken en te installeren. In deze paragraaf wordt één mogelijke optie uitgewerkt.
 			</p>
 			<p>
-				Stap 1) download anaconda via https://www.anaconda.com/download/. Click op windows installer python 3.6 en bij de pop-up klik je op ‘no thanks’
+				Stap 1) download anaconda via <a href='https://www.anaconda.com/download/'>https://www.anaconda.com/download/</a>. Click op windows installer python 3.6 en bij de pop-up klik je op ‘no thanks’
 			</p>
 			<p>
 				Stap 2) volg de stappen van de installer

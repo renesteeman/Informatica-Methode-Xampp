@@ -1,5 +1,6 @@
 $(document).ready(function(){
-	//quiz
+	var finished = 0;
+
 	function updateQuizHeader(){
 		var aantalVragenBeantwoord = $('input[type=checkbox]:checked').length;
 		var aantalVragen = $('.vraagBalk').length;
@@ -8,10 +9,19 @@ $(document).ready(function(){
 
 	updateQuizHeader();
 
+	//make boxes uncheckable after submitting results
 	$('input.single-select-checkbox[type="checkbox"]').on('change', function() {
-		var checkBoxesQuestion = $(this).parent().parent().parent().find('input[type=checkbox]');
-		$(checkBoxesQuestion).not(this).prop('checked', false);
-		updateQuizHeader();
+		if(!finished){
+			var checkBoxesQuestion = $(this).parent().parent().parent().find('input[type=checkbox]');
+			$(checkBoxesQuestion).not(this).prop('checked', false);
+			updateQuizHeader();
+		} else {
+			if($(this).next().css('background-color') == 'rgb(20, 90, 100)'){
+				$(this).prop('checked', false);
+			} else {
+				$(this).prop('checked', true);
+			}
+		}
 	});
 
 	$(".vraagBalk").click(function(){
@@ -51,6 +61,7 @@ $(document).ready(function(){
 				var wrong = msg.wrong;
 				var corrections = msg.corrections;
 				var error = msg.error;
+				finished = 1;
 
 				window.alert(result);
 				if(error != ''){
@@ -65,12 +76,15 @@ $(document).ready(function(){
 				}
 
 				wrong = Object.keys(wrong).map(function (key) { return wrong[key]; });
+				corrections = Object.keys(corrections).map(function (key) { return corrections[key]; });
 
 				for(var i=0; i<wrong.length; i++){
 					var number = wrong[i];
 					$('.vraagBalk').eq(number).css('background-color', 'rgb(160, 30, 30)');
 					$('.vraagBalk').eq(number).next().find('input[type="checkbox"]:checked').next().css('background-color', 'rgb(160, 30, 30)');
-					
+
+					$('.vraagBalk').eq(number).next().find('label:contains('+corrections[i]+')').children('.checkmark').css('background-color', 'rgb(0, 130, 70)');
+					$('.vraagBalk').eq(number).next().find('label:contains('+corrections[i]+')').children('.single-select-checkbox').prop('checked', true);
 				}
 
 			});

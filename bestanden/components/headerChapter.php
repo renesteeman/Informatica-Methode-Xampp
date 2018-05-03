@@ -153,6 +153,54 @@ session_start();
 		</div>
 	</div>
 
+<?php
+
+	include('../../../scripts/DB_connect.php');
+
+	//check if account is still valid
+	function AccountValid(){
+
+		//needed to connect inside a function
+		global $conn;
+
+		$user = $_SESSION["username"];
+		$sql = "SELECT expire_date FROM users WHERE username='$user'";
+
+		if (mysqli_query($conn, $sql)) {
+			//find teacher info
+			$result = mysqli_query($conn, $sql);
+			$result = mysqli_fetch_assoc($result);
+			$expire_date = $result['expire_date'];
+		} else {
+			echo "SQL error, report to admin";
+		}
+
+		if($expire_date>date("Y-m-d")){
+			$valid = 1;
+		} else {
+			$valid = 0;
+		}
+
+		return $valid;
+
+	}
+
+	if(isset($_SESSION['ErrorNotLogedIn'])){
+		if($_SESSION['ErrorNotLogedIn'] == 0){
+			if(!AccountValid()){
+				$_SESSION['ErrorInvalidAccount'] = 1;
+				header('Location: ../../index.php');
+			}
+		}
+	} else {
+		if(!AccountValid()){
+			$_SESSION['ErrorInvalidAccount'] = 1;
+			header('Location: ../../index.php');
+		}
+	}
+
+?>
+
 </header>
 
 <?php

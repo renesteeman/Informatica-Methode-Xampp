@@ -2,7 +2,7 @@ $(document).ready(function(){
 	var timeSpent = 0;
 	var active = 1;
 	var completed = 0;
-	var aantalSeconden = 5;
+	var aantalSeconden = 1;
 
 	if(completed == 0){
 

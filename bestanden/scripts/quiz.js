@@ -57,20 +57,21 @@ $(document).ready(function(){
 					window.alert(error);
 				}
 
-				console.log(msg);
-
-				console.log(right);
-
-				console.log($().find('vraagBalk'));
-				$().find('vraagBalk').css('background-color', 'red');
-
 				right = Object.keys(right).map(function (key) { return right[key]; });
+
 				for(var i=0; i<right.length; i++){
 					var number = right[i];
-					$().find('vraagbalk').eq(number).css('background-color', 'red');
+					$('.vraagBalk').eq(number).next().find('input[type="checkbox"]:checked').next().css('background-color', 'rgb(0, 130, 70)');
 				}
-				//$().find('.vraagbalk').eq(i);
 
+				wrong = Object.keys(wrong).map(function (key) { return wrong[key]; });
+
+				for(var i=0; i<wrong.length; i++){
+					var number = wrong[i];
+					$('.vraagBalk').eq(number).css('background-color', 'rgb(160, 30, 30)');
+					$('.vraagBalk').eq(number).next().find('input[type="checkbox"]:checked').next().css('background-color', 'rgb(160, 30, 30)');
+					
+				}
 
 			});
 

@@ -83,19 +83,6 @@
 			</ul>
 		</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 	</div>
 
 	<input type="submit" value="controleer" class="controleerAntwoordButton"/>
@@ -103,6 +90,7 @@
 
 	</div>
 
+	<script src="../../../scripts/quiz.js"></script>
 	<?php
 	include('../../../components/footerChapter.php');
 	?>

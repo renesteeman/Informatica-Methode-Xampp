@@ -14,16 +14,20 @@
 
 	$punten = 0;
 	$cijfer = 0;
+	$correct = [];
+	$incorrect = [];
+	$error = 0;
 
 	for($i=0; $i<count($antwoorden); $i++){
 		if($antwoorden[$i] == $juisteAntwoorden[$i]){
 			$punten++;
+			$correct[] = $i;
+		} else {
+			$incorrect[] = $i;
 		}
 	}
 
 	$cijfer = ((($punten * 10) / count($antwoorden)) * 9 + 10)/10;
-
-	echo 'Je hebt een '.$cijfer.' gehaald';
 
 	//get id for $username
 	$sql = "SELECT id FROM users WHERE username='$username'";
@@ -44,9 +48,9 @@
 			if (mysqli_num_rows($result) == 0){
 				$sql = "INSERT INTO quiz (userid, hoofdstuk, cijfer) VALUES ($userid, $hoofdstuk, $cijfer)";
 				if (mysqli_query($conn, $sql)) {
-					echo "\nHet cijfer is opgeslagen";
+
 				} else {
-					echo "SQL error report to admin";
+					$error = 1;
 				}
 			} else {
 				$result = mysqli_fetch_assoc($result);
@@ -55,23 +59,41 @@
 				if($cijfer > $Ccijfer){
 					$sql = "UPDATE quiz SET cijfer=$cijfer WHERE userid=$userid AND hoofdstuk=$hoofdstuk";
 					if (mysqli_query($conn, $sql)) {
-						echo "\nJe hebt een nieuwe highscore!";
+
 					} else {
-						echo "SQL error report to admin";
+						$error = 1;
 					}
 				} elseif ($cijfer == $Ccijfer){
-					echo "\nJe hebt jouw highscore herhaald";
+
 				} else {
-					echo "\nDit is niet jouw hoogste score, dat was een ".$Ccijfer.". Dit zal niet worden opgeslagen";
+
 				}
 			}
 
 		} else {
-			echo "SQL error report to admin";
+			$error = 1;
 		}
 
 	} else {
-		echo "SQL error report to admin";
+		$error = 1;
 	}
+
+	$result = 'Je hebt een '.$cijfer.' gehaald';
+	if($error){
+		$msg3 = 'SQL error, contact admin';
+	} else {
+		$msg3 = '';
+	}
+
+	$verbeteringen = [];
+	for($i=0; $i<sizeof($incorrect); $i++){
+		$number = $incorrect[$i];
+		$verbeteringen[] = $juisteAntwoorden[$number];
+	}
+
+	$return = array('result'=>$result, 'right'=>$correct, 'wrong'=>$incorrect, 'corrections'=>$verbeteringen, 'error'=>$error);
+	$return = json_encode($return, JSON_FORCE_OBJECT);
+
+	echo $return;
 
 ?>

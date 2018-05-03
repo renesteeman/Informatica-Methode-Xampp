@@ -5,6 +5,13 @@ $(document).ready(function(){
 	var aantalSeconden = 1;
 	var kind = '';
 
+	var title = $('.title-small').text();
+	title = title.trim();
+	kind = title[0];
+	if(title.search('quiz')){
+		kind = 'quiz';
+	}
+
 	if(completed == 0){
 
 		window.onblur = function(){
@@ -22,7 +29,7 @@ $(document).ready(function(){
 					updateProgress();
 				}
 			}
-			if(!completed){
+			if(!completed && kind!='quiz'){
 				setTimeout(updateTimeSpent, 1000);
 			}
 		};
@@ -44,9 +51,6 @@ $(document).ready(function(){
 			if(isReached(element)){
 				completed = 1;
 
-				var title = $('.title-small').text();
-				title = title.trim();
-				kind = title[0];
 				var chapter = title[1];
 				var paragraph = title[4];
 

@@ -153,6 +153,8 @@ session_start();
 		</div>
 	</div>
 
+</header>
+
 <?php
 
 	include('../../../scripts/DB_connect.php');
@@ -200,8 +202,6 @@ session_start();
 	}
 
 ?>
-
-</header>
 
 <?php
 

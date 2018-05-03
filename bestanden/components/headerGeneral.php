@@ -181,8 +181,9 @@ session_start();
 		return $valid;
 	}
 
-	//if the account is expired, than redirect to index (if the person isn't on the index page yet)
+	//if the account is expired, than redirect to index (if the person isn't on the index page yet) (only check if the person is loged in)
 	if(basename($_SERVER['PHP_SELF']) != 'index.php'){
+
 		if(isset($_SESSION['ErrorNotLogedIn'])){
 			if($_SESSION['ErrorNotLogedIn'] == 0){
 				if(!AccountValid()){
@@ -195,6 +196,10 @@ session_start();
 				$_SESSION['ErrorInvalidAccount'] = 1;
 				header('Location: index.php');
 			}
+		}
+	} else {
+		if(isset($_SESSION['ErrorInvalidAccount'])){
+			$_SESSION['ErrorInvalidAccount'] = 0;
 		}
 	}
 

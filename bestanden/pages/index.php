@@ -126,7 +126,19 @@
 	<div class="chapter-tiles">
 		<div class="tile">
 			<div class="tile-content">
-				B1 filosofie
+				<div class="tile-chapter">
+					B1 Filosofie
+				</div>
+				<div class="tile-paragraphs">
+					<ol>
+						<ul><a href="theorie/B1/p1.php">§1 iets</ul>
+						<ul><a href="theorie/B1/p2.php">§2 iets</a></ul>
+						<ul><a href="theorie/B1/p3.php">§3 iets</a></ul>
+						<ul><a href="theorie/B1/p4.php">§4 iets</a></ul>
+						<ul><a href="theorie/B1/p5.php">§5 iets</a></ul>
+						<ul><a href="theorie/B1/quiz.php">Quiz</a></ul>
+					</ol>
+				</div>
 			</div>
 		</div>
 

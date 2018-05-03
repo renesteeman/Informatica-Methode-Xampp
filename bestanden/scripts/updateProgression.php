@@ -62,7 +62,9 @@
 				$progression = $Cprogression;
 				$progression[$paragraph] = '1';
 
-				$sql = "UPDATE progressie SET H$chapter = '$progression' WHERE userid='$id'";
+				echo $chapter;
+
+				//$sql = "UPDATE progressie SET H$chapter = '$progression' WHERE userid='$id'";
 
 				if (mysqli_query($conn, $sql)) {
 

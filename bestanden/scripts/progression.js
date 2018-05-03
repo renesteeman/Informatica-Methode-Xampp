@@ -2,9 +2,10 @@ $(document).ready(function(){
 	var timeSpent = 0;
 	var active = 1;
 	var completed = 0;
-	var aantalSeconden = 60;
+	var aantalSeconden = 5;
 
 	if(completed == 0){
+
 		window.onblur = function(){
 			active = 0;
 		}
@@ -14,13 +15,15 @@ $(document).ready(function(){
 		}
 
 		function updateTimeSpent(){
-			if(active == 1){
+			if(active){
 				timeSpent++;
 				if(timeSpent>aantalSeconden){
 					updateProgress();
 				}
 			}
-			setTimeout(updateTimeSpent, 1000);
+			if(!completed){
+				setTimeout(updateTimeSpent, 1000);
+			}
 		};
 
 		updateTimeSpent();

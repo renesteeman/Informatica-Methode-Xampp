@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H1 §3 Gates
+			B1 §3 Gates
 		</h2>
 	</div>
 

@@ -184,7 +184,6 @@ session_start();
 		}
 
 		return $valid;
-
 	}
 
 	if(isset($_SESSION['ErrorNotLogedIn'])){

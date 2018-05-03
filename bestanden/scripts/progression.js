@@ -3,6 +3,7 @@ $(document).ready(function(){
 	var active = 1;
 	var completed = 0;
 	var aantalSeconden = 1;
+	var kind = '';
 
 	if(completed == 0){
 
@@ -45,6 +46,7 @@ $(document).ready(function(){
 
 				var title = $('.title-small').text();
 				title = title.trim();
+				kind = title[0];
 				var chapter = title[1];
 				var paragraph = title[4];
 
@@ -54,7 +56,7 @@ $(document).ready(function(){
 				jqXHR = $.ajax({
 					method: "POST",
 					url: '../../../scripts/updateProgression.php',
-					data: {chapter:chapter, paragraph:paragraph, Nparagraphs: Nparagraphs}
+					data: {kind:kind, chapter:chapter, paragraph:paragraph, Nparagraphs: Nparagraphs}
 				});
 
 				jqXHR.done(function(msg) {

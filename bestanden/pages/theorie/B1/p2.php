@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H1 §2 Binair rekenen
+			B1 §2 Binair rekenen
 		</h2>
 	</div>
 

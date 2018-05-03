@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H1 §1 het binair systeem
+			B1 §1 het binair systeem
 		</h2>
 	</div>
 
@@ -67,7 +67,7 @@
 					Alle 1’en samen, inclusief de ruimte ertussen, geven een volledige waarde weer. De waarde van de 1 wordt bepaald door de plek die de 1 heeft binnen de reeks. De eerste plek is 1 waard, de 2e plek is 2 waard, de 3e is 4 waard en zo blijft het zich steeds verdubbelen naarmate het verder naar links gaat.
 				</p>
 			</p>
-			
+
 			<p>
 				Een voorbeeld is 01001. Als je van links naar rechts telt en alle waardes daarna bij elkaar optelt, kom je op 1+8=9 uit. Dit kan ook andersom 9=8+1, dus eerst 1 en dan 1000. Dat wordt samen 1001 (= 01001).
 			</p>

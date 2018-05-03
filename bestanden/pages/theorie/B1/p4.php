@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H1 §4 onderdelen van de computer
+			B1 §4 onderdelen van de computer
 		</h2>
 	</div>
 

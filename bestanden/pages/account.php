@@ -76,12 +76,17 @@
 						<li>
 							<label>Email</label>
 							<input type="email" placeholder="'.$Cemail.'" name="Nemail" maxlength="50">
-						</li>
+						</li>';
+						if($Groepsrol == 'leerling'){
+						echo '
 						<li>
 							<label>Groepsrol</label>
 							<input type="text" placeholder="'.$Groepsrol.'"name="Ngroup_role" maxlength="50">
-						</li>
-						<li>
+						</li>';
+						}
+
+						echo
+						'<li>
 							<label>Huidig wachtwoord</label>
 							<input type="password" placeholder="Huidig wachtwoord" name="password" maxlength="50" required>
 						</li>

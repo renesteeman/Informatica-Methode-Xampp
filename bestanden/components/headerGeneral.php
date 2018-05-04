@@ -73,7 +73,7 @@ session_start();
 						if (isset($_SESSION["username"])){
 							echo
 								'<div>
-									Welkom <a href="../pages/account.php">'.$_SESSION["username"].'</a>
+									Welkom <a href="../pages/account.php">'.$_SESSION["name"].'</a>
 								</div>
 								<div>
 									<a href="../scripts/logoutGeneral.php">Log uit</a>
@@ -132,7 +132,7 @@ session_start();
 						if (isset($_SESSION["username"])){
 							echo
 								'<div>
-									Welkom <a href="../pages/account.php">'.$_SESSION["username"].'</a>
+									Welkom <a href="../pages/account.php">'.$_SESSION["name"].'</a>
 								</div>
 								<div>
 									<a href="../scripts/logoutGeneral.php">Log uit</a>
@@ -182,7 +182,7 @@ session_start();
 	}
 
 	//if the account is expired, than redirect to index (if the person isn't on the index page yet) (only check if the person is loged in)
-	if(basename($_SERVER['PHP_SELF']) != 'index.php'){
+	if(!basename($_SERVER['PHP_SELF']) == 'index.php' ){
 
 		if(isset($_SESSION['ErrorNotLogedIn'])){
 			if($_SESSION['ErrorNotLogedIn'] == 0){

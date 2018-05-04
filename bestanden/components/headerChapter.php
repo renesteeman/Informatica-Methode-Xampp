@@ -78,7 +78,7 @@ session_start();
 					if (isset($_SESSION["username"])){
 						echo
 							'<div>
-								Welkom <a href="../../account.php">'.$_SESSION["username"].'</a>
+								Welkom <a href="../../account.php">'.$_SESSION["name"].'</a>
 							</div>
 							<div>
 								<a href="../../../scripts/logoutGeneral.php">Log uit</a>
@@ -137,7 +137,7 @@ session_start();
 						if (isset($_SESSION["username"])){
 							echo
 								'<div>
-									Welkom <a href="../../account.php">'.$_SESSION["username"].'</a>
+									Welkom <a href="../../account.php">'.$_SESSION["name"].'</a>
 								</div>
 								<div>
 									<a href="../../../scripts/logoutGeneral.php">Log uit</a>

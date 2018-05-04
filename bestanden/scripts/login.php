@@ -15,7 +15,7 @@
 	$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
 
 	//get password for $username
-	$sql = "SELECT password, functie FROM users WHERE username='$username'";
+	$sql = "SELECT password, functie, naam FROM users WHERE username='$username'";
 
 	if (mysqli_query($conn, $sql)) {
 
@@ -23,6 +23,7 @@
 		$result = mysqli_fetch_assoc($result);
 		$rightpsw = $result['password'];
 		$functie = $result['functie'];
+		$naam = $result['naam'];
 
 	} else {
 		echo "Error with sql execution, please report to admin </br>";
@@ -32,6 +33,7 @@
 	if(password_verify($password, $rightpsw)){
 		//start session with username
 		$_SESSION["username"] = $username;
+		$_SESSION["name"] = $naam;
 		$_SESSION["functie"] = $functie;
 
 		mysqli_close($conn);

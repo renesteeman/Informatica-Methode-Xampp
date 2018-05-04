@@ -72,12 +72,10 @@
 					$Pfunctie = $result['functie'];
 
 					if($Pfunctie == 'leerling'){
-						$sql = "SELECT titel, beschrijving, datum, klas FROM planner WHERE school='$Pschool' AND klas='$Pklas' ORDER BY datum";
-					} elseif ($Pfunctie == 'docent') {
-						$sql = "SELECT titel, beschrijving, datum, klas FROM planner WHERE school='$Pschool' ORDER BY datum";
+						$sql = "SELECT * FROM planner WHERE school='$Pschool' AND klas='$Pklas' ORDER BY datum";
+					} else if ($Pfunctie == 'docent') {
+						$sql = "SELECT * FROM planner WHERE school='$Pschool' ORDER BY datum";
 					}
-
-					$sql = "SELECT titel, beschrijving, datum, klas FROM planner WHERE school='$Pschool' ORDER BY datum";
 
 					if (mysqli_query($conn, $sql)) {
 						//get planner info
@@ -91,51 +89,63 @@
 								$Ibeschrijving = $row['beschrijving'];
 								$Idatum = date('d/m', strtotime($row['datum']));
 								$Iklas = $row['klas'];
+								$Iprogressie = $row['progressie'];
+								//remove last comma
+								$Iprogressie = substr($Iprogressie, 0, -1);
 
-								if($Iklas == $Pklas or $Iklas == ""){
-									if($Idatum < date("d/m")){
-										echo '
-											<div class="item old">
-										';
-									} else {
-										echo '
-											<div class="item asdf">
-										';
-									}
-
+								if($Idatum < date("d/m")){
 									echo '
-										<div class="itemHeader">
-											<!-- table header for this class-->
-											<div class="itemHeaderContent">
-												<span class="datum">'.$Idatum.'</span>
-												<span class="naam">'.$Ititel.'</span>
-												<span class="hide">'.$Iklas.'</span>
-												<span class="icons">
-													<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>';
+										<div class="item old">
+									';
+								} else {
+									echo '
+										<div class="item">
+									';
+								}
 
-													if($Pfunctie == 'docent'){
-													echo '
-													<span class="editItem image"><img src="../icons/edit.svg" class="edit"/></span>
-													';
-													}
 
-											echo '
-											</span>
-											</div>
+								if($Pfunctie == 'docent'){
+								echo '
+									<div class="itemHeader docent">
+								';
+								} else {
+								echo '
+									<div class="itemHeader leerling">
+								';
+								}
 
-											<!-- table content for this class-->
-											<div class="itemContent">
+								echo '
 
-												<div class="itemInhoud">
-													<span class="itemBeschrijving">
-														'.$Ibeschrijving.'
-													</span>
-												</div>
+										<!-- table header for this class-->
+										<div class="itemHeaderContent">
+											<span class="datum">'.$Idatum.'</span>
+											<span class="klas">'.$Iklas.'</span>
+											<span class="naam">'.$Ititel.'</span>
+											<span class="icons">
+												<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>';
+
+												if($Pfunctie == 'docent'){
+												echo '
+												<span class="editItem image"><img src="../icons/edit.svg" class="edit"/></span>
+												';
+												}
+
+										echo '
+										</span>
+										</div>
+
+										<!-- table content for this class-->
+										<div class="itemContent">
+
+											<div class="itemInhoud">
+												<span class="itemBeschrijving">
+													'.$Ibeschrijving.'
+												</span>
 											</div>
 										</div>
 									</div>
-									';
-								}
+								</div>
+								';
 							}
 						}
 

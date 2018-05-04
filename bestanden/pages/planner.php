@@ -91,7 +91,7 @@
 								$Iklas = $row['klas'];
 								$Iprogressie = $row['progressie'];
 								//remove last comma
-								$Iprogressie = substr($Iprogressie, 0, -1);
+								$Ihoofdstukken = substr($Iprogressie, 0, -2);
 
 								if($Idatum < date("d/m")){
 									echo '
@@ -121,6 +121,7 @@
 											<span class="datum">'.$Idatum.'</span>
 											<span class="klas">'.$Iklas.'</span>
 											<span class="naam">'.$Ititel.'</span>
+											<span class="hoofdstukken">'.$Ihoofdstukken.'</span>
 											<span class="icons">
 												<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>';
 

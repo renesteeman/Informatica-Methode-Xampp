@@ -80,10 +80,10 @@ $(document).ready(function(){
 
 				for(var i=0; i<wrong.length; i++){
 					var number = wrong[i];
-					$('.vraagBalk').eq(number).css('background-color', 'rgb(160, 30, 30)');
-					$('.vraagBalk').eq(number).next().find('input[type="checkbox"]:checked').next().css('background-color', 'rgb(160, 30, 30)');
+					$('.vraagBalk').eq(number).addClass('wrong');
+					$('.vraagBalk').eq(number).next().find('input[type="checkbox"]:checked').next().addClass('wrong');
 
-					$('.vraagBalk').eq(number).next().find('label:contains('+corrections[i]+')').children('.checkmark').css('background-color', 'rgb(0, 130, 70)');
+					$('.vraagBalk').eq(number).next().find('label:contains('+corrections[i]+')').children('.checkmark').addClass('right');
 					$('.vraagBalk').eq(number).next().find('label:contains('+corrections[i]+')').children('.single-select-checkbox').prop('checked', true);
 				}
 

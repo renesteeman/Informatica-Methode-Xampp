@@ -121,7 +121,6 @@
 	transform: rotate(45deg)
 
 //submit button
-
 input[type=submit]
 	font-size: 2em
 	margin-left: 20%
@@ -132,6 +131,17 @@ input[type=submit]
 	height: 2em
 	border: 2px solid $grey
 	transition: background .5s ease-out, box-shadow 0.5s ease-in-out
+
+//show what's right and what's wrong
+.vragen
+	.vraagBalk.wrong
+			background-color: $red
+
+.container input:checked ~ .checkmark.wrong
+	background-color: $red
+
+.container input:checked ~ .checkmark.right
+	background-color: $green
 
 @media (max-width: $medium)
 	.vragen

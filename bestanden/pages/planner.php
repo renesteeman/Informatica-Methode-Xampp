@@ -53,8 +53,6 @@
 			</div>
 		-->
 
-
-
 		<?php
 			if (isset($_SESSION["username"])){
 
@@ -95,38 +93,17 @@
 								$Iklas = $row['klas'];
 
 								if($Iklas == $Pklas or $Iklas == ""){
-									if($Pfunctie == "leerling"){
+									if($Idatum < date("d/m")){
 										echo '
-										<div class="item">
-											<div class="itemHeader">
-												<!-- table header for this class-->
-												<div class="itemHeaderContent">
-													<span class="datum">'.$Idatum.'</span>
-													<span class="naam">'.$Ititel.'</span>
-													<span class="hide">'.$Iklas.'</span>
-													<span class="icons">
-														<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
-													</span>
-												</div>
-
-												<!-- table content for this class-->
-												<div class="itemContent">
-
-													<div class="itemInhoud">
-														<span class="itemBeschrijving">
-															'.$Ibeschrijving.'
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
+											<div class="item old">
+										';
+									} else {
+										echo '
+											<div class="item asdf">
 										';
 									}
-								}
 
-								if($Pfunctie == "docent"){
 									echo '
-									<div class="item">
 										<div class="itemHeader">
 											<!-- table header for this class-->
 											<div class="itemHeaderContent">
@@ -134,9 +111,16 @@
 												<span class="naam">'.$Ititel.'</span>
 												<span class="hide">'.$Iklas.'</span>
 												<span class="icons">
-													<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+													<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>';
+
+													if($Pfunctie == 'docent'){
+													echo '
 													<span class="editItem image"><img src="../icons/edit.svg" class="edit"/></span>
-												</span>
+													';
+													}
+
+											echo '
+											</span>
 											</div>
 
 											<!-- table content for this class-->
@@ -151,7 +135,6 @@
 										</div>
 									</div>
 									';
-
 								}
 							}
 						}
@@ -185,11 +168,6 @@
 
 		?>
 	</div>
-
-
-
-
-
 
 	<?php
 	include('../components/footerGeneral.php');

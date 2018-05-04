@@ -1,6 +1,5 @@
 <?php
 	include('../components/headerGeneral.php');
-	include('../scripts/DB_connect.php');
 ?>
 
 <link rel="stylesheet" href="../css/plannerItemAanmaken.min.css">
@@ -68,7 +67,7 @@
 			</ul>
 		</form>
 	</div>
-	
+
 	</div>
 
 	<?php

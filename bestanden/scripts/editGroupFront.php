@@ -144,16 +144,7 @@ include('../components/headerGeneral.php');
 			}
 		?>
 
-
-
-
-
-
-
-	</div>
-
-
-
+		</div>
 	</div>
 
 	<?php

@@ -87,7 +87,7 @@
 			$rightpsw = $result['password'];
 
 		} else {
-			echo "Error with sql execution, please report to admin </br>";
+			echo "\nError with sql execution, please report to admin";
 		}
 
 		//check psw

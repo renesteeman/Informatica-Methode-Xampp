@@ -46,11 +46,11 @@ $(document).ready(function(){
 			url: "createItemAjax.php",
 			data: {Inaam: Inaam, Iomschrijving: Iomschrijving, Iklas: Iklas, Iprogressie: Iprogressie, Idatum: Idatum, password: password}
 		});
-		jqXHR.done(function( msg ) {
+		jqXHR.done(function(msg) {
 			window.alert(msg);
 			window.location.href = '../pages/planner.php';
 		});
-		jqXHR.fail(function( jqXHR, textStatus ) {
+		jqXHR.fail(function(jqXHR, textStatus) {
 		  alert( "Request failed: " + textStatus );
 		});
 

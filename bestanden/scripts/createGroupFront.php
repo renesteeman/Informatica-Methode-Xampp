@@ -25,7 +25,7 @@
 	</div>
 
 	<div class="createGroup">
-		<form class="createGroupForm" method="post" action="../scripts/createGroup.php" accept-charset="UTF-8">
+		<form class="createGroupForm" method="post" action="../scripts/createGroupAjax.php" accept-charset="UTF-8">
 			<ul>
 				<li>
 					<label>Naam</label>

@@ -7,7 +7,7 @@
 	//set klas
 	$klas = "A52";
 
-	$sql = "SELECT klas FROM `groups` WHERE school='$school' ";
+	$sql = "SELECT klas FROM groepen WHERE school='$school' ";
 	$result = mysqli_query($conn, $sql);
 
 	$resultArray = array();
@@ -18,10 +18,10 @@
 
 	if (!in_array($klas, $resultArray)){
 		//insert group into DB
-		$sql = "INSERT INTO `groups` (school`, `klas`) VALUES ('$school', '$klas');";
+		$sql = "INSERT INTO groepen (school`, `klas`) VALUES ('$school', '$klas');";
 
 		if (mysqli_query($conn, $sql)) {
-			echo "Group created for ".$school." ".$klas;
+			echo "Er is een groep aangemaakt voor: ".$school." ".$klas;
 		} else {
 			echo "SQL error, contact admin";
 		}

@@ -42,7 +42,7 @@
 
 		if(isset($_POST['Iomschrijving'])){
 			if($_POST['Iomschrijving'] != ""){
-					$Iomschrijving = mysqli_real_escape_string($conn, check_input($_POST['Iomschrijving']));
+				$Iomschrijving = mysqli_real_escape_string($conn, check_input($_POST['Iomschrijving']));
 			}
 		};
 
@@ -60,7 +60,6 @@
 		};
 
 		if(isset($_POST['Iprogressie'])){
-			print_r($_POST['Iprogressie']));
 			if($_POST['Iprogressie'] != ""){
 				for($i=0; $i<count($_POST['Iprogressie']); $i++){
 					$chapter = mysqli_real_escape_string($conn, check_input($_POST['Iprogressie'][$i]));
@@ -89,23 +88,20 @@
 				if($Inaam != "" & $Iomschrijving != "" & $Iklas != "" & $Idatum != ""){
 
 					//check if data is unique
-					$sql = "SELECT titel, klas, school, datum FROM users WHERE username='$user'";
+					$sql = mysqli_query($conn, "SELECT * FROM planner WHERE titel='$Inaam' AND klas='$Iklas' AND datum='$Idatum'");
 
-					if(mysqli_num_rows($sql) != 0)) {
-						echo "Deze opdracht is nieuw";
+					if(mysqli_num_rows($sql) != 0){
+						echo "\nDeze opdracht bestaat al. Verander de naam, klas of datum";
 					} else {
-						echo "\nDeze opdracht bestaat al, verander de naam, klas of datum";
+						//create group
+						$sql = "INSERT INTO planner (titel, beschrijving, progressie, school, klas, datum) VALUES ('$Inaam', '$Iomschrijving', '$Iprogressie', '$Ischool', '$Iklas', '$Idatum')";
+
+						if (mysqli_query($conn, $sql)) {
+							echo "Item succesvol toegevoegd";
+						} else {
+							echo "\nError with sql execution, please report to admin";
+						}
 					}
-
-					//create group
-					/*
-					$sql = "INSERT INTO planner (titel, beschrijving, progressie, school, klas, datum) VALUES ('$Inaam', '$Iomschrijving', '$Iprogressie', '$Ischool', '$Iklas', '$Idatum')";
-
-					if (mysqli_query($conn, $sql)) {
-						echo "Item succesvol toegevoegd";
-					} else {
-						echo "\nError with sql execution, please report to admin";
-					} */
 
 				} else {
 					echo "\nNiet alle informatie is ontvangen of de informatie is niet correct";

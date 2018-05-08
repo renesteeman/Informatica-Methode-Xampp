@@ -23,6 +23,18 @@ include('../components/headerGeneral.php');
 
 		<?php
 
+		$user = $_SESSION["username"];
+		$school = "";
+
+		$sql = "SELECT school FROM users WHERE username='$user'";
+
+		//get current info in order to show a 'preview'
+		if (mysqli_query($conn, $sql)) {
+			$result = mysqli_query($conn, $sql);
+			$result = mysqli_fetch_assoc($result);
+			$school = $result['school'];
+		}
+
 		//function to check and clean input
 		function check_input($data) {
 			$data = trim($data, " ");
@@ -31,100 +43,86 @@ include('../components/headerGeneral.php');
 			return $data;
 		}
 
-		$itemname = mysqli_real_escape_string($conn, check_input($_SESSION['itemname']));
+		$Iname = mysqli_real_escape_string($conn, check_input($_SESSION['itemname']));
+		$Iklas = mysqli_real_escape_string($conn, check_input($_SESSION['itemklas']));
+		$Idate = mysqli_real_escape_string($conn, check_input($_SESSION['itemdatum']));
+		$Ibeschrijving = mysqli_real_escape_string($conn, check_input($_SESSION['itembeschrijving']));
 
-			$user = $_SESSION["username"];
-
-			/*
-			$sql = "SELECT * FROM planner WHERE  titel='$itemname' AND school='$school' AND klas='$CIklas' AND datum='$CIdatum'";
-
-			//get current info in order to show a 'preview'
-			if (mysqli_query($conn, $sql)) {
-				$result = mysqli_query($conn, $sql);
-				$result = mysqli_fetch_assoc($result);
-				$school = $result['school'];
-			} */
-
-			echo '
-			<span id="itemName">
-				'.$itemname.'
-			</span>
-			';
-
-		?>
-
-
+		echo '
+		<span id="itemName">
+			'.$Iname.'
+		</span>
 
 		<form class="editItemForm" method="post" action="../scripts/editItem.php" accept-charset="UTF-8">
 			<ul>
 				<li>
 					<label>Nieuwe naam</label>
-					<input type="text" placeholder="Nieuwe naam van de opdracht" name="NInaam" maxlength="50">
+					<input type="text" placeholder="'.$Iname.'" name="NInaam" maxlength="50">
 				</li>
 				<li>
 					<label>Nieuwe omschrijving</label>
-					<textarea type="text" placeholder="Nieuwe omschrijving voor de opdracht" name="NIomschrijving" maxlength="500"></textarea>
+					<textarea type="text" placeholder="'.$Ibeschrijving.'" name="NIomschrijving" maxlength="500"></textarea>
 				</li>
 				<li>
 					<label>Nieuwe klas</label>
-					<input type="text" placeholder="Nieuwe klas waar de opdracht voor is" name="NIklas" maxlength="3">
+					<input type="text" placeholder="'.$Iklas.'" name="NIklas" maxlength="3">
 				</li>
 				<li>
 					<label>Nieuwe datum</label>
-					<input type="date" placeholder="Nieuwe datum" name="NIdatum" maxlength="50">
+					<input type="date" value="'.$Idate.'" name="NIdatum" maxlength="50">
 				</li>
 				<li>
 					<label>Progressie</label>
 					<div class="itemLijst">
-						<ul>
-							<?php
-							if (isset($_SESSION["username"])){
+						<ul>';
 
-								$user = $_SESSION["username"];
+						if (isset($_SESSION["username"])){
 
-								$sql = "SELECT school FROM users WHERE username='$user'";
+							$user = $_SESSION["username"];
+
+							$sql = "SELECT school FROM users WHERE username='$user'";
+
+							if (mysqli_query($conn, $sql)) {
+								//find school of teacher
+								$result = mysqli_query($conn, $sql);
+								$result = mysqli_fetch_assoc($result);
+								$school = $result['school'];
+
+								$sql = "SELECT progressie FROM planner WHERE school='$school' AND titel='$Iname'";
 
 								if (mysqli_query($conn, $sql)) {
-									//find school of teacher
+
 									$result = mysqli_query($conn, $sql);
-									$result = mysqli_fetch_assoc($result);
-									$school = $result['school'];
+									$row = mysqli_fetch_assoc($result);
 
-									$sql = "SELECT progressie FROM planner WHERE school='$school' AND titel='$itemname'";
+									if (mysqli_num_rows($result) > 0) {
+										//save chapters
+										$hoofdstukkenRaw = $row['progressie'];
+										$hoofdstukkenEdited = explode(", ", $hoofdstukkenRaw);
+										array_pop($hoofdstukkenEdited);
 
-									if (mysqli_query($conn, $sql)) {
-
-										$result = mysqli_query($conn, $sql);
-										$row = mysqli_fetch_assoc($result);
-
-										if (mysqli_num_rows($result) > 0) {
-										    //save chapters
-										    $hoofdstukkenRaw = $row['progressie'];
-											$hoofdstukkenEdited = explode(", ", $hoofdstukkenRaw);
-											array_pop($hoofdstukkenEdited);
-
-											for($i=0; $i < count($hoofdstukkenEdited); $i++){
-												echo '
-												<li>
-													<span class="item">'.$hoofdstukkenEdited[$i].'</span>
-													<span class="delete">x</span>
-												</li>
-												';
-											}
-
-										} else {
-										    echo "Geen huidige leden";
+										for($i=0; $i < count($hoofdstukkenEdited); $i++){
+											echo '
+											<li>
+												<span class="item">'.$hoofdstukkenEdited[$i].'</span>
+												<span class="delete">x</span>
+											</li>
+											';
 										}
+
 									} else {
-										echo "SQL error, contact admin";
+										echo "Geen huidige leden";
 									}
 								} else {
 									echo "SQL error, contact admin";
 								}
+							} else {
+								echo "SQL error, contact admin";
 							}
+						}
 
+		?>
 
-							?>
 						</ul>
 					</div>
 					<div class="addItem">

@@ -59,15 +59,17 @@ $(document).ready(function(){
 	//edit item sent data
 	$(".editItem").click(function(){
 
-		var itemname = $(this).parent().parent().parent().children().find('.naam').text();
-		var itemklas = $(this).parent().parent().parent().children().find('.hide').text();
 		var itemdatum = $(this).parent().parent().parent().children().find('.datum').text();
+		var itemklas = $(this).parent().parent().parent().children().find('.klas').text();
+		var itemname = $(this).parent().parent().parent().children().find('.naam').text();
+		var itembeschrijving = $(this).parent().parent().parent().find('.itemBeschrijving').text();
+		itembeschrijving = itembeschrijving.trim();
 
 		//sent values of group via ajax to editGroupFront.php
 		jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/editItemSetSession.php',
-			data: {itemname: itemname, itemklas: itemklas, itemdatum:itemdatum}
+			data: {itemname: itemname, itemklas: itemklas, itemdatum:itemdatum, itembeschrijving:itembeschrijving}
 		});
 		jqXHR.done(function(msg) {
 			window.location.href = '../scripts/editItemFront.php';

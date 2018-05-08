@@ -33,7 +33,7 @@
 						<ul><a href="theorie/H1/p1.php">§1 Het binair systeem</ul>
 						<ul><a href="theorie/H1/p2.php">§2 Binair rekenen</a></ul>
 						<ul><a href="theorie/H1/p3.php">§3 Gates</a></ul>
-						<ul><a href="theorie/H1/p4.php">§4 onderdelen van de computer</a></ul>
+						<ul><a href="theorie/H1/p4.php">§4 Onderdelen van de computer</a></ul>
 						<ul><a href="theorie/H1/p5.php">§5 Software en het OS</a></ul>
 						<ul><a href="theorie/H1/quiz.php">Quiz</a></ul>
 					</ol>
@@ -86,7 +86,7 @@
 				<div class="tile-paragraphs">
 					<ol>
 						<ul><a href="theorie/H4/p1.php">§1 Elektriciteit</ul>
-						<ul><a href="theorie/H4/p2.php">§2 introductie tot arduino</a></ul>
+						<ul><a href="theorie/H4/p2.php">§2 Introductie tot arduino</a></ul>
 						<ul><a href="theorie/H4/p3.php">§3 De basis van programmeren voor arduino</a></ul>
 						<ul><a href="theorie/H4/p4.php">§4 Verder met arduino</a></ul>
 						<ul><a href="theorie/H4/p5.php">§5 Een LED met LDR</a></ul>

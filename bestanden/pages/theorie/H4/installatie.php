@@ -10,16 +10,14 @@
 		</h2>
 	</div>
 
-	<div class="bar-par-overview">
-		<div>
-			Arduino editor
-		</div>
+	<div class="installation-bar">
+		<h3>Arduino editor</h3>
 	</div>
 
 	<div class="theorie">
 		<div class="bar-s">
 			<h3>
-				Theorie
+				Installatie instructies
 			</h3>
 		</div>
 

@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H3 §6 Loops
+			H3 §6 Uitdaging: mini-game
 		</h2>
 	</div>
 

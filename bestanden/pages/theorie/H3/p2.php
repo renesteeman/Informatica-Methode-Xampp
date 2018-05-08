@@ -60,7 +60,7 @@
 
 		<div class="theorie-content">
 			<p>
-				De installatie voor het gebruik van python
+				Als python en jupyter notebook al geïnstalleerd zijn, dan kun je de eerste 5 stappen overslaan en in plaats daarvan de anaconda navigator openen en daarmee (jupyter) notebook starten.
 			</p>
 			<p>
 				Er zijn veel manieren om python te gebruiken en te installeren. In deze paragraaf wordt één mogelijke optie uitgewerkt.

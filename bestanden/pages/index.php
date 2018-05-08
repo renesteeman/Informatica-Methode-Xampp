@@ -71,7 +71,7 @@
 						<ul><a href="theorie/H3/p4.php">§4 Rekenen met variabelen</a></ul>
 						<ul><a href="theorie/H3/p5.php">§5 Condities</a></ul>
 						<ul><a href="theorie/H3/p6.php">§6 Loops</a></ul>
-						<ul><a href="theorie/H3/p7.php">§7 Uitdaging mini-game</a></ul>
+						<ul><a href="theorie/H3/p7.php">§7 Uitdaging: mini-game</a></ul>
 						<ul><a href="theorie/H3/quiz.php">Quiz</a></ul>
 					</ol>
 				</div>

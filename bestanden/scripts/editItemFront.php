@@ -3,6 +3,7 @@ include('../components/headerGeneral.php');
 ?>
 
 <link rel="stylesheet" href="../css/editItem.min.css">
+<script src="../scripts/planner.js"></script>
 
 <body>
 

@@ -3,6 +3,7 @@
 ?>
 
 <link rel="stylesheet" href="../css/plannerItemAanmaken.min.css">
+<script src="../scripts/planner.js"></script>
 
 <body>
 

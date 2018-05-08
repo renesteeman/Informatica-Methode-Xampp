@@ -1,15 +1,5 @@
 <?php
 include('../components/headerGeneral.php');
-
-//function to check and clean input
-function check_input($data) {
-	$data = trim($data, " ");
-	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-	return $data;
-}
-
-$itemname = mysqli_real_escape_string($conn, check_input($_SESSION['itemname']));
 ?>
 
 <link rel="stylesheet" href="../css/editItem.min.css">
@@ -30,9 +20,39 @@ $itemname = mysqli_real_escape_string($conn, check_input($_SESSION['itemname']))
 
 	<div class="editItemPage">
 
-		<span id="itemName">
-			<?php echo $itemname; ?>
-		</span>
+		<?php
+
+		//function to check and clean input
+		function check_input($data) {
+			$data = trim($data, " ");
+			$data = stripslashes($data);
+			$data = htmlspecialchars($data);
+			return $data;
+		}
+
+		$itemname = mysqli_real_escape_string($conn, check_input($_SESSION['itemname']));
+
+			$user = $_SESSION["username"];
+
+			/*
+			$sql = "SELECT * FROM planner WHERE  titel='$itemname' AND school='$school' AND klas='$CIklas' AND datum='$CIdatum'";
+
+			//get current info in order to show a 'preview'
+			if (mysqli_query($conn, $sql)) {
+				$result = mysqli_query($conn, $sql);
+				$result = mysqli_fetch_assoc($result);
+				$school = $result['school'];
+			} */
+
+			echo '
+			<span id="itemName">
+				'.$itemname.'
+			</span>
+			';
+
+		?>
+
+
 
 		<form class="editItemForm" method="post" action="../scripts/editItem.php" accept-charset="UTF-8">
 			<ul>

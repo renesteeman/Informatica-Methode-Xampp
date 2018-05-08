@@ -185,3 +185,5 @@
 	?>
 
 </body>
+
+<script src="../scripts/planner.js"></script>

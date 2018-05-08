@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H4 §5 verder met de arduino
+			H4 §5 LED met LDR
 		</h2>
 	</div>
 
@@ -37,11 +37,6 @@
 					§5
 				</a></span>
 			</div>
-			<div class="ptile">
-				<span class="ptile-content"><a href="p6.php">
-					§6
-				</a></span>
-			</div>
 
 		</div>
 	</div>
@@ -55,85 +50,73 @@
 
 		<div class="theorie-content">
 			<p>
-				Om een signaal te geven dat meer informatie bevat dan 0 of 1 kun je analogWrite() gebruiken. Dit geeft een waarde van 0 tm 255, het werkt op de arduino door snel te wisselen tussen 0 en 1. Dit kan bijvoorbeeld gebruikt worden om een led langzaam van helderheid te veranderen. Deze functie werkt alleen op de pinnen met het ~ ernaast.
+				Eerst nog een wat complexer voorbeeld. Een ledlampje dat meer licht geeft als het donker is en minder als het licht is. Dit werkt door met een LDR te achterhalen of er veel of weinig licht is en dan met een berekening een waarde voor het ledlampje te bepalen. Omdat we meer precisie willen dan aan of uit gebruiken we analogWrite() om de waarde voor de led in te stellen. Neem de code maar eens door, hierna ga je het uitbereiden. Er staat steeds uitleg bij over wat er gedaan wordt.
 			</p>
 			<p>
-				Om een ‘random’ getal te krijgen kun je random() gebruiken. Een voorbeeld is int intensiteit = random(500); Dit zal intensiteit voor de intensiteit een waarde van 0 tm 500 geven.
-			</p>
-			<p>
-				Voor comments (uitleg) kun je // gebruiken voor een regel of /* aan het begin en */ aan het eind van een comment van meerdere regels.
-			</p>
-			<p>
-				De taal ondersteunt ook loops en condities. Voor een if else statement ziet de syntax (de schrijfwijze) er als volgt uit:
 				<pre>
 					<code>
-if (voorwaarde){
-	//inhoud
-} else {
-//inhoud
+int sensorPin = A0; //stel de pin in voor het meten van de weerstand van de LDR
+int ledPin = 3; //stel de pin voor de led in (dit moet een pin met het golfje zijn)
+int sensorValue = 0;
+int ledValue = 0;
+
+void setup() {
+  Serial.begin(9600); //zet snelheid
+  pinMode(sensorPin, INPUT); //zet de sensorPin op aflees modus
+  pinMode(ledPin, OUTPUT); //zet de ledPin op output modus
 }
+void loop() {
+  //zet sensorValue gelijk aan de waarde van de weerstand van de LDR die afgelezen wordt
+  sensorValue = analogRead(sensorPin);
+
+  //laat de sensorwaarde zien
+  Serial.print("sensorValue = ");
+  Serial.println(sensorValue);
+
+  //zorg ervoor de helderheid van de led omgekeerd evenredig is met de weerstand (als het donker is geeft de led meer licht)
+  ledValue = (30000/sensorValue);
+
+  //zorg dat de led waarde niet groter is dan 255 (dit is de maximum waarde)
+  if(ledValue>255){
+    ledValue = 255;
+  }
+
+  //laat de waarde voor de led zien
+  Serial.print("ledValue =");
+  Serial.println(ledValue);
+  Serial.println();
+
+  //zet de helderheid van het licht gelijk aan de weerstands waarde van de LDR
+  analogWrite(ledPin, ledValue);
+  delay(1000); //wacht 1s
+}
+
+
+//Probeer het uit door jouw vinger op de LDR te leggen (niet op de 'draad')
+//Schijn nu met een lampje op de LDR
+//Laat nu een lampje knipperen en kijk naar de reactie van het led lampje
+
 					</code>
 				</pre>
 
 			</p>
 			<p>
-				Je kunt voor vergelijkingen weer (zoals in python) gebruik maken van != (is niet gelijk aan), < (is minder), > (is meer), == (is gelijk aan) en nog een paar anderen. Het rekenen is ook hetzelfde als in python.
+				Hier hoort natuurlijk ook een circuit bij. Dit is wat lastiger en hoef je niet helemaal te begrijpen. Let wel op dat als je het gaat namaken je eerst goed moet controleren voordat je het aan zet! Om de pinnummers te achterhalen kun je ook bovenaan in de code kijken. Volg de pijlen om te zien hoe de elektriciteit zich verplaatst.
+
+				<img src="./afbeeldingen/LDR_LED.png" />
 			</p>
 			<p>
-				Voor de rest van te mogelijkheden te bekijken kun je naar <a href="https://www.arduino.cc/reference/en/">https://www.arduino.cc/reference/en/</a> gaan.
+				Dan nu de uitdaging voor dit hoofdstuk. Laat een servo naar links draaien in het donker en naar rechts als het licht is. Er volgt nog een stukje uitleg.
 			</p>
 			<p>
-				Verder biedt arduino ook nog libraries, dit zijn een soort uitbereidingen om meer functies toe te voegen, de voorgaande link geeft hier ook informatie over.
+				De rode kabel bij de servo is +, verbindt dit met een 5V pin. De zwarte of bruine draad is de -, verbindt dit met grond (de GND pin). De andere draad (meestal geel) is voor het signaal door te sturen, verbindt deze met een analoge pin, dus een van de pinnen met A ernaast (bijvoorbeeld A5).
 			</p>
 			<p>
-				Er zijn ook nog andere (krachtigere en compactere) arduino’s die voor het grootste deel hetzelfde werken als de uno.
+				Voordat je gaat programmeren moet je eerst de servo library (uitbereiding) toevoegen, dit maakt het geven van commando’s voor de servo veel makkelijker. Ga hiervoor naar de arduino software, dan sketch, dan include library en klik op servo. Voor de rest van de uitleg ga als een echte programmeur zelf dingen zoeken, de pagina voor de library is <a href="https://playground.arduino.cc/ComponentLib/Servo">https://playground.arduino.cc/ComponentLib/Servo</a> hier vind je al een belangrijk deel van de code die je nodig zal hebben. Probeer het echt op te lossen en samenwerken is aanbevolen. Succes!
 			</p>
 
 		</div>
 
-		<div class="bar-s">
-			<h3>
-				Vragen
-			</h3>
-		</div>
-
-		<div class="theorie-content">
-
-			<ol>
-				<li>
-					Geef de naam van een arduino die krachtiger is dan de uno.
-				</li>
-				<li>
-					Hoe ziet een IF statement eruit die code uitvoert als twee waarden niet gelijk zijn aan elkaar (je mag doen alsof er al variabelen gedeclareerd zijn)?
-				</li>
-			</ol>
-
-		</div>
-
-		<div class="bar-s">
-			<h3>
-				Antwoorden
-			</h3>
-		</div>
-
-		<div class="theorie-content theorie-answers">
-
-			<ol>
-				<li>
-					Er zijn meerdere antwoorden mogelijk, waaronder de arduino mega.
-				</li>
-				<li>
-					<pre>
-						<code>
-if(waarde1 != waarde2){
-	//uit te voeren code
-}
-						</code>
-					</pre>
-				</li>
-			</ol>
-
-		</div>
 	</div>
 
 	<?php

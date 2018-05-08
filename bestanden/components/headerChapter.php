@@ -159,10 +159,16 @@ session_start();
 
 	include('../../../scripts/DB_connect.php');
 
+	//check if the person is loged in
+	if (!isset($_SESSION["username"])){
+		$_SESSION['ErrorNotLogedIn'] = 1;
+		header('Location: ../../index.php');
+	}
+
 	//check if account is still valid
 	function AccountValid(){
 
-		//needed to connect inside a function
+		//needed to connect inside the function
 		global $conn;
 
 		$user = $_SESSION["username"];
@@ -186,29 +192,13 @@ session_start();
 		return $valid;
 	}
 
-	if(isset($_SESSION['ErrorNotLogedIn'])){
-		if($_SESSION['ErrorNotLogedIn'] == 0){
-			if(!AccountValid()){
-				$_SESSION['ErrorInvalidAccount'] = 1;
-				header('Location: ../../index.php');
-			}
-		}
+	//check if the account hasn't expired and if it has, than redirect
+	if(AccountValid()){
+		$_SESSION['ErrorInvalidAccount'] = 0;
 	} else {
-		if(!AccountValid()){
-			$_SESSION['ErrorInvalidAccount'] = 1;
-			header('Location: ../../index.php');
-		}
-	}
-
-?>
-
-<?php
-
-	//check if user is logged in and redirect them away if they aren't
-	if (!isset($_SESSION["username"])){
-		$_SESSION['ErrorNotLogedIn'] = 1;
-
+		$_SESSION['ErrorInvalidAccount'] = 1;
 		header('Location: ../../index.php');
 	}
+
 
 ?>

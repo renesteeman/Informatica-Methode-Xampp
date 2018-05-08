@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H4 §1 Introductie tot arduino
+			H4 §2 Introductie tot arduino
 		</h2>
 	</div>
 
@@ -35,11 +35,6 @@
 			<div class="ptile">
 				<span class="ptile-content"><a href="p5.php">
 					§5
-				</a></span>
-			</div>
-			<div class="ptile">
-				<span class="ptile-content"><a href="p6.php">
-					§6
 				</a></span>
 			</div>
 

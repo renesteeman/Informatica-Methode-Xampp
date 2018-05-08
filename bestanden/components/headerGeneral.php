@@ -154,6 +154,28 @@ session_start();
 
 	include('../scripts/DB_connect.php');
 
+	//check for known problems
+	if(isset($_SESSION['ErrorNotLogedIn'])){
+		if($_SESSION['ErrorNotLogedIn']){
+			echo ("
+				<script>
+					alert('U bent niet ingelogd');
+				</script>
+			");
+			$_SESSION['ErrorNotLogedIn'] = 0;
+		}
+	}
+
+	if(isset($_SESSION['ErrorInvalidAccount'])){
+		if($_SESSION['ErrorInvalidAccount']){
+			echo ("
+				<script>
+					alert('Uw account is verlopen');
+				</script>
+			");
+		}
+	}
+
 	//check if account is still valid
 	function AccountValid(){
 
@@ -200,31 +222,6 @@ session_start();
 	} else {
 		if(isset($_SESSION['ErrorInvalidAccount'])){
 			$_SESSION['ErrorInvalidAccount'] = 0;
-		}
-	}
-
-?>
-
-<?php
-
-	if(isset($_SESSION['ErrorNotLogedIn'])){
-		if($_SESSION['ErrorNotLogedIn']){
-			echo ("
-				<script>
-					alert('U bent niet ingelogd');
-				</script>
-			");
-			$_SESSION['ErrorNotLogedIn'] = 0;
-		}
-	}
-
-	if(isset($_SESSION['ErrorInvalidAccount'])){
-		if($_SESSION['ErrorInvalidAccount']){
-			echo ("
-				<script>
-					alert('Uw account is verlopen');
-				</script>
-			");
 		}
 	}
 

@@ -37,11 +37,6 @@
 					§5
 				</a></span>
 			</div>
-			<div class="ptile">
-				<span class="ptile-content"><a href="p6.php">
-					§6
-				</a></span>
-			</div>
 
 		</div>
 	</div>

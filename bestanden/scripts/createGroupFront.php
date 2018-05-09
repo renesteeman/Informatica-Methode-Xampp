@@ -2,7 +2,7 @@
 	include('../components/headerGeneral.php');
 ?>
 
-<link rel="stylesheet" href="../css/overzichtGroepAanmaken.min.css">
+<link rel="stylesheet" href="../css/createGroup.min.css">
 
 <body>
 

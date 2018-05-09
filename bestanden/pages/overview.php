@@ -308,8 +308,8 @@
 					echo "U bent geen docent";
 				} else {
 					echo '
-					<form class="addGroupButton" method="post" action="../scripts/changeClassFront.php">
-						<input type="submit" value="Leerling(en) van klas veranderen">
+					<form class="changeClassButton" method="post" action="../scripts/changeClassFront.php">
+						<button type="submit">Leerling(en) van klas veranderen</button>
 					</form>
 					';
 				}
@@ -507,7 +507,7 @@
 					} else {
 						echo '
 						<form class="addGroupButton" method="post" action="../scripts/createGroupFront.php">
-							<input type="submit" value="Nieuwe groep">
+							<button type="submit">Nieuwe groep</button>
 						</form>
 						';
 					}

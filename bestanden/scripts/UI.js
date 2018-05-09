@@ -36,24 +36,24 @@ $(document).ready(function(){
 	$(".theorie-answers").slideToggle(0);
 
 	//groepen
-	$('.addLid').children().val(' ');
+	$('.add-item').children().val(' ');
 	window.setTimeout(addLid, 100);
 
 	function addLid(){
-		$('.addLid').children().val('');
+		$('.add-item').children().val('');
 	}
 
 	$(".addLidButton").click(function(){
 		var name = $(this).prev().children().val();
 		if(name!=""){
-			var paste = '<li><span class="lid">'+ name +'</span><span class="delete">x</span></li>'
+			var paste = '<li><span class="list-item">'+ name +'</span><span class="delete">x</span></li>'
 			$(this).prev().children().val('');
 			$(this).parent().prev().children().first().append(paste);
 		}
 
 	});
 
-	$(".addLid").children().first().keypress(function(event){
+	$(".add-item").children().first().keypress(function(event){
 		if(event.keyCode == 13){
 			$('.addLidButton').click();
 		}

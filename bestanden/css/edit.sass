@@ -130,9 +130,8 @@
 	input[type="checkbox"]
 		display: none
 
-	//page elements
+	//edit class specific
 	.klasSelector
-
 		option
 			font-size: 1em
 			height: 1em
@@ -143,6 +142,48 @@
 
 		.leerling
 			margin-left: 1em
+
+	//buttons
+	.red-button
+		font-size: 1em
+		margin-bottom: 1em
+		margin-left: 1em
+		padding: 12px 12px
+		border-radius: 4px
+		width: auto
+		background-color: mix($red, $white, 90%)
+		display: inline-block
+		text-align: center
+		vertical-align: middle
+		height: 2em
+		padding-top: 0.4em
+		box-sizing: border-box
+		box-shadow: inset 0 0 0 0 darken($white, 10%), 4px 4px 8px darken($green-blue, 20%)
+		transition: background .5s ease-out, box-shadow 0.5s ease-in-out
+
+	.red-button:hover
+		background-color: darken($red, 5%)
+		cursor: default
+
+	//edit group specific
+.editGroup
+	padding-left: 0
+	padding-top: 0
+
+	.editGroupForm
+		padding-left: 1em
+		padding-top: 0.5em
+
+	#groupName
+		height: 2em
+		background-color: $blue-green
+		width: 100%
+		display: inline-block
+		box-sizing: border-box
+		padding-left: 1.5em
+		padding-top: .5em
+		font-size: 1.5em
+		border-radius: 4px 4px 0 0
 
 
 @media (max-width: $large)

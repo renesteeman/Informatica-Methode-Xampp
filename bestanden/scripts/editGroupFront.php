@@ -2,7 +2,7 @@
 include('../components/headerGeneral.php');
 ?>
 
-<link rel="stylesheet" href="../css/editGroup.min.css">
+<link rel="stylesheet" href="../css/edit.min.css">
 
 <body>
 
@@ -18,7 +18,7 @@ include('../components/headerGeneral.php');
 		</h3>
 	</div>
 
-	<div class="editGroupPage">
+	<div class="main editGroup">
 
 		<?php
 
@@ -75,7 +75,7 @@ include('../components/headerGeneral.php');
 								</li>
 								<li>
 									<label>Leden</label>
-									<div class="ledenLijst">
+									<div class="list">
 										<ul>
 						';
 
@@ -92,7 +92,7 @@ include('../components/headerGeneral.php');
 
 									echo '
 									<li>
-										<span class="lid">'.$naam.'</span>
+										<span class="list-item">'.$naam.'</span>
 										<span class="delete">x</span>
 									</li>';
 

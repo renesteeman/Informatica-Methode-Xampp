@@ -41,7 +41,7 @@
 				</li>
 				<li>
 					<label>Leden</label>
-					<div class="ledenLijst">
+					<div class="list ledenLijst">
 						<ul>
 
 						</ul>

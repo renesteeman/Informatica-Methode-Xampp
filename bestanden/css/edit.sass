@@ -1,44 +1,94 @@
 @import "variables.sass"
 
 .main
+	font-size: 2em
+	height: auto
 	margin-left: 20%
 	margin-top: 40px
-	margin-bottom: 40px
-	padding-bottom: 1em
-	padding-left: 1em
-	padding-top: 1em
 	width: 60%
+	margin-bottom: 40px
 	background-color: $grey
 	box-shadow: inset 0 0 0 0 darken($white, 10%), 6px 6px 8px darken($white, 20%)
 	border-radius: 4px
 	color: $black
 	background: linear-gradient(to bottom right, $green-blue, $green)
+	padding-top: 0.5em
+	padding-left: 1em
 
-	input
-		font-size: 1.5em
+	label
+		display: block
+		font-size: 1.3em
+
+	input, select
+		font-size: 1em
 		margin-bottom: 1em
 		margin-top: 1em
+		margin-left: 1em
 		position: relative
 		bottom: 20px
 		padding: 12px 12px
 		border-radius: 4px
-		height: 1.5em
-		box-shadow: inset 0 0 0 0 darken($white, 10%), 4px 4px 8px darken($green-blue, 20%)
-		transition: background .5s ease-out, box-shadow 0.5s ease-in-out
-
-	input[type="submit"]
-		font-size: 2em
 		height: 2em
+
+	textarea
+		font-size: 1em
+		margin-bottom: 1em
+		margin-top: 1em
+		margin-left: 1em
+		position: relative
+		bottom: 20px
+		padding: 12px 12px
+		border-radius: 4px
+		height: 6em
+		width: 80%
+		transition: background .5s ease-out, box-shadow 0.5s ease-in-out
+		resize: none
+		border: none
+
+	.list
+		margin-top: 1em
+		cursor: default
+
+		.list-item
+			width: 60%
+			display: inline-block
+
+		.delete
+			display: inline-block
+			transition: color 0.4s
+
+		.delete:hover
+			color: $red
+			cursor: pointer
+
+	.add-item
+		input
+			width: 60%
+			display: inline-block
+
+		.plus-sign
+			display: inline-block
+			vertical-align: middle
+			margin-bottom: 0.65em
+			font-size: 2em
+
+		.plus-sign:hover
+			color: $blue
+			cursor: pointer
 
 	ul
 		list-style: none
+
+	img
+		width: 4em
+		height: 4em
 
 	//checkbox
 	.container
 		position: relative
 		padding-left: 1em
 		cursor: pointer
-		font-size: 1.5em
+		font-size: 1em
 
 	.container input
 		position: absolute
@@ -89,5 +139,23 @@
 			padding: 12px 12px
 
 	.leerlingSelector
-		margin-top: 1em
 		margin-bottom: 1em
+
+		.leerling
+			margin-left: 1em
+
+
+@media (max-width: $large)
+	.main
+		width: 100%
+		margin-left: 0
+		padding-left: 0
+		padding-top: 0.2em
+
+		input
+			width: 80%
+			margin-left: 0
+
+		textarea
+			width: 80%
+			margin-left: 0

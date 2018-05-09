@@ -128,7 +128,7 @@ $(document).ready(function(){
 		var password = $("input[name='password']").val();
 
 		var NGleden = [];
-		$('.ledenLijst>ul>li>.lid').each(function(index){
+		$('.ledenLijst>ul>li>.list-item').each(function(index){
 			NGleden.push($(this).text());
 		});
 

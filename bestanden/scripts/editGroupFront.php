@@ -18,7 +18,7 @@ include('../components/headerGeneral.php');
 		</h3>
 	</div>
 
-	<div class="main editGroup">
+	<div class="main editGroupPage">
 
 		<?php
 
@@ -105,8 +105,8 @@ include('../components/headerGeneral.php');
 							echo '
 								</ul>
 									</div>
-									<div class="addLid">
-										<span class="addLid">
+									<div class="addLid add-item">
+										<span class="addLid add-item">
 											<input type="text" placeholder="Nieuw lid" name="NGleden" maxlength="50" autocomplete="off">
 										</span>
 										<span class="plus-sign addLidButton">+</span>

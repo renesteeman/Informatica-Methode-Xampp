@@ -1,6 +1,6 @@
 @import "variables.sass"
 
-.createGroup
+.main
 	font-size: 2em
 	height: auto
 	margin-left: 20%
@@ -43,12 +43,13 @@
 		width: 80%
 		transition: background .5s ease-out, box-shadow 0.5s ease-in-out
 		resize: none
+		border: none
 
-	.ledenLijst
+	.list
 		margin-top: 1em
 		cursor: default
 
-		.lid
+		.list-item
 			width: 60%
 			display: inline-block
 
@@ -60,7 +61,7 @@
 			color: $red
 			cursor: pointer
 
-	.addLid
+	.add-item
 		input
 			width: 60%
 			display: inline-block
@@ -83,7 +84,7 @@
 		height: 4em
 
 @media (max-width: $large)
-	.createGroup
+	.main
 		width: 100%
 		margin-left: 0
 		padding-left: 0

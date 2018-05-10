@@ -2,7 +2,7 @@
 	include('../components/headerGeneral.php');
 ?>
 
-<link rel="stylesheet" href="../css/changeClass.min.css">
+<link rel="stylesheet" href="../css/edit.min.css">
 
 <head>
 	<meta name="description" content="Een informatica methode met structuur en keuze. Voor docenten is er een duidelijk overzicht en leerlingen kunnen zich specialiseren in wat ze interessant vinden, zonder de basis te missen." />

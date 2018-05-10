@@ -42,7 +42,7 @@
 
 		if(isset($_POST['Iomschrijving'])){
 			if($_POST['Iomschrijving'] != ""){
-					$Iomschrijving = mysqli_real_escape_string($conn, check_input($_POST['Iomschrijving']));
+				$Iomschrijving = mysqli_real_escape_string($conn, check_input($_POST['Iomschrijving']));
 			}
 		};
 
@@ -86,13 +86,21 @@
 			//check psw
 			if(password_verify($password, $rightpsw)){
 				if($Inaam != "" & $Iomschrijving != "" & $Iklas != "" & $Idatum != ""){
-					//create group
-					$sql = "INSERT INTO planner (titel, beschrijving, progressie, school, klas, datum) VALUES ('$Inaam', '$Iomschrijving', '$Iprogressie', '$Ischool', '$Iklas', '$Idatum')";
 
-					if (mysqli_query($conn, $sql)) {
-						echo "Item succesvol toegevoegd";
+					//check if data is unique
+					$sql = mysqli_query($conn, "SELECT * FROM planner WHERE titel='$Inaam' AND klas='$Iklas' AND datum='$Idatum'");
+
+					if(mysqli_num_rows($sql) != 0){
+						echo "\nDeze opdracht bestaat al. Verander de naam, klas of datum";
 					} else {
-						echo "\nError with sql execution, please report to admin";
+						//create group
+						$sql = "INSERT INTO planner (titel, beschrijving, progressie, school, klas, datum) VALUES ('$Inaam', '$Iomschrijving', '$Iprogressie', '$Ischool', '$Iklas', '$Idatum')";
+
+						if (mysqli_query($conn, $sql)) {
+							echo "Item succesvol toegevoegd";
+						} else {
+							echo "\nError with sql execution, please report to admin";
+						}
 					}
 
 				} else {
@@ -108,7 +116,5 @@
 		}
 
 	}
-
-	$conn->close();
 
 ?>

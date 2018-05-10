@@ -3,6 +3,7 @@
 ?>
 
 <link rel="stylesheet" href="../css/plannerItemAanmaken.min.css">
+<script src="../scripts/planner.js"></script>
 
 <body>
 
@@ -25,7 +26,7 @@
 	</div>
 
 	<div class="createItem">
-		<form class="createItemForm" method="post" action="../scripts/createGroup.php" accept-charset="UTF-8">
+		<form class="createItemForm" method="post" action="../scripts/createItemAjax.php" accept-charset="UTF-8">
 			<ul>
 				<li>
 					<label>Naam</label>

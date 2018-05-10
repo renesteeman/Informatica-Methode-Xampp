@@ -174,8 +174,7 @@
 					color: $grey
 
 
-.addGroupButton
-	input
+	input, button
 		font-size: 2em
 		padding: 12px 12px
 		border-radius: 4px
@@ -184,96 +183,48 @@
 		box-shadow: 4px 4px 8px darken($grey, 20%)
 		transition: background .4s ease-out, box-shadow 0.2s ease-in-out
 		background: linear-gradient(to bottom right, $green-blue, lighten($green-blue, 10%))
+		border: none
 
-	input:hover
+	input:hover, button:hover
 		box-shadow: 2px 2px 6px darken($grey, 30%)
 		background: linear-gradient(to bottom right, $green-blue, $blue-green)
 
-@media (max-width: $xlarge)
-	.overzicht
-		margin-left: 5%
-		margin-right: 5%
-
-		.table
-			width: 100%
-
-			.headerRow.klassen
-				.headerRowContent
-					span.klas
-						width: 25%
-
-					span.Nleerlingen
-						width: 45%
-						padding-right: 5%
-
-			.headerRow.groepen
-				.headerRowContent
-					span.groep
-						width: 25%
-
-					span.Nleden
-						width: 30%
-
-					span.klassen
-						width: 40%
-
-					span.icons
-						display: block
-
 @media (max-width: $large)
 	.overzicht
+		margin-left: 5%
 		.table
-			.headerRow.klassen
-				.headerRowContent
-					span.klas
-
-					span.Nleerlingen
-
-			.headerRow.groepen
-				.headerRowContent
-					span.groep
-						width: 100%
-						display: block
-
-					span.Nleden
-						width: 100%
-						display: block
-
-					span.klassen
-						width: 100%
-						display: block
-
-					span.icons
-						width: 100%
-						display: block
+			width: 95%
 
 @media (max-width: $medium)
 	.overzicht
 		.table
-			.headerRow.klassen
-				.rowContent
-					.row
-						padding-left: 5%
+			.headerRow.groepen
+				.headerRowContent
+					span.groep
+						width: 30%
 
-						span.name
-							width: 20%
+					span.Nleden
+						width: 40%
 
-						span.groepnaam
-							width: 30%
+					span.klassen
+						width: 20%
 
-						span.groepsrol
-							width: 25%
-
-						span.gemiddelde
-							width: 10%
-
-						span.progressie
-							width: 10%
 
 @media (max-width: $small)
 	.overzicht
+		margin-left: 0
+		margin-right: 0
+
+		input, button
+			margin-left: 5%
+			max-width: 90%
+			height: auto
+
 		.table
+			width: 100%
 			.headerRow.klassen
+				.headerRowContent
+					padding-left: 0.5em
 				.rowContent
 					.row
 						span.name

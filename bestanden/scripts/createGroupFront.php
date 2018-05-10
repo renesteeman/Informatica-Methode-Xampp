@@ -2,7 +2,7 @@
 	include('../components/headerGeneral.php');
 ?>
 
-<link rel="stylesheet" href="../css/overzichtGroepAanmaken.min.css">
+<link rel="stylesheet" href="../css/create.min.css">
 
 <body>
 
@@ -24,8 +24,8 @@
 		</h3>
 	</div>
 
-	<div class="createGroup">
-		<form class="createGroupForm" method="post" action="../scripts/createGroup.php" accept-charset="UTF-8">
+	<div class="main createGroup">
+		<form class="createGroupForm" method="post" action="../scripts/createGroupAjax.php" accept-charset="UTF-8">
 			<ul>
 				<li>
 					<label>Naam</label>
@@ -41,13 +41,13 @@
 				</li>
 				<li>
 					<label>Leden</label>
-					<div class="ledenLijst">
+					<div class="list ledenLijst">
 						<ul>
 
 						</ul>
 					</div>
-					<div class="addLid">
-						<span class="addLid">
+					<div class="add-item addLid">
+						<span class="add-item addLid">
 							<input type="text" placeholder="Nieuw lid" name="Gleden" maxlength="50" autocomplete="off">
 						</span>
 						<span class="plus-sign addLidButton">+</span>

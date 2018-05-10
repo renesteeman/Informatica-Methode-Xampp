@@ -1,6 +1,6 @@
 @import "variables.sass"
 
-.editGroupPage
+.main
 	font-size: 2em
 	height: auto
 	margin-left: 20%
@@ -12,10 +12,8 @@
 	border-radius: 4px
 	color: $black
 	background: linear-gradient(to bottom right, $green-blue, $green)
-
-	.editGroupForm
-		padding-top: 0.5em
-		padding-left: 1em
+	padding-top: 0.5em
+	padding-left: 1em
 
 	label
 		display: block
@@ -31,34 +29,6 @@
 		padding: 12px 12px
 		border-radius: 4px
 		height: 2em
-		width: 15em
-
-	input[type=submit]
-		width: auto
-
-	.center
-		display: inline-block
-
-	.deleteGroupButton
-		font-size: 1em
-		margin-bottom: 1em
-		margin-left: 1em
-		padding: 12px 12px
-		border-radius: 4px
-		width: auto
-		background-color: mix($red, $white, 90%)
-		display: inline-block
-		text-align: center
-		vertical-align: middle
-		height: 2em
-		padding-top: 0.4em
-		box-sizing: border-box
-		box-shadow: inset 0 0 0 0 darken($white, 10%), 4px 4px 8px darken($green-blue, 20%)
-		transition: background .5s ease-out, box-shadow 0.5s ease-in-out
-
-	.deleteGroupButton:hover
-		background-color: darken($red, 5%)
-		cursor: default
 
 	textarea
 		font-size: 1em
@@ -73,12 +43,13 @@
 		width: 80%
 		transition: background .5s ease-out, box-shadow 0.5s ease-in-out
 		resize: none
+		border: none
 
-	.ledenLijst
+	.list
 		margin-top: 1em
 		cursor: default
 
-		.lid
+		.list-item
 			width: 60%
 			display: inline-block
 
@@ -90,7 +61,7 @@
 			color: $red
 			cursor: pointer
 
-	.addLid
+	.add-item
 		input
 			width: 60%
 			display: inline-block
@@ -112,42 +83,17 @@
 		width: 4em
 		height: 4em
 
-	#groupName
-		height: 2em
-		background-color: $blue-green
-		width: 100%
-		display: inline-block
-		box-sizing: border-box
-		padding-left: 1.5em
-		padding-top: .5em
-		font-size: 1.5em
-		border-radius: 4px 4px 0 0
-
 @media (max-width: $large)
-	.editGroup
-		width: 80%
-		margin-left: 10%
+	.main
+		width: 100%
+		margin-left: 0
+		padding-left: 0
+		padding-top: 0.2em
 
-		.editGroupForm
-			padding-left: 0
+		input
+			width: 80%
+			margin-left: 0
 
-			input
-				margin-left: 0
-				width: 90%
-
-			.addLid
-				width: 100%
-
-				input
-					width: 80%
-
-			textarea
-				margin-left: 0
-				width: 90%
-
-			.center
-				display: block
-
-			.deleteGroupButton
-				margin-left: 0
-				width: 90%
+		textarea
+			width: 80%
+			margin-left: 0

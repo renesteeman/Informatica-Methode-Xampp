@@ -74,7 +74,7 @@
 					if($Pfunctie == 'leerling'){
 						$sql = "SELECT * FROM planner WHERE school='$Pschool' AND klas='$Pklas' ORDER BY datum";
 					} else if ($Pfunctie == 'docent') {
-						$sql = "SELECT * FROM planner WHERE school='$Pschool' ORDER BY datum";
+						$sql = "SELECT * FROM planner WHERE school='$Pschool' ORDER BY datum DESC";
 					}
 
 					if (mysqli_query($conn, $sql)) {
@@ -82,18 +82,22 @@
 						$result = mysqli_query($conn, $sql);
 						$Nitems = mysqli_num_rows($result);
 
+						$Cdate = date("Y-m-d");
+						$Cdate = strtotime($Cdate);
+
 						if (mysqli_num_rows($result) > 0) {
 						    // output data of each row
 						    while($row = mysqli_fetch_assoc($result)) {
 								$Ititel = $row['titel'];
 								$Ibeschrijving = $row['beschrijving'];
-								$Idatum = date('d/m', strtotime($row['datum']));
+								$Idatum = date('d-m-y', strtotime($row['datum']));
+								$IdatumCompare = strtotime($row['datum']);
 								$Iklas = $row['klas'];
 								$Iprogressie = $row['progressie'];
 								//remove last comma
 								$Ihoofdstukken = substr($Iprogressie, 0, -2);
 
-								if($Idatum < date("d/m")){
+								if($IdatumCompare < $Cdate){
 									echo '
 										<div class="item old">
 									';
@@ -113,6 +117,8 @@
 									<div class="itemHeader leerling">
 								';
 								}
+
+								$Idatum = substr($Idatum, 0, -3);
 
 								echo '
 

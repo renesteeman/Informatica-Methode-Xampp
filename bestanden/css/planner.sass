@@ -153,18 +153,38 @@
 		box-shadow: 2px 2px 6px darken($grey, 30%)
 		background: linear-gradient(to bottom right, $green-blue, $blue-green)
 
-@media(max-width: $medium)
+@media(max-width: $large)
 	.items
-		margin-left: 5%
+		margin-left: 0%
+
+		.addItemButton
+			margin-left: 5%
 
 		.table
-			width: 90%
+			width: 100%
 
+@media(max-width: $medium)
+	.items
+		.table
 			.item
-				.itemHeader
+				.itemHeader.docent
+					border-bottom: $black 1px solid
 					.itemHeaderContent
-						.datum
-							width: 40%
+						span.datum
+							width: 25%
+							min-width: 6em
 
-						.naam
-							width: 40%
+						span.klas
+							width: 25%
+							min-width: 6em
+
+						span.naam
+							width: 30%
+							min-width: 6em
+
+						span.hoofdstukken
+							width: 20%
+							min-width: 6em
+
+						span.icons
+							min-width: 6em

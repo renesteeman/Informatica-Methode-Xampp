@@ -10,7 +10,7 @@ $(document).ready(function(){
 	$(".addChapterButton").click(function(){
 		var name = $(this).prev().children().val();
 		if(name!=""){
-			var paste = '<li><span class="item">'+ name +'</span><span class="delete">x</span></li>'
+			var paste = '<li><span class="list-item">'+ name +'</span><span class="delete">x</span></li>'
 			$(this).prev().children().val('');
 			$(this).parent().prev().children().first().append(paste);
 		}
@@ -34,7 +34,7 @@ $(document).ready(function(){
 		var Idatum = $('input[name=Idatum]').val();
 
 		var Iprogressie = [];
-		$('.itemLijst>ul>li>.item').each(function(index){
+		$('.itemLijst>ul>li>.list-item').each(function(index){
 			Iprogressie.push($(this).text());
 		});
 

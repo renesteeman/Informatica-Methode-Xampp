@@ -2,7 +2,7 @@
 	include('../components/headerGeneral.php');
 ?>
 
-<link rel="stylesheet" href="../css/plannerItemAanmaken.min.css">
+<link rel="stylesheet" href="../css/create.min.css">
 <script src="../scripts/planner.js"></script>
 
 <body>
@@ -25,7 +25,7 @@
 		</h3>
 	</div>
 
-	<div class="createItem">
+	<div class="main createItem">
 		<form class="createItemForm" method="post" action="../scripts/createItemAjax.php" accept-charset="UTF-8">
 			<ul>
 				<li>
@@ -46,13 +46,13 @@
 				</li>
 				<li>
 					<label>Progressie</label>
-					<div class="itemLijst">
+					<div class="list itemLijst">
 						<ul>
 
 						</ul>
 					</div>
-					<div class="addChapter">
-						<span class="addChapter">
+					<div class="add-item addChapter">
+						<span class="add-item addChapter">
 							<input type="text" placeholder="Te maken hoofdstuk (bv H1)" name="Ihoofdstukken" maxlength="3" autocomplete="off">
 						</span>
 						<span class="plus-sign addChapterButton">+</span>

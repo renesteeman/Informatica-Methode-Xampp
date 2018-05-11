@@ -18,7 +18,7 @@ include('../components/headerGeneral.php');
 		</h3>
 	</div>
 
-	<div class="main editGroupPage">
+	<div class="main top-header-main">
 
 		<?php
 
@@ -35,7 +35,7 @@ include('../components/headerGeneral.php');
 			if (isset($_SESSION["username"])){
 
 				echo '
-					<span id="groupName">
+					<span class="top-header">
 						'.$groupname.'
 					</span>'
 				;
@@ -117,7 +117,7 @@ include('../components/headerGeneral.php');
 									<input type="password" placeholder="Huidig wachtwoord" name="password" maxlength="50">
 								</li>
 								<li>
-									<input type="submit" value="Bevestig" id="editGroupConfirm">
+									<input type="submit" value="Bevestig" id="editGroupConfirm" class="ConfirmButton">
 								</li>
 								<li>
 									</br></br>

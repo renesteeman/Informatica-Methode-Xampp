@@ -2,7 +2,7 @@
 include('../components/headerGeneral.php');
 ?>
 
-<link rel="stylesheet" href="../css/editItem.min.css">
+<link rel="stylesheet" href="../css/edit.min.css">
 <script src="../scripts/planner.js"></script>
 
 <body>
@@ -19,7 +19,7 @@ include('../components/headerGeneral.php');
 		</h3>
 	</div>
 
-	<div class="editItemPage">
+	<div class="main editItemPage top-header-main">
 
 		<?php
 
@@ -49,7 +49,7 @@ include('../components/headerGeneral.php');
 		$Ibeschrijving = mysqli_real_escape_string($conn, check_input($_SESSION['itembeschrijving']));
 
 		echo '
-		<span id="itemName">
+		<span class="top-header">
 			'.$Iname.'
 		</span>
 
@@ -73,7 +73,7 @@ include('../components/headerGeneral.php');
 				</li>
 				<li>
 					<label>Progressie</label>
-					<div class="itemLijst">
+					<div class="list itemLijst">
 						<ul>';
 
 						if (isset($_SESSION["username"])){
@@ -104,7 +104,7 @@ include('../components/headerGeneral.php');
 										for($i=0; $i < count($hoofdstukkenEdited); $i++){
 											echo '
 											<li>
-												<span class="item">'.$hoofdstukkenEdited[$i].'</span>
+												<span class="list-item">'.$hoofdstukkenEdited[$i].'</span>
 												<span class="delete">x</span>
 											</li>
 											';
@@ -137,12 +137,12 @@ include('../components/headerGeneral.php');
 					<input type="password" placeholder="Huidig wachtwoord" name="password" maxlength="50">
 				</li>
 				<li>
-					<input type="submit" value="Bevestig" id="editItemConfirm">
+					<input type="submit" value="Bevestig" id="editItemConfirm" class="ConfirmButton">
 				</li>
 				<li>
 					<div class="center">
 					</br></br>
-						<div class="deleteItemButton">
+						<div class="red-button deleteItemButton">
 							Verwijder opdracht
 						</div>
 					</div>

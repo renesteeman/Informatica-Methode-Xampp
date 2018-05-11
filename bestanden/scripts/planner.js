@@ -59,7 +59,7 @@ $(document).ready(function(){
 	//edit item sent data
 	$(".editItem").click(function(){
 
-		var itemdatum = $(this).parent().parent().parent().children().find('.datum').text();
+		var itemdatum = $(this).parent().parent().parent().children().find('.hide').text();
 		var itemklas = $(this).parent().parent().parent().children().find('.klas').text();
 		var itemname = $(this).parent().parent().parent().children().find('.naam').text();
 		var itembeschrijving = $(this).parent().parent().parent().find('.itemBeschrijving').text();
@@ -91,7 +91,7 @@ $(document).ready(function(){
 	$(".addItemButton").click(function(){
 		var name = $(this).prev().children().val();
 		if(name!=""){
-			var paste = '<li><span class="item">'+ name +'</span><span class="delete">x</span></li>'
+			var paste = '<li><span class="list-item">'+ name +'</span><span class="delete">x</span></li>'
 			$(this).prev().children().val('');
 			$(this).parent().prev().children().first().append(paste);
 		}
@@ -113,7 +113,7 @@ $(document).ready(function(){
 		var NIdatum = $('input[name=NIdatum]').val();
 
 		var NIprogressie = [];
-		$('.itemLijst>ul>li>.item').each(function(index){
+		$('.itemLijst>ul>li>.list-item').each(function(index){
 			NIprogressie.push($(this).text());
 		});
 

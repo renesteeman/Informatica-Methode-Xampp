@@ -35,7 +35,7 @@ $(document).ready(function(){
 
 	$(".theorie-answers").slideToggle(0);
 
-	//groepen
+	//edit lists
 	$('.add-item').children().val(' ');
 	window.setTimeout(addLid, 100);
 

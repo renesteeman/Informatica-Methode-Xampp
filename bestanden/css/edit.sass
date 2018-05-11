@@ -174,19 +174,10 @@
 		background-color: darken($red, 5%)
 		cursor: default
 
-	#editGroupConfirm
+	.ConfirmButton
 		margin-left: 0
 
-	//edit group specific
-.editGroupPage
-	padding-left: 0
-	padding-top: 0
-
-	.editGroupForm
-		padding-left: 1em
-		padding-top: 0.5em
-
-	#groupName
+	.top-header
 		height: 2em
 		background-color: $blue-green
 		width: 100%
@@ -197,6 +188,32 @@
 		font-size: 1.5em
 		border-radius: 4px 4px 0 0
 
+	//edit item specific
+	.editItemForm
+		padding-top: 0.5em
+		padding-left: 1em
+
+	#itemName
+		height: 2em
+		background-color: $blue-green
+		width: 100%
+		display: inline-block
+		box-sizing: border-box
+		padding-left: 1.5em
+		padding-top: .5em
+		font-size: 1.5em
+		border-radius: 4px 4px 0 0
+
+	//edit group specific
+	.editGroupForm
+		padding-left: 1em
+		padding-top: 0.5em
+
+	//end of specifics
+
+.top-header-main
+	padding-left: 0
+	padding-top: 0
 
 @media (max-width: $large)
 	.main

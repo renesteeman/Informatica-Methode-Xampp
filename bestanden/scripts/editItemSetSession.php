@@ -14,9 +14,8 @@
 	$_SESSION['itemklas'] =  mysqli_real_escape_string($conn, check_input($_POST['itemklas']));
 	$_SESSION['itembeschrijving'] =  mysqli_real_escape_string($conn, check_input($_POST['itembeschrijving']));
 
-	$gegevendatum = mysqli_real_escape_string($conn, check_input($_POST['itemdatum']));
-	$year = date("Y");
-	$date = $year.'-'.substr($gegevendatum, -2, 2).'-'.substr($gegevendatum, 0, 2);
+	$date = mysqli_real_escape_string($conn, check_input($_POST['itemdatum']));
 	$_SESSION['itemdatum'] = $date;
+	echo $date;
 
 ?>

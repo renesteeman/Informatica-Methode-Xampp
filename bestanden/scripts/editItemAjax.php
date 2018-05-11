@@ -23,6 +23,7 @@
 	$CInaam = $_SESSION["itemname"];
 	$CIklas = $_SESSION["itemklas"];
 	$CIdatum = $_SESSION["itemdatum"];
+	$CIdatum = date("Y-m-d", $CIdatum);
 
 	$NIprogressie = [];
 

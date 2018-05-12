@@ -46,10 +46,29 @@
 
 					//if the user has progression stored
 					if(!mysqli_num_rows($result) == 0){
-						while($chapter = mysqli_fetch_assoc($result)){
-							$availableChapters = array_keys($chapter);
+						while($chapters = mysqli_fetch_assoc($result)){
+							//get the chapters that are being tracked
+							$availableChapters = array_keys($chapters);
 							unset($availableChapters[0]);
-        					print_r($availableChapters);
+
+							//check info from chapters
+							for($i=1; $i<sizeof($availableChapters); $i++){
+								$chapter = $availableChapters[$i];
+								$chapterData = $chapters[$chapter];
+								if($chapterData != ""){
+									echo $chapter." : ".$chapterData;
+
+									$amountOfParagraphsThatShouldBeFinished = $chapterData[0];
+									$finishedParagraphs = substr($chapterData, 1);
+									$finishedParagraphs = str_replace('0', '', $finishedParagraphs);
+									$amountOfParagraphsFinished = strlen($finishedParagraphs);
+									echo "---".$amountOfParagraphsThatShouldBeFinished."---".$amountOfParagraphsFinished."</br>";
+
+
+
+								}
+							}
+
 						}
 					}
 				}

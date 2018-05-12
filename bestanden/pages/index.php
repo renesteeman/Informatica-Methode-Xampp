@@ -22,6 +22,43 @@
 		</h3>
 	</div>
 
+	<?php
+		//show which chapters are completed
+		if (isset($_SESSION["username"])){
+
+			$username = $_SESSION["username"];
+			$chaptersAvailable = [];
+			$completeChapters = [];
+
+			//get id from user
+			$sql = "SELECT id FROM users WHERE username='$username'";
+
+			if (mysqli_query($conn, $sql)) {
+
+				$result = mysqli_query($conn, $sql);
+				$result = mysqli_fetch_assoc($result);
+				$id = $result['id'];
+
+				//look for current values
+				$sql = "SELECT * FROM progressie WHERE userid='$id'";
+				if (mysqli_query($conn, $sql)) {
+					$result = mysqli_query($conn, $sql);
+
+					//if the user has progression stored
+					if(!mysqli_num_rows($result) == 0){
+						while($chapter = mysqli_fetch_assoc($result)){
+							$availableChapters = array_keys($chapter);
+							unset($availableChapters[0]);
+        					print_r($availableChapters);
+						}
+					}
+				}
+			}
+		}
+
+
+	?>
+
 	<div class="chapter-tiles">
 		<div class="tile">
 			<div class="tile-content">

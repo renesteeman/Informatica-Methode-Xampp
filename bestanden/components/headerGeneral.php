@@ -153,7 +153,7 @@ session_start();
 <?php
 
 	include('../scripts/DB_connect.php');
-
+	
 	//check for known problems
 	if(isset($_SESSION['ErrorNotLogedIn'])){
 		if($_SESSION['ErrorNotLogedIn']){

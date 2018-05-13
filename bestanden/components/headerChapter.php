@@ -163,7 +163,7 @@ session_start();
 	//check if the person is loged in
 	if (!isset($_SESSION["username"])){
 		$_SESSION['ErrorNotLogedIn'] = 1;
-		header('Location: ../../index.php');
+		//header('Location: ../../index.php');
 	}
 
 	//check if account is still valid
@@ -198,7 +198,7 @@ session_start();
 		$_SESSION['ErrorInvalidAccount'] = 0;
 	} else {
 		$_SESSION['ErrorInvalidAccount'] = 1;
-		header('Location: ../../index.php');
+		//header('Location: ../../index.php');
 	}
 
 

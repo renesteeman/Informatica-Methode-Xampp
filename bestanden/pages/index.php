@@ -56,18 +56,22 @@
 								$chapter = $availableChapters[$i];
 								$chapterData = $chapters[$chapter];
 								if($chapterData != ""){
-									echo $chapter." : ".$chapterData;
 
 									$amountOfParagraphsThatShouldBeFinished = $chapterData[0];
 									$finishedParagraphs = substr($chapterData, 1);
 									$finishedParagraphs = str_replace('0', '', $finishedParagraphs);
 									$amountOfParagraphsFinished = strlen($finishedParagraphs);
-									echo "---".$amountOfParagraphsThatShouldBeFinished."---".$amountOfParagraphsFinished."</br>";
 
-
-
+									if($amountOfParagraphsThatShouldBeFinished == $amountOfParagraphsFinished){
+										echo " Chapter completed"."</br>";
+										$completeChapters[] = $chapter;
+									} else {
+										echo " Chapter not completed"."</br>";
+									}
 								}
 							}
+
+							print_r($completeChapters);
 
 						}
 					}

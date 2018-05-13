@@ -108,9 +108,15 @@
 					</ol>
 				</div>
 			</div>
-		</div>
+		</div>';
 
-		<div class="tile">
+			if(chapterIsFinished('H2')){
+				echo '<div class="tile completed">';
+			} else {
+				echo '<div class="tile">';
+			}
+
+			echo '
 			<div class="tile-content">
 				<div class="tile-chapter">
 					H2 logica
@@ -125,9 +131,15 @@
 					</ol>
 				</div>
 			</div>
-		</div>
+		</div>';
 
-		<div class="tile">
+			if(chapterIsFinished('H3')){
+				echo '<div class="tile completed">';
+			} else {
+				echo '<div class="tile">';
+			}
+
+			echo '
 			<div class="tile-content">
 				<div class="tile-chapter">
 					H3 programmeren
@@ -145,9 +157,15 @@
 					</ol>
 				</div>
 			</div>
-		</div>
+		</div>';
 
-		<div class="tile">
+			if(chapterIsFinished('H4')){
+				echo '<div class="tile completed">';
+			} else {
+				echo '<div class="tile">';
+			}
+
+			echo '
 			<div class="tile-content">
 				<div class="tile-chapter">
 					H4 arduino
@@ -164,21 +182,39 @@
 					</ol>
 				</div>
 			</div>
-		</div>
+		</div>';
 
-		<div class="tile">
+			if(chapterIsFinished('H5')){
+				echo '<div class="tile completed">';
+			} else {
+				echo '<div class="tile">';
+			}
+
+			echo '
 			<div class="tile-content">
 				H5 Web development
 			</div>
-		</div>
+		</div>';
 
-		<div class="tile">
+			if(chapterIsFinished('H6')){
+				echo '<div class="tile completed">';
+			} else {
+				echo '<div class="tile">';
+			}
+
+			echo '
 			<div class="tile-content">
 				H6 Project management
 			</div>
-		</div>
+		</div>';
 
-		<div class="tile">
+			if(chapterIsFinished('H7')){
+				echo '<div class="tile completed">';
+			} else {
+				echo '<div class="tile">';
+			}
+
+			echo '
 			<div class="tile-content">
 				H7 Project uitvoeren
 			</div>
@@ -192,8 +228,15 @@
 		</h3>
 	</div>
 
-	<div class="chapter-tiles">
-		<div class="tile">
+	<div class="chapter-tiles">';
+
+		if(chapterIsFinished('B1')){
+			echo '<div class="tile completed">';
+		} else {
+			echo '<div class="tile">';
+		}
+
+		echo '
 			<div class="tile-content">
 				<div class="tile-chapter">
 					B1 Filosofie
@@ -209,26 +252,43 @@
 					</ol>
 				</div>
 			</div>
-		</div>
+		</div>';
 
-		<div class="tile">
+			if(chapterIsFinished('B2')){
+				echo '<div class="tile completed">';
+			} else {
+				echo '<div class="tile">';
+			}
+
+			echo '
 			<div class="tile-content">
 				B2 beveiliging en privacy
 			</div>
-		</div>
+		</div>';
 
-		<div class="tile">
+			if(chapterIsFinished('B3')){
+				echo '<div class="tile completed">';
+			} else {
+				echo '<div class="tile">';
+			}
+
+			echo '
 			<div class="tile-content">
 				B3 web+
 			</div>
-		</div>
+		</div>';
 
-		<div class="tile">
+			if(chapterIsFinished('B4')){
+				echo '<div class="tile completed">';
+			} else {
+				echo '<div class="tile">';
+			}
+
+			echo '
 			<div class="tile-content">
 				B4 databases
 			</div>
 		</div>
-
 		<div class="tile">
 			<div class="tile-content">
 				meer in de toekomst

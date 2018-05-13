@@ -75,7 +75,7 @@
 			function chapterIsFinished($thisChapter){
 				global $completedChapters;
 				if(in_array($thisChapter, $completedChapters)){
-					echo "</br>chapter ".$thisChapter." completed";
+					return true;
 				}
 			}
 
@@ -83,10 +83,16 @@
 		}
 
 
-	?>
+	echo '
 
-	<div class="chapter-tiles">
-		<div class="tile">
+	<div class="chapter-tiles">';
+		if(chapterIsFinished('H1')){
+			echo '<div class="tile completed">';
+		} else {
+			echo '<div class="tile">';
+		}
+
+			echo '
 			<div class="tile-content">
 				<div class="tile-chapter">
 					H1 Werking computer
@@ -229,7 +235,9 @@
 			</div>
 		</div>
 
-	</div>
+	</div>';
+
+	?>
 
 	<?php
 	include('../components/footerGeneral.php');

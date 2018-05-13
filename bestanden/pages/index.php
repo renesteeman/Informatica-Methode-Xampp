@@ -1,5 +1,6 @@
 <?php
 	include('../components/headerGeneral.php');
+	$completedChapters = [];
 ?>
 
 <head>
@@ -28,7 +29,6 @@
 
 			$username = $_SESSION["username"];
 			$chaptersAvailable = [];
-			$completeChapters = [];
 
 			//get id from user
 			$sql = "SELECT id FROM users WHERE username='$username'";
@@ -63,20 +63,23 @@
 									$amountOfParagraphsFinished = strlen($finishedParagraphs);
 
 									if($amountOfParagraphsThatShouldBeFinished == $amountOfParagraphsFinished){
-										echo " Chapter completed"."</br>";
-										$completeChapters[] = $chapter;
-									} else {
-										echo " Chapter not completed"."</br>";
+										$completedChapters[] = $chapter;
 									}
 								}
 							}
-
-							print_r($completeChapters);
-
 						}
 					}
 				}
 			}
+
+			function chapterIsFinished($thisChapter){
+				global $completedChapters;
+				if(in_array($thisChapter, $completedChapters)){
+					echo "</br>chapter ".$thisChapter." completed";
+				}
+			}
+
+			chapterIsFinished('H1');
 		}
 
 

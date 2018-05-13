@@ -1,5 +1,78 @@
 <?php
 session_start();
+
+include('../scripts/DB_connect.php');
+
+//check for known problems
+if(isset($_SESSION['ErrorNotLogedIn'])){
+	if($_SESSION['ErrorNotLogedIn']){
+		echo ("
+			<script>
+				alert('U bent niet ingelogd');
+			</script>
+		");
+		$_SESSION['ErrorNotLogedIn'] = 0;
+	}
+}
+
+if(isset($_SESSION['ErrorInvalidAccount'])){
+	if($_SESSION['ErrorInvalidAccount']){
+		echo ("
+			<script>
+				alert('Uw account is verlopen');
+			</script>
+		");
+	}
+}
+
+//check if account is still valid
+function AccountValid(){
+
+	//needed to connect inside a function
+	global $conn;
+
+	$user = $_SESSION["username"];
+	$sql = "SELECT expire_date FROM users WHERE username='$user'";
+
+	if (mysqli_query($conn, $sql)) {
+		//find teacher info
+		$result = mysqli_query($conn, $sql);
+		$result = mysqli_fetch_assoc($result);
+		$expire_date = $result['expire_date'];
+	} else {
+		echo "SQL error, report to admin";
+	}
+
+	if($expire_date>date("Y-m-d")){
+		$valid = 1;
+	} else {
+		$valid = 0;
+	}
+
+	return $valid;
+}
+
+//if the account is expired, than redirect to index (if the person isn't on the index page yet) (only check if the person is loged in)
+if(!basename($_SERVER['PHP_SELF']) == 'index.php' ){
+	if(isset($_SESSION['ErrorNotLogedIn'])){
+		if($_SESSION['ErrorNotLogedIn'] == 0){
+			if(!AccountValid()){
+				$_SESSION['ErrorInvalidAccount'] = 1;
+				header('Location: index.php');
+			}
+		}
+	}
+
+	if(!AccountValid()){
+		$_SESSION['ErrorInvalidAccount'] = 1;
+		header('Location: index.php');
+	}
+
+} else {
+	if(isset($_SESSION['ErrorInvalidAccount'])){
+		$_SESSION['ErrorInvalidAccount'] = 0;
+	}
+}
 ?>
 
 <!DOCTYPE HTML>
@@ -166,80 +239,3 @@ session_start();
 	</div>
 
 </header>
-
-<?php
-
-	include('../scripts/DB_connect.php');
-
-	//check for known problems
-	if(isset($_SESSION['ErrorNotLogedIn'])){
-		if($_SESSION['ErrorNotLogedIn']){
-			echo ("
-				<script>
-					alert('U bent niet ingelogd');
-				</script>
-			");
-			$_SESSION['ErrorNotLogedIn'] = 0;
-		}
-	}
-
-	if(isset($_SESSION['ErrorInvalidAccount'])){
-		if($_SESSION['ErrorInvalidAccount']){
-			echo ("
-				<script>
-					alert('Uw account is verlopen');
-				</script>
-			");
-		}
-	}
-
-	//check if account is still valid
-	function AccountValid(){
-
-		//needed to connect inside a function
-		global $conn;
-
-		$user = $_SESSION["username"];
-		$sql = "SELECT expire_date FROM users WHERE username='$user'";
-
-		if (mysqli_query($conn, $sql)) {
-			//find teacher info
-			$result = mysqli_query($conn, $sql);
-			$result = mysqli_fetch_assoc($result);
-			$expire_date = $result['expire_date'];
-		} else {
-			echo "SQL error, report to admin";
-		}
-
-		if($expire_date>date("Y-m-d")){
-			$valid = 1;
-		} else {
-			$valid = 0;
-		}
-
-		return $valid;
-	}
-
-	//if the account is expired, than redirect to index (if the person isn't on the index page yet) (only check if the person is loged in)
-	if(!basename($_SERVER['PHP_SELF']) == 'index.php' ){
-
-		if(isset($_SESSION['ErrorNotLogedIn'])){
-			if($_SESSION['ErrorNotLogedIn'] == 0){
-				if(!AccountValid()){
-					$_SESSION['ErrorInvalidAccount'] = 1;
-					header('Location: index.php');
-				}
-			}
-		} else {
-			if(!AccountValid()){
-				$_SESSION['ErrorInvalidAccount'] = 1;
-				header('Location: index.php');
-			}
-		}
-	} else {
-		if(isset($_SESSION['ErrorInvalidAccount'])){
-			$_SESSION['ErrorInvalidAccount'] = 0;
-		}
-	}
-
-?>

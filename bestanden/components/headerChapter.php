@@ -37,13 +37,20 @@ function AccountValid(){
 	return $valid;
 }
 
-//check if the account hasn't expired and if it has, than redirect
-if(AccountValid()){
-	$_SESSION['ErrorInvalidAccount'] = 0;
-} else {
-	$_SESSION['ErrorInvalidAccount'] = 1;
+//check if person is loged in
+if (!isset($_SESSION["username"])){
+	$_SESSION['ErrorNotLogedIn'] = 1;
 	header('Location: ../../index.php');
+} else {
+	//check if the account hasn't expired and if it has, than redirect
+	if(AccountValid()){
+		$_SESSION['ErrorInvalidAccount'] = 0;
+	} else {
+		$_SESSION['ErrorInvalidAccount'] = 1;
+		header('Location: ../../index.php');
+	}
 }
+
 ?>
 
 <!DOCTYPE HTML>

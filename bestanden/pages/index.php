@@ -1,6 +1,14 @@
 <?php
 	include('../components/headerGeneral.php');
 	$completedChapters = [];
+
+	function chapterIsFinished($thisChapter){
+		global $completedChapters;
+		if(in_array($thisChapter, $completedChapters)){
+			return true;
+		}
+	}
+
 ?>
 
 <head>
@@ -71,15 +79,6 @@
 					}
 				}
 			}
-
-			function chapterIsFinished($thisChapter){
-				global $completedChapters;
-				if(in_array($thisChapter, $completedChapters)){
-					return true;
-				}
-			}
-
-			chapterIsFinished('H1');
 		}
 
 

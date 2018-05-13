@@ -74,7 +74,7 @@ $(document).ready(function(){
 		var Glink = $('input[name=Glink]').val();
 
 		var Gleden = [];
-		$('.ledenLijst>ul>li>.lid').each(function(index){
+		$('.ledenLijst>ul>li>.list-item').each(function(index){
 			Gleden.push($(this).text());
 		});
 
@@ -128,9 +128,11 @@ $(document).ready(function(){
 		var password = $("input[name='password']").val();
 
 		var NGleden = [];
-		$('.ledenLijst>ul>li>.list-item').each(function(index){
+		$('.list>ul>li>.list-item').each(function(index){
 			NGleden.push($(this).text());
 		});
+
+		console.log(NGleden);
 
 		//sent values of group via ajax to editGroupFront.php
 		jqXHR = $.ajax({
@@ -163,7 +165,7 @@ $(document).ready(function(){
 
 			jqXHR.done(function(msg) {
 				window.alert(msg);
-				if(!msg.includes('error')){
+				if(!msg.includes('error') && !msg.includes('Wrong')){
 					window.location.href = '../pages/overview.php';
 				}
 			});

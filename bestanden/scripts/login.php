@@ -39,6 +39,33 @@
 		mysqli_close($conn);
 	} else {
 		echo "\nIncorrecte login gegevens";
+
+		//save failed logins
+		$sql = "SELECT NFailedLogins, LFailedLogin FROM users WHERE username='$username'";
+
+		//get current info in order to show a 'preview'
+		if(mysqli_query($conn, $sql)) {
+			$result = mysqli_query($conn, $sql);
+			$result = mysqli_fetch_assoc($result);
+
+			$NFailedLogins = $result['NFailedLogins'];
+			$LFailedLogin = $result['LFailedLogin'];
+
+			echo $NFailedLogins." ".$LFailedLogin." ";
+
+			$NNFailedLogins = $NFailedLogins + 1;
+			$NLFailedLogin = date('Y-m-d H:i:s');
+
+			/*
+			$sql = "UPDATE users SET NFailedLogins="$NNFailedLogins", LFailedLogin="$NLFailedLogin" WHERE username='$username'";
+
+			//get current info in order to show a 'preview'
+			if(mysqli_query($conn, $sql)) {
+				echo 'saved failed login';
+			}
+			*/
+		}
+
 	}
 
 ?>

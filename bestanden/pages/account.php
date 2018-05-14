@@ -3,7 +3,7 @@
 ?>
 
 <link rel="stylesheet" href="../css/account.min.css">
-<link rel="stylesheet" href="../scripts/login.min.css">
+<script src="../scripts/login.js"></script>
 
 <head>
 	<meta name="description" content="Uw account bijwerken en instellingen controleren." />

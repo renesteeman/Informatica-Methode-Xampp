@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	//login
 	$('.loginForm').submit(function(event){
 		event.preventDefault();

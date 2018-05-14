@@ -35,10 +35,12 @@
 			}
 		} else {
 			//continue login attempt
+			echo 'continue login attempt';
 
 			//check psw
 			if(password_verify($password, $rightpsw)){
 				//if it's right than login
+				echo 'password is correct';
 
 				//start session with username
 				$_SESSION["username"] = $username;
@@ -47,7 +49,7 @@
 
 				$sql = "UPDATE users SET NFailedLogins='0' WHERE username='$username'";
 				if(mysqli_query($conn, $sql)) {
-					echo "updated";
+					echo "updated attempts";
 				} else {
 					echo "SQL error, please report to admin";
 				}

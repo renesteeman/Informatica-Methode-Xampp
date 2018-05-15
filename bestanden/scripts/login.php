@@ -2,6 +2,8 @@
 	session_start();
 	include('DB_connect.php');
 
+	$now = date('Y-m-d H:i:s');
+
 	//function to check and clean input
 	function check_input($data) {
 		$data = trim($data, " ");
@@ -29,18 +31,21 @@
 		$NFailedLogins = $result['NFailedLogins'];
 		$LFailedLogin = $result['LFailedLogin'];
 
-		if($NFailedLogins > 3){
-			if(strtotime($LFailedLogin) > (strtotime($NLFailedLogin)) - strtotime("+1 day")){
-				echo "\n It's time for a captcha since you had the wrong login 3(+) times in a row within the last 24h\n";
+		if ($NFailedLogins < 10) {
+
+			//check if a captcha had to be filled in and if it's correct
+
+			if($NFailedLogins >= 3 && $NFailedLogins < 6){
+				if(strtotime($LFailedLogin) > (strtotime($now)) - strtotime("+1 day")){
+					echo "\n It's time for a captcha since you had the wrong login 3(+) times in a row within the last 24h\n";
+				}
 			}
-		} else {
+
 			//continue login attempt
-			echo 'continue login attempt';
 
 			//check psw
 			if(password_verify($password, $rightpsw)){
 				//if it's right than login
-				echo 'password is correct';
 
 				//start session with username
 				$_SESSION["username"] = $username;
@@ -60,18 +65,19 @@
 				echo "\nIncorrecte login gegevens";
 
 				$NNFailedLogins = $NFailedLogins + 1;
-				$NLFailedLogin = date('Y-m-d H:i:s');
 
 				//save failed logins
-				$sql = "UPDATE users SET NFailedLogins='$NNFailedLogins', LFailedLogin='$NLFailedLogin' WHERE username='$username'";
+				$sql = "UPDATE users SET NFailedLogins='$NNFailedLogins', LFailedLogin='$now' WHERE username='$username'";
 
-				//get current info in order to show a 'preview'
 				if(mysqli_query($conn, $sql)) {
-					echo 'Saved failed login';
+				} else {
+					echo "SQL error, please report to admin";
 				}
 
 			}
 
+		} else {
+			echo "Uw account is geblokkeerd, probeer het over 24 uur opnieuw. Om het wachtwoord te resetten kunt u gebruik maken van de 'wachtwoord vergeten' knop, dit kan alleen als u een e-mail adres heeft ingevuld.";
 		}
 
 	} else {

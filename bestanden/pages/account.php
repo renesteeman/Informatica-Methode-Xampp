@@ -9,6 +9,7 @@
 	<meta name="description" content="Uw account bijwerken en instellingen controleren." />
 	<meta name="keywords" content="Informatica, lesmethode, betaalbaar, duidelijk, account" />
 	<meta name="author" content="René Steeman" />
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -111,6 +112,15 @@
 						<li>
 							<img class="lock" src="../icons/lock.svg">
 							<input type="password" placeholder="Password" name="password" maxlength="50" required>
+						</li>
+						<li>
+
+							<div class="captcha">
+
+							</div>
+
+
+
 						</li>
 						<li>
 							<input type="submit" value="login" id="LoginButton">

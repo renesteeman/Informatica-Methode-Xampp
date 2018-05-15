@@ -17,7 +17,9 @@ $(document).ready(function(){
 
 			if(msg.length == 0){
 				window.location.href = '../pages/index.php';
-			} else {
+			} /*else if(msg.includes('captcha')){
+				$('.captcha').html('<div class="g-recaptcha" data-sitekey="your_site_key"></div>');
+			} */ else {
 				window.alert(msg);
 			}
 

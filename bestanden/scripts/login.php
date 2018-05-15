@@ -37,7 +37,7 @@
 
 			if($NFailedLogins >= 3 && $NFailedLogins < 6){
 				if(strtotime($LFailedLogin) > (strtotime($now)) - strtotime("+1 day")){
-					echo "\n It's time for a captcha since you had the wrong login 3(+) times in a row within the last 24h\n";
+					echo "\n Aangezien u 3(+) keer uw gegevens verkeerd heeft ingevuld moet u nu een captcha invullen, u heeft in totaal 10 pogingen om in te loggen.\n";
 				}
 			}
 
@@ -54,7 +54,7 @@
 
 				$sql = "UPDATE users SET NFailedLogins='0' WHERE username='$username'";
 				if(mysqli_query($conn, $sql)) {
-					echo "updated attempts";
+					echo "updated attempt";
 				} else {
 					echo "SQL error, please report to admin";
 				}

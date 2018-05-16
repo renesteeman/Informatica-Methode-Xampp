@@ -10,8 +10,25 @@
 		return $data;
 	}
 
+	//add failed login
+	function addFailedLogin($NFailedLogins, $now, $username){
+		global $conn;
+
+		$NNFailedLogins = $NFailedLogins + 1;
+
+		//save failed logins
+		$sql = "UPDATE users SET NFailedLogins='$NNFailedLogins', LFailedLogin='$now' WHERE username='$username'";
+
+		if(mysqli_query($conn, $sql)) {
+		} else {
+			echo "SQL error, please report to admin";
+		}
+	}
+
 	//login function
 	function login($username, $password, $rightpsw, $functie, $naam, $NFailedLogins, $LFailedLogin, $now){
+		global $conn;
+
 		//check psw
 		if(password_verify($password, $rightpsw)){
 			//if it's right than login
@@ -33,15 +50,7 @@
 			//if the password is wrong
 			echo "\nIncorrecte login gegevens";
 
-			$NNFailedLogins = $NFailedLogins + 1;
-
-			//save failed logins
-			$sql = "UPDATE users SET NFailedLogins='$NNFailedLogins', LFailedLogin='$now' WHERE username='$username'";
-
-			if(mysqli_query($conn, $sql)) {
-			} else {
-				echo "SQL error, please report to admin";
-			}
+			addFailedLogin($NFailedLogins, $now, $username);
 
 		}
 	};
@@ -71,6 +80,7 @@
 		if ($NFailedLogins < 10) {
 
 			//check if a captcha had to be filled in and if it's correct
+			//do this when there
 			if($NFailedLogins >= 3){
 				if(strtotime($LFailedLogin) > (strtotime($now)) - strtotime("+1 day")){
 
@@ -94,31 +104,29 @@
 							$captcha_success = json_decode($verify);
 
 							if ($captcha_success->success==false) {
-								echo "\n Aangezien u 3(+) keer uw gegevens verkeerd heeft ingevuld moet u nu een captcha invullen, u heeft in totaal 10 pogingen om in te loggen.\n";
+								echo "\n U moet de captcha invullen om verder te komen, aangezien u meerdere malen verkeerde gegevens heeft gegeven. U heeft maximaal 10 pogingen. \n";
 
-								//+ failed login
-
-
+								addFailedLogin($NFailedLogins, $now, $username);
 
 							} else if ($captcha_success->success==true) {
 								//try to log in
 								login($username, $password, $rightpsw, $functie, $naam, $NFailedLogins, $LFailedLogin, $now);
 							}
 						}
+					} else {
+						//show captcha (done by JS when this echo is returned)
+						echo "\n Aangezien u 3(+) keer uw gegevens verkeerd heeft ingevuld moet u nu een captcha invullen, u heeft in totaal 10 pogingen om in te loggen. \n";
+
 					}
-
-
-
-
 
 				} else {
 					//try to log in
-					login($username, $password, $rightpsw, $functie, $naam);
+					login($username, $password, $rightpsw, $functie, $naam, $NFailedLogins, $LFailedLogin, $now);
 				}
 			}
 
 			//try to log in
-			login($username, $password, $rightpsw, $functie, $naam);
+			login($username, $password, $rightpsw, $functie, $naam, $NFailedLogins, $LFailedLogin, $now);
 
 		} else {
 			echo "Uw account is geblokkeerd, probeer het over 24 uur opnieuw. Om het wachtwoord te resetten kunt u gebruik maken van de 'wachtwoord vergeten' knop, dit kan alleen als u een e-mail adres heeft ingevuld.";

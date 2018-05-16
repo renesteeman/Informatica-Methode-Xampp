@@ -1,23 +1,21 @@
 $(document).ready(function(){
 
-	//prepare captcha
-	var onloadCallback = function() {
-		grecaptcha.render('captcha', {
-			'sitekey' : 'your_site_key'
-		});
-	};
-
 	//login
 	$('.loginForm').submit(function(event){
 		event.preventDefault();
 
 		var username = $("input[name='username']").val();
 		var password = $("input[name='password']").val();
+		var captchaShown = 1;
+
+		if($('#captcha').hasClass('hide')){
+			captchaShown = 0;
+		}
 
 		jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/login.php',
-			data: {username: username, password: password}
+			data: {username: username, password: password, captchaShown: captchaShown}
 		});
 
 		jqXHR.done(function(msg) {

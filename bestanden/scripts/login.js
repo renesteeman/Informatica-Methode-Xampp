@@ -1,5 +1,12 @@
 $(document).ready(function(){
 
+	//prepare captcha
+	var onloadCallback = function() {
+		grecaptcha.render('captcha', {
+			'sitekey' : 'your_site_key'
+		});
+	};
+
 	//login
 	$('.loginForm').submit(function(event){
 		event.preventDefault();
@@ -17,9 +24,14 @@ $(document).ready(function(){
 
 			if(msg.length == 0){
 				window.location.href = '../pages/index.php';
-			} /*else if(msg.includes('captcha')){
-				$('.captcha').html('<div class="g-recaptcha" data-sitekey="your_site_key"></div>');
-			} */ else {
+			} else if (msg.includes('updated attempts')){
+				window.location.href = '../pages/index.php';
+			} else if (msg.includes('captcha')){
+				$("#captcha").removeClass("hide");
+
+				window.alert(msg);
+
+			} else {
 				window.alert(msg);
 			}
 

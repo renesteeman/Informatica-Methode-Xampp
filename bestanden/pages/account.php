@@ -9,7 +9,6 @@
 	<meta name="description" content="Uw account bijwerken en instellingen controleren." />
 	<meta name="keywords" content="Informatica, lesmethode, betaalbaar, duidelijk, account" />
 	<meta name="author" content="René Steeman" />
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -115,12 +114,12 @@
 						</li>
 						<li>
 
-							<div class="captcha">
+							<div id="captcha" class="hide">
 
 							</div>
 
 
-
+						</li>
 						</li>
 						<li>
 							<input type="submit" value="login" id="LoginButton">
@@ -142,5 +141,15 @@
 	<?php
 	include('../components/footerGeneral.php');
 	?>
+
+	<script>
+	var onloadCallback = function() {
+		grecaptcha.render('captcha', {
+			'sitekey' : '6Lc_J1MUAAAAAJlHeuG3e9tg0zTGAvA7bC2dgSzq'
+		});
+	};
+	</script>
+
+	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 
 </body>

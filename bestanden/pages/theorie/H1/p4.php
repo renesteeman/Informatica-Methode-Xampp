@@ -54,7 +54,7 @@
 			</p>
 
 			<p>
-				Het hart van de computer is de CPU, Central Processing Unit. Dit is een chip van normaalgesproken enkelen centimeters groot waarop alle algemene instructies worden uitgevoerd met behulp van de eerder besproken gates en dus het heen en weer halen van binaire getallen.
+				Het hart van de computer is de CPU, Central Processing Unit. Dit is een chip van normaalgesproken enkelen centimeters groot waarop alle algemene instructies worden uitgevoerd met behulp van de eerder besproken gates en dus het heen en weer halen van binaire getallen. Tegenwoordig heeft een CPU meerdere cores, dit wil zeggen dat het meerdere opdrachten tegelijk kunnen worden uitgevoerd. Elke core werkt dan als een soort mini CPU, maar dan niet met alle onderdelen die de gehele CPU heeft. De CPU heeft namelijk naast alleen de onderdelen voor het rekenen ook andere onderdelen, een voorbeeld is cache opslag. Cache is een vorm van hele snelle opslag, maar vaak met kleine capiciteit (vaak maar enkele MB). De snelheid van een CPU hangt van meerdere zaken af, voornamelijk de IPC, frequentie, cache en de hoeveelheid cores. De IPC is het aantal instructies dat per clock uitgevoerd kan worden. Een clock is een cyclus van instructies, zoals haal waardes van x naar y of voeg x toe aan y. De frequentie geeft aan hoeveel clocks er in een seconde uitgevoerd worden.
 			</p>
 
 			<p>
@@ -66,11 +66,13 @@
 			</p>
 
 			<p>
-				De GPU kan veel eenvoudige taken tegelijkertijd uitvoeren. Dit maakt het erg handig voor het laden van beelden en dus voor bijvoorbeeld het spelen van spellen. De GPU kan echter ook andere taken uitvoeren, maar deze zijn vrij geavanceerd. Denk hierbij bijvoorbeeld aan het trainen van zelflerende programma’s.
+				De GPU heeft heel veel cores, maar weer een lagere frequentie ten opzichte van de CPU en het is lastiger om er bepaalde instructies op uit te voeren. De GPU kan dus vooral veel eenvoudige taken tegelijkertijd uitvoeren. Dit maakt het erg handig voor het laden van beelden en dus voor bijvoorbeeld het spelen van spellen. De GPU kan echter ook andere taken uitvoeren, maar deze zijn vrij geavanceerd. Denk hierbij bijvoorbeeld aan het trainen van zelflerende programma’s.
 			</p>
 
 			<p>
-				Er zijn meerdere soorten schijven. Deze zijn voornamelijk op te delen in twee type schijven; de SSD (Solid State Drive) en de HDD (harddisk drive). Het voordeel van een SSD is dat hij t.o.v. een HDD veel sneller is, maar deze zijn op moment van schrijven nog wel prijzig vergeleken met de prijs die je betaald voor een HDD. Een voordeel van een HDD is dat deze voor weinig geld veel informatie op kunnen slaan. De prijs per GB voor een SSD bedraagt zo rond de €0,268, terwijl de prijs per GB voor een HDD zo rond de €0,028 ligt.
+				Er zijn meerdere soorten schijven. Deze zijn voornamelijk op te delen in twee type schijven; de SSD (Solid State Drive) en de HDD (harddisk drive). De SSD werkt met cellen die maar een aantal keer beschreven kunnen worden, terwijl een HDD werkt met ladingen aanbrengen op een ronddraaiende schijf. Het voordeel van een SSD is dat hij t.o.v. een HDD veel sneller is en dat als het kapot gaat de data vaak leesbaar blijft.
+
+				Het nadeel is dat op dit moment SSD's nog wel prijzig zijn vergeleken met een HDD. Een voordeel van een HDD is dat deze voor weinig geld veel informatie op kunnen slaan. De prijs per GB voor een SSD bedraagen nu (in 2018) rond de €0,268, terwijl de prijs per GB voor een HDD zo rond de €0,028 ligt.
 			</p>
 
 			Afkortingen:

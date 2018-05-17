@@ -75,7 +75,7 @@
 
 			Afkortingen:
 			<div class="table-wrapper">
-				<table id="afkortingen">
+				<table>
 					<tr>
 						<th>Afkorting</th>
 						<th>Volledige naam</th>

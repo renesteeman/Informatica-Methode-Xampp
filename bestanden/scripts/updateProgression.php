@@ -1,6 +1,6 @@
 <?php
-	include('DB_connect.php');
 	session_start();
+	include('DB_connect.php');
 
 	//function to check and clean input
 	function check_input($data) {
@@ -46,7 +46,7 @@
 					$i++;
 				}
 
-				echo "\n New progression: ".$progression;
+				//echo "\n New progression: ".$progression;
 
 				$sql = "INSERT INTO `progressie` (`userid`, `$kind$chapter`) VALUES ('$id', '$progression');";
 

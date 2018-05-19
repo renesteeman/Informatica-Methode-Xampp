@@ -58,7 +58,7 @@
 			</p>
 
 			<p>
-				Het belangrijkste programma dat op een computer werkt is het OS, oftewel besturingssysteem. Dit zorgt voor het geluid, het bewegen van de cursor op het schermen, het kunnen gebruiken van een toetsenbord, het beeldscherm verversen, enz. Verder geeft het OS de mogelijkheid om andere programma’s te laten werken die opdrachten kunnen geven aan het besturingssysteem.  Het werkt dus als een soort tussenlaag tussen de hardware (het fysieke deel) en de software (de code).
+				Het belangrijkste programma dat op een computer werkt is het OS, oftewel besturingssysteem. Dit zorgt voor het geluid, het bewegen van de cursor op het schermen, het kunnen gebruiken van een toetsenbord, het beeldscherm verversen, enz. Verder geeft het OS de mogelijkheid om andere programma’s te laten werken die opdrachten kunnen geven aan het besturingssysteem en zorgt dat de rekenkracht goed wordt verdeeld over deze processen.  Het werkt dus als een soort tussenlaag tussen de hardware (het fysieke deel) en de software (de code). De belangrijkste taak is misschien wel het registreren van input (data dat de gebruiker aan de computer geeft) en het terug kunnen geven van output, bijvoorbeeld het beeld of geluid. De vorm van de output wordt dan meestal wel weer door andere software geregeld, maar de OS maakt het mogelijk.
 			</p>
 
 			*RGBA staat voor Red Green Blue Alpha, alpha geeft aan hoe 'sterk' de kleur moet zijn en is een waarde van 0 tot 1.

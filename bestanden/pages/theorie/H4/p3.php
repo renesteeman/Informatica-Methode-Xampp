@@ -53,12 +53,16 @@
 				Als eerste gaan we de software klaar maken voor de arduino, zorg eerst ervoor dat alles geïnstalleerd is. Als de software niet geïnstalleerd is, dan kun je dit doen volgens de installatie pagina van dit hoofdstuk (onder het menu voor dit hoofdstuk). Volg voor het klaar maken van de software (na de installatie) de volgende stappen:
 			</p>
 			<p>
-				1) Open de arduino IDE</br>
-				2) Ga naar tools</br>
-				3) Selecteer arduino uno bij Board</br>
-				4) Selecteer de juiste poort onder Tools->Port (als er meerdere zijn probeer ze dan uit)</br>
-				5) Ga naar tools en klik op Serial Monitor</br>
-				6) Plak de volgende code in het arduino bestand</br>
+				<pre>
+1) Open de arduino IDE
+2) Ga naar tools
+3) Selecteer arduino uno bij Board
+4) Selecteer de juiste poort onder Tools->Port (als er meerdere zijn probeer ze dan uit)
+5) Ga naar tools en klik op Serial Monitor
+6) Plak de volgende code in het arduino bestand
+				</pre>
+
+
 			</p>
 			<p>
 				Hoe er rekening mee dat de als de code gekopieerd wordt, het bugs kan bevatten doordat te lange tekst naar de volgende regel wordt geschoven.

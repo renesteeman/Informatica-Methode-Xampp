@@ -75,30 +75,33 @@
 				Voorbeelden van de types in python
 			</p>
 			<p>
-				De meest gebruikte acties zijn:
+				<pre>
+De meest gebruikte acties zijn:
 
-				Additie
+Additie
 
-					waarde3 = waarde1 + waarde2 (=30)
+	waarde3 = waarde1 + waarde2 (=30)
 
-				Substractie
+Substractie
 
-					waarde3 = waarde1 - waarde2 (=10)
+	waarde3 = waarde1 - waarde2 (=10)
 
-				Multiplicatie
+Multiplicatie
 
-					waarde3 = waarde1 * waarde2 (=200)
+	waarde3 = waarde1 * waarde2 (=200)
 
-				Delen
+Delen
 
-					waarde3 = waarde1 / waarde2 (=2.0)
+	waarde3 = waarde1 / waarde2 (=2.0)
 
 
-				De modules, ook bekend als rest
-					waarde1 = 20
-					waarde2 = 3
+De modules, ook bekend als rest
+	waarde1 = 20
+	waarde2 = 3
 
-					waarde3 = waarde1 % waarde2 (=2, want 20/3 = 6 met rest 2 (of 2/3))
+	waarde3 = waarde1 % waarde2 (=2, want 20/3 = 6 met rest 2 (of 2/3))
+				</pre>
+
 
 			</p>
 
@@ -112,17 +115,20 @@
 			</p>
 
 			<p>
-				Bij strings, teksten kan ook met deze acties gewerkt worden. Hier gelden nagenoeg dezelfde regels al is er minder mogelijk.
+				<pre>
+Bij strings, teksten kan ook met deze acties gewerkt worden. Hier gelden nagenoeg dezelfde regels al is er minder mogelijk.
 
-				De nieuwe waarden zijn:
-				string1 = “eerste”
-				string2 = “tweede”
+De nieuwe waarden zijn:
+string1 = “eerste”
+string2 = “tweede”
 
-				Additie:
-					string3 = string1 + string2 (=eerstetweede)
+Additie:
+	string3 = string1 + string2 (=eerstetweede)
 
-				Multiplicatie:
-					String3 = string1 * 2 (=eersteeerste)
+Multiplicatie:
+	String3 = string1 * 2 (=eersteeerste)
+				</pre>
+
 			</p>
 
 		</div>

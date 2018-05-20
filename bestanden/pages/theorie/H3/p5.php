@@ -63,30 +63,33 @@
 				Condities
 			</p>
 			<p>
-				Als je programmeert wil je vaak kijken of een waarde aan een bepaalde eis voldoet en vervolgens iets uitvoeren als het aan die eis voldoet. Een voorbeeld is: als de koffie op is, dan hervul kop met koffie. Hier wordt gebruikt gemaakt van een IF-statement, er staat namelijk als x, dan y. Het kan ook andersom zijn, als de koffie niet op is, dan drink koffie. Stel je plakt deze twee aan elkaar, dan krijg je:
+				<pre>
+Als je programmeert wil je vaak kijken of een waarde aan een bepaalde eis voldoet en vervolgens iets uitvoeren als het aan die eis voldoet. Een voorbeeld is: als de koffie op is, dan hervul kop met koffie. Hier wordt gebruikt gemaakt van een IF-statement, er staat namelijk als x, dan y. Het kan ook andersom zijn, als de koffie niet op is, dan drink koffie. Stel je plakt deze twee aan elkaar, dan krijg je:
 
-				Als de koffie op is, dan
-					Hervul kop met koffie
-				Anders
-					Drink koffie
+Als de koffie op is, dan
+	Hervul kop met koffie
+Anders
+	Drink koffie
 
-				Dit is een IF-ELSE-statement, als x, dan y, anders z.
+Dit is een IF-ELSE-statement, als x, dan y, anders z.
 
-				Een voorbeeld in python:
+Een voorbeeld in python:
+<code>
+coffee = True
 
-				coffee = True
+if coffee == True:
+	print("Drink koffie")
 
-				if coffee == True:
-				    print("Drink koffie")
-
-				else:
-				    print("Zet koffie")
+else:
+	print("Zet koffie")
+</code>
+				</pre>
 
 			</p>
 			<p>
 				NB
 				Wat misschien opvalt is het dubbele = teken. Dit gebruik je bij het programmeren als je waardes vergelijkt, het enkele = teken gebruik je om een waarde toe te kennen.
-
+				Je kunt trouwens ook bij variabelen die 1 of 0 zijn (booleans) de statement 'if variabele:', dit wordt als waar gezien als de variabele 1 is.
 			</p>
 
 		</div>

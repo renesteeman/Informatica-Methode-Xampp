@@ -53,7 +53,7 @@
 
 			<p>
 				2 feiten vormen hier dus het 3e feit. Logica is een vorm van wiskunde die vrij abstract lijkt. Het heeft zijn eigen notaties en betekenissen. </br>
-				Er wordt veel gebruik gemaakt van sets. Dit zijn eigenlijk groepen objecten of getallen, bijvoorbeeld katten, honden of priemgetallen. Een van de andere regels bij logica is dat het ‘+-teken’ union (samenvoeging) betekent. Dit wordt gebruikt bij de sets, je kunt met het +-teken dus sets samenvoegen. X (maal) betekent intersection (overlap). Dit kan ook voor sets gebruikt worden. Verder betekent 1 alles, zoals in een set met auto’s, hier betekent 1 alle auto’s. Een andere notatie voor + is ꓵ en voor maal is ∪.
+				Er wordt veel gebruik gemaakt van sets. Dit zijn eigenlijk groepen objecten of getallen, bijvoorbeeld katten, honden of priemgetallen. Een van de andere regels bij logica is dat het ‘+-teken’ union (samenvoeging) betekent. Dit wordt gebruikt bij de sets, je kunt met het +-teken dus sets samenvoegen. X (maal) betekent intersection (overlap). Dit kan ook voor sets gebruikt worden. Verder betekent 1 alles, zoals in een set met auto’s, hier betekent 1 alle auto’s. Een andere notatie voor + is ∪ en voor maal is ꓵ. ∪ kun je zien als: samen en ꓵ als: hebben beide.
 			</p>
 
 			<p>
@@ -85,7 +85,7 @@
 
 					<ol>
 						<li>A + I</li>
-						<li>M &cap; A</li>
+						<li>I &cap; A</li>
 						<li>A &cup; I</li>
 						<li>1</li>
 					</ol>
@@ -107,7 +107,7 @@
 					7 (= 4+3)
 				</li>
 				<li>
-					5 (= 3+2)
+					7 (= 4+3)
 				</li>
 				<li>
 					0, geen AMD computer is hier ook een Intel computer

@@ -63,44 +63,50 @@
 				Loops
 			</p>
 			<p>
-				Bij software komt veel herhaling voor en dit kan het efficiënts geprogrammeerd worden met loops. Loops zijn herhalingsstructuren. De belangrijkste zijn: while- en for-loops. Oftewel terwijl en voor herhalingen. In python is de for loop een beetje anders dan in andere programmeertalen, maar de logica is bijna hetzelfde.
+				<pre>
+Bij software komt veel herhaling voor en dit kan het efficiënts geprogrammeerd worden met loops. Loops zijn herhalingsstructuren. De belangrijkste zijn: while- en for-loops. Oftewel terwijl en voor herhalingen. In python is de for loop een beetje anders dan in andere programmeertalen, maar de logica is bijna hetzelfde.
 
-				Voordat we kunnen beginnen met de voorbeelden is het belangrijk om een paar tekens te kennen. Deze zijn:
+Voordat we kunnen beginnen met de voorbeelden is het belangrijk om een paar tekens te kennen. Deze zijn:
 
-				Het groter dan teken >
-				Het kleiner dan teken <
+Het groter dan teken >
+Het kleiner dan teken <
 
-				Het ‘’is gelijk aan’’ teken kan met deze gecombineerd worden, dit gebeurd in python door =< of => te gebruiken
+Het ‘’is gelijk aan’’ teken kan met deze gecombineerd worden, dit gebeurd in python door =< of => te gebruiken
+				</pre>
+
 			</p>
 			<p>
 				Voorbeelden in python zijn:
 			</p>
 			<p>
-				#For-loop (# is een comment oftewel notatie in python voor één regel, hierin wordt vaak uitleg gezet)
+				<pre>
+#For-loop (# is een comment oftewel notatie in python voor één regel, hierin wordt vaak uitleg gezet)
 
-				Priemgetallen = [2,3,5,7]
-				for priemgetal in priemgetallen:
-					print (priemgetal)
+Priemgetallen = [2,3,5,7]
+for priemgetal in priemgetallen:
+	print (priemgetal)
 
-				#hier wordt dus eerst een lijst van priemgetallen gemaakt en vervolgens wordt gezegd dat voor elk getal in die lijst een bepaalde actie uitgevoerd moet worden, in dit geval het printen van het getal.
+#hier wordt dus eerst een lijst van priemgetallen gemaakt en vervolgens wordt gezegd dat voor elk getal in die lijst een bepaalde actie uitgevoerd moet worden, in dit geval het printen van het getal.
 
-				#while-loop
+#while-loop
 
-				i = 5
-				‘’’
-				i komt veel voor als variabele in een loop, het is het standard getal voor programmeurs voor een loop van één laag diep, het is namelijk ook mogelijk om meerdere loops in elkaar te zetten. Het standaard teken voor de 2e variabele is j, dan k, l, enz. De driedubbele accolades in python worden gebruikt voor commentaar dat meerdere regels lang is.
-				‘’’
+i = 5
+‘’’
+i komt veel voor als variabele in een loop, het is het standard getal voor programmeurs voor een loop van één laag diep, het is namelijk ook mogelijk om meerdere loops in elkaar te zetten. Het standaard teken voor de 2e variabele is j, dan k, l, enz. De driedubbele accolades in python worden gebruikt voor commentaar dat meerdere regels lang is.
+‘’’
 
-				while i < 20:
-					print (i)
-					i = i+1
-					#i += 1 geeft hetzelfde resultaat en in veel andere talen is i++ ook mogelijk
+while i < 20:
+	print (i)
+	i = i+1
+	#i += 1 geeft hetzelfde resultaat en in veel andere talen is i++ ook mogelijk
 
-				“
-				Er wordt hier dus steeds gekeken of i, dat eerst gelijk is aan 5 nog minder is dan 20. Als i minder is dan 20, dan wordt de waarde van i weergegeven en met één verhoogd. Je krijgt dus een lijst van de waardes van i vanaf 5 t/m 19. Aangezien 20 niet meer kleiner is dan 20 en dus de herhaling eindigt.
-				“
+“
+Er wordt hier dus steeds gekeken of i, dat eerst gelijk is aan 5 nog minder is dan 20. Als i minder is dan 20, dan wordt de waarde van i weergegeven en met één verhoogd. Je krijgt dus een lijst van de waardes van i vanaf 5 t/m 19. Aangezien 20 niet meer kleiner is dan 20 en dus de herhaling eindigt.
+“
 
-				Je kunt meerdere eisen maken voor de while loop. Stel je hebt twee eisen die beide vervuld moeten zijn, dan kun je ‘&’ tussen de eisen zetten.
+Je kunt meerdere eisen maken voor de while loop. Stel je hebt twee eisen die beide vervuld moeten zijn, dan kun je ‘&’ tussen de eisen zetten.
+				</pre>
+
 			</p>
 
 		</div>

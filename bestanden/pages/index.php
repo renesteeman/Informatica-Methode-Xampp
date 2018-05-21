@@ -238,7 +238,20 @@
 
 			echo '
 			<div class="tile-content">
-				H7 Project uitvoeren
+				<div class="tile-chapter">
+					H7 Project uitvoeren
+				</div>
+				<div class="tile-paragraphs">
+					<ol>
+						<ul><a href="theorie/H7/p1.php">§1 Plannen en Trello</ul>
+						<ul><a href="theorie/H7/p2.php">§2 Github</a></ul>
+						<ul><a href="theorie/H7/p3.php">§3 Verslag</a></ul>
+						<ul><a href="theorie/H7/p4.php">§4 Voorbeeld projecten</a></ul>
+						<ul><a href="theorie/H7/installerenTrello.php">Trello installeren</a></ul>
+						<ul><a href="theorie/H7/installerenGithub.php">Github installeren</a></ul>
+						<ul><a href="theorie/H7/quiz.php">Quiz</a></ul>
+					</ol>
+				</div>
 			</div>
 		</div>
 

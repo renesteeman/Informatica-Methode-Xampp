@@ -191,7 +191,19 @@
 
 			echo '
 			<div class="tile-content">
-				H5 Web development
+				<div class="tile-chapter">
+					H5 web development
+				</div>
+				<div class="tile-paragraphs">
+					<ol>
+						<ul><a href="theorie/H5/p1.php">§1 Introductie</ul>
+						<ul><a href="theorie/H5/p2.php">§2 De basis van HTML</a></ul>
+						<ul><a href="theorie/H5/p3.php">§3 HTML deel 2</a></ul>
+						<ul><a href="theorie/H5/p4.php">§4 De basis van CSS</a></ul>
+						<ul><a href="theorie/H5/p5.php">§5 CSS deel 2</a></ul>
+						<ul><a href="theorie/H5/quiz.php">Quiz</a></ul>
+					</ol>
+				</div>
 			</div>
 		</div>';
 

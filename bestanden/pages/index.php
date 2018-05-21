@@ -118,7 +118,7 @@
 			echo '
 			<div class="tile-content">
 				<div class="tile-chapter">
-					H2 logica
+					H2 Logica
 				</div>
 				<div class="tile-paragraphs">
 					<ol>
@@ -141,7 +141,7 @@
 			echo '
 			<div class="tile-content">
 				<div class="tile-chapter">
-					H3 programmeren
+					H3 Programmeren
 				</div>
 				<div class="tile-paragraphs">
 					<ol>
@@ -167,7 +167,7 @@
 			echo '
 			<div class="tile-content">
 				<div class="tile-chapter">
-					H4 arduino
+					H4 Arduino
 				</div>
 				<div class="tile-paragraphs">
 					<ol>
@@ -192,7 +192,7 @@
 			echo '
 			<div class="tile-content">
 				<div class="tile-chapter">
-					H5 web development
+					H5 Web development
 				</div>
 				<div class="tile-paragraphs">
 					<ol>
@@ -215,7 +215,18 @@
 
 			echo '
 			<div class="tile-content">
-				H6 Project management
+				<div class="tile-chapter">
+					H6 Project Management
+				</div>
+				<div class="tile-paragraphs">
+					<ol>
+						<ul><a href="theorie/H6/p1.php">§1 Introductie en onderdelen</ul>
+						<ul><a href="theorie/H6/p2.php">§2 Rollen</a></ul>
+						<ul><a href="theorie/H6/p3.php">§3 Communicatie</a></ul>
+						<ul><a href="theorie/H6/p4.php">§4 Agile en Scrum</a></ul>
+						<ul><a href="theorie/H6/quiz.php">Quiz</a></ul>
+					</ol>
+				</div>
 			</div>
 		</div>';
 

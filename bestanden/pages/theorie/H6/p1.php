@@ -1,0 +1,123 @@
+<?php
+	include('../../../components/headerChapter.php');
+?>
+
+<body>
+
+	<div class="title-small">
+		<h2>
+			H6 §1 Introductie en onderdelen
+		</h2>
+	</div>
+
+	<div class="bar-par-overview">
+		<div class="paragraph-tiles">
+			<div class="ptile active">
+				<span class="ptile-content"><a href="p1.php">
+					§1
+				</a></span>
+			</div>
+			<div class="ptile">
+				<span class="ptile-content"><a href="p2.php">
+					§2
+				</a></span>
+			</div>
+			<div class="ptile">
+				<span class="ptile-content"><a href="p3.php">
+					§3
+				</a></span>
+			</div>
+			<div class="ptile">
+				<span class="ptile-content"><a href="p4.php">
+					§4
+				</a></span>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="theorie">
+		<div class="bar-s">
+			<h3>
+				Theorie
+			</h3>
+		</div>
+
+		<div class="theorie-content">
+			<pre>
+Project management is het in goede banen leiden van een project. De definitie van een project is een activiteit om iets te creëren met beperkte middelen. Deze middelen zijn bijvoorbeeld: geld, tijd en informatie.
+
+Een project kan in verschillende fasen worden ingedeeld: de ideefase, definitiefase, ontwikkelfase en nazorgfase. Deze fasen maken duidelijk hoever je bent en maken het gemakkelijker om te plannen. De meeste tijd zul je besteden aan de ontwikkelfase, maar die zal alleen succesvol zijn als de idee- en definitiefase goed zijn uitgevoerd.
+
+De ideefase gaat over het bedenken wat je als project wilt hebben, het hoeft niet uitgewerkt te worden. Op het eind van deze fase moet het wel duidelijk zijn wat het project (grofweg) inhoud, dit kan worden gedaan met het SMART-model. SMART staat voor: specifiek, meetbaar, acceptabel, realistisch en tijdgebonden. Met dit model zul je dus aangeven: wat je wilt bereiken, hoe je weet dat je het doel hebt behaald, waarom je dit doel hebt, of het doel haalbaar is (en hoe) en wanneer het project af moet zijn.
+
+In de definitiefase gaat je je voorbereiden op het uitvoeren van het echte project. Dit doe je door de details van het project uit te werken. Je maakt dus duidelijk: wat het probleem is, waarom je dit wilt oplossen, de effecten van het project en wat de randvoorwaarden zijn. Deze randvoorwaarden kunnen bijvoorbeeld het budget, de opleverdatum, het aantal werkuren en de communicatiewijze zijn. Het is ook een goed idee om een planning te maken, zodat je weet wat wanneer klaar moet zijn en of het project haalbaar blijft of misschien wel te eenvoudig is.
+
+De ontwikkelfase is het daadwerkelijk uitvoeren van het gemaakte plan. Deze fase kan vaak worden opgedeeld in kleinere stukken, als je een website wilt maken kan dit bijvoorbeeld: een schets maken, de tekst schrijven, de HTML schrijven en de CSS schrijven zijn. Deze fase is afgelopen als de doelen zijn bereikt.
+
+De nazorgfase is de afronding van het project. In deze fase breng je het resultaat van het project uit, misschien gaat de website online of laat je jouw robot zien. Het kan ook zo zijn dat je nog kleine veranderingen aan het resultaat wilt maken, misschien wat fouten er uithalen of een paar dingen toevoegen. Deze fase bevat ook een evaluatie, hierbij kijk je naar wat goed en fout ging en wat je in de toekomst kunt veranderen.
+			</pre>
+		</div>
+
+		<div class="bar-s">
+			<h3>
+				Vragen
+			</h3>
+		</div>
+
+		<div class="theorie-content">
+
+			<ol>
+				<li>
+					Maak een samenvatting van de projectfasen met maximaal 10 woorden per fase.
+				</li>
+			</ol>
+
+		</div>
+
+		<div class="bar-s">
+			<h3>
+				Antwoorden
+			</h3>
+		</div>
+
+		<div class="theorie-content theorie-answers">
+
+			<ol>
+				<li>
+
+					<div class="table-wrapper">
+						<table>
+
+							<tr>
+								<td>Ideefase</td>
+								<td>Bedenken wat het project als doel heeft</td>
+							</tr>
+							<tr>
+								<td>Definitiefase</td>
+								<td>Het idee uitwerken, maar nog niet uitvoeren</td>
+							</tr>
+							<tr>
+								<td>Ontwikkelfase</td>
+								<td>Het product maken</td>
+							</tr>
+							<tr>
+								<td>Nazorgfase</td>
+								<td>Het product af geven en onderhouden</td>
+							</tr>
+
+						</table>
+					</div>
+
+
+				</li>
+			</ol>
+
+		</div>
+	</div>
+
+	<?php
+	include('../../../components/footerChapter.php');
+	?>
+
+</body>

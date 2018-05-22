@@ -249,6 +249,7 @@
 						<ul><a href="theorie/H7/p4.php">§4 Voorbeeld projecten</a></ul>
 						<ul><a href="theorie/H7/installerenTrello.php">Trello installeren</a></ul>
 						<ul><a href="theorie/H7/installerenGithub.php">Github installeren</a></ul>
+						<ul><a href="theorie/H7/verslag.docx" download>Voorbeeld verslag</a></ul>
 						<ul><a href="theorie/H7/quiz.php">Quiz</a></ul>
 					</ol>
 				</div>

@@ -51,7 +51,7 @@ Als Trello geïnstalleerd is (of als je de web-versie gebruikt) hoeft je alleen 
 
 Als je de lijst met een groep (of iedereen) wilt delen kan dit op Privé te klikken (naast de titel van het bord). Als je hier kiest voor team -> team creëren en zo een team aanmaakt, kun je vervolgens op de pagina van het team bij leden mensen toevoegen. Je kunt Trello nu als scrum bord gebruiken!
 
-Als voorbeeld van een Trello bord kan gekeken worden naar https://trello.com/b/R5YdaYG2 , dit is het bord dat gebruikt is voor het maken van deze methode!
+Als voorbeeld van een Trello bord kan gekeken worden naar <a href="https://trello.com/b/R5YdaYG2">https://trello.com/b/R5YdaYG2</a>, dit is het bord dat gebruikt is voor het maken van deze methode!
 			</pre>
 		</div>
 

@@ -45,7 +45,7 @@
 
 		<div class="theorie-content">
 			<pre>
-Als je een project uitvoert in een team, dan zullen er rollen moeten worden verdeeld. Dit zal bij een klein project meestal: developer, leider, designer of administrator zijn. De developer is de persoon die voornamelijk zal programmeren, de leider stuurt iedereen aan en zorgt voor een planning, de designer zorgt voor hoe het product eruit zal zien en de administrator doet al het papierwerk (denk aan verslagen).
+Als je een project uitvoert in een team, dan zullen er rollen moeten worden verdeeld. Dit zal bij een klein project meestal: developer, leider, designer of administrateur zijn. De developer is de persoon die voornamelijk zal programmeren, de leider stuurt iedereen aan en zorgt voor een planning, de designer zorgt voor hoe het product eruit zal zien en de administrateur doet al het papierwerk (denk aan verslagen).
 
 Bij een groter project komen er meer dingen bij kijken en zijn er dus ook meer rollen nodig, mensen zullen meer gespecialiseerd werken in plaats van aan een groep kleinere taken. Rollen die er dan nodig zijn zullen ook: tester, brononderzoeker, marketer (persoon die de marketing regelt), human resource manager, enz. kunnen omvatten.
 

@@ -7,16 +7,18 @@
 	$hoofdstuk = $_POST['hoofdstuk'];
 	$antwoorden = $_POST['antwoorden'];
 
-	//controleer antwoorden (per hoofdstuk)
-	if($hoofdstuk == 1){
-		$juisteAntwoorden = [71, 113];
-	}
-
 	$punten = 0;
 	$cijfer = 0;
 	$correct = [];
 	$incorrect = [];
+	$uitleg = [];
 	$error = 0;
+
+	//controleer antwoorden (per hoofdstuk)
+	if($hoofdstuk == 1){
+		$juisteAntwoorden = [71, 113];
+		$uitleg = ['uitleg1', 'uitleg2'];
+	}
 
 	for($i=0; $i<count($antwoorden); $i++){
 		if($antwoorden[$i] == $juisteAntwoorden[$i]){
@@ -63,10 +65,6 @@
 					} else {
 						$error = 1;
 					}
-				} elseif ($cijfer == $Ccijfer){
-
-				} else {
-
 				}
 			}
 
@@ -91,7 +89,7 @@
 		$verbeteringen[] = $juisteAntwoorden[$number];
 	}
 
-	$return = array('result'=>$result, 'right'=>$correct, 'wrong'=>$incorrect, 'corrections'=>$verbeteringen, 'error'=>$error);
+	$return = array('result'=>$result, 'right'=>$correct, 'wrong'=>$incorrect, 'corrections'=>$verbeteringen, 'uitleg' => $uitleg, 'error'=>$error);
 	$return = json_encode($return, JSON_FORCE_OBJECT);
 
 	echo $return;

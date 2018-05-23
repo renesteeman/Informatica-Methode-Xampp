@@ -54,12 +54,12 @@ $(document).ready(function(){
 			});
 
 			jqXHR.done(function(msg) {
-				console.log(msg);
 				msg = JSON.parse(msg);
 				var result = msg.result;
 				var right = msg.right;
 				var wrong = msg.wrong;
 				var corrections = msg.corrections;
+				var uitleg = msg.uitleg;
 				var error = msg.error;
 				finished = 1;
 
@@ -85,6 +85,15 @@ $(document).ready(function(){
 
 					$('.vraagBalk').eq(number).next().find('label:contains('+corrections[i]+')').children('.checkmark').addClass('right');
 					$('.vraagBalk').eq(number).next().find('label:contains('+corrections[i]+')').children('.single-select-checkbox').prop('checked', true);
+				}
+
+
+				uitleg = Object.keys(uitleg).map(function (key) { return uitleg[key]; });
+
+				for(var i=0; i<uitleg.length; i++){
+					var Cuitleg = uitleg[i];
+					$('.vraagBalk').eq(i).next().next().text(Cuitleg);
+					$('.vraagBalk').eq(i).next().next().addClass('show');
 				}
 
 			});

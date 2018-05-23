@@ -49,6 +49,9 @@
 				</li>
 			</ul>
 		</div>
+		<div class="uitleg">
+
+		</div>
 
 		<!-- vraag 2-->
 		<div class="vraagBalk">
@@ -82,11 +85,13 @@
 				</li>
 			</ul>
 		</div>
+		<div class="uitleg">
+
+		</div>
 
 	</div>
 
 	<input type="submit" value="controleer" class="controleerAntwoordButton"/>
-
 
 	</div>
 

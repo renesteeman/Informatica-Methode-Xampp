@@ -20,6 +20,11 @@
 		$uitleg = ['1+2+4+0+0+32 = 39, per getal dat je van rechts naar links gaat wordt de waarde twee maal zo groot', '1 * 0110 + 0 * 01100 + 0 * 011000 + 1 * 0110000 = 2 + 4 + 16 + 32 = 54, per digit dat je naar rechts gaat voor het linker getal zet je 0 achter de uitkomst voor dat digit.', 'De GPU is goed met parallellisatie en heeft veel meer opslag dan de CPU zelf, maar is minder flexibiel en kan sommige berekeningen dus niet uitvoeren.', 'Een SSD is over het algemeen 2.5 inch, terwijl een HDD standard 3.5 inch groot is. Een SSD is ook nog in kleinere formaten beschikbaar, terwijl bij een HDD het niet kleiner wordt dan 2.5 inch voor een laptop variant. Een SSD heeft als grootste voordeel zijn snelheid. De betrouwbaar van een SSD is ook beter, aangezien de data die erop staat meestal leesbaar blijft ook als er niet meer op geschreven kan worden en een SSD heeft geen bewegende delen.', 'Het vertalen van code naar machinetaal wordt gedaan door aparte software.', 'Bij de OR-gate is de uitkomst 1 en samen met de 1 die van onder komt krijgt de AND-gate ook 1,1 binnen en geeft dus weer 1 door. '];
 	}
 
+	if($hoofdstuk == 2){
+		$juisteAntwoorden = ['S (schoon) ∩ bus = 1', 'M ∪ G', 7];
+		$uitleg = ['Alle schonen voertuigen en de bus samen vormen alle voertuigen en dus 1 (alles in de set).', 'Het moet zowel modulus = 0 opleveren als groter zijn dan 20. Het kan dus niet altijd een van de getallen zijn die voldoet aan modulus = 0 of groter is dan 20.', 'Het patroon is X, X, 5, Y, Y, 5. Als er dus iets achter de 5 komt wordt het daarna meteen herhaald.'];
+	}
+
 	for($i=0; $i<count($antwoorden); $i++){
 		if($antwoorden[$i] == $juisteAntwoorden[$i]){
 			$punten++;

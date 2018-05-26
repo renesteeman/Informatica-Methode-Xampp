@@ -30,6 +30,11 @@
 		$uitleg = ['Des de dichter de taal bij het metaal ‘zit’, des te lager de taal is. Oftewel des te eenvoudiger de instructies, des te lager de taal.', 'De te lager de taal, des te minder overbodige instructies er zijn.', 'Python is een hoge taal, het ligt namelijk dicht bij het Engels en ver van machine taal af.', 'Python bepaald zelf wat voor een soort variabele je hebt gedeclareerd. ', ' Het tellen begint bij 0, dus 0 -> 1 -> 2 -> 3 -> 4 oftewel 0 -> 2 -> 5 -> ‘tesla’ -> ‘koffie’.', 'Als je 2,8 zo vaak mogelijk geheel in 20 stopt blijft er 0,4 over. 7 * 2.8 = 19,6 en 20 – 19,6 = 0,4', 'Tesla is niet gelijk aan 1 oftewel niet ‘waar’ en koffie is 1, dus niet gelijk aan 0. (donaties om dit te veranderen naar Tesla = 1 & Koffie = 1 zijn altijd welkom)', 'i word steeds met 2 vergroot en zal als voorlaatste stap 20 zijn en dus nog voldoen aan de eis om gelijk te zijn of kleiner dan 20. Het wordt dan dus nog een keer met 2 vergroot en wordt dus 22.'];
 	}
 
+	if($hoofdstuk == 4){
+		$juisteAntwoorden = ['6 ohm', '2 ohm', 'niet waar', 'niet waar', '0-255', 'met digitalWrite(pinNummer, HIGH)', 'Dat ligt aan het arduino model.'];
+		$uitleg = ['R = U/I, 12/2 = 6', '1/Rt = 1/R1 + 1/R2 -> 1/Rt = ¼ + ¼ = ½ -> Rt = 2/1 = 2', 'De weerstand van een LDR neemt af als er meer licht op schijnt.', 'De arduino heeft geen OS en alle code die het kan uitvoeren wordt direct op de chip geïnstalleerd, dit heet firmware.', 'Het signaal kan 0-255 als waarde hebben, ook al wordt het door arduino uno eigenlijk gezien als een hoeveelheid 1’en en 0’en per seconde.', 'Om een pin op 5V te zetten hoeft het alleen maar op ‘aan’ te staan, oftewel HIGH.', 'Een PWM/~ pin kan naast een digitaal signaal ook een signaal van 0-255 als waarde doorsturen in plaats van alleen een 1 of 0 op sommige arduino’s. Het is echter zo dat veel arduino’s (zoals de uno) een signaal aanmaken dat uit 1’en en 0’en bestaat, maar toch als analoog wordt gezien, ook al is het dat eigenlijk niet.'];
+	}
+
 	for($i=0; $i<count($antwoorden); $i++){
 		if($antwoorden[$i] == $juisteAntwoorden[$i]){
 			$punten++;

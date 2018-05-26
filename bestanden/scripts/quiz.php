@@ -26,7 +26,7 @@
 	}
 
 	if($hoofdstuk == 3){
-		$juisteAntwoorden = ['niet waar', 'niet waar', 'waar', ' niet waar', "Je krijgt 'koffie'", "0,40", 'if !Tesla & Koffie != 0', '22'];
+		$juisteAntwoorden = ['Niet waar', 'Niet waar', 'Waar', 'Niet waar', "Je krijgt ‘koffie’.", "0,40", 'if !Tesla & Koffie != 0', '22'];
 		$uitleg = ['Des de dichter de taal bij het metaal ‘zit’, des te lager de taal is. Oftewel des te eenvoudiger de instructies, des te lager de taal.', 'De te lager de taal, des te minder overbodige instructies er zijn.', 'Python is een hoge taal, het ligt namelijk dicht bij het Engels en ver van machine taal af.', 'Python bepaald zelf wat voor een soort variabele je hebt gedeclareerd. ', ' Het tellen begint bij 0, dus 0 -> 1 -> 2 -> 3 -> 4 oftewel 0 -> 2 -> 5 -> ‘tesla’ -> ‘koffie’.', 'Als je 2,8 zo vaak mogelijk geheel in 20 stopt blijft er 0,4 over. 7 * 2.8 = 19,6 en 20 – 19,6 = 0,4', 'Tesla is niet gelijk aan 1 oftewel niet ‘waar’ en koffie is 1, dus niet gelijk aan 0. (donaties om dit te veranderen naar Tesla = 1 & Koffie = 1 zijn altijd welkom)', 'i word steeds met 2 vergroot en zal als voorlaatste stap 20 zijn en dus nog voldoen aan de eis om gelijk te zijn of kleiner dan 20. Het wordt dan dus nog een keer met 2 vergroot en wordt dus 22.'];
 	}
 

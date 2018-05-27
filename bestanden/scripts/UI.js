@@ -8,6 +8,15 @@ $(document).ready(function(){
 	$(".tile").click(function(){
 		$(this).siblings().toggle();
 		$(this).toggleClass("active");
+
+		//go to selected tile (mostly for mobile)
+		var pos = $(this).position();
+		var y = pos.top;
+
+		$('html, body').animate({
+            scrollTop: y - 120
+        }, 'fast');
+
 	});
 
 	$("select").click(function(){

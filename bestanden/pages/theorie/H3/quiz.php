@@ -218,13 +218,10 @@
 		<!-- vraag 8-->
 		<div class="vraagBalk">
 			Wat is i op het eind van de code?
-			<pre>
-				<code>
+			<pre><code>
 i = 0
 while i =< 20:
-	i += 2
-				</code>
-			</pre>
+	i += 2</code></pre>
 		</div>
 		<div class="antwoorden">
 			<ul>

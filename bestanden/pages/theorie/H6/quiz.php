@@ -121,7 +121,7 @@
 
 		<!-- vraag 4-->
 		<div class="vraagBalk">
-			Agile gaat niet over …?
+			Agile gaat niet over …
 		</div>
 		<div class="antwoorden">
 			<ul>
@@ -157,7 +157,7 @@
 
 		<!-- vraag 5-->
 		<div class="vraagBalk">
-			User stories zijn …?
+			User stories zijn …
 		</div>
 		<div class="antwoorden">
 			<ul>

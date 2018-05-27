@@ -1,4 +1,4 @@
-&lt;&lt;<?php
+<?php
 	include('DB_connect.php');
 	session_start();
 
@@ -17,7 +17,7 @@
 	//controleer antwoorden (per hoofdstuk)
 	if($hoofdstuk == 1){
 		$juisteAntwoorden = [39, 54, 'De GPU kan complexere berekeningen uitvoeren.', 'de prijs', 'Het vertalen van code naar machinetaal.', 1];
-		$uitleg = ['1+2+4+0+0+32 = 39, per getal dat je van rechts naar links gaat wordt de waarde twee maal zo groot', '1 * 0110 + 0 * 01100 + 0 * 011000 + 1 * 0110000 = 2 + 4 + 16 + 32 = 54, per digit dat je naar rechts gaat voor het linker getal zet je 0 achter de uitkomst voor dat digit.', 'De GPU is goed met parallellisatie en heeft veel meer opslag dan de CPU zelf, maar is minder flexibiel en kan sommige berekeningen dus niet uitvoeren.', 'Een SSD is over het algemeen 2.5 inch, terwijl een HDD standard 3.5 inch groot is. Een SSD is ook nog in kleinere formaten beschikbaar, terwijl bij een HDD het niet kleiner wordt dan 2.5 inch voor een laptop variant. Een SSD heeft als grootste voordeel zijn snelheid. De betrouwbaar van een SSD is ook beter, aangezien de data die erop staat meestal leesbaar blijft ook als er niet meer op geschreven kan worden en een SSD heeft geen bewegende delen.', 'Het vertalen van code naar machinetaal wordt gedaan door aparte software.', 'Bij de OR-gate is de uitkomst 1 en samen met de 1 die van onder komt krijgt de AND-gate ook 1,1 binnen en geeft dus weer 1 door. '];
+		$uitleg = ['1+2+4+0+0+32 = 39, per getal dat je van rechts naar links gaat wordt de waarde twee maal zo groot', '1 * 0110 + 0 * 01100 + 0 * 011000 + 1 * 0110000 = 2 + 4 + 16 + 32 = 54, per digit dat je naar rechts gaat voor het linker getal zet je 0 achter de uitkomst voor dat digit.', 'De GPU is goed met parallellisatie en heeft veel meer opslag dan de CPU zelf, maar is minder flexibiel en kan sommige berekeningen dus niet uitvoeren.', 'Een SSD is over het algemeen 2.5 inch, terwijl een HDD standard 3.5 inch groot is. Een SSD is ook nog in kleinere formaten beschikbaar, terwijl bij een HDD het niet kleiner wordt dan 2.5 inch voor een laptop variant. Een SSD heeft als grootste voordeel zijn snelheid. De betrouwbaar van een SSD is ook beter, aangezien de data die erop staat meestal leesbaar blijft ook als er niet meer op geschreven kan worden en een SSD heeft geen bewegende delen.', 'Het vertalen van code naar machinetaal wordt gedaan door aparte software.', "Bij de OR-gate is de uitkomst 1 en samen met de 1 die van onder komt krijgt de AND-gate ook 1,1 binnen en geeft dus weer 1 door."];
 	}
 
 	if($hoofdstuk == 2){
@@ -43,6 +43,11 @@
 	if($hoofdstuk == 6){
 		$juisteAntwoorden = ['Om de specificaties van een project op te stellen.', 'Er wordt gecontroleerd of alles werkt.', 'Het project documenteren.', 'kosten besparen', 'features', 'een overzicht van hoeveel werk nog over is'];
 		$uitleg = ['Het wordt gebruikt om de specificaties van een project op te stellen en het plannen voor te bereiden.', 'De controle van het product vind plaats op het eind van de ontwikkelfase, voordat de klant het product ontvangt.', 'De documentatie wordt door de administrateur geregeld.', 'Agile gaat om beter werken en een beter product maken, het is vaak goedkoper of winstgevender, maar dit is niet het doel van Agile.', 'User stories zijn de functies van het product, deze hoeven nog niet af te zijn.', 'Een burn-down chart geeft weer hoeveel werk (in uren) er nog over is en hoe dit (is) veranderd over een bepaalde tijd. Het is mogelijk dat dit als hulpmiddel om af te vallen werkt als de grafiek niet daalt.'];
+	}
+
+	if($hoofdstuk == 7){
+		$juisteAntwoorden = ['een overzicht te houden bij een project', 'Een push zet de bestanden online.', 'een filmpje', 'onderzoeken hoe een CPU werkt'];
+		$uitleg = ['Met Trello kun je lijsten maken van wat gedaan moet worden en je kunt er ook eventueel mee plannen, maar het is er niet voor bedoeld. Het kan ook gebruikt worden om anderen te informeren over de status van het project.', 'Een push zet de bestanden van de commits online.', 'De visie is optioneel, al is het wel aan te bevelen, eventueel als onderdeel van de inleiding.', 'Bij het onderzoeken van de werking van de CPU is er geen eindproduct en de omvang van het project is al snel of erg klein of het wordt te complex om goed uit te leggen wat je hebt geleerd. Het is wel een goed project om voor jezelf uit te voeren.'];
 	}
 
 	for($i=0; $i<count($antwoorden); $i++){

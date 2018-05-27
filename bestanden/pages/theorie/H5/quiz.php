@@ -127,7 +127,7 @@
 
 		<!-- vraag 4-->
 		<div class="vraagBalk">
-			Om een map omhoog te gaan in HTML/CSS gebruik je …?
+			Om een map omhoog te gaan in HTML/CSS gebruik je …
 		</div>
 		<div class="antwoorden">
 			<ul>
@@ -163,7 +163,7 @@
 
 		<!-- vraag 5-->
 		<div class="vraagBalk">
-			Een HTML comment kun je toevoegen met …?
+			Een HTML comment kun je toevoegen met …
 		</div>
 		<div class="antwoorden">
 			<ul>
@@ -199,7 +199,7 @@
 
 		<!-- vraag 6-->
 		<div class="vraagBalk">
-			Je past de tekstgrote met CSS aan met …?
+			Je past de tekstgrote met CSS aan met …
 		</div>
 		<div class="antwoorden">
 			<ul>
@@ -235,7 +235,7 @@
 
 		<!-- vraag 7-->
 		<div class="vraagBalk">
-			De achtergrondkleur stel je met CSS in met …?
+			De achtergrondkleur stel je met CSS in met …
 		</div>
 		<div class="antwoorden">
 			<ul>
@@ -271,7 +271,7 @@
 
 		<!-- vraag 8-->
 		<div class="vraagBalk">
-			Om met CSS de stijl aan te passen op het moment dat iemand met zijn cursor (muis) ergens over gaat kan met …?
+			Om met CSS de stijl aan te passen op het moment dat iemand met zijn cursor (muis) ergens over gaat kan met …
 		</div>
 		<div class="antwoorden">
 			<ul>

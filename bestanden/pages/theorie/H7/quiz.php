@@ -8,7 +8,7 @@
 
 	<div class="title-small">
 		<h2>
-			H4 quiz
+			H7 quiz
 		</h2>
 	</div>
 
@@ -19,24 +19,30 @@
 	<div class="vragen">
 		<!-- vraag 1-->
 		<div class="vraagBalk">
-			Wat is de weerstand bij een spanning van 12V en 2A?
+			Trello is bedoeld voor …
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">6 ohm
+					<label class="container">het maken van een planning
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">0,2 ohm
+					<label class="container">het sturen van berichten
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">24 ohm
+					<label class="container">bestanden op te slaan
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">een overzicht te houden bij een project
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -49,30 +55,30 @@
 
 		<!-- vraag 2-->
 		<div class="vraagBalk">
-			Wat is de totale weerstand bij een parallelschakeling met twee ‘takken’ die elk een weerstand van 4 ohm hebben?
+			Wat is het verschil tussen een push en commit?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">8 ohm
+					<label class="container">Een push zet de bestanden online.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">2 ohm
+					<label class="container">Een push overschrijft alle bestanden.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">4 ohm
+					<label class="container">Een push slaat de bestanden op, terwijl een commit de bestanden alleen klaar zet.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">0,5 ohm
+					<label class="container">Een commit zet de bestanden online.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -85,18 +91,30 @@
 
 		<!-- vraag 3-->
 		<div class="vraagBalk">
-			Waar of niet waar, een LDR krijgt een hogere weerstand als er meer licht op valt.
+			Welk onderdeel is niet cruciaal in een verslag?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">waar
+					<label class="container">een logboek
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">niet waar
+					<label class="container">de resultaten
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">een filmpje
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">de werking van het product
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -109,18 +127,30 @@
 
 		<!-- vraag 4-->
 		<div class="vraagBalk">
-			Waar of niet waar, een arduino heeft zijn eigen OS.
+			Wat is geen goed project voor informatica (op school)?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">waar
+					<label class="container">een website maken
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">niet waar
+					<label class="container">een arduino voertuig maken
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">onderzoeken hoe een CPU werkt
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">zelf een programma schrijven
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -130,109 +160,6 @@
 		<div class="uitleg">
 
 		</div>
-
-		<!-- vraag 5-->
-		<div class="vraagBalk">
-			Tussen welke waarden kan een PWM signaal variëren?
-		</div>
-		<div class="antwoorden">
-			<ul>
-				<li>
-					<label class="container">0-100
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">0-1
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">0-255
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">-255-255
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-			</ul>
-		</div>
-		<div class="uitleg">
-
-		</div>
-
-		<!-- vraag 6-->
-		<div class="vraagBalk">
-			Hoe zet je een pin op 5V bij de arduino?
-		</div>
-		<div class="antwoorden">
-			<ul>
-				<li>
-					<label class="container">met digitalWrite(pinNummer, HIGH)
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">digitalWrite(pinNummer, 1)
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">digitalWrite(pinNummer, OUTPUT)
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">digitalWrite(pinNummer, 5)
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-			</ul>
-		</div>
-		<div class="uitleg">
-
-		</div>
-
-		<!-- vraag 7-->
-		<div class="vraagBalk">
-			Waar of niet waar, een ~ pin geeft alleen een digitaal signaal.
-		</div>
-		<div class="antwoorden">
-			<ul>
-				<li>
-					<label class="container">waar
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">niet waar
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">Dat ligt aan het arduino model.
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-			</ul>
-		</div>
-		<div class="uitleg">
-
-		</div>
-
 	</div>
 
 	<input type="submit" value="controleer" class="controleerAntwoordButton"/>

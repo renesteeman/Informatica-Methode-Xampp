@@ -157,10 +157,15 @@ input[type=submit]
 .container input:checked ~ .checkmark.right
 	background-color: $green
 
+@media (max-width: $large)
+	.vragen
+		width: 80%
+		margin-left: 10%
+
 @media (max-width: $medium)
 	.vragen
-		width: 90%
-		margin-left: 5%
+		width: 100%
+		margin-left: 0
 
 	input[type=submit]
 		margin-left: 5%

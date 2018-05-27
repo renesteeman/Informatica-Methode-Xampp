@@ -96,19 +96,19 @@
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">De GPU kan meer taken tegelijk uitvoeren
+					<label class="container">De GPU kan meer taken tegelijk uitvoeren.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">De GPU kan complexere berekeningen uitvoeren
+					<label class="container">De GPU kan complexere berekeningen uitvoeren.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">De GPU heeft meer opslag
+					<label class="container">De GPU heeft meer opslag.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -126,25 +126,25 @@
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">Het formaat (fysiek)
+					<label class="container">het formaat (fysiek)
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">De snelheid
+					<label class="container">de snelheid
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">De prijs
+					<label class="container">de prijs
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Betrouwbaarheid
+					<label class="container">betrouwbaarheid
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -162,25 +162,25 @@
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">Het registreren van input
+					<label class="container">Het registreren van input.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Het beheren van RAM
+					<label class="container">Het beheren van RAM.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Het vertalen van code naar machinetaal
+					<label class="container">Het vertalen van code naar machinetaal.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Het beheren van processen
+					<label class="container">Het beheren van processen.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>

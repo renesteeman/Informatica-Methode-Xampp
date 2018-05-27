@@ -8,7 +8,7 @@
 
 	<div class="title-small">
 		<h2>
-			H5 quiz
+			H6 quiz
 		</h2>
 	</div>
 
@@ -19,30 +19,24 @@
 	<div class="vragen">
 		<!-- vraag 1-->
 		<div class="vraagBalk">
-			Wat is geen hoofdonderdeel van een HTML pagina?
+			Waarvoor wordt het SMART-model gebruikt?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">&lt;header>
+					<label class="container">Om de specificaties van een project op te stellen.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">&lt;body>
+					<label class="container">Om een site te ontwerpen.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">&lt;footer>
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">&lt;p>
+					<label class="container">Om een product te ontwerpen.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -55,30 +49,30 @@
 
 		<!-- vraag 2-->
 		<div class="vraagBalk">
-			Wat staat er (in het algemeen) in de &lt;head>?
+			Wat gebeurt niet in de nazorgfase?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">links naar andere bestanden
+					<label class="container">Fouten worden uit het product gehaald.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">CSS
+					<label class="container">Nieuwe features worden toegevoegd aan het product.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">navigatie
+					<label class="container">De klant wordt uitgelegd hoe het product werkt.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">tekst
+					<label class="container">Er wordt gecontroleerd of alles werkt.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -91,30 +85,30 @@
 
 		<!-- vraag 3-->
 		<div class="vraagBalk">
-			Hoe zet je een link op een HTML pagina? Met …
+			Wat is geen taak van de leider (in een klein project)?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">&lt;a href=”LOCATIE”>LINK&lt;/a>
+					<label class="container">Mensen informeren over hun werk.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">&lt;a href=”LOCATIE”>
+					<label class="container">Geld en tijd regelen.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">&lt;link href=”LOCATIE”>TEKST&lt;/link>
+					<label class="container">Zorgen dat iedereen relevant werk heeft.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">&lt;link>LOCATIE&lt;/link>
+					<label class="container">Het project documenteren.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -127,30 +121,30 @@
 
 		<!-- vraag 4-->
 		<div class="vraagBalk">
-			Om een map omhoog te gaan in HTML/CSS gebruik je …?
+			Agile gaat niet over …?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">./
+					<label class="container">kosten besparen
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">../
+					<label class="container">een beter product realiseren
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">.\
+					<label class="container">zorgen voor duidelijkheid
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">up/
+					<label class="container">op schema blijven
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -163,30 +157,30 @@
 
 		<!-- vraag 5-->
 		<div class="vraagBalk">
-			Een HTML comment kun je toevoegen met …?
+			User stories zijn …?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">//comment
+					<label class="container">feedbackberichten van de klant
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">&lt;comment>TEKST&lt;/comment>
+					<label class="container">features
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">&lt;!-- COMMENT -->
+					<label class="container">dingen die nog gedaan moeten worden
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">/* COMMENT */
+					<label class="container">verhalen van tevreden klanten
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -199,102 +193,30 @@
 
 		<!-- vraag 6-->
 		<div class="vraagBalk">
-			Je past de tekstgrote met CSS aan met …?
+			Wat is een burn-down chart?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">size:
+					<label class="container">een te doen lijst
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">tekstgrote:
+					<label class="container">een overzicht van hoeveel werk nog over is
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">font-size:
+					<label class="container">de hoeveelheid geld dat over is
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">font:
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-			</ul>
-		</div>
-		<div class="uitleg">
-
-		</div>
-
-		<!-- vraag 7-->
-		<div class="vraagBalk">
-			De achtergrondkleur stel je met CSS in met …?
-		</div>
-		<div class="antwoorden">
-			<ul>
-				<li>
-					<label class="container">background-color:
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">color:
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">achtergrondkleur:
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">background-rgb:
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-			</ul>
-		</div>
-		<div class="uitleg">
-
-		</div>
-
-		<!-- vraag 8-->
-		<div class="vraagBalk">
-			Om met CSS de stijl aan te passen op het moment dat iemand met zijn cursor (muis) ergens over gaat kan met …?
-		</div>
-		<div class="antwoorden">
-			<ul>
-				<li>
-					<label class="container">:cursor
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">:hover
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">:change
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">:react-to-cursor
+					<label class="container">een hulpmiddel om af te vallen
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>

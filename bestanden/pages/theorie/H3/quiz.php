@@ -24,13 +24,13 @@
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">Waar
+					<label class="container">waar
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Niet waar
+					<label class="container">niet waar
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -48,13 +48,13 @@
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">Waar
+					<label class="container">waar
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Niet waar
+					<label class="container">niet waar
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -72,13 +72,13 @@
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">Waar
+					<label class="container">waar
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Niet waar
+					<label class="container">niet waar
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -96,13 +96,13 @@
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">Waar
+					<label class="container">waar
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Niet waar
+					<label class="container">niet waar
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>

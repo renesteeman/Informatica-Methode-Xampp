@@ -89,12 +89,12 @@ if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<!-- external includes -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 	<!-- internal includes -->
 	<link rel="stylesheet" href="../css/main.min.css">
+
+	<!-- external includes -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
 
 	<title>Inforca</title>
 	<!-- icon -->

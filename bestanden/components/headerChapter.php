@@ -65,13 +65,13 @@ if (!isset($_SESSION["username"])){
 	<meta name="keywords" content="Informatica, lesmethode, betaalbaar, duidelijk" />
 	<meta name="author" content="René Steeman" />
 
-	<!-- external includes -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 	<!-- internal includes -->
 	<link rel="stylesheet" href="../../../css/main.min.css">
 	<link rel="stylesheet" href="../../../css/paragraph.min.css">
+
+	<!-- external includes -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
 
     <title>Inforca</title>
 

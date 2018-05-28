@@ -17,7 +17,7 @@
 	</div>
 </footer>
 
-<script src="../../../scripts/UI.js"></script>
-<script src="../../../scripts/progression.js"></script>
+<script src="../../../scripts/UI.js" defer></script>
+<script src="../../../scripts/progression.js" defer></script>
 
 </html>

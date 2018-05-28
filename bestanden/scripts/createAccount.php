@@ -88,7 +88,7 @@
 			//create username
 			$username = rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
 
-			if($naam=''){
+			if($naam==''){
 				$naam = $username;
 			}
 
@@ -105,6 +105,8 @@
 
 			//hash password
 			$password = password_hash($password, PASSWORD_DEFAULT);
+
+			echo 'naam ='.$naam;
 
 			//insert account into DB
 			$sql = "INSERT INTO users (username, password, school, functie, creation_date, expire_date, klas, naam) VALUES ('$username', '$password' , '$school', '$functie', '$creation_date', '$expire_date', '$klas', '$naam')";

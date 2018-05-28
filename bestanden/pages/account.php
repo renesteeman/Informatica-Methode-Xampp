@@ -31,6 +31,10 @@
 		</h3>
 	</div>
 
+	<script>
+		console.log('test');
+	</script>
+
 	<?php
 
 		//if logged in say hello, else give the option to login

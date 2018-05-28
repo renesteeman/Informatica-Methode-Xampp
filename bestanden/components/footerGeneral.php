@@ -17,6 +17,6 @@
 	</div>
 </footer>
 
-<script src="../scripts/UI.js" defer></script>
+<script src="../scripts/UI.js"></script>
 
 </html>

@@ -28,7 +28,6 @@ $(document).ready(function(){
 				$("#captcha").removeClass("hide");
 
 				window.alert(msg);
-
 			} else {
 				window.alert(msg);
 			}
@@ -37,7 +36,7 @@ $(document).ready(function(){
 
 		jqXHR.fail(function( jqXHR) {
 		  alert("AJAX failed, contact admin");
-		});
+	  });
 	});
 
 

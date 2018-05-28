@@ -120,6 +120,8 @@
 
 
 						</li>
+						<li class="cookie">
+							Als u inlogd gaat u akkoord met het gebruik van cookies die bijhouden als wie u bent ingelogd. U kunt hier meer informatie over vinden onderaan de pagina.
 						</li>
 						<li>
 							<input type="submit" value="login" id="LoginButton">

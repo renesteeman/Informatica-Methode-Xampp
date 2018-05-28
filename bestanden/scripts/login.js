@@ -21,9 +21,9 @@ $(document).ready(function(){
 		jqXHR.done(function(msg) {
 
 			if(msg.length == 0){
-				window.location.href = '../pages/index.php';
+				window.location.href = '../index.php';
 			} else if (msg.includes('updated attempts')){
-				window.location.href = '../pages/index.php';
+				window.location.href = '../index.php';
 			} else if (msg.includes('captcha')){
 				$("#captcha").removeClass("hide");
 

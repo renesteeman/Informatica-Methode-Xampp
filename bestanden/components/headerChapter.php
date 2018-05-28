@@ -7,7 +7,7 @@ include('../../../scripts/DB_connect.php');
 //check if the person is loged in
 if (!isset($_SESSION["username"])){
 	$_SESSION['ErrorNotLogedIn'] = 1;
-	header('Location: ../../index.php');
+	header('Location: ../../../index.php');
 }
 
 //check if account is still valid
@@ -40,14 +40,14 @@ function AccountValid(){
 //check if person is loged in
 if (!isset($_SESSION["username"])){
 	$_SESSION['ErrorNotLogedIn'] = 1;
-	header('Location: ../../index.php');
+	header('Location: ../../../index.php');
 } else {
 	//check if the account hasn't expired and if it has, than redirect
 	if(AccountValid()){
 		$_SESSION['ErrorInvalidAccount'] = 0;
 	} else {
 		$_SESSION['ErrorInvalidAccount'] = 1;
-		header('Location: ../../index.php');
+		header('Location: ../../../index.php');
 	}
 }
 
@@ -116,7 +116,7 @@ if (!isset($_SESSION["username"])){
 							//if a teacher is logged in
 							echo '
 							<div class="nav-bar">
-								<a href="../../../pages/index.php">HOME</a>
+								<a href="../../../index.php">HOME</a>
 								<a href="../../../pages/overview.php">OVERZICHT</a>
 								<a href="../../../pages/planner.php">PLANNER</a>
 							</div>
@@ -125,7 +125,7 @@ if (!isset($_SESSION["username"])){
 							//if a student is logged in
 							echo '
 							<div class="nav-bar">
-								<a href="../../../pages/index.php">HOME</a>
+								<a href="../../../index.php">HOME</a>
 								<a href="../../../pages/planner.php">PLANNER</a>
 							</div>
 							';
@@ -134,7 +134,7 @@ if (!isset($_SESSION["username"])){
 						//if user isn't logged in
 						echo '
 						<div class="nav-bar">
-							<a href="../../../pages/index.php"></a>
+							<a href="../../../index.php"></a>
 						</div>
 						';
 
@@ -150,7 +150,7 @@ if (!isset($_SESSION["username"])){
 								Welkom <a href="../../account.php">'.$_SESSION["name"].'</a>
 							</div>
 							<div>
-								<a href="../../../scripts/logoutGeneral.php">Log uit</a>
+								<a href="../../../scripts/logout.php">Log uit</a>
 							</div>';
 
 					} else {
@@ -162,7 +162,7 @@ if (!isset($_SESSION["username"])){
 		</div>
 
 		<h1 class="INFORCA">
-			<a href="../../index.php">INFORCA</a>
+			<a href="../../../index.php">INFORCA</a>
 		</h1>
 
 		<div class="nav-wide">
@@ -174,7 +174,7 @@ if (!isset($_SESSION["username"])){
 					//if a teacher is logged in
 					echo '
 					<div class="nav-bar">
-						<a href="../../../pages/index.php">HOME</a>
+						<a href="../../../index.php">HOME</a>
 						<a href="../../../pages/overview.php">OVERZICHT</a>
 						<a href="../../../pages/planner.php">PLANNER</a>
 					</div>
@@ -183,7 +183,7 @@ if (!isset($_SESSION["username"])){
 					//if a student is logged in
 					echo '
 					<div class="nav-bar student">
-						<a href="../../../pages/index.php">HOME</a>
+						<a href="../../../index.php">HOME</a>
 						<a href="../../../pages/planner.php">PLANNER</a>
 					</div>
 					';
@@ -192,7 +192,7 @@ if (!isset($_SESSION["username"])){
 				//if user isn't logged in
 				echo '
 				<div class="nav-bar">
-					<a href="../../../pages/index.php"></a>
+					<a href="../../../index.php"></a>
 				</div>
 				';
 			}

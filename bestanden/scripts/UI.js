@@ -209,7 +209,7 @@ $(document).ready(function(){
 		jqXHR.done(function(msg) {
 			if(msg.includes('succesvol')){
 				window.alert(msg);
-				window.location.href = '../pages/index.php';
+				window.location.href = '../index.php';
 			} else {
 				window.alert(msg);
 			}

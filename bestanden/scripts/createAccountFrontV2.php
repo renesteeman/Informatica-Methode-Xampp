@@ -59,7 +59,7 @@
 					</ul>
 				</div>
 
-			<div class="addLid add-item">
+			<div class="add-item">
 				<span class="addKlas add-item">
 					<input type="text" placeholder="klas" name="Aklas" maxlength="50" autocomplete="off" class="medium">
 				</span>

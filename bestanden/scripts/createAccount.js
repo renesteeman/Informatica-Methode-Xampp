@@ -9,8 +9,8 @@ $(document).ready(function(){
 	}
 
 	$(".addklasButton").click(function(){
-		var klas = $(this).prev().children('.addKlas').val();
-		var leerlingen = $(this).prev().children('.addLeerlingen').val();
+		var klas = $('.addKlas').children().val();
+		var leerlingen = $('.addLeerlingen').children().val();
 		if(klas!="" && leerlingen!=""){
 			var paste = '<li><span class="list-item klas">'+ klas +'</span><span class="list-item leerlingen">'+ leerlingen +'</span><span class="delete">x</span></li>';
 			$('.addKlas').children().val('');
@@ -20,7 +20,7 @@ $(document).ready(function(){
 
 	});
 
-	$(".add-item").children().first().keypress(function(event){
+	$(".add-item").children().keypress(function(event){
 		if(event.keyCode == 13){
 			$('.addklasButton').click();
 		}

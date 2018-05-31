@@ -32,9 +32,13 @@ $(document).ready(function(){
 		$(this).parent().remove();
 	});
 
-
 	$('.requestAccounts').submit(function(event){
 		event.preventDefault();
 	});
+
+	function updatePrice(){
+		var docenten = $('.Ndocenten').val();
+		var leerlingen = 
+	}
 
 });

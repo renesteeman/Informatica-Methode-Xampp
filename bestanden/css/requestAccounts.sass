@@ -1,4 +1,12 @@
+@import "variables.sass"
+
 .main
+	a
+		color: $grey
+
+	a:hover
+		color: $white
+
 	.add-item
 		input
 			width: 60%
@@ -11,8 +19,6 @@
 			width: 30%
 
 	.list
-		padding-bottom: 1em
-
 		.list-item.klas
 			display: inline-block
 			width: 35%
@@ -21,3 +27,20 @@
 			display: inline-block
 			width: 20%
 			padding-right: 1.5em
+
+	.kosten
+		margin-top: 1em
+
+		ul
+			margin-top: 0.5em
+
+			span
+				display: inline-block
+
+			.aantal
+				width: 10%
+
+			.item
+				width: 20%
+
+			.prijs

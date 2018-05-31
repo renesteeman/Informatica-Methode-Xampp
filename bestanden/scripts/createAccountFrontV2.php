@@ -32,30 +32,26 @@
 		<ul>
 			<li>
 				Schoolnaam</br>
-				<input type="text" class="Nclass" name="Nclass"/>
+				<input type="text" class="schoolnaam" name="schoolnaam"/>
 			</li>
 			<li>
 				Telefoonnummer</br>
-				<input type="text" class="Nclass" name="Nclass"/>
+				<input type="text" class="telefoonnummer" name="telefoonnummer"/>
 			</li>
 			<li>
 				Email</br>
-				<input type="text" class="Nclass" name="Nclass"/>
+				<input type="text" class="email" name="email"/>
 			</li>
 			<li>
 				Aantal docenten</br>
-				<input type="text" class="Nclass" name="Nclass"/>
+				<input type="text" class="Ndocenten" name="Ndocenten"/>
 			</li>
 			<li>
 
 				<label>Klassen</label>
 				<div class="list">
 					<ul>
-						<li>
-							<span class="list-item klas">'+ klas +'</span>
-							<span class="list-item leerlingen">'+ leerlingen +'</span>
-							<span class="delete">x</span>
-						</li>
+
 					</ul>
 				</div>
 
@@ -71,12 +67,22 @@
 
 			</li>
 			<li>
-				<label class="container">'.$naam.'
+				<label class="container">
+					Ik ga akkoord met de <a href="../downloads/privacyBeleid.pdf">voorwaarden</a> en de <a href="../downloads/voorwaarden.pdf">privacy overeenkomst</a>.
 					<input type="checkbox">
 					<span class="checkmark"></span>
 				</label>
-				
-				Ik ga akkoord met de <a href="../downloads/privacyBeleid.pdf">voorwaarden</a> en de <a href="../downloads/voorwaarden.pdf">privacy overeenkomst</a>.
+			</li>
+
+			<li class="kosten">
+				Prijs
+				<ul>
+					<li>
+						<span class="aantal">5</span>
+						<span class="item">docenten</span>
+						<span class="prijs">€5</span>
+					</li>
+				</ul>
 			</li>
 
 			<li>

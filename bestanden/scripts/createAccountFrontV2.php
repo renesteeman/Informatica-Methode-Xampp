@@ -70,6 +70,9 @@
 			</div>
 
 			</li>
+			<li>
+				Ik ga akkoord met de <a href="../downloads/privacyBeleid.pdf">voorwaarden</a> en de <a href="../downloads/voorwaarden.pdf">privacy overeenkomst</a>.
+			</li>
 
 			<li>
 				<input type="submit" value="verzend">

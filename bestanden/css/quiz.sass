@@ -90,51 +90,6 @@
 	.uitleg.show
 		display: block
 
-//checkbox
-.container
-	display: block
-	position: relative
-	padding-left: 1em
-	cursor: pointer
-	font-size: 1.5em
-
-.container input
-	position: absolute
-	opacity: 0
-	cursor: pointer
-
-.checkmark
-	margin-top: 0.1em
-	position: absolute
-	top: 0
-	left: 0
-	height: 0.8em
-	width: 0.8em
-	background-color: darken($white, 10%)
-
-.container:hover input ~ .checkmark
-	background-color: darken($white, 20%)
-
-.container input:checked ~ .checkmark
-	background-color: $blue-green
-
-.checkmark:after
-	content: ""
-	position: absolute
-	display: none
-
-.container input:checked ~ .checkmark:after
-	display: block
-
-.container .checkmark:after
-	left: 6px
-	top: 3px
-	width: 5px
-	height: 10px
-	border: solid white
-	border-width: 0 3px 3px 0
-	transform: rotate(45deg)
-
 //submit button
 input[type=submit]
 	font-size: 2em

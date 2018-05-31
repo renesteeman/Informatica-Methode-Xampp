@@ -6,7 +6,7 @@
 	margin-left: 20%
 	margin-top: 40px
 	width: 60%
-	margin-bottom: 40px
+	margin-bottom: 80px
 	background-color: $grey
 	box-shadow: inset 0 0 0 0 darken($white, 10%), 6px 6px 8px darken($white, 20%)
 	border-radius: 4px
@@ -17,7 +17,6 @@
 
 	label
 		display: block
-		font-size: 1.3em
 
 	input, select
 		font-size: 0.8em
@@ -29,6 +28,9 @@
 		padding: 12px 12px
 		border-radius: 4px
 		height: 2em
+
+	select
+		padding: 0
 
 	input[type="submit"]
 		font-size: 1em
@@ -101,53 +103,6 @@
 	img
 		width: 4em
 		height: 4em
-
-	//checkbox
-	.container
-		position: relative
-		padding-left: 1em
-		cursor: pointer
-		font-size: 1em
-
-	.container input
-		position: absolute
-		opacity: 0
-		cursor: pointer
-
-	.checkmark
-		margin-top: 0.1em
-		position: absolute
-		top: 0
-		left: 0
-		height: 0.8em
-		width: 0.8em
-		background-color: $white
-
-	.container:hover input ~ .checkmark
-		background-color: $white
-
-	.container input:checked ~ .checkmark
-		background-color: $white
-
-	.checkmark:after
-		content: ""
-		position: absolute
-		display: none
-
-	.container input:checked ~ .checkmark:after
-		display: block
-
-	.container .checkmark:after
-		left: 6px
-		top: 3px
-		width: 5px
-		height: 10px
-		border: solid $blue-green
-		border-width: 0 3px 3px 0
-		transform: rotate(45deg)
-
-	input[type="checkbox"]
-		display: none
 
 	//edit class specific
 	.klasSelector

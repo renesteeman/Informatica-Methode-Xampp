@@ -27,6 +27,53 @@ a
 a:hover
 	color: $grey
 
+//checkbox
+.container
+	position: relative
+	padding-left: 1em
+	cursor: pointer
+	font-size: 1em
+
+.container input
+	position: absolute
+	opacity: 0
+	cursor: pointer
+
+.checkmark
+	margin-top: 0.1em
+	position: absolute
+	top: 0
+	left: 0
+	height: 0.8em
+	width: 0.8em
+	background-color: $white
+
+.container:hover input ~ .checkmark
+	background-color: $white
+
+.container input:checked ~ .checkmark
+	background-color: $white
+
+.checkmark:after
+	content: ""
+	position: absolute
+	display: none
+
+.container input:checked ~ .checkmark:after
+	display: block
+
+.container .checkmark:after
+	left: 0.25em
+	top: .1em
+	width: 0.2em
+	height: 0.4em
+	border: solid $blue-green
+	border-width: 0 3px 3px 0
+	transform: rotate(45deg)
+
+input[type="checkbox"]
+	display: none
+
 //navigation
 .navigation
 	background-color: $blue
@@ -185,7 +232,7 @@ footer
 
 	a:hover
 		color: $white
-		
+
 .bar-large
 	background-color: $blue
 	color: $white

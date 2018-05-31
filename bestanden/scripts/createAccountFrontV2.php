@@ -71,6 +71,11 @@
 
 			</li>
 			<li>
+				<label class="container">'.$naam.'
+					<input type="checkbox">
+					<span class="checkmark"></span>
+				</label>
+				
 				Ik ga akkoord met de <a href="../downloads/privacyBeleid.pdf">voorwaarden</a> en de <a href="../downloads/voorwaarden.pdf">privacy overeenkomst</a>.
 			</li>
 

@@ -66,28 +66,37 @@
 			</div>
 
 			</li>
-			<li>
+
+			<li class="kosten">
+				Prijs
+				<ul>
+					<li>
+						<span class="aantal">aantal</span>
+						<span class="item">soort</span>
+						<span class="prijs">prijs</span>
+					</li>
+					<li class="hide Pdocenten">
+						<span class="aantal"></span>
+						<span class="item">docent</span>
+						<span class="prijs"></span>
+					</li>
+					<li class="hide Pleerlingen">
+						<span class="aantal"></span>
+						<span class="item">leerling</span>
+						<span class="prijs"></span>
+					</li>
+					<li class="hide totaal">
+						<span class="Tprijs"></span>
+					</li>
+				</ul>
+			</li>
+
+			<li class="akkoord">
 				<label class="container">
 					Ik ga akkoord met de <a href="../downloads/privacyBeleid.pdf">voorwaarden</a> en de <a href="../downloads/voorwaarden.pdf">privacy overeenkomst</a>.
 					<input type="checkbox">
 					<span class="checkmark"></span>
 				</label>
-			</li>
-
-			<li class="kosten">
-				Prijs
-				<ul>
-					<li class="hide Pdocenten">
-						<span class="aantal">5</span>
-						<span class="item">docenten</span>
-						<span class="prijs">€5</span>
-					</li>
-					<li class="hide Pleerlingen">
-						<span class="aantal">5</span>
-						<span class="item">docenten</span>
-						<span class="prijs">€5</span>
-					</li>
-				</ul>
 			</li>
 
 			<li>

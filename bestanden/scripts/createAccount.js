@@ -57,19 +57,28 @@ $(document).ready(function(){
 			$('.Pdocenten').removeClass('hide');
 			$('.Pdocenten').children('.aantal').text(docenten);
 			$('.Pdocenten').children('.prijs').text('€' + Pdocenten);
+		} else {
+			$('.Pdocenten').addClass('hide');
 		}
 
 		if(leerlingen!=0){
 			$('.Pleerlingen').removeClass('hide');
 			$('.Pleerlingen').children('.aantal').text(leerlingen);
 			$('.Pleerlingen').children('.prijs').text('€' + Pleerlingen);
+		} else {
+			$('.Pleerlingen').addClass('hide');
 		}
 
-
+		if(Ptotaal!=0){
+			$('.totaal').removeClass('hide');
+			$('.totaal').children('.Tprijs').text('Totaal prijs: €' + Ptotaal);
+		} else {
+			$('.totaal').addClass('hide');
+		}
 
 	}
 
-	$('.Ndocenten').change(function(){
+	$('.Ndocenten').keyup(function(){
 		updatePrice();
 	});
 

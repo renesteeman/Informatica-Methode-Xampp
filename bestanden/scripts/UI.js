@@ -248,7 +248,7 @@ $(document).ready(function(){
 		var namen = [];
 
 		for(i=0; i<checkBoxesQuestion.length;i++){
-			var naam = $(this).find('input[type=checkbox]:checked').eq(i).parent().text();
+			var naam = checkBoxesQuestion.eq(i).parent().text();
 			naam = $.trim(naam);
 			namen.push(naam);
 		}
@@ -262,7 +262,6 @@ $(document).ready(function(){
 
 		jqXHR.done(function(msg) {
 			alert(msg);
-			location.reload();
 		});
 
 		jqXHR.fail(function( jqXHR) {

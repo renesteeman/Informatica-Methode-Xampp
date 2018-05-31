@@ -77,7 +77,12 @@
 			<li class="kosten">
 				Prijs
 				<ul>
-					<li>
+					<li class="hide Pdocenten">
+						<span class="aantal">5</span>
+						<span class="item">docenten</span>
+						<span class="prijs">€5</span>
+					</li>
+					<li class="hide Pleerlingen">
 						<span class="aantal">5</span>
 						<span class="item">docenten</span>
 						<span class="prijs">€5</span>

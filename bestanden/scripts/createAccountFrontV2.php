@@ -2,7 +2,9 @@
 	include('../components/headerGeneral.php');
 ?>
 
-<link rel="stylesheet" href="../css/edit.min.css">
+<link rel="stylesheet" href="../css/create.min.css">
+<link rel="stylesheet" href="../css/requestAccounts.min.css">
+<script src="createAccount.js"></script>
 
 <head>
 	<meta name="description" content="De bestelpagina voor nieuwe accounts op Inforca." />
@@ -25,7 +27,7 @@
 	</div>
 
 	<div class="main">
-		<form class="changeClass" method="post" action="../scripts/updateAccount.php" accept-charset="UTF-8">
+		<form class="requestAccounts" method="post" action="../scripts/requestAccounts.php" accept-charset="UTF-8">
 
 		<ul>
 			<li>
@@ -50,26 +52,27 @@
 				<div class="list">
 					<ul>
 						<li>
-							<span class="list-item">naam</span>
+							<span class="list-item klas">'+ klas +'</span>
+							<span class="list-item leerlingen">'+ leerlingen +'</span>
 							<span class="delete">x</span>
 						</li>
 					</ul>
 				</div>
 
 			<div class="addLid add-item">
-				<span class="addLid add-item">
-					<input type="text" placeholder="klas" name="NGleden" maxlength="50" autocomplete="off" class="medium">
+				<span class="addKlas add-item">
+					<input type="text" placeholder="klas" name="Aklas" maxlength="50" autocomplete="off" class="medium">
 				</span>
-				<span class="addLid add-item">
-					<input type="text" placeholder="aantal leerlingen" name="NGleden" maxlength="50" autocomplete="off" class="small">
+				<span class="addLeerlingen add-item">
+					<input type="text" placeholder="aantal leerlingen" name="ANleerlingen" maxlength="50" autocomplete="off" class="small">
 				</span>
-				<span class="plus-sign addLidButton">+</span>
+				<span class="plus-sign addklasButton">+</span>
 			</div>
 
 			</li>
 
 			<li>
-				<input type="submit" value="update">
+				<input type="submit" value="verzend">
 			</li>
 		</ul>
 

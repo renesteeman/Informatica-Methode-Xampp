@@ -65,11 +65,11 @@ $(document).ready(function(){
 			url: "requestAccounts.php",
 			data: {schoolnaam:schoolnaam, telefoonnummer:telefoonnummer, email:email, Ndocenten:Ndocenten, extraInfo:extraInfo, klassen:klassen, akkoord:akkoord}
 		});
-		jqXHR.done(function( msg ) {
+		jqXHR.done(function(msg){
 			alert(msg);
 			//window.location.href = '../pages/overview.php';
 		});
-		jqXHR.fail(function( jqXHR, textStatus ) {
+		jqXHR.fail(function(jqXHR, textStatus) {
 		  alert( "Request failed: " + textStatus );
 	  });
 	});

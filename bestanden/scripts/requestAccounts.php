@@ -90,7 +90,7 @@
 	}
 
 	//echo $schoolnaam." ".$telefoonnummer." ".$email." ".$Ndocenten." ".$extraInfo." ".$akkoord." ";
-	print_r($klassen);
+	//print_r($klassen);
 
 	$creation_date = date("Y-m-d");
 	$expire_date = date('Y-m-d',strtotime(date("Y-m-d", mktime()) . " + 365 day"));
@@ -128,7 +128,6 @@
 
 		//hash password
 		$Hpassword = password_hash($password, PASSWORD_DEFAULT);
-		echo $password;
 
 		//create username
 		$username = $schoolnaam.rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
@@ -137,7 +136,7 @@
 		$sql = mysqli_query($conn, "SELECT username FROM users WHERE username='$username'");
 
 		while(mysqli_num_rows($sql) != 0){
-			$username = rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
+			$username = $schoolnaam.rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
 		}
 
 		$accountDetails = [$username, $password, $Hpassword];
@@ -148,15 +147,21 @@
 	$accountsCreated = 0;
 	$accounts = [];
 
-	for($i=0;$i<count($klassen);$i++){
-		for($j=0;$j<count($klassen[$i]);$j++){
-			$Kleerlingen = $klassen[$i][$j][1];
-			$accountDetails = createAccountDetails();
-			$accounts[] = $accountDetails;
+	if($allSet == 1){
+		for($i=0;$i<count($klassen);$i++){
+			//next class
+			for($j=0;$j<$klassen[$i][1];$j++){
+				//next person
+				$Cklas = $klassen[$i][0];
+				$accountDetails = createAccountDetails();
+				$accounts[$Cklas][] = $accountDetails;
+				$accountsCreated++;
+			}
 		}
 	}
 
-	print_r($accounts);
+	echo $accountsCreated." account(s) aangemaakt voor ".$schoolnaam;
+
 
 
 
@@ -165,20 +170,8 @@
 
 	//check if all info was set
 	/*
-	if($allSet == 1){
-		for ($j = 0; $j<$accountsToCreate; $j++){
-
-			if($naam==''){
-				$naam = $username;
-			}
-
-			//add the username and password (unhashed) into an array to display when the accounts are added
-			array_push($usernames, $username);
-			array_push($passwords, $password);
 
 
-
-			echo 'naam ='.$naam;
 
 			//insert account into DB
 			//$sql = "INSERT INTO users (username, password, school, functie, creation_date, expire_date, klas, naam) VALUES ('$username', '$password' , '$school', '$functie', '$creation_date', '$expire_date', '$klas', '$naam')";

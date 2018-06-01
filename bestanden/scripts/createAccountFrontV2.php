@@ -111,6 +111,9 @@
 			<li>
 				<span class="info">Let op! Alle accounts zijn maar 1 jaar geldig, hierna moet u ze verlengen.</span>
 			</li>
+			<li>
+				<span class="info">Let op! Het aanmaken van de accounts kan even duren, wacht totdat u op deze pagina een bevestiging te zien krijgt waarin staat dat de accounts aangemaakt zijn voordat u deze pagina afsluit. Het zou maximaal enkele minuten mogen duren, als het langer duurt kunt bellen met 0622155216.</span>
+			</li>
 
 			<li>
 				<input type="submit" value="verzend">

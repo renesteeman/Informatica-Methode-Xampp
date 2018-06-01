@@ -32,19 +32,19 @@
 		<ul>
 			<li>
 				Schoolnaam</br>
-				<input type="text" class="schoolnaam" name="schoolnaam"/>
+				<input type="text" class="schoolnaam" name="schoolnaam" required/>
 			</li>
 			<li>
 				Telefoonnummer</br>
-				<input class="telefoonnummer" name="telefoonnummer" type="tel"/>
+				<input class="telefoonnummer" name="telefoonnummer" type="tel" required/>
 			</li>
 			<li>
 				Email</br>
-				<input class="email" name="email" type="email"/>
+				<input class="email" name="email" type="email" required/>
 			</li>
 			<li>
 				Aantal docenten</br>
-				<input class="Ndocenten" name="Ndocenten" type="number" min="0"/>
+				<input class="Ndocenten" name="Ndocenten" type="number" min="0" required/>
 			</li>
 			<li>
 
@@ -98,7 +98,7 @@
 
 			<li class="akkoord">
 				<label class="container">
-					Ik ga akkoord met de <a href="../downloads/privacyBeleid.pdf">voorwaarden</a> en de <a href="../downloads/voorwaarden.pdf">privacy overeenkomst</a>.
+					Ik ga akkoord met de <a href="../downloads/privacyBeleid.pdf">voorwaarden</a> en de <a href="../downloads/voorwaarden.pdf">privacy overeenkomst</a> en al mijn ingevoerde gegevens zijn correct.
 					<input type="checkbox" class="checkbox">
 					<span class="checkmark"></span>
 				</label>

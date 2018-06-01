@@ -48,8 +48,6 @@ $(document).ready(function(){
 
 		var klassen = [];
 		var klasElementen = $('.klas');
-
-		var leerlingen = [];
 		var leerlingElementen = $('.leerlingen');
 
 		for(var i=0; i<klasElementen.length; i++){
@@ -61,14 +59,11 @@ $(document).ready(function(){
 			klassen.push(push);
 		}
 
-
-
 		//Give php the info it needs (via AJAX)
-		/*
 		jqXHR = $.ajax({
 			method: "POST",
 			url: "requestAccounts.php",
-			data: {}
+			data: {schoolnaam:schoolnaam, telefoonnummer:telefoonnummer, email:email, Ndocenten:Ndocenten, extraInfo:extraInfo, klassen:klassen, akkoord:akkoord}
 		});
 		jqXHR.done(function( msg ) {
 			alert(msg);
@@ -76,7 +71,7 @@ $(document).ready(function(){
 		});
 		jqXHR.fail(function( jqXHR, textStatus ) {
 		  alert( "Request failed: " + textStatus );
-	  }); */
+	  });
 	});
 
 	function updatePrice(){

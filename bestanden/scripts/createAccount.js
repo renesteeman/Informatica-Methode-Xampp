@@ -37,6 +37,46 @@ $(document).ready(function(){
 
 	$('.requestAccounts').submit(function(event){
 		event.preventDefault();
+
+		//get data to send via AJAX
+		var schoolnaam = $('.schoolnaam').val();
+		var telefoonnummer = $('.telefoonnummer').val();
+		var email = $('.email').val();
+		var Ndocenten = $('.Ndocenten').val();
+		var extraInfo = $('.extraInfo').val();
+		var akkoord = $('.checkbox').is(':checked');
+
+		var klassen = [];
+		var klasElementen = $('.klas');
+
+		var leerlingen = [];
+		var leerlingElementen = $('.leerlingen');
+
+		for(var i=0; i<klasElementen.length; i++){
+			var klas = klasElementen.eq(i).text();
+			var leerlingen = leerlingElementen.eq(i).text();
+
+			var push = [klas, leerlingen];
+
+			klassen.push(push);
+		}
+
+
+
+		//Give php the info it needs (via AJAX)
+		/*
+		jqXHR = $.ajax({
+			method: "POST",
+			url: "requestAccounts.php",
+			data: {}
+		});
+		jqXHR.done(function( msg ) {
+			alert(msg);
+			//window.location.href = '../pages/overview.php';
+		});
+		jqXHR.fail(function( jqXHR, textStatus ) {
+		  alert( "Request failed: " + textStatus );
+	  }); */
 	});
 
 	function updatePrice(){
@@ -53,23 +93,25 @@ $(document).ready(function(){
 		var Pleerlingen = leerlingen * 15;
 		var Ptotaal = Pdocenten + Pleerlingen;
 
-		if(docenten!=0){
+		if(docenten>0){
 			$('.Pdocenten').removeClass('hide');
 			$('.Pdocenten').children('.aantal').text(docenten);
 			$('.Pdocenten').children('.prijs').text('€' + Pdocenten);
 		} else {
 			$('.Pdocenten').addClass('hide');
+			Pdocenten = 0;
 		}
 
-		if(leerlingen!=0){
+		if(leerlingen>0){
 			$('.Pleerlingen').removeClass('hide');
 			$('.Pleerlingen').children('.aantal').text(leerlingen);
 			$('.Pleerlingen').children('.prijs').text('€' + Pleerlingen);
 		} else {
 			$('.Pleerlingen').addClass('hide');
+			Pleerlingen = 0;
 		}
 
-		if(Ptotaal!=0){
+		if(Ptotaal>0){
 			$('.totaal').removeClass('hide');
 			$('.totaal').children('.Tprijs').text('Totaal prijs: €' + Ptotaal);
 		} else {

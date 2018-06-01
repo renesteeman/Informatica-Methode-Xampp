@@ -36,15 +36,15 @@
 			</li>
 			<li>
 				Telefoonnummer</br>
-				<input type="text" class="telefoonnummer" name="telefoonnummer"/>
+				<input class="telefoonnummer" name="telefoonnummer" type="tel"/>
 			</li>
 			<li>
 				Email</br>
-				<input type="text" class="email" name="email"/>
+				<input class="email" name="email" type="email"/>
 			</li>
 			<li>
 				Aantal docenten</br>
-				<input type="text" class="Ndocenten" name="Ndocenten"/>
+				<input class="Ndocenten" name="Ndocenten" type="number" min="0"/>
 			</li>
 			<li>
 
@@ -68,7 +68,7 @@
 			</li>
 
 			<li class="kosten">
-				Prijs
+				Overzicht
 				<ul>
 					<li>
 						<span class="aantal">aantal</span>
@@ -91,12 +91,21 @@
 				</ul>
 			</li>
 
+			<li>
+				<span>Opmerkingen en extra informatie</span>
+				<textarea class="extraInfo"></textarea>
+			</li>
+
 			<li class="akkoord">
 				<label class="container">
 					Ik ga akkoord met de <a href="../downloads/privacyBeleid.pdf">voorwaarden</a> en de <a href="../downloads/voorwaarden.pdf">privacy overeenkomst</a>.
-					<input type="checkbox">
+					<input type="checkbox" class="checkbox">
 					<span class="checkmark"></span>
 				</label>
+			</li>
+
+			<li>
+				<span class="info">Als u op verzenden klikt worden voor u de accounts aangemaakt en u ontvangt een vacature van uw bestelling die u binnen 14 dagen dient te betalen. Voor meer informatie kunt u bellen met 0622155216, hier zijn geen extra kosten aan verbonden.</span>
 			</li>
 
 			<li>

@@ -109,6 +109,10 @@
 			</li>
 
 			<li>
+				<span class="info">Let op! Alle accounts zijn maar 1 jaar geldig, hierna moet u ze verlengen.</span>
+			</li>
+
+			<li>
 				<input type="submit" value="verzend">
 			</li>
 		</ul>

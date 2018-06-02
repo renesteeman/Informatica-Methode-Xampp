@@ -162,17 +162,36 @@
 
 	echo $accountsCreated." account(s) aangemaakt voor ".$schoolnaam;
 
+	//print_r($accounts);
 
+	//send mail
+	$msg = "Hallo, uw de gegevens voor uw accounts zijn: ";
 
+	$klasnamen = array_keys($accounts);
+	print_r($accounts);
+	for($i=0; $i<count($accounts); $i++){
+		$Cklas = $klasnamen[$i];
+		for($j=0; $j<count($accounts[$Cklas]); $j++){
+			$Caccount = $accounts[$Cklas][$j];
+			$Cusername = $Caccount[0];
+			$Cpassword = $Caccount[1];
+		}
 
+	}
 
+	$subject = "Nieuw wachtwoord";
+
+	$header = "From: noreply@inforca.nl";
+
+	/*if (mail($email, $subject, $msg, $header)) {
+		echo("<p>Email verzonden</p>");
+	} else {
+		echo("<p>Email delivery failed…</p>");
+	}*/
 
 
 	//check if all info was set
 	/*
-
-
-
 			//insert account into DB
 			//$sql = "INSERT INTO users (username, password, school, functie, creation_date, expire_date, klas, naam) VALUES ('$username', '$password' , '$school', '$functie', '$creation_date', '$expire_date', '$klas', '$naam')";
 
@@ -184,11 +203,6 @@
 
 		}
 
-		echo $accountsCreated." account(s) created for ".$school." ".$klas."</br>";
-
-		for ($k=0; $k<count($usernames);$k++){
-			echo "Username = ".$usernames[$k]." Password = ".$passwords[$k]."</br>";
-		}
 	}*/
 
 	$conn->close();

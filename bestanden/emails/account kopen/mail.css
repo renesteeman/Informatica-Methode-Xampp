@@ -18,11 +18,11 @@ body{
 	margin: 0;
 }
 
-.docenten > div > ul > li:nth-child(2n){
+.docenten > ul > li:nth-child(2n){
 	background-color: #ccc;
 }
 
-.leerlingen > div > ul > li > div > ul > li:nth-child(2n){
+.leerlingen > div > ul > li > ul > li:nth-child(2n){
 	background-color: #ccc;
 }
 

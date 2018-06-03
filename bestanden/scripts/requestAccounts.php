@@ -13,7 +13,7 @@
 
 	$url = 'https://www.google.com/recaptcha/api/siteverify';
 	$data = array(
-		'secret' => '6Lc_J1MUAAAAAKHwycutWnJyO_VHtjF0C5Ty0_4F',
+		'secret' => 'NOPE',
 		'response' => $_POST["response"]
 	);
 	$query = http_build_query($data);

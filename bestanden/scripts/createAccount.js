@@ -38,6 +38,8 @@ $(document).ready(function(){
 	$('.requestAccounts').submit(function(event){
 		event.preventDefault();
 
+		alert('De accounts worden aangemaakt, sluit deze pagina niet.');
+
 		//get data to send via AJAX
 		var schoolnaam = $('.schoolnaam').val();
 		var telefoonnummer = $('.telefoonnummer').val();
@@ -59,11 +61,13 @@ $(document).ready(function(){
 			klassen.push(push);
 		}
 
+		var response = grecaptcha.getResponse();
+
 		//Give php the info it needs (via AJAX)
 		jqXHR = $.ajax({
 			method: "POST",
 			url: "requestAccounts.php",
-			data: {schoolnaam:schoolnaam, telefoonnummer:telefoonnummer, email:email, Ndocenten:Ndocenten, extraInfo:extraInfo, klassen:klassen, akkoord:akkoord}
+			data: {schoolnaam:schoolnaam, telefoonnummer:telefoonnummer, email:email, Ndocenten:Ndocenten, extraInfo:extraInfo, klassen:klassen, akkoord:akkoord, response: response}
 		});
 		jqXHR.done(function(msg){
 			alert(msg);

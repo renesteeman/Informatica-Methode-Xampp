@@ -2,14 +2,15 @@
 	include('../components/headerGeneral.php');
 ?>
 
-<link rel="stylesheet" href="../css/create.min.css">
-<link rel="stylesheet" href="../css/requestAccounts.min.css">
-<script src="createAccount.js"></script>
-
 <head>
 	<meta name="description" content="De bestelpagina voor nieuwe accounts op Inforca." />
 	<meta name="keywords" content="Informatica, lesmethode, betaalbaar, duidelijk" />
 	<meta name="author" content="René Steeman" />
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+
+	<link rel="stylesheet" href="../css/create.min.css">
+	<link rel="stylesheet" href="../css/requestAccounts.min.css">
+	<script src="createAccount.js"></script>
 </head>
 
 <body>
@@ -102,6 +103,10 @@
 					<input type="checkbox" class="checkbox">
 					<span class="checkmark"></span>
 				</label>
+			</li>
+
+			<li>
+				<div class="g-recaptcha" data-sitekey="6Lc_J1MUAAAAAJlHeuG3e9tg0zTGAvA7bC2dgSzq"></div>
 			</li>
 
 			<li>

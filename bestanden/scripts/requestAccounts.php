@@ -172,6 +172,7 @@
 
 	//send mail
 	$msg = "
+	<!DOCTYPE html>
 	<html>
 	<body style='margin: 0;'>
 		<div class='email-background' style='background-color: #eee;font-family: roboto, sans-serif;height: 100%;width: 100%;padding: 2em;'>
@@ -181,21 +182,37 @@
 			</div>
 
 			<div class='email-container'>
-				<h2>Dit zijn de login gegevens voor uw account(s)</h2>
+				<h2>Dit zijn de login gegevens voor uw account(s). Het factuur zult u spoedig ontvangen.</h2>
 
 				<div class='docenten'>
 					<h3>
 						Docenten:
 					</h3>
-					<ul style='list-style: none;'>
-						<li>
-							<span class='username' style='display: inline-block;width: 30%;overflow-x: auto;'>naam1</span>
-							<span class='password' style='display: inline-block;width: 30%;overflow-x: auto;'>psw1</span>
-						</li>
-						<li style='background-color: #ccc;'>
-							<span class='username' style='display: inline-block;width: 30%;overflow-x: auto;'>naam2</span>
-							<span class='password' style='display: inline-block;width: 30%;overflow-x: auto;'>psw2</span>
-						</li>
+					<ul style='list-style: none;'>";
+
+					for($i=0; $i<count($accounts['docenten']); $i++){
+						$Caccount = $accounts['docenten'][$i];
+						$Cusername = $Caccount[0];
+						$Cpassword = $Caccount[1];
+
+						if($i%2 == 0){
+							$msg.=
+							"<li>
+								<span class='username' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cusername."</span>
+								<span class='password' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cpassword."</span>
+							</li>
+							";
+						} else {
+							$msg.=
+							"<li>
+								<span class='username' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cusername."</span>
+								<span class='password' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cpassword."</span>
+							</li>
+							";
+						}
+					}
+
+					$msg.= "
 					</ul>
 
 				</div>
@@ -205,11 +222,12 @@
 					<div class='klassen'>
 						<ul style='list-style: none;'>";
 
-						$klasnamen = array_keys($accounts);
+
 						//print_r($accounts);
-						for($i=0; $i<count($accounts); $i++){
+						$klasnamen = array_keys($accounts);
+						for($i=1; $i<count($accounts); $i++){
 							$Cklas = $klasnamen[$i];
-							echo "
+							$msg.= "
 							<li>
 								<h4>".$Cklas."</h4>
 								<ul style='list-style: none;'>
@@ -221,22 +239,33 @@
 								$Cusername = $Caccount[0];
 								$Cpassword = $Caccount[1];
 
-								echo "
-								<li>
-									<span class='username' style='display: inline-block;width: 30%;overflow-x: auto;'>".$Cusername."</span>
-									<span class='password' style='display: inline-block;width: 30%;overflow-x: auto;'>".$Cpassword."</span>
-								</li>
-								";
+
+
+								if($j%2 == 0){
+									$msg.=
+									"<li>
+										<span class='username' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cusername."</span>
+										<span class='password' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cpassword."</span>
+									</li>
+									";
+								} else {
+									$msg.=
+									"<li>
+										<span class='username' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cusername."</span>
+										<span class='password' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cpassword."</span>
+									</li>
+									";
+								}
 							}
 
-							echo "
+							$msg.= "
 								</ul>
 							</li>
 							";
 
 						}
 
-						echo"
+						$msg.="
 						</ul>
 					</div>
 				</div>
@@ -246,17 +275,22 @@
 	</html>
 	";
 
-	echo $msg;
+	//echo $msg;
 
-	$subject = "Nieuw wachtwoord";
+	$subject = "Uw accounts";
 
-	$header = "From: noreply@inforca.nl";
+	$headers[] = "From: noreply@inforca.nl";
+	$headers[] = 'MIME-Version: 1.0';
+	$headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
-	/*if (mail($email, $subject, $msg, $header)) {
-		echo("<p>Email verzonden</p>");
+	$to = $email.", koffieandcode@gmail.com";
+
+	if (mail($to, $subject, $msg, implode("\r\n", $headers))) {
+		echo("\nEmail verzonden\n");
 	} else {
-		echo("<p>Email delivery failed…</p>");
-	}*/
+		echo("\nEmail delivery failed…\n");
+	}
+
 
 
 	//check if all info was set

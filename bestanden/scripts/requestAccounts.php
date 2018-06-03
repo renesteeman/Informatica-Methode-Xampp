@@ -148,6 +148,12 @@
 	$accounts = [];
 
 	if($allSet == 1){
+		for($i=0;$i<$Ndocenten;$i++){
+			$accountDetails = createAccountDetails();
+			$accounts['docenten'][] = $accountDetails;
+			$accountsCreated++;
+		}
+
 		for($i=0;$i<count($klassen);$i++){
 			//next class
 			for($j=0;$j<$klassen[$i][1];$j++){
@@ -162,22 +168,85 @@
 
 	echo $accountsCreated." account(s) aangemaakt voor ".$schoolnaam;
 
-	//print_r($accounts);
+	//print_r($accounts['docenten']);
 
 	//send mail
-	$msg = "Hallo, uw de gegevens voor uw accounts zijn: ";
+	$msg = "
+	<html>
+	<body style='margin: 0;'>
+		<div class='email-background' style='background-color: #eee;font-family: roboto, sans-serif;height: 100%;width: 100%;padding: 2em;'>
 
-	$klasnamen = array_keys($accounts);
-	print_r($accounts);
-	for($i=0; $i<count($accounts); $i++){
-		$Cklas = $klasnamen[$i];
-		for($j=0; $j<count($accounts[$Cklas]); $j++){
-			$Caccount = $accounts[$Cklas][$j];
-			$Cusername = $Caccount[0];
-			$Cpassword = $Caccount[1];
-		}
+			<div class='pre-header'>
+				<h1 style='margin-top: 0;'>Bedankt voor het aanvragen van uw accounts voor Inforca!</h1>
+			</div>
 
-	}
+			<div class='email-container'>
+				<h2>Dit zijn de login gegevens voor uw account(s)</h2>
+
+				<div class='docenten'>
+					<h3>
+						Docenten:
+					</h3>
+					<ul style='list-style: none;'>
+						<li>
+							<span class='username' style='display: inline-block;width: 30%;overflow-x: auto;'>naam1</span>
+							<span class='password' style='display: inline-block;width: 30%;overflow-x: auto;'>psw1</span>
+						</li>
+						<li style='background-color: #ccc;'>
+							<span class='username' style='display: inline-block;width: 30%;overflow-x: auto;'>naam2</span>
+							<span class='password' style='display: inline-block;width: 30%;overflow-x: auto;'>psw2</span>
+						</li>
+					</ul>
+
+				</div>
+
+				<div class='leerlingen'>
+					<h3>Leerlingen:</h3>
+					<div class='klassen'>
+						<ul style='list-style: none;'>";
+
+						$klasnamen = array_keys($accounts);
+						//print_r($accounts);
+						for($i=0; $i<count($accounts); $i++){
+							$Cklas = $klasnamen[$i];
+							echo "
+							<li>
+								<h4>".$Cklas."</h4>
+								<ul style='list-style: none;'>
+							";
+
+
+							for($j=0; $j<count($accounts[$Cklas]); $j++){
+								$Caccount = $accounts[$Cklas][$j];
+								$Cusername = $Caccount[0];
+								$Cpassword = $Caccount[1];
+
+								echo "
+								<li>
+									<span class='username' style='display: inline-block;width: 30%;overflow-x: auto;'>".$Cusername."</span>
+									<span class='password' style='display: inline-block;width: 30%;overflow-x: auto;'>".$Cpassword."</span>
+								</li>
+								";
+							}
+
+							echo "
+								</ul>
+							</li>
+							";
+
+						}
+
+						echo"
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	</html>
+	";
+
+	echo $msg;
 
 	$subject = "Nieuw wachtwoord";
 

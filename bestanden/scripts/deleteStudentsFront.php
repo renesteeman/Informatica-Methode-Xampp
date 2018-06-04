@@ -101,6 +101,10 @@
 				</div>
 			</li>
 			<li>
+				Uw wachtwoord:</br>
+				<input type="password" placeholder="Password" name="password" maxlength="50" required>
+			</li>
+			<li>
 				<input type="submit" value="verwijder">
 			</li>
 		</ul>

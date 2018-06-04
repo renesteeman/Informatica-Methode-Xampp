@@ -22,6 +22,8 @@ $(document).ready(function(){
 	$('.deleteStudents').submit(function(event){
 		event.preventDefault();
 
+		var password = $("input[name='password']").val();
+
 		var checkBoxesQuestion = $(this).find('input[type=checkbox]:checked');
 		var namen = [];
 
@@ -36,7 +38,7 @@ $(document).ready(function(){
 			jqXHR = $.ajax({
 				method: "POST",
 				url: '../scripts/deleteStudentsAjax.php',
-				data: {namen: namen}
+				data: {namen: namen, password: password}
 			});
 
 			jqXHR.done(function(msg) {

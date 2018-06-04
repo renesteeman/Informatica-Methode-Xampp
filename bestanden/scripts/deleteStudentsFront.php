@@ -3,6 +3,7 @@
 ?>
 
 <link rel="stylesheet" href="../css/edit.min.css">
+<script src="deleteStudents.js"></script>
 
 <head>
 	<meta name="description" content="Een informatica methode met structuur en keuze. Voor docenten is er een duidelijk overzicht en leerlingen kunnen zich specialiseren in wat ze interessant vinden, zonder de basis te missen." />
@@ -14,18 +15,18 @@
 
 	<div class="title">
 		<h2>
-			Leerlingen informatie wijzigen
+			Account(s) van leerling(en) verwijderen
 		</h2>
 	</div>
 
 	<div class="bar">
 		<h3>
-			Klas wijzigen
+			Account(s) van leerling(en) verwijderen
 		</h3>
 	</div>
 
 	<div class="main">
-		<form class="changeClass" method="post" accept-charset="UTF-8">
+		<form class="deleteStudents" method="post" accept-charset="UTF-8">
 
 			<ul>
 

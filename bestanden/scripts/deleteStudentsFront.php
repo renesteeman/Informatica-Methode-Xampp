@@ -100,11 +100,7 @@
 				</div>
 			</li>
 			<li>
-				Nieuwe klas:</br>
-				<input type="text" class="Nclass" name="Nclass"/>
-			</li>
-			<li>
-				<input type="submit" value="update">
+				<input type="submit" value="verwijder">
 			</li>
 		</ul>
 	</form>

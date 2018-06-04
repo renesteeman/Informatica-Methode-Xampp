@@ -262,6 +262,21 @@ $(document).ready(function(){
 
 		jqXHR.done(function(msg) {
 			alert(msg);
+			var klas = $('.klasSelector option:selected').val();
+
+			jqXHR = $.ajax({
+				method: "POST",
+				url: '../scripts/changeClassAjaxStudents.php',
+				data: {klas: klas}
+			});
+
+			jqXHR.done(function(msg) {
+				$('.leerlingSelector').html(msg);
+			});
+
+			jqXHR.fail(function( jqXHR) {
+			  alert("AJAX failed, contact admin");
+			});
 		});
 
 		jqXHR.fail(function( jqXHR) {

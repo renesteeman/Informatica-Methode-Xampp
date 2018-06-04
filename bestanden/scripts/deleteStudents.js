@@ -6,7 +6,7 @@ $(document).ready(function(){
 
 		jqXHR = $.ajax({
 			method: "POST",
-			url: '../scripts/changeClassAjaxStudents.php',
+			url: '../scripts/showStudentsAjax.php',
 			data: {klas: klas}
 		});
 
@@ -19,10 +19,9 @@ $(document).ready(function(){
 		});
 	})
 
-	$('.changeClass').submit(function(event){
+	$('.deleteStudents').submit(function(event){
 		event.preventDefault();
 
-		var Nklas = $('input[name=Nclass]').val();
 		var checkBoxesQuestion = $(this).find('input[type=checkbox]:checked');
 		var namen = [];
 
@@ -32,35 +31,40 @@ $(document).ready(function(){
 			namen.push(naam);
 		}
 
-		//actually edit class
-		jqXHR = $.ajax({
-			method: "POST",
-			url: '../scripts/changeClassAjax.php',
-			data: {namen: namen, Nklas: Nklas}
-		});
-
-		jqXHR.done(function(msg) {
-			alert(msg);
-			var klas = $('.klasSelector option:selected').val();
-
+		//actually delete accounts
+		if (confirm("Weet u zeker dat u deze accounts wilt verwijderen? U kunt deze actie niet terugdraaien.")){
 			jqXHR = $.ajax({
 				method: "POST",
-				url: '../scripts/changeClassAjaxStudents.php',
-				data: {klas: klas}
+				url: '../scripts/deleteStudentsAjax.php',
+				data: {namen: namen}
 			});
 
 			jqXHR.done(function(msg) {
-				$('.leerlingSelector').html(msg);
+				alert(msg);
+				var klas = $('.klasSelector option:selected').val();
+
+				jqXHR = $.ajax({
+					method: "POST",
+					url: '../scripts/showStudentsAjax.php',
+					data: {klas: klas}
+				});
+
+				jqXHR.done(function(msg) {
+					$('.leerlingSelector').html(msg);
+				});
+
+				jqXHR.fail(function( jqXHR) {
+				  alert("AJAX failed, contact admin");
+				});
+
 			});
 
 			jqXHR.fail(function( jqXHR) {
 			  alert("AJAX failed, contact admin");
 			});
-		});
+		} else {
+			alert("Het verwijderen van de accounts is geanuleerd.");
+		}
 
-		jqXHR.fail(function( jqXHR) {
-		  alert("AJAX failed, contact admin");
-		});
 	});
-
 });

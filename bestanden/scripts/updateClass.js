@@ -6,7 +6,7 @@ $(document).ready(function(){
 
 		jqXHR = $.ajax({
 			method: "POST",
-			url: '../scripts/changeClassAjaxStudents.php',
+			url: '../scripts/showStudentsAjax.php',
 			data: {klas: klas}
 		});
 
@@ -45,7 +45,7 @@ $(document).ready(function(){
 
 			jqXHR = $.ajax({
 				method: "POST",
-				url: '../scripts/changeClassAjaxStudents.php',
+				url: '../scripts/showStudentsAjax.php',
 				data: {klas: klas}
 			});
 
@@ -61,6 +61,6 @@ $(document).ready(function(){
 		jqXHR.fail(function( jqXHR) {
 		  alert("AJAX failed, contact admin");
 		});
-	});
 
+	});
 });

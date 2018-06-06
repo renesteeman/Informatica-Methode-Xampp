@@ -110,7 +110,7 @@
 		}
 
 		$creation_date = date("Y-m-d");
-		$expire_date = date('Y-m-d',strtotime(date("Y-m-d", mktime()) . " + 365 day"));
+		$expire_date = date('Y-m-d',strtotime(date("Y-m-d", mktime()) . " +1 year"));
 
 		//needed to create a password
 		$letters = array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");

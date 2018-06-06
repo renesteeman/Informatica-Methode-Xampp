@@ -1,7 +1,7 @@
 <?php
 	include('DB_connect.php');
 
-	$sql = "SELECT school, functie FROM users";
+	$sql = "SELECT school, functie, expire_date FROM users";
 
 	$scholen = [];
 
@@ -11,14 +11,25 @@
 
 		$school = $row['school'];
 		$functie = $row['functie'];
+		$expire_date = $row['expire_date'];
 
-		if(array_key_exists($school, $scholen)){
-			if(array_key_exists($functie, $scholen[$school])){
-				if($functie == 'docent'){
-					$scholen[$school]['docent']++;
-				} elseif ($functie == 'leerling') {
-					$scholen[$school]['leerling']++;
+		//if the account hasn't expired
+		if($expire_date>date("Y-m-d")){
+			if(array_key_exists($school, $scholen)){
+				if(array_key_exists($functie, $scholen[$school])){
+					if($functie == 'docent'){
+						$scholen[$school]['docent']++;
+					} elseif ($functie == 'leerling') {
+						$scholen[$school]['leerling']++;
+					}
+				} else {
+					if($functie == 'docent'){
+						$scholen[$school]['docent'] = 1;
+					} elseif ($functie == 'leerling') {
+						$scholen[$school]['leerling'] = 1;
+					}
 				}
+
 			} else {
 				if($functie == 'docent'){
 					$scholen[$school]['docent'] = 1;
@@ -26,17 +37,12 @@
 					$scholen[$school]['leerling'] = 1;
 				}
 			}
-
-		} else {
-			if($functie == 'docent'){
-				$scholen[$school]['docent'] = 1;
-			} elseif ($functie == 'leerling') {
-				$scholen[$school]['leerling'] = 1;
-			}
 		}
 	}
 
 	$schoolnamen = array_keys($scholen);
+
+	echo "<h1>Alle geldige accounts per school</h1>";
 
 	for($i=0; $i<count($schoolnamen); $i++){
 		$Cschoolnaam = $schoolnamen[$i];

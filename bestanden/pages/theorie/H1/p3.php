@@ -52,8 +52,11 @@
 			<span class="theorieTitle">Gates</span>
 
 			‘Gates’ (= poortjes) zijn kleine schakelingen. De eenvoudigste zijn AND en OR.
-			Een gate vergelijkt twee waarden om een nieuwe te creëren (logica, komt in het volgende hoofdstuk). Bij AND moeten beide waarden 1 zijn, bij OR minimaal 1. Dit kan door stroompjes door een circuit te sturen. Als (genoeg) schakelingen in het circuit dicht zijn, dan is er een gesloten stroomkring, dus 1. Wanneer er geen sprake is van een gesloten stroomkring spreken we van 0.
-			Je zou het elektrisch circuit als volgt kunnen weergeven:
+			in de input van een gate staan twee (dus twee keer een 1 of 0) Een gate vergelijkt deze twee bits, en afhankelijk van de input creërt de gate een output bestaande uit één bit (dus één 1 of 0) (logica, komt in het volgende hoofdstuk).
+			bij AND is de output 1 als de twee bits in de input dezelfde waarde hebben(in dit geval betekent 1 dat er stroom is in het circuit).
+			daarom ook de naam 'AND'. bij OR moet minimaal een van de twee bits in de input 1 zijn om de output 1 uit te krijgen. maar twee keer 1 geeft ook de output 1. dus alleen als de output twee keer 0 is zal de output bij een OR gate 0 zijn.
+			als je deze poorten in een stroom circuit gebruikt, dan geld dat wanneer de output 1 is de kring gesloten is (en er dus wel stroom kan circuleren), en bij 0 de kring open is (er dus geen stroom kan circuleren.)
+			Je zou de twee poorten in een elektrisch circuit kunnen gebruiken door poorten in verschillende manieren in het circuit te plaatsen, dit ziet er als volgt uit:
 			AND
 
 			<img src="./afbeeldingen/AND.svg" class="theorieImage" />

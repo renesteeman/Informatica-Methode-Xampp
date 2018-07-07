@@ -50,15 +50,17 @@
 
 		<div class="theorie-content">
 			<p>
-				De computer kan taken uitvoeren door een grote reeks van instructies uit te voeren. Deze instructies worden geschreven in een programmeertaal die dan word vertaald naar machinetaal (binair) die de computer kan begrijpen. Hoe je zelf code kunt schrijven leer je in een later hoofdstuk.
+				De computer kan taken uitvoeren door een grote reeks van instructies uit te voeren. Deze instructies worden geschreven in een programmeertaal die dan word vertaald naar machinetaal die de computer kan begrijpen. Hoe je zelf code kunt schrijven leer je in een later hoofdstuk.
 			</p>
 
 			<p>
-				De basis bestaat uit variabelen. Dit zijn getallen of een stuk tekst waar je steeds dingen aan veranderd. Er komt ook veel herhaling in voor. Een voorbeeld is het verversen van het beeldscherm. Dit gebeurt door pixel voor pixel van links naar rechts en van boven naar onder de kleur aan te passen (in RGBA*) en dat vaak 60 keer per seconde!
+				De basis van code bestaat uit variabelen. Dit zijn getallen of een stuk tekst waar je steeds dingen aan veranderd. Verder komt er ook veel herhaling voor, een voorbeeld is het verversen van het beeldscherm. Dit gebeurt door pixel voor pixel van links naar rechts en van boven naar onder de kleur aan te passen (in RGBA*) en dat vaak 60 keer per seconde!
+
+				Door deze variabelen en herhaling te combineren en om te zetten in instructies kan een computer taken uitvoeren.
 			</p>
 
 			<p>
-				Het belangrijkste programma dat op een computer werkt is het OS (Operating System), oftewel besturingssysteem. Dit zorgt ervoor dat het geluid, het bewegen van de cursor op het schermen, en het toetsenbord werkt. het OS doet ook het het beeldscherm verversen, enz. Verder geeft het OS de mogelijkheid om andere programma’s te laten werken die opdrachten kunnen geven aan het besturingssysteem en zorgt dat de rekenkracht goed wordt verdeeld over deze processen. Het werkt dus als een soort tussenlaag tussen de hardware (het fysieke deel) en de software (de code). De belangrijkste taak is misschien wel het registreren van input (data dat de gebruiker aan de computer geeft) en het terug kunnen geven van output, bijvoorbeeld het beeld of geluid. De vorm van de output wordt dan meestal wel weer door andere software geregeld, maar de OS maakt het mogelijk dat deze processen allemaal worden doorgegeven.
+				Het belangrijkste programma dat op een computer werkt is het OS (Operating System), oftewel het besturingssysteem. Dit zorgt ervoor dat het geluid, het bewegen van de cursor op het scherm, en het toetsenbord allemaal werken. Verder geeft het OS de mogelijkheid om andere programma’s te laten werken die opdrachten kunnen geven aan het besturingssysteem en zorgt het ervoor dat de rekenkracht goed wordt verdeeld over deze processen. Het werkt dus als een soort tussenlaag tussen de hardware (het fysieke deel) en de software (de code). De belangrijkste taak is misschien wel het registreren van input (data dat de gebruiker aan de computer geeft) en het terug kunnen geven van output, bijvoorbeeld het beeld of geluid. De vorm van de output wordt dan meestal wel weer door andere software geregeld, maar de OS maakt het mogelijk dat deze processen allemaal worden doorgegeven.
 			</p>
 
 			*RGBA staat voor Red Green Blue Alpha, alpha geeft aan hoe 'sterk' de kleur moet zijn en is een waarde van 0 tot 1.

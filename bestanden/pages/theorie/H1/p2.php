@@ -50,7 +50,7 @@
 
 		<div class="theorie-content">
 			<span class="theorieTitle">Optellen</span>
-			Optellen in binair is niet ingewikkeld. Je telt het bovenste en onderste getal bij elkaar op en in het geval van 1+1 krijg je 10. alleen is het zo dat je bij het optellen van binaire getallen je vaker iets moet onthouden omdat het vaker boven de grenswaarde uitkomt.
+			Optellen in binair is niet ingewikkeld. Je telt het bovenste en onderste getal bij elkaar op en in het geval van 1+1 krijg je 10. Alleen is het zo dat je bij het optellen van binaire getallen je vaker iets moet onthouden omdat het vaker boven de grenswaarde, meer dan 1, uitkomt.
 
 			<img src="./afbeeldingen/additie.svg" class="theorieImage" />
 

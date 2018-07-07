@@ -50,13 +50,13 @@
 
 		<div class="theorie-content">
 			<p>
-				Een computer werkt door veel gates samen te gebruiken om data te verplaatsen en te manipuleren. Om deze taken uit te kunnen voeren zijn verschillende onderdelen van een computer nodig. maar niet alle onderdelen voeren berkeningen uit.sommigen zorgen er voor dat aan de randvoorwaarden wordt voldaan, bijvoorbeeld dat de data opgeslagen kan worden en dat er genoeg stroom is. De belangrijkste onderdelen worden hieronder genoemd.
+				Een computer werkt door veel gates samen te gebruiken om data te verplaatsen en te manipuleren. Om deze taken uit te kunnen voeren zijn verschillende onderdelen van een computer nodig, maar niet alle onderdelen voeren berkeningen uit. Andere zorgen ervoor dat aan de randvoorwaarden wordt voldaan, bijvoorbeeld dat de data opgeslagen kan worden en dat er genoeg stroom is. De belangrijkste onderdelen worden hieronder genoemd.
 			</p>
 
 			<p>
 				<img src="./afbeeldingen/CPU.png" class="theorieImage small" />
 
-				Het hart van de computer is de CPU, (Central Processing Unit). Dit is een chip die meestal maar een paar centimeter groot is, waarop alle algemene instructies worden uitgevoerd met behulp van de eerder besproken gates en dus het heen en weer halen van binaire getallen. Tegenwoordig heeft een CPU meerdere cores, dit wil zeggen dat het meerdere opdrachten tegelijk kunnen worden uitgevoerd. Elke core werkt dan als een soort mini CPU, maar dan niet met alle onderdelen die de gehele CPU heeft. De CPU heeft namelijk naast alleen de onderdelen voor het rekenen ook andere onderdelen, een voorbeeld is cache opslag. Cache is een vorm van hele snelle opslag, maar vaak met kleine capiciteit (vaak maar enkele MB). De snelheid van een CPU hangt van meerdere zaken af, voornamelijk de IPC, frequentie, cache en de hoeveelheid cores. De IPC is het aantal instructies dat per clock uitgevoerd kan worden. Een clock is een cyclus van instructies, zoals haal waardes van x naar y of voeg x toe aan y. De frequentie geeft aan hoeveel clocks er in een seconde uitgevoerd worden.
+				Het hart van de computer is de CPU, (Central Processing Unit). Dit is een chip die meestal maar een paar centimeter groot is, waarop alle algemene instructies worden uitgevoerd met behulp van de eerder besproken gates en dus het heen en weer halen van binaire getallen. Tegenwoordig heeft een CPU meerdere cores, dit wil zeggen dat het aan meerdere opdrachten tegelijk kan werken. Elke core werkt dan als een soort mini CPU, maar dan niet met alle onderdelen die de gehele CPU heeft. De CPU heeft namelijk naast alleen de onderdelen voor het rekenen ook andere onderdelen, een voorbeeld is cache opslag. Cache is een vorm van hele snelle opslag, maar vaak met kleine capiciteit (enkele MBs of minder). De snelheid van een CPU hangt van meerdere zaken af, voornamelijk de IPC, frequentie, cache en de hoeveelheid cores. De IPC is het aantal instructies dat per clock uitgevoerd kan worden. Een clock is een cyclus van instructies, zoals haal waardes van x naar y of voeg x toe aan y. De frequentie geeft aan hoeveel clocks er in een seconde uitgevoerd worden.
 			</p>
 
 			<p>

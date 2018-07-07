@@ -51,12 +51,25 @@
 		<div class="theorie-content">
 			<span class="theorieTitle">Gates</span>
 
-			‘Gates’ (= poortjes) zijn kleine schakelingen. De eenvoudigste zijn AND en OR.
-			in de input van een gate staan twee (dus twee keer een 1 of 0) Een gate vergelijkt deze twee bits, en afhankelijk van de input creërt de gate een output bestaande uit één bit (dus één 1 of 0) (logica, komt in het volgende hoofdstuk).
-			bij AND is de output 1 als de twee bits in de input dezelfde waarde hebben(in dit geval betekent 1 dat er stroom is in het circuit).
-			daarom ook de naam 'AND'. bij OR moet minimaal een van de twee bits in de input 1 zijn om de output 1 uit te krijgen. maar twee keer 1 geeft ook de output 1. dus alleen als de output twee keer 0 is zal de output bij een OR gate 0 zijn.
-			als je deze poorten in een stroom circuit gebruikt, dan geld dat wanneer de output 1 is de kring gesloten is (en er dus wel stroom kan circuleren), en bij 0 de kring open is (er dus geen stroom kan circuleren.)
-			Je zou de twee poorten in een elektrisch circuit kunnen gebruiken door poorten in verschillende manieren in het circuit te plaatsen, dit ziet er als volgt uit:
+			<p>
+				‘Gates’ (poortjes) zijn kleine schakelingen. De eenvoudigste (en belangrijkste) zijn AND en OR.
+				Een gate ontvangt twee binaire waarden als input en vergelijkt deze twee bits. Afhankelijk van welke gate en welke input het heeft ontvangen komt er een bepaalde output. Deze output is weederom een bit, het antwoord eigenlijk dus met ja of nee.
+			</p>
+
+			<p>
+				Bij AND is de output 1 als de twee bits in de input beide 1 zijn, dan kan de stroom namelijk erdoor (zie afbeelding). De naam AND is dus eigenlijk best logisch, want het heeft twee keer een 1 nodig.
+			</p>
+
+			<p>
+				Bij OR moet minimaal een van de twee bits in de input 1 zijn om de output 1 uit te krijgen, maar twee keer 1 geeft ook de output 1. Alleen als de output twee keer 0 is zal de output bij een OR gate 0 zijn.  De stroom kan doorgaan als er minimaal een keer een 1 als input als input is.
+			</p>
+
+			<p>
+				Als je dus deze poorten in een stroomcircuit gebruikt, dan geld dat wanneer de output 1 is de kring gesloten is (en er dus wel stroom kan circuleren), en bij 0 dat de kring open is (er dus geen stroom kan circuleren).
+				</br>
+				Een voorbeeld van deze gates in een circuit is:
+			</p>
+
 			AND
 
 			<img src="./afbeeldingen/AND.svg" class="theorieImage" />
@@ -65,9 +78,7 @@
 
 			<img src="./afbeeldingen/OR.svg" class="theorieImage" />
 
-
 			De grijze strepen zijn de mogelijke posities van de schakelaars. Als ze dicht zijn, dan kan er stroom doorheen, als ze open zijn niet, 1 of 0.
-
 
 		</div>
 

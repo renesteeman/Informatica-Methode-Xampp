@@ -45,7 +45,7 @@
 					<input type="date" placeholder="Datum" name="Idatum" required>
 				</li>
 				<li>
-					<label>Progressie</label>
+					<label>Te maken hoofdstuk(ken)</label>
 					<div class="list itemLijst">
 						<ul>
 

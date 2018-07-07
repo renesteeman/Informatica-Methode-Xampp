@@ -72,7 +72,7 @@ include('../components/headerGeneral.php');
 					<input type="date" value="'.$Idate.'" name="NIdatum" maxlength="50">
 				</li>
 				<li>
-					<label>Progressie</label>
+					<label>Te maken hoofdstuk(ken)</label>
 					<div class="list itemLijst">
 						<ul>';
 

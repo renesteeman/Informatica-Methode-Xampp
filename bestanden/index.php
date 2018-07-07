@@ -260,7 +260,7 @@
 
 	<div class="bar">
 		<h3>
-			Bonus hoofdstukken
+			Verdiepings hoofdstukken
 		</h3>
 	</div>
 

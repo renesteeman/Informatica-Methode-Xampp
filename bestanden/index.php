@@ -272,29 +272,28 @@
 			echo '<div class="tile">';
 		}
 
-		echo '
-			<div class="tile-content">
-				<div class="tile-chapter">
-					B1 Filosofie
+			echo '
+				<div class="tile-content">
+					<div class="tile-chapter">
+						B1 Filosofie
+					</div>
+					<div class="tile-paragraphs">
+						<ol>
+							<ul><a href="pages/theorie/B1/p1.php">§1 iets</ul>
+							<ul><a href="pages/theorie/B1/p2.php">§2 iets</a></ul>
+							<ul><a href="pages/theorie/B1/p3.php">§3 iets</a></ul>
+							<ul><a href="pages/theorie/B1/p4.php">§4 iets</a></ul>
+							<ul><a href="pages/theorie/B1/p5.php">§5 iets</a></ul>
+						</ol>
+					</div>
 				</div>
-				<div class="tile-paragraphs">
-					<ol>
-						<ul><a href="pages/theorie/B1/p1.php">§1 iets</ul>
-						<ul><a href="pages/theorie/B1/p2.php">§2 iets</a></ul>
-						<ul><a href="pages/theorie/B1/p3.php">§3 iets</a></ul>
-						<ul><a href="pages/theorie/B1/p4.php">§4 iets</a></ul>
-						<ul><a href="pages/theorie/B1/p5.php">§5 iets</a></ul>
-						<ul><a href="pages/theorie/B1/quiz.php">Quiz</a></ul>
-					</ol>
-				</div>
-			</div>
-		</div>';
+			</div>';
 
-			if(chapterIsFinished('B2')){
-				echo '<div class="tile completed">';
-			} else {
-				echo '<div class="tile">';
-			}
+		if(chapterIsFinished('B2')){
+			echo '<div class="tile completed">';
+		} else {
+			echo '<div class="tile">';
+		}
 
 			echo '
 			<div class="tile-content">
@@ -302,11 +301,11 @@
 			</div>
 		</div>';
 
-			if(chapterIsFinished('B3')){
-				echo '<div class="tile completed">';
-			} else {
-				echo '<div class="tile">';
-			}
+		if(chapterIsFinished('B3')){
+			echo '<div class="tile completed">';
+		} else {
+			echo '<div class="tile">';
+		}
 
 			echo '
 			<div class="tile-content">
@@ -314,22 +313,29 @@
 			</div>
 		</div>';
 
-			if(chapterIsFinished('B4')){
-				echo '<div class="tile completed">';
-			} else {
-				echo '<div class="tile">';
-			}
+		if(chapterIsFinished('B4')){
+			echo '<div class="tile completed">';
+		} else {
+			echo '<div class="tile">';
+		}
 
 			echo '
-			<div class="tile-content">
-				B4 databases
+				<div class="tile-content">
+					<div class="tile-chapter">
+						B4 Databases
+					</div>
+					<div class="tile-paragraphs">
+						<ol>
+							<ul><a href="pages/theorie/B4/p1.php">§1 Wat is een database?</ul>
+							<ul><a href="pages/theorie/B4/p2.php">§2 Een database aanmaken</a></ul>
+							<ul><a href="pages/theorie/B4/p3.php">§3 Communiceren met een database</a></ul>
+							<ul><a href="pages/theorie/B4/p4.php">§4 Verder met SQL</a></ul>
+						</ol>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="tile">
-			<div class="tile-content">
-				meer in de toekomst
-			</div>
-		</div>
+
+
 
 	</div>';
 

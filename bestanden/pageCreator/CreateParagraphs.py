@@ -15,13 +15,14 @@ def openFileSelector(*args):
     except ValueError:
         pass
 
-ChapterName = StringVar
-Nparagraphs = StringVar
-Quiz = IntVar
-Quiz = 0
-
 root = Tk()
 root.title("Page creator")
+
+#variables
+ChapterName = StringVar()
+Nparagraphs = StringVar()
+Quiz = IntVar()
+Quiz.set(0)
 
 mainframe = ttk.Frame(root, padding="3 3 12 12")
 mainframe.grid(column=0, row=0, sticky=(N,W,E,S))

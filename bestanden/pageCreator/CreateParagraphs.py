@@ -1,6 +1,56 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog
+from tkinter import messagebox
+import os
+
+def setUp():
+    global root
+    root.title("Page creator")
+    
+    global mainframe 
+    mainframe = ttk.Frame(root, padding="3 3 12 12")
+    mainframe.grid(column=0, row=0, sticky=(N,W,E,S))
+    mainframe.columnconfigure(0, weight=1)
+    mainframe.rowconfigure(0, weight=1)
+
+    #algemene info
+    ttk.Label(mainframe, text="hoofdstuk naam: ").grid(column=1, row=1, sticky=W)
+    global ChapterName_entry
+    ChapterName_entry = ttk.Entry(mainframe, width=7, textvariable=ChapterName)
+    ChapterName_entry.grid(column=2, row=1, sticky=(W,E))
+
+    ttk.Label(mainframe, text="aantal paragrafen: ").grid(column=1, row=2, sticky=W)
+    global Nparagraphs_entry
+    Nparagraphs_entry = ttk.Entry(mainframe, width=7, textvariable=Nparagraphs)
+    Nparagraphs_entry.grid(column=2, row=2, sticky=(W,E))
+
+    ttk.Checkbutton(mainframe, text='quiz', variable=Quiz).grid(column=1, row=3, sticky=W)
+
+    ttk.Label(mainframe, text="opslaglocatie voor de aan te maken bestanden").grid(column=1, row=4, sticky=W)
+    ttk.Button(mainframe, text="selecteer folder", command=folderSelector).grid(column=2, row=4, sticky=W)
+
+    ChapterName_entry.focus()
+
+    #doorgaan naar volgende pagina
+    ttk.Button(mainframe, text="volgende", command=contiueToParagraphs).grid(column=1, row=5, sticky=W)
+
+    for child in mainframe.winfo_children(): child.grid_configure(padx=5, pady=5)
+
+def contiueToParagraphs(*args):
+    try:
+        ChapterName = ChapterName_entry.get()
+        Nparagraphs = Nparagraphs_entry.get()
+        IsQuiz = str(Quiz.get())
+
+        print(ChapterName + Nparagraphs + IsQuiz)
+
+        clearFrame(mainframe)
+
+        createParagraphFrame(int(Nparagraphs))
+
+    except ValueError:
+        pass
 
 def clearFrame(FrameName):
     
@@ -19,23 +69,6 @@ def createParagraphFrame(Nparagraphs):
     ttk.Button(mainframe, text="Maak bestanden de aan").grid(column=1, row=i, sticky=W)
 
     for child in mainframe.winfo_children(): child.grid_configure(padx=5, pady=5)
-        
-    
-
-def contiueToParagraphs(*args):
-    try:
-        ChapterName = ChapterName_entry.get()
-        Nparagraphs = Nparagraphs_entry.get()
-        IsQuiz = str(Quiz.get())
-
-        print(ChapterName + Nparagraphs + IsQuiz)
-
-        clearFrame(mainframe)
-
-        createParagraphFrame(int(Nparagraphs))
-
-    except ValueError:
-        pass
 
 def openFileSelector(*args):
     try:
@@ -43,35 +76,32 @@ def openFileSelector(*args):
     except ValueError:
         pass
 
+def folderSelector(*args):
+    try:
+        currentPath = os.path.dirname(os.path.abspath(__file__))
+        root.filename =  filedialog.askdirectory(initialdir = currentPath,title = "Select save path")
+    except ValueError:
+        pass
+
+def createFolder(savepath):
+    if not os.path.exists(savepath):
+        try:
+          os.makedirs(savepath)
+
+        except OSError:
+            pass
+
+def processFiles():
+    createFolder(Savepath)
+
 root = Tk()
-root.title("Page creator")
 
 #variables
 ChapterName = StringVar()
 Nparagraphs = StringVar()
 Quiz = IntVar()
+Savepath = StringVar()
 
-mainframe = ttk.Frame(root, padding="3 3 12 12")
-mainframe.grid(column=0, row=0, sticky=(N,W,E,S))
-mainframe.columnconfigure(0, weight=1)
-mainframe.rowconfigure(0, weight=1)
-
-#algemene info over het hoofdstuk
-ttk.Label(mainframe, text="hoofdstuk naam: ").grid(column=1, row=1, sticky=W)
-ChapterName_entry = ttk.Entry(mainframe, width=7, textvariable=ChapterName)
-ChapterName_entry.grid(column=2, row=1, sticky=(W,E))
-
-ttk.Label(mainframe, text="aantal paragrafen: ").grid(column=1, row=2, sticky=W)
-Nparagraphs_entry = ttk.Entry(mainframe, width=7, textvariable=Nparagraphs)
-Nparagraphs_entry.grid(column=2, row=2, sticky=(W,E))
-
-ttk.Checkbutton(mainframe, text='quiz', variable=Quiz).grid(column=1, row=3, sticky=W)
-
-ChapterName_entry.focus()
-
-#doorgaan naar volgende pagina
-ttk.Button(mainframe, text="volgende", command=contiueToParagraphs).grid(column=1, row=4, sticky=W)
-
-for child in mainframe.winfo_children(): child.grid_configure(padx=5, pady=5)
+setUp()
 
 root.mainloop()

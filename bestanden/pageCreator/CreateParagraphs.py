@@ -22,7 +22,6 @@ root.title("Page creator")
 ChapterName = StringVar()
 Nparagraphs = StringVar()
 Quiz = IntVar()
-Quiz.set(0)
 
 mainframe = ttk.Frame(root, padding="3 3 12 12")
 mainframe.grid(column=0, row=0, sticky=(N,W,E,S))
@@ -40,7 +39,6 @@ Nparagraphs_entry = ttk.Entry(mainframe, width=7, textvariable=Nparagraphs)
 Nparagraphs_entry.grid(column=2, row=2, sticky=(W,E))
 
 ttk.Checkbutton(mainframe, text='quiz', variable=Quiz).grid(column=1, row=3, sticky=W)
-ttk.Label(mainframe, text=Quiz).grid(column=2, row=3, sticky=W)
 
 #bestanden selecteren
 '''

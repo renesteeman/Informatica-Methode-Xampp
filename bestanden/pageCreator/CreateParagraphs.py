@@ -7,6 +7,21 @@ def clearFrame(FrameName):
     for widget in FrameName.winfo_children():
         widget.destroy()
 
+def createParagraphFrame(Nparagraphs):
+    i = 0
+    while i < Nparagraphs:
+        #voeg paragraaf toe
+        ttk.Label(mainframe, text="paragraaf " + str(i)).grid(column=1, row=i, sticky=W)
+        ttk.Button(mainframe, text="selecteer bestand", command=openFileSelector).grid(column=2, row=i, sticky=W)
+
+        i += 1
+
+    ttk.Button(mainframe, text="Maak bestanden de aan").grid(column=1, row=i, sticky=W)
+
+    for child in mainframe.winfo_children(): child.grid_configure(padx=5, pady=5)
+        
+    
+
 def contiueToParagraphs(*args):
     try:
         ChapterName = ChapterName_entry.get()
@@ -16,6 +31,8 @@ def contiueToParagraphs(*args):
         print(ChapterName + Nparagraphs + IsQuiz)
 
         clearFrame(mainframe)
+
+        createParagraphFrame(int(Nparagraphs))
 
     except ValueError:
         pass
@@ -40,7 +57,6 @@ mainframe.columnconfigure(0, weight=1)
 mainframe.rowconfigure(0, weight=1)
 
 #algemene info over het hoofdstuk
-
 ttk.Label(mainframe, text="hoofdstuk naam: ").grid(column=1, row=1, sticky=W)
 ChapterName_entry = ttk.Entry(mainframe, width=7, textvariable=ChapterName)
 ChapterName_entry.grid(column=2, row=1, sticky=(W,E))
@@ -52,12 +68,6 @@ Nparagraphs_entry.grid(column=2, row=2, sticky=(W,E))
 ttk.Checkbutton(mainframe, text='quiz', variable=Quiz).grid(column=1, row=3, sticky=W)
 
 ChapterName_entry.focus()
-
-#bestanden selecteren
-'''
-ttk.Label(mainframe, text="selecteer het te laden bestand").grid(column=1, row=3, sticky=W)
-ttk.Button(mainframe, text="selecteer bestand", command=openFileSelector).grid(column=2, row=3, sticky=W)
-'''
 
 #doorgaan naar volgende pagina
 ttk.Button(mainframe, text="volgende", command=contiueToParagraphs).grid(column=1, row=4, sticky=W)

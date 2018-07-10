@@ -2,10 +2,21 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog
 
+def clearFrame(FrameName):
+    
+    for widget in FrameName.winfo_children():
+        widget.destroy()
+
 def contiueToParagraphs(*args):
     try:
-        CapterName = ChapterName_entry.get()
-        Nparagraphs = int(Nparagraphs_entry.get())
+        ChapterName = ChapterName_entry.get()
+        Nparagraphs = Nparagraphs_entry.get()
+        IsQuiz = str(Quiz.get())
+
+        print(ChapterName + Nparagraphs + IsQuiz)
+
+        clearFrame(mainframe)
+
     except ValueError:
         pass
 
@@ -40,6 +51,8 @@ Nparagraphs_entry.grid(column=2, row=2, sticky=(W,E))
 
 ttk.Checkbutton(mainframe, text='quiz', variable=Quiz).grid(column=1, row=3, sticky=W)
 
+ChapterName_entry.focus()
+
 #bestanden selecteren
 '''
 ttk.Label(mainframe, text="selecteer het te laden bestand").grid(column=1, row=3, sticky=W)
@@ -50,8 +63,5 @@ ttk.Button(mainframe, text="selecteer bestand", command=openFileSelector).grid(c
 ttk.Button(mainframe, text="volgende", command=contiueToParagraphs).grid(column=1, row=4, sticky=W)
 
 for child in mainframe.winfo_children(): child.grid_configure(padx=5, pady=5)
-
-ChapterName_entry.focus()
-root.bind('<Return>', contiueToParagraphs)
 
 root.mainloop()

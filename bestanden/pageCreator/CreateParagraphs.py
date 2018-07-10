@@ -17,6 +17,8 @@ def openFileSelector(*args):
 
 ChapterName = StringVar
 Nparagraphs = StringVar
+Quiz = IntVar
+Quiz = 0
 
 root = Tk()
 root.title("Page creator")
@@ -36,9 +38,14 @@ ttk.Label(mainframe, text="aantal paragrafen: ").grid(column=1, row=2, sticky=W)
 Nparagraphs_entry = ttk.Entry(mainframe, width=7, textvariable=Nparagraphs)
 Nparagraphs_entry.grid(column=2, row=2, sticky=(W,E))
 
+ttk.Checkbutton(mainframe, text='quiz', variable=Quiz).grid(column=1, row=3, sticky=W)
+ttk.Label(mainframe, text=Quiz).grid(column=2, row=3, sticky=W)
+
 #bestanden selecteren
+'''
 ttk.Label(mainframe, text="selecteer het te laden bestand").grid(column=1, row=3, sticky=W)
 ttk.Button(mainframe, text="selecteer bestand", command=openFileSelector).grid(column=2, row=3, sticky=W)
+'''
 
 #doorgaan naar volgende pagina
 ttk.Button(mainframe, text="volgende", command=contiueToParagraphs).grid(column=1, row=4, sticky=W)

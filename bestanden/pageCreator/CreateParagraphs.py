@@ -49,8 +49,9 @@ def contiueToParagraphs(*args):
         global IsQuiz
         IsQuiz = UQuiz.get()
 
-        global Savepath
+        global SaveFolder
         Savepath = str(USavepath)
+        SaveFolder = Savepath + "/" + ChapterName
 
         clearFrame(mainframe)
 
@@ -87,36 +88,47 @@ def folderSelector(*args):
     try:
         currentPath = os.path.dirname(os.path.abspath(__file__))
         directory =  filedialog.askdirectory(initialdir = currentPath,title = "Select save path")
-        
+
         global USavepath
         USavepath = directory
     except ValueError:
         pass
 
-def createFolder(savepath):
-    if not os.path.exists(savepath):
+def createFolder(SaveFolder):
+    if not os.path.exists(SaveFolder):
         try:
-          #os.makedirs(savepath)
-          print ("create dir")
+          os.makedirs(SaveFolder)
+          print ("created dir at " + SaveFolder)
 
         except OSError:
+            print("Error: could't create directory")
             pass
 
 def addHeader(file):
     file = "header"
 
 def processFiles():
-    print(Savepath)
+    global SaveFolder
 
-    createFolder(Savepath)
+    createFolder(SaveFolder)
 
-    files = []
-    while len(files) < Nparagraphs:
-        files.append(len(files))
+    i = 0
+    while i < Nparagraphs:
+        paragraph = "p" + str(i) + ".txt"
+        paragraphLocation = SaveFolder + "/" + paragraph
 
-    print (files)
+        #create file if it doesn't exist, else delete the file and create a new one
+        if not os.path.isfile(paragraphLocation):
+            paragraphFile = open(paragraphLocation, "x")
+            print("bestand is aangemaakt")
+        else:
+            print("bestand bestaal al")
+            #os.remove(paragraphLocation)
+            #paragraphFile = open(paragraphLocation, "x")
 
-    
+        i += 1 
+
+        
 
 root = Tk()
 

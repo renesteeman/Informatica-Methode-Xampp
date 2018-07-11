@@ -107,24 +107,20 @@ def createFolder(SaveFolder):
 def addHeader(fileLocation, paragraphNumber):
 
     fileContent = """
-        <?php
-        include('../../../components/headerChapter.php');
-        ?>
+<?php
+include('../../../components/headerChapter.php');
+?>
 
-        <body>
+<body>
 
-            <div class="title-small">
-                <h2> 
+    <div class="title-small">
+        <h2> 
+        """+ChapterName+""" 
+        </h2>
+    </div>
 
-    """ 
-    fileContent += ChapterName
-    fileContent += """
-                    
-                </h2>
-            </div>
-
-            <div class="bar-par-overview">
-                <div class="paragraph-tiles">
+    <div class="bar-par-overview">
+        <div class="paragraph-tiles">
     """
 
     i = 1
@@ -133,37 +129,34 @@ def addHeader(fileLocation, paragraphNumber):
         if paragraphNumber == i:
 
             fileContent += """
-                <div class="ptile active">
-                    <span class="ptile-content"><a href="p"""+str(i)+""".php">
-                    §"""+str(i)+"""
-                    </a></span>
-                </div>
+    <div class="ptile active">
+        <span class="ptile-content"><a href="p"""+str(i)+""".php">
+        §"""+str(i)+"""
+        </a></span>
+    </div>
             """
         else:
             fileContent += """
-                <div class="ptile">
-                    <span class="ptile-content"><a href="p"""+str(i)+""".php">
-                    §"""+str(i)+"""
-                    </a></span>
-                </div>
+    <div class="ptile">
+        <span class="ptile-content"><a href="p"""+str(i)+""".php">
+        §"""+str(i)+"""
+        </a></span>
+    </div>
             """
 
         i += 1
 
-    fileContent += """
-                
+    fileContent += """</div>
+    </div>
 
-            </div>
+    <div class="theorie">
+        <div class="bar-s">
+            <h3>
+                Theorie
+            </h3>
         </div>
 
-        <div class="theorie">
-            <div class="bar-s">
-                <h3>
-                    Theorie
-                </h3>
-            </div>
-
-            <div class="theorie-content">
+        <div class="theorie-content">
             
     """
 

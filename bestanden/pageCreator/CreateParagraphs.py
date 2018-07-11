@@ -44,7 +44,7 @@ def contiueToParagraphs(*args):
 
         global Nparagraphs 
         Nparagraphs = Nparagraphs_entry.get()
-        Nparagraphs = int(Nparagraphs)
+        Nparagraphs = int(Nparagraphs) + 1
 
         global IsQuiz
         IsQuiz = UQuiz.get()
@@ -66,7 +66,7 @@ def clearFrame(FrameName):
         widget.destroy()
 
 def createParagraphFrame(Nparagraphs):
-    i = 0
+    i = 1
     while i < Nparagraphs:
         #voeg paragraaf toe
         ttk.Label(mainframe, text="paragraaf " + str(i)).grid(column=1, row=i, sticky=W)
@@ -104,27 +104,93 @@ def createFolder(SaveFolder):
             print("Error: could't create directory")
             pass
 
-def addHeader(file):
-    file = "header"
+def addHeader(fileLocation, paragraphNumber):
+
+    fileContent = """
+        <?php
+        include('../../../components/headerChapter.php');
+        ?>
+
+        <body>
+
+            <div class="title-small">
+                <h2> 
+
+    """ 
+    fileContent += ChapterName
+    fileContent += """
+                    
+                </h2>
+            </div>
+
+            <div class="bar-par-overview">
+                <div class="paragraph-tiles">
+    """
+
+    i = 1
+
+    while i < Nparagraphs:
+        if paragraphNumber == i:
+
+            fileContent += """
+                <div class="ptile active">
+                    <span class="ptile-content"><a href="p"""+str(i)+""".php">
+                    §"""+str(i)+"""
+                    </a></span>
+                </div>
+            """
+        else:
+            fileContent += """
+                <div class="ptile">
+                    <span class="ptile-content"><a href="p"""+str(i)+""".php">
+                    §"""+str(i)+"""
+                    </a></span>
+                </div>
+            """
+
+        i += 1
+
+    fileContent += """
+                
+
+            </div>
+        </div>
+
+        <div class="theorie">
+            <div class="bar-s">
+                <h3>
+                    Theorie
+                </h3>
+            </div>
+
+            <div class="theorie-content">
+            
+    """
+
+    file = open(fileLocation, "a")
+    file.write(fileContent)
 
 def processFiles():
     global SaveFolder
 
     createFolder(SaveFolder)
 
-    i = 0
+    #create file if it doesn't exist, else delete the file and create a new one
+    #also add the file's content via additional functions
+    i = 1
     while i < Nparagraphs:
         paragraph = "p" + str(i) + ".txt"
         paragraphLocation = SaveFolder + "/" + paragraph
 
-        #create file if it doesn't exist, else delete the file and create a new one
         if not os.path.isfile(paragraphLocation):
             paragraphFile = open(paragraphLocation, "x")
             print("bestand is aangemaakt")
         else:
-            print("bestand bestaal al")
-            #os.remove(paragraphLocation)
-            #paragraphFile = open(paragraphLocation, "x")
+            print("bestand bestaal al, het wordt opnieuw aangemaakt")
+            os.remove(paragraphLocation)
+            paragraphFile = open(paragraphLocation, "x")
+
+        addHeader(paragraphLocation, i)
 
         i += 1 
 

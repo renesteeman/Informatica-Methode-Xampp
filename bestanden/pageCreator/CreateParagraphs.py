@@ -17,15 +17,15 @@ def setUp():
     #algemene info
     ttk.Label(mainframe, text="hoofdstuk naam: ").grid(column=1, row=1, sticky=W)
     global ChapterName_entry
-    ChapterName_entry = ttk.Entry(mainframe, width=7, textvariable=ChapterName)
+    ChapterName_entry = ttk.Entry(mainframe, width=7, textvariable=UChapterName)
     ChapterName_entry.grid(column=2, row=1, sticky=(W,E))
 
     ttk.Label(mainframe, text="aantal paragrafen: ").grid(column=1, row=2, sticky=W)
     global Nparagraphs_entry
-    Nparagraphs_entry = ttk.Entry(mainframe, width=7, textvariable=Nparagraphs)
+    Nparagraphs_entry = ttk.Entry(mainframe, width=7, textvariable=UNparagraphs)
     Nparagraphs_entry.grid(column=2, row=2, sticky=(W,E))
 
-    ttk.Checkbutton(mainframe, text='quiz', variable=Quiz).grid(column=1, row=3, sticky=W)
+    ttk.Checkbutton(mainframe, text='quiz', variable=UQuiz).grid(column=1, row=3, sticky=W)
 
     ttk.Label(mainframe, text="opslaglocatie voor de aan te maken bestanden").grid(column=1, row=4, sticky=W)
     ttk.Button(mainframe, text="selecteer folder", command=folderSelector).grid(column=2, row=4, sticky=W)
@@ -39,15 +39,22 @@ def setUp():
 
 def contiueToParagraphs(*args):
     try:
+        global ChapterName
         ChapterName = ChapterName_entry.get()
-        Nparagraphs = Nparagraphs_entry.get()
-        IsQuiz = str(Quiz.get())
 
-        print(ChapterName + Nparagraphs + IsQuiz)
+        global Nparagraphs 
+        Nparagraphs = Nparagraphs_entry.get()
+        Nparagraphs = int(Nparagraphs)
+
+        global IsQuiz
+        IsQuiz = UQuiz.get()
+
+        global Savepath
+        Savepath = str(USavepath)
 
         clearFrame(mainframe)
 
-        createParagraphFrame(int(Nparagraphs))
+        createParagraphFrame(Nparagraphs)
 
     except ValueError:
         pass
@@ -66,41 +73,58 @@ def createParagraphFrame(Nparagraphs):
 
         i += 1
 
-    ttk.Button(mainframe, text="Maak bestanden de aan").grid(column=1, row=i, sticky=W)
+    ttk.Button(mainframe, text="Maak bestanden de aan", command=processFiles).grid(column=1, row=i, sticky=W)
 
     for child in mainframe.winfo_children(): child.grid_configure(padx=5, pady=5)
 
 def openFileSelector(*args):
     try:
-        root.filename =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("text files","*.txt *.pdf *.docx"),("all files","*.*")))
+        file =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("text files","*.txt *.pdf *.docx"),("all files","*.*")))
     except ValueError:
         pass
 
 def folderSelector(*args):
     try:
         currentPath = os.path.dirname(os.path.abspath(__file__))
-        root.filename =  filedialog.askdirectory(initialdir = currentPath,title = "Select save path")
+        directory =  filedialog.askdirectory(initialdir = currentPath,title = "Select save path")
+        
+        global USavepath
+        USavepath = directory
     except ValueError:
         pass
 
 def createFolder(savepath):
     if not os.path.exists(savepath):
         try:
-          os.makedirs(savepath)
+          #os.makedirs(savepath)
+          print ("create dir")
 
         except OSError:
             pass
 
+def addHeader(file):
+    file = "header"
+
 def processFiles():
+    print(Savepath)
+
     createFolder(Savepath)
+
+    files = []
+    while len(files) < Nparagraphs:
+        files.append(len(files))
+
+    print (files)
+
+    
 
 root = Tk()
 
 #variables
-ChapterName = StringVar()
-Nparagraphs = StringVar()
-Quiz = IntVar()
-Savepath = StringVar()
+UChapterName = StringVar()
+UNparagraphs = StringVar()
+UQuiz = IntVar()
+USavepath = StringVar()
 
 setUp()
 

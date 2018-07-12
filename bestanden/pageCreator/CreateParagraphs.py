@@ -86,7 +86,7 @@ def openFileSelector(*args):
 
     try:
         currentPath = os.path.dirname(os.path.abspath(__file__))
-        cFile =  filedialog.askopenfilename(initialdir = currentPath,title = "Select file",filetypes = (("text files","*.txt *.pdf *.docx"),("all files","*.*")))
+        cFile =  filedialog.askopenfilename(initialdir = currentPath,title = "Select file",filetypes = (("text files","*.txt *.docx"),("all files","*.*")))
         OldFiles.append(cFile)
 
     except ValueError:
@@ -171,8 +171,10 @@ include('../../../components/headerChapter.php');
     file = codecs.open(fileLocation, "a", "utf-8")
     file.write(fileContent)
 
-def addBody(fileLocation, paragraphNumber):
+def readFile(fileLocation, paragraphNumber):
     global OldFiles
+
+    cFileContent = ""
 
     try:
         if len(OldFiles) >= (paragraphNumber-1):
@@ -183,35 +185,40 @@ def addBody(fileLocation, paragraphNumber):
                 print("it's a txt")
                 cFile = codecs.open(cFile, "r", "utf-8")
                 cFileContent = cFile.read()
-                print (cFileContent)
-
-            elif cFile[-3:] == "pdf":
-                print("it's a pdf")
-                cFile = open(cFile, 'rb')
-                pdfReader = PyPDF2.PdfFileReader(cFile)
-                nPages = pdfReader.numPages
-
-                cFileContent = ""
-                i=0
-                while i < nPages:
-                    page = pdfReader.getPage(i)
-                    pageContent = page.extractText()
-                    cFileContent += pageContent
-                    i += 1
-
-                print(cFileContent)
-                
 
             elif cFile[-4:] == "docx":
                 print("it's a docx")
 
                 cFileContent = docx2txt.process(cFile)
 
-                print (cFileContent)
+            return cFileContent
+
 
     except:
         print("Error: could't read file")
         pass
+
+def createParagraphs(fileContent):
+    lastChar = ""
+
+    for char in fileContent:
+        if char == " " and lastChar == " ":
+            print("found new <p>")
+
+        lastChar = char
+
+
+
+def addBody(fileLocation, paragraphNumber):
+    
+    fileContent = readFile(fileLocation, paragraphNumber)
+
+    createParagraphs(fileContent)
+
+    print(fileContent)
+
+
+    
 
 
 def processFiles():

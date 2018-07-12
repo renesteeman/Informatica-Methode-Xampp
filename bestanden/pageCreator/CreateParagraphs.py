@@ -3,6 +3,7 @@ from tkinter import ttk
 from tkinter import filedialog
 from tkinter import messagebox
 import os
+import codecs
 
 def setUp():
     global root
@@ -79,8 +80,13 @@ def createParagraphFrame(Nparagraphs):
     for child in mainframe.winfo_children(): child.grid_configure(padx=5, pady=5)
 
 def openFileSelector(*args):
+    global OldFiles
+
     try:
-        file =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("text files","*.txt *.pdf *.docx"),("all files","*.*")))
+        currentPath = os.path.dirname(os.path.abspath(__file__))
+        cFile =  filedialog.askopenfilename(initialdir = currentPath,title = "Select file",filetypes = (("text files","*.txt *.pdf *.docx"),("all files","*.*")))
+        OldFiles.append(cFile)
+
     except ValueError:
         pass
 
@@ -160,8 +166,23 @@ include('../../../components/headerChapter.php');
             
     """
 
-    file = open(fileLocation, "a")
+    file = codecs.open(fileLocation, "a", "utf-8")
     file.write(fileContent)
+
+def addBody(fileLocation, paragraphNumber):
+    global OldFiles
+
+    try:
+        if len(OldFiles) >= (paragraphNumber-1):
+            cFile = OldFiles[paragraphNumber-1]
+            cFile = codecs.open(cFile, "r", "utf-8")
+            cFileContent = cFile.read()
+            print (cFileContent)
+
+    except:
+        print("Error: could't read file")
+        pass
+
 
 def processFiles():
     global SaveFolder
@@ -172,18 +193,20 @@ def processFiles():
     #also add the file's content via additional functions
     i = 1
     while i < Nparagraphs:
-        paragraph = "p" + str(i) + ".txt"
+        paragraph = "p" + str(i) + ".php"
         paragraphLocation = SaveFolder + "/" + paragraph
 
         if not os.path.isfile(paragraphLocation):
-            paragraphFile = open(paragraphLocation, "x")
+            codecs.open(paragraphLocation, "x", "utf-8")
             print("bestand is aangemaakt")
         else:
             print("bestand bestaal al, het wordt opnieuw aangemaakt")
             os.remove(paragraphLocation)
-            paragraphFile = open(paragraphLocation, "x")
+            codecs.open(paragraphLocation, "x", "utf-8")
 
         addHeader(paragraphLocation, i)
+
+        addBody(paragraphLocation, i)
 
         i += 1 
 
@@ -196,6 +219,7 @@ UChapterName = StringVar()
 UNparagraphs = StringVar()
 UQuiz = IntVar()
 USavepath = StringVar()
+OldFiles = []
 
 setUp()
 

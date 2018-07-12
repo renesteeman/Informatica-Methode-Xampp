@@ -199,13 +199,24 @@ def readFile(fileLocation, paragraphNumber):
         pass
 
 def createParagraphs(fileContent):
+    #find 2 new lines after each other and insert a <p>
     lastChar = ""
 
+    toAddToFile = ""
+
     for char in fileContent:
-        if char == " " and lastChar == " ":
-            print("found new <p>")
+
+        if char == "\n" and lastChar != "\n":
+            print("new line")
+            toAddToFile += """</p>
+            <p>
+            """
+
+        else:
+            toAddToFile += char
 
         lastChar = char
+
 
 
 
@@ -216,10 +227,6 @@ def addBody(fileLocation, paragraphNumber):
     createParagraphs(fileContent)
 
     print(fileContent)
-
-
-    
-
 
 def processFiles():
     global SaveFolder

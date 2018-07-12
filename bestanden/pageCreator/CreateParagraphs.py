@@ -4,6 +4,8 @@ from tkinter import filedialog
 from tkinter import messagebox
 import os
 import codecs
+import PyPDF2
+import docx2txt
 
 def setUp():
     global root
@@ -175,9 +177,37 @@ def addBody(fileLocation, paragraphNumber):
     try:
         if len(OldFiles) >= (paragraphNumber-1):
             cFile = OldFiles[paragraphNumber-1]
-            cFile = codecs.open(cFile, "r", "utf-8")
-            cFileContent = cFile.read()
-            print (cFileContent)
+
+            #check file type (pdf, txt or docx)
+            if cFile[-3:] == "txt":
+                print("it's a txt")
+                cFile = codecs.open(cFile, "r", "utf-8")
+                cFileContent = cFile.read()
+                print (cFileContent)
+
+            elif cFile[-3:] == "pdf":
+                print("it's a pdf")
+                cFile = open(cFile, 'rb')
+                pdfReader = PyPDF2.PdfFileReader(cFile)
+                nPages = pdfReader.numPages
+
+                cFileContent = ""
+                i=0
+                while i < nPages:
+                    page = pdfReader.getPage(i)
+                    pageContent = page.extractText()
+                    cFileContent += pageContent
+                    i += 1
+
+                print(cFileContent)
+                
+
+            elif cFile[-4:] == "docx":
+                print("it's a docx")
+
+                cFileContent = docx2txt.process(cFile)
+
+                print (cFileContent)
 
     except:
         print("Error: could't read file")

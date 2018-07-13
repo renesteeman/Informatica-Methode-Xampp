@@ -205,11 +205,12 @@ def createParagraphs(fileContent, fileLocation):
 
     for char in fileContent:
 
+        if i == 0:
+            toAddToFile += """<p>"""
+
         if char == "\n" and lastChar != "\n":
-            if len(buffer.strip()) != 0:
-              buffer = "\n<p>" + buffer + "</p>\n"
-              toAddToFile += buffer
-              buffer = ""
+            if buffer != "":
+              buffer = "<p>" + buffer + "</p>"
 
         else:
             buffer += char

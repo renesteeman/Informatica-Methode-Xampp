@@ -172,8 +172,6 @@ include('../../../components/headerChapter.php');
     file.write(fileContent)
 
 def readFile(fileLocation, paragraphNumber):
-    global OldFiles
-
     cFileContent = ""
 
     try:
@@ -198,28 +196,28 @@ def readFile(fileLocation, paragraphNumber):
 def createParagraphs(fileContent, fileLocation):
     #find 2 new lines after each other and insert a <p>
     fileContent = fileContent.strip()
-    lastChar = ""
     buffer = ""
 
     toAddToFile = ""
 
     for char in fileContent:
 
-        if char == "\n" and lastChar != "\n":
-            if len(buffer.strip()) != 0:
+        if char == "\n":
+            buffer = buffer.strip()
+            if len(buffer) > 0:
                 buffer = "<p>" + buffer + "</p>\n"
                 toAddToFile += buffer
                 buffer = ""
 
-        elif char != " " or lastChar != " ":
+        else:
             buffer += char
 
-        lastChar = char
 
     #if there's anything left in the buffer at the end, paste that in (needed when the file doesn't end with an \n)
-    buffer = "<p>" + buffer + "</p>\n"
-    toAddToFile += buffer
-    toAddToFile = toAddToFile.strip()
+    buffer = buffer.strip()
+    if len(buffer) > 0:
+        buffer = "<p>" + buffer + "</p>\n"
+        toAddToFile += buffer
 
     file = codecs.open(fileLocation, "a", "utf-8")
     file.write(toAddToFile)

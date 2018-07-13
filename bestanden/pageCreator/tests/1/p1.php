@@ -37,13 +37,6 @@ include('../../../components/headerChapter.php');
 
         <div class="theorie-content">
             
-    
-<p>testdocument</p>
-
-<p>Regel 2</p>
-
-<p>Na blanko 1</p>
-
-<p>Na blanko 2</p>
-
-<p>Tekstregel</p>
+    <p>Single par akdjfkjaskdfjkasjdkfjkasjdkfgjksdjgjksdajgjfdjghk jkfdjhkjsdkfjhkfdjshjfdksjhkfdsjhkjdfs khjksdjfhkjksdfhjksdf;;fdskjkd fjk gjskdfjgkjdsfkjgkjdfsgjdfksgjsldfkg asdfgasdhfgkhk kjldsdsfgk</p>
+<p>Par kasjdflagj</p>
+<p>Par askjla</p>

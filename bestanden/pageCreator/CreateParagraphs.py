@@ -6,6 +6,7 @@ import os
 import codecs
 import PyPDF2
 import docx2txt
+import re
 
 def setUp():
     global root
@@ -194,9 +195,16 @@ def readFile(fileLocation, paragraphNumber):
         pass
 
 def seperateContent(fileContent):
-    splitContent = fileContent.split("#VRAGEN")
+    splitTheory = fileContent.split("#VRAGEN")
+    Theory = splitTheory[0]
+
+    splitQuestions = splitTheory[1].split("#ANTWOORDEN")
+    Questions =  splitQuestions[0]
+
+    Answers = splitQuestions[1]
     
     #TODO split answers
+    splitContent = (Theory, Questions, Answers)
 
     return splitContent
 
@@ -233,10 +241,30 @@ def createTheory(fileContent, fileLocation):
     file.write(toAddToFile)
 
 def createQuestions(fileContent, fileLocation):
-    toAddToFile = ""
+    if len(fileContent.strip()) > 0:
+        toAddToFile = ""
 
-    file = codecs.open(fileLocation, "a", "utf-8")
-    file.write(toAddToFile)
+        #add questions start
+        toAddToFile += """<div class="bar-s">
+            <h3>
+                Vragen
+            </h3>
+        </div>
+        <div class="theorie-content">
+            <ol>"""
+
+        #add questions body
+        i = 1
+
+        questionStarts = re.search('[0-9]*\.', fileContent)
+        print (questionStarts)
+
+
+        #add questions end
+        toAddToFile += "</div>"
+
+        file = codecs.open(fileLocation, "a", "utf-8")
+        file.write(toAddToFile)
 
 
 def addBody(fileLocation, paragraphNumber):
@@ -247,9 +275,14 @@ def addBody(fileLocation, paragraphNumber):
     splitContent = seperateContent(fileContent)
     theory = splitContent[0]
     questions = splitContent[1]
+    answers = splitContent[2]
+
+    print("questions = " + questions)
+    print("answers = " + answers)
 
     createTheory(theory, fileLocation)
     createQuestions(questions, fileLocation)
+    #createAnswers
 
 def processFiles():
     createFolder(SaveFolder)

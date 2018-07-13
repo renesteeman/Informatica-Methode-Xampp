@@ -197,7 +197,6 @@ def readFile(fileLocation, paragraphNumber):
 
 def createParagraphs(fileContent, fileLocation):
     #find 2 new lines after each other and insert a <p>
-    i = 0
     lastChar = ""
     buffer = ""
 
@@ -211,30 +210,16 @@ def createParagraphs(fileContent, fileLocation):
               toAddToFile += buffer
               buffer = ""
 
-        else:
+        elif char != " " or lastChar != " ":
             buffer += char
 
         lastChar = char
-        i += 1
 
-
-        '''
-        if char == "\n" and lastChar != "\n":
-            toAddToFile += """\n
-            </p>
-            <p>
-            """
-
-        else:
-            toAddToFile += char
-        '''
-
-        lastChar = char
+    #if there's anything left in the buffer at the end, paste that in (needed when the file doesn't end with an \n)
+    toAddToFile += buffer
 
     file = codecs.open(fileLocation, "a", "utf-8")
     file.write(toAddToFile)
-
-
 
 
 def addBody(fileLocation, paragraphNumber):

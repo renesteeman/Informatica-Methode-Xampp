@@ -28,7 +28,7 @@ def setUp():
     Nparagraphs_entry = ttk.Entry(mainframe, width=7, textvariable=UNparagraphs)
     Nparagraphs_entry.grid(column=2, row=2, sticky=(W,E))
 
-    ttk.Checkbutton(mainframe, text='quiz', variable=UQuiz).grid(column=1, row=3, sticky=W)
+    #ttk.Checkbutton(mainframe, text='quiz', variable=UQuiz).grid(column=1, row=3, sticky=W)
 
     ttk.Label(mainframe, text="opslaglocatie voor de aan te maken bestanden").grid(column=1, row=4, sticky=W)
     ttk.Button(mainframe, text="selecteer folder", command=folderSelector).grid(column=2, row=4, sticky=W)
@@ -49,8 +49,8 @@ def contiueToParagraphs(*args):
         Nparagraphs = Nparagraphs_entry.get()
         Nparagraphs = int(Nparagraphs) + 1
 
-        global IsQuiz
-        IsQuiz = UQuiz.get()
+        #global IsQuiz
+        #IsQuiz = UQuiz.get()
 
         global SaveFolder
         Savepath = str(USavepath)
@@ -193,7 +193,14 @@ def readFile(fileLocation, paragraphNumber):
         print("Error: could't read file")
         pass
 
-def createParagraphs(fileContent, fileLocation):
+def seperateContent(fileContent):
+    splitContent = fileContent.split("#VRAGEN")
+    
+    #TODO split answers
+
+    return splitContent
+
+def createTheory(fileContent, fileLocation):
     #find 2 new lines after each other and insert a <p>
     fileContent = fileContent.strip()
     buffer = ""
@@ -205,7 +212,7 @@ def createParagraphs(fileContent, fileLocation):
         if char == "\n":
             buffer = buffer.strip()
             if len(buffer) > 0:
-                buffer = "<p>" + buffer + "</p>\n"
+                buffer = "<p>" + buffer + "</p>\n\n"
                 toAddToFile += buffer
                 buffer = ""
 
@@ -219,6 +226,15 @@ def createParagraphs(fileContent, fileLocation):
         buffer = "<p>" + buffer + "</p>\n"
         toAddToFile += buffer
 
+    #close html tag
+    toAddToFile += "</div>"
+
+    file = codecs.open(fileLocation, "a", "utf-8")
+    file.write(toAddToFile)
+
+def createQuestions(fileContent, fileLocation):
+    toAddToFile = ""
+
     file = codecs.open(fileLocation, "a", "utf-8")
     file.write(toAddToFile)
 
@@ -227,11 +243,15 @@ def addBody(fileLocation, paragraphNumber):
     
     fileContent = readFile(fileLocation, paragraphNumber)
 
-    createParagraphs(fileContent, fileLocation)
+    #TODO filter theory and questions
+    splitContent = seperateContent(fileContent)
+    theory = splitContent[0]
+    questions = splitContent[1]
+
+    createTheory(theory, fileLocation)
+    createQuestions(questions, fileLocation)
 
 def processFiles():
-    global SaveFolder
-
     createFolder(SaveFolder)
 
     #create file if it doesn't exist, else delete the file and create a new one
@@ -262,7 +282,7 @@ root = Tk()
 #variables
 UChapterName = StringVar()
 UNparagraphs = StringVar()
-UQuiz = IntVar()
+#UQuiz = IntVar()
 USavepath = StringVar()
 OldFiles = []
 

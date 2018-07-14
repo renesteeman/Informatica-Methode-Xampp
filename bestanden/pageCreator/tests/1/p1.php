@@ -19,12 +19,6 @@ include('../../../components/headerChapter.php');
         §1
         </a></span>
     </div>
-            
-    <div class="ptile">
-        <span class="ptile-content"><a href="p2.php">
-        §2
-        </a></span>
-    </div>
             </div>
     </div>
 
@@ -38,5 +32,14 @@ include('../../../components/headerChapter.php');
         <div class="theorie-content">
             
     <p>Single par akdjfkjaskdfjkasjdkfjkasjdkfgjksdjgjksdajgjfdjghk jkfdjhkjsdkfjhkfdjshjfdksjhkfdsjhkjdfs khjksdjfhkjksdfhjksdf;;fdskjkd fjk gjskdfjgkjdsfkjgkjdfsgjdfksgjsldfkg asdfgasdhfgkhk kjldsdsfgk</p>
+
 <p>Par kasjdflagj</p>
+
 <p>Par askjla</p>
+</div><div class="bar-s">
+            <h3>
+                Vragen
+            </h3>
+        </div>
+        <div class="theorie-content">
+            <ol></div>

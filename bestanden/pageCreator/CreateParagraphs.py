@@ -255,9 +255,17 @@ def createQuestions(fileContent, fileLocation):
 
         #add questions body
         i = 1
+        pattern = re.compile(r'/d+\.')
+        matches = pattern.finditer(fileContent)
 
-        questionStarts = re.search('[0-9]*\.', fileContent)
-        print (questionStarts)
+        print(fileContent)
+
+        for match in matches:
+            print('match =' + match)
+
+        #questionStarts = re.search('[0-9]*\.', fileContent)
+        #text_to_search
+        
 
 
         #add questions end
@@ -277,8 +285,8 @@ def addBody(fileLocation, paragraphNumber):
     questions = splitContent[1]
     answers = splitContent[2]
 
-    print("questions = " + questions)
-    print("answers = " + answers)
+    #print("questions = " + questions)
+    #print("answers = " + answers)
 
     createTheory(theory, fileLocation)
     createQuestions(questions, fileLocation)

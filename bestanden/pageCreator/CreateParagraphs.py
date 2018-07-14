@@ -254,18 +254,11 @@ def createQuestions(fileContent, fileLocation):
             <ol>"""
 
         #add questions body
-        i = 1
-        pattern = re.compile(r'/d+\.')
-        matches = pattern.finditer(fileContent)
+        pattern = re.compile(r'\d+[).]')
+        matches = re.split(pattern, text)
 
-        print(fileContent)
-
-        for match in matches:
-            print('match =' + match)
-
-        #questionStarts = re.search('[0-9]*\.', fileContent)
-        #text_to_search
-        
+        for match in matches2:
+           print ("match = " + match)
 
 
         #add questions end

@@ -245,24 +245,31 @@ def createQuestions(fileContent, fileLocation):
         toAddToFile = ""
 
         #add questions start
-        toAddToFile += """<div class="bar-s">
+        toAddToFile += """\n
+        <div class="bar-s">
             <h3>
                 Vragen
             </h3>
         </div>
+        
         <div class="theorie-content">
-            <ol>"""
+            <ol>\n"""
 
         #add questions body
         pattern = re.compile(r'\d+[).]')
-        matches = re.split(pattern, text)
+        matches = re.split(pattern, fileContent)
 
-        for match in matches2:
-           print ("match = " + match)
+        i = 0
+        for match in matches:
+            if i > 0:
+                match = match.strip()
+                toAddToFile += "<li>" + match + "</li>\n"
+
+            i += 1
 
 
         #add questions end
-        toAddToFile += "</div>"
+        toAddToFile += "</ol>\n</div>"
 
         file = codecs.open(fileLocation, "a", "utf-8")
         file.write(toAddToFile)

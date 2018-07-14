@@ -208,14 +208,14 @@ def seperateContent(fileContent):
 
     return splitContent
 
-def createTheory(fileContent, fileLocation):
+def createTheory(theory, fileLocation):
     #find 2 new lines after each other and insert a <p>
-    fileContent = fileContent.strip()
+    theory = theory.strip()
     buffer = ""
 
     toAddToFile = ""
 
-    for char in fileContent:
+    for char in theory:
 
         if char == "\n":
             buffer = buffer.strip()
@@ -240,8 +240,8 @@ def createTheory(fileContent, fileLocation):
     file = codecs.open(fileLocation, "a", "utf-8")
     file.write(toAddToFile)
 
-def createQuestions(fileContent, fileLocation):
-    if len(fileContent.strip()) > 0:
+def createQuestions(questions, fileLocation):
+    if len(questions.strip()) > 0:
         toAddToFile = ""
 
         #add questions start
@@ -251,13 +251,13 @@ def createQuestions(fileContent, fileLocation):
                 Vragen
             </h3>
         </div>
-        
+
         <div class="theorie-content">
             <ol>\n"""
 
         #add questions body
         pattern = re.compile(r'\d+[).]')
-        matches = re.split(pattern, fileContent)
+        matches = re.split(pattern, questions)
 
         i = 0
         for match in matches:
@@ -274,23 +274,65 @@ def createQuestions(fileContent, fileLocation):
         file = codecs.open(fileLocation, "a", "utf-8")
         file.write(toAddToFile)
 
+def createAnswers(answers, fileLocation):
+    if len(answers.strip()) > 0:
+        toAddToFile = ""
+
+        #add questions start
+        toAddToFile += """\n
+        <div class="bar-s">
+            <h3>
+                Antwoorden
+            </h3>
+        </div>
+
+        <div class="theorie-content theorie-answers">
+            <ol>\n"""
+
+        #add questions body
+        pattern = re.compile(r'\d+[).]')
+        matches = re.split(pattern, answers)
+
+        i = 0
+        for match in matches:
+            if i > 0:
+                match = match.strip()
+                toAddToFile += "<li>" + match + "</li>\n"
+
+            i += 1
+
+        #add questions end
+        toAddToFile += "</ol>\n</div>"
+
+        file = codecs.open(fileLocation, "a", "utf-8")
+        file.write(toAddToFile)
 
 def addBody(fileLocation, paragraphNumber):
     
     fileContent = readFile(fileLocation, paragraphNumber)
 
-    #TODO filter theory and questions
     splitContent = seperateContent(fileContent)
     theory = splitContent[0]
     questions = splitContent[1]
     answers = splitContent[2]
 
-    #print("questions = " + questions)
-    #print("answers = " + answers)
-
     createTheory(theory, fileLocation)
     createQuestions(questions, fileLocation)
-    #createAnswers
+    createAnswers(answers, fileLocation)
+
+def addFooter(fileLocation, paragraphNumber):
+    toAddToFile = """
+    </div>
+
+	<?php
+	include('../../../components/footerChapter.php');
+	?>
+
+</body>"""
+
+    file = codecs.open(fileLocation, "a", "utf-8")
+    file.write(toAddToFile)
+
 
 def processFiles():
     createFolder(SaveFolder)
@@ -313,6 +355,8 @@ def processFiles():
         addHeader(paragraphLocation, i)
 
         addBody(paragraphLocation, i)
+
+        addFooter(paragraphLocation, i)
 
         i += 1 
 

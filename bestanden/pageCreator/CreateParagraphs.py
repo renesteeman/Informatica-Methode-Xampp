@@ -212,6 +212,7 @@ def createTheory(theory, fileLocation):
     #find 2 new lines after each other and insert a <p>
     theory = theory.strip()
     buffer = ""
+    i = 0
 
     toAddToFile = ""
 
@@ -220,9 +221,16 @@ def createTheory(theory, fileLocation):
         if char == "\n":
             buffer = buffer.strip()
             if len(buffer) > 0:
-                buffer = "<p>" + buffer + "</p>\n\n"
-                toAddToFile += buffer
-                buffer = ""
+                if i == 0:
+                    buffer = "\t\t<p>" + buffer + "</p>\n\n"
+                    toAddToFile += buffer
+                    buffer = ""
+                    i += 1
+                else:
+                    buffer = "\t\t\t<p>" + buffer + "</p>\n\n"
+                    toAddToFile += buffer
+                    buffer = ""
+                    i += 1
 
         else:
             buffer += char
@@ -231,11 +239,11 @@ def createTheory(theory, fileLocation):
     #if there's anything left in the buffer at the end, paste that in (needed when the file doesn't end with an \n)
     buffer = buffer.strip()
     if len(buffer) > 0:
-        buffer = "<p>" + buffer + "</p>\n"
+        buffer = "\t\t\t<p>" + buffer + "</p>\n"
         toAddToFile += buffer
 
     #close html tag
-    toAddToFile += "</div>"
+    toAddToFile += "\n\t\t</div>"
 
     file = codecs.open(fileLocation, "a", "utf-8")
     file.write(toAddToFile)
@@ -263,13 +271,12 @@ def createQuestions(questions, fileLocation):
         for match in matches:
             if i > 0:
                 match = match.strip()
-                toAddToFile += "<li>" + match + "</li>\n"
+                toAddToFile += "\t\t\t\t<li>" + match + "</li>\n"
 
             i += 1
 
-
         #add questions end
-        toAddToFile += "</ol>\n</div>"
+        toAddToFile += "\t\t\t</ol>\n\t\t</div>"
 
         file = codecs.open(fileLocation, "a", "utf-8")
         file.write(toAddToFile)
@@ -297,12 +304,12 @@ def createAnswers(answers, fileLocation):
         for match in matches:
             if i > 0:
                 match = match.strip()
-                toAddToFile += "<li>" + match + "</li>\n"
+                toAddToFile += "\t\t\t\t<li>" + match + "</li>\n"
 
             i += 1
 
         #add questions end
-        toAddToFile += "</ol>\n</div>"
+        toAddToFile += "\t\t\t</ol>\n\t\t</div>"
 
         file = codecs.open(fileLocation, "a", "utf-8")
         file.write(toAddToFile)
@@ -321,8 +328,7 @@ def addBody(fileLocation, paragraphNumber):
     createAnswers(answers, fileLocation)
 
 def addFooter(fileLocation, paragraphNumber):
-    toAddToFile = """
-    </div>
+    toAddToFile = """\n\t</div>
 
 	<?php
 	include('../../../components/footerChapter.php');

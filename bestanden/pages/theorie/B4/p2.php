@@ -1,187 +1,120 @@
+
 <?php
-	include('../../../components/headerChapter.php');
+include('../../../components/headerChapter.php');
 ?>
 
 <body>
 
-	<div class="title-small">
-		<h2>
-			B1 §2 Binair rekenen
-		</h2>
-	</div>
+    <div class="title-small">
+        <h2> 
+        B4 
+        </h2>
+    </div>
 
-	<div class="bar-par-overview">
-		<div class="paragraph-tiles">
-			<div class="ptile">
-				<span class="ptile-content"><a href="p1.php">
-					§1
-				</a></span>
-			</div>
-			<div class="ptile active">
-				<span class="ptile-content"><a href="p2.php">
-					§2
-				</a></span>
-			</div>
-			<div class="ptile">
-				<span class="ptile-content"><a href="p3.php">
-					§3
-				</a></span>
-			</div>
-			<div class="ptile">
-				<span class="ptile-content"><a href="p4.php">
-					§4
-				</a></span>
-			</div>
-			<div class="ptile">
-				<span class="ptile-content"><a href="p5.php">
-					§5
-				</a></span>
-			</div>
+    <div class="bar-par-overview">
+        <div class="paragraph-tiles">
+    
+    <div class="ptile">
+        <span class="ptile-content"><a href="p1.php">
+        §1
+        </a></span>
+    </div>
+            
+    <div class="ptile active">
+        <span class="ptile-content"><a href="p2.php">
+        §2
+        </a></span>
+    </div>
+            
+    <div class="ptile">
+        <span class="ptile-content"><a href="p3.php">
+        §3
+        </a></span>
+    </div>
+            
+    <div class="ptile">
+        <span class="ptile-content"><a href="p4.php">
+        §4
+        </a></span>
+    </div>
+            </div>
+    </div>
+
+    <div class="theorie">
+        <div class="bar-s">
+            <h3>
+                Theorie
+            </h3>
+        </div>
+
+        <div class="theorie-content">
+            
+    		<p>§2 Een database aanmaken</p>
+
+			<p>Je kunt waardes opvragen, aanpassen en toevoegen met SQL (Structured Query Language), dit is een taal die erg lijkt op het Engels en waarmee je opdrachten kunt aanmaken om met de database te communiceren. Om hiermee te oefenen kun je gebruik maken van het programma XAMPP, hoe je dit kunt installeren kun je terugvinden bij de extra bestanden bij dit hoofdstuk. XAMPP is een programma dat je kunt gebruiken om te doen alsof een computer een server is. Zo kun je gebruikmaken van bepaalde talen en mogelijkheden. We gaan nu met XAMPP een eerste database aanmaken.</p>
+
+			<p>Ga nu naar de browser en dan naar http://localhost/phpmyadmin/ . Je krijgt hier een overzicht van een databasebeheer systeem. Om een database aan te maken klik je linksboven op “New”.</p>
+
+			<p>Dan vul je een naam in, collation kun je voor nu negeren. Het geeft aan met welke karakterset je wilt werken, oftewel hoe je tekens (tekst) wilt opslaan. Klik dan op “Create”. Je hebt nu een eigen database gemaakt!</p>
+
+			<p>Het heeft alleen nog geen inhoud, daar gaan we verandering in brengen. Klik links op de door jouw aangemaakte database.</p>
+
+			<p>Om een tabel toe te voegen vul je een naam in en dan het aantal kolommen, dit zijn het aantal vakken dat per rij beschikbaar zal zijn. Een vak kan dan bijvoorbeeld “gebruikersnaam” of “wachtwoord” zijn. Als naam van de tabel kun je bijvoorbeeld ‘gebruikers’ kiezen. Klik vervolgens op “Go” om de database aan te maken.</p>
+
+			<p>Als het goed is krijg je nu het volgende te zien:</p>
+
+			<p>Name geeft aan hoe je de kolom wilt noemen.</p>
+
+			<p>Type geeft aan welke soort data in die kolom komt te staan. De belangrijkste opties zijn:</p>
+
+			<p>INT</p>
+
+			<p>Een geheel getal</p>
+
+			<p>TEXT</p>
+
+			<p>Een reeks karakters (of een enkel karakter)</p>
+
+			<p>DATE</p>
+
+			<p>Een datum</p>
+
+			<p>Bij Length/Values kun je invullen welke waardes je wilt accepteren en hoelang een stuk tekst mag zijn (in aantal karakters).</p>
+
+			<p>Null Geeft aan of de waarde leeg mag zijn of dat het verplicht is.</p>
+
+			<p>A_I staat voor auto increment, dit zorgt ervoor dat het getal automatisch 1 groter wordt voor elke nieuwe rij. Het is erg handig voor een primaire sleutel.</p>
+
+			<p>De andere opties zijn minder belangrijk en zullen we nu ook niet doorlopen.</p>
+
+			<p>Je mag nu zelf een database bedenken of het voorbeeld blijven volgen.</p>
+
+			<p>We willen eerst een primaire sleutel, deze gaan we “id” noemen. Het wordt een INT met A_I aan. Als index kiezen we dus PRIMARY.</p>
+
+			<p>Dan willen we een gebruikersnaam, dit is een stuk tekst. Een gebruikersnaam van 20 karakters lang zou lang genoeg moeten zijn voor dit voorbeeld, dus Length = 20. Als je speciale tekens wilt opslaan, zoals een é, dan kun je onder Collation gebruikmaken van bijvoorbeeld utf8_bin. Deze optie zorgt ervoor dat een é niet opeens iets anders wordt als je het invoert in de database.</p>
+
+			<p>Een wachtwoord komt nu, dit is weer tekst en kun zelf proberen in te vullen. In een (goede) database zet je wachtwoorden niet als standard tekst erin, maar in dit voorbeeld gaan we dat wel doen omdat het te complex wordt.</p>
+
+			<p>Als laatste zetten we er email-adres bij, dit is weer tekst en mag in dit voorbeeld leeg blijven. We zetten “Null” dus aan.</p>
+
+			<p>Het ziet er nu als volgt uit:</p>
+
+			<p>De andere opties zijn nu niet van belang, dus we klikken op “Save” om het aanmaken definitief te maken.</p>
+
+			<p>We hebben nu een database met een structuur, maar er staat nog niks in. Hier gaan we in de volgende paragraaf aan werken.</p>
 
 		</div>
-	</div>
 
-	<div class="theorie">
-		<div class="bar-s">
-			<h3>
-				Theorie
-			</h3>
-		</div>
+        <div class="bar-s">
+            <h3>
+                Vragen
+            </h3>
+        </div>
 
-		<div class="theorie-content">
-			<span class="theorieTitle">Optellen</span>
-			Optellen in binair is niet ingewikkeld. Je telt het bovenste en onderste getal bij elkaar op en in het geval van 1+1 krijg je 10.
-
-			<img src="./afbeeldingen/additie.svg" class="theorieImage" />
-
-			Decimaal: 108+49 = 157, dus het klopt
-
-			<span class="theorieTitle">Getallen met elkaar verminderen</span>
-
-			Dit is ook niet ingewikkeld. Je haalt steeds het onderste getal van het bovenste getal af. als je op -1 uitkomt ‘leen’ je van het volgende getal.
-
-			<img src="./afbeeldingen/aftrekken.svg" class="theorieImage" />
-
-
-			<span class="theorieTitle">Vermenigvuldigen</span>
-
-			Vermenigvuldigen is lastiger, maar nog te doen. Dit doe je door steeds het meest rechtste nummer van onder te vermenigvuldigen met de nummers van de bovenste rij. Dit gaat dus van rechts naar links. Als de rij af is ga je bij de onderste rij de stappen herhalen voor het getal dat een plek verder naar links staat. Je zet steeds de uitkomsten onder elkaar en telt ze op het einde bij elkaar op. Denk eraan om het antwoord per rij ook steeds een plek op te laten schuiven.
-
-			<img src="./afbeeldingen/multiplicatie.svg" class="theorieImage" />
-
-			Delen
-
-			Binair delen is niet gemakkelijk, daarom begint het voorbeeld met een ‘normale’ staartdeling. De bedoeling is om steeds te kijken hoe vaak de noemer (het onderste getal in de breuk) in de teller (het bovenste getal in de breuk) past en dan uiteindelijk al die keren bij elkaar op te tellen en eventueel nog het overblijfsel als breuk over te nemen. Bij binair gaat het op precies dezelfde manier, maar het lijkt een stuk lastiger.
-
-			NB) bij binair rekenen mogen de 0 en waar geen 1 voor komt weg worden gelaten.
-
-			<img src="./afbeeldingen/delen.svg" class="theorieImage" />
-
-		</div>
-
-		<div class="bar-s">
-			<h3>
-				Vragen
-			</h3>
-		</div>
-
-		<div class="theorie-content">
-
-			Binair rekenen
-			<ol class="MLquestion">
-				<li>
-					Tel op
-
-					<ol>
-						<li>10111+01100</li>
-						<li>01111+1110101</li>
-						<li>001100111+01111100</li>
-					</ol>
-				</li>
-
-
-				<li>
-					Trek af
-
-					<ol>
-						<li>10110-11</li>
-						<li>10110-0110</li>
-						<li>110011-101110</li>
-					</ol>
-				</li>
-
-				<li>
-					Vermenigvuldig
-
-					<ol>
-						<li>111*000</li>
-						<li>101*101</li>
-						<li>11011*101111 </li>
-					</ol>
-				</li>
-
-				<li>
-					Delen
-
-					<ol>
-						<li>101/101</li>
-						<li>10110/10</li>
-					</ol>
-				</li>
+        <div class="theorie-content">
+            <ol>
+				<li>Maak zelf een database met minimaal 4 kolommen, het liefst niet gelijk aan het voorbeeld.</li>
 			</ol>
-
-		</div>
-
-		<div class="bar-s">
-			<h3>
-				Antwoorden
-			</h3>
-		</div>
-
-		<div class="theorie-content theorie-answers">
-
-			<ol class="MLquestion">
-				<li>
-					Tel op
-
-					<ol>
-						<li>100011</li>
-						<li>10000100</li>
-						<li>11100011</li>
-					</ol>
-				</li>
-
-
-				<li>
-					Trek af
-
-					<ol>
-						<li>10011</li>
-						<li>10000</li>
-						<li>100</li>
-					</ol>
-				</li>
-
-				<li>
-					Vermenigvuldig
-
-					<ol>
-						<li>0</li>
-						<li>11001</li>
-						<li>1001010</li>
-					</ol>
-				</li>
-
-				<li>
-					Delen
-
-					<ol>
-						<li>1</li>
-						<li>1011</li>
-					</ol>
-				</li>
-			</ol>
-
 		</div>
 	</div>
 

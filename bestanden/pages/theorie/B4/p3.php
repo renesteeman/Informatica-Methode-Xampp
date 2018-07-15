@@ -1,120 +1,88 @@
+
 <?php
-	include('../../../components/headerChapter.php');
+include('../../../components/headerChapter.php');
 ?>
 
 <body>
 
-	<div class="title-small">
-		<h2>
-			B1 §3 Gates
-		</h2>
-	</div>
+    <div class="title-small">
+        <h2> 
+        B4 
+        </h2>
+    </div>
 
-	<div class="bar-par-overview">
-		<div class="paragraph-tiles">
-			<div class="ptile">
-				<span class="ptile-content"><a href="p1.php">
-					§1
-				</a></span>
-			</div>
-			<div class="ptile">
-				<span class="ptile-content"><a href="p2.php">
-					§2
-				</a></span>
-			</div>
-			<div class="ptile active">
-				<span class="ptile-content"><a href="p3.php">
-					§3
-				</a></span>
-			</div>
-			<div class="ptile">
-				<span class="ptile-content"><a href="p4.php">
-					§4
-				</a></span>
-			</div>
-			<div class="ptile">
-				<span class="ptile-content"><a href="p5.php">
-					§5
-				</a></span>
-			</div>
+    <div class="bar-par-overview">
+        <div class="paragraph-tiles">
+    
+    <div class="ptile">
+        <span class="ptile-content"><a href="p1.php">
+        §1
+        </a></span>
+    </div>
+            
+    <div class="ptile">
+        <span class="ptile-content"><a href="p2.php">
+        §2
+        </a></span>
+    </div>
+            
+    <div class="ptile active">
+        <span class="ptile-content"><a href="p3.php">
+        §3
+        </a></span>
+    </div>
+            
+    <div class="ptile">
+        <span class="ptile-content"><a href="p4.php">
+        §4
+        </a></span>
+    </div>
+            </div>
+    </div>
+
+    <div class="theorie">
+        <div class="bar-s">
+            <h3>
+                Theorie
+            </h3>
+        </div>
+
+        <div class="theorie-content">
+            
+    		<p>§3 Communiceren met de database</p>
+
+			<p>Zoals al eerder gezegd gebruik je SQL om met de database te communiceren. Het is een vrij eenvoudige taal, dus we gaan er snel doorheen. Als je meer details wilt kun je bijvoorbeeld terecht op https://www.w3schools.com/sql/ , maar ook bij de volgende paragraaf.</p>
+
+			<p>Laten we beginnen, we willen eerst iets in onze database zetten. Hiervoor gebruik je INSERT INTO tabel (veld1, veld2, veld3) VALUES (waarde1, waarde2, waarde3). Stel dat we in onze database iemand willen zetten met als gebruikersnaam “gebruiker” en als wachtwoord “wachtwoord” en geen email. We gebruiken dan INSERT INTO gebruikers (gebruikersnaam, wachtwoord) VALUES ('gebruiker', 'wachtwoord'). Je kunt dit uitvoeren door in phpMyAdmin naar jouw database te gaan en dan te klikken op SQL</p>
+
+			<p>en dan de query (de SQL opdracht) in te voeren</p>
+
+			<p>als je dan op “Go” klikt wordt een rij aan jouw database toegevoegd. De code zet dus in de gebruikers tabel een rij met voor gebruikersnaam de waarde “gebruiker” en als wachtwoord de waarde “wachtwoord”. Er staan enkele aanhalingstekens om de waardes in SQL omdat het tekst is.</p>
+
+			<p>Het resultaat van de opdracht is te zien onder “Browse”.</p>
+
+			<p>Zo kunnen we nog een aantal rijen aanmaken, ga verder als je er 4 bij hebt gemaakt.</p>
+
+			<p>Er staan nu 5 rijen in onze database, laten we daar gebruik van maken. We gaan nu één van die rijen aanpassen, dit kun je in SQL doen door gebruik te maken van: UPDATE tabel SET kolom = waarde WHERE voorwaarde. Stel je wilt het email-adres van iemand met als gebruikersnaam “gebruiker” veranderen in test@test.test, dan kun je dat doen met de volgende code: UPDATE gebruikers SET email = 'test@test.test' WHERE gebruikersnaam = 'gebruiker'. Dit update het veld “email” naar de waarde test@test.test waar de gebruikersnaam gelijk is aan “gebruiker”.</p>
+
+			<p>Stel je wilt nu iemand terugvinden in jouw database, hiervoor kun je gebruik maken van SELECT kolom FROM tabel WHERE voorwaarde. De kolom die na SELECT komt is dus het ‘antwoord’ dat je krijgt, het kunnen ook meerdere kolommen zijn. Als je alles van een rij wilt terugkrijgen kun je ook * invullen, dat staat voor ‘alles’. Als je wilt zoeken voor iemand met als id de waarde 5 en je alles van die persoon wilt zien, dan gebruik je dus SELECT * FROM gebruikers WHERE id = 5. 5 is hier geen tekst, maar een getal, er hoeven dus geen aanhalingstekens omheen. Je kunt het * ook uitspreken als all of alles.</p>
+
+			<p>Om deze paragraaf af te sluiten gaan we een rij verwijderen. Dit doe je met: DELETE FROM tabel WHERE voorwaarde. Als we de gebruiker met id 5 willen verwijderen doen we dat met DELETE FROM gebruikers WHERE id = 5. Het is trouwens ook mogelijk om de keywords, oftewel de commando’s zoals SELECT, UPDATE en WHERE te schrijven zonder hoofdletters, al maken de hoofdletters duidelijker wat er gebeurt.</p>
 
 		</div>
-	</div>
 
-	<div class="theorie">
-		<div class="bar-s">
-			<h3>
-				Theorie
-			</h3>
-		</div>
+        <div class="bar-s">
+            <h3>
+                Vragen
+            </h3>
+        </div>
 
-		<div class="theorie-content">
-			<span class="theorieTitle">Gates</span>
-
-			‘Gates’ (= poortjes) zijn kleine schakelingen. De eenvoudigste zijn AND en OR.
-			Een gate vergelijkt twee waarden om een nieuwe te creëren (logica, komt in het volgende hoofdstuk). Bij AND moeten beide waarden 1 zijn, bij OR minimaal 1. Dit kan door stroompjes door een circuit te sturen. Als (genoeg) schakelingen in het circuit dicht zijn, dan is er een gesloten stroomkring, dus 1. Wanneer er geen sprake is van een gesloten stroomkring spreken we van 0.
-			Je zou het elektrisch circuit als volgt kunnen weergeven:
-			AND
-
-			<img src="./afbeeldingen/AND.svg" class="theorieImage" />
-
-			OR
-
-			<img src="./afbeeldingen/OR.svg" class="theorieImage" />
-
-
-			De grijze strepen zijn de mogelijke posities van de schakelaars. Als ze dicht zijn, dan kan er stroom doorheen, als ze open zijn niet, 1 of 0.
-
-
-		</div>
-
-		<div class="bar-s">
-			<h3>
-				Vragen
-			</h3>
-		</div>
-
-		<div class="theorie-content">
-
-			<ol class="MLquestion">
-				<li>
-					Neem als waarden 0 en 1 (in die volgorde).
-
-					<ol>
-						<li>Welk resultaat zal dit geven bij een AND-gate?</li>
-						<li>En bij een OR-gate?</li>
-						<li>Teken de AND- en OR-gates als een elektrisch circuit.</li>
-					</ol>
-				</li>
+        <div class="theorie-content">
+            <ol>
+				<li>Voeg minimaal 4 rijen toe aan jouw database.</li>
+				<li>Gebruik SELECT met WHERE in jouw database.</li>
+				<li>Verwijder een rij uit jouw database.</li>
 			</ol>
-
-		</div>
-
-		<div class="bar-s">
-			<h3>
-				Antwoorden
-			</h3>
-		</div>
-
-		<div class="theorie-content theorie-answers">
-
-			<ol class="MLquestion">
-				<li>
-					<ol>
-						<li>0</li>
-						<li>1</li>
-						<li>
-							AND
-							<img src="./afbeeldingen/vraagAND.svg" class="theorieImage" />
-
-							OR
-							<img src="./afbeeldingen/vraagOR.svg" class="theorieImage" />
-
-						</li>
-					</ol>
-				</li>
-			</ol>
-
 		</div>
 	</div>
 

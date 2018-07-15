@@ -1,120 +1,65 @@
+
 <?php
-	include('../../../components/headerChapter.php');
+include('../../../components/headerChapter.php');
 ?>
 
 <body>
 
-	<div class="title-small">
-		<h2>
-			B1 §1 het binair systeem
-		</h2>
-	</div>
+    <div class="title-small">
+        <h2> 
+        B4 
+        </h2>
+    </div>
 
-	<div class="bar-par-overview">
-		<div class="paragraph-tiles">
-			<div class="ptile active">
-				<span class="ptile-content"><a href="p1.php">
-					§1
-				</a></span>
-			</div>
-			<div class="ptile">
-				<span class="ptile-content"><a href="p2.php">
-					§2
-				</a></span>
-			</div>
-			<div class="ptile">
-				<span class="ptile-content"><a href="p3.php">
-					§3
-				</a></span>
-			</div>
-			<div class="ptile">
-				<span class="ptile-content"><a href="p4.php">
-					§4
-				</a></span>
-			</div>
-			<div class="ptile">
-				<span class="ptile-content"><a href="p5.php">
-					§5
-				</a></span>
-			</div>
+    <div class="bar-par-overview">
+        <div class="paragraph-tiles">
+    
+    <div class="ptile active">
+        <span class="ptile-content"><a href="p1.php">
+        §1
+        </a></span>
+    </div>
+            
+    <div class="ptile">
+        <span class="ptile-content"><a href="p2.php">
+        §2
+        </a></span>
+    </div>
+            
+    <div class="ptile">
+        <span class="ptile-content"><a href="p3.php">
+        §3
+        </a></span>
+    </div>
+            
+    <div class="ptile">
+        <span class="ptile-content"><a href="p4.php">
+        §4
+        </a></span>
+    </div>
+            </div>
+    </div>
 
-		</div>
-	</div>
+    <div class="theorie">
+        <div class="bar-s">
+            <h3>
+                Theorie
+            </h3>
+        </div>
 
-	<div class="theorie">
-		<div class="bar-s">
-			<h3>
-				Theorie
-			</h3>
-		</div>
+        <div class="theorie-content">
+            
+    		<p>§1 Wat is een database?</p>
 
-		<div class="theorie-content">
-			<p>
-				<p>
-					Een computer ‘begrijpt’ alleen 0’en en 1’en. Deze worden in de computer heen en weer gestuurd, waardoor de computer taken kan uitvoeren. Ze worden begrepen door de af- of aanwezigheid van stroom, dus een 0 of 1.
+			<p>Een database is een manier om data op te slaan voor applicaties. Het lijkt op een grote tabel waar onder andere getallen, datums en tekst in kan worden opgeslagen. Het is vooral handig om gegevens van gebruikers bij te houden, zoals de gebruikersnaam, het wachtwoord (niet in tekst) en een email-adres.</p>
 
-				</p>
+			<p>Zo’n database staat vaak op een server, dat is een soort computer die vooral gebruikt wordt om informatie uit te wisselen met gebruikers en een applicatie. Bijvoorbeeld voor het inloggen op een website, hier stuurt de gebruiker tekst door naar een server en ‘reageert’ de applicatie door bijvoorbeeld de code te activeren die toegang geeft tot bepaalde functies.</p>
 
-				<p>
-					Een hele reeks van deze 0’en en 1’en kan een betekenis hebben, net zoals een letter of cijfer. Samen zijn ze dus nuttig.
-				</p>
+			<p>In een database zijn vaak meerdere tabellen te vinden, zoals: groepen, planner en gebruikers. Elke tabel heeft dan zijn eigen overzicht van gegevens. Zo kan er bij gebruikers bijvoorbeeld een gebruikersnaam en wachtwoorden kolom zijn. Elke gebruiker heeft dan zijn eigen rij waar deze kolommen zijn ingevuld.</p>
 
-				<p>
-					In binair wordt van rechts naar links geteld. Elke 1 geeft de aanwezigheid van een getal weer en elke 0 de afwezigheid van een getal.
-				</p>
+			<p>Een voorbeeld van zo’n database is:</p>
 
-				<p>
-					Alle 1’en samen, inclusief de ruimte ertussen, geven een volledige waarde weer. De waarde van de 1 wordt bepaald door de plek die de 1 heeft binnen de reeks. De eerste plek is 1 waard, de 2e plek is 2 waard, de 3e is 4 waard en zo blijft het zich steeds verdubbelen naarmate het verder naar links gaat.
-				</p>
-			</p>
-
-			<p>
-				Een voorbeeld is 01001. Als je van links naar rechts telt en alle waardes daarna bij elkaar optelt, kom je op 1+8=9 uit. Dit kan ook andersom 9=8+1, dus eerst 1 en dan 1000. Dat wordt samen 1001 (= 01001).
-			</p>
-
-		</div>
-
-		<div class="bar-s">
-			<h3>
-				Vragen
-			</h3>
-		</div>
-
-		<div class="theorie-content">
-
-			<ol>
-				<li>
-					Hoe wordt een nul en een één door een computer begrepen?
-				</li>
-				<li>
-					Vertaal 001, 011, 1001001 naar het decimale systeem (‘normale’ getallen)
-				</li>
-				<li>
-					Vertaal 5, 20 en 40 naar binair
-				</li>
-			</ol>
-
-		</div>
-
-		<div class="bar-s">
-			<h3>
-				Antwoorden
-			</h3>
-		</div>
-
-		<div class="theorie-content theorie-answers">
-
-			<ol>
-				<li>
-					Wel stroom = 1, geen stroom = 0
-				</li>
-				<li>
-					1, 3, 73
-				</li>
-				<li>
-					101, 10100, 101000
-				</li>
-			</ol>
+			<p>In een database is het belangrijk dat er een primairy key in voorkomt. Dit is een waarde die voor elke rij uniek is. In dit voorbeeld is dat het id, dit is een uniek nummer voor elke gebruiker en kan gebruikt worden om mensen uit elkaar te houden.</p>
 
 		</div>
 	</div>

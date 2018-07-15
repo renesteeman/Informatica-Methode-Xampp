@@ -124,7 +124,7 @@ include('../../../components/headerChapter.php');
 
 \t<div class="title-small">
 \t\t<h2> 
-\t\t\t """+ChapterName+ ' § ' + str(paragraphNumber) + """ 
+\t\t\t"""+ChapterName+ ' §' + str(paragraphNumber) + """ 
 \t\t</h2>
 \t </div>
 

@@ -124,7 +124,7 @@ include('../../../components/headerChapter.php');
 
     <div class="title-small">
         <h2> 
-        """+ChapterName+""" 
+        """+ChapterName+ ' § ' + paragraphNumber + """ 
         </h2>
     </div>
 
@@ -165,7 +165,7 @@ include('../../../components/headerChapter.php');
             </h3>
         </div>
 
-        <div class="theorie-content">
+    <div class="theorie-content">
             
     """
 
@@ -227,7 +227,7 @@ def createTheory(theory, fileLocation):
                     buffer = ""
                     i += 1
                 else:
-                    buffer = "\t\t\t<p>" + buffer + "</p>\n\n"
+                    buffer = "\t\t\t\t<p>" + buffer + "</p>\n\n"
                     toAddToFile += buffer
                     buffer = ""
                     i += 1
@@ -254,14 +254,14 @@ def createQuestions(questions, fileLocation):
 
         #add questions start
         toAddToFile += """\n
-        <div class="bar-s">
-            <h3>
-                Vragen
-            </h3>
-        </div>
+    <div class="bar-s">
+        <h3>
+            Vragen
+        </h3>
+    </div>
 
         <div class="theorie-content">
-            <ol>\n"""
+        \t<ol>\n"""
 
         #add questions body
         pattern = re.compile(r'\d+[).]')
@@ -271,12 +271,12 @@ def createQuestions(questions, fileLocation):
         for match in matches:
             if i > 0:
                 match = match.strip()
-                toAddToFile += "\t\t\t\t<li>" + match + "</li>\n"
+                toAddToFile += "\t\t\t\t\t\t<li>" + match + "</li>\n"
 
             i += 1
 
         #add questions end
-        toAddToFile += "\t\t\t</ol>\n\t\t</div>"
+        toAddToFile += "\t\t\t\t\t</ol>\n\t\t\t\t</div>"
 
         file = codecs.open(fileLocation, "a", "utf-8")
         file.write(toAddToFile)

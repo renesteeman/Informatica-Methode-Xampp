@@ -6,12 +6,12 @@
 
 	<div class="title-small">
 		<h2>
-			H7 Trello installeren
+			B4 XAMPP installeren
 		</h2>
 	</div>
 
 	<div class="installation-bar">
-		<h3>Trello</h3>
+		<h3>XAMPP</h3>
 	</div>
 
 	<div class="theorie">

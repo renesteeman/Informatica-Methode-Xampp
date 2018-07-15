@@ -122,15 +122,15 @@ include('../../../components/headerChapter.php');
 
 <body>
 
-    <div class="title-small">
-        <h2> 
-        """+ChapterName+ ' § ' + paragraphNumber + """ 
-        </h2>
-    </div>
+\t<div class="title-small">
+\t\t<h2> 
+\t\t\t """+ChapterName+ ' § ' + str(paragraphNumber) + """ 
+\t\t</h2>
+\t </div>
 
-    <div class="bar-par-overview">
-        <div class="paragraph-tiles">
-    """
+\t<div class="bar-par-overview">
+\t\t<div class="paragraph-tiles">
+"""
 
     i = 1
 
@@ -138,36 +138,37 @@ include('../../../components/headerChapter.php');
         if paragraphNumber == i:
 
             fileContent += """
-    <div class="ptile active">
-        <span class="ptile-content"><a href="p"""+str(i)+""".php">
-        §"""+str(i)+"""
-        </a></span>
-    </div>
-            """
+\t\t\t<div class="ptile active">
+\t\t\t\t<span class="ptile-content"><a href="p"""+str(i)+""".php">
+\t\t\t\t\t§"""+str(i)+"""
+\t\t\t\t</a></span>
+\t\t\t</div>
+"""
         else:
             fileContent += """
-    <div class="ptile">
-        <span class="ptile-content"><a href="p"""+str(i)+""".php">
-        §"""+str(i)+"""
-        </a></span>
-    </div>
-            """
+\t\t\t<div class="ptile">
+\t\t\t\t<span class="ptile-content"><a href="p"""+str(i)+""".php">
+\t\t\t\t\t§"""+str(i)+"""
+\t\t\t\t</a></span>
+\t\t\t</div>
+"""
 
         i += 1
 
-    fileContent += """</div>
-    </div>
+    fileContent += """
+\t\t</div>
+\t</div>
 
-    <div class="theorie">
-        <div class="bar-s">
-            <h3>
-                Theorie
-            </h3>
-        </div>
+\t<div class="theorie">
+\t\t<div class="bar-s">
+\t\t\t<h3>
+\t\t\t\tTheorie
+\t\t\t</h3>
+\t\t</div>
 
-    <div class="theorie-content">
-            
-    """
+\t\t<div class="theorie-content">
+        
+"""
 
     file = codecs.open(fileLocation, "a", "utf-8")
     file.write(fileContent)
@@ -188,7 +189,6 @@ def readFile(fileLocation, paragraphNumber):
                 cFileContent = docx2txt.process(cFile)
 
             return cFileContent
-
 
     except:
         print("Error: could't read file")
@@ -222,12 +222,12 @@ def createTheory(theory, fileLocation):
             buffer = buffer.strip()
             if len(buffer) > 0:
                 if i == 0:
-                    buffer = "\t\t<p>" + buffer + "</p>\n\n"
+                    buffer = "\t\t\t<p>" + buffer + "</p>\n\n"
                     toAddToFile += buffer
                     buffer = ""
                     i += 1
                 else:
-                    buffer = "\t\t\t\t<p>" + buffer + "</p>\n\n"
+                    buffer = "\t\t\t<p>" + buffer + "</p>\n\n"
                     toAddToFile += buffer
                     buffer = ""
                     i += 1
@@ -254,14 +254,14 @@ def createQuestions(questions, fileLocation):
 
         #add questions start
         toAddToFile += """\n
-    <div class="bar-s">
-        <h3>
-            Vragen
-        </h3>
-    </div>
+\t\t<div class="bar-s">
+\t\t\t<h3>
+\t\t\t\tVragen
+\t\t\t</h3>
+\t\t</div>
 
-        <div class="theorie-content">
-        \t<ol>\n"""
+\t\t<div class="theorie-content">
+\t\t\t<ol>\n"""
 
         #add questions body
         pattern = re.compile(r'\d+[).]')
@@ -271,12 +271,12 @@ def createQuestions(questions, fileLocation):
         for match in matches:
             if i > 0:
                 match = match.strip()
-                toAddToFile += "\t\t\t\t\t\t<li>" + match + "</li>\n"
+                toAddToFile += "\t\t\t\t<li>" + match + "</li>\n"
 
             i += 1
 
         #add questions end
-        toAddToFile += "\t\t\t\t\t</ol>\n\t\t\t\t</div>"
+        toAddToFile += "\t\t\t</ol>\n\t\t</div>"
 
         file = codecs.open(fileLocation, "a", "utf-8")
         file.write(toAddToFile)
@@ -287,14 +287,14 @@ def createAnswers(answers, fileLocation):
 
         #add questions start
         toAddToFile += """\n
-        <div class="bar-s">
-            <h3>
-                Antwoorden
-            </h3>
-        </div>
+\t\t<div class="bar-s">
+\t\t\t<h3>
+\t\t\t\tAntwoorden
+\t\t\t</h3>
+\t\t</div>
 
-        <div class="theorie-content theorie-answers">
-            <ol>\n"""
+\t\t<div class="theorie-content theorie-answers">
+\t\t\t<ol>\n"""
 
         #add questions body
         pattern = re.compile(r'\d+[).]')
@@ -330,15 +330,14 @@ def addBody(fileLocation, paragraphNumber):
 def addFooter(fileLocation, paragraphNumber):
     toAddToFile = """\n\t</div>
 
-	<?php
-	include('../../../components/footerChapter.php');
-	?>
+\t<?php
+\t\tinclude('../../../components/footerChapter.php');
+\t?>
 
 </body>"""
 
     file = codecs.open(fileLocation, "a", "utf-8")
     file.write(toAddToFile)
-
 
 def processFiles():
     createFolder(SaveFolder)
@@ -365,8 +364,6 @@ def processFiles():
         addFooter(paragraphLocation, i)
 
         i += 1 
-
-        
 
 root = Tk()
 

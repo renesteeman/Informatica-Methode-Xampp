@@ -89,7 +89,7 @@ Hello HTML
 </code>
 
 Stel je wilt een hele paragraaf als tekst, dan kun je &lt;p> gebruiken. De p staat voor paragraph. Of om een ‘blok’ te detineren kun je &lt;div> gebruiken, dit staat voor divisie. Dit kun je later met css bijvoorbeeld een achtergrondkleur geven.
-Als je HTML gaat schrijven kan dit in word, maar het is beter om een gespecialiseerd programma voor te gebruiken. Zelf (de maker van deze website) gebruik ik atom. Dit is een gratis tekstbewerker waar je zelf veel aan kunt aanpassen en toevoegen. Je kunt het vinden op https://atom.io/ . Je kunt een bestand dan opslaan met de extensie html (dus je eindigt de naam van het bestand met .html). Dit kun je dan openen met de browser. Ik adviseer om als browser geen gebruik te maken van internet explorer, aangezien dit slechte ondersteuning heeft.
+Als je HTML gaat schrijven kan dit in word, maar het is beter om een gespecialiseerd programma voor te gebruiken. Zelf (als maker van deze website) gebruik ik atom. Dit is een gratis tekstbewerker waar je zelf veel aan kunt aanpassen en toevoegen. Je kunt het vinden op <a href="https://atom.io/">https://atom.io/</a> . Je kunt een bestand dan opslaan met de extensie html (dus je eindigt de naam van het bestand met .html). Dit kun je dan openen met de browser. Ik adviseer om als browser geen gebruik te maken van internet explorer, aangezien dit slechte ondersteuning heeft.
 			</pre>
 		</div>
 

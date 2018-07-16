@@ -13,7 +13,12 @@
 
 		.item.old
 			.itemHeader.docent, .itemHeader.leerling
-				background-color: rgba(darken($grey, 30%), .6)
+				background-color: rgba(darken($blue-green, 15%), .6)
+
+			.itemContent
+				.itemInhoud
+					//color stacks because of the lower alpha, so the .1 makes sure it's not to dark
+					background-color: rgba(darken($blue-green, 15%), .1)
 
 		.item
 
@@ -183,13 +188,16 @@
 						span.naam
 							width: 30%
 							min-width: 6em
+							margin-top: 1.5em
 
 						span.hoofdstukken
 							width: 20%
 							min-width: 6em
+							margin-top: 1.5em
 
 						span.icons
 							min-width: 6em
+							margin-top: 0.5em
 
 			.item:not(:last-of-type)
 				border-bottom: $black 1px solid

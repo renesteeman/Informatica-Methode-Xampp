@@ -97,6 +97,8 @@ $(document).ready(function(){
 					$('.vraagBalk').eq(i).next().next().addClass('show');
 				}
 
+				$('html, body').animate({ scrollTop: 0 }, 'fast');
+
 			});
 
 			jqXHR.fail(function( jqXHR) {

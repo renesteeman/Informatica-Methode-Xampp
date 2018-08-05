@@ -4,6 +4,10 @@
 
 	$user = $_SESSION["username"];
 
+	$minPasswordLength = 5;
+	$error = false;
+	$return_msg = "";
+
 	//function to check and clean input
 	function check_input($data) {
 		$data = trim($data, " ");
@@ -27,7 +31,7 @@
 			$rightpsw = $result['password'];
 
 		} else {
-			echo "\nError with sql execution, please report to admin";
+			$return_msg .= "\nError with sql execution, please report to admin";
 		}
 
 		//check password
@@ -47,59 +51,62 @@
 
 			//update naam
 			if(isset($_POST['Nnaam'])){
+
 				$Nnaam = mysqli_real_escape_string($conn, check_input($_POST['Nnaam']));
 
-				$sql = "SELECT naam FROM users WHERE naam='$Nnaam'";
-				if (mysqli_query($conn, $sql)) {
-
-					$result = mysqli_query($conn, $sql);
-
-					//geen account met nieuwe naam gevonden
-					if(mysqli_num_rows($result)==0){
-						if($Nnaam != $Cnaam && $Nnaam != ''){
-							$sql = "UPDATE users SET naam='$Nnaam' WHERE username='$user'";
-							if (mysqli_query($conn, $sql)) {
-							    echo "\nNaam succesvol bijgewerkt";
-							} else {
-							    echo "SQL error report to admin";
-							}
+				if(strlen($Nnaam) > 0){
+					if($Nnaam != $Cnaam){
+						$sql = "UPDATE users SET naam='$Nnaam' WHERE username='$user'";
+						if (mysqli_query($conn, $sql)) {
+					    $return_msg .= "\nNaam succesvol bijgewerkt";
+							$_SESSION["name"] = $Nnaam;
+						} else {
+					    $return_msg .= "SQL error report to admin";
+							$error = 1;
 						}
-					} else {
-						echo "\nNaam al in gebruik";
 					}
-				} else {
-					echo "SQL error report to admin";
 				}
 			}
 
 			//update gebruikersnaam
 			if(isset($_POST['Nusername'])){
+
 				$Nusername = mysqli_real_escape_string($conn, check_input($_POST['Nusername']));
 
-				$sql = "SELECT naam FROM users WHERE username='$Nusername'";
-				if (mysqli_query($conn, $sql)) {
+				if(strlen($Nusername) > 0){
 
-					$result = mysqli_query($conn, $sql);
+					if($Cusername != $Nusername){
+						$sql = "SELECT naam FROM users WHERE username='$Nusername'";
+						if (mysqli_query($conn, $sql)) {
 
-					//geen account met nieuwe naam gevonden
-					if(mysqli_num_rows($result)==0){
-						if($Nusername != $Cusername && $Nusername != ''){
-							$sql = "UPDATE users SET username='$Nusername' WHERE username='$user'";
+							$result = mysqli_query($conn, $sql);
 
-							if (mysqli_query($conn, $sql)) {
-							    echo "\nGebruikersnaam succesvol bijgewerkt";
-								$_SESSION["username"] = $Nusername;
-								$user = $Nusername;
+							//geen account met nieuwe naam gevonden
+							if(mysqli_num_rows($result)==0){
+								if($Nusername != $Cusername && $Nusername != ''){
+									$sql = "UPDATE users SET username='$Nusername' WHERE username='$user'";
 
+									if (mysqli_query($conn, $sql)) {
+								    $return_msg .= "\nGebruikersnaam succesvol bijgewerkt";
+										$_SESSION["username"] = $Nusername;
+										$user = $Nusername;
+
+									} else {
+								    $return_msg .= "SQL error report to admin";
+										$error = 1;
+									}
+								}
 							} else {
-							    echo "SQL error report to admin";
+								$return_msg .= "\nGebruikersnaam al in gebruik";
+								$error = 1;
 							}
+						} else {
+							$return_msg .= "SQL error report to admin";
+							$error = 1;
 						}
-					} else {
-						echo "\nGebruikersnaam al in gebruik";
+					}	else {
+						$return_msg .= "\nDe nieuwe gebruiksnaam is gelijk aan de oude.";
 					}
-				} else {
-					echo "SQL error report to admin";
 				}
 			}
 
@@ -108,17 +115,27 @@
 				$Npassword = mysqli_real_escape_string($conn, check_input($_POST['Npassword']));
 				$NpasswordConfirm = mysqli_real_escape_string($conn, check_input($_POST['NpasswordConfirm']));
 
-				if($Npassword == $NpasswordConfirm && $Npassword != ''){
-					//hash password
-					$Npassword = password_hash($Npassword, PASSWORD_DEFAULT);
+				if($Npassword == $NpasswordConfirm){
+					if(strlen($Npassword) >= $minPasswordLength){
+						//hash password
+						$Npassword = password_hash($Npassword, PASSWORD_DEFAULT);
 
-					//update password
-					$sql = "UPDATE users SET password='$Npassword' WHERE username='$user'";
-					if (mysqli_query($conn, $sql)) {
-					    echo "\nWachtwoord succesvol bijgewerkt";
+						//update password
+						$sql = "UPDATE users SET password='$Npassword' WHERE username='$user'";
+						if (mysqli_query($conn, $sql)) {
+					    $return_msg .= "\nWachtwoord succesvol bijgewerkt";
+						} else {
+					    $return_msg .= "SQL error, report admin";
+							$error = 1;
+						}
 					} else {
-					    echo "SQL error, report admin";
+						$return_msg .= "\nHet nieuwe wachtwoord is niet lang genoeg, het moet minimaal "."$minPasswordLength"." karakters lang zijn.";
+						$error = 1;
 					}
+
+				} else {
+					$return_msg .= "\nHet nieuwe wachtwoord komt niet overeen met de bevestiging.";
+					$error = 1;
 				}
 			}
 
@@ -136,12 +153,14 @@
 						if(mysqli_num_rows($result)==0){
 							$sql = "UPDATE users SET email='$Nemail' WHERE username='$user'";
 							if (mysqli_query($conn, $sql)) {
-							    echo "\nEmail succesvol bijgewerkt";
+							    $return_msg .= "\nEmail succesvol bijgewerkt";
 							} else {
-							    echo "SQL error, report to admin";
+							    $return_msg .= "SQL error, report to admin";
+									$error = 1;
 							}
 						} else {
-							echo "\nEmailadres al in gebruik \n";
+							$return_msg .= "\nEmailadres al in gebruik \n";
+							$error = 1;
 						}
 					}
 				}
@@ -155,17 +174,25 @@
 
 					$sql = "UPDATE users SET group_role='$Ngroup_role' WHERE username='$user'";
 					if (mysqli_query($conn, $sql)) {
-					    echo "\nGroup succesvol bijgewerkt";
+					    $return_msg .= "\nGroup succesvol bijgewerkt";
 					} else {
-					    echo "SQL error, report admin";
+					    $return_msg .= "SQL error, report admin";
+							$error = 1;
 					}
 				}
 			}
 
 		} else {
-			echo "\nVerkeerd wachtwoord";
+			$return_msg .= "\nVerkeerd wachtwoord";
+			$error = 1;
 		}
 	}
+
+	$toReturn = array('msg' => $return_msg, 'error' => $error);
+	$toReturn = json_encode($toReturn);
+
+	#return data to ajax
+	echo $toReturn;
 
 	mysqli_close($conn);
 

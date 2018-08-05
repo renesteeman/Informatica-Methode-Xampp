@@ -14,8 +14,8 @@ $(document).ready(function(){
 		var y = pos.top;
 
 		$('html, body').animate({
-            scrollTop: y - 120
-        }, 'fast');
+      scrollTop: y - 120
+    }, 'fast');
 
 	});
 
@@ -203,15 +203,19 @@ $(document).ready(function(){
 		jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/updateAccount.php',
-			data: {Nnaam: Nnaam, Nusername: Nusername, Npassword: Npassword, NpasswordConfirm: NpasswordConfirm, Nemail:Nemail, Ngroup_role: Ngroup_role, password: password}
+			data: {Nnaam: Nnaam, Nusername: Nusername, Npassword: Npassword, NpasswordConfirm: NpasswordConfirm, Nemail:Nemail, Ngroup_role: Ngroup_role, password: password},
 		});
 
-		jqXHR.done(function(msg) {
-			if(msg.includes('succesvol')){
-				window.alert(msg);
+		jqXHR.done(function(response) {
+			response = JSON.parse(response);
+			console.log(response);
+
+			//if there isn't an error, redirect, else stay on page
+			if(response.error == 0){
+				window.alert(response.msg);
 				window.location.href = '../index.php';
 			} else {
-				window.alert(msg);
+				window.alert(response.msg);
 			}
 		});
 

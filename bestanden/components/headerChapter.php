@@ -5,7 +5,7 @@ session_start();
 include('../../../scripts/DB_connect.php');
 
 //check if the person is loged in
-if (!isset($_SESSION["username"])){
+if (!isset($_SESSION["id"])){
 	$_SESSION['ErrorNotLogedIn'] = 1;
 	header('Location: ../../../index.php');
 }
@@ -16,8 +16,8 @@ function AccountValid(){
 	//needed to connect inside the function
 	global $conn;
 
-	$user = $_SESSION["username"];
-	$sql = "SELECT expire_date FROM users WHERE username='$user'";
+	$id = $_SESSION["id"];
+	$sql = "SELECT expire_date FROM users WHERE id='$id'";
 
 	if (mysqli_query($conn, $sql)) {
 		//find teacher info
@@ -38,7 +38,7 @@ function AccountValid(){
 }
 
 //check if person is loged in
-if (!isset($_SESSION["username"])){
+if (!isset($_SESSION["id"])){
 	$_SESSION['ErrorNotLogedIn'] = 1;
 	header('Location: ../../../index.php');
 } else {
@@ -111,7 +111,7 @@ if (!isset($_SESSION["username"])){
 			<div class="burger-content">
 				<?php
 					//if logged in say hello, else give the option to login
-					if (isset($_SESSION["username"])){
+					if (isset($_SESSION["functie"])){
 						if ($_SESSION["functie"] == 'docent'){
 							//if a teacher is logged in
 							echo '
@@ -144,7 +144,7 @@ if (!isset($_SESSION["username"])){
 				<div class="welcome">
 					<?php
 					//if logged in say hello, else give the option to login
-					if (isset($_SESSION["username"])){
+					if (isset($_SESSION["name"])){
 						echo
 							'<div>
 								Welkom <a href="../../account.php">'.$_SESSION["name"].'</a>
@@ -169,7 +169,7 @@ if (!isset($_SESSION["username"])){
 
 			<?php
 			//if logged in say hello, else give the option to login
-			if (isset($_SESSION["username"])){
+			if (isset($_SESSION["functie"])){
 				if ($_SESSION["functie"] == 'docent'){
 					//if a teacher is logged in
 					echo '
@@ -203,7 +203,7 @@ if (!isset($_SESSION["username"])){
 
 					<?php
 						//if logged in say hello, else give the option to login
-						if (isset($_SESSION["username"])){
+						if (isset($_SESSION["name"])){
 							echo
 								'<div>
 									Welkom <a href="../../account.php">'.$_SESSION["name"].'</a>

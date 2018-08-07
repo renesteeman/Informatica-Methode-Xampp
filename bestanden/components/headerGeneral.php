@@ -31,8 +31,8 @@ function AccountValid(){
 	//needed to connect inside a function
 	global $conn;
 
-	$user = $_SESSION["username"];
-	$sql = "SELECT expire_date FROM users WHERE username='$user'";
+	$id = $_SESSION["id"];
+	$sql = "SELECT expire_date FROM users WHERE id='$id'";
 
 	if (mysqli_query($conn, $sql)) {
 		//find teacher info
@@ -54,12 +54,12 @@ function AccountValid(){
 
 //if the account is expired, than redirect to index (if the person isn't on the index page yet) (only check if the person is loged in)
 if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF']) != 'account.php' AND basename($_SERVER['PHP_SELF']) != 'resetPswFront.php'){
-	if(!isset($_SESSION['username'])){
+	if(!isset($_SESSION['id'])){
 		$_SESSION['ErrorNotLogedIn'] = 1;
 		header('Location: index.php');
 	}
 
-	if(isset($_SESSION['ErrorNotLogedIn'])){
+	if(isset($_SESSION['id'])){
 		if($_SESSION['ErrorNotLogedIn'] == 0){
 			if(!AccountValid()){
 				$_SESSION['ErrorInvalidAccount'] = 1;
@@ -133,7 +133,7 @@ if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF
 			<div class="burger-content">
 				<?php
 					//if logged in say hello, else give the option to login
-					if (isset($_SESSION["username"])){
+					if (isset($_SESSION["functie"])){
 						if ($_SESSION["functie"] == 'docent'){
 							//if a teacher is logged in
 							echo '
@@ -165,7 +165,7 @@ if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF
 				<div class="welcome">
 					<?php
 						//if logged in say hello, else give the option to login
-						if (isset($_SESSION["username"])){
+						if (isset($_SESSION["name"])){
 							echo
 								'<div>
 									Welkom <a href="../pages/account.php">'.$_SESSION["name"].'</a>
@@ -190,7 +190,7 @@ if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF
 
 			<?php
 				//if logged in say hello, else give the option to login
-				if (isset($_SESSION["username"])){
+				if (isset($_SESSION["functie"])){
 					if ($_SESSION["functie"] == 'docent'){
 						//if a teacher is logged in
 						echo '
@@ -224,7 +224,7 @@ if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF
 
 					<?php
 						//if logged in say hello, else give the option to login
-						if (isset($_SESSION["username"])){
+						if (isset($_SESSION["name"])){
 							echo
 								'<div>
 									Welkom <a href="../pages/account.php">'.$_SESSION["name"].'</a>

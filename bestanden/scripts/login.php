@@ -26,7 +26,7 @@
 	}
 
 	//login function
-	function login($username, $password, $rightpsw, $functie, $naam, $NFailedLogins, $LFailedLogin, $now){
+	function login($id, $username, $password, $rightpsw, $functie, $naam, $NFailedLogins, $LFailedLogin, $now){
 		global $conn;
 
 		//check psw
@@ -34,9 +34,12 @@
 			//if it's right than login
 
 			//start session with username
+			$_SESSION["id"] = $id;
 			$_SESSION["username"] = $username;
 			$_SESSION["name"] = $naam;
 			$_SESSION["functie"] = $functie;
+			$_SESSION['ErrorNotLogedIn'] = 0;
+			$_SESSION['ErrorInvalidAccount'] = 0;
 
 			$sql = "UPDATE users SET NFailedLogins='0' WHERE username='$username'";
 			if(mysqli_query($conn, $sql)) {
@@ -61,12 +64,13 @@
 	$captchaShown = mysqli_real_escape_string($conn, check_input($_POST['captchaShown']));
 
 	//get password for $username
-	$sql = "SELECT password, functie, naam, NFailedLogins, LFailedLogin FROM users WHERE username='$username'";
+	$sql = "SELECT id, password, functie, naam, NFailedLogins, LFailedLogin FROM users WHERE username='$username'";
 
 	if (mysqli_query($conn, $sql)) {
 
 		$result = mysqli_query($conn, $sql);
 		$result = mysqli_fetch_assoc($result);
+		$id = $result['id'];
 		$rightpsw = $result['password'];
 		$functie = $result['functie'];
 		$naam = $result['naam'];
@@ -110,7 +114,7 @@
 
 							} else if ($captcha_success->success==true) {
 								//try to log in
-								login($username, $password, $rightpsw, $functie, $naam, $NFailedLogins, $LFailedLogin, $now);
+								login($id, $username, $password, $rightpsw, $functie, $naam, $NFailedLogins, $LFailedLogin, $now);
 							}
 						}
 					} else {
@@ -121,12 +125,12 @@
 
 				} else {
 					//try to log in
-					login($username, $password, $rightpsw, $functie, $naam, $NFailedLogins, $LFailedLogin, $now);
+					login($id, $username, $password, $rightpsw, $functie, $naam, $NFailedLogins, $LFailedLogin, $now);
 				}
 			}
 
 			//try to log in
-			login($username, $password, $rightpsw, $functie, $naam, $NFailedLogins, $LFailedLogin, $now);
+			login($id, $username, $password, $rightpsw, $functie, $naam, $NFailedLogins, $LFailedLogin, $now);
 
 		} else {
 			echo "Uw account is geblokkeerd, probeer het over 24 uur opnieuw. Om het wachtwoord te resetten kunt u gebruik maken van de 'wachtwoord vergeten' knop, dit kan alleen als u een e-mail adres heeft ingevuld.";

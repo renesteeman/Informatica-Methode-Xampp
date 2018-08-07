@@ -115,27 +115,29 @@
 				$Npassword = mysqli_real_escape_string($conn, check_input($_POST['Npassword']));
 				$NpasswordConfirm = mysqli_real_escape_string($conn, check_input($_POST['NpasswordConfirm']));
 
-				if($Npassword == $NpasswordConfirm){
-					if(strlen($Npassword) >= $minPasswordLength){
-						//hash password
-						$Npassword = password_hash($Npassword, PASSWORD_DEFAULT);
+				if(strlen($Npassword) > 0){
+					if($Npassword == $NpasswordConfirm){
+						if(strlen($Npassword) >= $minPasswordLength){
+							//hash password
+							$Npassword = password_hash($Npassword, PASSWORD_DEFAULT);
 
-						//update password
-						$sql = "UPDATE users SET password='$Npassword' WHERE username='$user'";
-						if (mysqli_query($conn, $sql)) {
-					    $return_msg .= "\nWachtwoord succesvol bijgewerkt";
+							//update password
+							$sql = "UPDATE users SET password='$Npassword' WHERE username='$user'";
+							if (mysqli_query($conn, $sql)) {
+						    $return_msg .= "\nWachtwoord succesvol bijgewerkt";
+							} else {
+						    $return_msg .= "SQL error, report admin";
+								$error = 1;
+							}
 						} else {
-					    $return_msg .= "SQL error, report admin";
+							$return_msg .= "\nHet nieuwe wachtwoord is niet lang genoeg, het moet minimaal "."$minPasswordLength"." karakters lang zijn.";
 							$error = 1;
 						}
+
 					} else {
-						$return_msg .= "\nHet nieuwe wachtwoord is niet lang genoeg, het moet minimaal "."$minPasswordLength"." karakters lang zijn.";
+						$return_msg .= "\nHet nieuwe wachtwoord komt niet overeen met de bevestiging.";
 						$error = 1;
 					}
-
-				} else {
-					$return_msg .= "\nHet nieuwe wachtwoord komt niet overeen met de bevestiging.";
-					$error = 1;
 				}
 			}
 

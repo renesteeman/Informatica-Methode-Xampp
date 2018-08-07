@@ -8,6 +8,9 @@
 	$Glink = "";
 	$Gschool = "";
 
+	$error = false;
+	$return_msg = "";
+
 	//function to check and clean input
 	function check_input($data) {
 		$data = trim($data, " ");
@@ -28,7 +31,8 @@
 			$Gschool = $result['school'];
 
 		} else {
-			echo "Error with sql execution, please report to admin </br>";
+			$return_msg .= "\nError with sql execution, please report to admin.";
+			$error = 1;
 		}
 
 		//get info
@@ -40,7 +44,7 @@
 				$sql = mysqli_query($conn, "SELECT naam FROM groepen WHERE naam='$Gnaam' and school='$Gschool'");
 
 				if (mysqli_num_rows($sql) != 0) {
-					echo "\n Groepnaam is al in gebruik.";
+					$return_msg .= "\nGroepnaam is al in gebruik.";
 	 			   $Gnaam = "";
 				};
 			}
@@ -87,7 +91,8 @@
 			$rightpsw = $result['password'];
 
 		} else {
-			echo "\nError with sql execution, please report to admin";
+			$return_msg .= "\nError with sql execution, please report to admin";
+			$error = 1;
 		}
 
 		//check psw
@@ -98,9 +103,10 @@
 				$sql = "INSERT INTO groepen (naam, beschrijving, link, school) VALUES ('$Gnaam', '$Gomschrijving', '$Glink', '$Gschool')";
 
 				if (mysqli_query($conn, $sql)) {
-					echo "Groep succesvol toegevoegd";
+					$return_msg .= "\nGroep succesvol toegevoegd";
 				} else {
-					echo "\nError with sql execution, please report to admin";
+					$return_msg .= "\nError with sql execution, please report to admin";
+					$error = 1;
 				}
 
 				//link students to group
@@ -114,24 +120,34 @@
 						$sql = "UPDATE users SET group_name='$Gnaam' WHERE naam='$studentName' and school='$Gschool'";
 
 						if (mysqli_query($conn, $sql)) {
-							echo "\n".$studentName." succesvol toegevoegd aan groep";
+							$return_msg .= "\n".$studentName." succesvol toegevoegd aan groep";
 						} else {
-							echo "\n SQL error, report to admin";
+							$return_msg .= "\nSQL error, report to admin";
+							$error = 1;
 						}
 					} else {
-						echo "\n".$studentName." bestaat niet";
+						$return_msg .= "\n".$studentName." bestaat niet";
+						$error = 1;
 					}
 				}
 
 			} else {
-				echo "\n Niet alle informatie is ontvangen of de informatie is niet correct";
+				$return_msg .= "\nNiet alle informatie is ontvangen of de informatie is niet correct";
+				$error = 1;
 			}
 
 		} else {
-			echo "\nWrong password";
+			$return_msg .= "\nVerkeerd wachtwoord";
+			$error = 1;
 		}
 
 	}
+
+	$toReturn = array('msg' => $return_msg, 'error' => $error);
+	$toReturn = json_encode($toReturn);
+
+	#return data to ajax
+	echo $toReturn;
 
 	$conn->close();
 

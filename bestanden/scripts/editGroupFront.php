@@ -149,4 +149,6 @@ include('../components/headerGeneral.php');
 	include('../components/footerGeneral.php');
 	?>
 
+	<script src="../scripts/group.js"></script>
+
 </body>

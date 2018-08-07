@@ -56,7 +56,7 @@
 			echo '
 			<link rel="stylesheet" href="../css/accountSettings.min.css">
 			<div class="login">
-				<form class="accountSettingsForm" method="post" action="../scripts/updateAccount.php" accept-charset="UTF-8">
+				<form class="accountSettingsForm" method="post" action="../scripts/editAccount.php" accept-charset="UTF-8">
 					<ul>
 						<li>
 							<label>Naam</label>
@@ -143,6 +143,8 @@
 	<?php
 	include('../components/footerGeneral.php');
 	?>
+
+	<script src="../scripts/editAccount.js"></script>
 
 	<script>
 	var onloadCallback = function() {

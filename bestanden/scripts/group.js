@@ -1,0 +1,120 @@
+$(document).ready(function(){
+  //create group
+	$('.createGroupForm').submit(function(event){
+		event.preventDefault();
+
+		var Gnaam = $('input[name=Gnaam]').val();
+		var Gomschrijving = $('textarea[name=Gomschrijving]').val();
+		var Glink = $('input[name=Glink]').val();
+
+		var Gleden = [];
+		$('.ledenLijst>ul>li>.list-item').each(function(index){
+			Gleden.push($(this).text());
+		});
+
+		var password = $('input[name=password]').val();
+
+		//Give php the info it needs (via AJAX)
+		jqXHR = $.ajax({
+			method: "POST",
+			url: "createGroupAjax.php",
+			data: {Gnaam: Gnaam, Gomschrijving: Gomschrijving, Glink: Glink, Gleden: Gleden, password: password}
+		});
+		jqXHR.done(function(response) {
+      response = JSON.parse(response);
+			alert(response.msg);
+
+      //if there isn't an error, redirect
+      if(!response.error){
+        window.location.href = '../pages/overview.php';
+      }
+
+		});
+		jqXHR.fail(function(jqXHR, textStatus) {
+		  alert( "Request failed: " + textStatus );
+		});
+
+	});
+
+  //edit group sent data
+  $(".editGroup").click(function(){
+    var groupname = $(this).parent().parent().parent().children().first().children().first().text();
+
+    //sent values of group via ajax to editGroupFront.php
+    jqXHR = $.ajax({
+      method: "POST",
+      url: '../scripts/editGroupSetSession.php',
+      data: {groupname: groupname}
+    });
+    jqXHR.done(function() {
+      window.location.href = '../scripts/editGroupFront.php';
+    });
+    jqXHR.fail(function( jqXHR) {
+      alert( "AJAX failed, contact admin" );
+    });
+
+  });
+
+  $('.editGroupForm').submit(function(event){
+    event.preventDefault();
+  });
+
+  //edit group
+  $("#editGroupConfirm").click(function(){
+    var NGname = $("input[name='NGnaam']").val();
+    var NGbeschrijving = $("textarea[name='NGomschrijving']").val();
+    var NGlink = $("input[name='NGlink']").val();
+    var password = $("input[name='password']").val();
+
+    var NGleden = [];
+    $('.list>ul>li>.list-item').each(function(index){
+      NGleden.push($(this).text());
+    });
+
+    console.log(NGleden);
+
+    //sent values of group via ajax to editGroupFront.php
+    jqXHR = $.ajax({
+      method: "POST",
+      url: '../scripts/editGroupAjax.php',
+      data: {NGname: NGname, NGbeschrijving:NGbeschrijving, NGlink:NGlink, NGleden:NGleden, password:password}
+    });
+
+    jqXHR.done(function(msg) {
+      window.alert(msg);
+      window.location.href = '../pages/overview.php';
+    });
+
+    jqXHR.fail(function( jqXHR) {
+      alert("AJAX failed, contact admin");
+    });
+  });
+
+  //delete group data
+  $('.deleteGroupButton').click(function(){
+    if (confirm("Weet u zeker dat u de groep wilt verwijderen?")){
+      var password = $("input[name='password']").val();
+
+      //sent values of group via ajax to editGroupFront.php
+      jqXHR = $.ajax({
+        method: "POST",
+        url: '../scripts/deleteGroupAjax.php',
+        data: {password:password}
+      });
+
+      jqXHR.done(function(msg) {
+        window.alert(msg);
+        if(!includes(msg, 'error') && !includes(msg, 'Wrong')){
+          window.location.href = '../pages/overview.php';
+        }
+      });
+
+      jqXHR.fail(function( jqXHR) {
+        alert("AJAX failed, contact admin");
+      });
+
+    } else {
+      alert("Groep verwijderen is geanuleerd.");
+    }
+  });
+});

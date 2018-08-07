@@ -33,46 +33,36 @@
 
 	<?php
 		//show which chapters are completed
-		if (isset($_SESSION["username"])){
+		if (isset($_SESSION["id"])){
 
-			$username = $_SESSION["username"];
+			$id = $_SESSION["id"];
 			$chaptersAvailable = [];
 
-			//get id from user
-			$sql = "SELECT id FROM users WHERE username='$username'";
-
+			//look for current values
+			$sql = "SELECT * FROM progressie WHERE userid='$id'";
 			if (mysqli_query($conn, $sql)) {
-
 				$result = mysqli_query($conn, $sql);
-				$result = mysqli_fetch_assoc($result);
-				$id = $result['id'];
 
-				//look for current values
-				$sql = "SELECT * FROM progressie WHERE userid='$id'";
-				if (mysqli_query($conn, $sql)) {
-					$result = mysqli_query($conn, $sql);
+				//if the user has progression stored
+				if(!mysqli_num_rows($result) == 0){
+					while($chapters = mysqli_fetch_assoc($result)){
+						//get the chapters that are being tracked
+						$availableChapters = array_keys($chapters);
+						unset($availableChapters[0]);
 
-					//if the user has progression stored
-					if(!mysqli_num_rows($result) == 0){
-						while($chapters = mysqli_fetch_assoc($result)){
-							//get the chapters that are being tracked
-							$availableChapters = array_keys($chapters);
-							unset($availableChapters[0]);
+						//check info from chapters
+						for($i=1; $i<sizeof($availableChapters); $i++){
+							$chapter = $availableChapters[$i];
+							$chapterData = $chapters[$chapter];
+							if($chapterData != ""){
 
-							//check info from chapters
-							for($i=1; $i<sizeof($availableChapters); $i++){
-								$chapter = $availableChapters[$i];
-								$chapterData = $chapters[$chapter];
-								if($chapterData != ""){
+								$amountOfParagraphsThatShouldBeFinished = $chapterData[0];
+								$finishedParagraphs = substr($chapterData, 1);
+								$finishedParagraphs = str_replace('0', '', $finishedParagraphs);
+								$amountOfParagraphsFinished = strlen($finishedParagraphs);
 
-									$amountOfParagraphsThatShouldBeFinished = $chapterData[0];
-									$finishedParagraphs = substr($chapterData, 1);
-									$finishedParagraphs = str_replace('0', '', $finishedParagraphs);
-									$amountOfParagraphsFinished = strlen($finishedParagraphs);
-
-									if($amountOfParagraphsThatShouldBeFinished == $amountOfParagraphsFinished){
-										$completedChapters[] = $chapter;
-									}
+								if($amountOfParagraphsThatShouldBeFinished == $amountOfParagraphsFinished){
+									$completedChapters[] = $chapter;
 								}
 							}
 						}

@@ -58,14 +58,14 @@
 
 			<?php
 				//if logged in show class
-				if (isset($_SESSION["username"])){
+				if (isset($_SESSION["id"])){
 
-					$user = $_SESSION["username"];
+					$id = $_SESSION["id"];
 
 					$klassen = [];
 					$klassen['klas'] = [];
 
-					$sql = "SELECT school, functie FROM users WHERE username='$user'";
+					$sql = "SELECT school, functie FROM users WHERE id='$id'";
 
 					if (mysqli_query($conn, $sql)) {
 						//find school of teacher
@@ -87,11 +87,9 @@
 								    // output data of each row of names with class
 
 								    while($row = mysqli_fetch_assoc($result)) {
-										$klas = $row["klas"];
-
-										$id = $row["id"];
-										$naam = $row["naam"];
-										$klas = $row["klas"];
+										$Cid = $row["id"];
+										$Cnaam = $row["naam"];
+										$Cklas = $row["klas"];
 										$group_role = $row["group_role"];
 										$group_name = $row["group_name"];
 										$gemiddeldePunt = 0;
@@ -99,10 +97,10 @@
 										$onSchedule = 1;
 
 										//save info from user
-										$userinfo = ['naam'=>$naam, 'klas'=>$klas, 'group_role'=>$group_role, 'group_name'=>$group_name];
+										$userinfo = ['naam'=>$Cnaam, 'klas'=>$Cklas, 'group_role'=>$group_role, 'group_name'=>$group_name];
 
 										//get more info cijfer
-										$sql2 = "SELECT cijfer FROM `quiz` WHERE userid='$id'";
+										$sql2 = "SELECT cijfer FROM `quiz` WHERE id='$Cid'";
 
 										//get info from other tables
 										if (mysqli_query($conn, $sql2)) {
@@ -129,7 +127,7 @@
 										}
 
 										//get more info progression
-										$sql3 = "SELECT H1, H2, H3, H4, H5, H6, H7 FROM `progressie` WHERE userid='$id'";
+										$sql3 = "SELECT H1, H2, H3, H4, H5, H6, H7 FROM `progressie` WHERE userid='$Cid'";
 
 										//get/calculate completed chapters
 										if (mysqli_query($conn, $sql3)) {
@@ -170,8 +168,8 @@
 											echo "SQL error, alert admin";
 										}
 
-										//get more info chapters that should have been completed
-										$sql4 = "SELECT progressie FROM `planner` WHERE school='$school' AND klas='$klas'";
+										//get more info about chapters that should have been completed
+										$sql4 = "SELECT progressie FROM `planner` WHERE school='$school' AND klas='$Cklas'";
 
 										//get chapters that should be done
 										if (mysqli_query($conn, $sql4)) {
@@ -202,7 +200,7 @@
 										$userinfo['onSchedule'] = $onSchedule;
 										$userinfo['gemiddeldePunt'] = $gemiddeldePunt;
 
-										$klassen['klas'][$klas][] = $userinfo;
+										$klassen['klas'][$Cklas][] = $userinfo;
 
 								    }
 
@@ -303,7 +301,7 @@
 		<?php
 
 			//if logged in show add group button
-			if (isset($_SESSION["username"])){
+			if (isset($_SESSION["functie"])){
 				if($functie != 'docent'){
 					echo "U bent geen docent";
 				} else {
@@ -336,14 +334,14 @@
 			<?php
 
 				//if logged in show class
-				if (isset($_SESSION["username"])){
+				if (isset($_SESSION["id"])){
 
-					$user = $_SESSION["username"];
+					$id = $_SESSION["id"];
 
 					$userSchool = "";
 
 					//get school from teacher
-					$sql = "SELECT school, functie FROM users WHERE username='$user'";
+					$sql = "SELECT school, functie FROM users WHERE id='$id'";
 
 					if (mysqli_query($conn, $sql)) {
 
@@ -504,7 +502,7 @@
 			<?php
 
 				//if logged in show add group button
-				if (isset($_SESSION["username"])){
+				if (isset($_SESSION["functie"])){
 					if($functie != 'docent'){
 						echo "U bent geen docent";
 					} else {

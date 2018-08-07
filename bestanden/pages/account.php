@@ -22,7 +22,7 @@
 	<div class="bar">
 		<h3>
 			<?php
-				if (isset($_SESSION["username"])){
+				if (isset($_SESSION["id"])){
 					echo 'Account gegevens';
 				} else {
 					echo 'Login';
@@ -34,12 +34,12 @@
 	<?php
 
 		//if logged in say hello, else give the option to login
-		if (isset($_SESSION["username"])){
+		if (isset($_SESSION["id"])){
 			//if the user is loged in, display account settings
 
-			$user = $_SESSION["username"];
+			$id = $_SESSION["id"];
 
-			$sql = "SELECT * FROM users WHERE username='$user'";
+			$sql = "SELECT * FROM users WHERE id='$id'";
 
 			//get current info in order to show a 'preview'
 			if (mysqli_query($conn, $sql)) {
@@ -114,10 +114,7 @@
 						</li>
 						<li>
 
-							<div id="captcha" class="hide">
-
-							</div>
-
+							<div id="captcha" class="hide"></div>
 
 						</li>
 						<li class="cookie">

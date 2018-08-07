@@ -6,7 +6,7 @@
 		</div>
 		<div class="contact-info">
 			<?php
-				if (isset($_SESSION["username"])){
+				if (isset($_SESSION["functie"])){
 					if ($_SESSION["functie"] == 'docent'){
 						echo '<a id="phone" href="tel:+045622155216">06-22155216</a>';
 					}

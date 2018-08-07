@@ -1,8 +1,29 @@
 $(document).ready(function(){
+	//IE patch
+	function includes(container, value) {
+		var returnValue = false;
+		var pos = container.indexOf(value);
+
+		if (pos >= 0) {
+			returnValue = true;
+		}
+
+		return returnValue;
+	}
+
 	//burger icon
 	$(".burger-icon").click(function(){
 		$(".nav-burger").toggleClass("active");
 	});
+
+	//IE detection
+	function isIE() {
+		return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null)));
+	}
+
+	if (isIE()){
+		$('.chapter-tiles').addClass("IE");
+	}
 
 	//chapter tiles
 	$(".tile").click(function(){
@@ -174,7 +195,7 @@ $(document).ready(function(){
 
 			jqXHR.done(function(msg) {
 				window.alert(msg);
-				if(!msg.includes('error') && !msg.includes('Wrong')){
+				if(!includes(msg, 'error') && !includes(msg, 'Wrong')){
 					window.location.href = '../pages/overview.php';
 				}
 			});

@@ -1,5 +1,17 @@
 $(document).ready(function(){
 
+	//IE patch
+	function includes(container, value) {
+		var returnValue = false;
+		var pos = container.indexOf(value);
+
+		if (pos >= 0) {
+			returnValue = true;
+		}
+
+		return returnValue;
+	}
+
 	//login
 	$('.loginForm').submit(function(event){
 		event.preventDefault();
@@ -20,13 +32,14 @@ $(document).ready(function(){
 
 		jqXHR.done(function(msg) {
 
+			console.log(msg);
+
 			if(msg.length == 0){
 				window.location.href = '../index.php';
-			} else if (msg.includes('updated attempts')){
+			} else if (includes(msg, 'updated attempts')){
 				window.location.href = '../index.php';
-			} else if (msg.includes('captcha')){
+			} else if (includes(msg, 'captcha')){
 				$("#captcha").removeClass("hide");
-
 				window.alert(msg);
 			} else {
 				window.alert(msg);

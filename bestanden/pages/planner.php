@@ -54,14 +54,14 @@
 		-->
 
 		<?php
-			if (isset($_SESSION["username"])){
+			if (isset($_SESSION["id"])){
 
-				$user = $_SESSION["username"];
+				$id = $_SESSION["id"];
 
 				$klassen = [];
 				$klassen['klas'] = [];
 
-				$sql = "SELECT school, klas, functie FROM users WHERE username='$user'";
+				$sql = "SELECT school, klas, functie FROM users WHERE id='$id'";
 
 				if (mysqli_query($conn, $sql)) {
 					//find teacher info
@@ -72,7 +72,7 @@
 					$Pfunctie = $result['functie'];
 
 					if($Pfunctie == 'leerling'){
-						$sql = "SELECT * FROM planner WHERE school='$Pschool' AND klas='$Pklas' ORDER BY datum";
+						$sql = "SELECT * FROM planner WHERE school='$Pschool' AND klas='$Pklas' ORDER BY datum DESC";
 					} else if ($Pfunctie == 'docent') {
 						$sql = "SELECT * FROM planner WHERE school='$Pschool' ORDER BY datum DESC";
 					}
@@ -160,8 +160,6 @@
 					} else {
 						echo "SQL error, report to admin";
 					}
-
-
 				} else {
 					echo "SQL error, report to admin";
 				}
@@ -176,7 +174,7 @@
 		<?php
 			//if logged in show groups
 			//TODO check if person is teacher
-			if (isset($_SESSION["username"])){
+			if (isset($_SESSION["id"])){
 				echo '
 				<form class="addItemButton" method="post" action="../scripts/createItemFront.php">
 					<input type="submit" value="Nieuwe opdracht">

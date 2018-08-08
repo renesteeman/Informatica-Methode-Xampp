@@ -32,6 +32,10 @@
 
 		<ul>
 			<li>
+				Aanvraagcode</br>
+				<input class="password" name="request_password" type="password" required/>
+			</li>
+			<li>
 				Schoolnaam</br>
 				<input type="text" class="schoolnaam" name="schoolnaam" required/>
 			</li>

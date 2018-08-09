@@ -2,7 +2,7 @@
 	include('DB_connect.php');
 	session_start();
 
-	$user = $_SESSION["username"];
+	$id = $_SESSION["id"];
 	$Inaam = "";
 	$Iomschrijving = "";
 	$Ischool = "";
@@ -21,7 +21,7 @@
 	//get given login data if set
 	if(isset($_POST)){
 		//get school from teacher
-		$sql = "SELECT school FROM users WHERE username='$user'";
+		$sql = "SELECT school FROM users WHERE id='$id'";
 
 		if (mysqli_query($conn, $sql)) {
 

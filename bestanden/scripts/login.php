@@ -63,7 +63,7 @@
 	$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
 	$captchaShown = mysqli_real_escape_string($conn, check_input($_POST['captchaShown']));
 
-	//get password for $username
+	//get password for user
 	$sql = "SELECT id, password, functie, naam, NFailedLogins, LFailedLogin FROM users WHERE username='$username'";
 
 	if (mysqli_query($conn, $sql)) {

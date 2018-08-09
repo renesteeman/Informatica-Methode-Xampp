@@ -23,10 +23,10 @@ include('../components/headerGeneral.php');
 
 		<?php
 
-		$user = $_SESSION["username"];
+		$id = $_SESSION["id"];
 		$school = "";
 
-		$sql = "SELECT school FROM users WHERE username='$user'";
+		$sql = "SELECT school FROM users WHERE id='$id'";
 
 		//get current info in order to show a 'preview'
 		if (mysqli_query($conn, $sql)) {
@@ -47,6 +47,9 @@ include('../components/headerGeneral.php');
 		$Iklas = mysqli_real_escape_string($conn, check_input($_SESSION['itemklas']));
 		$Idate = mysqli_real_escape_string($conn, check_input($_SESSION['itemdatum']));
 		$Ibeschrijving = mysqli_real_escape_string($conn, check_input($_SESSION['itembeschrijving']));
+
+		if (isset($_SESSION["functie"])){
+			if($_SESSION["functie"] == 'docent'){
 
 		echo '
 		<span class="top-header">
@@ -76,11 +79,7 @@ include('../components/headerGeneral.php');
 					<div class="list itemLijst">
 						<ul>';
 
-						if (isset($_SESSION["username"])){
-
-							$user = $_SESSION["username"];
-
-							$sql = "SELECT school FROM users WHERE username='$user'";
+							$sql = "SELECT school FROM users WHERE username='$id'";
 
 							if (mysqli_query($conn, $sql)) {
 								//find school of teacher
@@ -119,10 +118,8 @@ include('../components/headerGeneral.php');
 							} else {
 								echo "SQL error, contact admin";
 							}
-						}
 
-		?>
-
+							echo '
 						</ul>
 					</div>
 					<div class="addItem">
@@ -149,9 +146,14 @@ include('../components/headerGeneral.php');
 				</li>
 			</ul>
 		</form>
-	</div>
-
-
+	</div>';
+				} else {
+					echo "\nU bent geen docent.";
+				}
+			} else {
+				echo "\nU bent niet ingelogd.";
+			}
+	?>
 
 	</div>
 

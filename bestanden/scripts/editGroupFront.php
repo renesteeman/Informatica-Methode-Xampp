@@ -40,8 +40,8 @@ include('../components/headerGeneral.php');
 					</span>'
 				;
 
-				$user = $_SESSION["username"];
-				$sql = "SELECT school FROM users WHERE username='$user'";
+				$id = $_SESSION["id"];
+				$sql = "SELECT school FROM users WHERE id='$id'";
 
 				//get current info in order to show a 'preview'
 				if (mysqli_query($conn, $sql)) {

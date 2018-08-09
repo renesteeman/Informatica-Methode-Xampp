@@ -10,12 +10,12 @@
 		return $data;
 	}
 
-	$user = $_SESSION["username"];
+	$id = $_SESSION["id"];
 	$Gnaam = $_SESSION["groupname"];
 	$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
 
-	//get password for $user
-	$sql = "SELECT password FROM users WHERE username='$user'";
+	//get password for user
+	$sql = "SELECT password FROM users WHERE id='$id'";
 	if (mysqli_query($conn, $sql)) {
 
 		$result = mysqli_query($conn, $sql);
@@ -24,7 +24,7 @@
 
 		//check psw
 		if(password_verify($password, $rightpsw)){
-			$sql = "SELECT school FROM users WHERE username='$user'";
+			$sql = "SELECT school FROM users WHERE id='$id'";
 
 			if (mysqli_query($conn, $sql)) {
 				$result = mysqli_query($conn, $sql);

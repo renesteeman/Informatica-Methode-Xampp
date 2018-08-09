@@ -2,7 +2,7 @@
 	include('DB_connect.php');
 	session_start();
 
-	$user = $_SESSION["username"];
+	$id = $_SESSION["id"];
 
 	$minPasswordLength = 5;
 	$error = false;
@@ -21,8 +21,8 @@
 		//get given psw
 		$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
 
-		//get password for $username
-		$sql = "SELECT password FROM users WHERE username='$user'";
+		//get password for user
+		$sql = "SELECT password FROM users WHERE id='$id'";
 
 		if (mysqli_query($conn, $sql)) {
 
@@ -36,7 +36,7 @@
 
 		//check password
 		if(password_verify($password, $rightpsw)){
-			$sql = "SELECT * FROM users WHERE username='$user'";
+			$sql = "SELECT * FROM users WHERE id='$id'";
 
 			//get current info in order to compare
 			if (mysqli_query($conn, $sql)) {
@@ -56,12 +56,32 @@
 
 				if(strlen($Nnaam) > 0){
 					if($Nnaam != $Cnaam){
-						$sql = "UPDATE users SET naam='$Nnaam' WHERE username='$user'";
+
+						$sql = "SELECT id FROM users WHERE username='$Nusername'";
+
 						if (mysqli_query($conn, $sql)) {
-					    $return_msg .= "\nNaam succesvol bijgewerkt";
-							$_SESSION["name"] = $Nnaam;
+
+							$result = mysqli_query($conn, $sql);
+
+							//geen account met nieuwe naam gevonden
+							if(mysqli_num_rows($result)==0){
+
+								$sql = "UPDATE users SET naam='$Nnaam' WHERE id='$id'";
+
+								if (mysqli_query($conn, $sql)) {
+							    $return_msg .= "\nNaam succesvol bijgewerkt";
+									$_SESSION["name"] = $Nnaam;
+								} else {
+							    $return_msg .= "\nSQL error report to admin";
+									$error = 1;
+								}
+
+							} else {
+								$return_msg .= "\nDeze naam is in gebruik op deze school.";
+								$error = 1;
+							}
 						} else {
-					    $return_msg .= "SQL error report to admin";
+							$return_msg .= "\nSQL error report to admin";
 							$error = 1;
 						}
 					}
@@ -76,23 +96,22 @@
 				if(strlen($Nusername) > 0){
 
 					if($Cusername != $Nusername){
-						$sql = "SELECT naam FROM users WHERE username='$Nusername'";
+						$sql = "SELECT id FROM users WHERE username='$Nusername'";
 						if (mysqli_query($conn, $sql)) {
 
 							$result = mysqli_query($conn, $sql);
 
-							//geen account met nieuwe naam gevonden
+							//geen account met nieuwe gebruikersnaam gevonden
 							if(mysqli_num_rows($result)==0){
 								if($Nusername != $Cusername && $Nusername != ''){
-									$sql = "UPDATE users SET username='$Nusername' WHERE username='$user'";
+									$sql = "UPDATE users SET username='$Nusername' WHERE id='$id'";
 
 									if (mysqli_query($conn, $sql)) {
 								    $return_msg .= "\nGebruikersnaam succesvol bijgewerkt";
 										$_SESSION["username"] = $Nusername;
-										$user = $Nusername;
 
 									} else {
-								    $return_msg .= "SQL error report to admin";
+								    $return_msg .= "\nSQL error report to admin";
 										$error = 1;
 									}
 								}
@@ -101,7 +120,7 @@
 								$error = 1;
 							}
 						} else {
-							$return_msg .= "SQL error report to admin";
+							$return_msg .= "\nSQL error report to admin";
 							$error = 1;
 						}
 					}	else {
@@ -122,11 +141,11 @@
 							$Npassword = password_hash($Npassword, PASSWORD_DEFAULT);
 
 							//update password
-							$sql = "UPDATE users SET password='$Npassword' WHERE username='$user'";
+							$sql = "UPDATE users SET password='$Npassword' WHERE id='$id'";
 							if (mysqli_query($conn, $sql)) {
 						    $return_msg .= "\nWachtwoord succesvol bijgewerkt";
 							} else {
-						    $return_msg .= "SQL error, report admin";
+						    $return_msg .= "\nSQL error, report admin";
 								$error = 1;
 							}
 						} else {
@@ -153,15 +172,15 @@
 
 						//geen account met nieuw emailadres gevonden
 						if(mysqli_num_rows($result)==0){
-							$sql = "UPDATE users SET email='$Nemail' WHERE username='$user'";
+							$sql = "UPDATE users SET email='$Nemail' WHERE id='$id'";
 							if (mysqli_query($conn, $sql)) {
 							    $return_msg .= "\nEmail succesvol bijgewerkt";
 							} else {
-							    $return_msg .= "SQL error, report to admin";
+							    $return_msg .= "\nSQL error, report to admin";
 									$error = 1;
 							}
 						} else {
-							$return_msg .= "\nEmailadres al in gebruik \n";
+							$return_msg .= "\nEmailadres al in gebruik";
 							$error = 1;
 						}
 					}
@@ -174,11 +193,11 @@
 
 				if($Ngroup_role != $Cgroup_role && $Ngroup_role != ''){
 
-					$sql = "UPDATE users SET group_role='$Ngroup_role' WHERE username='$user'";
+					$sql = "UPDATE users SET group_role='$Ngroup_role' WHERE id='$id'";
 					if (mysqli_query($conn, $sql)) {
 					    $return_msg .= "\nGroup succesvol bijgewerkt";
 					} else {
-					    $return_msg .= "SQL error, report admin";
+					    $return_msg .= "\nSQL error, report admin";
 							$error = 1;
 					}
 				}

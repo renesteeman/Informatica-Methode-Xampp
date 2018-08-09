@@ -12,7 +12,7 @@
 
 	$error = 0;
 	//get and filter data
-	$user = $_SESSION["username"];
+	$id = $_SESSION["id"];
 	$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
 	$NInaam = mysqli_real_escape_string($conn, check_input($_POST['NInaam']));
 	$NIomschrijving = mysqli_real_escape_string($conn, check_input($_POST['NIomschrijving']));
@@ -39,8 +39,8 @@
 		$NIprogressie = [];
 	}
 
-	//get password for $user
-	$sql = "SELECT password FROM users WHERE username='$user'";
+	//get password for id
+	$sql = "SELECT password FROM users WHERE id='id'";
 	if (mysqli_query($conn, $sql)) {
 
 		$result = mysqli_query($conn, $sql);
@@ -49,7 +49,7 @@
 
 		//check psw
 		if(password_verify($password, $rightpsw)){
-			$sql = "SELECT school FROM users WHERE username='$user'";
+			$sql = "SELECT school FROM users WHERE id='id'";
 
 			if (mysqli_query($conn, $sql)) {
 				$result = mysqli_query($conn, $sql);

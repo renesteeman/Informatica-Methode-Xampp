@@ -34,14 +34,14 @@
 				<?php
 					//show classes
 					//if logged in show class
-					if (isset($_SESSION["username"])){
+					if (isset($_SESSION["id"])){
 
-						$user = $_SESSION["username"];
+						$id = $_SESSION["id"];
 
 						$klassen = [];
 						$klassen['klas'] = [];
 
-						$sql = "SELECT school, functie FROM users WHERE username='$user'";
+						$sql = "SELECT school, functie FROM users WHERE id='$id'";
 
 						if (mysqli_query($conn, $sql)) {
 							//find school of teacher

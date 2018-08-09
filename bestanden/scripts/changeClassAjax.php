@@ -2,7 +2,7 @@
 	include('DB_connect.php');
 	session_start();
 
-	$user = $_SESSION["username"];
+	$id = $_SESSION["id"];
 	$school = '';
 	$functie = '';
 
@@ -22,7 +22,7 @@
 		array_push($namen, $naam);
 	};
 
-	$sql = "SELECT school, functie FROM users WHERE username='$user'";
+	$sql = "SELECT school, functie FROM users WHERE id='$id'";
 
 	if (mysqli_query($conn, $sql)) {
 		//find school of teacher

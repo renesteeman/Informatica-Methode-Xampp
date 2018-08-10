@@ -47,6 +47,7 @@
 				$Cusername = $result['username'];
 				$Cemail = $result['email'];
 				$Cgroup_role = $result['group_role'];
+				$School = $result['school'];
 			}
 
 			//update naam
@@ -57,13 +58,13 @@
 				if(strlen($Nnaam) > 0){
 					if($Nnaam != $Cnaam){
 
-						$sql = "SELECT id FROM users WHERE username='$Nusername'";
+						$sql = "SELECT id FROM users WHERE username='$Nusername' AND school='$school'";
 
 						if (mysqli_query($conn, $sql)) {
 
 							$result = mysqli_query($conn, $sql);
 
-							//geen account met nieuwe naam gevonden
+							//geen account met nieuwe naam gevonden vcoor deze school
 							if(mysqli_num_rows($result)==0){
 
 								$sql = "UPDATE users SET naam='$Nnaam' WHERE id='$id'";

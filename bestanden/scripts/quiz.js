@@ -25,9 +25,16 @@ $(document).ready(function(){
 	});
 
 	$(".vraagBalk").click(function(){
-		$(this).next().slideToggle();
-		$(this).toggleClass("active");
-		$(this).next().next().toggleClass("after-active");
+		$(this).toggleClass("inactive");
+		$(this).next(".antwoorden").first().slideToggle();
+		$(this).nextAll(".vraagBalk").first().toggleClass("after-inactive");
+
+		//klap uitleg niet uit als het nog niet getoond is, anders wel
+		$uitleg = $(this).nextAll(".uitleg").first();
+		if(uitleg.css("display") != "none"){
+			$uitleg.slideToggle();
+		}
+
 	});
 
 	$('.controleerAntwoordButton').click(function(){

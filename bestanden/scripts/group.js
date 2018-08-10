@@ -36,25 +36,6 @@ $(document).ready(function(){
 
 	});
 
-  //edit group sent data
-  $(".editGroup").click(function(){
-    var groupname = $(this).parent().parent().parent().children().first().children().first().text();
-
-    //sent values of group via ajax to editGroupFront.php
-    jqXHR = $.ajax({
-      method: "POST",
-      url: '../scripts/editGroupSetSession.php',
-      data: {groupname: groupname}
-    });
-    jqXHR.done(function() {
-      window.location.href = '../scripts/editGroupFront.php';
-    });
-    jqXHR.fail(function( jqXHR) {
-      alert( "AJAX failed, contact admin" );
-    });
-
-  });
-
   $('.editGroupForm').submit(function(event){
     event.preventDefault();
   });

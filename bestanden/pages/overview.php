@@ -433,8 +433,8 @@
 										echo'
 											</span>
 												<span class="icons">
-													<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
-													<span class="editGroup image"><img src="../icons/edit.svg" class="arrow"/></span>
+													<span class="Arrow image"><img src="../icons/arrow.svg"></span>
+													<span class="editGroup image"><img src="../icons/edit.svg"></span>
 												</span>
 											</div>';
 

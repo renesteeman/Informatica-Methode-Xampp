@@ -95,4 +95,23 @@ $(document).ready(function(){
 		$(this).parent().remove();
 	});
 
+	//edit group sent data for preperation and open the editing page
+  $(".editGroup").click(function(){
+    var groupname = $(this).parent().parent().parent().children().first().children().first().text();
+
+    //sent values of group via ajax to editGroupFront.php
+    jqXHR = $.ajax({
+      method: "POST",
+      url: '../scripts/editGroupSetSession.php',
+      data: {groupname: groupname}
+    });
+    jqXHR.done(function() {
+      window.location.href = '../scripts/editGroupFront.php';
+    });
+    jqXHR.fail(function( jqXHR) {
+      alert( "AJAX failed, contact admin" );
+    });
+
+  });
+
 });

@@ -40,17 +40,17 @@
 				if (mysqli_query($conn, $sql)) {
 					echo $Inaam." is verwijderd";
 				} else {
-					echo "Error with sql execution, please report to admin (Delete group)";
+					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 				}
 
 			} else {
-				echo "Error with sql execution, please report to admin";
+				echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 			}
 		} else {
 			echo "Wrong password";
 		}
 	} else {
-		echo "Error with sql execution, please report to admin";
+		echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 	}
 
 ?>

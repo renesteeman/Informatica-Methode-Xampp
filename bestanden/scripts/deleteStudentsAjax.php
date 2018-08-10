@@ -38,7 +38,7 @@
 				if (mysqli_query($conn, $sql)) {
 					echo "Account van ".$naam." is verwijderd.";
 				} else {
-					echo "SQL error, report to admin";
+					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 				}
 			} else {
 				echo "Uw wachtwoord is incorrect.";

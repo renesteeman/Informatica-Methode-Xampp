@@ -31,7 +31,7 @@
 			$rightpsw = $result['password'];
 
 		} else {
-			$return_msg .= "\nError with sql execution, please report to admin";
+			$return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 		}
 
 		//check password
@@ -72,7 +72,7 @@
 							    $return_msg .= "\nNaam succesvol bijgewerkt";
 									$_SESSION["name"] = $Nnaam;
 								} else {
-							    $return_msg .= "\nSQL error report to admin";
+							    $return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 									$error = 1;
 								}
 
@@ -81,7 +81,7 @@
 								$error = 1;
 							}
 						} else {
-							$return_msg .= "\nSQL error report to admin";
+							$return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							$error = 1;
 						}
 					}
@@ -111,7 +111,7 @@
 										$_SESSION["username"] = $Nusername;
 
 									} else {
-								    $return_msg .= "\nSQL error report to admin";
+								    $return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 										$error = 1;
 									}
 								}
@@ -120,7 +120,7 @@
 								$error = 1;
 							}
 						} else {
-							$return_msg .= "\nSQL error report to admin";
+							$return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							$error = 1;
 						}
 					}	else {
@@ -145,7 +145,7 @@
 							if (mysqli_query($conn, $sql)) {
 						    $return_msg .= "\nWachtwoord succesvol bijgewerkt";
 							} else {
-						    $return_msg .= "\nSQL error, report admin";
+						    $return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 								$error = 1;
 							}
 						} else {
@@ -176,7 +176,7 @@
 							if (mysqli_query($conn, $sql)) {
 							    $return_msg .= "\nEmail succesvol bijgewerkt";
 							} else {
-							    $return_msg .= "\nSQL error, report to admin";
+							    $return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 									$error = 1;
 							}
 						} else {
@@ -197,7 +197,7 @@
 					if (mysqli_query($conn, $sql)) {
 					    $return_msg .= "\nGroup succesvol bijgewerkt";
 					} else {
-					    $return_msg .= "\nSQL error, report admin";
+					    $return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							$error = 1;
 					}
 				}

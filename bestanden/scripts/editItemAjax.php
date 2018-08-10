@@ -57,7 +57,7 @@
 				$school = $result['school'];
 
 			} else {
-				echo "\nError with sql execution, please report to admin";
+				echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 			}
 
 			if($NInaam!=""){
@@ -69,7 +69,7 @@
 					$CInaam = $_SESSION["itemnaam"];
 
 				} else {
-					echo "\nError with sql execution, please report to admin";
+					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					$error = 1;
 				}
 			}
@@ -80,7 +80,7 @@
 				if (mysqli_query($conn, $sql)) {
 					echo "\nNieuwe beschrijving voor opdracht is succesvol ingesteld";
 				} else {
-					echo "\nError with sql execution, please report to admin";
+					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					$error = 1;
 				}
 			}
@@ -93,7 +93,7 @@
 					$_SESSION["itemklas"] = $NIklas;
 					$CIklas = $_SESSION["itemklas"];
 				} else {
-					echo "\nError with sql execution, please report to admin";
+					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					$error = 1;
 				}
 			}
@@ -106,7 +106,7 @@
 					$_SESSION["itemdatum"] = $NIdatum;
 					$CIdatum = $_SESSION["itemdatum"];
 				} else {
-					echo "\nError with sql execution, please report to admin";
+					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					$error = 1;
 				}
 			}
@@ -122,7 +122,7 @@
 					echo "\nNieuwe hoofdstuk(ken) voor opdracht is succesvol ingesteld";
 
 				} else {
-					echo "\nError with sql execution, please report to admin";
+					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					$error = 1;
 				}
 
@@ -133,7 +133,7 @@
 		}
 
 	} else {
-		echo "\nError with sql execution, please report to admin";
+		echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 	}
 
 	if($error==1){

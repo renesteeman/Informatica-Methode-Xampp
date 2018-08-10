@@ -36,7 +36,7 @@
 				if (mysqli_query($conn, $sql)) {
 					echo $Gnaam." deleted";
 				} else {
-					echo "\nError with sql execution, please report to admin (Delete group)";
+					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 				}
 
 				//delete group_name of current members
@@ -45,17 +45,17 @@
 				if (mysqli_query($conn, $sql)) {
 					echo "\nLeden succesvol verwijderd";
 				} else {
-					echo "\nError with sql execution, please report to admin (Remove members)";
+					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 				}
 
 			} else {
-				echo "\nError with sql execution, please report to admin";
+				echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 			}
 		} else {
 			echo "\nWrong password";
 		}
 	} else {
-		echo "\nError with sql execution, please report to admin";
+		echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 	}
 
 ?>

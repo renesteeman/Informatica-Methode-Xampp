@@ -50,7 +50,7 @@
 				$school = $result['school'];
 
 			} else {
-				echo "\nError with sql execution, please report to admin";
+				echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 			}
 
 			if($NGnaam!=""){
@@ -68,7 +68,7 @@
 					   $_SESSION["groupname"] = $NGnaam;
 					   $CGnaam = $_SESSION["groupname"];
 				   } else {
-   					echo "\nError with sql execution, please report to admin (Gnaam)";
+   					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
    					$error = 1;
    					}
 			   }
@@ -81,7 +81,7 @@
 				if (mysqli_query($conn, $sql)) {
 					echo "\nNieuwe groepsbeschrijving is succesvol ingesteld";
 				} else {
-					echo "\nError with sql execution, please report to admin (Gbeschrijving)";
+					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					$error = 1;
 				}
 			}
@@ -92,7 +92,7 @@
 				if (mysqli_query($conn, $sql)) {
 					echo "\nNieuwe groepslink is succesvol ingesteld";
 				} else {
-					echo "\nError with sql execution, please report to admin (Glink)";
+					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					$error = 1;
 				}
 			}
@@ -105,7 +105,7 @@
 				if (mysqli_query($conn, $sql)) {
 					echo "\nOude leden succesvol verwijderd";
 				} else {
-					echo "\nError with sql execution, please report to admin (Remove old members)";
+					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					$error = 1;
 				}
 
@@ -121,7 +121,7 @@
 						if (mysqli_query($conn, $sql)) {
 							echo "\n".$lid." is nu lid van de groep";
 						} else {
-							echo "\nError with sql execution, please report to admin (Gleden)";
+							echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							$error = 1;
 						}
 					} else {
@@ -136,7 +136,7 @@
 		}
 
 	} else {
-		echo "\nError with sql execution, please report to admin";
+		echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 	}
 
 	if($error==1){

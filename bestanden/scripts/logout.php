@@ -11,5 +11,5 @@
 	//redirect to main page
 	header("Location: ../index.php");
 
-	echo "Error redirecting";
+	echo "\nEr is een fout opgetreden met omleiden, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 ?>

@@ -30,7 +30,7 @@
 			$Ischool = $result['school'];
 
 		} else {
-			echo "\nError with sql execution, please report to admin";
+			echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 		}
 
 		//get info
@@ -99,7 +99,7 @@
 						if (mysqli_query($conn, $sql)) {
 							echo "Item succesvol toegevoegd";
 						} else {
-							echo "\nError with sql execution, please report to admin";
+							echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 						}
 					}
 
@@ -112,7 +112,7 @@
 			}
 
 		} else {
-			echo "\nError with sql execution, please report to admin";
+			echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 		}
 
 	}

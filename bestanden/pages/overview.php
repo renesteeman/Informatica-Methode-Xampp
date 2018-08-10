@@ -123,7 +123,7 @@
 											}
 
 										} else {
-											echo "SQL error, alert admin";
+											echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 										}
 
 										//get more info progression
@@ -165,7 +165,7 @@
 											}
 
 										} else {
-											echo "SQL error, alert admin";
+											echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 										}
 
 										//get more info about chapters that should have been completed
@@ -193,7 +193,7 @@
 											}
 
 										} else {
-											echo "SQL error, alert admin";
+											echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 										}
 
 										//save the info
@@ -282,12 +282,12 @@
 								}
 
 							} else {
-								echo "Error with sql execution, please report to admin </br>";
+								echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							}
 						}
 
 					} else {
-						echo "Error with sql execution, please report to admin </br>";
+						echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					}
 
 				} else {

@@ -96,7 +96,7 @@
 
 	$result = 'Je hebt een '.$cijfer.' gehaald';
 	if($error){
-		$msg3 = 'SQL error, contact admin';
+		$msg3 = '</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!';
 	} else {
 		$msg3 = '';
 	}

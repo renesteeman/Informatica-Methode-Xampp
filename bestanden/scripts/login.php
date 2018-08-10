@@ -21,7 +21,7 @@
 
 		if(mysqli_query($conn, $sql)) {
 		} else {
-			echo "SQL error, please report to admin";
+			echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 		}
 	}
 
@@ -45,7 +45,7 @@
 			if(mysqli_query($conn, $sql)) {
 				echo "updated attempts";
 			} else {
-				echo "SQL error, please report to admin";
+				echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 			}
 
 			mysqli_close($conn);
@@ -108,7 +108,7 @@
 							$captcha_success = json_decode($verify);
 
 							if ($captcha_success->success==false) {
-								echo "\n U moet de captcha invullen om verder te komen, aangezien u meerdere malen verkeerde gegevens heeft gegeven. U heeft maximaal 10 pogingen. \n";
+								echo "\nU moet de captcha invullen om verder te komen, aangezien u meerdere malen verkeerde gegevens heeft gegeven. U heeft maximaal 10 pogingen. \n";
 
 								addFailedLogin($NFailedLogins, $now, $username);
 
@@ -119,7 +119,7 @@
 						}
 					} else {
 						//show captcha (done by JS when this echo is returned)
-						echo "\n Aangezien u 3(+) keer uw gegevens verkeerd heeft ingevuld moet u nu een captcha invullen, u heeft in totaal 10 pogingen om in te loggen. \n";
+						echo "\nAangezien u 3(+) keer uw gegevens verkeerd heeft ingevuld moet u nu een captcha invullen, u heeft in totaal 10 pogingen om in te loggen. \n";
 
 					}
 
@@ -137,7 +137,7 @@
 		}
 
 	} else {
-		echo "Error with sql execution, please report to admin";
+		echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 	}
 
 

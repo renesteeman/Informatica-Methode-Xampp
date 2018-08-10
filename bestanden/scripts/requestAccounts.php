@@ -197,7 +197,7 @@
 						if (mysqli_query($conn, $sql)) {
 							$accountsCreated++;
 						} else {
-							echo "SQL error, contact admin";
+							echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 						}
 					}
 
@@ -216,7 +216,7 @@
 							if (mysqli_query($conn, $sql)) {
 								$accountsCreated++;
 							} else {
-								echo "SQL error, contact admin";
+								echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							}
 						}
 					}

@@ -113,10 +113,10 @@ include('../components/headerGeneral.php');
 										echo "Geen huidige leden";
 									}
 								} else {
-									echo "SQL error, contact admin";
+									echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 								}
 							} else {
-								echo "SQL error, contact admin";
+								echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							}
 
 							echo '

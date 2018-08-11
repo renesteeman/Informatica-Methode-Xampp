@@ -45,8 +45,6 @@ $(document).ready(function(){
 		$(this).parents(".tile").removeClass('active');
 	});
 
-
-
 	$(".select").click(function(){
 		if($('select[name=newGroup]').val()!=''){
 			$(this).removeClass("defaultSelect");
@@ -71,6 +69,7 @@ $(document).ready(function(){
 	});
 
 	$(".theorie-answers").slideToggle(0);
+	$(".theorie-answers").siblings().last().toggleClass("active");
 
 	//edit lists
 	$('.add-item').children().val(' ');
@@ -116,7 +115,7 @@ $(document).ready(function(){
       window.location.href = '../scripts/editGroupFront.php';
     });
     jqXHR.fail(function( jqXHR) {
-      alert( "AJAX failed, contact admin" );
+      alert( "Er is een fout opgetreden met AJAX, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!" );
     });
 
   });

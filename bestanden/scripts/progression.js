@@ -21,7 +21,6 @@ $(document).ready(function(){
 	var title = $('.title-small').text();
 	title = title.trim();
 	kind = title[0];
-	alert(title);
 
 	//check if it's a quiz
 	if(includes(title, 'quiz')){
@@ -62,7 +61,7 @@ $(document).ready(function(){
 			});
 
 			jqXHR.fail(function(jqXHR) {
-			  alert("AJAX failed, contact admin");
+			  alert("Er is een fout opgetreden met AJAX, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
 		  });
 
 		}

@@ -45,8 +45,8 @@
 
 		<div class="theorie-content">
 			<p>
-				Een andere manier om logica te gebruiken is met booleans, oftewel ja of nee, 1 of 0.
-				Stel ik wil een witte kat met korte staart of een mannetjes kat v (v = of) een groene kat. Oftewel W(it)*K(ort)+M(an)+G(roen). X kan hier als ‘en’ gezien worden en ‘+’ als of. Stel ik vind een bruine mannetjes kat, dan kan ik dat weergeven als: 0*0+1+0=1, dus het voldoet. NB (nota bene/let op) 1+1=1, want true+true=true.
+				Een andere manier om logica te gebruiken is met booleans, oftewel ja of nee, true or false, 1 of 0.
+				Stel ik wil een witte kat met korte staart of een mannetjes kat v (v = of) een groene kat. Oftewel W(it)*K(ort)+M(an)+G(roen). Maal kan hier als ‘en’ gezien worden en ‘+’ als of. Stel ik vind een bruine mannetjes kat, dan kan ik dat weergeven als: 0*0+1+0=1, dus het voldoet. NB (nota bene/let op) 1+1=1, want true+true=true.
 			</p>
 			<p>
 				Een computer voert deze taken uit met de gates die in H1 besproken zijn.
@@ -70,7 +70,7 @@
 						<li>Wat is de uitkomst (1 of 0) in de volgende gevallen:
 							<ol>
 								<li>
-									een tesla
+									een tesla model 3
 								</li>
 								<li>
 									een monster truck

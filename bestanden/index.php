@@ -337,7 +337,11 @@
 				<div class="tile-paragraphs">
 					<span class="closeTile">X</span>
 					<ol>
-						<ul>Komt binnenkort</ul>
+						<ul><a href="pages/theorie/B4/p1.php">§1 Wat is een database?</ul>
+						<ul><a href="pages/theorie/B4/p2.php">§2 Een database aanmaken</a></ul>
+						<ul><a href="pages/theorie/B4/p3.php">§3 Communiceren met een database</a></ul>
+						<ul><a href="pages/theorie/B4/p4.php">§4 Verder met SQL</a></ul>
+						<ul><a href="pages/theorie/B4/installatieXAMPP.php">installatie XAMPP</a></ul>
 					</ol>
 				</div>
 			</div>

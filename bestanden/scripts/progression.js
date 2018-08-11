@@ -1,5 +1,17 @@
 $(document).ready(function(){
 
+	//IE patch
+	function includes(container, value) {
+		var returnValue = false;
+		var pos = container.indexOf(value);
+
+		if (pos >= 0) {
+			returnValue = true;
+		}
+
+		return returnValue;
+	}
+
 	var timeSpent = 0;
 	var active = 1;
 	var completed = 0;
@@ -9,8 +21,10 @@ $(document).ready(function(){
 	var title = $('.title-small').text();
 	title = title.trim();
 	kind = title[0];
+	alert(title);
+
 	//check if it's a quiz
-	if(title.search('quiz') != -1){
+	if(includes(title, 'quiz')){
 		kind = 'quiz';
 	}
 
@@ -78,7 +92,6 @@ $(document).ready(function(){
 		};
 
 		updateTimeSpent();
-
 
 	}
 });

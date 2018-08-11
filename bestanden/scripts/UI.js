@@ -27,8 +27,8 @@ $(document).ready(function(){
 
 	//chapter tiles
 	$(".tile").click(function(){
-		$(this).siblings().toggle();
-		$(this).toggleClass("active");
+		$(this).siblings().hide();
+		$(this).addClass("active");
 
 		//go to selected tile (mostly for mobile)
 		var pos = $(this).position();
@@ -40,7 +40,14 @@ $(document).ready(function(){
 
 	});
 
-	$("select").click(function(){
+	$(document).on("click", ".closeTile", function(){
+		$(this).parents(".tile").siblings().show();
+		$(this).parents(".tile").removeClass('active');
+	});
+
+
+
+	$(".select").click(function(){
 		if($('select[name=newGroup]').val()!=''){
 			$(this).removeClass("defaultSelect");
 		} else {

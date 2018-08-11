@@ -87,6 +87,7 @@
 					H1 Werking computer
 				</div>
 				<div class="tile-paragraphs">
+					<span class="closeTile">X</span>
 					<ol>
 						<ul><a href="pages/theorie/H1/p1.php">§1 Het binair systeem</ul>
 						<ul><a href="pages/theorie/H1/p2.php">§2 Binair rekenen</a></ul>
@@ -111,6 +112,7 @@
 					H2 Logica
 				</div>
 				<div class="tile-paragraphs">
+					<span class="closeTile">X</span>
 					<ol>
 						<ul><a href="pages/theorie/H2/p1.php">§1 Introductie tot logica</ul>
 						<ul><a href="pages/theorie/H2/p2.php">§2 Visuele logica</a></ul>
@@ -134,6 +136,7 @@
 					H3 Programmeren
 				</div>
 				<div class="tile-paragraphs">
+					<span class="closeTile">X</span>
 					<ol>
 						<ul><a href="pages/theorie/H3/p1.php">§1 Introductie tot programmeertalen</ul>
 						<ul><a href="pages/theorie/H3/p2.php">§2 Installatie</a></ul>
@@ -160,6 +163,7 @@
 					H4 Arduino
 				</div>
 				<div class="tile-paragraphs">
+					<span class="closeTile">X</span>
 					<ol>
 						<ul><a href="pages/theorie/H4/p1.php">§1 Elektriciteit</ul>
 						<ul><a href="pages/theorie/H4/p2.php">§2 Introductie tot arduino</a></ul>
@@ -185,6 +189,7 @@
 					H5 Web development
 				</div>
 				<div class="tile-paragraphs">
+					<span class="closeTile">X</span>
 					<ol>
 						<ul><a href="pages/theorie/H5/p1.php">§1 Introductie</ul>
 						<ul><a href="pages/theorie/H5/p2.php">§2 De basis van HTML</a></ul>
@@ -209,6 +214,7 @@
 					H6 Project Management
 				</div>
 				<div class="tile-paragraphs">
+					<span class="closeTile">X</span>
 					<ol>
 						<ul><a href="pages/theorie/H6/p1.php">§1 Introductie en onderdelen</ul>
 						<ul><a href="pages/theorie/H6/p2.php">§2 Rollen</a></ul>
@@ -232,6 +238,7 @@
 					H7 Project uitvoeren
 				</div>
 				<div class="tile-paragraphs">
+					<span class="closeTile">X</span>
 					<ol>
 						<ul><a href="pages/theorie/H7/p1.php">§1 Plannen en Trello</ul>
 						<ul><a href="pages/theorie/H7/p2.php">§2 Github</a></ul>
@@ -263,21 +270,18 @@
 		}
 
 			echo '
-				<div class="tile-content">
-					<div class="tile-chapter">
-						B1 Filosofie
-					</div>
-					<div class="tile-paragraphs">
-						<ol>
-							<ul><a href="pages/theorie/B1/p1.php">§1 iets</ul>
-							<ul><a href="pages/theorie/B1/p2.php">§2 iets</a></ul>
-							<ul><a href="pages/theorie/B1/p3.php">§3 iets</a></ul>
-							<ul><a href="pages/theorie/B1/p4.php">§4 iets</a></ul>
-							<ul><a href="pages/theorie/B1/p5.php">§5 iets</a></ul>
-						</ol>
-					</div>
+			<div class="tile-content">
+				<div class="tile-chapter">
+					B2 Beveiliging en privacy
 				</div>
-			</div>';
+				<div class="tile-paragraphs">
+					<span class="closeTile">X</span>
+					<ol>
+						<ul>Komt binnenkort</ul>
+					</ol>
+				</div>
+			</div>
+		</div>';
 
 		if(chapterIsFinished('B2')){
 			echo '<div class="tile completed">';
@@ -287,7 +291,15 @@
 
 			echo '
 			<div class="tile-content">
-				B2 beveiliging en privacy
+				<div class="tile-chapter">
+					B2 Beveiliging en privacy
+				</div>
+				<div class="tile-paragraphs">
+					<span class="closeTile">X</span>
+					<ol>
+						<ul>Komt binnenkort</ul>
+					</ol>
+				</div>
 			</div>
 		</div>';
 
@@ -299,7 +311,15 @@
 
 			echo '
 			<div class="tile-content">
-				B3 web+
+				<div class="tile-chapter">
+					B3 Web+
+				</div>
+				<div class="tile-paragraphs">
+					<span class="closeTile">X</span>
+					<ol>
+						<ul>Komt binnenkort</ul>
+					</ol>
+				</div>
 			</div>
 		</div>';
 
@@ -310,25 +330,18 @@
 		}
 
 			echo '
-				<div class="tile-content">
-					<div class="tile-chapter">
-						B4 Databases
-					</div>
-					<div class="tile-paragraphs">
-						<ol>
-							<ul><a href="pages/theorie/B4/p1.php">§1 Wat is een database?</ul>
-							<ul><a href="pages/theorie/B4/p2.php">§2 Een database aanmaken</a></ul>
-							<ul><a href="pages/theorie/B4/p3.php">§3 Communiceren met een database</a></ul>
-							<ul><a href="pages/theorie/B4/p4.php">§4 Verder met SQL</a></ul>
-							<ul><a href="pages/theorie/B4/installatieXAMPP.php">installatie XAMPP</a></ul>
-						</ol>
-					</div>
+			<div class="tile-content">
+				<div class="tile-chapter">
+					B4 Databases
+				</div>
+				<div class="tile-paragraphs">
+					<span class="closeTile">X</span>
+					<ol>
+						<ul>Komt binnenkort</ul>
+					</ol>
 				</div>
 			</div>
-
-
-
-	</div>';
+		</div>';
 
 	?>
 

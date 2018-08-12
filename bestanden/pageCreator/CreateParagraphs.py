@@ -195,14 +195,30 @@ def readFile(fileLocation, paragraphNumber):
 
 def seperateContent(fileContent):
     splitTheory = fileContent.split("#VRAGEN")
-    Theory = splitTheory[0]
+    if(len(splitTheory[0]) > 0):
+        Theory = splitTheory[0]
+    else:
+        Theory = ""
 
-    splitQuestions = splitTheory[1].split("#ANTWOORDEN")
-    Questions =  splitQuestions[0]
+    if(len(splitTheory) > 1):
+        splitQuestions = splitTheory[1].split("#ANTWOORDEN")
+        if(len(splitQuestions[0]) > 0):
+            Questions = splitQuestions[0]
+        else:
+            Questions = ""
 
-    Answers = splitQuestions[1]
+        if(len(splitQuestions[1]) > 0):
+            Answers = splitQuestions[1]
+        else:
+            Answers = ""
+
+    else:
+        Questions = ""
+        Answers = ""
     
-    #TODO split answers
+    
+    print(Questions + Answers + Theory)
+
     splitContent = (Theory, Questions, Answers)
 
     return splitContent
@@ -266,18 +282,16 @@ def createQuestions(questions, fileLocation):
         pattern = re.compile(r'\d+[).]')
         matches = re.split(pattern, questions)
 
-        i = 0
         for match in matches:
-            if i > 0:
+            if matches > 0:
                 match = match.strip()
                 toAddToFile += "\t\t\t\t<li>" + match + "</li>\n"
-
-            i += 1
 
         #add questions end
         toAddToFile += "\t\t\t</ol>\n\t\t</div>"
 
         file = codecs.open(fileLocation, "a", "utf-8")
+
         file.write(toAddToFile)
 
 def createAnswers(answers, fileLocation):
@@ -337,6 +351,25 @@ def addFooter(fileLocation, paragraphNumber):
 
     file = codecs.open(fileLocation, "a", "utf-8")
     file.write(toAddToFile)
+
+def addLinks(fileLocation, paragraphNumber):
+    #TODO finish
+
+    fileContent = readFile(fileLocation, paragraphNumber)
+    #find links
+    pattern = re.compile(r'\d+[).]')
+    matches = re.split(pattern, file)
+
+    i = 0
+    for match in matches:
+        if matches > 0:
+            match = match.strip()
+            toAddToFile += "\t\t\t\t<li>" + match + "</li>\n"
+
+        i += 1
+
+def finishFile(fileLocation, paragraphNumber):
+    addLinks(fileLocation, paragraphNumber)
 
 def processFiles():
     createFolder(SaveFolder)

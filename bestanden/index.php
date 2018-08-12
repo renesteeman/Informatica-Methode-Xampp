@@ -272,7 +272,7 @@
 			echo '
 			<div class="tile-content">
 				<div class="tile-chapter">
-					B2 Beveiliging en privacy
+					B1 Filosofie
 				</div>
 				<div class="tile-paragraphs">
 					<span class="closeTile">X</span>

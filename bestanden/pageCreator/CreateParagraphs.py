@@ -115,8 +115,7 @@ def createFolder(SaveFolder):
 
 def addHeader(fileLocation, paragraphNumber):
 
-    fileContent = """
-<?php
+    fileContent = """<?php
 include('../../../components/headerChapter.php');
 ?>
 

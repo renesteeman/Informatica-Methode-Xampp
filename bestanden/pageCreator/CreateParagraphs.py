@@ -8,6 +8,23 @@ import PyPDF2
 import docx2txt
 import re
 
+testbestand = """TESTBESTAND
+
+Div1 kjaskdjfiudhgjnkcvdnbk djskj ij g ijg jkdfnbdiiji jj iikdafnbn ojedfkj giqw34
+Akdjfkjasdf
+
+Div2 aksjdfkj sadfkjg sdkjiew kvckjeri cdkj sdkeridk erkire
+
+Div3 kajkdjfkjakdjgsdghijskdg
+
+Div 4 www.link.com
+
+Div5
+Table Left	Table Right
+Table Left 2	Table Right 2
+Table Left 3	Table Right 3
+"""
+
 def setUp():
     global root
     root.title("Page creator")
@@ -283,8 +300,9 @@ def createQuestions(questions, fileLocation):
         matches = re.split(pattern, questions)
 
         for match in matches:
-            if matches > 0:
-                match = match.strip()
+            match = match.strip()
+
+            if len(match) > 0:
                 toAddToFile += "\t\t\t\t<li>" + match + "</li>\n"
 
         #add questions end
@@ -313,13 +331,11 @@ def createAnswers(answers, fileLocation):
         pattern = re.compile(r'\d+[).]')
         matches = re.split(pattern, answers)
 
-        i = 0
         for match in matches:
-            if i > 0:
-                match = match.strip()
-                toAddToFile += "\t\t\t\t<li>" + match + "</li>\n"
+            match = match.strip()
 
-            i += 1
+            if len(match) > 0:
+                toAddToFile += "\t\t\t\t<li>" + match + "</li>\n"
 
         #add questions end
         toAddToFile += "\t\t\t</ol>\n\t\t</div>"
@@ -355,18 +371,27 @@ def addFooter(fileLocation, paragraphNumber):
 def addLinks(fileLocation, paragraphNumber):
     #TODO finish
 
-    fileContent = readFile(fileLocation, paragraphNumber)
+    #fileContent = readFile(fileLocation, paragraphNumber)
+
+    fileContent = testbestand
+    toAddToFile = ""
+
     #find links
-    pattern = re.compile(r'\d+[).]')
-    matches = re.split(pattern, file)
+    pattern = re.compile(r'www\..+\..+')
+    matches = re.split(pattern, fileContent)
 
-    i = 0
     for match in matches:
-        if matches > 0:
-            match = match.strip()
-            toAddToFile += "\t\t\t\t<li>" + match + "</li>\n"
+        match = match.strip()
 
-        i += 1
+        if len(match) > 0:
+            #TODO change to 'edit' file, instead of adding to it
+            toAddToFile += """<a href=" """ + match + """>" """ + match + "</a>"
+            
+    print(toAddToFile)
+
+#TODO delete
+addLinks("x", "x")
+
 
 def finishFile(fileLocation, paragraphNumber):
     addLinks(fileLocation, paragraphNumber)

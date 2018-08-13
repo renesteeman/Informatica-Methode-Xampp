@@ -232,9 +232,6 @@ def seperateContent(fileContent):
     else:
         Questions = ""
         Answers = ""
-    
-    
-    print(Questions + Answers + Theory)
 
     splitContent = (Theory, Questions, Answers)
 
@@ -369,12 +366,9 @@ def addFooter(fileLocation, paragraphNumber):
     file.write(toAddToFile)
 
 def addLinks(fileLocation, paragraphNumber):
-    #TODO finish
-
-    #fileContent = readFile(fileLocation, paragraphNumber)
-
-    fileContent = testbestand
-    toAddToFile = ""
+    file = codecs.open(fileLocation, "r", "utf-8")
+    fileContent = file.read()
+    file.close()
 
     #find links
     pattern = re.compile(r'\S*\.?w{3}\.\S+\.\S+')
@@ -384,19 +378,23 @@ def addLinks(fileLocation, paragraphNumber):
         match = match.strip()
 
         if len(match) > 0:
-            #TODO change to 'edit' file, instead of adding to it
-            test = """<a href=" """ + match + """>" """ + match + "</a>"
-            print(test)
+            #if the link is at the end of a <p>, than don't include <p> as part of the link
+            if(match[-4:] == "</p>"):
+                match = match[:-4]
 
-            toAddToFile += """<a href=" """ + match + """>" """ + match + "</a>"
-            
+            toAdd = """<a href=\"""" + match + """\">""" + match + "</a>"
 
-#TODO delete
-addLinks("x", "x")
+            fileContent = fileContent.replace(match, toAdd)
+
+    file = codecs.open(fileLocation, "w", "utf-8")
+    file.write(fileContent)
+    file.close()
 
 
 def finishFile(fileLocation, paragraphNumber):
     addLinks(fileLocation, paragraphNumber)
+    #TODO add tables
+    #TODO add images?
 
 def processFiles():
     createFolder(SaveFolder)
@@ -421,6 +419,8 @@ def processFiles():
         addBody(paragraphLocation, i)
 
         addFooter(paragraphLocation, i)
+
+        finishFile(paragraphLocation, i)
 
         i += 1 
 

@@ -3,8 +3,8 @@
 block_cipher = None
 
 
-a = Analysis(['createParagraphs.py'],
-             pathex=['C:\\Users\\steem\\Anaconda3\\Lib\\site-packages', 'F:\\xampp\\htdocs\\InformaticaMethode\\bestanden\\pageCreator'],
+a = Analysis(['CreateParagraphs.py'],
+             pathex=['F:\\xampp\\htdocs\\InformaticaMethode\\bestanden\\pageCreator'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -21,8 +21,9 @@ exe = EXE(pyz,
           a.binaries,
           a.zipfiles,
           a.datas,
-          name='createParagraphs',
+          name='CreateParagraphs',
           debug=False,
           strip=False,
           upx=True,
+          runtime_tmpdir=None,
           console=False )

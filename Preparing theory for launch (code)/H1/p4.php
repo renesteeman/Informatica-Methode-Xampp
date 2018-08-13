@@ -5,8 +5,8 @@ include('../../../components/headerChapter.php');
 <body>
 
 	<div class="title-small">
-		<h2> 
-			H1 §4 
+		<h2>
+			H1 §4 Onderdelen van de computer
 		</h2>
 	 </div>
 
@@ -54,10 +54,12 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content">
-        
+
 			<p>Een computer werkt door veel gates samen te gebruiken om data te verplaatsen en te manipuleren. Om deze taken uit te kunnen voeren zijn verschillende onderdelen van een computer nodig, maar niet alle onderdelen voeren berekeningen uit.</p>
 
 			<p>Andere onderdelen zorgen ervoor dat aan de randvoorwaarden wordt voldaan, bijvoorbeeld dat de data opgeslagen kan worden en dat er genoeg stroom is. De belangrijkste onderdelen van een computer worden hieronder genoemd.</p>
+
+			<img src="./afbeeldingen/CPU.png" class="theorieImage small" />
 
 			<p>Het hart van de computer is de CPU (Central Processing Unit). Dit is een chip die meestal maar een paar centimeter groot is, waarop alle algemene instructies worden uitgevoerd met behulp van de eerder besproken gates en dus het heen en weer halen van binaire getallen. Tegenwoordig heeft een CPU meerdere kernen, ook wel cores genoemd. Door middel van deze kernen kan de CPU aan meerdere opdrachten tegelijk kan werken.</p>
 
@@ -69,95 +71,101 @@ include('../../../components/headerChapter.php');
 
 			<p>De snelheid van een CPU hangt af van meerdere factoren, voornamelijk de IPC, frequentie, cache en de hoeveelheid kernen. De IPC is het aantal instructies dat per clock uitgevoerd kan worden. Een clock is een cyclus van instructies, bijvoorbeeld haal waardes van x naar y of voeg x toe aan y. De frequentie geeft aan hoeveel clocks er in een seconde uitgevoerd worden.</p>
 
-			<p>Het RAM, Random Accessible Memory, slaat alle informatie op die snel beschikbaar moet zijn. Zaken als het OS en programma’s worden hierop gezet, zodat de CPU niet steeds verzoeken hoeft te doen om gegevens op een schijf op te vragen en ze dus veel sneller kan krijgen. Hoe meer ram, des te meer er opgeslagen kan worden in  dit snelle geheugen.</p>
+			<img src="./afbeeldingen/RAM.png" class="theorieImage small" />
+
+			<p>RAM, Random Accessible Memory, slaat alle informatie op die snel beschikbaar moet zijn. Zaken als het OS en programma’s worden hierop gezet, zodat de CPU niet steeds verzoeken hoeft te doen om gegevens op een schijf op te vragen en ze dus veel sneller kan krijgen. Hoe meer ram, des te meer er opgeslagen kan worden in  dit snelle geheugen.</p>
+
+			<img src="./afbeeldingen/MOBO.png" class="theorieImage small" />
 
 			<p>Het moederbord is een soort hub waarop alle hardware aangesloten is: de CPU, GPU, schijven (opslag), usb poorten, internet en nog een heleboel andere zaken zitten allemaal hierop aangesloten. Het moederbord zorgt er dus voor dat alle onderdelen met elkaar kunnen communiceren.</p>
 
+			<img src="./afbeeldingen/GPU.png" class="theorieImage small" />
+
 			<p>De GPU heeft heel veel kernen, maar weer een lagere frequentie ten opzichte van de CPU. Tevens is het lastiger om er bepaalde instructies op uit te voeren. De GPU kan dus vooral veel eenvoudige taken tegelijkertijd uitvoeren. Dit maakt het erg handig voor het laden van beelden en dus voor bijvoorbeeld het spelen van spellen. De GPU kan echter ook andere taken uitvoeren, maar deze zijn vrij geavanceerd. Denk hierbij aan het trainen van zelflerende programma’s.</p>
+
+			<img src="./afbeeldingen/HDD.png" class="theorieImage small inline" />
+			<img src="./afbeeldingen/SSD.png" class="theorieImage small inline" />
 
 			<p>Er zijn meerdere soorten schijven. Deze zijn voornamelijk op te delen in twee type schijven; de SSD (Solid State Drive) en de HDD (harddisk drive).</p>
 
 			<p>Verschillen tussen de SSD en de HDD</p>
 
-			<p>Verschil</p>
+			<!-- TODO add tables! -->
+			Afkortingen:
+			<div class="table-wrapper">
+				<table>
+					<tr>
+						<th>Verschil</th>
+						<th>SSD</th>
+						<th>HDD</th>
+					</tr>
+					<tr>
+						<td>Werking</td>
+						<td>Door middel van cellen die maar een aantal keer beschreven kunnen worden</td>
+						<td>Door middel van ladingen aan te brengen op een ronddraaiende schijf/td>
+					</tr>
+					<tr>
+						<td>Snelheid</td>
+						<td>Super snel (afhankelijk van het soort SSD) Gemiddeld; 250mb/s</td>
+						<td>Langzamer dan een SSD Gemiddeld; 20mb/s</td>
+					</tr>
+					<tr>
+						<td>Corruptie</td>
+						<td>Wanneer een SSD kapot gaat blijft de data vaak nog leesbaar</td>
+						<td>Wanneer een HDD kapot gaat is de data niet meer leesbaar.</td>
+					</tr>
+					<tr>
+						<td>Prijs</td>
+						<td>De prijs per GB bedraagt op het moment van schrijven rond de €0,268. De prijs van een 1TB SSD ligt zo rond de €300.</td>
+						<td>De prijs per GB bedraagt op het moment van schrijven rond de €0,028. De prijs van een 1TB HDD ligt zo rond de €50, waardoor je dus voor weinig geld veel informatie op kan slaan.</td>
+					</tr>
 
-			<p>SSD</p>
+				</table>
+			</div>
 
-			<p>HDD</p>
+			Afkortingen:
 
-			<p>Werking</p>
+			<div class="table-wrapper">
+				<table>
+					<tr>
+						<th>Afkorting</th>
+						<th>Volledige naam</th>
+						<th>Vertaling</th>
+					</tr>
 
-			<p>Door middel van cellen die maar een aantal keer beschreven kunnen worden</p>
+					<tr>
+						<td>CPU</td>
+						<td>Central Processing Unit</td>
+						<td>Centrale processoreenheid</td>
+					</tr>
+					<tr>
+						<td>RAM</td>
+						<td>Random Accessible Memory</td>
+						<td>Willekeurig toegankelijk geheugen</td>
+					</tr>
+					<tr>
+						<td>OS</td>
+						<td>Operating System</td>
+						<td>Besturingssysteem</td>
+					</tr>
+					<tr>
+						<td>GPU</td>
+						<td>Graphics Processing Unit</td>
+						<td>Grafische processoreenheid</td>
+					</tr>
+					<tr>
+						<td>SSD</td>
+						<td>Solid State Drive</td>
+						<td>Schijf zonder bewegende delen</td>
+					</tr>
+					<tr>
+						<td>HDD</td>
+						<td>Harddisk Drive</td>
+						<td>Harde schijf</td>
+					</tr>
 
-			<p>Door middel van ladingen aan te brengen op een ronddraaiende schijf</p>
-
-			<p>Snelheid</p>
-
-			<p>Super snel (afhankelijk van het soort SSD)</p>
-
-			<p>Gemiddeld; 250mb/s</p>
-
-			<p>Langzamer dan een SSD</p>
-
-			<p>Gemiddeld; 20mb/s</p>
-
-			<p>Corruptie</p>
-
-			<p>Wanneer een SSD kapot gaat blijft de data vaak nog leesbaar</p>
-
-			<p>Wanneer een HDD kapot gaat is de data niet meer leesbaar</p>
-
-			<p>Prijs</p>
-
-			<p>De prijs per GB bedraagt op het moment van schrijven rond de €0,268.</p>
-
-			<p>De prijs van een 1TB SSD ligt zo rond de €300.</p>
-
-			<p>De prijs per GB bedraagt op het moment van schrijven rond de €0,028</p>
-
-			<p>De prijs van een 1TB HDD ligt zo rond de €50, waardoor je dus voor weinig geld veel informatie op kan slaan.</p>
-
-			<p>Afkorting</p>
-
-			<p>Volledige naam</p>
-
-			<p>Vertaling</p>
-
-			<p>CPU</p>
-
-			<p>Central Processing Unit</p>
-
-			<p>Centrale processoreenheid</p>
-
-			<p>RAM</p>
-
-			<p>Random Accessible Memory</p>
-
-			<p>Willekeurig toegankelijk geheugen</p>
-
-			<p>OS</p>
-
-			<p>Operating System</p>
-
-			<p>Besturingssysteem</p>
-
-			<p>GPU</p>
-
-			<p>Graphics Processing Unit</p>
-
-			<p>Grafische processoreenheid</p>
-
-			<p>SSD</p>
-
-			<p>Solid State Drive</p>
-
-			<p>Schijf zonder bewegende delen (schijf in solide staat)</p>
-
-			<p>HDD</p>
-
-			<p>Harddisk Drive</p>
-
-			<p>Harde schijf</p>
+				</table>
+			</div>
 
 		</div>
 	</div>

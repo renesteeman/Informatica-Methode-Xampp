@@ -5,8 +5,8 @@ include('../../../components/headerChapter.php');
 <body>
 
 	<div class="title-small">
-		<h2> 
-			H1 §5 
+		<h2>
+			H1 §5 Software en het OS
 		</h2>
 	 </div>
 
@@ -54,7 +54,7 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content">
-        
+
 			<p>De computer kan taken uitvoeren door een grote reeks van instructies uit te voeren. Deze instructies worden geschreven in een programmeertaal die vervolgens vertaald wordt naar machinetaal die de computer kan begrijpen. Hoe je zelf code kunt schrijven leer je in een later hoofdstuk.</p>
 
 			<p>De basis van code bestaat uit variabelen. Dit zijn getallen of een stuk tekst waar je steeds dingen aan veranderd.</p>

@@ -5,8 +5,8 @@ include('../../../components/headerChapter.php');
 <body>
 
 	<div class="title-small">
-		<h2> 
-			H1 §1 
+		<h2>
+			H1 §1 Het binair systeem
 		</h2>
 	 </div>
 
@@ -54,7 +54,7 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content">
-        
+
 			<p>Een computer ‘begrijpt’ alleen 0’en en 1’en. Informatie wordt in een computer altijd door middel van deze twee getallen opgeslagen. Ook de opdrachten die heen en weer worden verstuurd bestaan uit dezen 1'en en 0'en.</p>
 
 			<p>Een bit heeft twee mogelijke waardes: 1 en 0. Een 1 geeft de aanwezigheid en 0 de afwezigheid van stroom aan. Er kan met dit binair systeem van alles worden weergegeven.</p>

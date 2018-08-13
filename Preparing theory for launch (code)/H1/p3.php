@@ -6,7 +6,7 @@ include('../../../components/headerChapter.php');
 
 	<div class="title-small">
 		<h2>
-			H1 §3
+			H1 §3 Gates
 		</h2>
 	 </div>
 

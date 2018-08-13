@@ -6,7 +6,7 @@ include('../../../components/headerChapter.php');
 
 	<div class="title-small">
 		<h2>
-			H1 §2
+			H1 §2 Binair rekenen
 		</h2>
 	 </div>
 

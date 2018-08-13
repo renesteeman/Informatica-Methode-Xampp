@@ -209,11 +209,11 @@ if (!isset($_SESSION["id"])){
 									Welkom <a href="../../account.php">'.$_SESSION["name"].'</a>
 								</div>
 								<div>
-									<a href="../../../scripts/logoutGeneral.php">Log uit</a>
+									<a href="../../../scripts/logout.php">Log uit</a>
 								</div>';
 
 						} else {
-							echo ' <div><a href="../../account.php"> login</a></div> ';
+							echo '<div><a href="../../account.php">login</a></div>';
 						}
 					?>
 

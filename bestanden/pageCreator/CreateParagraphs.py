@@ -377,17 +377,19 @@ def addLinks(fileLocation, paragraphNumber):
     toAddToFile = ""
 
     #find links
-    pattern = re.compile(r'www\..+\..+')
-    matches = re.split(pattern, fileContent)
+    pattern = re.compile(r'\S*\.?w{3}\.\S+\.\S+')
+    matches = pattern.findall(fileContent)
 
     for match in matches:
         match = match.strip()
 
         if len(match) > 0:
             #TODO change to 'edit' file, instead of adding to it
+            test = """<a href=" """ + match + """>" """ + match + "</a>"
+            print(test)
+
             toAddToFile += """<a href=" """ + match + """>" """ + match + "</a>"
             
-    print(toAddToFile)
 
 #TODO delete
 addLinks("x", "x")

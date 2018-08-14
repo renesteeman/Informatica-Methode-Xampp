@@ -55,7 +55,7 @@ include('../../../components/headerChapter.php');
 
 		<div class="theorie-content">
 
-			<p>Een computer ‘begrijpt’ alleen 0’en en 1’en. Informatie wordt in een computer altijd door middel van deze twee getallen opgeslagen, letters, programma's of het beeld, het zijn allemaal 0'en en 1'en.</p>
+			<p>Een computer ‘begrijpt’ alleen 0’en en 1’en. Informatie wordt in een computer altijd door middel van deze twee getallen opgeslagen. Of het nou gaat om letters, programma's of het beeld, het zijn allemaal 0'en en 1'en.</p>
 
 			<p>Een bit heeft twee mogelijke waardes: 1 en 0. Een 1 geeft de aanwezigheid en 0 de afwezigheid van stroom aan. Er kan met dit binair systeem, een systeem met twee waarden, van alles worden weergegeven.</p>
 

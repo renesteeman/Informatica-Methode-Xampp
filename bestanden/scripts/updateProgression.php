@@ -11,47 +11,22 @@
 	}
 
 	//get and filter data
-	$id = $_SESSION["id"];
-	$kind = mysqli_real_escape_string($conn, check_input($_POST['kind']));
-	$chapter = mysqli_real_escape_string($conn, check_input($_POST['chapter']));
-	$paragraph = mysqli_real_escape_string($conn, check_input($_POST['paragraph']));
-	$Nparagraphs = mysqli_real_escape_string($conn, check_input($_POST['Nparagraphs']));
+	if(isset($_SESSION["id"])){
+		$id = $_SESSION["id"];
 
-	//look for current values
-	$sql = "SELECT $kind$chapter FROM progressie WHERE userid='$id'";
+		$kind = mysqli_real_escape_string($conn, check_input($_POST['kind']));
+		$chapter = mysqli_real_escape_string($conn, check_input($_POST['chapter']));
+		$paragraph = mysqli_real_escape_string($conn, check_input($_POST['paragraph']));
+		$Nparagraphs = mysqli_real_escape_string($conn, check_input($_POST['Nparagraphs']));
 
-	if (mysqli_query($conn, $sql)) {
-		$result = mysqli_query($conn, $sql);
+		//look for current values
+		$sql = "SELECT $kind$chapter FROM progressie WHERE userid='$id'";
 
-		if(mysqli_num_rows($result) == 0){
-			//if user has no progression at all
-			//insert progress
-			$progressionContent = str_repeat("0", $paragraph-1).'1';
-			$progressionPrefix = $Nparagraphs;
+		if (mysqli_query($conn, $sql)) {
+			$result = mysqli_query($conn, $sql);
 
-			$progression = $progressionPrefix.$progressionContent;
-
-			$i = strlen($progression);
-
-			while($i<($Nparagraphs+1)){
-				$progression .= '0';
-				$i++;
-			}
-
-			$sql = "INSERT INTO `progressie` (`userid`, `$kind$chapter`) VALUES ('$id', '$progression');";
-
-			if (mysqli_query($conn, $sql)) {
-
-			} else {
-				echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
-			}
-
-		} else {
-			$result = mysqli_fetch_assoc($result);
-			$Cprogression = $result[$kind.$chapter];
-
-			if(is_null($Cprogression)){
-				//if user has no progression for this chapter
+			if(mysqli_num_rows($result) == 0){
+				//if user has no progression at all
 				//insert progress
 				$progressionContent = str_repeat("0", $paragraph-1).'1';
 				$progressionPrefix = $Nparagraphs;
@@ -65,7 +40,7 @@
 					$i++;
 				}
 
-				$sql = "UPDATE progressie SET $kind$chapter = '$progression' WHERE userid='$id'";
+				$sql = "INSERT INTO `progressie` (`userid`, `$kind$chapter`) VALUES ('$id', '$progression');";
 
 				if (mysqli_query($conn, $sql)) {
 
@@ -74,22 +49,53 @@
 				}
 
 			} else {
-				//if progress is found
-				//update progress
-				$progression = $Cprogression;
-				$progression[$paragraph] = '1';
+				$result = mysqli_fetch_assoc($result);
+				$Cprogression = $result[$kind.$chapter];
 
-				$sql = "UPDATE progressie SET $kind$chapter = '$progression' WHERE userid='$id'";
+				if(is_null($Cprogression)){
+					//if user has no progression for this chapter
+					//insert progress
+					$progressionContent = str_repeat("0", $paragraph-1).'1';
+					$progressionPrefix = $Nparagraphs;
 
-				if (mysqli_query($conn, $sql)) {
+					$progression = $progressionPrefix.$progressionContent;
+
+					$i = strlen($progression);
+
+					while($i<($Nparagraphs+1)){
+						$progression .= '0';
+						$i++;
+					}
+
+					$sql = "UPDATE progressie SET $kind$chapter = '$progression' WHERE userid='$id'";
+
+					if (mysqli_query($conn, $sql)) {
+
+					} else {
+						echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					}
 
 				} else {
-					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					//if progress is found
+					//update progress
+					$progression = $Cprogression;
+					$progression[$paragraph] = '1';
+
+					$sql = "UPDATE progressie SET $kind$chapter = '$progression' WHERE userid='$id'";
+
+					if (mysqli_query($conn, $sql)) {
+
+					} else {
+						echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					}
 				}
 			}
+		} else {
+			echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 		}
+
 	} else {
-		echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+		echo "U bent niet meer ingelogd en uw progressie kan daarom niet bijgewerkt worden.";
 	}
 
 ?>

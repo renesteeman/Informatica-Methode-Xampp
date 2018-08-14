@@ -172,7 +172,7 @@ if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF
 									Welkom <a href="pages/account.php">'.$_SESSION["name"].'</a>
 								</div>
 								<div>
-									<a href="scripts/logoutGeneral.php">Log uit</a>
+									<a href="scripts/logout.php">Log uit</a>
 								</div>';
 
 						} else {

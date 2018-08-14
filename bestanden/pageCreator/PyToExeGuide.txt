@@ -1,0 +1,4 @@
+pyinstaller OPTIONS filename
+-w no console popup
+-F single exe
+-i to add icon (.ico)

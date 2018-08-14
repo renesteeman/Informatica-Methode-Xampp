@@ -89,7 +89,7 @@
 				<div class="tile-paragraphs">
 					<span class="closeTile">X</span>
 					<ol>
-						<ul><a href="pages/theorie/H1/p1.php">§1 Het binair systeem</ul>
+						<ul><a href="pages/theorie/H1/p1.php">§1 Het binair systeem</a></ul>
 						<ul><a href="pages/theorie/H1/p2.php">§2 Binair rekenen</a></ul>
 						<ul><a href="pages/theorie/H1/p3.php">§3 Gates</a></ul>
 						<ul><a href="pages/theorie/H1/p4.php">§4 Onderdelen van de computer</a></ul>
@@ -114,7 +114,7 @@
 				<div class="tile-paragraphs">
 					<span class="closeTile">X</span>
 					<ol>
-						<ul><a href="pages/theorie/H2/p1.php">§1 Introductie tot logica</ul>
+						<ul><a href="pages/theorie/H2/p1.php">§1 Introductie tot logica</a></ul>
 						<ul><a href="pages/theorie/H2/p2.php">§2 Visuele logica</a></ul>
 						<ul><a href="pages/theorie/H2/p3.php">§3 Binair?</a></ul>
 						<ul><a href="pages/theorie/H2/p4.php">§4 Logica en programmeren</a></ul>
@@ -138,7 +138,7 @@
 				<div class="tile-paragraphs">
 					<span class="closeTile">X</span>
 					<ol>
-						<ul><a href="pages/theorie/H3/p1.php">§1 Introductie tot programmeertalen</ul>
+						<ul><a href="pages/theorie/H3/p1.php">§1 Introductie tot programmeertalen</a></ul>
 						<ul><a href="pages/theorie/H3/p2.php">§2 Installatie</a></ul>
 						<ul><a href="pages/theorie/H3/p3.php">§3 Variabelen</a></ul>
 						<ul><a href="pages/theorie/H3/p4.php">§4 Rekenen met variabelen</a></ul>
@@ -165,7 +165,7 @@
 				<div class="tile-paragraphs">
 					<span class="closeTile">X</span>
 					<ol>
-						<ul><a href="pages/theorie/H4/p1.php">§1 Elektriciteit</ul>
+						<ul><a href="pages/theorie/H4/p1.php">§1 Elektriciteit</a></ul>
 						<ul><a href="pages/theorie/H4/p2.php">§2 Introductie tot arduino</a></ul>
 						<ul><a href="pages/theorie/H4/p3.php">§3 De basis van programmeren voor arduino</a></ul>
 						<ul><a href="pages/theorie/H4/p4.php">§4 Verder met arduino</a></ul>
@@ -191,7 +191,7 @@
 				<div class="tile-paragraphs">
 					<span class="closeTile">X</span>
 					<ol>
-						<ul><a href="pages/theorie/H5/p1.php">§1 Introductie</ul>
+						<ul><a href="pages/theorie/H5/p1.php">§1 Introductie</a></ul>
 						<ul><a href="pages/theorie/H5/p2.php">§2 De basis van HTML</a></ul>
 						<ul><a href="pages/theorie/H5/p3.php">§3 HTML deel 2</a></ul>
 						<ul><a href="pages/theorie/H5/p4.php">§4 De basis van CSS</a></ul>
@@ -216,7 +216,7 @@
 				<div class="tile-paragraphs">
 					<span class="closeTile">X</span>
 					<ol>
-						<ul><a href="pages/theorie/H6/p1.php">§1 Introductie en onderdelen</ul>
+						<ul><a href="pages/theorie/H6/p1.php">§1 Introductie en onderdelen</a></ul>
 						<ul><a href="pages/theorie/H6/p2.php">§2 Rollen</a></ul>
 						<ul><a href="pages/theorie/H6/p3.php">§3 Communicatie</a></ul>
 						<ul><a href="pages/theorie/H6/p4.php">§4 Agile en Scrum</a></ul>
@@ -240,7 +240,7 @@
 				<div class="tile-paragraphs">
 					<span class="closeTile">X</span>
 					<ol>
-						<ul><a href="pages/theorie/H7/p1.php">§1 Plannen en Trello</ul>
+						<ul><a href="pages/theorie/H7/p1.php">§1 Plannen en Trello</a></ul>
 						<ul><a href="pages/theorie/H7/p2.php">§2 Github</a></ul>
 						<ul><a href="pages/theorie/H7/p3.php">§3 Verslag</a></ul>
 						<ul><a href="pages/theorie/H7/p4.php">§4 Voorbeeld projecten</a></ul>
@@ -277,7 +277,10 @@
 				<div class="tile-paragraphs">
 					<span class="closeTile">X</span>
 					<ol>
-						<ul>Komt binnenkort</ul>
+						<ul><a href="pages/theorie/B1/p1.php">§1 Wat is filosofie?</a></ul>
+						<ul><a href="pages/theorie/B1/p2.php">§2 Wat is ethiek?</a></ul>
+						<ul><a href="pages/theorie/B1/p3.php">§3 Het trein probleem</a></ul>
+						<ul><a href="pages/theorie/B1/p4.php">§4 Kunstmatige intelligentie</a></ul>
 					</ol>
 				</div>
 			</div>
@@ -337,7 +340,7 @@
 				<div class="tile-paragraphs">
 					<span class="closeTile">X</span>
 					<ol>
-						<ul><a href="pages/theorie/B4/p1.php">§1 Wat is een database?</ul>
+						<ul><a href="pages/theorie/B4/p1.php">§1 Wat is een database?</a></ul>
 						<ul><a href="pages/theorie/B4/p2.php">§2 Een database aanmaken</a></ul>
 						<ul><a href="pages/theorie/B4/p3.php">§3 Communiceren met een database</a></ul>
 						<ul><a href="pages/theorie/B4/p4.php">§4 Verder met SQL</a></ul>

@@ -75,6 +75,7 @@ include('../../../components/headerChapter.php');
 					</ol>
 				</li>
 			</ol>
+
 		</div>
 
 		<div class="bar-s">
@@ -84,43 +85,37 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content theorie-answers">
-			<ol class="MLquestionAlt2">
+			<ol class="MLquestion">
 				<li>
 					Hier zijn antwoorden van verschillende filosofische stromingen:
 
 					<ol>
 						<li>
-							<ol>
-								<li>
-									Breinreductionisten (Victor Lamme): De vrije wil bestaat niet, de mens is een resultaat van chemische processen in het brein. Het zelf is een illusie.
-								</li>
-								<li>
-									René Descartes: Je kunt aan alles twijfelen behalve het ik. Het ik is degene die twijfelt. Het ik is een onstoffelijke geest die het lichaam bestuurt.
-								</li>
-							</ol>
+							<li>
+								Breinreductionisten (Victor Lamme): De vrije wil bestaat niet, de mens is een resultaat van chemische processen in het brein. Het zelf is een illusie.
+							</li>
+							<li>
+								René Descartes: Je kunt aan alles twijfelen behalve het ik. Het ik is degene die twijfelt. Het ik is een onstoffelijke geest die het lichaam bestuurt.
+							</li>
 						</li>
 						<li>
-							<ol>
-								<li>
-									Hedonisme: Een daad is goed wanneer ik er blij van word. Genot is het belangrijkste doel in het leven en is hetgeen waar iedereen naar moet streven.
-								</li>
-								<li>
-									Immanuel Kant: Een daad is goed wanneer een maatschappij er beter van wordt als iedereen dit doet. Bijvoorbeeld: “Liegen is niet een goede daad omdat een maatschappij niet kan bestaan als iedereen tegen elkaar zou liegen.
-								</li>
-								<li>
-									Utilitarisme (Jeremy Bentham): Het is een goede daad wanneer het resultaat positief is.
-								</li>
-							</ol>
+							<li>
+								Hedonisme: Een daad is goed wanneer ik er blij van word. Genot is het belangrijkste doel in het leven en is hetgeen waar iedereen naar moet streven.
+							</li>
+							<li>
+								Immanuel Kant: Een daad is goed wanneer een maatschappij er beter van wordt als iedereen dit doet. Bijvoorbeeld: “Liegen is niet een goede daad omdat een maatschappij niet kan bestaan als iedereen tegen elkaar zou liegen.
+							</li>
+							<li>
+								Utilitarisme (Jeremy Bentham): Het is een goede daad wanneer het resultaat positief is.
+							</li>
 						</li>
 						<li>
-							<ol>
-								<li>
-									Ja, een AI is een brein van silicium en is in staat om veel sneller en efficiënter te werken dan een menselijk brein.
-								</li>
-								<li>
-									Nee, AI is een programma en bestaat uit door mens geschreven code en kan niet emoties ervaren dat centraal staat tot een mens. Een AI kan wel simuleren dat het emoties heeft zoals blijheid en verdriet maar ervaart ze niet. Dit zorgt voor een fundamentele verschil in bewustzijn.
-								</li>
-							</ol>
+							<li>
+								Ja, een AI is een brein van silicium en is in staat om veel sneller en efficiënter te werken dan een menselijk brein.
+							</li>
+							<li>
+								Nee, AI is een programma en bestaat uit door mens geschreven code en kan niet emoties ervaren dat centraal staat tot een mens. Een AI kan wel simuleren dat het emoties heeft zoals blijheid en verdriet maar ervaart ze niet. Dit zorgt voor een fundamentele verschil in bewustzijn.
+							</li>
 						</li>
 					</ol>
 				</li>

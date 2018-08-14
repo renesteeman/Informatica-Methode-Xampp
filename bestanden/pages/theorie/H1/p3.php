@@ -57,15 +57,13 @@ include('../../../components/headerChapter.php');
 
 			<p>Gates</p>
 
-			<p>‘Gates’, poortjes, zijn kleine schakelingen. De eenvoudigste (en tevens ook de belangrijkste) zijn AND en OR. Een gate ontvangt twee binaire waarden als input en vergelijkt deze twee bits.</p>
+			<p>‘Gates’, oftewel poortjes in het Nederlands, zijn kleine schakelingen. De eenvoudigste (en tevens ook de belangrijkste) zijn AND en OR. Een gate ontvangt twee binaire waarden als input en vergelijkt deze twee bits.</p>
 
 			<p>Afhankelijk van welke gate en welke input het heeft ontvangen komt er een bepaalde output. Deze output is wederom een bit, het antwoord eigenlijk dus met ja of nee.</p>
 
-			<p>Bij AND is de output 1 als de twee bits in de input beide 1 zijn, dan kan de stroom namelijk erdoorheen (zie afbeelding). De naam AND is dus eigenlijk best logisch, want het heeft twee keer een 1 nodig.</p>
+			<p>Bij AND is de output 1 als de twee bits in de input beide 1 zijn, dan kan de stroom namelijk erdoorheen (zie afbeelding). De naam AND is dus eigenlijk best logisch, want het heeft 1 en 1 nodig.</p>
 
-			<p>Bij OR moet minimaal een van de twee bits in de input 1 zijn om vervolgens een output van 1 uit te krijgen, maar twee keer 1 geeft ook de output 1.</p>
-
-			<p>Alleen als de output twee keer 0 is zal de output bij een OR gate 0 zijn. De stroom kan doorgaan als er minimaal één keer een 1 als input is.</p>
+			<p>Bij OR moet minimaal een van de twee bits in de input 1 zijn om vervolgens een output van 1 uit te krijgen, maar twee keer 1 geeft ook de output 1. Alleen als de output twee keer 0 is zal de output bij een OR gate 0 zijn. De stroom kan dus doorgaan als er minimaal één keer een 1 als input is.</p>
 
 			<p>Als je deze poorten in een stroomcircuit gebruikt geld dat wanneer de output 1 is, de kring gesloten is (en er dus wel stroom kan circuleren), en bij 0 de kring open is (en er dus geen stroom kan circuleren).</p>
 
@@ -82,6 +80,57 @@ include('../../../components/headerChapter.php');
 			<p>De grijze strepen zijn de mogelijke posities van de schakelaars. Als ze dicht zijn kan er stroom doorheen en als ze open zijn niet, 1 of 0.</p>
 
 		</div>
+
+		<div class="bar-s">
+			<h3>
+				Vragen
+			</h3>
+		</div>
+
+		<div class="theorie-content">
+
+			<ol class="MLquestion">
+				<li>
+					Neem als waarden 0 en 1 (in die volgorde).
+
+					<ol>
+						<li>Welk resultaat zal dit geven bij een AND-gate?</li>
+						<li>En bij een OR-gate?</li>
+						<li>Teken de AND- en OR-gates als een elektrisch circuit.</li>
+					</ol>
+				</li>
+			</ol>
+
+		</div>
+
+		<div class="bar-s">
+			<h3>
+				Antwoorden
+			</h3>
+		</div>
+
+		<div class="theorie-content theorie-answers">
+
+			<ol class="MLquestion">
+				<li>
+					<ol>
+						<li>0</li>
+						<li>1</li>
+						<li>
+							AND
+							<img src="./afbeeldingen/vraagAND.svg" class="theorieImage" />
+
+							OR
+							<img src="./afbeeldingen/vraagOR.svg" class="theorieImage" />
+
+						</li>
+					</ol>
+				</li>
+			</ol>
+
+		</div>
+
+
 	</div>
 
 	<?php

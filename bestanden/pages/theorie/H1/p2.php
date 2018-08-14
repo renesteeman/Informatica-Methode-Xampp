@@ -71,19 +71,118 @@ include('../../../components/headerChapter.php');
 
 			<p>Vermenigvuldigen</p>
 
-			<p>Vermenigvuldigen is lastiger, maar nog te doen. Dit doe je door steeds het meest rechtste nummer van onder te vermenigvuldigen met de nummers van de bovenste rij. Dit gaat dus van rechts naar links. Als de rij af is ga je bij de onderste rij de stappen herhalen voor het getal dat een plek verder naar links staat. Je zet steeds de uitkomsten onder elkaar en telt ze op het einde bij elkaar op. Denk eraan om het antwoord per rij ook steeds een plek op te laten schuiven.</p>
+			<p>Vermenigvuldigen lijkt wat moeilijker, maar dit valt mee. Dit doe je door steeds het meest rechtste nummer van onder te vermenigvuldigen met de nummers van de bovenste rij. Dit gaat dus van rechts naar links. Als de rij af is ga je bij de onderste rij de stappen herhalen voor het getal dat een plek verder naar links staat. Je zet steeds de uitkomsten onder elkaar en telt ze op het einde bij elkaar op. Denk eraan om het antwoord per rij ook steeds een plek op te laten schuiven naar links, je kunt er ook steeds een nul naast zetten om dit te verduidelijken.</p>
 
 			<img src="./afbeeldingen/multiplicatie.svg" class="theorieImage" />
 
-			<p>Delen</p>
+			<p>
+				Binair delen is ook mogelijk, maar dit is vrij lastig (voor een mens) om te doen. We zullen dit dus niet gaan uitvoeren, omdat het simpelweg te complex wordt.
+			</p>
 
-			<p>Binair delen is niet gemakkelijk, daarom begint het voorbeeld met een ‘normale’ staartdeling. De bedoeling is om steeds te kijken hoe vaak de noemer (het onderste getal in de breuk) in de teller (het bovenste getal in de breuk) past en vervolgens die aantal keren bij elkaar op te tellen en mocht er iets overblijven dit als breuk over te nemen.</p>
+		</div>
 
-			<p>Bij binair gaat het op exact dezelfde manier, maar het lijkt een stuk lastiger.</p>
+		<div class="bar-s">
+			<h3>
+				Vragen
+			</h3>
+		</div>
 
-			<p>(Bij binair rekenen mogen alle nullen waar aan de linkerkant geen 1 voor staat, weg gelaten worden)</p>
+		<div class="theorie-content">
 
-			<img src="./afbeeldingen/delen.svg" class="theorieImage" />
+			Binair rekenen
+			<ol class="MLquestion">
+				<li>
+					Tel op
+
+					<ol>
+						<li>10111+01100</li>
+						<li>01111+1110101</li>
+						<li>001100111+01111100</li>
+					</ol>
+				</li>
+
+
+				<li>
+					Trek af
+
+					<ol>
+						<li>10110-11</li>
+						<li>10110-0110</li>
+						<li>110011-101110</li>
+					</ol>
+				</li>
+
+				<li>
+					Vermenigvuldig
+
+					<ol>
+						<li>111*000</li>
+						<li>101*101</li>
+						<li>11011*101111 </li>
+					</ol>
+				</li>
+
+				<li>
+					Delen
+
+					<ol>
+						<li>101/101</li>
+						<li>10110/10</li>
+					</ol>
+				</li>
+			</ol>
+
+		</div>
+
+		<div class="bar-s">
+			<h3>
+				Antwoorden
+			</h3>
+		</div>
+
+		<div class="theorie-content theorie-answers">
+
+			<ol class="MLquestion">
+				<li>
+					Tel op
+
+					<ol>
+						<li>100011</li>
+						<li>10000100</li>
+						<li>11100011</li>
+					</ol>
+				</li>
+
+
+				<li>
+					Trek af
+
+					<ol>
+						<li>10011</li>
+						<li>10000</li>
+						<li>100</li>
+					</ol>
+				</li>
+
+				<li>
+					Vermenigvuldig
+
+					<ol>
+						<li>0</li>
+						<li>11001</li>
+						<li>1001010</li>
+					</ol>
+				</li>
+
+				<li>
+					Delen
+
+					<ol>
+						<li>1</li>
+						<li>1011</li>
+					</ol>
+				</li>
+			</ol>
 
 		</div>
 	</div>

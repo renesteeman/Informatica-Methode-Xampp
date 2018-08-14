@@ -165,6 +165,50 @@ include('../../../components/headerChapter.php');
 			</div>
 
 		</div>
+
+		<div class="bar-s">
+			<h3>
+				Vragen
+			</h3>
+		</div>
+
+		<div class="theorie-content">
+
+			<ol class="MLquestion">
+				<li>
+					Beschrijf in maximaal 10 woorden de functie van de volgende onderdelen (dit hoeft niet in volledige zinnen).
+
+					<ol>
+						<li>de CPU</li>
+						<li>de GPU</li>
+						<li>het moederbord</li>
+						<li>het RAM</li>
+					</ol>
+				</li>
+			</ol>
+
+		</div>
+
+		<div class="bar-s">
+			<h3>
+				Antwoorden
+			</h3>
+		</div>
+
+		<div class="theorie-content theorie-answers">
+
+			<ol class="MLquestion">
+				<li>
+					<ol>
+						<li>Het uitvoeren van algemene instructies.</li>
+						<li>Het uitvoeren van veel eenvoudige instructies tegelijkertijd.</li>
+						<li>Zorgen dat onderdelen onderling kunnen communiceren.</li>
+						<li>Het opslaan van data dat snel nodig is.</li>
+					</ol>
+				</li>
+			</ol>
+
+		</div>
 	</div>
 
 	<?php

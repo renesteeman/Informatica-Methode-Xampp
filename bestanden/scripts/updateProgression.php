@@ -93,9 +93,9 @@
 		} else {
 			echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 		}
-		
+
 	} else {
-		echo "U bent niet meer ingelogd en uw progressie kan daarom niet bijgewerkt worden."
+		echo "U bent niet meer ingelogd en uw progressie kan daarom niet bijgewerkt worden.";
 	}
 
 ?>

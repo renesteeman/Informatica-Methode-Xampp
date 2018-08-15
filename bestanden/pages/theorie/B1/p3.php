@@ -51,7 +51,7 @@ include('../../../components/headerChapter.php');
 
 			<p>Nieuwe filosofen hebben vast iets hierover gehoord. Stel je voor:</p>
 
-			<p>Je zit in een treinwagon, voor je gaat de spoor op in twee kanten, op spoor A staat een mens, op spoor B staan vijf mensen. Je kunt de trein niet stoppen. Wat doe je?</p>
+			<p>Je zit in een treinwagon, voor je gaat de spoor op in twee kanten, op spoor A staat één mens, op spoor B staan vijf mensen. Je kunt de trein niet stoppen. Wat doe je?</p>
 
 			<ol>
 				<li>
@@ -65,9 +65,9 @@ include('../../../components/headerChapter.php');
 				</li>
 			</ol>
 
-			<p>Voor de meeste mensen is dit een makkelijke keuze, wanneer je het leven waardeert zal je willen dat de minste hoeveelheid mensen dood gaan. Volgens het gevolgenethiek van Bentham en Mill zou je dus spoor A volgen en de vijf mensen redden.</p>
+			<p>Voor de meeste mensen is dit een makkelijke keuze, wanneer je het (mensen)leven waardeert zal je willen dat zo min mogelijk mensen dood gaan. Volgens de gevolgenethiek van Bentham en Mill zou je dus spoor A volgen en de vijf mensen redden.</p>
 
-			<p>Er zijn meerdere varianten van dit denk-experiment, wat nou als de mensen op de sporen veranderen? Wat zou je kiezen wanneer:</p>
+			<p>Er zijn meerdere varianten van dit denk-experiment, wat nou als er anderen mesen/aantallen gebruikt worden? Wat zou je kiezen wanneer:</p>
 
 			<ol class="MLquestion">
 				<li>
@@ -86,7 +86,7 @@ include('../../../components/headerChapter.php');
 							een jong kind
 						</li>
 						<li>
-							5 gepensioneerde leraren
+							5 gepensioneerden
 						</li>
 					</ol>
 				</li>
@@ -116,7 +116,7 @@ include('../../../components/headerChapter.php');
 							Jouw ouders
 						</li>
 						<li>
-							30 onschuldige mensen
+							5 onschuldige mensen
 						</li>
 					</ol>
 				</li>
@@ -124,32 +124,32 @@ include('../../../components/headerChapter.php');
 
 			<p>Zoals je waarschijnlijk al hebt gemerkt zijn sommige keuzes makkelijker dan de andere. De vraag is natuurlijk wat dit te maken heeft met programmeren.</p>
 
-			<p>Stel, Elon Musk is een grote fan van jouw programma's en neemt jou aan als een developer voor de zelfrijdende Tesla auto’s. Hoewel het doel van een Tesla is om menselijke fouten te vermijden zijn sommige fouten onvermijdelijk. Als een Tesla rond aan het rijden is met een familie die net terugkomt van Disneyland, twee straten voordat ze thuiskomen steekt een klas van groep vier kinderen over. De Tesla kan nu of:</p>
+			<p>Stel, Elon Musk is een grote fan van jouw programma's en neemt jou aan als een developer voor de zelfrijdende Tesla auto’s. Hoewel het doel van een Tesla is om menselijke fouten te vermijden zijn sommige fouten onvermijdelijk. Als een Tesla rond aan het rijden is met een familie die net terugkomt van Disneyland gebeurt het volgende: twee straten voordat ze thuiskomen steekt een groep kinderen van groep 4 over. De Tesla kan nu of:</p>
 
 			<ol>
 				<li>
-					Tegen een boom aan botsen, riskeer de familie en red de kinderen.
+					Tegen een boom aan botsen en  de familie riskeren en de kinderen redden.
 				</li>
 				<li>
-					Probeer uit te wijken, riskeer de kinderen aan te botsen.
+					Proberen uit te wijken en riskeren om tegen de kinderen te botsen.
 				</li>
 			</ol>
 
-			<p>Een computer is niet in staat om dit probleem op te lossen. Wat moet jij als programmeur hier aan doen? Als mens heb je een set normen en waarden, regels wat je zijn aangeleerd sinds dat je bent geboren. Je mag bijvoorbeeld niet zomaar stelen of liegen. Een algoritme heeft dat niet. Wanneer een computer moet bepalen wie het moet aanrijden denkt het niet aan interpersoonlijke relaties, het denkt niet aan de waardes dat mensen nog hebben in de samenleving, dat is jouw taak.</p>
+			<p>Een computer is niet in staat om dit probleem op te lossen. Wat moet jij als programmeur hier aan doen? Als mens heb je een set normen en waarden, regels die jou zijn aangeleerd vanaf dat je geboren bent. Je mag bijvoorbeeld niet zomaar stelen of liegen. Een algoritme heeft dat niet. Wanneer een computer moet bepalen wie het moet aanrijden denkt het niet aan interpersoonlijke relaties, het denkt niet aan de waardes die mensen nog hebben in de samenleving, dat is jouw taak.</p>
 
-			<p>Dus, je krijgt nu de onmogelijke taak, je moet waardes geven aan mensen. Hoe kun je dat doen? Sommige mensen zullen claimen dat alle mensen gelijk aan elkaar staat, dat is geen slecht begin. Dus dan beginnen we met de regel:</p>
+			<p>Dus, je krijgt nu de onmogelijke taak, je moet waardes geven aan mensen. Hoe kun je dat doen? Sommige mensen zullen claimen dat alle mensen gelijk aan elkaar staan, dat is geen slecht begin. We beginnen we met de regel:</p>
 
 			<p>-Probeer zo weinig mogelijk mensen te verwonden.</p>
 
-			<p>We hebben natuurlijk meer regels nodig, we kunnen bijvoorbeeld zorgen dat mensen boven de 68 jaar minder meetellen. Ze contribueren tenslotte niet meer aan een maatschappij. Dus:</p>
+			<p>We hebben natuurlijk meer regels nodig, we kunnen bijvoorbeeld zorgen dat mensen boven de 68 jaar minder meetellen. Ze contribueren tenslotte minder aan een maatschappij. Dus:</p>
 
-			<p>-Mensen>68 jaar worden niet geprioriteerd.</p>
+			<p>-Mensen boven de 68 jaar worden niet geprioriteerd.</p>
 
-			<p>Maar, als we mensen zouden prioriteren gebaseerd op hun nuttigheid in de maatschappij, moeten we dan de werklozen en drugsverslaafde ook minder meetellen? Het volgt dezelfde regel, dus:</p>
+			<p>Maar, als we mensen zouden prioriteren gebaseerd op hun nuttigheid in de maatschappij, moeten we dan de werklozen en drugsverslaafden ook minder meetellen? Het volgt dezelfde regel, dus:</p>
 
 			<p>-Mensen krijgen een andere telling gebaseerd op hun contributie in de maatschappij.</p>
 
-			<p>Zo kan je natuurlijk doorgaan, begin met het aantal mensen en ga door totdat je een hele regelboek hebt bedacht voor jouw Tesla. Nu is het tijd om het in de praktijk uit te testen. Laten we hiervoor de A&B vragen nemen die hiervoor zijn gesteld. Wat zou de Tesla volgens jou moeten kiezen voor het beste resultaat?</p>
+			<p>Zo kun je natuurlijk doorgaan, begin met regels op te stellen en ga door totdat je een heel regelboek hebt bedacht voor jouw Tesla. Nu is het tijd om het in de praktijk uit te testen. Laten we hiervoor de A en B vragen nemen die eerder zijn gesteld. Wat zou de Tesla volgens jou moeten kiezen voor het beste resultaat?</p>
 
 			<ol class="MLquestion">
 				<li>
@@ -168,7 +168,7 @@ include('../../../components/headerChapter.php');
 							een jong kind
 						</li>
 						<li>
-							5 gepensioneerde leraren
+							5 gepensioneerden
 						</li>
 					</ol>
 				</li>
@@ -198,7 +198,7 @@ include('../../../components/headerChapter.php');
 							Jouw ouders
 						</li>
 						<li>
-							30 onschuldige mensen
+							5 onschuldige mensen
 						</li>
 					</ol>
 				</li>

@@ -49,30 +49,33 @@ include('../../../components/headerChapter.php');
 
 		<div class="theorie-content">
 
-			<p>In de vorige paragraaf heb je vraag 2 beantwoordt, “Wat is een goede daad?” Dit is een van de ingewikkeldste vraag in de filosofie en vormt een stroming in de filosofie genaamd ethiek. Ethiek is de studie waarin men de concepten van goed en slecht systematiseert en verdedigd.</p>
+			<p>In de vorige paragraaf heb de vraag, “Wat is een goede daad?” beantwoord. Dit is een van de ingewikkeldste vragen in de filosofie en vormt een stroming in de filosofie genaamd ethiek. Ethiek is de studie waarin men de concepten van goed en slecht systematiseert en verdedigd.</p>
 
-			<p>Digitale technologieën zoals het internet, mobieltjes en programmeren zijn relatief nieuw en de regels hiervan zijn vaak onduidelijk. Daarom is het belangrijk om te weten wanneer je een programma schrijft je rekening moet houden met wat voor een invloed het heeft op jouw omgeving.</p>
+			<p>Digitale technologieën zoals het internet, mobieltjes en programmeren zijn relatief nieuw en de regels hiervan zijn vaak onduidelijk. Daarom is het belangrijk om, wanneer je een programma schrijft, rekening te houden met wat voor een invloed het heeft op jouw omgeving.</p>
 
-			<p>Bijvoorbeeld:</p>
+			<p>Een paar vragen die je je kunt afvragen zijn:</p>
 
 			<ul>
-				<p>Mag je een programma schrijven dat gebruikers data vertaalt naar mogelijke reclames?</p>
+				<li>Mag je een programma schrijven dat data van gebruikers vertaalt naar mogelijke reclames?</li>
 
-				<p>Mag je iets maken dat in staat is om mensen te bespioneren via hun microfoons?</p>
+				<li>Mag je iets maken dat in staat is om mensen te bespioneren via hun microfoons?</li>
 
-				<p>Verschillende groepen mensen hebben een richtlijn gecreëerd hierover, zo heeft de ACM (Association for Computing Machinery) een ethische code gemaakt:</p>
+			</ul>
 
-				<p>Contribuer aan de maatschappij en menselijk welzijn.</p>
+			<p>Verschillende groepen mensen hebben een richtlijn hierover gecreëerd, zo heeft de ACM (Association for Computing Machinery) een ethische code gemaakt:</p>
 
-				<p>Doe geen schade aan anderen.</p>
+			<ul>
+				<li>Contribuer aan de maatschappij en menselijk welzijn.</li>
 
-				<p>Wees eerlijk en vertrouwbaar.</p>
+				<li>Doe geen schade aan anderen.</li>
 
-				<p>Geef credit aan intellectueel eigendommen van anderen.</p>
+				<li>Wees eerlijk en betrouwbaar.</li>
 
-				<p>Respecteer privacy van anderen.</p>
+				<li>Waardeer intellectueel eigendommen van anderen.</li>
 
-				<p>Behoud het geheimplicht.</p>
+				<li>Respecteer privacy van anderen.</li>
+
+				<li>Behoud de geheimplicht en deel dus geen informatie onnodig met anderen.</li>
 			</ul>
 
 		</div>
@@ -86,7 +89,7 @@ include('../../../components/headerChapter.php');
 		<div class="theorie-content">
 			<ol class="MLquestion">
 				<li>
-					Deze vragen hebben geen concrete antwoorden, ze zijn reflecties van wie je bent en hoe je denkt. Probeer het standpunt van jouw antwoord te nemen en het te discussiëren met iemand met een verschillend standpunt.
+					Deze vragen hebben geen concrete antwoorden, ze zijn reflecties van wie je bent en hoe je denkt. Probeer het standpunt van jouw antwoord in te nemen en erover te discussiëren met iemand met een ander standpunt.
 
 					<ol>
 						<li>Mag je iets maken dat intelligentie van mensen kan berekenen?</li>
@@ -105,7 +108,7 @@ include('../../../components/headerChapter.php');
 		<div class="theorie-content theorie-answers">
 			<ol class="MLquestionAlt2">
 				<li>
-					Hier zijn antwoorden van verschillende filosofische stromingen:
+					Hier zijn mogelijke antwoorden met verschillende filosofische richtingen:
 
 					<ol>
 						<li>

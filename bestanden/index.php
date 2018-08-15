@@ -27,7 +27,7 @@
 
 	<div class="bar">
 		<h3>
-			Kernhoofdstukken
+			Kern
 		</h3>
 	</div>
 
@@ -257,7 +257,7 @@
 
 	<div class="bar">
 		<h3>
-			Verdiepingshoofdstukken
+			Verdieping
 		</h3>
 	</div>
 

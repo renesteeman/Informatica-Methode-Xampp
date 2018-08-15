@@ -122,14 +122,6 @@ include('../../../components/headerChapter.php');
 					</ol>
 				</li>
 
-				<li>
-					Delen
-
-					<ol>
-						<li>101/101</li>
-						<li>10110/10</li>
-					</ol>
-				</li>
 			</ol>
 
 		</div>
@@ -153,7 +145,6 @@ include('../../../components/headerChapter.php');
 					</ol>
 				</li>
 
-
 				<li>
 					Trek af
 
@@ -174,14 +165,6 @@ include('../../../components/headerChapter.php');
 					</ol>
 				</li>
 
-				<li>
-					Delen
-
-					<ol>
-						<li>1</li>
-						<li>1011</li>
-					</ol>
-				</li>
 			</ol>
 
 		</div>

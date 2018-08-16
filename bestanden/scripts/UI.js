@@ -58,7 +58,6 @@ $(document).ready(function(){
 		$(this).parent().parent().next().toggleClass("active");
 
 		$(this).toggleClass("active");
-
 	});
 
 	//paragraph
@@ -119,5 +118,10 @@ $(document).ready(function(){
     });
 
   });
+
+	$(".goToTop").click(function(){
+		//Go to the top of the page after clicking the arrow
+		$("html, body").animate({scrollTop: 0}, "fast");
+	});
 
 });

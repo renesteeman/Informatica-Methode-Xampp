@@ -1,4 +1,9 @@
 </div>
+
+<div class="goToTop">
+	&#8593;
+</div>
+
 <footer>
 	<div class="bar-large">
 		<div class="contact">

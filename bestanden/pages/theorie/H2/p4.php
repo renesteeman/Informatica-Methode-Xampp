@@ -45,13 +45,15 @@
 
 		<div class="theorie-content">
 			<p>
-				Het opdelen van een probleem is erg belangrijk. Voornamelijk bij logisch nadenken en dus ook programmeren. Als je een project gaat uitvoeren moet je een groot probleem in delen kunnen hakken om te zorgen voor overzicht, zodat je weet waar je moet beginnen.
+				Het opdelen van een probleem is erg belangrijk. Voornamelijk bij logisch nadenken en dus ook bij programmeren.  Als je een project gaat uitvoeren moet je een groot probleem in kleinere stukken kunnen hakken om te zorgen voor overzicht. Het wordt dan makkelijker om de problemen op te lossen.
 			</p>
+
 			<p>
-				Stel je wilt een website gaan maken (meer hierover in H5), dan moet je eerst bedenken waarover het moet gaan, hoe het gaat het heten, hoe de structuur ervan uit moet zien, hoe het vorm gegeven moet worden, enz. Daarna kun je bijvoorbeeld de logica van de site in stukken delen, bijvoorbeeld in de talen php en javascript. Dan ga je logica indelen bij deze talen, bijvoorbeeld mails sturen via php. Dan maak je een bestaand aan, bijvoorbeeld sendMail.php en stel je hierin de logica van het programma op, eerst in het Engels of Nederlands en later in de programmeertaal, dus php.
+				Stel je wilt een website gaan maken (meer hierover in H5), dan moet je eerst bedenken wat voor soort website het moet worden: hoe het gaat het heten, wat wordt de structuur en hoe moet het eruit gaan zien, enz. Daarna kun je de logica van de site in stukken hakken. Stel je de flow van het programma op, oftewel hoe dingen met elkaar verbonden zijn en wat wanneer gebeurt. Een flow kan bijvoorbeeld zijn: ga naar de startpagina, klik op login, vul gegevens in, klik op submit, laat een script de gegevens analyseren, controleer de gegevens en bepaal of iemand ingelogd moet worden. Je kunt ook de taken indelen onder bepaalde talen, sommige talen zijn namelijk beter voor bepaalde problemen dan andere.
 			</p>
+
 			<p>
-				De logica kan bijvoorbeeld zijn: als de gebruiker in het systeem staat voor de mail lijst en er is een nieuwe mail om te sturen, dan stuur mail naar de gebruiker. Je hakt het probleem, de mail sturen dus in kleine stukjes. Vervolgens kun je die stukjes weer gaan uitwerken.
+				Als je vervolgens gaat programmeren kun je het beste eerst de logica van het programma opstellen. Een voorbeeld kan zijn: lees de informatie die ontvangen is, controleer of er genoeg informatie is, controleer of de gegevens kloppen, laat iemand toe tot de website. Je kunt daarna deze onderdelen van het programma gaan uitwerken, op deze manier hou je overzicht en krijg je dus meer gedaan.
 			</p>
 
 		</div>
@@ -69,7 +71,7 @@
 					Noem minimaal vijf mogelijke stappen die je volgt als je een auto wilt kopen.
 				</li>
 				<li>
-					Je wilt een mail sturen naar klasgenoten waarvan de naam niet begint met een r, jonger zijn dan 18, ouder dan 16 en graag naar de bioscoop gaan en actiefilms leuk vinden. Noem de stappen die je kunt volgen om een mail te sturen naar deze klasgenoten, noteer minimaal 5 stappen.
+					Je wilt een mail sturen naar klasgenoten waarvan de naam niet begint met een r, jonger zijn dan 18, ouder dan 16 en graag naar de bioscoop gaan en actiefilms leuk vinden. Noem de stappen die een programma kan volgen om een mail te sturen naar deze klasgenoten, noteer minimaal 5 stappen.
 				</li>
 			</ol>
 

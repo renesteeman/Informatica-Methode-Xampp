@@ -45,29 +45,32 @@
 
 		<div class="theorie-content">
 			<p>
-				Logica is het combineren van feiten om nieuwe feiten op te kunnen stellen. Een bekend voorbeeld is de uitspraak:
-				"Alle mensen zijn stervelingen.
-				Socrates is een mens.
-				Dus Socrates is een sterveling."
+				Logica is het combineren van feiten om nieuwe feiten op te kunnen stellen. Een bekend voorbeeld is de uitspraak: "Alle mensen zijn stervelingen. Socrates is een mens. Dus Socrates is een sterveling." Twee feiten vormen hier dus het derde feit.
 			</p>
 
 			<p>
-				2 feiten vormen hier dus het 3e feit. Logica is een vorm van wiskunde die vrij abstract lijkt. Het heeft zijn eigen notaties en betekenissen. </br>
-				Er wordt veel gebruik gemaakt van sets. Dit zijn eigenlijk groepen objecten of getallen, bijvoorbeeld katten, honden of priemgetallen. Een van de andere regels bij logica is dat het ‘+-teken’ union (samenvoeging) betekent. Dit wordt gebruikt bij de sets, je kunt met het +-teken dus sets samenvoegen. X (maal) betekent intersection (overlap). Dit kan ook voor sets gebruikt worden. Verder betekent 1 alles, zoals in een set met auto’s, hier betekent 1 alle auto’s. Een andere notatie voor + is ∪ en voor maal is ꓵ. ∪ kun je zien als: samen en ꓵ als: hebben beide.
+				Logica is een vorm van wiskunde die vrij abstract lijkt. Het heeft zijn eigen notaties en betekenissen. Er wordt veel gebruik gemaakt van sets. Dit zijn eigenlijk groepen objecten of getallen, bijvoorbeeld katten, honden of priemgetallen.
 			</p>
 
 			<p>
-				Voorbeelden:
-				<p>
-					Stel set 1 bestaat uit katten. We delen set 1 in op basis van kleur: wit, grijs en bruin. We korten deze kleuren af met W, G en B. Je kunt nu zeggen dat bij set 1 W+G+B=1, want alle katten van deze set vallen onder die drie kleuren. Zo is W+G=1-B, alle katten met uitzondering van de bruine zijn wit of grijs. Er komen nu 0 rode (R) katten bij, nu is R=0, want geen enkele kat is rood.
-				</p>
-
-				<p>
-					Stel we hebben nu 5 witte, 2 grijze, 6 bruine en 0 rode katten. W+G of W ∪ G bevat dus 7 katten (5+2). Van de 5 witte katten zijn 3 man (M) en 2 vrouw (V). M x W of M ꓵ W bevat dus 3 katten, want 3 witte katten zijn man.
-				</p>
-
+				Een van de andere regels bij logica is dat het ‘+-teken’ union (samenvoeging) betekent. Dit wordt gebruikt bij de sets. Je kunt met ‘+’ dus sets samenvoegen.  X (maal) betekent intersection (overlap). Dit kan ook voor sets gebruikt worden.  Verder betekent 1 alles, zoals in een set met auto’s, hier betekent 1 alle auto’s.
 			</p>
 
+			<p>
+				Een andere notatie voor ‘+’ is ∪ en voor maal is ꓵ. ∪ kun je zien als bij elkaar en ꓵ als ‘en’.
+			</p>
+
+			<p>
+			Voorbeelden:
+			</p>
+
+			<p>
+				Stel set 1 bestaat uit katten. We delen set 1 in op basis van kleur; wit, grijs en bruin. We korten deze kleuren af met W, G en B. Je kunt nu zeggen dat bij set 1 W+G+B=1, want alle katten van deze set vallen onder die drie kleuren. Zo is W+G=1-B, alle katten met uitzondering van de bruine zijn wit of grijs. Er komen nu 0 rode (R) katten bij, nu is R=0, want geen enkele kat is rood.
+			</p>
+
+			<p>
+				Stel we hebben nu 5 witte, 2 grijze, 6 bruine en 0 rode katten. W+G of W ∪ G bevat dus 7 katten (5+2). Van de 5 witte katten zijn 3 man (M) en 2 vrouw (V). M x W of M ꓵ W bevat dus 3 katten, want 3 witte katten zijn man. 
+			</p>
 
 		</div>
 

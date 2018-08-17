@@ -20,7 +20,7 @@
 				padding-left: 1em
 				padding-top: 0.5em
 				padding-bottom: 0.5em
-				background-color: $primairy2
+				background-color: $secondary1
 				color: $white
 
 				span
@@ -60,9 +60,9 @@
 					padding-left: 4em
 					padding-top: 0.5em
 					padding-bottom: 0.3em
-					background-color: $green-blue
+					background-color: $secondary2
 
-					color: $white
+					color: $black
 
 					span
 						display: inline-block
@@ -87,17 +87,17 @@
 						height: 1em
 						border-radius: 50%
 						border: 1px solid $grey
-						background-color: lighten($green-blue, 10%)
+						background-color: lighten($green-blue, 5%)
 
 					.notSchedule
 						width: 1em
 						height: 1em
 						border-radius: 50%
 						border: 1px solid $grey
-						background-color: lighten($red, 15%)
+						background-color: lighten($red, 5%)
 
 				.row:nth-child(even)
-					background-color: darken($green-blue, 5%)
+					background-color: darken($secondary2, 10%)
 
 			.rowContent.active
 				display: block
@@ -147,7 +147,7 @@
 						width: 20%
 
 		.groepInhoud
-			background-color: $primairy2
+			background-color: $secondary1
 			color: $white
 			display: block
 			box-sizing: border-box
@@ -182,12 +182,12 @@
 		margin-bottom: 2em
 		box-shadow: 4px 4px 8px darken($grey, 20%)
 		transition: background .4s ease-out, box-shadow 0.2s ease-in-out
-		background: linear-gradient(to bottom right, $green-blue, lighten($green-blue, 10%))
+		background: linear-gradient(to bottom right, $secondary2, lighten($secondary2, 10%))
 		border: none
 
 	input:hover, button:hover
 		box-shadow: 2px 2px 6px darken($grey, 30%)
-		background: linear-gradient(to bottom right, $green-blue, $primairy2)
+		background: linear-gradient(to bottom right, darken($secondary2, 10%), $secondary2)
 
 	.changeClassButton
 		display: inline-block

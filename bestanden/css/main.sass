@@ -185,7 +185,7 @@ input[type="checkbox"]
 
 	.tile
 		background-color: $green-blue
-		background: linear-gradient(to bottom right, $green-blue, $green)
+		background: linear-gradient(to bottom right, darken($secondary2, 10%), lighten($secondary2, 5%))
 		background-size: 15em
 		height: 15em
 		line-height: 15em
@@ -211,7 +211,7 @@ input[type="checkbox"]
 					transition: color 0.3s ease-in-out
 
 				a:hover
-					color: darken($white, 10%)
+					color: darken($white, 45%)
 
 	.tile:hover
 		box-shadow: inset 0 0 0 4px darken($white, 5%), 4px 4px 8px darken($white, 20%)
@@ -221,7 +221,7 @@ input[type="checkbox"]
 
 	.tile.active
 		transition: box-shadow 0.5s ease-in-out
-		background: linear-gradient(to bottom right, $green-blue, $green)
+		background: linear-gradient(to bottom right, darken($secondary2, 10%), lighten($secondary2, 5%))
 		width: 70rem
 		height: auto
 

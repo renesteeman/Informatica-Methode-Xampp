@@ -184,7 +184,6 @@ input[type="checkbox"]
 	grid-gap: 2em
 
 	.tile
-		background-color: $green-blue
 		background: linear-gradient(to bottom right, darken($secondary2, 10%), lighten($secondary2, 5%))
 		background-size: 15em
 		height: 15em
@@ -296,7 +295,7 @@ footer
 
 //buttons
 input
-	box-shadow: inset 0 0 0 0 darken($white, 10%), 4px 4px 8px darken($green-blue, 20%)
+	box-shadow: inset 0 0 0 0 darken($white, 10%), 4px 4px 8px darken($secondary2, 20%)
 	transition: background .5s ease-out, box-shadow 0.5s ease-in-out
 
 input:not([type=submit])::placeholder
@@ -306,27 +305,27 @@ input:not([type=submit])
 	border: none
 
 input:not([type=submit]):focus
-	box-shadow: inset 0 0 0 6px darken($white, 10%), 4px 4px 8px darken($green-blue, 20%)
+	box-shadow: inset 0 0 0 6px darken($white, 10%), 4px 4px 8px darken($secondary2, 20%)
 
 input:not([type=submit]):hover
-	box-shadow: inset 0 0 0 6px darken($white, 10%), 2px 2px 6px darken($green-blue, 20%)
+	box-shadow: inset 0 0 0 6px darken($white, 10%), 2px 2px 6px darken($secondary2, 20%)
 
 input[type=submit]
 	background-color: $white
 	border: none
 
 input[type=submit]:hover
-	background-color: lighten($green-blue, 20%)
+	background-color: $green-blue
 
 textarea
 	font-family: 'Robot', sans-serif
-	box-shadow: inset 0 0 0 0 darken($white, 10%), 4px 4px 8px darken($green-blue, 20%)
+	box-shadow: inset 0 0 0 0 darken($white, 10%), 4px 4px 8px darken($secondary2, 20%)
 
 textarea:focus
-	box-shadow: inset 0 0 0 6px darken($white, 10%), 4px 4px 8px darken($green-blue, 20%)
+	box-shadow: inset 0 0 0 6px darken($white, 10%), 4px 4px 8px darken($secondary2, 20%)
 
 textarea:hover
-	box-shadow: inset 0 0 0 6px darken($white, 10%), 2px 2px 6px darken($green-blue, 20%)\
+	box-shadow: inset 0 0 0 6px darken($white, 10%), 2px 2px 6px darken($secondary2, 20%)
 
 //general
 .hide
@@ -335,7 +334,7 @@ textarea:hover
 //index specific
 .chapter-tiles
 	.completed
-		background: linear-gradient(to bottom right, rgba($green-blue, .5), rgba($green, .5))
+		background: linear-gradient(to bottom right, lighten($secondary2, 5%), lighten($secondary2, 10%))
 
 //responsiveness
 @media (max-width: $xlarge)

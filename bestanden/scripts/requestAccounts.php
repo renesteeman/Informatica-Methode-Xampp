@@ -30,7 +30,7 @@
 	$verify = file_get_contents($url, false, $context);
 	$captcha_success = json_decode($verify);
 	if ($captcha_success->success==false) {
-		echo "\nVul alstublieft de recpatcha in\n";
+		echo "Vul alstublieft de recpatcha in";
 	} else if ($captcha_success->success==true) {
 
 		if(isset($_POST['request_password'])){
@@ -98,9 +98,12 @@
 						$klassen[] = $klasinfo;
 					}
 
+					if(count($klassen) <= 0){
+						echo "\nU heeft geen geldige klassen ingevuld";
+					}
+
 				} else {
-					echo "\nU heeft geen (of niet) geldige klassen ingevuld";
-					$allSet = 0;
+					echo "\nU heeft geen geldige klassen ingevuld";
 				}
 
 				if(isset ($_POST['akkoord']) & $_POST['akkoord']!=""){
@@ -328,9 +331,9 @@
 					$headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
 					if (mail($email, $subject, $msg, implode("\r\n", $headers))) {
-						echo("\nEmail verzonden\n");
+						echo "\nEmail verzonden";
 					} else {
-						echo("\nEmail niet correct verzonden\n");
+						echo "\nEmail niet correct verzonden";
 					}
 
 					$Nleerlingen = $accountsCreated - $Ndocenten;

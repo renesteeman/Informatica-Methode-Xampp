@@ -33,7 +33,7 @@
 		<ul>
 			<li>
 				Aanvraagcode</br>
-				<input class="password" name="request_password" type="password" required/>
+				<input class="request_password" name="request_password" type="password" required/>
 			</li>
 			<li>
 				Schoolnaam</br>
@@ -110,7 +110,7 @@
 			</li>
 
 			<li>
-				<div class="g-recaptcha" data-sitekey="6Lc_J1MUAAAAAJlHeuG3e9tg0zTGAvA7bC2dgSzq"></div>
+				<div class="g-recaptcha" data-sitekey="NOPE"></div>
 			</li>
 
 			<li>

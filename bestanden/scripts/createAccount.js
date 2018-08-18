@@ -38,9 +38,10 @@ $(document).ready(function(){
 	$('.requestAccounts').submit(function(event){
 		event.preventDefault();
 
-		alert('De accounts worden aangemaakt, sluit deze pagina niet.');
+		//alert('De accounts worden aangemaakt, sluit deze pagina niet.');
 
 		//get data to send via AJAX
+		var request_password = $('.request_password').val();
 		var schoolnaam = $('.schoolnaam').val();
 		var telefoonnummer = $('.telefoonnummer').val();
 		var email = $('.email').val();
@@ -67,7 +68,7 @@ $(document).ready(function(){
 		jqXHR = $.ajax({
 			method: "POST",
 			url: "requestAccounts.php",
-			data: {schoolnaam:schoolnaam, telefoonnummer:telefoonnummer, email:email, Ndocenten:Ndocenten, extraInfo:extraInfo, klassen:klassen, akkoord:akkoord, response: response}
+			data: {request_password:request_password, schoolnaam:schoolnaam, telefoonnummer:telefoonnummer, email:email, Ndocenten:Ndocenten, extraInfo:extraInfo, klassen:klassen, akkoord:akkoord, response: response},
 		});
 		jqXHR.done(function(msg){
 			alert(msg);

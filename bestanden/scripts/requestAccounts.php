@@ -193,9 +193,9 @@
 					for($i=0; $i<count($accounts['docenten']); $i++){
 						$Caccount = $accounts['docenten'][$i];
 						$Cusername = $Caccount[0];
-						$Cpassword = $Caccount[1];
+						$CHpassword = $Caccount[2];
 
-						$sql = "INSERT INTO users (username, password, school, functie, creation_date, expire_date, naam) VALUES ('$Cusername', '$Cpassword' , '$schoolnaam', 'docent', '$creation_date', '$expire_date', '$Cusername')";
+						$sql = "INSERT INTO users (username, password, school, functie, creation_date, expire_date, naam) VALUES ('$Cusername', '$CHpassword' , '$schoolnaam', 'docent', '$creation_date', '$expire_date', '$Cusername')";
 
 						if (mysqli_query($conn, $sql)) {
 							$accountsCreated++;
@@ -212,9 +212,9 @@
 						for($j=0; $j<count($accounts[$Cklas]); $j++){
 							$Caccount = $accounts[$Cklas][$j];
 							$Cusername = $Caccount[0];
-							$Cpassword = $Caccount[1];
+							$CHpassword = $Caccount[2];
 
-							$sql = "INSERT INTO users (username, password, school, functie, creation_date, expire_date, klas, naam) VALUES ('$Cusername', '$Cpassword' , '$schoolnaam', 'leerling', '$creation_date', '$expire_date', '$Cklas', '$Cusername')";
+							$sql = "INSERT INTO users (username, password, school, functie, creation_date, expire_date, klas, naam) VALUES ('$Cusername', '$CHpassword' , '$schoolnaam', 'leerling', '$creation_date', '$expire_date', '$Cklas', '$Cusername')";
 
 							if (mysqli_query($conn, $sql)) {
 								$accountsCreated++;

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	$('.addKlas').children().val(' ');
 	$('.addLeerlingen').children().val(' ');
 	window.setTimeout(addItem, 100);
@@ -38,7 +39,7 @@ $(document).ready(function(){
 	$('.requestAccounts').submit(function(event){
 		event.preventDefault();
 
-		//alert('De accounts worden aangemaakt, sluit deze pagina niet.');
+		alert('De accounts worden aangemaakt, sluit deze pagina niet. Klik op OK om verder te gaan.');
 
 		//get data to send via AJAX
 		var request_password = $('.request_password').val();
@@ -71,8 +72,14 @@ $(document).ready(function(){
 			data: {request_password:request_password, schoolnaam:schoolnaam, telefoonnummer:telefoonnummer, email:email, Ndocenten:Ndocenten, extraInfo:extraInfo, klassen:klassen, akkoord:akkoord, response: response},
 		});
 		jqXHR.done(function(msg){
-			alert(msg);
-			//window.location.href = '../pages/overview.php';
+			msg = JSON.parse(msg);
+
+			alert(msg.msg);
+			if(!msg.error){
+				//redirect to index
+				window.location.href = '../';
+			}
+
 		});
 		jqXHR.fail(function(jqXHR, textStatus) {
 		  alert( "Request failed: " + textStatus );

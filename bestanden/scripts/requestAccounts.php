@@ -2,6 +2,7 @@
 	include('DB_connect.php');
 
 	$allSet = 1;
+	$msg = "";
 
 	//function to check and clean input
 	function check_input($data) {
@@ -30,7 +31,7 @@
 	$verify = file_get_contents($url, false, $context);
 	$captcha_success = json_decode($verify);
 	if ($captcha_success->success==false) {
-		echo "Vul alstublieft de recpatcha in";
+		$msg .=  "Vul alstublieft de recpatcha in";
 	} else if ($captcha_success->success==true) {
 
 		if(isset($_POST['request_password'])){
@@ -42,14 +43,14 @@
 				if(isset ($_POST['schoolnaam']) & $_POST['schoolnaam']!=""){
 					$schoolnaam = mysqli_real_escape_string($conn, check_input($_POST['schoolnaam']));
 				} else {
-					echo "\nU heeft geen geldige schoolnaam ingevuld";
+					$msg .=  "\nU heeft geen geldige schoolnaam ingevuld";
 					$allSet = 0;
 				}
 
 				if(isset ($_POST['telefoonnummer']) & $_POST['telefoonnummer']!=""){
 					$telefoonnummer = mysqli_real_escape_string($conn, check_input($_POST['telefoonnummer']));
 				} else {
-					echo "\nU heeft geen geldige telefoonnummer ingevuld";
+					$msg .=  "\nU heeft geen geldige telefoonnummer ingevuld";
 					$allSet = 0;
 				}
 
@@ -57,11 +58,11 @@
 					$email = mysqli_real_escape_string($conn, check_input($_POST['email']));
 					if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 						$email = "";
-						echo "\nU heeft geen geldige email ingevuld";
+						$msg .=  "\nU heeft geen geldige email ingevuld";
 						$allSet = 0;
 					}
 				} else {
-					echo "\nU heeft geen geldige email ingevuld";
+					$msg .=  "\nU heeft geen geldige email ingevuld";
 					$allSet = 0;
 				}
 
@@ -69,11 +70,11 @@
 					$Ndocenten = mysqli_real_escape_string($conn, check_input($_POST['Ndocenten']));
 					if($Ndocenten < 0){
 						$Ndocenten = 0;
-						echo "\nU heeft geen geldig aantal docenten ingevuld";
+						$msg .=  "\nU heeft geen geldig aantal docenten ingevuld";
 						$allSet = 0;
 					}
 				} else {
-					echo "\nU heeft geen geldig aantal docenten ingevuld";
+					$msg .=  "\nU heeft geen geldig aantal docenten ingevuld";
 					$allSet = 0;
 				}
 
@@ -99,21 +100,21 @@
 					}
 
 					if(count($klassen) <= 0){
-						echo "\nU heeft geen geldige klassen ingevuld";
+						$msg .=  "\nU heeft geen geldige klassen ingevuld";
 					}
 
 				} else {
-					echo "\nU heeft geen geldige klassen ingevuld";
+					$msg .=  "\nU heeft geen (geldige) klassen ingevuld";
 				}
 
 				if(isset ($_POST['akkoord']) & $_POST['akkoord']!=""){
 					$akkoord = mysqli_real_escape_string($conn, check_input($_POST['akkoord']));
 					if(!$akkoord){
-						echo "U moet akkoord gaan om accounts aan te kunnen vragen";
+						$msg .=  "U moet akkoord gaan om accounts aan te kunnen vragen";
 						$allSet = 0;
 					}
 				} else {
-					echo "\nEr is een fout opgetreden omtrend het akkoord gaan met de voorwaarden";
+					$msg .=  "\nEr is een fout opgetreden omtrend het akkoord gaan met de voorwaarden";
 					$allSet = 0;
 				}
 
@@ -200,7 +201,7 @@
 						if (mysqli_query($conn, $sql)) {
 							$accountsCreated++;
 						} else {
-							echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							$msg .=  "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 						}
 					}
 
@@ -219,7 +220,7 @@
 							if (mysqli_query($conn, $sql)) {
 								$accountsCreated++;
 							} else {
-								echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+								$msg .=  "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							}
 						}
 					}
@@ -331,9 +332,9 @@
 					$headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
 					if (mail($email, $subject, $msg, implode("\r\n", $headers))) {
-						echo "\nEmail verzonden";
+						$msg .=  "\nEmail verzonden";
 					} else {
-						echo "\nEmail niet correct verzonden";
+						$msg .=  "\nEmail niet correct verzonden";
 					}
 
 					$Nleerlingen = $accountsCreated - $Ndocenten;
@@ -449,21 +450,31 @@
 
 					if (mail('koffieandcode@gmail.com', $subject, $msg, implode("\r\n", $headers))) {
 					} else {
-						echo "\nEmail kopie is niet correct verzonden.\n";
+						$msg .=  "\nEmail kopie is niet correct verzonden.\n";
 					}
 				}
 
-				echo "\n".$accountsCreated." account(s) aangemaakt voor ".$schoolnaam."\n U kunt het venster nu sluiten en ontvangt een mail met de accountgegevens. Het factuur ontvangt u later, nadat alle informatie gecontroleerd is.";
+				$msg .=  "\n".$accountsCreated." account(s) aangemaakt voor ".$schoolnaam."\n U kunt het venster nu sluiten en ontvangt een mail met de accountgegevens. Het factuur ontvangt u later, nadat alle informatie gecontroleerd is.";
 
 			} else {
-				echo "\nUw aanvraagcode is incorrect, stuur voor een geldige aanvraagcode een mail naar koffieandcode@gmail.com";
+				$msg .=  "\nUw aanvraagcode is incorrect, stuur voor een geldige aanvraagcode een mail naar koffieandcode@gmail.com";
 			}
 
 		} else {
-			echo "\nU heeft een aanvraagcode nodig om accounts aan te kunnen vragen, stuur hiervoor een mail naar koffieandcode@gmail.com";
+			$msg .=  "\nU heeft een aanvraagcode nodig om accounts aan te kunnen vragen, stuur hiervoor een mail naar koffieandcode@gmail.com";
 		}
 
 	}
+
+	if($allSet == 1){
+		$error = 0;
+	} else {
+		$error = 1;
+	}
+
+	$toReturn = array('msg' => $msg, 'error' => $error);
+	$toReturn = json_encode($toReturn);
+	echo $toReturn;
 
 	$conn->close();
 ?>

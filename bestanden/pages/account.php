@@ -23,7 +23,7 @@
 		<h3>
 			<?php
 				if (isset($_SESSION["id"])){
-					echo 'Account gegevens';
+					echo 'Accountgegevens';
 				} else {
 					echo 'Login';
 				}

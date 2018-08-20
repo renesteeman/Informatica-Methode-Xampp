@@ -1,6 +1,9 @@
 <?php
 	include('DB_connect.php');
 
+	#allow to script to continue for a maximum of 5m
+	ini_set('max_execution_time', '300');
+
 	$allSet = 1;
 	$msg = "";
 
@@ -31,7 +34,7 @@
 	$verify = file_get_contents($url, false, $context);
 	$captcha_success = json_decode($verify);
 	if ($captcha_success->success==false) {
-		$msg .=  "Vul alstublieft de recpatcha in";
+		$msg .= "Vul alstublieft de recpatcha in";
 	} else if ($captcha_success->success==true) {
 
 		if(isset($_POST['request_password'])){
@@ -43,14 +46,14 @@
 				if(isset ($_POST['schoolnaam']) & $_POST['schoolnaam']!=""){
 					$schoolnaam = mysqli_real_escape_string($conn, check_input($_POST['schoolnaam']));
 				} else {
-					$msg .=  "\nU heeft geen geldige schoolnaam ingevuld";
+					$msg .= "\nU heeft geen geldige schoolnaam ingevuld";
 					$allSet = 0;
 				}
 
 				if(isset ($_POST['telefoonnummer']) & $_POST['telefoonnummer']!=""){
 					$telefoonnummer = mysqli_real_escape_string($conn, check_input($_POST['telefoonnummer']));
 				} else {
-					$msg .=  "\nU heeft geen geldige telefoonnummer ingevuld";
+					$msg .= "\nU heeft geen geldige telefoonnummer ingevuld";
 					$allSet = 0;
 				}
 
@@ -58,11 +61,11 @@
 					$email = mysqli_real_escape_string($conn, check_input($_POST['email']));
 					if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 						$email = "";
-						$msg .=  "\nU heeft geen geldige email ingevuld";
+						$msg .= "\nU heeft geen geldige email ingevuld";
 						$allSet = 0;
 					}
 				} else {
-					$msg .=  "\nU heeft geen geldige email ingevuld";
+					$msg .= "\nU heeft geen geldige email ingevuld";
 					$allSet = 0;
 				}
 
@@ -70,11 +73,11 @@
 					$Ndocenten = mysqli_real_escape_string($conn, check_input($_POST['Ndocenten']));
 					if($Ndocenten < 0){
 						$Ndocenten = 0;
-						$msg .=  "\nU heeft geen geldig aantal docenten ingevuld";
+						$msg .= "\nU heeft geen geldig aantal docenten ingevuld";
 						$allSet = 0;
 					}
 				} else {
-					$msg .=  "\nU heeft geen geldig aantal docenten ingevuld";
+					$msg .= "\nU heeft geen geldig aantal docenten ingevuld";
 					$allSet = 0;
 				}
 
@@ -87,10 +90,12 @@
 				if(isset ($_POST['klassen'])){
 					$KlassenUnChecked = $_POST['klassen'];
 
+					$count = count($KlassenUnChecked);
 					//check array and stored filtered array
-					for($i=0;$i<count($KlassenUnChecked);$i++){
+					for($i=0;$i<$count;$i++){
 						$klas = $KlassenUnChecked[$i];
-						for($j=0;$j<count($klas);$j++){
+						$count = count($klas);
+						for($j=0;$j<$count;$j++){
 							$klasinfo1 = mysqli_real_escape_string($conn, check_input($klas[0]));
 							$klasinfo2 = mysqli_real_escape_string($conn, check_input($klas[1]));
 							$klasinfo[0] = $klasinfo1;
@@ -99,22 +104,16 @@
 						$klassen[] = $klasinfo;
 					}
 
-					if(count($klassen) <= 0){
-						$msg .=  "\nU heeft geen geldige klassen ingevuld";
-					}
-
-				} else {
-					$msg .=  "\nU heeft geen (geldige) klassen ingevuld";
 				}
 
 				if(isset ($_POST['akkoord']) & $_POST['akkoord']!=""){
 					$akkoord = mysqli_real_escape_string($conn, check_input($_POST['akkoord']));
 					if(!$akkoord){
-						$msg .=  "U moet akkoord gaan om accounts aan te kunnen vragen";
+						$msg .= "U moet akkoord gaan om accounts aan te kunnen vragen";
 						$allSet = 0;
 					}
 				} else {
-					$msg .=  "\nEr is een fout opgetreden omtrend het akkoord gaan met de voorwaarden";
+					$msg .= "\nEr is een fout opgetreden omtrend het akkoord gaan met de voorwaarden";
 					$allSet = 0;
 				}
 
@@ -180,18 +179,20 @@
 						$accounts['docenten'][] = $accountDetails;
 					}
 
-					for($i=0;$i<count($klassen);$i++){
+					$count = count($klassen);
+					for($i=0;$i<$count;$i++){
 						//next class
 						for($j=0;$j<$klassen[$i][1];$j++){
 							//next person
 							$Cklas = $klassen[$i][0];
 							$accountDetails = createAccountDetails();
-							$accounts[$Cklas][] = $accountDetails;
+							$accounts['leerlingen'][$Cklas][] = $accountDetails;
 						}
 					}
 
+					$count = count($accounts['docenten']);
 					//update DB voor docenten
-					for($i=0; $i<count($accounts['docenten']); $i++){
+					for($i=0; $i<$count; $i++){
 						$Caccount = $accounts['docenten'][$i];
 						$Cusername = $Caccount[0];
 						$CHpassword = $Caccount[2];
@@ -201,17 +202,19 @@
 						if (mysqli_query($conn, $sql)) {
 							$accountsCreated++;
 						} else {
-							$msg .=  "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 						}
 					}
 
 					//update DB voor leerlingen
-					$klasnamen = array_keys($accounts);
-					for($i=1; $i<count($accounts); $i++){
+					$klasnamen = array_keys($accounts['leerlingen']);
+					$count = count($accounts['leerlingen']);
+					for($i=0; $i<$count; $i++){
 						$Cklas = $klasnamen[$i];
 
-						for($j=0; $j<count($accounts[$Cklas]); $j++){
-							$Caccount = $accounts[$Cklas][$j];
+						$count = count($accounts['leerlingen'][$Cklas]);
+						for($j=0; $j<$count; $j++){
+							$Caccount = $accounts['leerlingen'][$Cklas][$j];
 							$Cusername = $Caccount[0];
 							$CHpassword = $Caccount[2];
 
@@ -220,7 +223,7 @@
 							if (mysqli_query($conn, $sql)) {
 								$accountsCreated++;
 							} else {
-								$msg .=  "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+								$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							}
 						}
 					}
@@ -237,7 +240,7 @@
 							</div>
 
 							<div class='email-container'>
-								<h2>Dit zijn de login gegevens voor uw account(s). Het factuur zult u spoedig ontvangen.</h2>
+								<h2>Dit zijn de inloggegevens voor uw account(s). Het factuur zult u spoedig ontvangen.</h2>
 
 								<div class='docenten'>
 									<h3>
@@ -245,7 +248,8 @@
 									</h3>
 									<ul style='list-style: none;'>";
 
-									for($i=0; $i<count($accounts['docenten']); $i++){
+									$count = count($accounts['docenten']);
+									for($i=0; $i<$count; $i++){
 										$Caccount = $accounts['docenten'][$i];
 										$Cusername = $Caccount[0];
 										$Cpassword = $Caccount[1];
@@ -277,8 +281,9 @@
 									<div class='klassen'>
 										<ul style='list-style: none;'>";
 
-										$klasnamen = array_keys($accounts);
-										for($i=1; $i<count($accounts); $i++){
+										$klasnamen = array_keys($accounts['leerlingen']);
+										$count = count($accounts['leerlingen']);
+										for($i=0; $i<$count; $i++){
 											$Cklas = $klasnamen[$i];
 											$msg.= "
 											<li>
@@ -286,8 +291,9 @@
 												<ul style='list-style: none;'>
 											";
 
-											for($j=0; $j<count($accounts[$Cklas]); $j++){
-												$Caccount = $accounts[$Cklas][$j];
+											$count = count($accounts['leerlingen'][$Cklas]);
+											for($j=0; $j<$count; $j++){
+												$Caccount = $accounts['leerlingen'][$Cklas][$j];
 												$Cusername = $Caccount[0];
 												$Cpassword = $Caccount[1];
 
@@ -329,12 +335,12 @@
 
 					$headers[] = "From: noreply@inforca.nl";
 					$headers[] = 'MIME-Version: 1.0';
-					$headers[] = 'Content-type: text/html; charset=iso-8859-1';
+					$headers[] = 'Content-type: text/html; charset=UTF-8';
 
 					if (mail($email, $subject, $msg, implode("\r\n", $headers))) {
-						$msg .=  "\nEmail verzonden";
+						$msg .= "\nEmail verzonden";
 					} else {
-						$msg .=  "\nEmail niet correct verzonden";
+						$msg .= "\nEmail niet correct verzonden";
 					}
 
 					$Nleerlingen = $accountsCreated - $Ndocenten;
@@ -344,124 +350,125 @@
 					<!DOCTYPE html>
 					<html>
 					<body style='margin: 0;'>
-						<div class='email-background' style='background-color: #eee;font-family: roboto, sans-serif;height: 100%;width: 100%;padding: 2em;'>
+					  <div class='email-background' style='background-color: #eee;font-family: roboto, sans-serif;height: 100%;width: 100%;padding: 2em;'>
 
-							<div class='pre-header'>
-								<h1 style='margin-top: 0;'>Bedankt voor het aanvragen van uw accounts voor Inforca!</h1>
-							</div>
+					    <div class='pre-header'>
+					      <h1 style='margin-top: 0;'>Bedankt voor het aanvragen van uw accounts voor Inforca!</h1>
+					    </div>
 
-							<div class='email-container'>
-								<h2>Opmerking(en) ".$extraInfo."</h2>
-								<h2>Contact: telefoonnummer "."$telefoonnummer"." email "."$email"."</h2>
-								<h2>Hoeveelheid: docenten ".$Ndocenten." leerlingen ".$Nleerlingen."</h2>
-								<h2>Dit zijn de login gegevens voor ".$schoolnaam."</h2>
+					    <div class='email-container'>
+					      <h2>Opmerking(en) ".$extraInfo."</h2>
+					      <h2>Contact: telefoonnummer "."$telefoonnummer"." email "."$email"."</h2>
+					      <h2>Hoeveelheid: docenten ".$Ndocenten." leerlingen ".$Nleerlingen."</h2>
+					      <h2>Dit zijn de inloggegevens voor ".$schoolnaam."</h2>
 
-								<div class='docenten'>
-									<h3>
-										Docenten:
-									</h3>
-									<ul style='list-style: none;'>";
+					      <div class='docenten'>
+					        <h3>
+					          Docenten:
+					        </h3>
+					        <ul style='list-style: none;'>";
 
-									for($i=0; $i<count($accounts['docenten']); $i++){
-										$Caccount = $accounts['docenten'][$i];
-										$Cusername = $Caccount[0];
-										$Cpassword = $Caccount[1];
+									$count = count($accounts['docenten']);
+					        for($i=0; $i<$count; $i++){
+					          $Caccount = $accounts['docenten'][$i];
+					          $Cusername = $Caccount[0];
+					          $Cpassword = $Caccount[1];
 
-										if($i%2 == 0){
-											$msg.=
-											"<li>
-												<span class='username' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cusername."</span>
-												<span class='password' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cpassword."</span>
-											</li>
-											";
-										} else {
-											$msg.=
-											"<li>
-												<span class='username' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cusername."</span>
-												<span class='password' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cpassword."</span>
-											</li>
-											";
-										}
-									}
+					          if($i%2 == 0){
+					            $msg.=
+					            "<li>
+					              <span class='username' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cusername."</span>
+					              <span class='password' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cpassword."</span>
+					            </li>
+					            ";
+					          } else {
+					            $msg.=
+					            "<li>
+					              <span class='username' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cusername."</span>
+					              <span class='password' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cpassword."</span>
+					            </li>
+					            ";
+					          }
+					        }
 
-									$msg.= "
-									</ul>
+					        $msg.= "
+					        </ul>
 
-								</div>
+					      </div>
 
-								<div class='leerlingen'>
-									<h3>Leerlingen:</h3>
-									<div class='klassen'>
-										<ul style='list-style: none;'>";
+					      <div class='leerlingen'>
+					        <h3>Leerlingen:</h3>
+					        <div class='klassen'>
+					          <ul style='list-style: none;'>";
 
-										$klasnamen = array_keys($accounts);
-										for($i=1; $i<count($accounts); $i++){
-											$Cklas = $klasnamen[$i];
-											$msg.= "
-											<li>
-												<h4>".$Cklas."</h4>
-												<ul style='list-style: none;'>
-											";
+					          $klasnamen = array_keys($accounts['leerlingen']);
+										$count = count($accounts['leerlingen']);
+					          for($i=0; $i<$count; $i++){
+					            $Cklas = $klasnamen[$i];
+					            $msg.= "
+					            <li>
+					              <h4>".$Cklas."</h4>
+					              <ul style='list-style: none;'>
+					            ";
 
-											for($j=0; $j<count($accounts[$Cklas]); $j++){
-												$Caccount = $accounts[$Cklas][$j];
-												$Cusername = $Caccount[0];
-												$Cpassword = $Caccount[1];
+											$count = count($accounts['leerlingen'][$Cklas]);
+					            for($j=0; $j<$count; $j++){
+					              $Caccount = $accounts['leerlingen'][$Cklas][$j];
+					              $Cusername = $Caccount[0];
+					              $Cpassword = $Caccount[1];
 
-												if($j%2 == 0){
-													$msg.=
-													"<li>
-														<span class='username' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cusername."</span>
-														<span class='password' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cpassword."</span>
-													</li>
-													";
-												} else {
-													$msg.=
-													"<li>
-														<span class='username' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cusername."</span>
-														<span class='password' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cpassword."</span>
-													</li>
-													";
-												}
-											}
+					              if($j%2 == 0){
+					                $msg.=
+					                "<li>
+					                  <span class='username' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cusername."</span>
+					                  <span class='password' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cpassword."</span>
+					                </li>
+					                ";
+					              } else {
+					                $msg.=
+					                "<li>
+					                  <span class='username' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cusername."</span>
+					                  <span class='password' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cpassword."</span>
+					                </li>
+					                ";
+					              }
+					            }
 
-											$msg.= "
-												</ul>
-											</li>
-											";
+					            $msg.= "
+					              </ul>
+					            </li>
+					            ";
 
-										}
+					          }
 
-										$msg.="
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
+					          $msg.="
+					          </ul>
+					        </div>
+					      </div>
+					    </div>
+					  </div>
 					</body>
 					</html>
 					";
 
-					$subject = "Bestelling ".$schoolnaam;
+					$subject = $schoolnaam." heeft accounts besteld.";
 
-					$headers[] = "From: noreply@inforca.nl";
-					$headers[] = 'MIME-Version: 1.0';
-					$headers[] = 'Content-type: text/html; charset=iso-8859-1';
-
+					#mail($email, $subject, $msg, implode("\r\n", $headers))
 					if (mail('koffieandcode@gmail.com', $subject, $msg, implode("\r\n", $headers))) {
+						$msg .= "\nEen kopie is verzonden naar koffieandcode.\n";
 					} else {
-						$msg .=  "\nEmail kopie is niet correct verzonden.\n";
+						$msg .= "\nEmail kopie is niet correct verzonden.\n";
 					}
 				}
 
-				$msg .=  "\n".$accountsCreated." account(s) aangemaakt voor ".$schoolnaam."\n U kunt het venster nu sluiten en ontvangt een mail met de accountgegevens. Het factuur ontvangt u later, nadat alle informatie gecontroleerd is.";
+				$msg .= "\n".$accountsCreated." account(s) aangemaakt voor ".$schoolnaam."\n U kunt het venster nu sluiten en ontvangt een mail met de accountgegevens. Het factuur ontvangt u later, nadat alle informatie gecontroleerd is.";
 
 			} else {
-				$msg .=  "\nUw aanvraagcode is incorrect, stuur voor een geldige aanvraagcode een mail naar koffieandcode@gmail.com";
+				$msg .= "\nUw aanvraagcode is incorrect, stuur voor een geldige aanvraagcode een mail naar koffieandcode@gmail.com";
 			}
 
 		} else {
-			$msg .=  "\nU heeft een aanvraagcode nodig om accounts aan te kunnen vragen, stuur hiervoor een mail naar koffieandcode@gmail.com";
+			$msg .= "\nU heeft een aanvraagcode nodig om accounts aan te kunnen vragen, stuur hiervoor een mail naar koffieandcode@gmail.com";
 		}
 
 	}

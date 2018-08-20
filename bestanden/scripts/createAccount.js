@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 	$('.addKlas').children().val(' ');
 	$('.addLeerlingen').children().val(' ');
 	window.setTimeout(addItem, 100);
@@ -39,8 +38,6 @@ $(document).ready(function(){
 	$('.requestAccounts').submit(function(event){
 		event.preventDefault();
 
-		alert('De accounts worden aangemaakt, sluit deze pagina niet. Klik op OK om verder te gaan.');
-
 		//get data to send via AJAX
 		var request_password = $('.request_password').val();
 		var schoolnaam = $('.schoolnaam').val();
@@ -79,7 +76,6 @@ $(document).ready(function(){
 				//redirect to index
 				window.location.href = '../';
 			}
-
 		});
 		jqXHR.fail(function(jqXHR, textStatus) {
 		  alert( "Request failed: " + textStatus );
@@ -100,7 +96,7 @@ $(document).ready(function(){
 		var Pleerlingen = leerlingen * 15;
 		var Ptotaal = Pdocenten + Pleerlingen;
 
-		if(docenten>0){
+		if(docenten>=0){
 			$('.Pdocenten').removeClass('hide');
 			$('.Pdocenten').children('.aantal').text(docenten);
 			$('.Pdocenten').children('.prijs').text('€' + Pdocenten);
@@ -109,7 +105,7 @@ $(document).ready(function(){
 			Pdocenten = 0;
 		}
 
-		if(leerlingen>0){
+		if(leerlingen>=0){
 			$('.Pleerlingen').removeClass('hide');
 			$('.Pleerlingen').children('.aantal').text(leerlingen);
 			$('.Pleerlingen').children('.prijs').text('€' + Pleerlingen);
@@ -120,7 +116,7 @@ $(document).ready(function(){
 
 		if(Ptotaal>0){
 			$('.totaal').removeClass('hide');
-			$('.totaal').children('.Tprijs').text('Totaal prijs: €' + Ptotaal);
+			$('.totaal').children('.Tprijs').text('Totaalprijs: €' + Ptotaal);
 		} else {
 			$('.totaal').addClass('hide');
 		}

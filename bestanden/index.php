@@ -21,7 +21,7 @@
 
 	<div class="title">
 		<h2>
-			Theorie overzicht
+			Theorieoverzicht
 		</h2>
 	</div>
 

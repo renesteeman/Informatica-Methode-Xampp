@@ -94,8 +94,8 @@
 					//check array and stored filtered array
 					for($i=0;$i<$count;$i++){
 						$klas = $KlassenUnChecked[$i];
-						$count = count($klas);
-						for($j=0;$j<$count;$j++){
+						$count2 = count($klas);
+						for($j=0;$j<$count2;$j++){
 							$klasinfo1 = mysqli_real_escape_string($conn, check_input($klas[0]));
 							$klasinfo2 = mysqli_real_escape_string($conn, check_input($klas[1]));
 							$klasinfo[0] = $klasinfo1;
@@ -212,8 +212,8 @@
 					for($i=0; $i<$count; $i++){
 						$Cklas = $klasnamen[$i];
 
-						$count = count($accounts['leerlingen'][$Cklas]);
-						for($j=0; $j<$count; $j++){
+						$count2 = count($accounts['leerlingen'][$Cklas]);
+						for($j=0; $j<$count2; $j++){
 							$Caccount = $accounts['leerlingen'][$Cklas][$j];
 							$Cusername = $Caccount[0];
 							$CHpassword = $Caccount[2];
@@ -229,7 +229,7 @@
 					}
 
 					//send mail to school
-					$msg = "
+					$emailContent1 = "
 					<!DOCTYPE html>
 					<html>
 					<body style='margin: 0;'>
@@ -255,14 +255,14 @@
 										$Cpassword = $Caccount[1];
 
 										if($i%2 == 0){
-											$msg.=
+											$emailContent1 .=
 											"<li>
 												<span class='username' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cusername."</span>
 												<span class='password' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cpassword."</span>
 											</li>
 											";
 										} else {
-											$msg.=
+											$emailContent1 .=
 											"<li>
 												<span class='username' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cusername."</span>
 												<span class='password' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cpassword."</span>
@@ -271,7 +271,7 @@
 										}
 									}
 
-									$msg.= "
+									$emailContent1 .= "
 									</ul>
 
 								</div>
@@ -285,27 +285,27 @@
 										$count = count($accounts['leerlingen']);
 										for($i=0; $i<$count; $i++){
 											$Cklas = $klasnamen[$i];
-											$msg.= "
+											$emailContent1 .= "
 											<li>
 												<h4>".$Cklas."</h4>
 												<ul style='list-style: none;'>
 											";
 
-											$count = count($accounts['leerlingen'][$Cklas]);
-											for($j=0; $j<$count; $j++){
+											$count2 = count($accounts['leerlingen'][$Cklas]);
+											for($j=0; $j<$count2; $j++){
 												$Caccount = $accounts['leerlingen'][$Cklas][$j];
 												$Cusername = $Caccount[0];
 												$Cpassword = $Caccount[1];
 
 												if($j%2 == 0){
-													$msg.=
+													$emailContent1 .=
 													"<li>
 														<span class='username' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cusername."</span>
 														<span class='password' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cpassword."</span>
 													</li>
 													";
 												} else {
-													$msg.=
+													$emailContent1 .=
 													"<li>
 														<span class='username' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cusername."</span>
 														<span class='password' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cpassword."</span>
@@ -314,14 +314,14 @@
 												}
 											}
 
-											$msg.= "
+											$emailContent1 .= "
 												</ul>
 											</li>
 											";
 
 										}
 
-										$msg.="
+										$emailContent1 .="
 										</ul>
 									</div>
 								</div>
@@ -337,7 +337,7 @@
 					$headers[] = 'MIME-Version: 1.0';
 					$headers[] = 'Content-type: text/html; charset=UTF-8';
 
-					if (mail($email, $subject, $msg, implode("\r\n", $headers))) {
+					if (mail($email, $subject, $emailContent1, implode("\r\n", $headers))) {
 						$msg .= "\nEmail verzonden";
 					} else {
 						$msg .= "\nEmail niet correct verzonden";
@@ -346,14 +346,14 @@
 					$Nleerlingen = $accountsCreated - $Ndocenten;
 
 					//send mail to self
-					$msg = "
+					$emailContent2 = "
 					<!DOCTYPE html>
 					<html>
 					<body style='margin: 0;'>
 					  <div class='email-background' style='background-color: #eee;font-family: roboto, sans-serif;height: 100%;width: 100%;padding: 2em;'>
 
 					    <div class='pre-header'>
-					      <h1 style='margin-top: 0;'>Bedankt voor het aanvragen van uw accounts voor Inforca!</h1>
+					      <h1 style='margin-top: 0;'>Bestelling van accounts</h1>
 					    </div>
 
 					    <div class='email-container'>
@@ -375,14 +375,14 @@
 					          $Cpassword = $Caccount[1];
 
 					          if($i%2 == 0){
-					            $msg.=
+					            $emailContent2 .=
 					            "<li>
 					              <span class='username' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cusername."</span>
 					              <span class='password' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cpassword."</span>
 					            </li>
 					            ";
 					          } else {
-					            $msg.=
+					            $emailContent2 .=
 					            "<li>
 					              <span class='username' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cusername."</span>
 					              <span class='password' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cpassword."</span>
@@ -391,7 +391,7 @@
 					          }
 					        }
 
-					        $msg.= "
+					        $emailContent2 .= "
 					        </ul>
 
 					      </div>
@@ -405,27 +405,27 @@
 										$count = count($accounts['leerlingen']);
 					          for($i=0; $i<$count; $i++){
 					            $Cklas = $klasnamen[$i];
-					            $msg.= "
+					            $emailContent2 .= "
 					            <li>
 					              <h4>".$Cklas."</h4>
 					              <ul style='list-style: none;'>
 					            ";
 
-											$count = count($accounts['leerlingen'][$Cklas]);
-					            for($j=0; $j<$count; $j++){
+											$count2 = count($accounts['leerlingen'][$Cklas]);
+					            for($j=0; $j<$count2; $j++){
 					              $Caccount = $accounts['leerlingen'][$Cklas][$j];
 					              $Cusername = $Caccount[0];
 					              $Cpassword = $Caccount[1];
 
 					              if($j%2 == 0){
-					                $msg.=
+					                $emailContent2 .=
 					                "<li>
 					                  <span class='username' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cusername."</span>
 					                  <span class='password' style='display: inline-block;width: 20em;overflow-x: auto; background-color: #ccc;'>".$Cpassword."</span>
 					                </li>
 					                ";
 					              } else {
-					                $msg.=
+					                $emailContent2 .=
 					                "<li>
 					                  <span class='username' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cusername."</span>
 					                  <span class='password' style='display: inline-block;width: 20em;overflow-x: auto;'>".$Cpassword."</span>
@@ -434,14 +434,14 @@
 					              }
 					            }
 
-					            $msg.= "
+					            $emailContent2 .= "
 					              </ul>
 					            </li>
 					            ";
 
 					          }
 
-					          $msg.="
+					          $emailContent2 .="
 					          </ul>
 					        </div>
 					      </div>
@@ -453,8 +453,7 @@
 
 					$subject = $schoolnaam." heeft accounts besteld.";
 
-					#mail($email, $subject, $msg, implode("\r\n", $headers))
-					if (mail('koffieandcode@gmail.com', $subject, $msg, implode("\r\n", $headers))) {
+					if (mail('koffieandcode@gmail.com', $subject, $emailContent2, implode("\r\n", $headers))) {
 						$msg .= "\nEen kopie is verzonden naar koffieandcode.\n";
 					} else {
 						$msg .= "\nEmail kopie is niet correct verzonden.\n";

@@ -119,6 +119,7 @@ $(document).ready(function(){
 			$('.totaal').children('.Tprijs').text('Totaalprijs: €' + Ptotaal);
 		} else {
 			$('.totaal').addClass('hide');
+			Ptotaal = 0;
 		}
 
 	}
@@ -127,9 +128,8 @@ $(document).ready(function(){
 		updatePrice();
 	});
 
-	$('.delete').click(function(){
+	$(document).on('click',".delete", function(){
 		updatePrice();
 	});
-
 
 });

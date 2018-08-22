@@ -59,60 +59,63 @@
 		</div>
 
 		<div class="theorie-content">
-			<p>
-				Loops
-			</p>
-			<p>
-				<pre>
-Bij software komt veel herhaling voor en dit kan het efficiënts geprogrammeerd worden met loops. Loops zijn herhalingsstructuren. De belangrijkste zijn: while- en for-loops. Oftewel terwijl en voor herhalingen. In python is de for loop een beetje anders dan in andere programmeertalen, maar de logica is bijna hetzelfde.
+			<p>Bij software komt veel herhaling voor en dit kan het efficiënts geprogrammeerd worden met loops. Loops zijn herhalingsstructuren. De belangrijkste zijn: while- en for-loops. Oftewel terwijl en voor herhalingen. In python is de for loop een beetje anders dan in andere programmeertalen, maar de logica is bijna hetzelfde.</p>
 
-Voordat we kunnen beginnen met de voorbeelden is het belangrijk om een paar tekens te kennen. Deze zijn:
+			<p>Voordat we kunnen beginnen met de voorbeelden is het belangrijk om een paar tekens te kennen. Deze zijn:</p>
 
-Het groter dan teken >
-Het kleiner dan teken <
+			<p>Het groter dan teken ></p>
 
-Het ‘’is gelijk aan’’ teken kan met deze gecombineerd worden, dit gebeurd in python door =< of => te gebruiken
-				</pre>
+			<p>Het kleiner dan teken <</p>
 
-			</p>
-			<p>
-				Voorbeelden in python zijn:
-			</p>
-			<p>
-				<pre>
-					<code>
+			<p>Het = teken kan met deze gecombineerd worden, dit gebeurd in python door <= of >= te gebruiken</p>
+
+			<p>Voorbeelden in python zijn:</p>
+
+<pre>
+<code>
 #For-loop (# is een comment oftewel notatie in python voor één regel, hierin wordt vaak uitleg gezet)
 
 Priemgetallen = [2,3,5,7]
+
 for priemgetal in priemgetallen:
-	print (priemgetal)
+
+print (priemgetal)
 
 #hier wordt dus eerst een lijst van priemgetallen gemaakt en vervolgens wordt gezegd dat voor elk getal in die lijst een bepaalde actie uitgevoerd moet worden, in dit geval het printen van het getal.
 
 #while-loop
 
 i = 5
+
 '''
+
 i komt veel voor als variabele in een loop, het is het standard getal voor programmeurs voor een loop van één laag diep, het is namelijk ook mogelijk om meerdere loops in elkaar te zetten. Het standaard teken voor de 2e variabele is j, dan k, l, enz. De driedubbele accolades in python worden gebruikt voor commentaar dat meerdere regels lang is.
+
 '''
 
 while i < 20:
-	print (i)
-	i = i+1
-	#i += 1 geeft hetzelfde resultaat en in veel andere talen is i++ ook mogelijk
+
+print (i)
+
+i = i+1
+
+#i += 1 geeft hetzelfde resultaat en in veel andere talen is i++ ook mogelijk
 
 '''
+
 Er wordt hier dus steeds gekeken of i, dat eerst gelijk is aan 5 nog minder is dan 20. Als i minder is dan 20, dan wordt de waarde van i weergegeven en met één verhoogd. Je krijgt dus een lijst van de waardes van i vanaf 5 t/m 19. Aangezien 20 niet meer kleiner is dan 20 en dus de herhaling eindigt.
+
 '''
+</code>
+</pre>
 
-Je kunt meerdere eisen maken voor de while loop. Stel je hebt twee eisen die beide vervuld moeten zijn, dan kun je ‘&’ tussen de eisen zetten.
 
-					</code>
-				</pre>
+			<p>Je kunt meerdere eisen maken voor de while loop. Stel je hebt twee eisen die beide vervuld moeten zijn, dan kun je ‘&’ tussen de eisen zetten.</p>
 
-			</p>
+			<p>Je kunt de code voor rekenwerk nog iets makkelijker opschrijven. Zo is variabele = variabele + 1 ook te schrijven als variabele++. Net zoals variabele2 = variabele2 + variabele te schrijven is als variabele2 += variabele.</p>
+
 			<p>
-				Je kunt de code voor rekenwerk nog iets makkelijker opschrijven. Zo is variabele = variabele + 1 ook te schrijven als variabele++. Net zoals variabele2 = variabele2 + variabele te schrijven is als variabele2 += variabele.
+				Noties zoals hierboven zijn erg belangrijk om de code goed leesbaar te maken en houden. Ze worden vooral gebruikt voor uitleg en zijn erg handig voor code die gedeeld wordt en voor als je na een tijdje terug gaat naar de code. Het is zo duidelijk wat de code eigenlijk doet en waarom het zo in elkaar zit.
 			</p>
 
 		</div>

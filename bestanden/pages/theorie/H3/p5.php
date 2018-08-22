@@ -59,38 +59,37 @@
 		</div>
 
 		<div class="theorie-content">
-			<p>
-				Condities
-			</p>
-			<p>
-				<pre>
-Als je programmeert wil je vaak kijken of een waarde aan een bepaalde eis voldoet en vervolgens iets uitvoeren als het aan die eis voldoet. Een voorbeeld is: als de koffie op is, dan hervul kop met koffie. Hier wordt gebruikt gemaakt van een IF-statement, er staat namelijk als x, dan y. Het kan ook andersom zijn, als de koffie niet op is, dan drink koffie. Stel je plakt deze twee aan elkaar, dan krijg je:
+			<p>Als je programmeert wil je vaak kijken of een waarde aan een bepaalde eis voldoet en vervolgens iets uitvoeren als het aan die eis voldoet. Een voorbeeld is: als de koffie op is, dan hervul kop met koffie. Hier wordt gebruikt gemaakt van een IF-statement, er staat namelijk als x, dan y. Het kan ook andersom zijn, als de koffie niet op is, dan drink koffie. Stel je plakt deze twee aan elkaar, dan krijg je:</p>
 
-Als de koffie op is, dan
-	Hervul kop met koffie
-Anders
-	Drink koffie
+			<p>Als de koffie op is, dan</p>
 
-Dit is een IF-ELSE-statement, als x, dan y, anders z.
+			<p>Hervul kop met koffie</p>
 
-Een voorbeeld in python:
+			<p>Anders</p>
+
+			<p>Drink koffie</p>
+
+			<p>Dit is een IF-ELSE-statement, als x, dan y, anders z.</p>
+
+			<p>Een voorbeeld in python:</p>
+
+<pre>
 <code>
 coffee = True
 
 if coffee == True:
+
 	print("Drink koffie")
 
 else:
+
 	print("Zet koffie")
 </code>
-				</pre>
+</pre>
 
-			</p>
-			<p>
-				NB
-				Wat misschien opvalt is het dubbele = teken. Dit gebruik je bij het programmeren als je waardes vergelijkt, het enkele = teken gebruik je om een waarde toe te kennen.
-				Je kunt trouwens ook bij variabelen die 1 of 0 zijn (booleans) de statement 'if variabele:', dit wordt als waar gezien als de variabele 1 is.
-			</p>
+			<p>NB: Wat misschien opvalt is het dubbele = teken. Dit gebruik je bij het programmeren als je waardes vergelijkt, het enkele = teken gebruik je om een waarde toe te kennen.</p>
+
+			<p>NB: Je kunt trouwens ook bij variabelen die 1 of 0 zijn (booleans) de statement 'if variabele:', dit wordt als waar gezien als de variabele 1 is.</p>
 
 		</div>
 

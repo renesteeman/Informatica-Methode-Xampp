@@ -347,14 +347,23 @@ textarea:hover
 			font-size: 125%
 
 		.tile.active
-			width: 52rem
-			font-size: 110%
+			width: 60vw
 
-			.tile-paragraphs
-				ol
-					margin-left: 2%
-					ul
-						padding-left: 0
+			.tile-content
+				font-size: 110%
+
+				.tile-paragraphs
+					ol
+						margin: 0
+						padding-top: 1em
+						padding-bottom: 1em
+						ul
+							padding-left: 0
+
+				.tile-paragraphs:after
+				  clear: both
+				  content: ""
+				  display: table
 
 @media (max-width: $large)
 
@@ -462,18 +471,14 @@ textarea:hover
 			width: 90%
 			background-size: 100%
 
-		.title-content
-			font-size: 150%
+			.title-content
+				font-size: 150%
 
 		.tile.active
-			width: 60vw
-			.tile-content
-				.tile-paragraphs
-					ol
-						margin-left: 2%
+			width: 100%
 
-						ul
-							padding-left: 0
+			.tile-content
+				font-size: 100%
 
 @media (max-width: $medium)
 	.bar
@@ -483,7 +488,6 @@ textarea:hover
 
 	.chapter-tiles
 		grid-template-columns: auto
-
 		margin-left: 5%
 		margin-right: 5%
 
@@ -495,18 +499,6 @@ textarea:hover
 
 		.tile-content
 			font-size: 150%
-
-		.tile.active
-			width: 100%
-
-			.tile-content
-				font-size: 100%
-
-				.tile-paragraphs
-					ol
-						margin-left: 1%
-						ul
-							padding-left: 0
 
 	footer
 		.bar-footer

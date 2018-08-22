@@ -59,51 +59,43 @@
 		</div>
 
 		<div class="theorie-content">
-			<p>
-				Variabelen
-			</p>
-			<p>
-				Variabelen zijn vaak het hart van een computerprogramma. Dit zijn namen die een waarde toegekend hebben. Een voorbeeld in python is droomAuto = “tesla”. Als je dit in het jupyter notebook invoert (voor een nieuw hokje klik je op de +) als
+			<p>Variabelen zijn vaak het hart van een computerprogramma. Dit zijn namen die een waarde toegekend hebben. Een voorbeeld in python is droomAuto = “tesla”. Als je dit in het jupyter notebook invoert (voor een nieuw hokje klik je op de +) als</p>
 
-				droomAuto = “Tesla model S”
-				print(droomAuto)
+			<p><code>droomAuto = “Tesla model S”</code></p>
 
-				En je voert het uit (toetsencombinatie ctrl+enter) dan zie je onder het hokje Tesla model S verschijnen.
-			</p>
-			<p>
-				Er zijn verschillende type variabelen, in python hoef je deze niet zelf te definiëren, omdat de programmeertaal dit namelijk voor jou doet.
-				Een paar belangrijkste types zijn: int, float, string, bool en array.
-				Een int is een geheel getal, het kan positief of negatief zijn. String is een stuk tekst, in python geef je dit aan door er “ ” omheen te zetten. Bool staat voor boolean en kan als waarde true of false hebben, 1 of 0, waar of niet waar. Een array is een lijst van waardes, zoals: “Tesla”, “koffie”, 20.
+			<p><code>print(droomAuto)</code></p>
 
-			</p>
-			<p>
-				Voorbeelden van de types in python
-			</p>
-			<p>
-				Als je de waarde van een variabele op het scherm wilt zien kan dit door print(NAAM VAN DE VARIABELE) te gebruiken.
+			<p>En je voert het uit (toetsencombinatie ctrl+enter) dan zie je onder het hokje Tesla model S verschijnen.</p>
 
-				int: 	getal = 5
+			<p>Er zijn verschillende type variabelen, in python hoef je deze niet zelf te definiëren, omdat de programmeertaal dit namelijk voor jou doet.</p>
 
-				float:	getal = 1.2
+			<p>Een paar belangrijkste types zijn: int, float, string, bool en array.</p>
 
-				string:	droomauto = “Tesla model S”
+			<p>Een int is een geheel getal, het kan positief of negatief zijn. String is een stuk tekst, in python geef je dit aan door er “ ” omheen te zetten. Bool staat voor boolean en kan als waarde true of false hebben, 1 of 0, waar of niet waar. Een array is een lijst van waardes, zoals: “Tesla”, “koffie”, 20.</p>
 
-				bool: 	waarde1 = True
-							waarde2 = False
+			<p>Voorbeelden van de types in python</p>
 
-				list (in andere talen array):
-					lijst = [2,4,7,8,”test”,0]
+			<p>Als je de waarde van een variabele op het scherm wilt zien kan dit door print(NAAM VAN DE VARIABELE) te gebruiken.</p>
 
-			</p>
-			<p>
-				NB
-				Als je bij een list een waarde van een bepaalde locatie in de list wilt hebben kunnen je hiernaar verwijzen als NAAMLIST[NUMMER]. Let erop dat de eerste waarde nummer 0 is en niet 1. Stel je wilt “test” hebben, dan gebruik je dus lijst[4], want test heeft de 4e plaats (volgens de telling van programmeurs, die bij 0 beginnen).
-			</p>
-			<p>
-				NB
-				Bij python kan een list allerlei soorten waarden bevatten, zoals tekst en integers, andere talen staan dit vaak niet toe en accepteren maar een datatype in de list.
-			</p>
+			<p>int: <code>getal = 5</code></p>
 
+			<p>float:	<code>getal = 1.2</code></p>
+
+			<p>string: <code>droomauto = “Tesla model S”</code></p>
+
+			<p>bool: <code>waarde1 = True</code></p>
+
+			<p><code>waarde2 = False</code></p>
+
+			<p>list (in andere talen array): <code>lijst = [2,4,7,8,”test”,0]</code></p>
+
+			<p>NB</p>
+
+			<p>Als je bij een list een waarde van een bepaalde locatie in de list wilt hebben kunnen je hiernaar verwijzen als NAAMLIST[NUMMER]. Let erop dat de eerste waarde nummer 0 is en niet 1. Stel je wilt “test” hebben, dan gebruik je dus lijst[4], want test heeft de 4e plaats (volgens de telling van programmeurs, die bij 0 beginnen).</p>
+
+			<p>NB</p>
+
+			<p>Bij python kan een list allerlei soorten waarden bevatten, zoals tekst en integers, andere talen staan dit vaak niet toe en accepteren maar een datatype in de list.</p>
 		</div>
 
 		<div class="bar-s">

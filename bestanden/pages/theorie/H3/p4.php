@@ -59,78 +59,62 @@
 		</div>
 
 		<div class="theorie-content">
-			<p>
-				Rekenen met variabelen
-			</p>
-			<p>
-				Variabelen zijn bedoeld om waardes bij te houden en met deze variabelen kan gerekend worden. We gaan in dit geval uit van integers (gehele getallen).
-			</p>
-			<p>
-				Deze waarden worden gebruikt tenzij anders aangegeven:
 
-				waarde1 = 20
-				waarde2 = 10
-			</p>
-			<p>
-				Voorbeelden van de types in python
-			</p>
-			<p>
-				<pre>
-De meest gebruikte acties zijn:
+			<p>Variabelen zijn bedoeld om waardes bij te houden en met deze variabelen kan gerekend worden. We gaan in dit geval uit van integers (gehele getallen).</p>
 
-Additie
+			<p>Deze waarden worden gebruikt tenzij anders aangegeven:</p>
 
-	waarde3 = waarde1 + waarde2 (=30)
+			<p><code>waarde1 = 20</code></p>
 
-Substractie
+			<p><code>waarde2 = 10</code></p>
 
-	waarde3 = waarde1 - waarde2 (=10)
+			<p>De meest gebruikte acties zijn:</p>
 
-Multiplicatie
+			<p>Additie</p>
 
-	waarde3 = waarde1 * waarde2 (=200)
+			<p><code>waarde3 = waarde1 + waarde2 (=30)</code></p>
 
-Delen
+			<p>Substractie</p>
 
-	waarde3 = waarde1 / waarde2 (=2.0)
+			<p><code>waarde3 = waarde1 - waarde2 (=10)</code></p>
 
+			<p>Multiplicatie</p>
 
-De modules, ook bekend als rest
-	waarde1 = 20
-	waarde2 = 3
+			<p><code>waarde3 = waarde1 * waarde2 (=200)</code></p>
 
-	waarde3 = waarde1 % waarde2 (=2, want 20/3 = 6 met rest 2 (of 2/3))
-				</pre>
+			<p>Delen</p>
 
+			<p><code>waarde3 = waarde1 / waarde2 (=2.0)</code></p>
 
-			</p>
+			<p>De modules, ook bekend als rest</p>
 
-			<p>
-				Er zijn veel meer mogelijkheden en deze zijn terug te vinden op https://docs.python.org/3/tutorial/introduction.html#numbers
-			</p>
+			<p><code>waarde1 = 20</code></p>
 
-			<p>
-				NB de rekenregels die je gewend bent gelden ook in python.
-				NB python verandert automatisch datatypes in gevallen zoals 17/3, de uitkomst is hier een float met de waarde 5.666666666666667 ook al waren twee integers de beginwaarden.
-			</p>
+			<p><code>waarde2 = 3</code></p>
 
-			<p>
-				<pre>
-Bij strings, teksten kan ook met deze acties gewerkt worden. Hier gelden nagenoeg dezelfde regels al is er minder mogelijk.
+			<p><code>waarde3 = waarde1 % waarde2</code> (=2, want 20/3 = 6 met rest 2 (of 2/3))</p>
 
-De nieuwe waarden zijn:
-string1 = “eerste”
-string2 = “tweede”
+			<p>Er zijn veel meer mogelijkheden en deze zijn terug te vinden op https://docs.python.org/3/tutorial/introduction.html#numbers</p>
 
-Additie:
-	string3 = string1 + string2 (=eerstetweede)
+			<p>NB de rekenregels die je gewend bent gelden ook in python.</p>
 
-Multiplicatie:
-	String3 = string1 * 2 (=eersteeerste)
-				</pre>
+			<p>NB python verandert automatisch datatypes in gevallen zoals 17/3, de uitkomst is hier een float met de waarde 5.666666666666667 ook al waren twee integers de beginwaarden.</p>
 
-			</p>
+			<p>Bij strings, teksten kan ook met deze acties gewerkt worden. Hier gelden nagenoeg dezelfde regels al is er minder mogelijk.</p>
 
+			<p>De nieuwe waarden zijn:</p>
+
+			<p><code>string1 = “eerste”</code></p>
+
+			<p><code>string2 = “tweede”</code></p>
+
+			<p>Additie:</p>
+
+			<p><code>string3 = string1 + string2</code> (=eerstetweede)</p>
+
+			<p>Multiplicatie:</p>
+
+			<p><code>String3 = string1 * 2</code> (=eersteeerste)</p>
 		</div>
 
 		<div class="bar-s">

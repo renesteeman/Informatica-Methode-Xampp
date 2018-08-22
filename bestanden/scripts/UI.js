@@ -30,14 +30,15 @@ $(document).ready(function(){
 		$(this).siblings().hide();
 		$(this).addClass("active");
 
-		//go to selected tile (mostly for mobile)
-		var pos = $(this).position();
-		var y = pos.top;
+		if($(window).width() < 1400){
+			//go to selected tile (for smaller devices)
+			var pos = $(this).position();
+			var y = pos.top;
 
-		$('html, body').animate({
-      scrollTop: y - 120
-    }, 'fast');
-
+			$('html, body').animate({
+	      scrollTop: y - 120
+	    }, 'fast');
+		}
 	});
 
 	$(document).on("click", ".closeTile", function(){

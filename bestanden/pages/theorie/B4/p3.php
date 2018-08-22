@@ -5,9 +5,9 @@ include('../../../components/headerChapter.php');
 <body>
 
   <div class="title-small">
-      <h2>
+    <h2>
       B4 §3 Communiceren met een database
-      </h2>
+    </h2>
   </div>
 
   <div class="bar-par-overview">
@@ -71,7 +71,7 @@ include('../../../components/headerChapter.php');
 
     <div class="bar-s">
       <h3>
-          Vragen
+        Vragen
       </h3>
     </div>
 

@@ -65,38 +65,40 @@
 			<p>
 				Er zijn veel manieren om python te gebruiken en te installeren. In deze paragraaf wordt één mogelijke optie uitgewerkt.
 			</p>
-			<p>
-				Stap 1) download anaconda via <a href='https://www.anaconda.com/download/'>https://www.anaconda.com/download/</a>. Click op windows installer python 3.6 en bij de pop-up klik je op ‘no thanks’
-			</p>
-			<p>
-				Stap 2) volg de stappen van de installer
-			</p>
-			<p>
-				Stap 3) start anaconda navigator
-			</p>
-			<p>
-				Stap 4) klik op install onder jupyter notebook
-			</p>
-			<p>
-				Stap 5) start jupyter notebook
-			</p>
-			<p>
-				Stap 6) maak een folder aan (via new -> folder)
-				NB de standaard folder waar je in begint staat onder C:\Users\USERNAME\
-			</p>
-			<p>
-				Stap 7) maak een bestand aan in deze folder (of kopieer het bestand van paragraaf 1)
-			</p>
-			<p>
-				Stap 8) open het bestand
-			</p>
-			<p>
-				Stap 9) type in het eerste hokje (achter In[])
-				print(“Hello world”)
-			</p>
-			<p>
-				Stap 10) Gebruik de toetsencombinatie ctrl+enter terwijl het hokje geselecteerd is, dit voert de code in het hokje uit. Als alles juist geïnstalleerd is komt er nu onder het hokje ‘Hello world’ te staan.
-			</p>
+			<ol>
+				<li>
+					Download anaconda via <a href='https://www.anaconda.com/download/'>https://www.anaconda.com/download/</a>. Click op windows installer python 3.6 en bij de pop-up klik je op ‘no thanks’.
+				</li>
+				<li>
+					Volg de stappen van de installer.
+				</li>
+				<li>
+					Start anaconda navigator.
+				</li>
+				<li>
+					Klik op install onder jupyter notebook.
+				</li>
+				<li>
+					Start jupyter notebook.
+				</li>
+				<li>
+					Maak een folder aan (via new -> folder)	NB de standaard folder waar je in begint staat onder C:\Users\USERNAME\
+				</li>
+				<li>
+					Maak een bestand aan in deze folder (of kopieer het bestand van paragraaf 1).
+				</li>
+				<li>
+					Open het bestand.
+				</li>
+				<li>
+					Type in het eerste hokje (achter In[])</br>
+					<code>print(“Hello world”)</code>
+				</li>
+				<li>
+					Gebruik de toetsencombinatie ctrl+enter terwijl het hokje geselecteerd is, dit voert de code in het hokje uit. Als alles juist geïnstalleerd is komt er nu onder het hokje ‘Hello world’ te staan.
+				</li>
+			</ol>
+
 			<p>
 				Gefeliciteerd, je hebt jouw eerste regel python code uitgevoerd!
 			</p>

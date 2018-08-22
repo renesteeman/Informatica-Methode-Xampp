@@ -219,7 +219,8 @@ input[type="checkbox"]
 	.tile.active
 		transition: box-shadow 0.5s ease-in-out
 		background: linear-gradient(to bottom right, darken($secondary2, 10%), lighten($secondary2, 5%))
-		width: 70rem
+		width: 60vw
+		min-width: 66rem
 		height: auto
 
 		.closeTile
@@ -346,7 +347,8 @@ textarea:hover
 			font-size: 125%
 
 		.tile.active
-
+			width: 60vw
+			min-width: 50rem
 
 			.tile-content
 				font-size: 110%
@@ -471,7 +473,8 @@ textarea:hover
 			background-size: 100%
 
 		.tile.active
-			width: 44rem
+			width: 60vw
+			min-width: 42rem
 
 		.tile-content
 			font-size: 150%
@@ -493,12 +496,17 @@ textarea:hover
 			line-height: 10em
 			width: 90vw
 
+		.tile.active
+			width: 90vw
+			min-width: 0
+
 		.tile-content
 			font-size: 150%
 
 	footer
 		.bar-footer
 			padding-left: 1em
+			font-size: 150%
 
 			.contact-info
 				#mail

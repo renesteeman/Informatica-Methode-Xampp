@@ -5,7 +5,7 @@
 </div>
 
 <footer>
-	<div class="bar-large">
+	<div class="bar-footer">
 		<div class="contact">
 			Neem gerust contact op voor vragen, suggesties, adviezen en overigen. U mag binnen 24 uur een antwoord verwachten via de mail. Voor informatie over het privacy en cookie beleid kunt u <a href="../../../downloads/privacyBeleid.pdf">hier</a> klikken en voor de overige voorwaarden <a href="../../../downloads/voorwaarden.pdf">hier</a> .
 		</div>

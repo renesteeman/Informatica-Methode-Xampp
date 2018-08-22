@@ -18,7 +18,6 @@ footer
 	clear: both
 	position: relative
 	z-index: 10
-	height: 3em
 
 a
 	color: $black
@@ -269,7 +268,12 @@ footer
 	a:hover
 		color: $white
 
-.bar-large
+.bar-footer:after
+  clear: both
+  content: ""
+  display: table
+
+.bar-footer
 	background-color: $primairy1
 	color: $white
 	padding-top: 1em
@@ -278,15 +282,14 @@ footer
 	z-index: 30
 	background: linear-gradient(to bottom right, $primairy1, $primairy2)
 	padding-left: 20%
-	font-size: 1.5em
+	font-size: 1.2em
+	padding-bottom: .5em
 
 	.contact
 		max-width: 80%
 
 	.contact-info
-		padding-top: 0.5em
-		padding-bottom: 0.5em
-
+		height: auto
 		#mail
 			float: right
 			margin-right: 20%
@@ -333,6 +336,7 @@ textarea:hover
 .chapter-tiles
 	.completed
 		background: linear-gradient(to bottom right, lighten($secondary2, 5%), lighten($secondary2, 10%))
+		color: rgba($black, 0.8)
 
 //responsiveness
 @media (max-width: $xlarge)
@@ -505,7 +509,7 @@ textarea:hover
 							padding-left: 0
 
 	footer
-		.bar-large
+		.bar-footer
 			padding-left: 1em
 
 			.contact-info

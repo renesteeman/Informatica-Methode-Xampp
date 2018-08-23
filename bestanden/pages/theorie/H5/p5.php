@@ -49,26 +49,31 @@
 		</div>
 
 		<div class="theorie-content">
-			<pre>
-In CSS wordt gebruik gemaakt van het box model. Dit geeft aan hoe bepaalde toevoegingen invloed hebben op het element. Je kunt het voorstellen als een doos met daarin vier lagen. Laag 1 is de inhoud, bijvoorbeeld tekst. Laag 2 is padding, dit is een opvulling om de inhoud heen, maar hoort nog bij het element. Laag 3 is de border, oftewel de rand die eromheen zit. Laag 4 is margin, oftewel de afstand tot andere elementen.
-
-Stel je voegt een achtergrond kleur toe, dan wordt die kleur gebruikt voor het element, dus inclusief padding, maar exclusief de margin.
-
-Padding is dus een soort opvulling, in CSS gebruik je dit als padding of padding-kant. Padding voegt het aan alle kanten toe en padding-kant voegt het aan een kant toe. Een voorbeeld is padding-left: 10%; Dit zal links (van de inhoud) het element 10% groter maken.
-
-Border is een rand om het element. Een element met een rand die blauw is, 10 px dik en waarvan de rand solide is kan als CSS border: 10px solid blue; hebben. Voor alle mogelijkheden kun je kijken op <a href="https://www.w3schools.com/css/css_border.asp">https://www.w3schools.com/css/css_border.asp</a>
-
-Je kunt ook de opmaak veranderen door ergens overheen te gaan. Dit kan door gebruik te maken van :hover. Een voorbeeld is:
-
-<code>
-	#div1:hover
-		Background-color: yellow
-		Width: 400px
-</code>
-
-Als je nu met de muis erover gaat wordt de achtergrond geel en wordt het breder.
-
-			</pre>
+			<p>
+				In CSS wordt gebruik gemaakt van het box model. Dit geeft aan hoe bepaalde toevoegingen invloed hebben op het element. Je kunt het voorstellen als een doos met daarin vier lagen. Laag 1 is de inhoud, bijvoorbeeld tekst. Laag 2 is padding, dit is een opvulling om de inhoud heen, maar hoort nog bij het element. Laag 3 is de border, oftewel de rand die eromheen zit. Laag 4 is margin, oftewel de afstand tot andere elementen.
+			</p>
+			<p>
+				Stel je voegt een achtergrond kleur toe, dan wordt die kleur gebruikt voor het element, dus inclusief padding, maar exclusief de margin.
+			</p>
+			<p>
+				Padding is dus een soort opvulling, in CSS gebruik je dit als padding of padding-kant. Padding voegt het aan alle kanten toe en padding-kant voegt het aan een kant toe. Een voorbeeld is padding-left: 10%; Dit zal links (van de inhoud) het element 10% groter maken.
+			</p>
+			<p>
+				Border is een rand om het element. Een element met een rand die blauw is, 10 px dik en waarvan de rand solide is kan als CSS border: 10px solid blue; hebben. Voor alle mogelijkheden kun je kijken op <a href="https://www.w3schools.com/css/css_border.asp">https://www.w3schools.com/css/css_border.asp</a>
+			</p>
+			<p>
+				Je kunt ook de opmaak veranderen door ergens overheen te gaan. Dit kan door gebruik te maken van :hover. Een voorbeeld is:
+			</p>
+			<p>
+<pre><code>
+#div1:hover
+	Background-color: yellow
+	Width: 400px
+</code></pre>
+			</p>
+			<p>
+				Als je nu met de muis erover gaat wordt de achtergrond geel en wordt het breder.
+			</p>
 
 		</div>
 

@@ -49,10 +49,11 @@
 		</div>
 
 		<div class="theorie-content">
-			<pre>
-Zoals eerder genoemd bestaat een webpagina vaak uit 3 belangrijke onderdelen: de header, de body en de footer. Een HTML bestand zonder inhoud ziet er dan als volgt uit:
-<code>
-&lt;html>
+			<p>
+				Zoals eerder genoemd bestaat een webpagina vaak uit 3 belangrijke onderdelen: de header, de body en de footer. Een HTML bestand zonder inhoud ziet er dan als volgt uit:
+			</p>
+
+<pre><code>&lt;html>
 &lt;head>
 &lt;/head>
 
@@ -64,15 +65,19 @@ Zoals eerder genoemd bestaat een webpagina vaak uit 3 belangrijke onderdelen: de
 
 &lt;footer>
 &lt;/footer>
-&lt;/html>
-</code>
+&lt;/html></code></pre>
 
-Het valt misschien op dat er ook &lt;head> bij staat, hierin zet je normaal algemene dingen die de pagina nodig heeft om te werken, al wordt dit tegenwoordig ook vaak in de &lt;footer> gezet zodat eerst de inhoud van de pagina geladen wordt en daarna pas de rest, dan lijkt de pagina sneller te zijn. Zo kan er verwezen worden naar een css bestand of een andere code.
-Je ziet ook dat onderdelen beginnen met <> en eindigen met </>, dit komt bij bijna elk element (onderdeel) in HTML voor. Tussen deze ‘blokken’ kun je de inhoud zetten.
-Een pagina met als inhoud “Hello HTML” zou er als volgt uit kunnen zien.
+			<p>
+				Het valt misschien op dat er ook &lt;head> bij staat, hierin zet je normaal algemene dingen die de pagina nodig heeft om te werken, al wordt dit tegenwoordig ook vaak in de &lt;footer> gezet zodat eerst de inhoud van de pagina geladen wordt en daarna pas de rest, dan lijkt de pagina sneller te zijn. Zo kan er verwezen worden naar een css bestand of een andere code.
+			</p>
+			<p>
+				Je ziet ook dat onderdelen beginnen met <> en eindigen met </>, dit komt bij bijna elk element (onderdeel) in HTML voor. Tussen deze ‘blokken’ kun je de inhoud zetten.
+			</p>
+			<p>
+				Een pagina met als inhoud “Hello HTML” zou er als volgt uit kunnen zien.
+			</p>
 
-<code>
-&lt;html>
+<pre><code>&lt;html>
 &lt;head>
 &lt;/head>
 
@@ -85,12 +90,17 @@ Hello HTML
 
 &lt;footer>
 &lt;/footer>
-&lt;/html>
-</code>
+&lt;/html></code></pre>
 
-Stel je wilt een hele paragraaf als tekst, dan kun je &lt;p> gebruiken. De p staat voor paragraph. Of om een ‘blok’ te detineren kun je &lt;div> gebruiken, dit staat voor divisie. Dit kun je later met css bijvoorbeeld een achtergrondkleur geven.
-Als je HTML gaat schrijven kan dit in word, maar het is beter om een gespecialiseerd programma voor te gebruiken. Zelf (als maker van deze website) gebruik ik atom. Dit is een gratis tekstbewerker waar je zelf veel aan kunt aanpassen en toevoegen. Je kunt het vinden op <a href="https://atom.io/">https://atom.io/</a> . Je kunt een bestand dan opslaan met de extensie html (dus je eindigt de naam van het bestand met .html). Dit kun je dan openen met de browser. Ik adviseer om als browser geen gebruik te maken van internet explorer, aangezien dit slechte ondersteuning heeft.
-			</pre>
+<p>
+	Stel je wilt een hele paragraaf als tekst, dan kun je &lt;p> gebruiken. De p staat voor paragraph. Of om een ‘blok’ te detineren kun je &lt;div> gebruiken, dit staat voor divisie. Dit kun je later met css bijvoorbeeld een achtergrondkleur geven.
+</p>
+<p>
+	Als je HTML gaat schrijven kan dit in word, maar het is beter om een gespecialiseerd programma voor te gebruiken. Zelf (als maker van deze website) gebruik ik atom. Dit is een gratis tekstbewerker waar je zelf veel aan kunt aanpassen en toevoegen. Je kunt het vinden op <a href="https://atom.io/">https://atom.io/</a>.
+</p>
+<p>
+	 Je kunt een bestand dan opslaan met de extensie html (dus je eindigt de naam van het bestand met .html). Dit kun je dan openen met de browser. Ik adviseer om als browser geen gebruik te maken van internet explorer, aangezien dit slechte ondersteuning heeft. Als je meer informatie wilt hebben over browsersupport dan kun je kijken op <a href="https://caniuse.com/">https://caniuse.com/</a>, hier staan wel veel dingen op die je nog niet kent.
+</p>
 		</div>
 
 		<div class="bar-s">

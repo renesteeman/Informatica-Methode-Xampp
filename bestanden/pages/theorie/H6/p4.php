@@ -44,34 +44,39 @@
 		</div>
 
 		<div class="theorie-content">
-			<pre>
-In deze paragraaf ga je leren wat agile is. Agile is een groep waardes en principies. Dat klinkt vrij vaag en dat is het in zichzelf ook, daarom zijn er verschillende agile systemen die een stuk concreter zijn. Agile heeft als doel het flexibiel uitvoeren van een project. In de kern heeft agile een paar belangrijke punten, deze zijn:
-			</pre>
-<ol>
-	<li>
-		Een groep goed moet samenwerken en zelfstandigheid hebben.
-	</li>
-	<li>
-		Een planning moet niet teveel vast leggen, zodat er ruimte is voor veranderingen.
-	</li>
-	<li>
-		De klant en gebruiker veel contact moeten hebben.
-	</li>
-	<li>
-		Producten moeten niet in een keer worden gemaakt en getoond, maar in stappen. Updates moeten klein en regelmatig zijn, in plaats van ver uit elkaar en groot. Zo kan de gebruiker feedback geven en gaat minder tijd verloren aan onnodige zaken.
-	</li>
-	<li>
-		Er moet regelmatig een meeting zijn waarbij terug wordt gekeken en verbeterpunten worden gevormd.
-	</li>
-</ol>
+			<p>
+				In deze paragraaf ga je leren wat agile is. Agile is een groep waardes en principies. Dat klinkt vrij vaag en dat is het in zichzelf ook, daarom zijn er verschillende agile systemen die een stuk concreter zijn. Agile heeft als doel het flexibiel uitvoeren van een project. In de kern heeft agile een paar belangrijke punten, deze zijn:
+			</p>
+			<ol>
+				<li>
+					Een groep goed moet samenwerken en zelfstandigheid hebben.
+				</li>
+				<li>
+					Een planning moet niet teveel vast leggen, zodat er ruimte is voor veranderingen.
+				</li>
+				<li>
+					De klant en gebruiker veel contact moeten hebben.
+				</li>
+				<li>
+					Producten moeten niet in een keer worden gemaakt en getoond, maar in stappen. Updates moeten klein en regelmatig zijn, in plaats van ver uit elkaar en groot. Zo kan de gebruiker feedback geven en gaat minder tijd verloren aan onnodige zaken.
+				</li>
+				<li>
+					Er moet regelmatig een meeting zijn waarbij terug wordt gekeken en verbeterpunten worden gevormd.
+				</li>
+			</ol>
 
-			<pre>
-Een van de systemen die agile gebruikt is Scrum. Bij scrum wordt elke feature (onder de naam ‘user-storie’) in een zogenaamde backlog gezet, dit is een soort grote te doen lijst van opdrachten. Er wordt vervolgens een planning voor twee weken gemaakt en hiervoor worden opdrachten uit de backlog uitgekozen. In de komende twee weken wordt aan deze opdrachten gewerkt en ze komen op het agile board te staan, dit is gebruikelijk een bord met post-it notes die worden verdeeld over: to do, dev, test en release. Er is dus een lijst van dingen waar nog aan begonnen moet worden, een waar aan gewerkt wordt, een waarvoor getest wordt en een met de opdrachten die af zijn. De periode van twee weken heet ‘sprint’. Op het eind van een sprint wordt een nieuwe versie van het project uitgegeven en wordt teruggekeken naar hoe de sprint is verlopen en wat beter kon. Er is ook op elke dag een kort gesprek tussen de teamleden waarin kort wordt gezegd wat die dag gedaan wordt en eventueel nog wat belangrijke mededelingen, dit heet ‘de daily scrum meeting’. De persoon die zorgt dat dit allemaal in goede banen wordt geleid heet ‘scrum master’.
-
-Het is ook mogelijk om aan dit proces een ‘burn-down chart’ toe te voegen, dit is een grafiek waarop elke dag wordt weergegeven hoeveel werk er nog grofweg over is voor de huidige sprint. Des te meer werk, des te hoger het punt op de grafiek. Elke dag komt er weer een nieuw punt bij op de grafiek en op het eind kan dan gekeken worden naar wanneer het goed en wanneer het minder goed ging.
-
-Voor een korte samenvatting (in het Engels) kun je <a href=" https://www.youtube.com/watch?v=1PBln3dyaPs&list=PLngnoZX8cAn9zw-9wKg6HiHV4TJkUrdGW">https://www.youtube.com/watch?v=1PBln3dyaPs&list=PLngnoZX8cAn9zw-9wKg6HiHV4TJkUrdGW</a> bekijken.
-			</pre>
+			<p>
+				Een van de systemen die agile gebruikt is Scrum. Bij scrum wordt elke feature (onder de naam 'user-storie') in een zogenaamde backlog gezet, dit is een soort grote te doen lijst van opdrachten. Er wordt vervolgens een planning voor enkele weken gemaakt en hiervoor worden opdrachten uit de backlog uitgekozen. In de komende weken wordt aan deze opdrachten gewerkt en ze komen op het agile board te staan, dit is gebruikelijk een bord met post-it notes die worden verdeeld over: to do, dev, test en release. Er is dus een lijst van dingen waar nog aan begonnen moet worden, een waar aan gewerkt wordt, een waarvoor getest wordt en een met de opdrachten die af zijn.
+			</p>
+			<p>
+				De periode waarin deze backlog weggewerkt wordt heet 'sprint' en duurt meestal twee weken. Op het eind van een sprint wordt een nieuwe versie van het project uitgegeven en wordt teruggekeken naar hoe de sprint is verlopen en wat beter kon. Er is ook op elke dag een kort gesprek tussen de teamleden waarin kort wordt gezegd wat die dag gedaan wordt en eventueel nog wat belangrijke mededelingen, dit is een 'daily scrum meeting'. De persoon die zorgt dat dit allemaal in goede banen wordt geleid heet 'scrum master'.
+			</p>
+			<p>
+				Het is ook mogelijk om aan dit proces een ‘burn-down chart’ toe te voegen, dit is een grafiek waarop elke dag wordt weergegeven hoeveel werk er nog grofweg over is voor de huidige sprint. Des te meer werk, des te hoger het punt op de grafiek. Elke dag komt er weer een nieuw punt bij op de grafiek en op het eind kan dan gekeken worden naar wanneer het goed en wanneer het minder goed ging.
+			</p>
+			<p>
+				Voor een korte samenvatting (in het Engels) kun je <a href=" https://www.youtube.com/watch?v=1PBln3dyaPs&list=PLngnoZX8cAn9zw-9wKg6HiHV4TJkUrdGW">https://www.youtube.com/watch?v=1PBln3dyaPs&list=PLngnoZX8cAn9zw-9wKg6HiHV4TJkUrdGW</a> bekijken.
+			</p>
 
 		</div>
 

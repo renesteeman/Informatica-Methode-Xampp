@@ -44,14 +44,15 @@
 		</div>
 
 		<div class="theorie-content">
-			<pre>
-Als je een project uitvoert in een team, dan zullen er rollen moeten worden verdeeld. Dit zal bij een klein project meestal: developer, leider, designer of administrateur zijn. De developer is de persoon die voornamelijk zal programmeren, de leider stuurt iedereen aan en zorgt voor een planning, de designer zorgt voor hoe het product eruit zal zien en de administrateur doet al het papierwerk (denk aan verslagen).
-
-Bij een groter project komen er meer dingen bij kijken en zijn er dus ook meer rollen nodig, mensen zullen meer gespecialiseerd werken in plaats van aan een groep kleinere taken. Rollen die er dan nodig zijn zullen ook: tester, brononderzoeker, marketer (persoon die de marketing regelt), human resource manager, enz. kunnen omvatten.
-
-Een rol die altijd zeer belangrijk is, is de leider. Deze persoon zal moeten zorgen dat iedereen in het team weet wat gedaan moet worden en voor wanneer. De leider moet ook de grote beslissingen maken en proberen de groep bij elkaar te houden. Het is niet altijd een baan die in dank af zal worden genomen, maar zonder leider is een project haast onmogelijk.
-			</pre>
-
+			<p>
+				Als je een project uitvoert in een team, dan zullen er rollen moeten worden verdeeld. Dit zal bij een klein project meestal: developer, leider, designer of administrateur zijn. De developer is de persoon die voornamelijk zal programmeren, de leider stuurt iedereen aan en zorgt voor een planning, de designer zorgt voor hoe het product eruit zal zien en de administrateur doet al het papierwerk (denk aan verslagen).
+			</p>
+			<p>
+				Bij een groter project komen er meer dingen bij kijken en zijn er dus ook meer rollen nodig, mensen zullen meer gespecialiseerd werken in plaats van aan een groep kleinere taken. Rollen die er dan nodig zijn zullen ook: tester, brononderzoeker, marketer (persoon die de marketing regelt), human resource manager, enz. kunnen omvatten.
+			</p>
+			<p>
+				Een rol die altijd zeer belangrijk is, is de leider. Deze persoon zal moeten zorgen dat iedereen in het team weet wat gedaan moet worden en voor wanneer. De leider moet ook de grote beslissingen maken en proberen de groep bij elkaar te houden. Het is niet altijd een baan die in dank af zal worden genomen, maar zonder leider is een project haast onmogelijk.
+			</p>
 		</div>
 
 		<div class="bar-s">

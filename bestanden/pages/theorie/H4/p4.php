@@ -60,15 +60,12 @@
 			</p>
 			<p>
 				De taal ondersteunt ook loops en condities. Voor een if else statement ziet de syntax (de schrijfwijze) er als volgt uit:
-				<pre>
-					<code>
-if (voorwaarde){
+
+<pre><code>if (voorwaarde){
 	//inhoud
 } else {
 //inhoud
-}
-					</code>
-				</pre>
+}</code></pre>
 
 			</p>
 			<p>

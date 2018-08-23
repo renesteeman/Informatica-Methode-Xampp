@@ -52,24 +52,34 @@
 			<p>
 				Als eerste gaan we de software klaar maken voor de arduino, zorg eerst ervoor dat alles geïnstalleerd is. Als de software niet geïnstalleerd is, dan kun je dit doen volgens de installatie pagina van dit hoofdstuk (onder het menu voor dit hoofdstuk). Volg voor het klaar maken van de software (na de installatie) de volgende stappen:
 			</p>
+
 			<p>
-				<pre>
-1) Open de arduino IDE
-2) Ga naar tools
-3) Selecteer arduino uno bij Board
-4) Selecteer de juiste poort onder Tools->Port (als er meerdere zijn probeer ze dan uit)
-5) Ga naar tools en klik op Serial Monitor
-6) Plak de volgende code in het arduino bestand
-				</pre>
-
-
+				<ol>
+					<li>
+						Open de arduino IDE.
+					</li>
+					<li>
+						Ga naar tools.
+					</li>
+					<li>
+						Selecteer arduino uno bij Board.
+					</li>
+					<li>
+						Selecteer de juiste poort onder Tools->Port (als er meerdere zijn probeer ze dan uit).
+					</li>
+					<li>
+						Ga naar tools en klik op Serial Monitor.
+					</li>
+					<li>
+						Plak de onderstaande code in het arduino bestand.
+					</li>
+				</ol>
 			</p>
-			<p>
-				Hoe er rekening mee dat de als de code gekopieerd wordt, het bugs kan bevatten doordat te lange tekst naar de volgende regel wordt geschoven.
 
-					<pre>
-						<code>
-void setup() {
+			<p>
+				Hou er rekening mee dat de als de code gekopieerd wordt, het bugs kan bevatten doordat te lange tekst naar de volgende regel wordt geschoven.
+
+<pre><code>void setup() {
   Serial.begin(9600);
 }
 
@@ -77,17 +87,21 @@ void loop() {
   Serial.print("het werkt");
   Serial.print("\n");
   delay(200);
-}
-					</code>
-				</pre>
+}</code></pre>
 
 			</p>
 			<p>
-				7) Klik op het pijltje in de donker blauwe balk (naast het check teken en onder de witte balk), dit uploadt de code naar de arduino.</br>
-
-				8) Kijk in de serial console of er “het werkt” komt te staan.</br>
-
-				9) Als het niet werkt controleer of de arduino wel goed ingestoken is en of de serial monitor wel of 9600Baud is ingesteld.</br>
+				<ol start="7">
+					<li>
+						Klik op het pijltje in de donker blauwe balk (naast het check teken en onder de witte balk), dit uploadt de code naar de arduino.
+					</li>
+					<li>
+						Kijk in de serial console of er “het werkt” komt te staan.
+					</li>
+					<li>
+						Als het niet werkt controleer of de arduino wel goed ingestoken is en of de serial monitor wel of 9600 Baud is ingesteld.
+					</li>
+				</ol>
 			</p>
 			<p>
 				Dan nu wat uitleg over de basis van het programmeren voor arduino.
@@ -107,9 +121,7 @@ void loop() {
 			</p>
 			<p>
 
-				<pre>
-					<code>
-void setup() {
+<pre><code>void setup() {
   //zet 'snelheid' signaal
   Serial.begin(9600);
 }
@@ -120,22 +132,17 @@ void loop() {
   Serial.println(string);
   delay(200);
 
-}
-					</code>
-				</pre>
+}</code></pre>
 
 			</p>
 			<p>
 				Als je tussen stukken code wilt wachten, dan kan dit via delay(), tussen de haken kun je het aantal milliseconden dat je wachten invoeren. Een voorbeeld is delay(200). Om 0,2s te wachten.
 			</p>
 			<p>
-				Dan komt nu een praktisch voorbeeld.
+				Dan komt nu een praktisch voorbeeld. Als onderdelen heb je nodig: de arduino, een breadboard, een paar male-to-male kabels (met een uitstekende pin aan beide kanten), een resistor van 330ohm en een kleine LED.
 			</p>
 			<p>
-				Als onderdelen heb je nodig: de arduino, een breadboard, een paar male-to-male kabels (met een uitstekende pin aan beide kanten), een resistor van 330ohm en een kleine LED.
-			</p>
-			<p>
-				Voordat je begint met het maken van het elektrisch circuit moet je de arduino uitzetten.
+				Voordat je begint met het maken van het elektrisch circuit moet je de arduino uitzetten, anders kan die beschadigd raken.
 				Laat een kabel van de 5V pin van de arduino naar de +rij van het breadboard gaan. Laat een kabel van de GND (grond/-) naar de -rij van het breadboard gaan. Zet nu een 330ohm resistor op het breadboard van de -rij naar de kortere pin van de LED gaan. Laat vervolgens een kabel van de +rij naar de lange pin van de LED gaan. Verbind de arduino met de computer. Als het goed hebt gedaan gaat nu het lampje aan. Als je een flits ziet, dan heb je de korte en lange pin omgedraaid of de verkeerde weerstand gebruikt, je hebt dan een nieuwe LED nodig (de oude is doorgebrand).
 			</p>
 			<p>
@@ -143,13 +150,14 @@ void loop() {
 				<img src="./afbeeldingen/LED2.png" />
 			</p>
 			<p>
+				Bij een breadboard gaat de stroom van het middeldeel via de horizontale rijen (van links naar rechts). Bij de randen (de + en - rijen) gaat het verticaal (van onder naar boven). Hou daar rekening mee als je de stroom erdoor laat gaan.
+			</p>
+			<p>
 				Als laatste onderdeel van deze paragraaf gaan we wat code schrijven die de LED aan en uit laat gaan.
 				Dit is de code:
 			</p>
 			<p>
-				<pre>
-					<code>
-int ledPin = 13; //stel de pin in
+<pre><code>int ledPin = 13; //stel de pin in
 
 void setup() {
   pinMode(ledPin, OUTPUT); //zet de modus van de pin op OUTPUT om het signaal te kunnen sturen
@@ -160,14 +168,10 @@ void loop() {
   delay(1000);                       //wacht 1s
   digitalWrite(ledPin, LOW);    //zet de pin uit, hierdoor gaat er 0V door
   delay(1000);                       //wacht 1s
-}
-
-					</code>
-				</pre>
-
+}</code></pre>
 			</p>
 			<p>
-				Kijk naar de comments (de tekst met // ervoor) voor de uitleg per regel. Probeer nu zelf het lampje aan en uit te laten gaan met een andere snelheid. Tip: gebruik als +pin hier pin 13 en niet de 5V pin.
+				Kijk naar de comments (de tekst met // ervoor) voor de uitleg per regel. Probeer nu zelf het lampje aan en uit te laten gaan met een andere snelheid. Tip: gebruik als +pin hier pin 13 en niet de 5V pin. Je kunt deze namelijk aansturen met de arduino.
 			</p>
 
 		</div>
@@ -185,10 +189,16 @@ void loop() {
 					In welke 2 onderdelen is arduino code verdeeld?
 				</li>
 				<li>
-					Welke waarde heeft een pin 6 na de uitvoering van: digtalWrite(12, HIGH)?
+					Welke waarde heeft pin 12 na de uitvoering van: digtalWrite(12, HIGH)?
 				</li>
 				<li>
 					Hoe pauzeer je de code voor 1s?
+				</li>
+				<li>
+					In welke richting gaat de stroom in het middelste deel van een breadboard?
+				</li>
+				<li>
+					In welke richting gaat de stroom aan de zijkanten van een breadboard?
 				</li>
 			</ol>
 
@@ -211,6 +221,12 @@ void loop() {
 				</li>
 				<li>
 					delay(1000)
+				</li>
+				<li>
+					De stroom gaat horizontaal.
+				</li>
+				<li>
+					De stroom gaat verticaal
 				</li>
 			</ol>
 

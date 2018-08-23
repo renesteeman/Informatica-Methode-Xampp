@@ -53,9 +53,7 @@
 				Eerst nog een wat complexer voorbeeld. Een ledlampje dat meer licht geeft als het donker is en minder als het licht is. Dit werkt door met een LDR te achterhalen of er veel of weinig licht is en dan met een berekening een waarde voor het ledlampje te bepalen. Omdat we meer precisie willen dan aan of uit gebruiken we analogWrite() om de waarde voor de led in te stellen. Neem de code maar eens door, hierna ga je het uitbereiden. Er staat steeds uitleg bij over wat er gedaan wordt.
 			</p>
 			<p>
-				<pre>
-					<code>
-int sensorPin = A0; //stel de pin in voor het meten van de weerstand van de LDR
+<pre><code>int sensorPin = A0; //stel de pin in voor het meten van de weerstand van de LDR
 int ledPin = 3; //stel de pin voor de led in (dit moet een pin met het golfje zijn)
 int sensorValue = 0;
 int ledValue = 0;
@@ -91,13 +89,9 @@ void loop() {
   delay(1000); //wacht 1s
 }
 
-
 //Probeer het uit door jouw vinger op de LDR te leggen (niet op de 'draad')
 //Schijn nu met een lampje op de LDR
-//Laat nu een lampje knipperen en kijk naar de reactie van het led lampje
-
-					</code>
-				</pre>
+//Laat nu een lampje knipperen en kijk naar de reactie van het led lampje</code></pre>
 
 			</p>
 			<p>

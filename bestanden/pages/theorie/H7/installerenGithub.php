@@ -22,11 +22,12 @@
 		</div>
 
 		<div class="theorie-content">
-			<pre>
-Als eerste is een account nodig op <a href="https://github.com">https://github.com</a>, deze kun je nu eenvoudig aanmaken.
-
-Vervolgens is het tijd voor een GUI om het gebruik een stuk makkelijker te maken. Er zijn veel varianten van beschikbaar, als voorbeeld nemen we sourcetree. Je kunt het downloaden op <a href="https://www.sourcetreeapp.com">https://www.sourcetreeapp.com</a>.
-			</pre>
+			<p>
+				Als eerste is een account nodig op <a href="https://github.com">https://github.com</a>, deze kun je nu eenvoudig aanmaken.
+			</p>
+			<p>
+				Vervolgens is het tijd voor een GUI om het gebruik een stuk makkelijker te maken. Er zijn veel varianten van beschikbaar, als voorbeeld nemen we sourcetree. Je kunt het downloaden op <a href="https://www.sourcetreeapp.com">https://www.sourcetreeapp.com</a>.
+			</p>
 
 			<ol>
 				<li>

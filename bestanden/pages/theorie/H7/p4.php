@@ -44,11 +44,14 @@
 		</div>
 
 		<div class="theorie-content">
-			<pre>
-Bij de projecten ga in een groep aan de slag om iets te doen dat jullie (hopelijk) interessant vinden en iets van kunnen leren. Dit is jouw kans om iets te doen dat je zelf wilt, in plaats van het uitvoeren van een verplichting. Als je een erg goed project maakt kan het zelfs op jouw CV.
-Probeer bij het project gebruik te maken van alles dat je hebt geleerd en zorg ervoor dat iedereen iets te doen heeft waar ze interesse in hebben. Het is het leukste om zelf een project te verzinnen, maar als je echt niks kunt bedenken kun je de volgende ideeën (als inspiratie) gebruiken.
-			</pre>
-			<ol>
+			<p>
+				Bij de projecten ga in een groep aan de slag om iets te doen dat jullie (hopelijk) interessant vinden en iets van kunnen leren. Dit is jouw kans om iets te doen dat je zelf wilt, in plaats van het uitvoeren van een verplichting. Als je een erg goed project maakt kan het zelfs op jouw CV.
+			</p>
+			<p>
+				Probeer bij het project gebruik te maken van alles dat je hebt geleerd en zorg ervoor dat iedereen iets te doen heeft waar ze interesse in hebben. Het is het leukste om zelf een project te verzinnen, maar als je echt niks kunt bedenken kun je de volgende ideeën (als inspiratie) gebruiken.
+			</p>
+			<p>
+				<ol>
 				<li>
 					Een website waarin je mensen met jou laat kennismaken, een soort visitekaartje
 				</li>
@@ -68,6 +71,7 @@ Probeer bij het project gebruik te maken van alles dat je hebt geleerd en zorg e
 					Het bouwen van een eigen computer (niet aanbevolen voor groepen).
 				</li>
 			</ol>
+		</p>
 		</div>
 
 		<div class="bar-s">

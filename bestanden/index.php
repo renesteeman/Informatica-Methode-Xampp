@@ -349,8 +349,10 @@
 				</div>
 			</div>
 		</div>';
-
 	?>
+
+	<!-- end page content / start footer -->
+	</div>
 
 	<?php
 	include('components/footerIndex.php');

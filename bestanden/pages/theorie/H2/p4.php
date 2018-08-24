@@ -49,7 +49,7 @@
 			</p>
 
 			<p>
-				Stel je wilt een website gaan maken (meer hierover in H5), dan moet je eerst bedenken wat voor soort website het moet worden: hoe het gaat het heten, wat wordt de structuur en hoe moet het eruit gaan zien, enz. Daarna kun je de logica van de site in stukken hakken. Stel je de flow van het programma op, oftewel hoe dingen met elkaar verbonden zijn en wat wanneer gebeurt. Een flow kan bijvoorbeeld zijn: ga naar de startpagina, klik op login, vul gegevens in, klik op submit, laat een script de gegevens analyseren, controleer de gegevens en bepaal of iemand ingelogd moet worden. Je kunt ook de taken indelen onder bepaalde talen, sommige talen zijn namelijk beter voor bepaalde problemen dan andere.
+				Stel je wilt een website gaan maken (meer hierover in H5), dan moet je eerst bedenken wat voor soort website het moet worden: hoe het gaat heten, wat wordt de structuur en hoe moet het eruit gaan zien, enz. Daarna kun je de logica van de site in stukken hakken. Stel je de flow van het programma op, oftewel hoe dingen met elkaar verbonden zijn en wat wanneer gebeurt. Een flow kan bijvoorbeeld zijn: ga naar de startpagina, klik op login, vul gegevens in, klik op submit, laat een script de gegevens analyseren, controleer de gegevens en bepaal of iemand ingelogd moet worden. Je kunt ook de taken indelen onder bepaalde talen, sommige talen zijn namelijk beter voor bepaalde problemen dan andere.
 			</p>
 
 			<p>

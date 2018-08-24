@@ -48,8 +48,7 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content">
-
-			<p>In de vorige paragraaf heb de vraag, “Wat is een goede daad?” beantwoord. Dit is een van de ingewikkeldste vragen in de filosofie en vormt een stroming in de filosofie genaamd ethiek. Ethiek is de studie waarin men de concepten van goed en slecht systematiseert en verdedigd.</p>
+			<p>In de vorige paragraaf heb je de vraag, “Wat is een goede daad?” beantwoord. Dit is een van de ingewikkeldste vragen in de filosofie en vormt een stroming in de filosofie genaamd ethiek. Ethiek is de studie waarin men de concepten van goed en slecht systematiseert en verdedigd.</p>
 
 			<p>Digitale technologieën zoals het internet, mobieltjes en programmeren zijn relatief nieuw en de regels hiervan zijn vaak onduidelijk. Daarom is het belangrijk om, wanneer je een programma schrijft, rekening te houden met wat voor een invloed het heeft op jouw omgeving.</p>
 
@@ -59,13 +58,12 @@ include('../../../components/headerChapter.php');
 				<li>Mag je een programma schrijven dat data van gebruikers vertaalt naar mogelijke reclames?</li>
 
 				<li>Mag je iets maken dat in staat is om mensen te bespioneren via hun microfoons?</li>
-
 			</ul>
 
 			<p>Verschillende groepen mensen hebben een richtlijn hierover gecreëerd, zo heeft de ACM (Association for Computing Machinery) een ethische code gemaakt:</p>
 
 			<ul>
-				<li>Contribuer aan de maatschappij en menselijk welzijn.</li>
+				<li>Draag bij aan de maatschappij en menselijk welzijn.</li>
 
 				<li>Doe geen schade aan anderen.</li>
 

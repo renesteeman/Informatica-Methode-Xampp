@@ -34,7 +34,7 @@
 						Start nu XAMPP op en klik op config.
 					</li>
 					<li>
-						Vink apache en MySQL aan onder autostart of modules en klik op save.
+						Vink Apache en MySQL aan onder autostart of modules en klik op save.
 					</li>
 					<li>
 						Zorg ervoor dat Apache en MySQL aan staan, zo niet klik dan op start.
@@ -45,7 +45,7 @@
 				Als je een website gebruik wilt laten maken van XAMPP, zet dan de bestanden van de site in de folder 'htdocs' onder de XAMPP-installatiemap.
 			</p>
 			<p>
-				Denk eraan om XAMPP te starten voordat je gebruik kunt maken ervan.
+				Denk eraan om XAMPP te starten voordat je het kunt gebruiken.
 			</p>
 		</div>
 

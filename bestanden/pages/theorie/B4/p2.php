@@ -47,7 +47,7 @@ include('../../../components/headerChapter.php');
 
   <div class="theorie-content">
 
-	<p>Je kunt waardes opvragen, aanpassen en toevoegen met SQL (Structured Query Language), dit is een taal die erg lijkt op het Engels en waarmee je opdrachten kunt aanmaken om met de database te communiceren. Om hiermee te oefenen kun je gebruik maken van het programma XAMPP, hoe je dit kunt installeren kun je terugvinden bij de extra bestanden bij dit hoofdstuk. XAMPP is een programma dat je kunt gebruiken om te doen alsof een computer een server is. Zo kun je gebruikmaken van bepaalde talen en mogelijkheden. We gaan nu met XAMPP een eerste database aanmaken.</p>
+	<p>Je kunt waardes opvragen, aanpassen en toevoegen met SQL (Structured Query Language), dit is een taal die erg lijkt op het Engels en waarmee je opdrachten kunt aanmaken om met de database te communiceren. Om hiermee te oefenen kun je gebruik maken van het programma XAMPP. Hoe je dit kunt installeren kun je terugvinden bij de extra bestanden bij dit hoofdstuk. XAMPP is een programma dat je kunt gebruiken om te doen alsof een computer een server is. Zo kun je gebruikmaken van bepaalde talen en mogelijkheden. We gaan nu met XAMPP een eerste database aanmaken.</p>
 
 	<p>Ga nu naar de browser en dan naar <a href="http://localhost/phpmyadmin/">http://localhost/phpmyadmin/</a> . Je krijgt hier een overzicht van een databasebeheer systeem. Om een database aan te maken klik je linksboven op “New”.</p>
   <img src="./afbeeldingen/CreateDatabase.png" />

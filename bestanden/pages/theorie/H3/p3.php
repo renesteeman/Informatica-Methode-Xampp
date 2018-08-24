@@ -71,7 +71,7 @@
 
 			<p>Een paar belangrijkste types zijn: int, float, string, bool en array.</p>
 
-			<p>Een int is een geheel getal, het kan positief of negatief zijn. String is een stuk tekst, in python geef je dit aan door er “ ” omheen te zetten. Bool staat voor boolean en kan als waarde true of false hebben, 1 of 0, waar of niet waar. Een array is een lijst van waardes, zoals: “Tesla”, “koffie”, 20.</p>
+			<p>Een int (staat voor integer) is een geheel getal, het kan positief of negatief zijn. String is een stuk tekst, in python geef je dit aan door er “ ” omheen te zetten. Bool staat voor boolean en kan als waarde true of false hebben, 1 of 0, waar of niet waar. Een array is een lijst van waardes, zoals: “Tesla”, “koffie”, 20.</p>
 
 			<p>Voorbeelden van de types in python</p>
 
@@ -89,13 +89,9 @@
 
 			<p>list (in andere talen array): <code>lijst = [2,4,7,8,”test”,0]</code></p>
 
-			<p>NB</p>
+			<p>NB: Als je bij een list een waarde van een bepaalde locatie in de list wilt hebben, kun je hiernaar verwijzen via NAAMLIST[NUMMER]. Let erop dat de eerste waarde nummer 0 is en niet 1. Stel je wilt “test” hebben, dan gebruik je dus lijst[4], want test heeft de 4e plaats (volgens de telling van programmeurs, die bij 0 beginnen).</p>
 
-			<p>Als je bij een list een waarde van een bepaalde locatie in de list wilt hebben kunnen je hiernaar verwijzen als NAAMLIST[NUMMER]. Let erop dat de eerste waarde nummer 0 is en niet 1. Stel je wilt “test” hebben, dan gebruik je dus lijst[4], want test heeft de 4e plaats (volgens de telling van programmeurs, die bij 0 beginnen).</p>
-
-			<p>NB</p>
-
-			<p>Bij python kan een list allerlei soorten waarden bevatten, zoals tekst en integers, andere talen staan dit vaak niet toe en accepteren maar een datatype in de list.</p>
+			<p>NB: Bij python kan een list allerlei soorten waarden bevatten, zoals tekst en integers, andere talen staan dit vaak niet toe en accepteren maar één datatype in de list.</p>
 		</div>
 
 		<div class="bar-s">

@@ -137,7 +137,7 @@
 					machinetaal
 				</li>
 				<li>
-					Een lage programmeertaal is meer gedtailleerd en vaak efficiënter. Een hoge programmeertaal is makkelijker om code mee te schrijven en de taal zelf zorgt voor de details.
+					Een lage programmeertaal is meer gedetailleerd en vaak efficiënter. Een hoge programmeertaal is makkelijker om code mee te schrijven en de taal zelf zorgt voor de details.
 				</li>
 			</ol>
 

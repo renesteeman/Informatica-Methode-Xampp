@@ -67,7 +67,7 @@
 
 			<p>Het kleiner dan teken <</p>
 
-			<p>Het = teken kan met deze gecombineerd worden, dit gebeurd in python door <= of >= te gebruiken</p>
+			<p>Het = teken kan met deze gecombineerd worden, dit gebeurt in python door <= of >= te gebruiken</p>
 
 			<p>Voorbeelden in python zijn:</p>
 

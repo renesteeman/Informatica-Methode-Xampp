@@ -46,6 +46,32 @@ $(document).ready(function(){
 		$(this).parents(".tile").removeClass('active');
 	});
 
+	//if the text doesn't fit in the tile, make it fit
+	function responsiveTile(element){
+		//if there's overflow -> edit css
+		if(element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth){
+			if($(window).width() > 650){
+				$(element).css('line-height', '2rem');
+				$(element).children().find('.tile-chapter').css('padding-top', '5.5rem');
+			} else if ($(window).width() < 650){
+				$(element).css('line-height', '2rem');
+				$(element).children().find('.tile-chapter').css('padding-top', '3rem');
+			}
+		}
+	}
+
+	//check on start and on window resize
+	$('.tile').each(function(){
+		responsiveTile(this);
+	});
+
+	$(window).on('resize', function(){
+		$('.tile').each(function(){
+			responsiveTile(this);
+		});
+	});
+
+
 	$(".select").click(function(){
 		if($('select[name=newGroup]').val()!=''){
 			$(this).removeClass("defaultSelect");

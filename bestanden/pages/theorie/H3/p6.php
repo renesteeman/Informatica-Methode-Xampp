@@ -89,7 +89,7 @@ i = 5
 
 '''
 
-i komt veel voor als variabele in een loop, het is het standard getal voor programmeurs voor een loop van één laag diep, het is namelijk ook mogelijk om meerdere loops in elkaar te zetten. Het standaard teken voor de 2e variabele is j, dan k, l, enz. De driedubbele accolades in python worden gebruikt voor commentaar dat meerdere regels lang is.
+i komt veel voor als variabele in een loop, het is het standaard getal voor programmeurs voor een loop van één laag diep, het is namelijk ook mogelijk om meerdere loops in elkaar te zetten. Het standaard teken voor de 2e variabele is j, dan k, l, enz. De driedubbele accolades in python worden gebruikt voor commentaar dat meerdere regels lang is.
 
 '''
 

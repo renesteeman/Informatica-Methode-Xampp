@@ -47,7 +47,7 @@ include('../../../components/headerChapter.php');
 
     <div class="theorie-content">
 
-  		<p>Zoals al eerder gezegd gebruik je SQL om met de database te communiceren. Het is een vrij eenvoudige taal, dus we gaan er snel doorheen. Als je meer details wilt kun je bijvoorbeeld terecht op <a href="https://www.w3schools.com/sql/">https://www.w3schools.com/sql/</a> , maar ook bij de volgende paragraaf.</p>
+  		<p>Zoals al eerder gezegd, gebruik je SQL om met de database te communiceren. Het is een vrij eenvoudige taal, dus we gaan er snel doorheen. Als je meer details wilt kun je bijvoorbeeld terecht op <a href="https://www.w3schools.com/sql/">https://www.w3schools.com/sql/</a>, maar ook bij de volgende paragraaf.</p>
 
   		<p>Laten we beginnen, we willen eerst iets in onze database zetten. Hiervoor gebruik je INSERT INTO tabel (veld1, veld2, veld3) VALUES (waarde1, waarde2, waarde3). Stel dat we in onze database iemand willen zetten met als gebruikersnaam “gebruiker” en als wachtwoord “wachtwoord” en geen email. We gebruiken dan INSERT INTO gebruikers (gebruikersnaam, wachtwoord) VALUES ('gebruiker', 'wachtwoord'). Je kunt dit uitvoeren door in phpMyAdmin naar jouw database te gaan en dan te klikken op SQL</p>
       <img src="./afbeeldingen/ExecuteSQL.png" />

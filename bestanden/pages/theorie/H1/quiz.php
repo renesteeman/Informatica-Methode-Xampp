@@ -121,7 +121,7 @@
 
 		<!-- vraag 4-->
 		<div class="vraagBalk">
-			Wat is geen voordeel van een (standard) SDD over een (standard) HDD?
+			Wat is geen voordeel van een (standaard) SDD over een (standaard) HDD?
 		</div>
 		<div class="antwoorden">
 			<ul>

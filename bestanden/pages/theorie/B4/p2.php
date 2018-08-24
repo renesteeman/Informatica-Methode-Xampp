@@ -101,7 +101,7 @@ include('../../../components/headerChapter.php');
 
 	<p>Dan willen we een gebruikersnaam, dit is een stuk tekst. Een gebruikersnaam van 20 karakters lang zou lang genoeg moeten zijn voor dit voorbeeld, dus Length = 20. Als je speciale tekens wilt opslaan, zoals een é, dan kun je onder Collation gebruikmaken van bijvoorbeeld utf8_bin. Deze optie zorgt ervoor dat een é niet opeens iets anders wordt als je het invoert in de database.</p>
 
-	<p>Nu komt het wachtwoord, dit is weer tekst en kun je zelf proberen in te vullen. In een (goede) database zet je wachtwoorden niet als standard tekst erin, maar in dit voorbeeld gaan we dat wel doen omdat het te complex wordt. Normaal zou je hiervoor encryptie gebruiken, dan is het wachtwoord namelijk niet direct af te lezen uit een (gehackte) database.</p>
+	<p>Nu komt het wachtwoord, dit is weer tekst en kun je zelf proberen in te vullen. In een (goede) database zet je wachtwoorden niet als standaard tekst erin, maar in dit voorbeeld gaan we dat wel doen omdat het te complex wordt. Normaal zou je hiervoor encryptie gebruiken, dan is het wachtwoord namelijk niet direct af te lezen uit een (gehackte) database.</p>
 
 	<p>Als laatste zetten we er email-adres bij, dit is weer tekst en mag in dit voorbeeld leeg blijven. We zetten “Null” dus aan.</p>
 

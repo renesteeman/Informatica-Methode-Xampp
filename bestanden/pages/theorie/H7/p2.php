@@ -134,7 +134,7 @@
 				</ol>
 			</p>
 			<p>
-				Je kunt via het tabblad Log/History (onderaan) de geschiedenis van het project zien per commit (update). Om weer een Push uit te voeren moet je dan terug gaan naar het tabblad File Status. Om de handeling voor te pushen over te slaan kun je ook bij de commit op ‘Push changes immediately to x’ aanvinken (x is standard origin/master). De commit wordt dan automatisch gepushed.
+				Je kunt via het tabblad Log/History (onderaan) de geschiedenis van het project zien per commit (update). Om weer een Push uit te voeren moet je dan terug gaan naar het tabblad File Status. Om de handeling voor te pushen over te slaan kun je ook bij de commit op ‘Push changes immediately to x’ aanvinken (x is standaard origin/master). De commit wordt dan automatisch gepushed.
 			</p>
 			<p>
 				Als het project wordt bijgewerkt door iemand anders of via een andere manier moet je voor de push een pull uitvoeren. Dit haalt de nieuwe eerst op (zorg dus ervoor dat je een kopie maakt van jouw aanpassingen zodat ze niet verloren gaan).

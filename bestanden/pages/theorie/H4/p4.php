@@ -56,7 +56,7 @@
 				Om een ‘random’ getal te krijgen kun je random() gebruiken. Een voorbeeld is int intensiteit = random(500); Dit zal intensiteit voor de intensiteit een waarde van 0 tm 500 geven.
 			</p>
 			<p>
-				Voor comments (uitleg) kun je // gebruiken voor een regel of /* aan het begin en */ aan het eind van een comment van meerdere regels.
+				Voor comments (uitleg) kun je // gebruiken voor één regel of /* aan het begin en */ aan het eind van een comment van meerdere regels.
 			</p>
 			<p>
 				De taal ondersteunt ook loops en condities. Voor een if else statement ziet de syntax (de schrijfwijze) er als volgt uit:
@@ -69,10 +69,10 @@
 
 			</p>
 			<p>
-				Je kunt voor vergelijkingen weer (zoals in python) gebruik maken van != (is niet gelijk aan), < (is minder), > (is meer), == (is gelijk aan) en nog een paar anderen. Het rekenen is ook hetzelfde als in python.
+				Je kunt voor vergelijkingen weer (zoals in python) gebruik maken van != (is niet gelijk aan), < (is minder), > (is meer), == (is gelijk aan) en nog een paar andere. Het rekenen is ook hetzelfde als in python.
 			</p>
 			<p>
-				Voor de rest van te mogelijkheden te bekijken kun je naar <a href="https://www.arduino.cc/reference/en/">https://www.arduino.cc/reference/en/</a> gaan.
+				Om de rest van de mogelijkheden te bekijken kun je naar <a href="https://www.arduino.cc/reference/en/">https://www.arduino.cc/reference/en/</a> gaan.
 			</p>
 			<p>
 				Verder biedt arduino ook nog libraries, dit zijn een soort uitbereidingen om meer functies toe te voegen, de voorgaande link geeft hier ook informatie over.

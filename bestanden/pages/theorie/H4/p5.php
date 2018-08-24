@@ -106,7 +106,7 @@ void loop() {
 				De rode kabel bij de servo is +, verbindt dit met een 5V pin. De zwarte of bruine draad is de -, verbindt dit met grond (de GND pin). De andere draad (meestal geel) is voor het signaal door te sturen, verbindt deze met een analoge pin, dus een van de pinnen met A ernaast (bijvoorbeeld A5).
 			</p>
 			<p>
-				Voordat je gaat programmeren moet je eerst de servo library (uitbereiding) toevoegen, dit maakt het geven van commando’s voor de servo veel makkelijker. Ga hiervoor naar de arduino software, dan sketch, dan include library en klik op servo. Voor de rest van de uitleg ga als een echte programmeur zelf dingen zoeken, de pagina voor de library is <a href="https://playground.arduino.cc/ComponentLib/Servo">https://playground.arduino.cc/ComponentLib/Servo</a> hier vind je al een belangrijk deel van de code die je nodig zal hebben. Probeer het echt op te lossen en samenwerken is aanbevolen. Succes!
+				Voordat je gaat programmeren moet je eerst de servo library (uitbreiding) toevoegen, dit maakt het geven van commando’s voor de servo veel makkelijker. Ga hiervoor naar de arduino software, dan sketch, dan include library en klik op servo. Voor de rest van de uitleg ga je als een echte programmeur zelf dingen zoeken. De pagina voor de library is <a href="https://playground.arduino.cc/ComponentLib/Servo">https://playground.arduino.cc/ComponentLib/Servo</a> hier vind je al een belangrijk deel van de code die je nodig zult hebben. Probeer het daadwerkelijk op te lossen en samenwerken is aanbevolen. Succes!
 			</p>
 
 		</div>

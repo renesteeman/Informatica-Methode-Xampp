@@ -77,7 +77,7 @@
 			</p>
 
 			<p>
-				Hou er rekening mee dat de als de code gekopieerd wordt, het bugs kan bevatten doordat te lange tekst naar de volgende regel wordt geschoven.
+				Hou er rekening mee dat als de code gekopieerd wordt, het bugs kan bevatten doordat te lange tekst naar de volgende regel wordt geschoven.
 
 <pre><code>void setup() {
   Serial.begin(9600);
@@ -113,7 +113,7 @@ void loop() {
 				Dan nu een paar basis “commando’s” voor de arduino.
 			</p>
 			<p>
-				Met Serial.print() kun je waardes en tekst weergeven in de serial console, als je tekst wil weergeven, vergeet dan niet om “ ” toe te voegen.
+				Met Serial.print() kun je waardes en tekst weergeven in de serial console, als je tekst wilt weergeven, vergeet dan niet om “ ” toe te voegen.
 				Met pinMode() kun je een van de pinnen op de arduino in een bepaalde stand zetten, de opties zijn INPUT en OUTPUT. Wil je een signaal ontvangen, gebruik dan INPUT, wil je iets versturen, gebruik dan OUTPUT. Gebruik pinMode() als volgt, zet als eerste het nummer van de pin tussen de haakjes, deze kun je aflezen op de arduino. Blijf voorlopig bij de nummers 2 tm 13. Als tweede zet je stand erin. Een voorbeeld is pinMode(13, OUTPUT);
 				Om een signaal te lezen gebruik je digitalRead(). Je voert het nummer van de pin (die op de INPUT modus staat) in tussen de haakjes. Een voorbeeld is digitalRead(13);
 				Om een signaal te sturen gebruik je digitalWrite(). Je voert eerst het nummer van de pin in en dan de waarde. Mogelijke waardes zijn HIGH en LOW. HIGH kun je zien als 1 en LOW 0, dus aan en uit.
@@ -143,7 +143,7 @@ void loop() {
 			</p>
 			<p>
 				Voordat je begint met het maken van het elektrisch circuit moet je de arduino uitzetten, anders kan die beschadigd raken.
-				Laat een kabel van de 5V pin van de arduino naar de +rij van het breadboard gaan. Laat een kabel van de GND (grond/-) naar de -rij van het breadboard gaan. Zet nu een 330ohm resistor op het breadboard van de -rij naar de kortere pin van de LED gaan. Laat vervolgens een kabel van de +rij naar de lange pin van de LED gaan. Verbind de arduino met de computer. Als het goed hebt gedaan gaat nu het lampje aan. Als je een flits ziet, dan heb je de korte en lange pin omgedraaid of de verkeerde weerstand gebruikt, je hebt dan een nieuwe LED nodig (de oude is doorgebrand).
+				Laat een kabel van de 5V pin van de arduino naar de +rij van het breadboard gaan. Laat een kabel van de GND (grond/-) naar de -rij van het breadboard gaan. Zet nu een 330ohm resistor op het breadboard van de -rij naar de kortere pin van de LED gaan. Laat vervolgens een kabel van de +rij naar de lange pin van de LED gaan. Verbind de arduino met de computer. Als je het goed hebt gedaan gaat nu het lampje aan. Als je een flits ziet, dan heb je de korte en lange pin omgedraaid of de verkeerde weerstand gebruikt, je hebt dan een nieuwe LED nodig (de oude is doorgebrand).
 			</p>
 			<p>
 				<img src="./afbeeldingen/LED1.png" />

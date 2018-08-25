@@ -45,7 +45,7 @@
 
 		<div class="theorie-content">
 			<p>
-				Om bij een groot project code te organiseren is git een handige tool. Het is het makkelijkst te gebruiken met github in combinatie met een GUI (graphical user interface). Je kunt via dit systeem bestanden opslaan en ook terug gaan naar hoe bestanden in het verleden uitzagen (of hoe verwijderde bestanden eruit zagen). Zo raak je nooit meer iets kwijt en kunnen anderen makkelijk de bestanden vinden en samenwerken. Een voorbeeld van een github pagina is <a href="https://github.com/renesteeman/Informatica-Methode-Xampp">https://github.com/renesteeman/Informatica-Methode-Xampp</a>, dit is de pagina dat voor het maken van deze methode is gebruikt. In de bonusparagrafen is weer te vinden hoe dit geïnstalleerd kan worden. Als het geïnstalleerd is kun je nu verder gaan.
+				Git is een handige tool voor versiebeheer van code. Het is het makkelijkst te gebruiken met github in combinatie met een GUI (graphical user interface). Je kunt via dit systeem bestanden opslaan en ook terug gaan naar hoe bestanden in het verleden uitzagen (of hoe verwijderde bestanden eruit zagen). Zo raak je nooit meer iets kwijt en kunnen anderen makkelijk de bestanden vinden en samenwerken. Een voorbeeld van een github pagina is <a href="https://github.com/renesteeman/Informatica-Methode-Xampp">https://github.com/renesteeman/Informatica-Methode-Xampp</a>, dit is de pagina dat voor het maken van deze methode is gebruikt. In de bonusparagrafen is weer te vinden hoe dit geïnstalleerd kan worden. Als het geïnstalleerd is kun je nu verder gaan.
 			</p>
 			<p>
 				<ol>
@@ -130,7 +130,6 @@
 					<li>
 						De nieuwe versie van het project staat nu online!
 					</li>
-
 				</ol>
 			</p>
 			<p>

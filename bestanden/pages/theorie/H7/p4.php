@@ -59,7 +59,7 @@
 					Maak een klein voertuig dat je met een arduino kan laten rijden. Eventueel op afstand bestuurbaar of zelfrijdend voor een echte uitdaging.
 				</li>
 				<li>
-					Een nural network dat objecten of personen kan herkennen.
+					Een neural network dat objecten of personen kan herkennen.
 				</li>
 				<li>
 					Een led-strip die automatisch aangaat in de ochtend, eventueel afhankelijk van het lesrooster.

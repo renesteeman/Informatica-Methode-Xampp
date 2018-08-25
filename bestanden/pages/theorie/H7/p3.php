@@ -51,7 +51,7 @@
 				Je kunt bij het verslag een stuk maken over: wat er mis ging, wat je hebt geleerd, hoe de werkverdeling was, wat de termen beteken of welke programmeertalen zijn er gebruikt bij. Probeer op tijd aan het verslag te beginnen, vooral aan onderdelen zoals het plan van aanpak en het logboek. Probeer ook waar mogelijk afbeeldingen, grafieken en tabellen te gebruiken, dit zorgt ervoor dat het project er interessant uit ziet en duidelijk wordt. Zorg ervoor dat als het project code bevat dit terug te vinden is in het verslag of dat er een link staat naar de bestanden.
 			</p>
 			<p>
-				Voor een voorbeeldverslag kun je kijken bij de bonus van dit hoofdstuk, hierin staat een verslag over een nural network dat de toekomst kan voorspellen. Het project dat hierin beschreven gaat misschien een beetje ver voor de gemiddelde leerling, al is dit wel een (zelfstandig uitgevoerd) 5 havo project (en profiel werkstuk). NB: normaalgesproken staat bij het PvA (plan van aanpak) ook een datum bij elk item.
+				Voor een voorbeeldverslag kun je kijken bij de bonus van dit hoofdstuk, hierin staat een verslag over een neural network dat de toekomst kan voorspellen. Het project dat hierin beschreven gaat misschien een beetje ver voor de gemiddelde leerling, al is dit wel een (zelfstandig uitgevoerd) 5 havo project (en profiel werkstuk). NB: normaalgesproken staat bij het PvA (plan van aanpak) ook een datum bij elk item.
 			</p>
 		</div>
 	</div>

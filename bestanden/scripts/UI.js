@@ -71,7 +71,6 @@ $(document).ready(function(){
 		});
 	});
 
-
 	$(".select").click(function(){
 		if($('select[name=newGroup]').val()!=''){
 			$(this).removeClass("defaultSelect");
@@ -112,7 +111,6 @@ $(document).ready(function(){
 			$(this).prev().children().val('');
 			$(this).parent().prev().children().first().append(paste);
 		}
-
 	});
 
 	$(".add-item").children().first().keypress(function(event){

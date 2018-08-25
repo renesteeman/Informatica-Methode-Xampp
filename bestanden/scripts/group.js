@@ -31,7 +31,7 @@ $(document).ready(function(){
 
 		});
 		jqXHR.fail(function(jqXHR, textStatus) {
-		  alert( "Request failed: " + textStatus );
+		  alert("Er is iets mis gegaan met AJAX " + textStatus);
 		});
 
 	});

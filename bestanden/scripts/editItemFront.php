@@ -69,7 +69,7 @@ include('../components/headerGeneral.php');
 						</li>
 						<li>
 							<label>Nieuwe klas</label>
-							<input type="text" placeholder="'.$Iklas.'" name="NIklas" maxlength="3">
+							<input type="text" placeholder="'.$Iklas.'" name="NIklas" maxlength="50">
 						</li>
 						<li>
 							<label>Nieuwe datum</label>
@@ -105,8 +105,7 @@ include('../components/headerGeneral.php');
 												for($i=0; $i<$count; $i++){
 													echo '
 													<li>
-														<span class="list-item">'.$hoofdstukkenEdited[$i].'</span>
-														<span class="delete">x</span>
+														<span class="list-item">'.$hoofdstukkenEdited[$i].'</span><span class="delete">x</span>
 													</li>
 													';
 												}

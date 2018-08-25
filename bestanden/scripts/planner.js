@@ -74,9 +74,9 @@ $(document).ready(function(){
 		jqXHR.done(function(msg) {
 			window.location.href = '../scripts/editItemFront.php';
 		});
-		jqXHR.fail(function( jqXHR) {
-		  alert("Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
-	  });
+		jqXHR.fail(function(jqXHR, textStatus) {
+		  alert("Er is iets mis gegaan met AJAX " + textStatus);
+		});
 
 	});
 
@@ -131,8 +131,8 @@ $(document).ready(function(){
 			window.location.href = '../pages/planner.php';
 		});
 
-		jqXHR.fail(function( jqXHR) {
-		  alert("Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
+		jqXHR.fail(function(jqXHR, textStatus) {
+		  alert("Er is iets mis gegaan met AJAX " + textStatus);
 		});
 	});
 
@@ -153,8 +153,8 @@ $(document).ready(function(){
 				window.location.href = '../pages/planner.php';
 			});
 
-			jqXHR.fail(function( jqXHR) {
-			  alert("Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
+			jqXHR.fail(function(jqXHR, textStatus) {
+			  alert("Er is iets mis gegaan met AJAX " + textStatus);
 			});
 
 		} else {

@@ -58,7 +58,7 @@
 					<input type="password" placeholder="Huidig wachtwoord" name="password" maxlength="50" required>
 				</li>
 				<li>
-					<input type="submit" value="Bevestig">
+					<button type="submit">Bevestig</button>
 				</li>
 			</ul>
 		</form>

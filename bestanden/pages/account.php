@@ -55,7 +55,7 @@
 
 			echo '
 			<link rel="stylesheet" href="../css/accountSettings.min.css">
-			<div class="login">
+			<div class="main">
 				<form class="accountSettingsForm" method="post" action="../scripts/editAccount.php" accept-charset="UTF-8">
 					<ul>
 						<li>
@@ -92,7 +92,7 @@
 							<input type="password" placeholder="Huidig wachtwoord" name="password" maxlength="50" required>
 						</li>
 						<li>
-							<input type="submit" value="bijwerken">
+							<button type="submit">bijwerken</button>
 						</li>
 					</ul>
 				</form>
@@ -101,7 +101,7 @@
 		} else {
 			//if the user is not loged in, display login form
 			echo '
-			<div class="login">
+			<div class="main">
 				<form class="loginForm" method="post" action="../scripts/login.php" accept-charset="UTF-8">
 					<ul>
 						<li>
@@ -113,22 +113,16 @@
 							<input type="password" placeholder="Password" name="password" maxlength="50" required>
 						</li>
 						<li>
-
 							<div id="captcha" class="hide"></div>
-
 						</li>
 						<li class="cookie">
 							Als u inlogd gaat u akkoord met het gebruik van cookies die bijhouden als wie u bent ingelogd. U kunt hier meer informatie over vinden onderaan de pagina.
 						</li>
 						<li>
-							<input type="submit" value="login" id="LoginButton">
+							<button type="submit" id="LoginButton">Login</button>
 						</li>
 						<li>
-							<div class="resetPasswordButton">
-								<a href="../scripts/resetPswFront.php">
-									wachtwoord vergeten
-								</a>
-							</div>
+							<button type="submit" class="RedButton"><a href="../scripts/resetPswFront.php">Wachtwoord vergeten</a></button>
 						</li>
 					</ul>
 				</form>

@@ -92,8 +92,7 @@ include('../components/headerGeneral.php');
 
 									echo '
 									<li>
-										<span class="list-item">'.$naam.'</span>
-										<span class="delete">x</span>
+										<span class="list-item">'.$naam.'</span><span class="delete">x</span>
 									</li>';
 
 								}

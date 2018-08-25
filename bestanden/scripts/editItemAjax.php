@@ -31,7 +31,8 @@
 		$NIprogressieUnchecked = $_POST['NIprogressie'];
 
 		//check array and stored filtered array
-		for($i=0;$i<count($NIprogressieUnchecked);$i++){
+		$count = count($NIprogressieUnchecked);
+		for($i=0;$i<$count;$i++){
 			$progressieChecked = mysqli_real_escape_string($conn, check_input($NIprogressieUnchecked[$i]));
 			$NIprogressie[] = $progressieChecked;
 		}
@@ -113,7 +114,8 @@
 
 			if($NIprogressie!=""){
 				$chapters = "";
-				for($i=0; $i<count($NIprogressie);$i++){
+				$count2 = count($NIprogressie);
+				for($i=0; $i<$count2;$i++){
 					$chapters .= $NIprogressie[$i].', ';
 				}
 				$sql = "UPDATE planner SET progressie='$chapters' WHERE titel='$CInaam' AND school='$school' AND klas='$CIklas' AND datum='$CIdatum'";

@@ -50,7 +50,8 @@
 		$uitleg = ['Met Trello kun je lijsten maken van wat gedaan moet worden en je kunt er ook eventueel mee plannen, maar het is er niet voor bedoeld. Het kan ook gebruikt worden om anderen te informeren over de status van het project.', 'Een push zet de bestanden van de commits online.', 'De visie is optioneel, al is het wel aan te bevelen, eventueel als onderdeel van de inleiding.', 'Bij het onderzoeken van de werking van de CPU is er geen eindproduct en de omvang van het project is al snel of erg klein of het wordt te complex om goed uit te leggen wat je hebt geleerd. Het is wel een goed project om voor jezelf uit te voeren.'];
 	}
 
-	for($i=0; $i<count($antwoorden); $i++){
+	$count = count($antwoorden);
+	for($i=0; $i<$count; $i++){
 		if($antwoorden[$i] == $juisteAntwoorden[$i]){
 			$punten++;
 			$correct[] = $i;

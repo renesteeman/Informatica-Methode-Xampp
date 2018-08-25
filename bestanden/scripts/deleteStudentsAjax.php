@@ -29,7 +29,8 @@
 	if($functie == 'docent'){
 		$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
 
-		for($i=0; $i<count($_POST['namen']); $i++){
+		$count = count($_POST['namen']);
+		for($i=0; $i<$count; $i++){
 			$naam = mysqli_real_escape_string($conn, check_input($_POST['namen'][$i]));
 
 			if(password_verify($password, $rightpsw)){

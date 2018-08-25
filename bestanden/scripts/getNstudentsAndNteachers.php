@@ -44,7 +44,8 @@
 
 	echo "<h1>Alle geldige accounts per school</h1>";
 
-	for($i=0; $i<count($schoolnamen); $i++){
+	$count = count($schoolnamen);
+	for($i=0; $i<$count; $i++){
 		$Cschoolnaam = $schoolnamen[$i];
 		echo "</br>Schoolnaam: ".$Cschoolnaam;
 

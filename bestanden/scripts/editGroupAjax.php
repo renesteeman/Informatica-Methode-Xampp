@@ -24,7 +24,8 @@
 		$NGledenUnChecked = $_POST['NGleden'];
 
 		//check array and stored filtered array
-		for($i=0;$i<count($NGledenUnChecked);$i++){
+		$count = count($NGledenUnChecked);
+		for($i=0;$i<$count;$i++){
 			$lidChecked = mysqli_real_escape_string($conn, check_input($NGledenUnChecked[$i]));
 			$NGledenchecked[] = $lidChecked;
 		}
@@ -59,18 +60,18 @@
 
 				if (mysqli_num_rows($sql) != 0) {
 					echo "\nGroepnaam is al in gebruik.";
-	 			   $Gnaam = "";
+					$Gnaam = "";
 			   } else {
-				   $sql = "UPDATE groepen SET naam='$NGnaam' WHERE naam='$CGnaam' AND school='$school'";
+					$sql = "UPDATE groepen SET naam='$NGnaam' WHERE naam='$CGnaam' AND school='$school'";
 
-				   if (mysqli_query($conn, $sql)) {
-					   echo "\nNieuwe groepnaam is succesvol ingesteld";
-					   $_SESSION["groupname"] = $NGnaam;
-					   $CGnaam = $_SESSION["groupname"];
-				   } else {
-   					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
-   					$error = 1;
-   					}
+					if (mysqli_query($conn, $sql)) {
+						echo "\nNieuwe groepnaam is succesvol ingesteld";
+						$_SESSION["groupname"] = $NGnaam;
+						$CGnaam = $_SESSION["groupname"];
+					} else {
+						echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+						$error = 1;
+					}
 			   }
 			}
 
@@ -110,7 +111,8 @@
 				}
 
 				//set group_name for new members
-				for($i=0; $i<count($NGledenchecked); $i++){
+				$count2 = count($NGledenchecked);
+				for($i=0; $i<$count2; $i++){
 					$lid = $NGledenchecked[$i];
 
 					$sql = mysqli_query($conn, "SELECT naam FROM users WHERE naam='$lid' AND school='$school'");

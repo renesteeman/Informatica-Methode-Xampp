@@ -100,7 +100,8 @@ include('../components/headerGeneral.php');
 										$hoofdstukkenEdited = explode(", ", $hoofdstukkenRaw);
 										array_pop($hoofdstukkenEdited);
 
-										for($i=0; $i < count($hoofdstukkenEdited); $i++){
+										$count = count($hoofdstukkenEdited);
+										for($i=0; $i<$count; $i++){
 											echo '
 											<li>
 												<span class="list-item">'.$hoofdstukkenEdited[$i].'</span>

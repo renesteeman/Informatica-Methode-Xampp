@@ -52,8 +52,6 @@ $(document).ready(function(){
       NGleden.push($(this).text());
     });
 
-    console.log(NGleden);
-
     //sent values of group via ajax to editGroupFront.php
     jqXHR = $.ajax({
       method: "POST",
@@ -90,7 +88,7 @@ $(document).ready(function(){
         }
       });
 
-      jqXHR.fail(function( jqXHR) {
+      jqXHR.fail(function(jqXHR) {
         alert("Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
       });
 

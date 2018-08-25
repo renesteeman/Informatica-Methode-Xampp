@@ -115,7 +115,8 @@
 													$punten[] = $punt;
 												}
 
-												for($i=0; $i<count($punten); $i++){
+												$count = count($punten);
+												for($i=0; $i<$count; $i++){
 													$totaalCijfers += $punten[$i];
 												}
 
@@ -146,7 +147,8 @@
 													$hoofdstukken['H7'] = $row3["H7"];
 												}
 
-												for($i=1; $i<count($hoofdstukken); $i++){
+												$count2 = count($hoofdstukken);
+												for($i=1; $i<$count2; $i++){
 													if($hoofdstukken['H'.$i]){
 														$hoofdstuk = $hoofdstukken['H'.$i];
 														$hoofdstukLength = $hoofdstuk[0];
@@ -183,7 +185,8 @@
 												}
 											}
 
-											for($i=0; $i<count($chapterToBeMade)-1;$i++){
+											$count3 = count($chapterToBeMade);
+											for($i=0; $i<$count3-1;$i++){
 												$shouldBeComplete = $chapterToBeMade[$i];
 												$shouldBeComplete = substr($shouldBeComplete, 1);
 

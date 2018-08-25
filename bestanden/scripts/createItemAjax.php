@@ -61,7 +61,8 @@
 
 		if(isset($_POST['Iprogressie'])){
 			if($_POST['Iprogressie'] != ""){
-				for($i=0; $i<count($_POST['Iprogressie']); $i++){
+				$count = count($_POST['Iprogressie']);
+				for($i=0; $i<$count; $i++){
 					$chapter = mysqli_real_escape_string($conn, check_input($_POST['Iprogressie'][$i]));
 					$Iprogressie .= $chapter.', ';
 				};

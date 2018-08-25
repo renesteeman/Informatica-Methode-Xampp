@@ -66,7 +66,8 @@
 			if($_POST['Gleden'] != ""){
 				$Gleden = [];
 
-				for($i=0; $i<count($_POST['Gleden']); $i++){
+				$count = count($_POST['Gleden']);
+				for($i=0; $i<$count; $i++){
 					$lid = mysqli_real_escape_string($conn, check_input($_POST['Gleden'][$i]));
 					array_push($Gleden, $lid);
 				};
@@ -110,7 +111,8 @@
 				}
 
 				//link students to group
-				for($i=0; $i < count($Gleden); $i++){
+				$count2 = count($Gleden);
+				for($i=0; $i < $count2; $i++){
 					//select student
 					$studentName = $Gleden[$i];
 
@@ -126,7 +128,7 @@
 							$error = 1;
 						}
 					} else {
-						$return_msg .= "\n".$studentName." bestaat niet";
+						$return_msg .= "\n".$studentName." bestaat niet. De groep wordt niet aangemaakt, zodat u dit kunt aanpassen.";
 						$error = 1;
 					}
 				}

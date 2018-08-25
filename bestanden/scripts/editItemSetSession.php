@@ -14,9 +14,5 @@
 	$_SESSION['itemID'] =  mysqli_real_escape_string($conn, check_input($_POST['itemID']));
 	$_SESSION['itemklas'] =  mysqli_real_escape_string($conn, check_input($_POST['itemklas']));
 	$_SESSION['itembeschrijving'] =  mysqli_real_escape_string($conn, check_input($_POST['itembeschrijving']));
-
-	$date = mysqli_real_escape_string($conn, check_input($_POST['itemdatum']));
-	$_SESSION['itemdatum'] = $date;
-	echo $date;
-
+	$_SESSION['itemdatum'] = mysqli_real_escape_string($conn, check_input($_POST['itemdatum']));
 ?>

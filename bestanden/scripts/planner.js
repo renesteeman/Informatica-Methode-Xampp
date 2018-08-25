@@ -58,7 +58,6 @@ $(document).ready(function(){
 
 	//edit item sent data
 	$(".editItem").click(function(){
-
 		var itemdatum = $(this).parent().parent().parent().children().find('.DateCompare').text();
 		var itemID = $(this).parent().parent().parent().children().find('.itemID').text();
 		var itemklas = $(this).parent().parent().parent().children().find('.klas').text();

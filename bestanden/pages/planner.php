@@ -125,8 +125,8 @@
 
 										<!-- table header for this class-->
 										<div class="itemHeaderContent">
-											<span class="hide" class="DateCompare">'.$IdatumCompare.'</span>
-											<span class="hide" class="itemID">'.$itemID.'</span>
+											<span class="hide DateCompare">'.$IdatumCompare.'</span>
+											<span class="hide itemID">'.$itemID.'</span>
 											<span class="datum">'.$Idatum.'</span>
 											<span class="klas">'.$Iklas.'</span>
 											<span class="naam">'.$Ititel.'</span>

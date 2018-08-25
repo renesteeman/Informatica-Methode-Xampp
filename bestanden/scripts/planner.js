@@ -59,7 +59,8 @@ $(document).ready(function(){
 	//edit item sent data
 	$(".editItem").click(function(){
 
-		var itemdatum = $(this).parent().parent().parent().children().find('.hide').text();
+		var itemdatum = $(this).parent().parent().parent().children().find('.DateCompare').text();
+		var itemID = $(this).parent().parent().parent().children().find('.itemID').text();
 		var itemklas = $(this).parent().parent().parent().children().find('.klas').text();
 		var itemname = $(this).parent().parent().parent().children().find('.naam').text();
 		var itembeschrijving = $(this).parent().parent().parent().find('.itemBeschrijving').text();
@@ -69,7 +70,7 @@ $(document).ready(function(){
 		jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/editItemSetSession.php',
-			data: {itemname: itemname, itemklas: itemklas, itemdatum:itemdatum, itembeschrijving:itembeschrijving}
+			data: {itemname: itemname, itemID: itemID, itemklas: itemklas, itemdatum:itemdatum, itembeschrijving:itembeschrijving}
 		});
 		jqXHR.done(function(msg) {
 			window.location.href = '../scripts/editItemFront.php';

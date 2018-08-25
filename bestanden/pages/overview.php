@@ -54,8 +54,6 @@
 			</div>
 		-->
 
-
-
 			<?php
 				//if logged in show class
 				if (isset($_SESSION["id"])){

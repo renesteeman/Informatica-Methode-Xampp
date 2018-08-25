@@ -86,9 +86,10 @@
 						$Cdate = strtotime($Cdate);
 
 						if (mysqli_num_rows($result) > 0) {
-						    // output data of each row
-						    while($row = mysqli_fetch_assoc($result)) {
+					    // output data of each row
+					    while($row = mysqli_fetch_assoc($result)) {
 								$Ititel = $row['titel'];
+								$itemID = $row['id'];
 								$Ibeschrijving = $row['beschrijving'];
 								$Idatum = date('d-m-y', strtotime($row['datum']));
 								$IdatumCompare = strtotime($row['datum']);
@@ -124,7 +125,8 @@
 
 										<!-- table header for this class-->
 										<div class="itemHeaderContent">
-											<span class="hide">'.$IdatumCompare.'</span>
+											<span class="hide" class="DateCompare">'.$IdatumCompare.'</span>
+											<span class="hide" class="itemID">'.$itemID.'</span>
 											<span class="datum">'.$Idatum.'</span>
 											<span class="klas">'.$Iklas.'</span>
 											<span class="naam">'.$Ititel.'</span>

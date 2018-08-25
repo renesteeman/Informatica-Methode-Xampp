@@ -105,7 +105,7 @@
 				<input type="text" class="Nclass" name="Nclass"/>
 			</li>
 			<li>
-				<input type="submit" value="update">
+				<button type="submit">Update</button>
 			</li>
 		</ul>
 	</form>

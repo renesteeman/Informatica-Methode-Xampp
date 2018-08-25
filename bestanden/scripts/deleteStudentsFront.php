@@ -105,7 +105,7 @@
 				<input type="password" placeholder="Password" name="password" maxlength="50" required>
 			</li>
 			<li>
-				<input type="submit" value="verwijder">
+				<button type="submit">Verwijder</button>
 			</li>
 		</ul>
 	</form>

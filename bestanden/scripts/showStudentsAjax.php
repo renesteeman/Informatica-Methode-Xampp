@@ -32,7 +32,7 @@
 			$result = mysqli_query($conn, $sql);
 
 			//display students
-			echo "leerlingen: ";
+			echo "Leerlingen: ";
 			if (mysqli_num_rows($result) > 0) {
 
 				// output data of each row of names with class

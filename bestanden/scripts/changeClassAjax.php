@@ -38,7 +38,8 @@
 	}
 
 	if($functie == 'docent'){
-		for($i=0; $i<count($namen); $i++){
+		$count = count($namen);
+		for($i=0; $i<$count; $i++){
 			$naam = $namen[$i];
 			$sql = "UPDATE users SET klas='$Nklas' WHERE naam='$naam' AND school='$school'";
 
@@ -49,6 +50,8 @@
 				echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 			}
 		}
+	} else {
+		echo "U bent geen docent!".
 	}
 
 ?>

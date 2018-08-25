@@ -17,10 +17,15 @@
 	$Nklas = mysqli_real_escape_string($conn, check_input($_POST['Nklas']));
 	$namen = [];
 
-	for($i=0; $i<count($_POST['namen']); $i++){
-		$naam = mysqli_real_escape_string($conn, check_input($_POST['namen'][$i]));
-		array_push($namen, $naam);
-	};
+	if(isset($_POST['namen'])){
+		$count = count($_POST['namen']);
+		for($i=0; $i<$count; $i++){
+			$naam = mysqli_real_escape_string($conn, check_input($_POST['namen'][$i]));
+			array_push($namen, $naam);
+		}
+	} else {
+		echo "U heeft geen leerlingen opgegeven.";
+	}
 
 	$sql = "SELECT school, functie FROM users WHERE id='$id'";
 

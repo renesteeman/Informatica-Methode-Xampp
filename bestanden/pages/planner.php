@@ -85,7 +85,7 @@
 						$Cdate = date("Y-m-d");
 						$Cdate = strtotime($Cdate);
 
-						if (mysqli_num_rows($result) > 0) {
+						if(mysqli_num_rows($result) > 0) {
 					    // output data of each row
 					    while($row = mysqli_fetch_assoc($result)) {
 								$Ititel = $row['titel'];
@@ -107,7 +107,6 @@
 										<div class="item">
 									';
 								}
-
 
 								if($Pfunctie == 'docent'){
 								echo '
@@ -157,6 +156,17 @@
 								</div>
 								';
 							}
+						} else {
+							//no 'items' found
+							echo '
+								<div class="item">
+									<div class="itemHeader">
+										<div class="itemHeaderContent">
+											<span>Geen opdrachten gevonden</span>
+										</div>
+									</div>
+								</div>
+							';
 						}
 
 					} else {

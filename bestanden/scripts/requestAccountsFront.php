@@ -32,20 +32,8 @@
 
 		<ul>
 			<li>
-				Aanvraagcode</br>
-				<input class="request_password" name="request_password" type="password" required/>
-			</li>
-			<li>
 				Schoolnaam</br>
 				<input type="text" class="schoolnaam" name="schoolnaam" required/>
-			</li>
-			<li>
-				Telefoonnummer</br>
-				<input class="telefoonnummer" name="telefoonnummer" type="tel" required/>
-			</li>
-			<li>
-				Email</br>
-				<input class="email" name="email" type="email" required/>
 			</li>
 			<li>
 				Aantal docenten</br>
@@ -60,68 +48,15 @@
 					</ul>
 				</div>
 
-			<div class="add-item">
-				<span class="addKlas add-item">
-					<input type="text" placeholder="klas" name="Aklas" maxlength="50" autocomplete="off" class="medium">
-				</span>
-				<span class="addLeerlingen add-item">
-					<input type="text" placeholder="aantal leerlingen" name="ANleerlingen" maxlength="50" autocomplete="off" class="small">
-				</span>
-				<span class="plus-sign addklasButton">+</span>
-			</div>
-
-			</li>
-
-			<li class="kosten">
-				Overzicht
-				<ul>
-					<li>
-						<span class="aantal">aantal</span>
-						<span class="item">soort</span>
-						<span class="prijs">prijs</span>
-					</li>
-					<li class="hide Pdocenten">
-						<span class="aantal"></span>
-						<span class="item">docent</span>
-						<span class="prijs"></span>
-					</li>
-					<li class="hide Pleerlingen">
-						<span class="aantal"></span>
-						<span class="item">leerling</span>
-						<span class="prijs"></span>
-					</li>
-					<li class="hide totaal">
-						<span class="Tprijs"></span>
-					</li>
-				</ul>
-			</li>
-
-			<li>
-				<span>Opmerkingen en extra informatie</span>
-				<textarea class="extraInfo"></textarea>
-			</li>
-
-			<li class="akkoord">
-				<label class="container">
-					Ik ga akkoord met de <a href="../downloads/privacyBeleid.pdf">voorwaarden</a> en de <a href="../downloads/voorwaarden.pdf">privacy overeenkomst</a> en al mijn ingevoerde gegevens zijn correct.
-					<input type="checkbox" class="checkbox">
-					<span class="checkmark"></span>
-				</label>
-			</li>
-
-			<li>
-				<div class="g-recaptcha" data-sitekey="NOPE"></div>
-			</li>
-
-			<li>
-				<span class="info">Als u op verzenden klikt worden voor u de accounts aangemaakt en u ontvangt een vacature van uw bestelling die u binnen 14 dagen dient te betalen. Voor meer informatie kunt u bellen met 0622155216, hier zijn geen extra kosten aan verbonden.</span>
-			</li>
-
-			<li>
-				<span class="info">Let op! Alle accounts zijn maar 1 jaar geldig, hierna moet u ze verlengen.</span>
-			</li>
-			<li>
-				<span class="info">Let op! Het aanmaken van de accounts kan even duren, wacht totdat u op deze pagina een bevestiging te zien krijgt waarin staat dat de accounts aangemaakt zijn voordat u deze pagina afsluit. Het zou maximaal enkele minuten mogen duren, als het langer duurt kunt bellen met 0622155216.</span>
+				<div class="add-item">
+					<span class="addKlas add-item">
+						<input type="text" placeholder="klas" name="Aklas" maxlength="50" autocomplete="off" class="medium">
+					</span>
+					<span class="addLeerlingen add-item">
+						<input type="text" placeholder="aantal leerlingen" name="ANleerlingen" maxlength="50" autocomplete="off" class="small">
+					</span>
+					<span class="plus-sign addklasButton">+</span>
+				</div>
 			</li>
 
 			<li>

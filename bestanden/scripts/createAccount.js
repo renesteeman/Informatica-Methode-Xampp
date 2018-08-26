@@ -39,13 +39,8 @@ $(document).ready(function(){
 		event.preventDefault();
 
 		//get data to send via AJAX
-		var request_password = $('.request_password').val();
 		var schoolnaam = $('.schoolnaam').val();
-		var telefoonnummer = $('.telefoonnummer').val();
-		var email = $('.email').val();
 		var Ndocenten = $('.Ndocenten').val();
-		var extraInfo = $('.extraInfo').val();
-		var akkoord = $('.checkbox').is(':checked');
 
 		var klassen = [];
 		var klasElementen = $('.klas');
@@ -60,22 +55,14 @@ $(document).ready(function(){
 			klassen.push(push);
 		}
 
-		var response = grecaptcha.getResponse();
-
 		//Give php the info it needs (via AJAX)
 		jqXHR = $.ajax({
 			method: "POST",
 			url: "requestAccounts.php",
-			data: {request_password:request_password, schoolnaam:schoolnaam, telefoonnummer:telefoonnummer, email:email, Ndocenten:Ndocenten, extraInfo:extraInfo, klassen:klassen, akkoord:akkoord, response: response},
+			data: {schoolnaam:schoolnaam, Ndocenten:Ndocenten, klassen:klassen},
 		});
 		jqXHR.done(function(msg){
-			msg = JSON.parse(msg);
-
-			alert(msg.msg);
-			if(!msg.error){
-				//redirect to index
-				window.location.href = '../';
-			}
+			$('.main').html(msg);
 		});
 		jqXHR.fail(function(jqXHR, textStatus) {
 		  alert( "Request failed: " + textStatus );

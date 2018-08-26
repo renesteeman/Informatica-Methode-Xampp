@@ -1,25 +1,10 @@
 @import "variables.sass"
 
-.login
-	input
-		margin-left: 1em
-
-	input[type=submit]
+.main
+	button[type=submit]
 		margin-left: 0
 
-	select:focus
-		box-shadow: inset 0 0 0 6px darken($white, 10%), 4px 4px 8px darken($green-blue, 20%)
-
-	select:hover
-		box-shadow: inset 0 0 0 6px darken($white, 10%), 4px 4px 8px darken($green-blue, 20%)
-
-	option:checked
-		color: $grey
-
-	.defaultSelect
-		color: $grey
-
 @media (max-width: $medium)
-	.login
+	.main
 		.accountSettingsForm
 			padding-left: 0

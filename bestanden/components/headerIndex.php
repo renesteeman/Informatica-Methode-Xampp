@@ -54,7 +54,7 @@ function AccountValid(){
 }
 
 //if the account is expired, than redirect to index (if the person isn't on the index page yet) (only check if the person is loged in)
-if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF']) != 'account.php' AND basename($_SERVER['PHP_SELF']) != 'resetPswFront.php'){
+if(basename($_SERVER['PHP_SELF']) != 'index.php'){
 	if(!isset($_SESSION['id'])){
 		$_SESSION['ErrorNotLogedIn'] = 1;
 		header('Location: index.php');

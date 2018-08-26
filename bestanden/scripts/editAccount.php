@@ -188,7 +188,7 @@
 				}
 			}
 
-			//update email
+			//update group_role
 			if(isset($_POST['Ngroup_role'])){
 				$Ngroup_role = mysqli_real_escape_string($conn, check_input($_POST['Ngroup_role']));
 
@@ -196,7 +196,7 @@
 
 					$sql = "UPDATE users SET group_role='$Ngroup_role' WHERE id='$id'";
 					if (mysqli_query($conn, $sql)) {
-					    $return_msg .= "\nGroup succesvol bijgewerkt";
+					    $return_msg .= "\nGroupsrol succesvol bijgewerkt";
 					} else {
 					    $return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							$error = 1;

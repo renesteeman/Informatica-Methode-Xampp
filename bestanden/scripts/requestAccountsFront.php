@@ -33,7 +33,7 @@
 		<ul>
 			<li>
 				Schoolnaam</br>
-				<input type="text" class="schoolnaam" name="schoolnaam" required/>
+				<input type="text" class="schoolnaam" name="schoolnaam" maxlength="50" required/>
 			</li>
 			<li>
 				Aantal docenten</br>
@@ -50,10 +50,10 @@
 
 				<div class="add-item">
 					<span class="addKlas add-item">
-						<input type="text" placeholder="klas" name="Aklas" maxlength="50" autocomplete="off" class="medium">
+						<input type="text" placeholder="klas" name="Aklas" maxlength="20" autocomplete="off" class="medium">
 					</span>
 					<span class="addLeerlingen add-item">
-						<input type="text" placeholder="aantal leerlingen" name="ANleerlingen" maxlength="50" autocomplete="off" class="small">
+						<input type="text" placeholder="aantal leerlingen" name="ANleerlingen" maxlength="3" autocomplete="off" class="small">
 					</span>
 					<span class="plus-sign addklasButton">+</span>
 				</div>

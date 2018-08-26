@@ -251,7 +251,6 @@
 
 											if($CstudentGroupName==""){
 												$CstudentGroupName = "zit niet in een groep";
-												$CstudentGroupRole = "";
 											}
 
 											echo '

@@ -38,6 +38,7 @@
 			//if the user is loged in, display account settings
 
 			$id = $_SESSION["id"];
+			$functie = $_SESSION["functie"];
 
 			$sql = "SELECT * FROM users WHERE id='$id'";
 
@@ -78,7 +79,7 @@
 							<label>Email</label>
 							<input type="email" placeholder="'.$Cemail.'" name="Nemail" maxlength="50">
 						</li>';
-						if($Groepsrol == 'leerling'){
+						if($functie == 'leerling'){
 						echo '
 						<li>
 							<label>Groepsrol</label>

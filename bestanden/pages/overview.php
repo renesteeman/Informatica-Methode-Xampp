@@ -480,7 +480,13 @@
 									}
 
 								} else {
-									echo "Geen groepen gevonden </br>";
+									echo '
+									<div class="headerRow groepen">
+										<div class="headerRowContent">
+											<span>Geen groepen gevonden</span>
+										</div>
+									</div>';
+
 								}
 
 							} else {

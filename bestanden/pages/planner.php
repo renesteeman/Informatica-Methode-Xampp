@@ -185,13 +185,14 @@
 
 		<?php
 			//if logged in show groups
-			//TODO check if person is teacher
-			if (isset($_SESSION["id"])){
-				echo '
-				<form class="addItemButton" method="post" action="../scripts/createItemFront.php">
-					<button type="submit">Nieuwe opdracht</button>
-				</form>
-				';
+			if ($Pfunctie == 'docent'){
+				if (isset($_SESSION["id"])){
+					echo '
+					<form class="addItemButton" method="post" action="../scripts/createItemFront.php">
+						<button type="submit">Nieuwe opdracht</button>
+					</form>
+					';
+				}
 			}
 
 		?>

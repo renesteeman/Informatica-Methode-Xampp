@@ -71,7 +71,7 @@ include('../components/headerGeneral.php');
 								</li>
 								<li>
 									<label>Nieuwe link</label>
-									<input type="text" placeholder="'.$Glink.'" name="NGlink" maxlength="50">
+									<input type="text" placeholder="'.$Glink.'" name="NGlink" maxlength="150">
 								</li>
 								<li>
 									<label>Leden</label>

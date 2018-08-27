@@ -122,9 +122,16 @@
 						<li>
 							<button type="submit" id="LoginButton">Login</button>
 						</li>
-						<li>
-							<button type="submit" class="RedButton"><a href="../scripts/resetPswFront.php">Wachtwoord vergeten</a></button>
+
+						</form>
+						<li id="resetPswLi">
+							<span class="resetPswButton">
+								<a href="../scripts/resetPswFront.php">
+									Wachtwoord vergeten
+								</a>
+							</span>
 						</li>
+
 					</ul>
 				</form>
 			</div>';

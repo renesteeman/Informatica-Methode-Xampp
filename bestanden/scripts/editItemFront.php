@@ -47,6 +47,7 @@ include('../components/headerGeneral.php');
 		$Iname = mysqli_real_escape_string($conn, check_input($_SESSION['itemname']));
 		$Iklas = mysqli_real_escape_string($conn, check_input($_SESSION['itemklas']));
 		$Idate = mysqli_real_escape_string($conn, check_input($_SESSION['itemdatum']));
+		$Idate = date('Y-m-d', $Idate);
 		$Ibeschrijving = mysqli_real_escape_string($conn, check_input($_SESSION['itembeschrijving']));
 
 		if (isset($_SESSION["functie"])){

@@ -61,11 +61,21 @@
 
 		if(isset($_POST['Iprogressie'])){
 			if($_POST['Iprogressie'] != ""){
+				$chapters = [];
+
 				$count = count($_POST['Iprogressie']);
 				for($i=0; $i<$count; $i++){
 					$chapter = mysqli_real_escape_string($conn, check_input($_POST['Iprogressie'][$i]));
-					$Iprogressie .= $chapter.', ';
+					$chapters[] = $chapter;
 				};
+
+				//sort chapters before 'saving' them
+				sort($chapters);
+
+				for($i=0; $i<$count; $i++){
+					$Iprogressie .= $chapters[$i].', ';
+				};
+
 			}
 		};
 

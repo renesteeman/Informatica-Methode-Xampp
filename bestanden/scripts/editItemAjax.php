@@ -114,12 +114,23 @@
 			}
 
 			if($NIprogressie!=""){
-				$chapters = "";
+				$chapters = [];
+
+				$chaptersString = "";
+
 				$count2 = count($NIprogressie);
 				for($i=0; $i<$count2;$i++){
-					$chapters .= $NIprogressie[$i].', ';
+					$chapter = $NIprogressie[$i];
+					$chapters[] = $chapter;
 				}
-				$sql = "UPDATE planner SET progressie='$chapters' WHERE school='$school' AND id='$CIid'";
+
+				sort($chapters);
+
+				for($i=0; $i<$count; $i++){
+					$chaptersString .= $chapters[$i].', ';
+				};
+
+				$sql = "UPDATE planner SET progressie='$chaptersString' WHERE school='$school' AND id='$CIid'";
 
 				if (mysqli_query($conn, $sql)) {
 					echo "\nNieuwe hoofdstuk(ken) voor opdracht is succesvol ingesteld";

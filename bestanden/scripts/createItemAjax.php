@@ -98,7 +98,7 @@
 						$sql = "INSERT INTO planner (titel, beschrijving, progressie, school, klas, datum) VALUES ('$Inaam', '$Iomschrijving', '$Iprogressie', '$Ischool', '$Iklas', '$Idatum')";
 
 						if (mysqli_query($conn, $sql)) {
-							echo "Item succesvol toegevoegd";
+							echo "Opdracht succesvol toegevoegd";
 						} else {
 							echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 						}

@@ -107,11 +107,11 @@
 					<ul>
 						<li>
 							<img class="person" src="../icons/person.svg">
-							<input type="text" placeholder="Name" name="username" maxlength="50" required>
+							<input type="text" placeholder="gebruikersnaam" name="username" maxlength="50" required>
 						</li>
 						<li>
 							<img class="lock" src="../icons/lock.svg">
-							<input type="password" placeholder="Password" name="password" maxlength="50" required>
+							<input type="password" placeholder="wachtwoord" name="password" maxlength="50" required>
 						</li>
 						<li>
 							<div id="captcha" class="hide"></div>

@@ -59,7 +59,7 @@
 								if (mysqli_num_rows($result) > 0) {
 									while($row = mysqli_fetch_assoc($result)) {
 										$klas = $row['klas'];
-										if(!in_array($klas, $klassen)){
+										if(!in_array($klas, $klassen) && $klas!=""){
 											$klassen[] = $klas;
 										}
 									}

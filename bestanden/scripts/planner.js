@@ -50,9 +50,9 @@ $(document).ready(function(){
 			window.alert(msg);
 			window.location.href = '../pages/planner.php';
 		});
-		jqXHR.fail(function(jqXHR, textStatus) {
-		  alert( "Request failed: " + textStatus );
-		});
+		jqXHR.fail(function(jqXHR) {
+			alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
+	  });
 
 	});
 
@@ -74,9 +74,9 @@ $(document).ready(function(){
 		jqXHR.done(function(msg) {
 			window.location.href = '../scripts/editItemFront.php';
 		});
-		jqXHR.fail(function(jqXHR, textStatus) {
-		  alert("Er is iets mis gegaan met AJAX " + textStatus);
-		});
+		jqXHR.fail(function(jqXHR) {
+			alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
+	  });
 
 	});
 
@@ -131,9 +131,9 @@ $(document).ready(function(){
 			window.location.href = '../pages/planner.php';
 		});
 
-		jqXHR.fail(function(jqXHR, textStatus) {
-		  alert("Er is iets mis gegaan met AJAX " + textStatus);
-		});
+		jqXHR.fail(function(jqXHR) {
+			alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
+	  });
 	});
 
 	//delete item data
@@ -153,9 +153,9 @@ $(document).ready(function(){
 				window.location.href = '../pages/planner.php';
 			});
 
-			jqXHR.fail(function(jqXHR, textStatus) {
-			  alert("Er is iets mis gegaan met AJAX " + textStatus);
-			});
+			jqXHR.fail(function(jqXHR) {
+				alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
+		  });
 
 		} else {
 			alert("Opdracht verwijderen is geanuleerd.");

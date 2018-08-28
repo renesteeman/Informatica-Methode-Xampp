@@ -30,9 +30,9 @@ $(document).ready(function(){
       }
 
 		});
-		jqXHR.fail(function(jqXHR, textStatus) {
-		  alert("Er is iets mis gegaan met AJAX " + textStatus);
-		});
+		jqXHR.fail(function(jqXHR) {
+			alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
+	  });
 
 	});
 
@@ -67,9 +67,9 @@ $(document).ready(function(){
 			}
     });
 
-    jqXHR.fail(function( jqXHR) {
-      alert("Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
-    });
+		jqXHR.fail(function(jqXHR) {
+			alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
+	  });
   });
 
   //delete group data
@@ -91,9 +91,9 @@ $(document).ready(function(){
         }
       });
 
-      jqXHR.fail(function(jqXHR) {
-        alert("Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
-      });
+			jqXHR.fail(function(jqXHR) {
+				alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
+		  });
 
     } else {
       alert("Groep verwijderen is geanuleerd.");

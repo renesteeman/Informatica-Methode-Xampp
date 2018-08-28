@@ -16,7 +16,7 @@ $('.restPswForm').submit(function(event){
 
     //if there isn't an error, redirect
     if(!response.error){
-      //window.location.href = '../';
+      window.location.href = '../';
     }
 
   });

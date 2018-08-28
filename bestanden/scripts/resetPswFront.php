@@ -28,13 +28,12 @@
 			<label>Email</label>
 			<input type="email" placeholder="email adres" name="email" maxlength="50" required>
 
-			<div class="g-recaptcha" data-sitekey="6Lc_J1MUAAAAAJlHeuG3e9tg0zTGAvA7bC2dgSzq"></div>
-
 			<input type="submit" value="reset wachtwoord"/>
 
 		</form>
 	</div>
 
+	<script src="resetPassword.js" defer></script>
 
 	<?php
 	include('../components/footerGeneral.php');

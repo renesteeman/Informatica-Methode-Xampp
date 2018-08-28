@@ -98,7 +98,7 @@
 										$userinfo = ['naam'=>$Cnaam, 'klas'=>$Cklas, 'group_role'=>$group_role, 'group_name'=>$group_name];
 
 										//get more info cijfer
-										$sql2 = "SELECT cijfer FROM `quiz` WHERE id='$Cid'";
+										$sql2 = "SELECT cijfer FROM `quiz` WHERE userid='$Cid'";
 
 										//get info from other tables
 										if (mysqli_query($conn, $sql2)) {

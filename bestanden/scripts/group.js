@@ -59,9 +59,12 @@ $(document).ready(function(){
       data: {NGname: NGname, NGbeschrijving:NGbeschrijving, NGlink:NGlink, NGleden:NGleden, password:password}
     });
 
-    jqXHR.done(function(msg) {
-      window.alert(msg);
-      window.location.href = '../pages/overview.php';
+    jqXHR.done(function(response) {
+			response = JSON.parse(response);
+      window.alert(response.msg);
+			if(!response.error){
+				window.location.href = '../pages/overview.php';
+			}
     });
 
     jqXHR.fail(function( jqXHR) {

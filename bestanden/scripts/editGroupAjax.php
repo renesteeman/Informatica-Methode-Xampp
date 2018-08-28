@@ -11,6 +11,7 @@
 	}
 
 	$error = 0;
+	$msg = "";
 	//get and filter data
 	$id = $_SESSION["id"];
 	$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
@@ -51,7 +52,7 @@
 				$school = $result['school'];
 
 			} else {
-				echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+				$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 			}
 
 			if($NGnaam!=""){
@@ -59,17 +60,17 @@
 				$sql = mysqli_query($conn, "SELECT naam FROM groepen WHERE naam='$NGnaam' and school='$NGnaam$NGnaam'");
 
 				if (mysqli_num_rows($sql) != 0) {
-					echo "\nGroepnaam is al in gebruik.";
+					$msg .= "\nGroepnaam is al in gebruik.";
 					$Gnaam = "";
 			   } else {
 					$sql = "UPDATE groepen SET naam='$NGnaam' WHERE naam='$CGnaam' AND school='$school'";
 
 					if (mysqli_query($conn, $sql)) {
-						echo "\nNieuwe groepnaam is succesvol ingesteld";
+						$msg .= "\nNieuwe groepnaam is succesvol ingesteld";
 						$_SESSION["groupname"] = $NGnaam;
 						$CGnaam = $_SESSION["groupname"];
 					} else {
-						echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+						$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 						$error = 1;
 					}
 			   }
@@ -77,12 +78,12 @@
 
 			if($NGbeschrijving!=""){
 				$sql = "UPDATE groepen SET beschrijving='$NGbeschrijving' WHERE naam='$CGnaam' AND school='$school'";
-				echo $school;
+				$msg .= $school;
 
 				if (mysqli_query($conn, $sql)) {
-					echo "\nNieuwe groepsbeschrijving is succesvol ingesteld";
+					$msg .= "\nNieuwe groepsbeschrijving is succesvol ingesteld";
 				} else {
-					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					$error = 1;
 				}
 			}
@@ -91,9 +92,9 @@
 				$sql = "UPDATE groepen SET link='$NGlink' WHERE naam='$CGnaam' AND school='$school'";
 
 				if (mysqli_query($conn, $sql)) {
-					echo "\nNieuwe groepslink is succesvol ingesteld";
+					$msg .= "\nNieuwe groepslink is succesvol ingesteld";
 				} else {
-					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					$error = 1;
 				}
 			}
@@ -104,9 +105,9 @@
 				$sql = "UPDATE users SET group_name='' WHERE group_name='$CGnaam' AND school='$school'";
 
 				if (mysqli_query($conn, $sql)) {
-					echo "\nOude leden succesvol verwijderd";
+					$msg .= "\nOude leden succesvol verwijderd";
 				} else {
-					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					$error = 1;
 				}
 
@@ -121,29 +122,30 @@
 						$sql = "UPDATE users SET group_name='$CGnaam' WHERE naam='$lid' AND school='$school'";
 
 						if (mysqli_query($conn, $sql)) {
-							echo "\n".$lid." is nu lid van de groep";
+							$msg .= "\n".$lid." is nu lid van de groep";
 						} else {
-							echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							$error = 1;
 						}
 					} else {
-						echo "\n".$lid." bestaat niet";
+						$msg .= "\n".$lid." bestaat niet";
 					}
 				}
 			}
 
 		} else {
-			echo "Verkeerd wachtwoord";
+			$msg .= "Verkeerd wachtwoord";
 			$error = 1;
 		}
 
 	} else {
-		echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+		$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 	}
 
-	if($error==1){
-		die(header("HTTP/1.0 404 Not Found"));
-	}
+	$toReturn = array('msg' => $msg, 'error' => $error);
+	$toReturn = json_encode($toReturn);
+
+	echo $toReturn;
 
 	$conn->close();
 

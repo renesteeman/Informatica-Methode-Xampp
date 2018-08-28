@@ -14,7 +14,7 @@
     // Check connection
     if($conn === false){
 
-        die("Kon geen verbinding maken met database");
+      die("Kon geen verbinding maken met database");
 
     }
 

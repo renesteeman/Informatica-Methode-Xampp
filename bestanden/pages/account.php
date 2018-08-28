@@ -116,15 +116,14 @@
 						<li>
 							<div id="captcha" class="hide"></div>
 						</li>
-						<li class="cookie">
+						<li class="cookie indent">
 							Als u inlogd gaat u akkoord met het gebruik van cookies die bijhouden als wie u bent ingelogd. U kunt hier meer informatie over vinden onderaan de pagina.
 						</li>
-						<li>
+						<li class="indent">
 							<button type="submit" id="LoginButton">Login</button>
 						</li>
 
-						</form>
-						<li id="resetPswLi">
+						<li id="resetPswLi" class="indent">
 							<span class="resetPswButton">
 								<a href="../scripts/resetPswFront.php">
 									Wachtwoord vergeten

@@ -2,7 +2,7 @@
 
 .main
 	button[type=submit], .resetPswButton
-		margin-left: 4.1em
+		//margin-left: 4.1em
 
 	ul
 		list-style: none
@@ -38,19 +38,22 @@
 		background-color: darken($red, 5%)
 		box-shadow: 2px 2px 6px darken($grey, 30%)
 
+	.indent
+		margin-left: 5.5rem
+
 	#captcha
-		margin-bottom: 2em
-		margin-left: 6em
+		margin-bottom: 1em
+		margin-left: 5.5rem
 
 	.cookie
 		width: 80%
 		padding-bottom: 1em
 		font-size: 1.5rem
-		margin-left: 4.1em
+		margin-left: 5.5rem
 
 @media (max-width: $large)
 	.main
-		.cookie
+		.indent
 			padding-left: 0
 
 		input
@@ -58,7 +61,6 @@
 			margin-left: 0
 
 		input[type=submit]
-			margin-left: 0
 			width: 50%
 			min-width: 4em
 

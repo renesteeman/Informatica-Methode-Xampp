@@ -18,14 +18,14 @@ $(document).ready(function(){
     });
 
     jqXHR.done(function(response) {
+      console.log(response);
       response = JSON.parse(response);
 
+      window.alert(response.msg);
+
       //if there isn't an error, redirect, else stay on page
-      if(response.error == 0){
-        window.alert(response.msg);
+      if(!response.error){
         window.location.href = '../index.php';
-      } else {
-        window.alert(response.msg);
       }
     });
 

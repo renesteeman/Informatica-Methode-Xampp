@@ -6,7 +6,7 @@
 
 	$minPasswordLength = 5;
 	$error = false;
-	$return_msg = "";
+	$msg = "";
 
 	//function to check and clean input
 	function check_input($data) {
@@ -31,7 +31,7 @@
 			$rightpsw = $result['password'];
 
 		} else {
-			$return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+			$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 		}
 
 		//check password
@@ -58,7 +58,7 @@
 				if(strlen($Nnaam) > 0){
 					if($Nnaam != $Cnaam){
 
-						$sql = "SELECT id FROM users WHERE username='$Nusername' AND school='$school'";
+						$sql = "SELECT id FROM users WHERE naam='$Nnaam' AND school='$School'";
 
 						if (mysqli_query($conn, $sql)) {
 
@@ -70,19 +70,19 @@
 								$sql = "UPDATE users SET naam='$Nnaam' WHERE id='$id'";
 
 								if (mysqli_query($conn, $sql)) {
-							    $return_msg .= "\nNaam succesvol bijgewerkt";
+							    $msg .= "\nNaam succesvol bijgewerkt";
 									$_SESSION["name"] = $Nnaam;
 								} else {
-							    $return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							    $msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 									$error = 1;
 								}
 
 							} else {
-								$return_msg .= "\nDeze naam is in gebruik op deze school.";
+								$msg .= "\nDeze naam is in gebruik op deze school.";
 								$error = 1;
 							}
 						} else {
-							$return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							$error = 1;
 						}
 					}
@@ -108,24 +108,24 @@
 									$sql = "UPDATE users SET username='$Nusername' WHERE id='$id'";
 
 									if (mysqli_query($conn, $sql)) {
-								    $return_msg .= "\nGebruikersnaam succesvol bijgewerkt";
+								    $msg .= "\nGebruikersnaam succesvol bijgewerkt";
 										$_SESSION["username"] = $Nusername;
 
 									} else {
-								    $return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+								    $msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 										$error = 1;
 									}
 								}
 							} else {
-								$return_msg .= "\nGebruikersnaam al in gebruik";
+								$msg .= "\nGebruikersnaam al in gebruik";
 								$error = 1;
 							}
 						} else {
-							$return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							$error = 1;
 						}
 					}	else {
-						$return_msg .= "\nDe nieuwe gebruiksnaam is gelijk aan de oude.";
+						$msg .= "\nDe nieuwe gebruiksnaam is gelijk aan de oude.";
 					}
 				}
 			}
@@ -144,18 +144,18 @@
 							//update password
 							$sql = "UPDATE users SET password='$Npassword' WHERE id='$id'";
 							if (mysqli_query($conn, $sql)) {
-						    $return_msg .= "\nWachtwoord succesvol bijgewerkt";
+						    $msg .= "\nWachtwoord succesvol bijgewerkt";
 							} else {
-						    $return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+						    $msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 								$error = 1;
 							}
 						} else {
-							$return_msg .= "\nHet nieuwe wachtwoord is niet lang genoeg, het moet minimaal "."$minPasswordLength"." karakters lang zijn.";
+							$msg .= "\nHet nieuwe wachtwoord is niet lang genoeg, het moet minimaal "."$minPasswordLength"." karakters lang zijn.";
 							$error = 1;
 						}
 
 					} else {
-						$return_msg .= "\nHet nieuwe wachtwoord komt niet overeen met de bevestiging.";
+						$msg .= "\nHet nieuwe wachtwoord komt niet overeen met de bevestiging.";
 						$error = 1;
 					}
 				}
@@ -166,7 +166,7 @@
 				$Nemail = mysqli_real_escape_string($conn, check_input($_POST['Nemail']));
 
 				if($Nemail != $Cemail && $Nemail != ''){
-					$sql = "SELECT naam FROM users WHERE email='$Nemail'";
+					$sql = "SELECT id FROM users WHERE email='$Nemail'";
 					if (mysqli_query($conn, $sql)) {
 
 						$result = mysqli_query($conn, $sql);
@@ -175,13 +175,13 @@
 						if(mysqli_num_rows($result)==0){
 							$sql = "UPDATE users SET email='$Nemail' WHERE id='$id'";
 							if (mysqli_query($conn, $sql)) {
-							    $return_msg .= "\nEmail succesvol bijgewerkt";
+							    $msg .= "\nEmail succesvol bijgewerkt";
 							} else {
-							    $return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							    $msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 									$error = 1;
 							}
 						} else {
-							$return_msg .= "\nEmailadres al in gebruik";
+							$msg .= "\nEmailadres al in gebruik";
 							$error = 1;
 						}
 					}
@@ -196,24 +196,23 @@
 
 					$sql = "UPDATE users SET group_role='$Ngroup_role' WHERE id='$id'";
 					if (mysqli_query($conn, $sql)) {
-					    $return_msg .= "\nGroupsrol succesvol bijgewerkt";
+					    $msg .= "\nGroupsrol succesvol bijgewerkt";
 					} else {
-					    $return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					    $msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							$error = 1;
 					}
 				}
 			}
 
 		} else {
-			$return_msg .= "\nVerkeerd wachtwoord";
+			$msg .= "\nVerkeerd wachtwoord";
 			$error = 1;
 		}
 	}
 
-	$toReturn = array('msg' => $return_msg, 'error' => $error);
+	$toReturn = array('msg' => $msg, 'error' => $error);
 	$toReturn = json_encode($toReturn);
 
-	#return data to ajax
 	echo $toReturn;
 
 	mysqli_close($conn);

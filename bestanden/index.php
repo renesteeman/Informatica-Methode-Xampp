@@ -295,12 +295,15 @@
 			echo '
 			<div class="tile-content">
 				<div class="tile-chapter">
-					B2 Beveiliging en privacy
+					B2 Privacy
 				</div>
 				<div class="tile-paragraphs">
 					<span class="closeTile">X</span>
 					<ol>
-						<ul>Komt binnenkort</ul>
+						<ul><a href="pages/theorie/B2/p1.php">§1 Wat wordt bijgehouden?</a></ul>
+						<ul><a href="pages/theorie/B2/p2.php">§2 Hoe worden gegevens bijgehouden?</a></ul>
+						<ul><a href="pages/theorie/B2/p3.php">§3 Hoe kun je jouw privacy verbeteren?</a></ul>
+						<ul><a href="pages/theorie/B2/p4.php">§4 Wie beschermt jouw privacy?</a></ul>
 					</ol>
 				</div>
 			</div>

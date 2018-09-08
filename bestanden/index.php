@@ -324,10 +324,10 @@
 				<span class="closeTile">X</span>
 				<ol>
 					<ul><a href="pages/theorie/B3/p1.php">§1 JS introductie</a></ul>
-					<ul><a href="pages/theorie/B3/p2.php">§2 Wat is ethiek?</a></ul>
-					<ul><a href="pages/theorie/B3/p3.php">§3 Het trein probleem</a></ul>
-					<ul><a href="pages/theorie/B3/p4.php">§4 Kunstmatige intelligentie</a></ul>
-					<ul><a href="pages/theorie/B3/p5.php">§5 Kunstmatige intelligentie</a></ul>
+					<ul><a href="pages/theorie/B3/p2.php">§2 JS basis deel 1</a></ul>
+					<ul><a href="pages/theorie/B3/p3.php">§3 JS basis deel 2</a></ul>
+					<ul><a href="pages/theorie/B3/p4.php">§4 JS basis deel 3</a></ul>
+					<ul><a href="pages/theorie/B3/p5.php">§5 JS advanced</a></ul>
 				</ol>
 			</div>
 		</div>
@@ -348,7 +348,7 @@
 					<span class="closeTile">X</span>
 					<ol>
 						<ul><a href="pages/theorie/B4/p1.php">§1 Wat is een database?</a></ul>
-						<ul><a href="pages/theorie/B4/p2.php">§2 JS basis deel 1</a></ul>
+						<ul><a href="pages/theorie/B4/p2.php">§2 Een database aanmaken</a></ul>
 						<ul><a href="pages/theorie/B4/p3.php">§3 Communiceren met een database</a></ul>
 						<ul><a href="pages/theorie/B4/p4.php">§4 Verder met SQL</a></ul>
 						<ul><a href="pages/theorie/B4/installatieXAMPP.php">installatie XAMPP</a></ul>

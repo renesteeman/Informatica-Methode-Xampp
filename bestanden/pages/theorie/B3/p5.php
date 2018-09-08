@@ -5,8 +5,8 @@ include('../../../components/headerChapter.php');
 <body>
 
 	<div class="title-small">
-		<h2> 
-			B3 §5 
+		<h2>
+			B3 §5 JS advanced
 		</h2>
 	 </div>
 
@@ -54,116 +54,107 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content">
-        
+
 			<p>In deze paragraaf ga je leren wat events zijn, een stukje geschiedenis van JS en wat frameworks zijn.</p>
 
 			<p>Als je wilt controleren of een bepaalde actie uitgevoerd wordt kunnen events erg van pas komen. Een paar veel gebruikte events zijn: onchange, onclick, onmouseover, onmouseout, onkeydown en onload. Dit zijn allemaal acties die kunnen voorkomen bij elementen. Als zo’n actie plaatsvindt wordt dit als ‘trigger’ gebruikt voor het uitvoeren van code. Je kunt bijvoorbeeld andere informatie geven als iemand op een knop klikt.</p>
 
-			<p>Event</p>
+			<div class="table-wrapper">
+				<table>
 
-			<p>Beschrijving</p>
+					<tr>
+						<th>Event</th>
+						<th>Beschrijving</th>
+					</tr>
+					<tr>
+						<td>Onchange</td>
+						<td>Het element is aangepast</td>
+					</tr>
+					<tr>
+						<td>Onclick</td>
+						<td>Het element is aangeklikt</td>
+					</tr>
+					<tr>
+						<td>Onmouseover</td>
+						<td>De cursor is over het element gegaan</td>
+					</tr>
+					<tr>
+						<td>Onmouseout</td>
+						<td>De cursor is van het element af gegaan</td>
+					</tr>
+					<tr>
+						<td>Onkeydown</td>
+						<td>Een knop is ingeklikt (fysiek)</td>
+					</tr>
+					<tr>
+						<td>Onload</td>
+						<td>Het element is geladen</td>
+					</tr>
 
-			<p>Onchange</p>
-
-			<p>Het element is aangepast</p>
-
-			<p>Onclick</p>
-
-			<p>Het element is aangeklikt</p>
-
-			<p>Onmouseover</p>
-
-			<p>De cursor is over het element gegaan</p>
-
-			<p>Onmouseout</p>
-
-			<p>De cursor is van het element af gegaan</p>
-
-			<p>Onkeydown</p>
-
-			<p>Een knop is ingeklikt (fysiek)</p>
-
-			<p>Onload</p>
-
-			<p>Het element is geladen</p>
+				</table>
+			</div>
 
 			<p>Deze events kun je koppelen aan een element. Zo kun je een actie in de browser koppelen aan een stuk JS code. Om deze events ‘op te vangen’ kun je een event listener gebruiken, dit is een stuk code dat controleert wat er met het element gebeurt. Een voorbeeld is:</p>
 
 			<p>HTML</p>
 
-			<p>#CODE</p>
+			<pre><code>&lt;html>
+  &lt;head>
+    &lt;!-- stel karakterset in en verwijder waarschuwing -->
+    &lt;meta charset="UTF-8" />
+  &lt;/head>
+  &lt;body>
+    &lt;header>
 
-			<p><html></p>
+    &lt;/header>
 
-			<p><head></p>
+    &lt;div id='parent'>
+      &lt;p id='element'>
+        Klik hier!
+      &lt;/p>
+    &lt;/div>
 
-			<p><!-- stel karakterset in en verwijder waarschuwing --></p>
+    &lt;footer>
 
-			<p><meta charset="UTF-8" /></p>
+    &lt;/footer>
 
-			<p></head></p>
-
-			<p><body></p>
-
-			<p><header></p>
-
-			<p></header></p>
-
-			<p><div id='parent'></p>
-
-			<p><p id='element'></p>
-
-			<p>Klik hier!</p>
-
-			<p></p></p>
-
-			<p></div></p>
-
-			<p><footer></p>
-
-			<p></footer></p>
-
-			<p><script src="js.js"></script></p>
-
-			<p></body></p>
-
-			<p></html></p>
+    &lt;script src="js.js">&lt;/script>
+  &lt;/body>
+&lt;/html></code></pre>
 
 			<p>JS</p>
 
-			<p>#CODE</p>
+			<pre><code>function veranderInhoud(element){
+  console.log(element);
+  element.textContent = "Het event heeft plaatsgevonden.";
+  alert('triggered');
+}
 
-			<p>function veranderInhoud(element){</p>
+document.getElementById('element').addEventListener("click", function(){
+  veranderInhoud(this);
+})
+</code></pre>
 
-			<p>console.log(element);</p>
-
-			<p>element.textContent = "Het event heeft plaatsgevonden.";</p>
-
-			<p>alert('triggered');</p>
-
-			<p>}</p>
-
-			<p>document.getElementById('element').addEventListener("click", function(){</p>
-
-			<p>veranderInhoud(this);</p>
-
-			<p>})</p>
-
-			<p>Als de <p> met id ‘element’ aangeklikt wordt zal de tekst ervan veranderen. De event listener wordt dus toegevoegd aan het element en voert een functie uit als het event plaatsvindt.</p>
+			<p>Als de &lt;p> met id ‘element’ aangeklikt wordt zal de tekst ervan veranderen. De event listener wordt dus toegevoegd aan het element en voert een functie uit als het event plaatsvindt.</p>
 
 			<p>JS kent verschillende versies en deze werken niet allemaal op elke browser. Als je nieuwe mogelijkheden wilt gebruiken moet je hier dus op letten. JS, ook ECMAScript genoemd kwam uit in 1997 en heeft meerdere updates gehad. De latere versies voegen vooral handige functies toe om het leven van een programmeur te verfijnen.</p>
 
-			<p>Versie</p>
-
-			<p>Belangrijke veranderingen</p>
-
-			<p>ES5</p>
-
-			<p>Betere ondersteuning voor JSON en handige functies voor het werken met variabelen.</p>
-
-			<p>ES6</p>
-
-			<p>Meer verbeteringen voor het omgaan met variabelen in specifieke manieren. Betere omgang met arrays. Extra notatiewijze voor functies.</p>
+			<div class="table-wrapper tSL">
+				<table>
+					<tr>
+						<th>Versie</th>
+						<th>Belangrijke veranderingen</th>
+					</tr>
+					<tr>
+						<td>ES5</td>
+						<td>Betere ondersteuning voor JSON en handige functies voor het werken met variabelen.</td>
+					</tr>
+					<tr>
+						<td>ES6</td>
+						<td>Meer verbeteringen voor het omgaan met variabelen in specifieke manieren. Betere omgang met arrays. Extra notatiewijze voor functies.</td>
+					</tr>
+				</table>
+			</div>
 
 			<p>Op dit moment (2018) worden versies na ES6 nog nauwelijks ondersteund. De recentere updates hebben vooral verbeteringen voor performance.</p>
 
@@ -183,11 +174,9 @@ include('../../../components/headerChapter.php');
 
 		<div class="theorie-content">
 			<ol>
-				<li>Maak zelf een JS event.
-
-Zijn nieuwe versies van JS al goed ondersteund?
-
-Beschrijf het verschil tussen een library en framework in jouw eigen woorden.</li>
+				<li>Maak zelf een JS event.</li>
+				<li>Zijn nieuwe versies van JS al goed ondersteund?</li>
+				<li>Beschrijf het verschil tussen een library en framework in jouw eigen woorden.</li>
 			</ol>
 		</div>
 
@@ -199,11 +188,9 @@ Beschrijf het verschil tussen een library en framework in jouw eigen woorden.</l
 
 		<div class="theorie-content theorie-answers">
 			<ol>
-				<li>Eigen antwoord
-
-Nee, dit duurt een aantal jaar en sommige browsers zullen nauwelijks bijwerken.
-
-Een mogelijk antwoord is: “Een framework is een schrijfwijze en een library is een verzameling afkortingen.”.</li>
+				<li>Eigen antwoord</li>
+				<li>Nee, dit duurt een aantal jaar en sommige browsers zullen nauwelijks bijwerken.</li>
+				<li>Een mogelijk antwoord is: “Een framework is een schrijfwijze en een library is een verzameling afkortingen.”.</li>
 			</ol>
 		</div>
 	</div>

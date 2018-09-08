@@ -62,7 +62,7 @@ include('../../../components/headerChapter.php');
   &lt;head>
     &lt;meta charset="UTF-8" />
   &lt;/head>
- &lt;body>
+  &lt;body>
     &lt;header>
 
     &lt;/header>

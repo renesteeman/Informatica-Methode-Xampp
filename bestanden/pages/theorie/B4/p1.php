@@ -51,7 +51,7 @@ include('../../../components/headerChapter.php');
 
   		<p>Een database is een manier om data op te slaan voor applicaties. Het lijkt op een grote tabel waar onder andere getallen, datums en tekst in kan worden opgeslagen. Het is vooral handig om gegevens van gebruikers bij te houden, zoals de gebruikersnaam, het wachtwoord (niet in tekst) en een email-adres.</p>
 
-  		<p>Zo’n database staat vaak op een server, dat is een soort computer die vooral gebruikt wordt om informatie uit te wisselen met gebruikers en een applicatie. Bijvoorbeeld voor het inloggen op een website, hier stuurt de gebruiker tekst door naar een server en ‘reageert’ de applicatie door bijvoorbeeld de code te activeren die toegang geeft tot bepaalde functies.</p>
+  		<p>Zo’n database staat vaak op een server. Dat is een soort computer die voornamleijk gebruikt wordt om informatie uit te wisselen met gebruikers en een applicatie. Bijvoorbeeld voor het inloggen op een website, hier stuurt de gebruiker tekst door naar een server en ‘reageert’ de applicatie door bijvoorbeeld de code te activeren die toegang geeft tot bepaalde functies.</p>
 
   		<p>In een database zijn vaak meerdere tabellen te vinden, zoals: groepen, planner en gebruikers. Elke tabel heeft dan zijn eigen overzicht van gegevens. Zo kan er bij gebruikers bijvoorbeeld een gebruikersnaam en wachtwoorden kolom zijn. Elke gebruiker heeft dan zijn eigen rij waar deze kolommen zijn ingevuld.</p>
 

@@ -51,7 +51,7 @@ include('../../../components/headerChapter.php');
 
 			<p>Hoe kun je jouw online privacy verbeteren?</p>
 
-			<p>Het makkelijkste is om informatie die niet nodig is ook niet te geven en op te letten aan wie je informatie geeft. Als je niet wilt dat iedereen je kan vinden, gebruik dan geen sociale media of stel ze goed in. Je kunt ook een search engine kiezen die privacy respecteert. Hetzelfde geldt voor een browser. Zo zijn er veel keuzes die je kunt maken om jouw privacy flink te verbeteren.</p>
+			<p>Het makkelijkste is om informatie die niet verplicht is ook niet te geven en op te letten aan wie je informatie geeft. Als je niet wilt dat iedereen je kan vinden, gebruik dan geen sociale media of stel ze goed in. Je kunt ook een search engine kiezen die jouw privacy respecteert. Hetzelfde geldt voor een browser. Zo zijn er veel keuzes die je kunt maken om jouw privacy flink te verbeteren.</p>
 
 			<p>Het is helaas wel vaak zo dat je gemak moet inleveren voor privacy, hoe je dit wilt balanceren is natuurlijk erg persoonlijk. Misschien vind je privacy niet belangrijk en let je er niet op of je wilt juist veel privacy en bent bereid er iets voor in te leveren.</p>
 

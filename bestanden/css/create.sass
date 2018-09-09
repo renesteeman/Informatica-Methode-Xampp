@@ -1,6 +1,8 @@
 @import "variables.sass"
 
 .main
+	box-sizing: border-box
+	
 	label
 		display: block
 
@@ -53,14 +55,25 @@
 	.main
 		width: 100%
 		margin-left: 0
-		padding-left: 0
-		padding-top: 0.2em
 		border-radius: 0
 
+@media (max-width: $medium)
+	.main
 		input
-			width: 80%
+			width: 60%
+			margin-left: 0
+
+		select
 			margin-left: 0
 
 		textarea
-			width: 80%
+			width: 70%
 			margin-left: 0
+
+		button
+			height: auto
+			max-width: 75vw
+
+		.red-button
+			height: auto
+			max-width: 75vw

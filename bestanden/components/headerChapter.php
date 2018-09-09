@@ -4,34 +4,30 @@ session_start();
 
 include('../../../scripts/DB_connect.php');
 
-//check if the person is loged in
-if (!isset($_SESSION["id"])){
-	$_SESSION['ErrorNotLogedIn'] = 1;
-	header('Location: ../../../index.php');
-}
-
 //check if account is still valid
 function AccountValid(){
 
-	//needed to connect inside the function
+	//needed to connect inside a function
 	global $conn;
 
-	$id = $_SESSION["id"];
-	$sql = "SELECT expire_date FROM users WHERE id='$id'";
+	if(isset($_SESSION["username"])){
+		$id = $_SESSION["username"];
+		$sql = "SELECT expire_date FROM users WHERE username='$id'";
 
-	if (mysqli_query($conn, $sql)) {
-		//find teacher info
-		$result = mysqli_query($conn, $sql);
-		$result = mysqli_fetch_assoc($result);
-		$expire_date = $result['expire_date'];
-	} else {
-		echo "SQL error, report to admin";
-	}
+		if (mysqli_query($conn, $sql)) {
+			//find teacher info
+			$result = mysqli_query($conn, $sql);
+			$result = mysqli_fetch_assoc($result);
+			$expire_date = $result['expire_date'];
+		} else {
+			echo "SQL error, report to admin";
+		}
 
-	if($expire_date>date("Y-m-d")){
-		$valid = 1;
-	} else {
-		$valid = 0;
+		if($expire_date>date("Y-m-d")){
+			$valid = 1;
+		} else {
+			$valid = 0;
+		}
 	}
 
 	return $valid;

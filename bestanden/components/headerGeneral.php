@@ -31,22 +31,24 @@ function AccountValid(){
 	//needed to connect inside a function
 	global $conn;
 
-	$id = $_SESSION["id"];
-	$sql = "SELECT expire_date FROM users WHERE id='$id'";
+	if(isset($_SESSION["username"])){
+		$id = $_SESSION["username"];
+		$sql = "SELECT expire_date FROM users WHERE username='$id'";
 
-	if (mysqli_query($conn, $sql)) {
-		//find teacher info
-		$result = mysqli_query($conn, $sql);
-		$result = mysqli_fetch_assoc($result);
-		$expire_date = $result['expire_date'];
-	} else {
-		echo "SQL error, report to admin";
-	}
+		if (mysqli_query($conn, $sql)) {
+			//find teacher info
+			$result = mysqli_query($conn, $sql);
+			$result = mysqli_fetch_assoc($result);
+			$expire_date = $result['expire_date'];
+		} else {
+			echo "SQL error, report to admin";
+		}
 
-	if($expire_date>date("Y-m-d")){
-		$valid = 1;
-	} else {
-		$valid = 0;
+		if($expire_date>date("Y-m-d")){
+			$valid = 1;
+		} else {
+			$valid = 0;
+		}
 	}
 
 	return $valid;
@@ -54,28 +56,17 @@ function AccountValid(){
 
 //if the account is expired, than redirect to index (if the person isn't on the index page yet) (only check if the person is loged in)
 if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF']) != 'account.php' AND basename($_SERVER['PHP_SELF']) != 'resetPswFront.php' AND basename($_SERVER['PHP_SELF']) != 'requestAccountsFront.php'){
-	if(!isset($_SESSION['id'])){
+	if (!isset($_SESSION["id"])){
 		$_SESSION['ErrorNotLogedIn'] = 1;
-		header('Location: index.php');
-	}
-
-	if(isset($_SESSION['id'])){
-		if($_SESSION['ErrorNotLogedIn'] == 0){
-			if(!AccountValid()){
-				$_SESSION['ErrorInvalidAccount'] = 1;
-				header('Location: index.php');
-			}
+		header('Location: ../index.php');
+	} else {
+		//check if the account hasn't expired and if it has, than redirect
+		if(AccountValid()){
+			$_SESSION['ErrorInvalidAccount'] = 0;
+		} else {
+			$_SESSION['ErrorInvalidAccount'] = 1;
+			header('Location: ../index.php');
 		}
-	}
-
-	if(!AccountValid()){
-		$_SESSION['ErrorInvalidAccount'] = 1;
-		header('Location: index.php');
-	}
-
-} else {
-	if(isset($_SESSION['ErrorInvalidAccount'])){
-		$_SESSION['ErrorInvalidAccount'] = 0;
 	}
 }
 ?>

@@ -402,7 +402,7 @@
 												$Cname = $row['naam'];
 												$Cfunction = $row['group_role'];
 
-												$CstudentInfoForGroup = ['naam'=>$Cname, 'klas'=>$Cklas, 'functie'=>$Cfunction];
+												$CstudentInfoForGroup = ['naam'=>$Cname, 'klas'=>$Cklas, 'group_role'=>$Cfunction, 'functie'=>$Cfunction];
 
 												array_push($studentInfoForGroup, $CstudentInfoForGroup);
 
@@ -460,7 +460,7 @@
 
 												$CmemberName = $studentInfoForGroup[$j]['naam'];
 												$CstudentClass = $studentInfoForGroup[$j]['klas'];
-												$CstudentRole = $studentInfoForGroup[$j]['functie'];
+												$CstudentRole = $studentInfoForGroup[$j]['group_role'];
 
 												echo '
 

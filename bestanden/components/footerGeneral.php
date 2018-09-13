@@ -18,5 +18,6 @@
 </footer>
 
 <script src="../scripts/UI.js"></script>
+<script src="../scripts/updateActivityGeneral.js" defer></script>
 
 </html>

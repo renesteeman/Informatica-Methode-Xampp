@@ -63,6 +63,8 @@ include('../../../components/headerChapter.php');
 
 			<p>Talen die worden uitgevoerd aan de kant van de gebruiker heten ‘client-side’. Een voorbeeld hiervan is JS, aangezien de browser aan de kant van de gebruiker wordt gebruikt. Talen die aan de kant van de server worden gebruikt heten ‘server-side’. Een voorbeeld hiervan is PHP. Het voordeel van een client-side taal is dat het weinig rekenkracht vereist van een centrale server. Het voordeel van een server-side taal is dat het vaak sneller uitgevoerd wordt (de snelheid van het apparaat van de gebruiker is niet erg belangrijk) en het is vaak krachtiger.</p>
 
+			<p>NB: JS kan ook server-side gebruikt worden, maar dat is niet standard.</p>
+
 		</div>
 
 		<div class="bar-s">

@@ -30,5 +30,6 @@ $(document).ready(function(){
     setTimeout(updateActivity, 60000);
   }
 
+  active = 1;
   updateActivity();
 })

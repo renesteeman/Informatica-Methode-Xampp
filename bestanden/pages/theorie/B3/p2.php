@@ -54,9 +54,9 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content">
-			<p>In deze paragraaf je kennismaken met JS. Om JS te kunnen gebruiken heb je niet meer nodig dan een tekstbewerker en een browser. Als je al Atom gebruikt is het ook hier erg handig voor. Als je meer wilt weten dan dat hier behandeld wordt kun je altijd zoeken op <a href="https://www.w3schools.com/js/default.asp.">https://www.w3schools.com/js/default.asp.</a></p>
+			<p>In deze paragraaf ga je kennismaken met JS. Om JS te kunnen gebruiken heb je niet meer nodig dan een tekstbewerker en een browser. Als je al Atom gebruikt is het ook hier erg handig voor. Als je meer wilt weten dan dat hier behandeld wordt kun je altijd zoeken op <a href="https://www.w3schools.com/js/default.asp.">https://www.w3schools.com/js/default.asp</a>.</p>
 
-			<p>Er zijn meerdere manieren om de JS code toe te voegen aan een webpagina. De standard is een vorm van een external include, dit betekent dat het in een apart bestand staat, los van eventuele HTLM. Het liefst zetten we deze external include ook nog op het eind van een pagina. Op die manier kan de gebruiker eerst al de inhoud van de pagina zien en na even te wachten ook de interactie gebruiken. De pagina lijkt dan sneller te zijn, terwijl het eigenlijk even lang zal laden. Een voorbeeld van zo’n soort include is:</p>
+			<p>Er zijn meerdere manieren om de JS code toe te voegen aan een webpagina. De standard is een vorm van een external include, dit betekent dat het in een apart bestand staat, los van eventuele HTML. Het liefst zetten we deze external include ook nog op het eind van een pagina. Op die manier kan de gebruiker eerst al de inhoud van de pagina zien en na even te wachten ook de interactie gebruiken. De pagina lijkt dan sneller te zijn, terwijl het eigenlijk even lang zal laden. Een voorbeeld van zo’n soort include is:</p>
 
 			<pre><code>&lt;html>
   &lt;head>
@@ -92,7 +92,7 @@ include('../../../components/headerChapter.php');
 
 			<p>Met JS ga je gebruik maken van het DOM om elementen te veranderen of informatie eruit te halen. Dit kan op verschillende manieren. De makkelijkste manieren zijn via het ID en de class, deze ken je hopelijk nog van jouw gebruik van CSS.</p>
 
-			<p>Om via een ID een element te op te halen gebruik je:</p>
+			<p>Om via een ID een element op te halen gebruik je:</p>
 
 			<pre><code>document.getElementById(“ID”)</code></pre>
 
@@ -109,7 +109,6 @@ include('../../../components/headerChapter.php');
 			<p>Een voorbeeld is:</p>
 
 			<pre><code>Content = document.getElementById(“formulier”).innerText;</code></pre>
-
 
 			<p>Het toevoegen van een class via:</p>
 

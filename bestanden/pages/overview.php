@@ -26,8 +26,12 @@
 
 	<div class="overzicht">
 		<!-- the table as a whole -->
-		<div class="table">
+		<div class="searchWrap">
+			<input type="text" class="searchInput" placeholder="Zoek op naam">
+			<button class="searchButton"><img src="../icons/search.svg" /></button>
+		</div>
 
+		<div class="table">
 			<!--
 			<div class="headerRow klassen">
 				<!- table header for this class->

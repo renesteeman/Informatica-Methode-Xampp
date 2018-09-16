@@ -320,8 +320,21 @@ button[type=submit].RedButton
 button[type=submit].RedButton:hover
 	background-color: darken($red, 5%)
 
+select
+	height: 1.5em
+	font-size: 1.6rem
+	border-radius: 4px
+	padding: 0
+	border-radius: 0
+	margin-bottom: 1em
+	margin-top: 1em
+	margin-left: 1em
+	position: relative
+	bottom: 20px
+
 input
-	font-size: 0.8em
+	height: 1.2rem
+	font-size: 1.6rem
 	margin-bottom: 1em
 	margin-top: 1em
 	margin-left: 1rem
@@ -399,6 +412,29 @@ textarea:hover
 	.completed
 		background: linear-gradient(to bottom right, lighten($secondary2, 5%), lighten($secondary2, 10%))
 		color: rgba($black, 0.8)
+
+//search bar
+.searchWrap
+	font-size: 1.5rem
+	margin-top: 1.5rem
+	margin-bottom: 1.5rem
+	height: 2.6rem
+
+.searchInput
+	margin: 0
+	width: 20%
+	display: inline-block
+	position: static
+
+
+.searchButton
+	height: 1.2rem
+	padding: 12px
+	box-sizing: content-box
+
+	img
+		height: 1.5em
+		width: 1.5em
 
 //responsiveness
 @media (max-width: $xlarge)

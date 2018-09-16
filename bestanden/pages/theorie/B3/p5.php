@@ -147,7 +147,7 @@ document.getElementById('element').addEventListener("click", function(){
 					</tr>
 					<tr>
 						<td>ES5</td>
-						<td>Betere ondersteuning voor JSON en handige functies voor het werken met variabelen.</td>
+						<td>Betere ondersteuning voor JSON (een bepaalde notatiewijze) en handige functies voor het werken met variabelen.</td>
 					</tr>
 					<tr>
 						<td>ES6</td>

@@ -120,7 +120,7 @@ for (item in items){
   alert(items[item]);
 }</code></pre>
 
-			<p>Een while loop wordt vaak gebruikt bij processen die lang doorgaan. Denk aan een spel waarbij de speler kan bewegen zolang hij leeft. Het lastig om bij een klein programma een goed voorbeeld hiervan te geven. Een while loop kan er als volgt uitzien:</p>
+			<p>Een while loop wordt vaak gebruikt bij processen die lang doorgaan. Denk aan een spel waarbij de speler kan bewegen zolang hij leeft. Het is lastig om bij een klein programma een goed voorbeeld hiervan te geven. Een while loop kan er als volgt uitzien:</p>
 
 			<pre><code>i = 0;
 amount = 10;
@@ -138,7 +138,7 @@ while(i < amount){
   //doe iets
 }</code></pre>
 
-			<p>Je kunt een functie ‘aanroepen’ doormiddel van #CODE FUNCTIE_NAAM(NODIGE_DATA); De functie zal dan worden uitgevoerd. Op de plek van NODIGE_DATA kan data staan die de functie nodig heeft, denk aan variabelen die in de rest van de code voorkomen. Een voorbeeld van een kort programma met functies is:</p>
+			<p>Je kunt een functie ‘aanroepen’ doormiddel van FUNCTIE_NAAM(NODIGE_DATA); De functie zal dan worden uitgevoerd. Op de plek van NODIGE_DATA kan data staan die de functie nodig heeft, denk aan variabelen die in de rest van de code voorkomen. Een voorbeeld van een kort programma met functies is:</p>
 
 			<pre><code>function updateTime(DoorTeSturenInfo){
   datum = new Date();

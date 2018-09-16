@@ -28,7 +28,6 @@
 		<!-- the table as a whole -->
 		<div class="searchWrap">
 			<input type="text" class="searchInput" placeholder="Zoek op naam">
-			<button class="searchButton"><img src="../icons/search.svg" /></button>
 		</div>
 
 		<div class="table">

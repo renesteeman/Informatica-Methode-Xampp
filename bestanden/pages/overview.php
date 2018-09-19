@@ -28,52 +28,89 @@
 		<input type="text" class="searchInput" placeholder="Zoek op naam">
 
 		<div class="searchResult">
+
 			<div class="searchResultNaam">
 				Naam
 			</div>
+
 			<div class="searchResultKlas">
 				Klas
 			</div>
+
 			<div class="searchResultActiviteit">
 				Actief? Nee? -> Laatst online op X om Y
 			</div>
+
 			<div class="searchResultGroep">
-				Groepnaam
-				<div class="searchResultGroepInhoud">
+				<div class="searchResultHeader">
+					<span class="barItem">Groepnaam</span>
+					<span class="icons">
+						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+					</span>
+				</div>
+
+				<div class="searchResultInhoud">
+
 					<div class="searchResultGroepInhoudItem">
 						<span class="searchResultGroepInhoudLeden">lid1</span>
 						<span class="searchResultGroepInhoudRollen">rol1</span>
 					</div>
+
 					<div class="searchResultGroepInhoudItem">
 						<span class="searchResultGroepInhoudLeden">lid2</span>
 						<span class="searchResultGroepInhoudRollen">rol2</span>
 					</div>
+
 				</div>
 			</div>
+
 			<div class="searchResultQuiz">
-				Quiz resultaten
-				<div class="searchResultQuizInhoud">
-					<div class="searchResultQuizInhoudItem">
-						<span class="searchResultQuizInhoudHoofdstuk">H1</span>
-						<span class="searchResultQuizInhoudCijfer">cijfer1</span>
+
+				<div class="searchResultHeader">
+					<span class="barItem">Quiz resultaten</span>
+					<span class="icons">
+						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+					</span>
+				</div>
+
+				<div class="searchResultInhoud">
+
+					<div class="searchResultQuizInhoud">
+						<div class="searchResultQuizInhoudItem">
+							<span class="searchResultQuizInhoudHoofdstuk">H1</span>
+							<span class="searchResultQuizInhoudCijfer">cijfer1</span>
+						</div>
+
+						<div class="searchResultQuizInhoudItem">
+							<span class="searchResultQuizInhoudHoofdstuk">H2</span>
+							<span class="searchResultQuizInhoudCijfer">cijfer2</span>
+						</div>
 					</div>
-					<div class="searchResultQuizInhoudItem">
-						<span class="searchResultQuizInhoudHoofdstuk">H2</span>
-						<span class="searchResultQuizInhoudCijfer">cijfer2</span>
-					</div>
+
 				</div>
 			</div>
+
 			<div class="searchResultProgressie">
-				Theorie progressie
-				<div class="searchResultProgressieInhoud">
+
+				<div class="searchResultHeader">
+					<span class="barItem">Theorie progressie</span>
+					<span class="icons">
+						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+					</span>
+				</div>
+				
+				<div class="searchResultInhoud">
+
 					<div class="searchResultProgressieInhoudItem">
 						<span class="searchResultProgressieInhoudHoofdstuk">H1</span>
 						<span class="searchResultProgressieInhoudPercentage">%</span>
-						<div class="searchResultProgressieInhoudHoofstukItem">
-							<span class="searchResultProgressieInhoudHoofstukParagraaf">§1</span>
-							<span class="searchResultProgressieInhoudHoofstukAf">af?</span>
-						</div>
 					</div>
+
+					<div class="searchResultProgressieInhoudHoofstukItem">
+						<span class="searchResultProgressieInhoudHoofstukParagraaf">§1</span>
+						<span class="searchResultProgressieInhoudHoofstukAf">af?</span>
+					</div>
+
 				</div>
 			</div>
 		</div>

@@ -20,7 +20,7 @@ function AccountValid(){
 			$result = mysqli_fetch_assoc($result);
 			$expire_date = $result['expire_date'];
 		} else {
-			echo "SQL error, report to admin";
+			echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 		}
 
 		if($expire_date>date("Y-m-d")){

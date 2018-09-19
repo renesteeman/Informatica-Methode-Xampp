@@ -98,17 +98,48 @@
 						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
 					</span>
 				</div>
-				
+
 				<div class="searchResultInhoud">
 
-					<div class="searchResultProgressieInhoudItem">
+					<div class="searchResultProgressieChapter">
 						<span class="searchResultProgressieInhoudHoofdstuk">H1</span>
 						<span class="searchResultProgressieInhoudPercentage">%</span>
+						<span class="icons">
+							<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+						</span>
 					</div>
 
-					<div class="searchResultProgressieInhoudHoofstukItem">
-						<span class="searchResultProgressieInhoudHoofstukParagraaf">§1</span>
-						<span class="searchResultProgressieInhoudHoofstukAf">af?</span>
+					<div class="searchResultProgressieParagraphs">
+						<div class="searchResultProgressieParagraphRow">
+							<span class="searchResultProgressieParagraphRowParagraph">§1</span>
+							<span class="searchResultProgressieParagraphRowProgress">ICON</span>
+						</div>
+
+						<div class="searchResultProgressieParagraphRow">
+							<span class="searchResultProgressieParagraphRowParagraph">§2</span>
+							<span class="searchResultProgressieParagraphRowProgress">ICON</span>
+						</div>
+					</div>
+
+
+					<div class="searchResultProgressieChapter">
+						<span class="searchResultProgressieInhoudHoofdstuk">H2</span>
+						<span class="searchResultProgressieInhoudPercentage">%</span>
+						<span class="icons">
+							<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+						</span>
+					</div>
+
+					<div class="searchResultProgressieParagraphs">
+						<div class="searchResultProgressieParagraphRow">
+							<span class="searchResultProgressieParagraphRowParagraph">§1</span>
+							<span class="searchResultProgressieParagraphRowProgress">ICON</span>
+						</div>
+
+						<div class="searchResultProgressieParagraphRow">
+							<span class="searchResultProgressieParagraphRowParagraph">§2</span>
+							<span class="searchResultProgressieParagraphRowProgress">ICON</span>
+						</div>
 					</div>
 
 				</div>

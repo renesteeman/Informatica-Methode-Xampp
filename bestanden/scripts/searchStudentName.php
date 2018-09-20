@@ -5,7 +5,8 @@
   $id = $_SESSION["id"];
   $school = '';
   $input = '';
-  $namen = [];
+  $error = '';
+  $searchResults = [];
 
   #get school and (part of a) name
   #search DB for possible (student) matches
@@ -28,27 +29,27 @@
 		$result = mysqli_fetch_assoc($result);
 		$school = $result['school'];
 
-    //TODO debug sql
-    $sql = "SELECT naam FROM users WHERE school='$school' AND name LIKE %'$input'";
+    $sql = "SELECT naam FROM users WHERE school='$school' AND naam LIKE '$input%' AND functie='leerling'";
 
   	if (mysqli_query($conn, $sql)) {
   		$result = mysqli_query($conn, $sql);
       //add names to possible students
       while($row = mysqli_fetch_assoc($result)) {
     		$Cnaam = $row['naam'];
-        $namen[] = $Cnaam;
+        $searchResults[] = $Cnaam;
       }
 
-      //return names
-      //TODO
-      echo $namen[0];
-
     } else {
-      echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 1";
+      $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 1";
     }
 
   } else {
-    echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 2";
+    $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 2";
   }
+
+  //return data via json
+  $toReturn = array('searchResults' => $searchResults, 'error' => $error);
+	$toReturn = json_encode($toReturn, JSON_FORCE_OBJECT);
+  echo $toReturn;
 
 ?>

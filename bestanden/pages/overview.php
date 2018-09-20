@@ -25,7 +25,13 @@
 	</div>
 
 	<div class="searchWrap">
-		<input type="text" class="searchInput" placeholder="Zoek op naam">
+		<input type="text" class="searchInput" placeholder="Zoek op naam" list="searchStudentDatalist">
+		<datalist id='searchStudentDatalist'>
+			<option value='11'>
+			<option value='12'>
+			<option value='13'>
+			<option value='14'>
+		</datalist>
 
 		<div class="searchResult">
 

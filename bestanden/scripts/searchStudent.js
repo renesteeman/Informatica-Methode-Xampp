@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  datalist = $('#searchStudentDatalist');
+
   $('.searchInput').on('focus', function(){
     $('.searchInput').on('keyup', function(){
       input = $('.searchInput').val();
@@ -10,8 +12,20 @@ $(document).ready(function(){
   			data: {input: input}
   		});
 
-  		jqXHR.done(function(msg) {
-  			alert(msg);
+  		jqXHR.done(function(response) {
+        response = JSON.parse(response);
+        if(response.error.length > 0){
+          alert(response.error);
+        }
+        searchResults = Object.values(response.searchResults);
+        console.log(searchResults);
+        console.log(searchResults.length);
+
+        datalist.empty();
+        for(var i=0; i<searchResults.length; i++){
+          var opt = $("<option></option>").attr("value", searchResults[i]);
+          datalist.append(opt);
+        }
   		});
 
   		jqXHR.fail(function(jqXHR) {

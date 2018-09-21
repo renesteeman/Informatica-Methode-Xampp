@@ -18,8 +18,6 @@ $(document).ready(function(){
           alert(response.error);
         }
         searchResults = Object.values(response.searchResults);
-        console.log(searchResults);
-        console.log(searchResults.length);
 
         datalist.empty();
         for(var i=0; i<searchResults.length; i++){

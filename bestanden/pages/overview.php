@@ -27,10 +27,7 @@
 	<div class="searchWrap">
 		<input type="text" class="searchInput" placeholder="Zoek op naam" list="searchStudentDatalist">
 		<datalist id='searchStudentDatalist'>
-			<option value='11'>
-			<option value='12'>
-			<option value='13'>
-			<option value='14'>
+			<!-- filled by php -->
 		</datalist>
 
 		<div class="searchResult">
@@ -41,6 +38,10 @@
 
 			<div class="searchResultKlas">
 				Klas
+			</div>
+
+			<div class="searchResultMail">
+				E-mail
 			</div>
 
 			<div class="searchResultActiviteit">
@@ -663,5 +664,6 @@
 	?>
 
 	<script src="../scripts/searchStudent.js" defer></script>
+	<script src="../scripts/searchStudentInfo.js" defer></script>
 
 </body>

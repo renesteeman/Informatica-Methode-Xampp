@@ -36,6 +36,7 @@
       $result = mysqli_query($conn, $sql);
 
       if(mysqli_num_rows($result) == 1){
+        //get the right info for the containers
         $result = mysqli_fetch_assoc($result);
 
         $info['id'] = $result['id'];
@@ -46,14 +47,11 @@
         $info['email'] = $result['email'];
         $info['LActivity'] = $result['LActivity'];
 
-        $info['groepsgenoten'] = [];
-        $info['quizResults'] = [];
-        $info['progression'] = [];
-
         //if the person is in a group, get his groupmates
         $sqlGroupName = $info['group_name'];
+        $sqlNaam = $info['naam'];
         if(strlen($sqlGroupName) > 0){
-          $sql = "SELECT naam FROM users WHERE school='$school' AND group_name=$sqlGroupName AND functie='leerling'";
+          $sql = "SELECT naam, klas, group_role FROM users WHERE school='$school' AND group_name='$sqlGroupName' AND functie='leerling' AND naam!='$sqlNaam'";
 
         	if (mysqli_query($conn, $sql)) {
             $result = mysqli_query($conn, $sql);
@@ -61,7 +59,11 @@
             //add each name to the array of group_members
             while($row = mysqli_fetch_assoc($result)) {
               $Cnaam = $row['naam'];
-              $info['groepsgenoten'][] = $Cnaam;
+              $Cklas = $row['klas'];
+              $Cgroup_role= $row['group_role'];
+
+              $add = [$Cnaam, $Cklas, $Cgroup_role];
+              $info['groepsgenoten'][] = $add;
             }
 
           } else {
@@ -85,7 +87,7 @@
           }
 
         } else {
-          $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 1";
+          $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 2";
         }
 
         //get progression
@@ -97,22 +99,42 @@
           $result = mysqli_fetch_assoc($result);
 
           $info['progression'] = $result;
-
-
         } else {
-          $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 1";
+          $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 3";
         }
-
-
       }
 
     } else {
-      $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 1";
+      $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 4";
     }
 
   } else {
-    $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 2";
+    $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 5";
   }
+
+  //remove NULL values
+  if(is_null($info['group_name'])){
+    $info['group_name'] = '';
+  }
+  if(is_null($info['group_role'])){
+    $info['group_role'] = '';
+  }
+  if(is_null($info['email'])){
+    $info['email'] = '';
+  }
+  if(is_null($info['LActivity'])){
+    $info['LActivity'] = '';
+  }
+  if(empty($info['groepsgenoten'])){
+    $info['groepsgenoten'] = '';
+  }
+  if(empty($info['quizResults'])){
+    $info['quizResults'] = '';
+  }
+  if(empty($info['progression'])){
+    $info['progression'] = '';
+  }
+
 
   //return data via json
   $toReturn = array('info' => $info, 'error' => $error);

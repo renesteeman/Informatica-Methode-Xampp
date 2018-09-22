@@ -50,21 +50,23 @@
 
 			<div class="searchResultGroep">
 				<div class="searchResultHeader">
-					<span class="barItem">Groepnaam</span>
+					<span class="barItem searchResultGroupName">Groepnaam</span>
 					<span class="icons">
 						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
 					</span>
 				</div>
 
-				<div class="searchResultInhoud">
+				<div class="searchResultInhoud searchResultGroepInhoud">
 
 					<div class="searchResultGroepInhoudItem">
 						<span class="searchResultGroepInhoudLeden">lid1</span>
+						<span class="searchResultGroepInhoudKlas">klas1</span>
 						<span class="searchResultGroepInhoudRollen">rol1</span>
 					</div>
 
 					<div class="searchResultGroepInhoudItem">
 						<span class="searchResultGroepInhoudLeden">lid2</span>
+						<span class="searchResultGroepInhoudKlas">klas2</span>
 						<span class="searchResultGroepInhoudRollen">rol2</span>
 					</div>
 
@@ -74,13 +76,13 @@
 			<div class="searchResultQuiz">
 
 				<div class="searchResultHeader">
-					<span class="barItem">Quiz resultaten</span>
+					<span class="barItem searchResultQuiz">Quiz resultaten</span>
 					<span class="icons">
 						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
 					</span>
 				</div>
 
-				<div class="searchResultInhoud">
+				<div class="searchResultInhoud searchResultQuizInhoud">
 
 					<div class="searchResultQuizInhoud">
 						<div class="searchResultQuizInhoudItem">

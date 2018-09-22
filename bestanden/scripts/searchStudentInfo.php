@@ -48,6 +48,7 @@
 
         $info['groepsgenoten'] = [];
         $info['quizResults'] = [];
+        $info['progression'] = [];
 
         //if the person is in a group, get his groupmates
         $sqlGroupName = $info['group_name'];
@@ -82,6 +83,21 @@
             $add = [$Cchapter => $Cgrade];
             $info['quizResults'][] = $add;
           }
+
+        } else {
+          $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 1";
+        }
+
+        //get progression
+        $sqlID = $info['id'];
+        $sql = "SELECT * FROM progressie WHERE userid='$sqlID'";
+
+      	if (mysqli_query($conn, $sql)) {
+          $result = mysqli_query($conn, $sql);
+          $result = mysqli_fetch_assoc($result);
+
+          $info['progression'] = $result;
+
 
         } else {
           $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 1";

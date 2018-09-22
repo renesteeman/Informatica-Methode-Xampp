@@ -44,23 +44,29 @@
         $info['group_role'] = $result['group_role'];
         $info['email'] = $result['email'];
         $info['LActivity'] = $result['LActivity'];
+        $info['groepsgenoten'] = [];
 
         //get more info
-        /*
-        $sql = """SELECT naam FROM users WHERE school='$school' AND group_name="$info['group_name']" AND functie='leerling'""";
 
-      	if (mysqli_query($conn, $sql)) {
-          $result = mysqli_query($conn, $sql);
+        //if the person is in a group, get his groupmates
+        $sqlGroupName = $info['group_name'];
+        if(strlen($sqlGroupName) > 0){
+          $sql = "SELECT naam FROM users WHERE school='$school' AND group_name=$sqlGroupName AND functie='leerling'";
 
-          //add each name to the array of group_members
-          while($row = mysqli_fetch_assoc($result)) {
-            $Cnaam = $row['naam'];
-            $info['groepsgenoten'][] = $Cnaam;
+        	if (mysqli_query($conn, $sql)) {
+            $result = mysqli_query($conn, $sql);
+
+            //add each name to the array of group_members
+            while($row = mysqli_fetch_assoc($result)) {
+              $Cnaam = $row['naam'];
+              $info['groepsgenoten'][] = $Cnaam;
+            }
+
+          } else {
+            $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 1";
           }
+        }
 
-        } else {
-          $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 1";
-        }*/
       }
 
     } else {

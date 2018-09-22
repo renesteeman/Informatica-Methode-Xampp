@@ -30,7 +30,7 @@
 		$school = $result['school'];
 
     //check if there's a student with the given name and if so start to gather info
-    $sql = "SELECT naam, klas, group_name, group_role, email, LActivity FROM users WHERE school='$school' AND naam='$input' AND functie='leerling'";
+    $sql = "SELECT id, naam, klas, group_name, group_role, email, LActivity FROM users WHERE school='$school' AND naam='$input' AND functie='leerling'";
 
     if (mysqli_query($conn, $sql)) {
       $result = mysqli_query($conn, $sql);
@@ -38,15 +38,16 @@
       if(mysqli_num_rows($result) == 1){
         $result = mysqli_fetch_assoc($result);
 
+        $info['id'] = $result['id'];
         $info['naam'] = $result['naam'];
         $info['klas'] = $result['klas'];
         $info['group_name'] = $result['group_name'];
         $info['group_role'] = $result['group_role'];
         $info['email'] = $result['email'];
         $info['LActivity'] = $result['LActivity'];
-        $info['groepsgenoten'] = [];
 
-        //get more info
+        $info['groepsgenoten'] = [];
+        $info['quizResults'] = [];
 
         //if the person is in a group, get his groupmates
         $sqlGroupName = $info['group_name'];
@@ -66,6 +67,26 @@
             $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 1";
           }
         }
+
+        //get test results
+        $sqlID = $info['id'];
+        $sql = "SELECT hoofdstuk, cijfer FROM quiz WHERE userid='$sqlID'";
+
+      	if (mysqli_query($conn, $sql)) {
+          $result = mysqli_query($conn, $sql);
+
+          //add each name to the array of group_members
+          while($row = mysqli_fetch_assoc($result)) {
+            $Cchapter = $row['hoofdstuk'];
+            $Cgrade = $row['cijfer'];
+            $add = [$Cchapter => $Cgrade];
+            $info['quizResults'][] = $add;
+          }
+
+        } else {
+          $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 1";
+        }
+
 
       }
 

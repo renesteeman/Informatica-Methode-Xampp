@@ -44,10 +44,34 @@ $(document).ready(function(){
       } else {
         $('.searchResultGroupName').text('Zit niet in een groep');
       }
-      if(info['groepsgenoten'] != 0){
+      if(info['groepsgenoten'] != ""){
         $('.searchResultGroupName').next().removeClass('hide');
-        //TODO set right info
-        $('.searchResultGroepInhoud').text(info['groepsgenoten']);
+
+        $('.searchResultGroepInhoud').html("");
+
+
+        info['groepsgenoten'] = Object.values(info['groepsgenoten']);
+        console.log(info['groepsgenoten'].length);
+
+
+        for(i=0; i<info['groepsgenoten'].length; i++){
+          if(info['groepsgenoten'][i][2] == null){
+            info['groepsgenoten'][i][2] = "Geen groepsrol";
+          }
+          
+          append = "<div class='searchResultGroepInhoudItem'><span class='searchResultGroepInhoudLeden'>"+info['groepsgenoten'][i][0]+"</span><span class='searchResultGroepInhoudKlas'>"+info['groepsgenoten'][i][1]+"</span><span class='searchResultGroepInhoudRollen'>"+info['groepsgenoten'][i][2]+"</span></div>";
+
+          $('.searchResultGroepInhoud').append(append);
+        }
+
+        /*
+        <div class="searchResultGroepInhoudItem">
+          <span class="searchResultGroepInhoudLeden">lid1</span>
+          <span class="searchResultGroepInhoudKlas">klas1</span>
+          <span class="searchResultGroepInhoudRollen">rol1</span>
+        </div>
+        */
+
       } else {
         $('.searchResultGroupName').next().addClass('hide');
       }

@@ -19,19 +19,27 @@ $(document).ready(function(){
 
       info = response.info;
       console.log(info);
-      $('.searchResultNaam').text(info['naam']);
-      $('.searchResultKlas').text(info['klas']);
-      if(info['email'].length > 0){
+      if(info['naam'] != ""){
+        $('.searchResultNaam').text(info['naam']);
+      } else {
+        $('.searchResultNaam').text('Deze persoon bestaat niet');
+      }
+      if(info['klas'] != ""){
+        $('.searchResultKlas').text(info['klas']);
+      } else {
+        $('.searchResultKlas').text('Deze persoon bestaat niet');
+      }
+      if(info['email'] != ""){
         $('.searchResultMail').text(info['email']);
       } else {
         $('.searchResultMail').text('Geen email ingesteld');
       }
-      if(info['email'].length > 0){
+      if(info['LActivity'] != ""){
         $('.searchResultActiviteit').text(info['LActivity']);
       } else {
         $('.searchResultActiviteit').text('Nooit actief geweest');
       }
-      if(info['group_name'].length > 0){
+      if(info['group_name'] != ""){
         $('.searchResultGroupName').text(info['group_name']);
       } else {
         $('.searchResultGroupName').text('Zit niet in een groep');
@@ -51,6 +59,13 @@ $(document).ready(function(){
         $('.searchResultQuiz').next().addClass('hide');
       }
       //TODO progression
+      if(info['progression'] != 0){
+        $('.searchResultProgression').next().removeClass('hide');
+        //TODO set right info
+        $('.searchResultProgressionInhoud').text(info['progression']);
+      } else {
+        $('.searchResultProgression').next().addClass('hide');
+      }
 
 
 

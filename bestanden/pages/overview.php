@@ -102,13 +102,13 @@
 			<div class="searchResultProgressie">
 
 				<div class="searchResultHeader">
-					<span class="barItem">Theorie progressie</span>
+					<span class="barItem searchResultProgression">Theorie progressie</span>
 					<span class="icons">
 						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
 					</span>
 				</div>
 
-				<div class="searchResultInhoud">
+				<div class="searchResultProgressionInhoud">
 
 					<div class="searchResultProgressieChapter">
 						<span class="searchResultProgressieInhoudHoofdstuk">H1</span>

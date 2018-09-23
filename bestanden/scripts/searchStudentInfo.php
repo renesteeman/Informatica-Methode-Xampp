@@ -112,29 +112,64 @@
     $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 5";
   }
 
-  //remove NULL values
-  if(is_null($info['group_name'])){
+  //remove NULL values and empty values
+  if(isset($info['group_name'])){
+    if(is_null($info['group_name'])){
+      $info['group_name'] = '';
+    }
+  } else {
     $info['group_name'] = '';
   }
-  if(is_null($info['group_role'])){
+
+  if(isset($info['group_role'])){
+    if(is_null($info['group_role'])){
+      $info['group_role'] = '';
+    }
+  } else {
     $info['group_role'] = '';
   }
-  if(is_null($info['email'])){
+
+
+  if(isset($info['email'])){
+    if(is_null($info['email'])){
+      $info['email'] = '';
+    }
+  } else {
     $info['email'] = '';
   }
-  if(is_null($info['LActivity'])){
+
+  if(isset($info['LActivity'])){
+    if(is_null($info['LActivity'])){
+      $info['LActivity'] = '';
+    }
+  }
+  else {
     $info['LActivity'] = '';
   }
-  if(empty($info['groepsgenoten'])){
+
+  if(isset($info['groepsgenoten'])){
+    if(empty($info['groepsgenoten'])){
+      $info['groepsgenoten'] = '';
+    }
+  } else {
     $info['groepsgenoten'] = '';
   }
-  if(empty($info['quizResults'])){
+
+  if(isset($info['quizResults'])){
+    if(empty($info['quizResults'])){
+      $info['quizResults'] = '';
+    }
+  } else {
     $info['quizResults'] = '';
   }
-  if(empty($info['progression'])){
+
+  if(isset($info['progression'])){
+    if(empty($info['progression'])){
+      $info['progression'] = '';
+    }
+  } else {
     $info['progression'] = '';
   }
-
 
   //return data via json
   $toReturn = array('info' => $info, 'error' => $error);

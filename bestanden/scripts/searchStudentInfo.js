@@ -132,12 +132,6 @@ $(document).ready(function(){
         $('.searchResultProgression').next().addClass('hide');
       }
 
-
-
-
-
-
-
 		});
 
 		jqXHR.fail(function(jqXHR) {

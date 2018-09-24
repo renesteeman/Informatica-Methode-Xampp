@@ -112,22 +112,19 @@ $(document).ready(function(){
 
             //add paragraphs
             append = "<div class='searchResultProgressieParagraphs'>";
-            $('.searchResultProgressionInhoud').append(append);
 
             for(j=0; j<Nparagraphs; j++){
               CparagraphComplete = Number(CprogressionResultsCompletion[j]);
               if(CparagraphComplete){
-                append = "<div class='searchResultProgressieParagraphRow'><span class='searchResultProgressieParagraphRowParagraph'>§"+(j+1)+"</span><span class='searchResultProgressieParagraphRowProgress'><span class='onSchedule'></span></span></div>";
+                append += "<div class='searchResultProgressieParagraphRow'><span class='searchResultProgressieParagraphRowParagraph'>§"+(j+1)+"</span><span class='searchResultProgressieParagraphRowProgress'><span class='onSchedule'></span></span></div>";
               } else {
-                append = "<div class='searchResultProgressieParagraphRow'><span class='searchResultProgressieParagraphRowParagraph'>§"+(j+1)+"</span><span class='searchResultProgressieParagraphRowProgress'><span class='notOnSchedule'></span></span></div>";
+                append += "<div class='searchResultProgressieParagraphRow'><span class='searchResultProgressieParagraphRowParagraph'>§"+(j+1)+"</span><span class='searchResultProgressieParagraphRowProgress'><span class='notOnSchedule'></span></span></div>";
               }
 
-              $('.searchResultProgressionInhoud').append(append);
             }
 
-            append = "</div>";
+            append += "</div>";
             $('.searchResultProgressionInhoud').append(append);
-
 
           }
         }

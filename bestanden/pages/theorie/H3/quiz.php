@@ -186,7 +186,7 @@
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">f Koffie == 1 & Tesla!= 0
+					<label class="container">if Koffie == 1 & Tesla!= 0
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>

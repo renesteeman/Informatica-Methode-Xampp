@@ -12,7 +12,7 @@
 	$correct = [];
 	$incorrect = [];
 	$uitleg = [];
-	$error = 0;
+	$error = '';
 
 	//controleer antwoorden (per hoofdstuk)
 	if($hoofdstuk == 1){
@@ -61,10 +61,10 @@
 	}
 
 	$cijfer = ((($punten * 10) / count($antwoorden)) * 9 + 10)/10;
-
+	$cijfer = number_format(round(floatval($cijfer)), 1);
 
 	//check if user already has a score for the quiz
-	$sql = "SELECT cijfer FROM quiz WHERE userid=$id";
+	$sql = "SELECT cijfer FROM quiz WHERE userid=$id AND hoofdstuk='$hoofdstuk'";
 
 	if (mysqli_query($conn, $sql)) {
 
@@ -75,7 +75,7 @@
 			if (mysqli_query($conn, $sql)) {
 
 			} else {
-				$error = 1;
+				$error = "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 			}
 		} else {
 			$result = mysqli_fetch_assoc($result);
@@ -86,21 +86,16 @@
 				if (mysqli_query($conn, $sql)) {
 
 				} else {
-					$error = 1;
+					$error = "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 				}
 			}
 		}
 
 	} else {
-		$error = 1;
+		$error = "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 	}
 
 	$result = 'Je hebt een '.$cijfer.' gehaald';
-	if($error){
-		$msg3 = '</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!';
-	} else {
-		$msg3 = '';
-	}
 
 	$verbeteringen = [];
 	for($i=0; $i<sizeof($incorrect); $i++){

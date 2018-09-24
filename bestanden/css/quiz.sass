@@ -96,15 +96,7 @@
 
 //submit button
 input[type=submit]
-	font-size: 2em
 	margin-left: 20%
-	margin-bottom: 1.5em
-	box-shadow: 4px 4px 8px darken($white, 20%)
-	padding: 12px 12px
-	border-radius: 4px
-	height: 2em
-	border: 2px solid $grey
-	transition: background .5s ease-out, box-shadow 0.5s ease-in-out
 
 //show what's right and what's wrong
 .vragen
@@ -114,8 +106,14 @@ input[type=submit]
 .container input:checked ~ .checkmark.wrong
 	background-color: $red
 
+.container input:checked ~ .checkmark.wrong::after
+	border-color: $white
+
 .container input:checked ~ .checkmark.right
 	background-color: $green
+
+.container input:checked ~ .checkmark.right::after
+	border-color: $white
 
 @media (max-width: $large)
 	.vragen

@@ -80,7 +80,7 @@ $(document).ready(function(){
 
 				for(var i=0; i<right.length; i++){
 					var number = right[i];
-					$('.vraagBalk').eq(number).next().find('input[type="checkbox"]:checked').next().css('background-color', 'rgb(0, 130, 70)');
+					$('.vraagBalk').eq(number).next().find('input[type="checkbox"]:checked').next().addClass('right');
 				}
 
 				wrong = Object.keys(wrong).map(function (key) { return wrong[key]; });

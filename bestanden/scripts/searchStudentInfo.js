@@ -74,24 +74,47 @@ $(document).ready(function(){
           CquizResultsArray[0] = parseFloat(Object.keys(CquizResults));
           CquizResultsArray[1] = parseFloat(Object.values(CquizResults));
 
-          console.log(CquizResultsArray);
-
-
           append = "<div class='searchResultQuizInhoudItem'><span class='searchResultQuizInhoudHoofdstuk'>H"+CquizResultsArray[0]+"</span><span class='searchResultQuizInhoudCijfer'>"+CquizResultsArray[1]+"</span></div>";
 
           $('.searchResultQuizInhoud').append(append);
         }
 
-
-
       } else {
         $('.searchResultQuiz').next().addClass('hide');
       }
-      //TODO progression
-      if(info['progression'] != 0){
+
+      if(info['progression'] != ""){
         $('.searchResultProgression').next().removeClass('hide');
-        //TODO set right info
-        $('.searchResultProgressionInhoud').text(info['progression']);
+
+        $('.searchResultProgressionInhoud').html('');
+        progressionResultsProgression = Object.values(info['progression']);
+        progressionResultsChapters = Object.keys(info['progression']);
+        progressionResultsLength = progressionResultsProgression.length;
+
+        for(i=0; i<progressionResultsLength; i++){
+          CprogressionResultsChapters = progressionResultsChapters[i];
+          CprogressionResultsCompletion = progressionResultsProgression[i];
+
+          //show Chapters
+          if(CprogressionResultsChapters!='userid' && CprogressionResultsCompletion!=null){
+            Nparagraphs = CprogressionResultsCompletion.length;
+
+            FinishedParagraphs = 0;
+            for(j=0; j<Nparagraphs; j++){
+              FinishedParagraphs += Number(CprogressionResultsCompletion[j]);
+            }
+
+            CchapterCompletionPercentage = Math.round((FinishedParagraphs/Nparagraphs) * 100);
+
+            console.log(CprogressionResultsChapters);
+            console.log(CchapterCompletionPercentage);
+
+            append = "<div class='searchResultProgressieChapter'><span class='searchResultProgressieInhoudHoofdstuk'>"+CprogressionResultsChapters+"</span><span class='searchResultProgressieInhoudPercentage'>"+CchapterCompletionPercentage+"%</span><span class='icons'><span class='Arrow image'><img src='../icons/arrow.svg' class='arrow'/></span></span></div>";
+
+            $('.searchResultProgressionInhoud').append(append);
+
+          }
+        }
       } else {
         $('.searchResultProgression').next().addClass('hide');
       }

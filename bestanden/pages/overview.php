@@ -405,7 +405,7 @@
 											} else {
 												echo '
 												<span class="progressie">
-													<span class="notSchedule"></span>
+													<span class="notOnSchedule"></span>
 												</span>
 												';
 											}

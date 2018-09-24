@@ -60,18 +60,6 @@
 					span.progressie
 						width: 15%
 
-					.onSchedule
-						width: 1em
-						height: 1em
-						border-radius: 50%
-						background-color: $green
-
-					.notSchedule
-						width: 1em
-						height: 1em
-						border-radius: 50%
-						background-color: lighten($red, 5%)
-
 				.row:nth-child(even)
 					background-color: darken($secondary2, 10%)
 
@@ -112,6 +100,24 @@
 		.searchResultProgressieInhoudPercentage
 			width: 5%
 			display: inline-block
+
+	.searchResultProgressieParagraphRowParagraph
+		margin-right: 1rem
+
+	.searchResultProgressieParagraphRowProgress
+		position: relative
+
+		.notOnSchedule
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+
+		.onSchedule
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+
+
 
 //klas
 .overzicht

@@ -106,12 +106,28 @@ $(document).ready(function(){
 
             CchapterCompletionPercentage = Math.round((FinishedParagraphs/Nparagraphs) * 100);
 
-            console.log(CprogressionResultsChapters);
-            console.log(CchapterCompletionPercentage);
-
             append = "<div class='searchResultProgressieChapter'><span class='searchResultProgressieInhoudHoofdstuk'>"+CprogressionResultsChapters+"</span><span class='searchResultProgressieInhoudPercentage'>"+CchapterCompletionPercentage+"%</span><span class='icons'><span class='Arrow image'><img src='../icons/arrow.svg' class='arrow'/></span></span></div>";
 
             $('.searchResultProgressionInhoud').append(append);
+
+            //add paragraphs
+            append = "<div class='searchResultProgressieParagraphs'>";
+            $('.searchResultProgressionInhoud').append(append);
+
+            for(j=0; j<Nparagraphs; j++){
+              CparagraphComplete = Number(CprogressionResultsCompletion[j]);
+              if(CparagraphComplete){
+                append = "<div class='searchResultProgressieParagraphRow'><span class='searchResultProgressieParagraphRowParagraph'>§"+(j+1)+"</span><span class='searchResultProgressieParagraphRowProgress'><span class='onSchedule'></span></span></div>";
+              } else {
+                append = "<div class='searchResultProgressieParagraphRow'><span class='searchResultProgressieParagraphRowParagraph'>§"+(j+1)+"</span><span class='searchResultProgressieParagraphRowProgress'><span class='notOnSchedule'></span></span></div>";
+              }
+
+              $('.searchResultProgressionInhoud').append(append);
+            }
+
+            append = "</div>";
+            $('.searchResultProgressionInhoud').append(append);
+
 
           }
         }

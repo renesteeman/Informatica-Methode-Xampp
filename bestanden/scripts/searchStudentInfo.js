@@ -46,39 +46,44 @@ $(document).ready(function(){
       }
       if(info['groepsgenoten'] != ""){
         $('.searchResultGroupName').next().removeClass('hide');
-
         $('.searchResultGroepInhoud').html("");
 
-
         info['groepsgenoten'] = Object.values(info['groepsgenoten']);
-        console.log(info['groepsgenoten'].length);
-
 
         for(i=0; i<info['groepsgenoten'].length; i++){
           if(info['groepsgenoten'][i][2] == null){
             info['groepsgenoten'][i][2] = "Geen groepsrol";
           }
-          
+
           append = "<div class='searchResultGroepInhoudItem'><span class='searchResultGroepInhoudLeden'>"+info['groepsgenoten'][i][0]+"</span><span class='searchResultGroepInhoudKlas'>"+info['groepsgenoten'][i][1]+"</span><span class='searchResultGroepInhoudRollen'>"+info['groepsgenoten'][i][2]+"</span></div>";
 
           $('.searchResultGroepInhoud').append(append);
         }
 
-        /*
-        <div class="searchResultGroepInhoudItem">
-          <span class="searchResultGroepInhoudLeden">lid1</span>
-          <span class="searchResultGroepInhoudKlas">klas1</span>
-          <span class="searchResultGroepInhoudRollen">rol1</span>
-        </div>
-        */
-
       } else {
         $('.searchResultGroupName').next().addClass('hide');
       }
-      if(info['quizResults'] != 0){
+      if(info['quizResults'] != ""){
         $('.searchResultQuiz').next().removeClass('hide');
-        //TODO set right info
-        $('.searchResultQuizInhoud').text(info['quizResults']);
+        $('.searchResultQuizInhoud').html('');
+        quizResultsLength = (Object.values(info['quizResults'])).length;
+
+        for(i=0; i<quizResultsLength; i++){
+          CquizResults = info['quizResults'][i];
+          CquizResultsArray = [];
+          CquizResultsArray[0] = parseFloat(Object.keys(CquizResults));
+          CquizResultsArray[1] = parseFloat(Object.values(CquizResults));
+
+          console.log(CquizResultsArray);
+
+
+          append = "<div class='searchResultQuizInhoudItem'><span class='searchResultQuizInhoudHoofdstuk'>H"+CquizResultsArray[0]+"</span><span class='searchResultQuizInhoudCijfer'>"+CquizResultsArray[1]+"</span></div>";
+
+          $('.searchResultQuizInhoud').append(append);
+        }
+
+
+
       } else {
         $('.searchResultQuiz').next().addClass('hide');
       }

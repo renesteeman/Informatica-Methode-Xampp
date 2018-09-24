@@ -84,16 +84,14 @@
 
 				<div class="searchResultInhoud searchResultQuizInhoud">
 
-					<div class="searchResultQuizInhoud">
-						<div class="searchResultQuizInhoudItem">
-							<span class="searchResultQuizInhoudHoofdstuk">H1</span>
-							<span class="searchResultQuizInhoudCijfer">cijfer1</span>
-						</div>
+					<div class="searchResultQuizInhoudItem">
+						<span class="searchResultQuizInhoudHoofdstuk">H1</span>
+						<span class="searchResultQuizInhoudCijfer">cijfer1</span>
+					</div>
 
-						<div class="searchResultQuizInhoudItem">
-							<span class="searchResultQuizInhoudHoofdstuk">H2</span>
-							<span class="searchResultQuizInhoudCijfer">cijfer2</span>
-						</div>
+					<div class="searchResultQuizInhoudItem">
+						<span class="searchResultQuizInhoudHoofdstuk">H2</span>
+						<span class="searchResultQuizInhoudCijfer">cijfer2</span>
 					</div>
 
 				</div>

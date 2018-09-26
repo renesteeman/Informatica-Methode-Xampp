@@ -63,10 +63,14 @@ $(document).ready(function(){
       } else {
         $('.searchResultGroupName').next().addClass('hide');
       }
+
       if(info['quizResults'] != ""){
         $('.searchResultQuiz').next().removeClass('hide');
+        $('.searchResultQuiz').text('Quiz resultaten');
         $('.searchResultQuizInhoud').html('');
         quizResultsLength = (Object.values(info['quizResults'])).length;
+
+        append = "";
 
         for(i=0; i<quizResultsLength; i++){
           CquizResults = info['quizResults'][i];
@@ -74,13 +78,14 @@ $(document).ready(function(){
           CquizResultsArray[0] = parseFloat(Object.keys(CquizResults));
           CquizResultsArray[1] = parseFloat(Object.values(CquizResults));
 
-          append = "<div class='searchResultQuizInhoudItem'><span class='searchResultQuizInhoudHoofdstuk'>H"+CquizResultsArray[0]+"</span><span class='searchResultQuizInhoudCijfer'>"+CquizResultsArray[1]+"</span></div>";
-
-          $('.searchResultQuizInhoud').append(append);
+          append += "<div class='searchResultQuizInhoudItem'><span class='searchResultQuizInhoudHoofdstuk'>H"+CquizResultsArray[0]+"</span><span class='searchResultQuizInhoudCijfer'>"+CquizResultsArray[1]+"</span></div>";
         }
+
+        $('.searchResultQuizInhoud').append(append);
 
       } else {
         $('.searchResultQuiz').next().addClass('hide');
+        $('.searchResultQuiz').text('Er zijn geen gemaakte quizes');
       }
 
       if(info['progression'] != ""){
@@ -106,7 +111,7 @@ $(document).ready(function(){
 
             CchapterCompletionPercentage = Math.round((FinishedParagraphs/Nparagraphs) * 100);
 
-            append = "<div class='searchResultProgressieChapter'><span class='searchResultProgressieInhoudHoofdstuk'>"+CprogressionResultsChapters+"</span><span class='searchResultProgressieInhoudPercentage'>"+CchapterCompletionPercentage+"%</span><span class='icons'><span class='Arrow image'><img src='../icons/arrow.svg' class='arrow'/></span></span></div>";
+            append = "<div class='searchResultProgressieChapter'><span class='searchResultProgressieInhoudHoofdstuk barItem'>"+CprogressionResultsChapters+"</span><span class='searchResultProgressieInhoudPercentage'>"+CchapterCompletionPercentage+"%</span><span class='icons'><span class='Arrow image'><img src='../icons/arrow.svg' class='arrow'/></span></span></div>";
 
             $('.searchResultProgressionInhoud').append(append);
 
@@ -130,13 +135,18 @@ $(document).ready(function(){
         }
       } else {
         $('.searchResultProgression').next().addClass('hide');
+        $('.searchResultProgression').html('Er is geen progressie');
       }
+
+      //collapse 'menu'
+      $(".barItem").parent().next().slideUp(0);
 
 		});
 
 		jqXHR.fail(function(jqXHR) {
 		  alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
 		});
+
   }
 
   $('.searchInput').on('keypress', function(){

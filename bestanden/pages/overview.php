@@ -109,7 +109,7 @@
 				<div class="searchResultProgressionInhoud">
 
 					<div class="searchResultProgressieChapter">
-						<span class="searchResultProgressieInhoudHoofdstuk">H1</span>
+						<span class="searchResultProgressieInhoudHoofdstuk barItem">H1</span>
 						<span class="searchResultProgressieInhoudPercentage">%</span>
 						<span class="icons">
 							<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
@@ -130,7 +130,7 @@
 
 
 					<div class="searchResultProgressieChapter">
-						<span class="searchResultProgressieInhoudHoofdstuk">H2</span>
+						<span class="searchResultProgressieInhoudHoofdstuk barItem">H2</span>
 						<span class="searchResultProgressieInhoudPercentage">%</span>
 						<span class="icons">
 							<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>

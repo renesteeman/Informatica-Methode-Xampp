@@ -93,7 +93,6 @@ $(document).ready(function(){
 		$(this).next().next().toggleClass("after-active");
 	});
 
-	$(".theorie-answers").slideToggle(0);
 	$(".theorie-answers").siblings().last().toggleClass("active");
 
 	//edit lists

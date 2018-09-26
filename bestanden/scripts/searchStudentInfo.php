@@ -113,6 +113,22 @@
   }
 
   //remove NULL values and empty values
+  if(isset($info['naam'])){
+    if(is_null($info['naam'])){
+      $info['naam'] = '';
+    }
+  } else {
+    $info['naam'] = '';
+  }
+
+  if(isset($info['klas'])){
+    if(is_null($info['klas'])){
+      $info['klas'] = '';
+    }
+  } else {
+    $info['klas'] = '';
+  }
+
   if(isset($info['group_name'])){
     if(is_null($info['group_name'])){
       $info['group_name'] = '';

@@ -90,6 +90,7 @@ $(document).ready(function(){
 
       if(info['progression'] != ""){
         $('.searchResultProgression').next().removeClass('hide');
+        $('.searchResultProgression').text('Theorie progressie');
 
         $('.searchResultProgressionInhoud').html('');
         progressionResultsProgression = Object.values(info['progression']);
@@ -135,7 +136,7 @@ $(document).ready(function(){
         }
       } else {
         $('.searchResultProgression').next().addClass('hide');
-        $('.searchResultProgression').html('Er is geen progressie');
+        $('.searchResultProgression').text('Er is geen progressie');
       }
 
       //collapse 'menu'

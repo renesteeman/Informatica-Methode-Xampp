@@ -1,5 +1,10 @@
 <?php
 	include('../components/headerGeneral.php');
+
+	if($_SESSION['functie'] != 'docent'){
+		header('Location: ../index.php');
+	}
+
 ?>
 
 <link rel="stylesheet" href="../css/overview.min.css">
@@ -275,218 +280,214 @@
 						$school = $result['school'];
 						$functie = $result['functie'];
 
-						if($functie != 'docent'){
-							echo "U bent geen docent";
-						} else {
-							$sql = "SELECT id, naam, klas, group_role, group_name FROM `users` WHERE school='$school' AND functie='leerling'";
+						$sql = "SELECT id, naam, klas, group_role, group_name FROM `users` WHERE school='$school' AND functie='leerling'";
 
-							if (mysqli_query($conn, $sql)) {
+						if (mysqli_query($conn, $sql)) {
 
-								$result = mysqli_query($conn, $sql);
+							$result = mysqli_query($conn, $sql);
 
-								if (mysqli_num_rows($result) > 0) {
-								    // output data of each row of names with class
+							if (mysqli_num_rows($result) > 0) {
+							    // output data of each row of names with class
 
-								    while($row = mysqli_fetch_assoc($result)) {
-										$Cid = $row["id"];
-										$Cnaam = $row["naam"];
-										$Cklas = $row["klas"];
-										$group_role = $row["group_role"];
-										$group_name = $row["group_name"];
-										$gemiddeldePunt = 0;
-										$hoofdstukkenAf = [];
-										$onSchedule = 1;
+							    while($row = mysqli_fetch_assoc($result)) {
+									$Cid = $row["id"];
+									$Cnaam = $row["naam"];
+									$Cklas = $row["klas"];
+									$group_role = $row["group_role"];
+									$group_name = $row["group_name"];
+									$gemiddeldePunt = 0;
+									$hoofdstukkenAf = [];
+									$onSchedule = 1;
 
-										//save info from user
-										$userinfo = ['naam'=>$Cnaam, 'klas'=>$Cklas, 'group_role'=>$group_role, 'group_name'=>$group_name];
+									//save info from user
+									$userinfo = ['naam'=>$Cnaam, 'klas'=>$Cklas, 'group_role'=>$group_role, 'group_name'=>$group_name];
 
-										//get more info cijfer
-										$sql2 = "SELECT cijfer FROM `quiz` WHERE userid='$Cid'";
+									//get more info cijfer
+									$sql2 = "SELECT cijfer FROM `quiz` WHERE userid='$Cid'";
 
-										//get info from other tables
-										if (mysqli_query($conn, $sql2)) {
-											$result2 = mysqli_query($conn, $sql2);
+									//get info from other tables
+									if (mysqli_query($conn, $sql2)) {
+										$result2 = mysqli_query($conn, $sql2);
 
-											if(mysqli_num_rows($result2)>0){
-												$punten = [];
-												$totaalCijfers = 0;
+										if(mysqli_num_rows($result2)>0){
+											$punten = [];
+											$totaalCijfers = 0;
 
-												while($row2 = mysqli_fetch_assoc($result2)) {
-													$punt = $row2["cijfer"];
-													$punten[] = $punt;
-												}
-
-												$count = count($punten);
-												for($i=0; $i<$count; $i++){
-													$totaalCijfers += $punten[$i];
-												}
-
-												$gemiddeldePunt = $totaalCijfers/count($punten);
+											while($row2 = mysqli_fetch_assoc($result2)) {
+												$punt = $row2["cijfer"];
+												$punten[] = $punt;
 											}
 
-										} else {
-											echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+											$count = count($punten);
+											for($i=0; $i<$count; $i++){
+												$totaalCijfers += $punten[$i];
+											}
+
+											$gemiddeldePunt = $totaalCijfers/count($punten);
 										}
 
-										//get more info progression
-										$sql3 = "SELECT H1, H2, H3, H4, H5, H6, H7 FROM `progressie` WHERE userid='$Cid'";
+									} else {
+										echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+									}
 
-										//get/calculate completed chapters
-										if (mysqli_query($conn, $sql3)) {
-											$result3 = mysqli_query($conn, $sql3);
+									//get more info progression
+									$sql3 = "SELECT H1, H2, H3, H4, H5, H6, H7 FROM `progressie` WHERE userid='$Cid'";
 
-											if(mysqli_num_rows($result3)>0){
-												$hoofdstukken = [];
+									//get/calculate completed chapters
+									if (mysqli_query($conn, $sql3)) {
+										$result3 = mysqli_query($conn, $sql3);
 
-												while($row3 = mysqli_fetch_assoc($result3)) {
-													$hoofdstukken['H1'] = $row3["H1"];
-													$hoofdstukken['H2'] = $row3["H2"];
-													$hoofdstukken['H3'] = $row3["H3"];
-													$hoofdstukken['H4'] = $row3["H4"];
-													$hoofdstukken['H5'] = $row3["H5"];
-													$hoofdstukken['H6'] = $row3["H6"];
-													$hoofdstukken['H7'] = $row3["H7"];
-												}
+										if(mysqli_num_rows($result3)>0){
+											$hoofdstukken = [];
 
-												$count2 = count($hoofdstukken);
-												for($i=1; $i<$count2; $i++){
-													if($hoofdstukken['H'.$i]){
-														$hoofdstuk = $hoofdstukken['H'.$i];
-														$hoofdstukLength = $hoofdstuk[0];
-														$hoofdstuk = substr($hoofdstuk, 1);
-														$hoofdstukAfTotaal = 0;
-														for($j=0; $j<$hoofdstukLength; $j++){
-															if($hoofdstuk[$j] == '1'){
-																$hoofdstukAfTotaal++;
-															}
+											while($row3 = mysqli_fetch_assoc($result3)) {
+												$hoofdstukken['H1'] = $row3["H1"];
+												$hoofdstukken['H2'] = $row3["H2"];
+												$hoofdstukken['H3'] = $row3["H3"];
+												$hoofdstukken['H4'] = $row3["H4"];
+												$hoofdstukken['H5'] = $row3["H5"];
+												$hoofdstukken['H6'] = $row3["H6"];
+												$hoofdstukken['H7'] = $row3["H7"];
+											}
+
+											$count2 = count($hoofdstukken);
+											for($i=1; $i<$count2; $i++){
+												if($hoofdstukken['H'.$i]){
+													$hoofdstuk = $hoofdstukken['H'.$i];
+													$hoofdstukLength = $hoofdstuk[0];
+													$hoofdstuk = substr($hoofdstuk, 1);
+													$hoofdstukAfTotaal = 0;
+													for($j=0; $j<$hoofdstukLength; $j++){
+														if($hoofdstuk[$j] == '1'){
+															$hoofdstukAfTotaal++;
 														}
-														if($hoofdstukAfTotaal == $hoofdstukLength){
-															$hoofdstukkenAf['H'.$i] = 1;
-														}
+													}
+													if($hoofdstukAfTotaal == $hoofdstukLength){
+														$hoofdstukkenAf['H'.$i] = 1;
 													}
 												}
 											}
-
-										} else {
-											echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 										}
 
-										//get more info about chapters that should have been completed
-										$sql4 = "SELECT progressie FROM `planner` WHERE school='$school' AND klas='$Cklas'";
+									} else {
+										echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+									}
 
-										//get chapters that should be done
-										if (mysqli_query($conn, $sql4)) {
-											$result4 = mysqli_query($conn, $sql4);
-											$chapterToBeMade = [];
+									//get more info about chapters that should have been completed
+									$sql4 = "SELECT progressie FROM `planner` WHERE school='$school' AND klas='$Cklas'";
 
-											if(mysqli_num_rows($result4)>0){
-												while($row4 = mysqli_fetch_assoc($result4)) {
-													$progressie = $row4['progressie'];
-													$chapterToBeMade = explode(", ", $progressie );
-												}
+									//get chapters that should be done
+									if (mysqli_query($conn, $sql4)) {
+										$result4 = mysqli_query($conn, $sql4);
+										$chapterToBeMade = [];
+
+										if(mysqli_num_rows($result4)>0){
+											while($row4 = mysqli_fetch_assoc($result4)) {
+												$progressie = $row4['progressie'];
+												$chapterToBeMade = explode(", ", $progressie );
 											}
-
-											$count3 = count($chapterToBeMade);
-											for($i=0; $i<$count3-1;$i++){
-												$shouldBeComplete = $chapterToBeMade[$i];
-												$shouldBeComplete = substr($shouldBeComplete, 1);
-
-												if(!array_key_exists("H".$shouldBeComplete, $hoofdstukkenAf)){
-													$onSchedule = 0;
-												}
-											}
-
-										} else {
-											echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 										}
 
-										//save the info
-										$userinfo['onSchedule'] = $onSchedule;
-										$userinfo['gemiddeldePunt'] = $gemiddeldePunt;
+										$count3 = count($chapterToBeMade);
+										for($i=0; $i<$count3-1;$i++){
+											$shouldBeComplete = $chapterToBeMade[$i];
+											$shouldBeComplete = substr($shouldBeComplete, 1);
 
-										$klassen['klas'][$Cklas][] = $userinfo;
-
-								    }
-
-								} else {
-								    echo "0 results";
-								}
-
-								//How many classes are there?
-								$Nclasses = count($klassen['klas']);
-
-								//put the classes in the right order
-								ksort($klassen['klas']);
-
-								//Show me these (the nice way)
-								$AllClasses = array_keys($klassen['klas']);
-
-								for($i=0; $i < $Nclasses; $i++){
-									$CurrentClass = $AllClasses[$i];
-
-									$StudentsCurrentClass[] = $klassen['klas'][$CurrentClass];
-
-									$NStudents = array_map("count", $StudentsCurrentClass);
-									$NStudentsCurrentClass = ($NStudents[$i]);
-
-									echo'
-									<div class="headerRow klassen">
-										<!-- table header for this class-->
-										<div class="headerRowContent">
-											<span class="klas">'.$CurrentClass.'</span>
-											<span class="Nleerlingen">'.$NStudentsCurrentClass.' leerlingen </span>
-											<span class="icons">
-												<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
-											</span>
-										</div>
-
-										<!-- table content for this class-->
-										<div class="rowContent">';
-
-
-										for($j=0; $j<$NStudentsCurrentClass; $j++){
-											$Cstudent = $StudentsCurrentClass[$i][$j];
-											$CstudentName = $Cstudent['naam'];
-											$CstudentGroupName = $Cstudent['group_name'];
-											$CstudentGroupRole= $Cstudent['group_role'];
-											$ConSchedule = $Cstudent['onSchedule'];
-											$Caverage = $Cstudent['gemiddeldePunt'];
-
-											if($CstudentGroupName==""){
-												$CstudentGroupName = "zit niet in een groep";
+											if(!array_key_exists("H".$shouldBeComplete, $hoofdstukkenAf)){
+												$onSchedule = 0;
 											}
-
-											echo '
-
-											<div class="row">
-												<span class="name">'.$CstudentName.'</span>
-												<span class="groepnaam">'.$CstudentGroupName.'</span>
-												<span class="groepsrol">'.$CstudentGroupRole.'</span>
-												<span class="gemiddelde">'.$Caverage.'</span>';
-
-											if($ConSchedule){
-												echo '
-												<span class="progressie">
-													<span class="onSchedule"></span>
-												</span>
-												';
-											} else {
-												echo '
-												<span class="progressie">
-													<span class="notOnSchedule"></span>
-												</span>
-												';
-											}
-
-											echo '</div>';
-
 										}
-								echo '</div></div>';
-								}
+
+									} else {
+										echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+									}
+
+									//save the info
+									$userinfo['onSchedule'] = $onSchedule;
+									$userinfo['gemiddeldePunt'] = $gemiddeldePunt;
+
+									$klassen['klas'][$Cklas][] = $userinfo;
+
+							    }
 
 							} else {
-								echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							    echo "0 results";
 							}
+
+							//How many classes are there?
+							$Nclasses = count($klassen['klas']);
+
+							//put the classes in the right order
+							ksort($klassen['klas']);
+
+							//Show me these (the nice way)
+							$AllClasses = array_keys($klassen['klas']);
+
+							for($i=0; $i < $Nclasses; $i++){
+								$CurrentClass = $AllClasses[$i];
+
+								$StudentsCurrentClass[] = $klassen['klas'][$CurrentClass];
+
+								$NStudents = array_map("count", $StudentsCurrentClass);
+								$NStudentsCurrentClass = ($NStudents[$i]);
+
+								echo'
+								<div class="headerRow klassen">
+									<!-- table header for this class-->
+									<div class="headerRowContent">
+										<span class="klas">'.$CurrentClass.'</span>
+										<span class="Nleerlingen">'.$NStudentsCurrentClass.' leerlingen </span>
+										<span class="icons">
+											<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+										</span>
+									</div>
+
+									<!-- table content for this class-->
+									<div class="rowContent">';
+
+
+									for($j=0; $j<$NStudentsCurrentClass; $j++){
+										$Cstudent = $StudentsCurrentClass[$i][$j];
+										$CstudentName = $Cstudent['naam'];
+										$CstudentGroupName = $Cstudent['group_name'];
+										$CstudentGroupRole= $Cstudent['group_role'];
+										$ConSchedule = $Cstudent['onSchedule'];
+										$Caverage = $Cstudent['gemiddeldePunt'];
+
+										if($CstudentGroupName==""){
+											$CstudentGroupName = "zit niet in een groep";
+										}
+
+										echo '
+
+										<div class="row">
+											<span class="name">'.$CstudentName.'</span>
+											<span class="groepnaam">'.$CstudentGroupName.'</span>
+											<span class="groepsrol">'.$CstudentGroupRole.'</span>
+											<span class="gemiddelde">'.$Caverage.'</span>';
+
+										if($ConSchedule){
+											echo '
+											<span class="progressie">
+												<span class="onSchedule"></span>
+											</span>
+											';
+										} else {
+											echo '
+											<span class="progressie">
+												<span class="notOnSchedule"></span>
+											</span>
+											';
+										}
+
+										echo '</div>';
+
+									}
+							echo '</div></div>';
+							}
+
+						} else {
+							echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 						}
 
 					} else {
@@ -505,18 +506,15 @@
 
 			//if logged in show add group button
 			if (isset($_SESSION["functie"])){
-				if($functie != 'docent'){
-					echo "U bent geen docent";
-				} else {
-					echo '
-					<form class="changeClassButton" method="post" action="../scripts/changeClassFront.php">
-						<button type="submit">Leerling(en) van klas veranderen</button>
-					</form>
-					<form class="deleteStudentsButton" method="post" action="../scripts/deleteStudentsFront.php">
-						<button type="submit">Account(s) van leerling(en) verwijderen</button>
-					</form>
-					';
-				}
+
+				echo '
+				<form class="changeClassButton" method="post" action="../scripts/changeClassFront.php">
+					<button type="submit">Leerling(en) van klas veranderen</button>
+				</form>
+				<form class="deleteStudentsButton" method="post" action="../scripts/deleteStudentsFront.php">
+					<button type="submit">Account(s) van leerling(en) verwijderen</button>
+				</form>
+				';
 			}
 
 		?>

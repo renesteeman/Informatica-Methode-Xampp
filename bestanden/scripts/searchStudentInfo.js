@@ -64,9 +64,10 @@ $(document).ready(function(){
         $('.searchResultGroupName').next().addClass('hide');
       }
 
+
       if(info['quizResults'] != ""){
-        $('.searchResultQuiz').next().removeClass('hide');
-        $('.searchResultQuiz').text('Quiz resultaten');
+        $('.searchResultQuizHeader').next().removeClass('hide');
+        $('.searchResultQuizHeader').text('Quiz resultaten');
         $('.searchResultQuizInhoud').html('');
         quizResultsLength = (Object.values(info['quizResults'])).length;
 
@@ -84,8 +85,8 @@ $(document).ready(function(){
         $('.searchResultQuizInhoud').append(append);
 
       } else {
-        $('.searchResultQuiz').next().addClass('hide');
-        $('.searchResultQuiz').text('Er zijn geen gemaakte quizes');
+        $('.searchResultQuizHeader').next().addClass('hide');
+        $('.searchResultQuizHeader').text('Er zijn geen gemaakte quizes');
       }
 
       if(info['progression'] != ""){

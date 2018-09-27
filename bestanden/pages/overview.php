@@ -76,7 +76,7 @@
 			<div class="searchResultQuiz">
 
 				<div class="searchResultHeader">
-					<span class="barItem searchResultQuiz">Quiz resultaten</span>
+					<span class="barItem searchResultQuizHeader">Quiz resultaten</span>
 					<span class="icons">
 						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
 					</span>

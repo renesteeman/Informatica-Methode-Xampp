@@ -145,7 +145,6 @@
     $info['group_role'] = '';
   }
 
-
   if(isset($info['email'])){
     if(is_null($info['email'])){
       $info['email'] = '';

@@ -24,10 +24,10 @@
 		</h3>
 	</div>
 
-	<div class="searchWrap">
+	<!-- <div class="searchWrap">
 		<input type="text" class="searchInput" placeholder="Zoek op naam" list="searchStudentDatalist">
 		<datalist id='searchStudentDatalist'>
-			<!-- filled by php -->
+
 		</datalist>
 
 		<div class="searchResult">
@@ -148,6 +148,74 @@
 							<span class="searchResultProgressieParagraphRowProgress">ICON</span>
 						</div>
 					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	-->
+
+	<div class="searchWrap">
+		<input type="text" class="searchInput" placeholder="Zoek op naam" list="searchStudentDatalist">
+		<datalist id='searchStudentDatalist'>
+			<!-- filled by php -->
+		</datalist>
+
+		<div class="searchResult">
+
+			<div class="searchResultNaam">
+				Naam
+			</div>
+
+			<div class="searchResultKlas">
+				Klas
+			</div>
+
+			<div class="searchResultMail">
+				E-mail
+			</div>
+
+			<div class="searchResultActiviteit">
+				Laatst actief
+			</div>
+
+			<div class="searchResultGroep">
+				<div class="searchResultHeader">
+					<span class="barItem searchResultGroupName">Groepnaam</span>
+					<span class="icons hide">
+						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+					</span>
+				</div>
+
+				<div class="searchResultInhoud searchResultGroepInhoud">
+
+				</div>
+			</div>
+
+			<div class="searchResultQuiz">
+
+				<div class="searchResultHeader">
+					<span class="barItem searchResultQuizHeader">Quiz resultaten</span>
+					<span class="icons hide">
+						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+					</span>
+				</div>
+
+				<div class="searchResultInhoud searchResultQuizInhoud">
+
+				</div>
+			</div>
+
+			<div class="searchResultProgressie">
+
+				<div class="searchResultHeader">
+					<span class="barItem searchResultProgression">Theorie progressie</span>
+					<span class="icons hide">
+						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+					</span>
+				</div>
+
+				<div class="searchResultProgressionInhoud">
 
 				</div>
 			</div>

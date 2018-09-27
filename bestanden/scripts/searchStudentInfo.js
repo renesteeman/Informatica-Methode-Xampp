@@ -5,11 +5,24 @@ $(document).ready(function(){
     input = $('.searchInput').val();
     //CALL AJAX for DB search
 
-    jqXHR = $.ajax({
-			method: "POST",
-			url: '../scripts/searchStudentInfo.php',
-			data: {input: input}
-		});
+    if(input != ""){
+      jqXHR = $.ajax({
+  			method: "POST",
+  			url: '../scripts/searchStudentInfo.php',
+  			data: {input: input}
+  		});
+    } else {
+      $('.searchResultNaam').text('Naam');
+      $('.searchResultKlas').text('Klas');
+      $('.searchResultMail').text('E-mail');
+      $('.searchResultActiviteit').text('Laats actief');
+      $('.searchResultGroupName').text('Groepnaam');
+      $('.searchResultGroupName').next().addClass('hide');
+      $('.searchResultQuizHeader').text('Quiz resultaten');
+      $('.searchResultQuizHeader').next().addClass('hide');
+      $('.searchResultProgression').text('Theorie progressie');
+      $('.searchResultProgression').next().addClass('hide');
+    }
 
 		jqXHR.done(function(response) {
       response = JSON.parse(response);
@@ -63,7 +76,6 @@ $(document).ready(function(){
       } else {
         $('.searchResultGroupName').next().addClass('hide');
       }
-
 
       if(info['quizResults'] != ""){
         $('.searchResultQuizHeader').next().removeClass('hide');
@@ -151,7 +163,7 @@ $(document).ready(function(){
 
   }
 
-  $('.searchInput').on('keypress', function(){
+  $('.searchInput').on('keyup', function(){
     update();
   })
 

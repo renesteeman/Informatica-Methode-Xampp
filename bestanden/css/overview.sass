@@ -99,6 +99,7 @@
 
 		.searchResultProgressieInhoudPercentage
 			width: 5%
+			min-width: 4rem
 			display: inline-block
 
 	.searchResultProgressieParagraphRowParagraph
@@ -242,6 +243,43 @@
 					span.klassen
 						width: 20%
 
+	.searchWrap
+		.searchResult > div
+			padding-left: 2rem
+
+		.searchResult
+			padding-left: 0
+
+			.searchResultGroep
+				padding-left: 0
+
+			.searchResultGroupName
+				padding-left: 1rem
+
+			.searchResultGroepInhoudItem
+				border-left: none
+				border-right: none
+				background-color: $secondary2
+				color: $black
+				font-size: 50%
+				padding-top: 1rem
+				padding-bottom: .3rem
+
+				.searchResultGroepInhoudLeden
+					width: 100%
+
+				.searchResultGroepInhoudKlas
+					width: 100%
+
+				.searchResultGroepInhoudRollen
+					width: 100%
+
+			.searchResultGroepInhoudItem > span
+				margin-left: 1rem
+
+			.searchResultGroepInhoudItem:nth-child(even)
+				background-color: darken($secondary2, 10%)
+
 @media (max-width: $small)
 	.overzicht
 		margin-left: 0
@@ -278,6 +316,8 @@
 
 			.headerRow.groepen
 				.headerRowContent
+					padding-left: 1rem
+
 					span.groep
 						width: 80%
 
@@ -306,9 +346,19 @@
 	.searchWrap
 		margin-left: 0
 
+		.searchResult > div
+			padding-left: 1rem
+
 		.searchInput
 			width: 90%
 			margin-left: 5%
+			margin-right: 5%
+			box-sizing: border-box
+			height: auto
 
 		.searchResult
 			width: 100%
+
+			.searchResultGroepInhoudItem
+				margin-left: -10%
+				padding-left: 10%

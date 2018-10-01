@@ -1,7 +1,7 @@
 $(document).ready(function(){
   datalist = $('#searchStudentDatalist');
 
-  $('.searchInput').on('keypress', function(){
+  $('.searchInput').on('input', function(){
     input = $('.searchInput').val();
     //CALL AJAX for DB search
 
@@ -13,6 +13,7 @@ $(document).ready(function(){
 
 		jqXHR.done(function(response) {
       response = JSON.parse(response);
+      console.log(response);
       if(response.error.length > 0){
         alert(response.error);
       }
@@ -21,6 +22,7 @@ $(document).ready(function(){
       datalist.empty();
       for(var i=0; i<searchResults.length; i++){
         var opt = $("<option></option>").attr("value", searchResults[i]);
+        console.log(opt);
         datalist.append(opt);
       }
 		});

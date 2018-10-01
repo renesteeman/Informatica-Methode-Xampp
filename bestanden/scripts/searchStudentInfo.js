@@ -25,6 +25,7 @@ $(document).ready(function(){
     }
 
 		jqXHR.done(function(response) {
+      console.log(response);
       response = JSON.parse(response);
       if(response.error.length > 0){
         alert(response.error);
@@ -163,7 +164,7 @@ $(document).ready(function(){
 
   }
 
-  $('.searchInput').on('keyup', function(){
+  $('.searchInput').on('input', function(){
     update();
   })
 

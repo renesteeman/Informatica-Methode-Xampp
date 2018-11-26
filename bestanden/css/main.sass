@@ -303,10 +303,12 @@ button
 	border: none
 	margin-bottom: 1.5rem
 	background-color: darken($white, 10%)
-	transition: background-color .2s ease-in-out
+	transition: background-color .2s ease-in-out, box-shadow .2s ease-in-out
+	box-shadow: $box-shadow
 
 button:hover
 	background-color: $secondary2
+	box-shadow: none
 
 button[type=submit]:hover
 	background-color: rgba($green, .5)

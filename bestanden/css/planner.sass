@@ -8,16 +8,16 @@
 		width: 80%
 		margin-top: 2em
 		margin-bottom: 2em
-		box-shadow: 0 5px 20px darken($white, 50%)
+		//box-shadow: 0 5px 20px darken($white, 30%)
 		-webkit-backface-visibility: hidden
 
 		.item.old
 			.itemHeader.docent, .itemHeader.leerling
-				background-color: darken($secondary2, 10%)
+				background-color: $secondary2
 
 			.itemContent
 				.itemInhoud
-					background-color: darken($secondary2, 10%)
+					background-color: $secondary2
 
 		.item
 			.itemHeader
@@ -143,4 +143,4 @@
 							width: 95%
 
 			.item:not(:last-of-type)
-				border-bottom: $grey 1px solid
+				border-bottom: darken($grey, 15%) 1px solid

@@ -1,5 +1,4 @@
 <?php
-session_save_path('tmp');
 session_start();
 
 include('scripts/DB_connect.php');
@@ -123,7 +122,7 @@ if(isset($_SESSION['ErrorInvalidAccount'])){
 								</div>';
 
 						} else {
-							echo ' <div><a href="pages/account.php"> login</a></div> ';
+							echo '<div><a href="pages/account.php">login</a></div>';
 						}
 					?>
 				</div>

@@ -10,6 +10,6 @@ Trello/roadmap: https://trello.com/b/R5YdaYG2/informatica-methode
 Idereen is welkom om mee te helpen, maar er zal niet betaald worden voor hulp tenzij explisiet aangegeven. 
 Het is misschien later wel mogelijk een commpensatie te krijgen, maar dit is geen belofte!
 
-Om de code te gebruiken is het nodig om het in een XAMPP folder in te stellen met het PHP.ini bestand in de map 'xampp files for reference' waarin de settings
-onderaan dat bestand aangepast moeten worden aan de folderstructuur van het apparaat waarop u de bestanden wilt zetten. Verder is het nodig om de DB 
-op xampp te zetten onder de naam 'inforca'.
+Om de code te gebruiken is het nodig om het in een XAMPP folder in te stellen met het PHP.ini bestand zoals in de map 'xampp files
+for reference', hierin staan onderaan settings die gekopieerd kunnen worden en daarna aangepast aan het apparaat waar u aan werkt.
+Verder is het nodig om de DB op xampp te zetten onder de naam 'inforca', hiervoor staat een .sql bestand in de hoofdfolder van dit project.

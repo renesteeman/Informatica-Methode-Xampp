@@ -15,7 +15,7 @@ $(document).ready(function(){
       $('.searchResultNaam').text('Naam');
       $('.searchResultKlas').text('Klas');
       $('.searchResultMail').text('E-mail');
-      $('.searchResultActiviteit').text('Laats actief');
+      $('.searchResultActiviteit').text('Laatst actief');
       $('.searchResultGroupName').text('Groepnaam');
       $('.searchResultGroupName').next().addClass('hide');
       $('.searchResultQuizHeader').text('Quiz resultaten');

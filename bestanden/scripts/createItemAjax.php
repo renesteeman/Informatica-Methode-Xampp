@@ -55,6 +55,7 @@
 		if(isset($_POST['Idatum'])){
 			if($_POST['Idatum'] != ""){
 				$Idatum = mysqli_real_escape_string($conn, check_input($_POST['Idatum']));
+				//TODO fix y2k38 bug (wait for new php version or 64-bit server?)
 				$Idatum = date("Y-m-d", strtotime($Idatum));
 			}
 		};
@@ -127,5 +128,6 @@
 		}
 
 	}
+
 
 ?>

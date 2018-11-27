@@ -20,7 +20,7 @@
 
 		.delete
 			display: inline-block
-			transition: color 0.4s
+			transition: $transition-speed
 
 		.delete:hover
 			color: $red
@@ -94,7 +94,7 @@
 		padding-top: 0.4em
 		box-sizing: border-box
 		box-shadow: inset 0 0 0 0 darken($white, 10%), 4px 4px 8px darken($secondary2, 20%)
-		transition: background .5s ease-out, box-shadow 0.5s ease-in-out
+		transition: background $transition-speed, box-shadow $transition-speed
 
 	.red-button:hover
 		background-color: darken($red, 5%)

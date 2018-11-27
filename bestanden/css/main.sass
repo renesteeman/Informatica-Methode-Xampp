@@ -23,7 +23,7 @@ footer
 a
 	color: $black
 	text-decoration: none
-	transition: color 0.3s ease
+	transition: color $transition-speed
 	word-break: break-all
 
 a:hover
@@ -190,7 +190,7 @@ input[type="checkbox"]
 		width: 15em
 		box-shadow: 2px 5px $dark-grey
 		-webkit-backface-visibility: hidden
-		transition: box-shadow 0.2s
+		transition: $transition-speed
 		overflow: hidden
 		border-radius: 2px
 		word-wrap: break-word
@@ -206,7 +206,7 @@ input[type="checkbox"]
 
 				a
 					color: $black
-					transition: color 0.3s ease-in-out
+					transition: $transition-speed
 
 				a:hover
 					color: darken($white, 45%)
@@ -231,7 +231,7 @@ input[type="checkbox"]
 			margin-top: 1.5rem
 			margin-right: 2.5rem
 			font-size: 150%
-			transition: color 0.3s ease-in-out
+			transition: $transition-speed
 
 		.closeTile:hover
 			color: $white
@@ -431,7 +431,7 @@ textarea:hover
 	.Arrow
 		img
 			transform: rotateX(0deg)
-			transition: transform 0.4s
+			transition: transform $transition-speed
 			transform-origin: 50% 50%
 
 	.Arrow.active
@@ -536,7 +536,7 @@ textarea:hover
 					height: 5px
 					background-color: $white
 					margin: 6px 0
-					transition: 0.4s
+					transition: $transition-speed
 
 			.burger-content
 				display: none
@@ -562,7 +562,7 @@ textarea:hover
 					height: 5px
 					background-color: $white
 					margin: 12px 0
-					transition: 0.4s
+					transition: $transition-speed
 
 				.bar1
 					transform: rotate(-45deg) translate(-12px, 12px)

@@ -48,13 +48,13 @@ a:hover
 	left: 0
 	height: 0.8em
 	width: 0.8em
-	background-color: $white
+	background-color: darken($white, 10%)
 
 .container:hover input ~ .checkmark
-	background-color: $white
+	background-color: lighten($white, 10%)
 
 .container input:checked ~ .checkmark
-	background-color: $white
+	background-color: lighten($white, 10%)
 
 .checkmark:after
 	content: ""
@@ -69,7 +69,7 @@ a:hover
 	top: .1em
 	width: 0.2em
 	height: 0.4em
-	border: solid mix($grey, $black, 50%)
+	border: solid lighten($black, 5%)
 	border-width: 0 3px 3px 0
 	transform: rotate(45deg)
 
@@ -330,6 +330,13 @@ select
 	margin-left: 1em
 	position: relative
 	bottom: 20px
+	box-shadow: $box-shadow
+
+select:hover
+	box-shadow: none
+
+select:active
+	box-sizing: none
 
 input
 	height: 1.8rem
@@ -342,7 +349,7 @@ input
 	padding: 12px 12px
 	border-radius: $border-radius
 	box-shadow: $box-shadow
-	transition: background .4s ease-out, box-shadow 0.2s ease-in-out
+	transition: background-color .2s ease-in-out, box-shadow .2s ease-in-out
 
 input:not([type=submit])::placeholder
 	color: $grey
@@ -377,7 +384,7 @@ textarea
 	border-radius: $border-radius
 	height: 6em
 	width: 80%
-	transition: background .4s ease-out
+	transition: background-color .2s ease-in-out, box-shadow .2s ease-in-out
 	resize: none
 	border: none
 
@@ -402,6 +409,12 @@ textarea:hover
 	padding-top: 1em
 	padding-bottom: .5em
 	padding-left: 1em
+
+	input, textarea, select
+		box-shadow: $box-shadow-l2
+
+	input:hover, textarea:hover, select:hover
+		box-shadow: none
 
 //general
 .hide

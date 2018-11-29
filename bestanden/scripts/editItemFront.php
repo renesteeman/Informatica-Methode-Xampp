@@ -140,10 +140,8 @@ include('../components/headerGeneral.php');
 						</li>
 						<li>
 							<div class="center">
-							</br></br>
-								<div class="red-button deleteItemButton">
-									Verwijder opdracht
-								</div>
+								<input type="submit" class="deleteGroupButton red-button" value="Verwijder opdracht">
+								</input>
 							</div>
 						</li>
 					</ul>

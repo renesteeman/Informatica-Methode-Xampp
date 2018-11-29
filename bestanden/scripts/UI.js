@@ -89,11 +89,12 @@ $(document).ready(function(){
 	//paragraph
 	$(".bar-s").click(function(){
 		$(this).next().slideToggle();
-		$(this).toggleClass("active");
-		$(this).next().next().toggleClass("after-active");
+		$(this).toggleClass("folded");
+		$(this).next().next().toggleClass("after-folded");
 	});
 
-	$(".theorie-answers").siblings().last().toggleClass("active");
+	$(".theorie-answers").siblings().last().next().slideUp(0);
+	$(".theorie-answers").siblings().last().toggleClass("folded");
 
 	//edit lists
 	$('.add-item').children().val(' ');

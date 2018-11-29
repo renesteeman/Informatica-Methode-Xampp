@@ -5,7 +5,7 @@ html
 	font-family: 'Robot', sans-serif
 	color: $black
 	max-width: 100vw
-	font-size: 100%
+	font-size: 90%
 
 body
 	margin: 0
@@ -23,7 +23,7 @@ footer
 a
 	color: $black
 	text-decoration: none
-	transition: color 0.3s ease
+	transition: color $transition-speed
 	word-break: break-all
 
 a:hover
@@ -48,13 +48,13 @@ a:hover
 	left: 0
 	height: 0.8em
 	width: 0.8em
-	background-color: $white
+	background-color: darken($white, 10%)
 
 .container:hover input ~ .checkmark
-	background-color: $white
+	background-color: lighten($white, 10%)
 
 .container input:checked ~ .checkmark
-	background-color: $white
+	background-color: lighten($white, 10%)
 
 .checkmark:after
 	content: ""
@@ -69,7 +69,7 @@ a:hover
 	top: .1em
 	width: 0.2em
 	height: 0.4em
-	border: solid mix($grey, $black, 50%)
+	border: solid lighten($black, 5%)
 	border-width: 0 3px 3px 0
 	transform: rotate(45deg)
 
@@ -81,7 +81,7 @@ input[type="checkbox"]
 	color: $white
 	width: 100%
 	background: linear-gradient(to bottom right, $primairy1, $primairy2)
-	box-shadow: 0 5px 20px darken($white, 50%)
+	box-shadow: $box-shadow
 	position: relative
 	z-index: 50
 
@@ -163,7 +163,7 @@ input[type="checkbox"]
 	color: $white
 	padding-top: 0.5em
 	padding-bottom: 0.5em
-	box-shadow: 0 5px 20px darken($white, 50%)
+	box-shadow: $box-shadow
 	position: relative
 	z-index: 30
 	background: linear-gradient(to bottom right, $primairy1, $primairy2)
@@ -183,16 +183,16 @@ input[type="checkbox"]
 	grid-gap: 2em
 
 	.tile
-		background: linear-gradient(to bottom right, darken($secondary2, 10%), lighten($secondary2, 5%))
+		background: $secondary2
 		background-size: 15em
 		height: 10em
 		line-height: 10em
 		width: 15em
-		box-shadow: inset 0 0 0 0 darken($white, 10%), 6px 6px 8px darken($white, 20%)
+		box-shadow: 2px 5px $dark-grey
 		-webkit-backface-visibility: hidden
-		transition: box-shadow 0.2s
+		transition: $transition-speed
 		overflow: hidden
-		border-radius: 4px
+		border-radius: 2px
 		word-wrap: break-word
 
 		.closeTile
@@ -206,19 +206,18 @@ input[type="checkbox"]
 
 				a
 					color: $black
-					transition: color 0.3s ease-in-out
+					transition: $transition-speed
 
 				a:hover
 					color: darken($white, 45%)
 
 	.tile:hover
-		box-shadow: inset 0 0 0 4px darken($white, 5%), 4px 4px 8px darken($white, 20%)
+		box-shadow: 1px 3px $dark-grey
 
 	.tile.active:hover
-		box-shadow: inset 0 0 0 0 darken($white, 10%), 6px 6px 8px darken($white, 20%)
+		box-shadow: 1px 3px $dark-grey
 
 	.tile.active
-		transition: box-shadow 0.5s ease-in-out
 		background: linear-gradient(to bottom right, darken($secondary2, 10%), lighten($secondary2, 5%))
 		width: 58.5vw
 		min-width: 66rem
@@ -232,7 +231,7 @@ input[type="checkbox"]
 			margin-top: 1.5rem
 			margin-right: 2.5rem
 			font-size: 150%
-			transition: color 0.3s ease-in-out
+			transition: $transition-speed
 
 		.closeTile:hover
 			color: $white
@@ -278,7 +277,6 @@ footer
 	background-color: $primairy1
 	color: $white
 	padding-top: 1em
-	box-shadow: 0 5px 20px darken($white, 50%)
 	position: relative
 	z-index: 30
 	background: linear-gradient(to bottom right, $primairy1, $primairy2)
@@ -301,16 +299,16 @@ label
 button
 	font-size: 1.5rem
 	padding: 12px 12px
-	border-radius: 4px
+	border-radius: $border-radius
 	border: none
 	margin-bottom: 1.5rem
-	box-shadow: 4px 4px 8px darken($grey, 20%)
-	background-color: $white
-	transition: box-shadow .2s ease-in-out, background-color .4s ease-in-out
+	background-color: darken($white, 10%)
+	transition: background-color .2s ease-in-out, box-shadow .2s ease-in-out
+	box-shadow: $box-shadow
 
 button:hover
-	box-shadow: 2px 2px 6px darken($grey, 30%)
 	background-color: $secondary2
+	box-shadow: none
 
 button[type=submit]:hover
 	background-color: rgba($green, .5)
@@ -324,7 +322,7 @@ button[type=submit].RedButton:hover
 select
 	height: 1.5em
 	font-size: 1.6rem
-	border-radius: 4px
+	border-radius: $border-radius
 	padding: 0
 	border-radius: 0
 	margin-bottom: 1em
@@ -332,9 +330,15 @@ select
 	margin-left: 1em
 	position: relative
 	bottom: 20px
+	box-shadow: $box-shadow
+
+select:hover
+	box-shadow: none
+
+select:active
+	box-sizing: none
 
 input
-	height: 1.8rem
 	font-size: 1.6rem
 	margin-bottom: 1em
 	margin-top: 1em
@@ -342,9 +346,9 @@ input
 	position: relative
 	bottom: 20px
 	padding: 12px 12px
-	border-radius: 4px
-	box-shadow: inset 0 0 0 0 darken($white, 10%), 4px 4px 8px darken($secondary2, 20%)
-	transition: background .4s ease-out, box-shadow 0.2s ease-in-out
+	border-radius: $border-radius
+	box-shadow: $box-shadow
+	transition: background-color .2s ease-in-out, box-shadow .2s ease-in-out
 
 input:not([type=submit])::placeholder
 	color: $grey
@@ -353,10 +357,10 @@ input:not([type=submit])
 	border: none
 
 input:not([type=submit]):hover
-	box-shadow: inset 0 0 0 2px darken($white, 10%), 2px 2px 6px darken($secondary2, 20%)
+	box-shadow: none
 
 input:not([type=submit]):focus
-	box-shadow: inset 0 0 0 2px darken($white, 10%), 4px 4px 8px darken($secondary2, 20%)
+	box-shadow: none
 
 input[type=submit]
 	background-color: $white
@@ -368,7 +372,7 @@ input[type=submit]:hover
 
 textarea
 	font-family: 'Robot', sans-serif
-	box-shadow: inset 0 0 0 0 darken($white, 10%), 4px 4px 8px darken($secondary2, 20%)
+	box-shadow: $box-shadow
 	font-size: 1em
 	margin-bottom: 1em
 	margin-top: 1em
@@ -376,18 +380,18 @@ textarea
 	position: relative
 	bottom: 20px
 	padding: 12px 12px
-	border-radius: 4px
+	border-radius: $border-radius
 	height: 6em
 	width: 80%
-	transition: background .4s ease-out, box-shadow 0.2s ease-in-out
+	transition: background-color .2s ease-in-out, box-shadow .2s ease-in-out
 	resize: none
 	border: none
 
 textarea:focus
-	box-shadow: inset 0 0 0 2px darken($white, 10%), 4px 4px 8px darken($secondary2, 20%)
+	box-shadow: none
 
 textarea:hover
-	box-shadow: inset 0 0 0 2px darken($white, 10%), 2px 2px 6px darken($secondary2, 20%)
+	box-shadow: none
 
 //main sections for most pages
 .main
@@ -397,13 +401,19 @@ textarea:hover
 	margin-top: 40px
 	margin-bottom: 3rem
 	width: 60%
-	box-shadow: inset 0 0 0 0 darken($white, 10%), 6px 6px 8px darken($white, 20%)
-	border-radius: 4px
+	box-shadow: $box-shadow-XXL
+	border-radius: $border-radius
 	color: $black
 	background: linear-gradient(to bottom right, $secondary1, $secondary2)
 	padding-top: 1em
 	padding-bottom: .5em
 	padding-left: 1em
+
+	input, textarea, select
+		box-shadow: $box-shadow-l2
+
+	input:hover, textarea:hover, select:hover
+		box-shadow: none
 
 //general
 .hide
@@ -420,7 +430,7 @@ textarea:hover
 	.Arrow
 		img
 			transform: rotateX(0deg)
-			transition: transform 0.4s
+			transition: transform $transition-speed
 			transform-origin: 50% 50%
 
 	.Arrow.active
@@ -525,7 +535,7 @@ textarea:hover
 					height: 5px
 					background-color: $white
 					margin: 6px 0
-					transition: 0.4s
+					transition: $transition-speed
 
 			.burger-content
 				display: none
@@ -551,7 +561,7 @@ textarea:hover
 					height: 5px
 					background-color: $white
 					margin: 12px 0
-					transition: 0.4s
+					transition: $transition-speed
 
 				.bar1
 					transform: rotate(-45deg) translate(-12px, 12px)

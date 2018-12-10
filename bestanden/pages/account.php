@@ -124,11 +124,9 @@
 						</li>
 
 						<li id="resetPswLi" class="indent">
-							<span class="resetPswButton">
-								<a href="../scripts/resetPswFront.php">
-									Wachtwoord vergeten
-								</a>
-							</span>
+							<a href="../scripts/resetPswFront.php">
+								<button class="resetPswButton redButton" type="button">Wachtwoord vergeten</button>
+							</a>
 						</li>
 
 					</ul>

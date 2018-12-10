@@ -1,9 +1,6 @@
 @import "variables.sass"
 
 .main
-	button[type=submit], .resetPswButton
-		//margin-left: 4.1em
-
 	ul
 		list-style: none
 		margin: 0
@@ -20,23 +17,9 @@
 	#resetPswLi
 		padding-bottom: 1.5rem
 
-	.resetPswButton
-		background-color: mix($red, $white, 90%)
-		font-size: 1.5rem
-		padding: 12px 12px
-		border-radius: $border-radius
-		border: none
-		margin-bottom: 1.5rem
-		box-shadow: 4px 4px 8px darken($grey, 20%)
-		transition: box-shadow $transition-speed, background-color $transition-speed
-
 		a:hover
 			color: $black
 			cursor: default
-
-	.resetPswButton:hover
-		background-color: darken($red, 5%)
-		box-shadow: 2px 2px 6px darken($grey, 30%)
 
 	.indent
 		margin-left: 5.5rem
@@ -73,7 +56,7 @@
 		.cookie
 			margin-left: 0
 
-		button[type="submit"], .resetPswButton
+		button[type="submit"]
 			margin-left: 0
 
 @media (max-width: $medium)

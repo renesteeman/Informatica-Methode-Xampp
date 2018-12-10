@@ -1,4 +1,5 @@
 <?php
+	session_save_path('../tmp');
 	//start session to be able to 'clear' session
 	session_start();
 

@@ -119,8 +119,7 @@ include('../components/headerGeneral.php');
 									<input type="submit" value="Bevestig" id="editGroupConfirm" class="ConfirmButton">
 								</li>
 								<li>
-									<input type="submit" class="deleteGroupButton red-button" value="Verwijder groep">
-									</input>
+									<button class="deleteGroupButton redButton" type="submit">Verwijder groep</button>
 								</li>
 							</ul>
 						</form>

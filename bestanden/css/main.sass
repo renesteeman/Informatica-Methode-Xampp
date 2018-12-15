@@ -33,7 +33,6 @@ a:hover
 .container
 	position: relative
 	padding-left: 1em
-	cursor: pointer
 	font-size: 1em
 
 .container input
@@ -50,11 +49,11 @@ a:hover
 	width: 0.8em
 	background-color: darken($white, 10%)
 
-.container:hover input ~ .checkmark
+.checkmark:hover
 	background-color: lighten($white, 10%)
 
 .container input:checked ~ .checkmark
-	background-color: lighten($white, 10%)
+	background-color: lighten($white, 5%)
 
 .checkmark:after
 	content: ""

@@ -1,5 +1,6 @@
 <?php
 	include('DB_connect.php');
+	session_save_path('../tmp');
 	session_start();
 
 	//get and filter data

@@ -16,7 +16,8 @@ $(document).ready(function(){
 			$(checkBoxesQuestion).not(this).prop('checked', false);
 			updateQuizHeader();
 		} else {
-			if($(this).next().css('background-color') == 'rgb(20, 90, 100)'){
+			//revert 'check'
+			if($(this).prop('checked', true)){
 				$(this).prop('checked', false);
 			} else {
 				$(this).prop('checked', true);

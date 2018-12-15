@@ -10,14 +10,8 @@
 		margin-left: 20%
 
 .installation-bar
-	font-size: 2em
-	background-color: $primairy1
-	text-align: center
-	color: $white
-	padding-top: 0.5em
-	padding-bottom: 0.5em
-	box-shadow: 0 5px 20px darken($white, 50%)
-	background: linear-gradient(to bottom right, $primairy1, $primairy2)
+	@extend .bar-par-overview
+	font-size: 1.8rem
 
 	h3
 		margin: 0
@@ -43,7 +37,7 @@
 		height: 2em
 		display: inline-block
 		background: linear-gradient(to bottom right, darken($secondary2, 10%), lighten($secondary2, 5%))
-		box-shadow: 0 2px 10px darken($primairy1, 10%)
+		box-shadow: 0 3px 2px darken($darker-grey, 10%)
 		line-height: 2em
 		margin-left: 0.2em
 

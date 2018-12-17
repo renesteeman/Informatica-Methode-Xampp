@@ -50,7 +50,7 @@
 
 		<div class="theorie-content">
 			<p>
-				Eerst nog een wat complexer voorbeeld. Een ledlampje dat meer licht geeft als het donker is en minder als het licht is. Dit werkt door met een LDR te achterhalen of er veel of weinig licht is en dan met een berekening een waarde voor het ledlampje te bepalen. Omdat we meer precisie willen dan aan of uit gebruiken we analogWrite() om de waarde voor de led in te stellen. Neem de code maar eens door, hierna ga je het uitbereiden. Er staat steeds uitleg bij over wat er gedaan wordt.
+				In deze paragraaf ga je werken aan een uitdaging, maar eerst komt nog een wat complexer voorbeeld. Een ledlampje dat meer licht geeft als het donker is en minder als het licht is. Dit werkt door met een LDR te achterhalen of er veel of weinig licht is en dan met een berekening een waarde voor het ledlampje te bepalen. Omdat we meer precisie willen dan aan of uit gebruiken we analogWrite() om de waarde voor de led in te stellen. Neem de onderstaande code maar eens door, hierna ga je het uitbereiden. Er staat steeds uitleg bij over wat er gedaan wordt.
 			</p>
 			<p>
 <pre><code>int sensorPin = A0; //stel de pin in voor het meten van de weerstand van de LDR
@@ -98,6 +98,10 @@ void loop() {
 				Hier hoort natuurlijk ook een circuit bij. Dit is wat lastiger en hoef je niet helemaal te begrijpen. Let wel op dat als je het gaat namaken je eerst goed moet controleren voordat je het aan zet! Om de pinnummers te achterhalen kun je ook bovenaan in de code kijken. Volg de pijlen om te zien hoe de elektriciteit zich verplaatst.
 
 				<img src="./afbeeldingen/LDR_LED.png" />
+			</p>
+			<!-- newly added TODO check -->
+			<p>
+				Het voorbeeld dat je net hebt doorgenomen maakt gebruik van modelleren. Modelleren is het vereenvoudigen van een verschijnsel. Hier gebruik je het verschijnsel licht(sterkte) voor het besturen van een led aan de hand van een waarde die een sensor geeft, de waarde van de sensor is dus een vereenvoudiging voor hoe donker het is, de lichtsterkte. 
 			</p>
 			<p>
 				Dan nu de uitdaging voor dit hoofdstuk. Laat een servo naar links draaien in het donker en naar rechts als het licht is. Er volgt nog een stukje uitleg.

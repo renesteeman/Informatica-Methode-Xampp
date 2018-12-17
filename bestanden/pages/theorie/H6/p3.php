@@ -53,6 +53,10 @@
 			<p>
 				Als je een opdrachtgever hebt moet je natuurlijk daarmee goed contact onderhouden, zowel voor als tijdens het project.
 			</p>
+			<!-- newly added TODO check-->
+			<p>
+				Naast de communicatie met de personen waarmee je het project uitvoert is het bij een commercieel product ook erg belangrijk om (potentiele) klanten te informeren. Zorg ervoor dat zaken omtrend privacy en voorwaarden duidelijk zijn, hou hierbij rekening met de wet en regelgeving (zoals GDPR).
+			</p>
 		</div>
 	</div>
 

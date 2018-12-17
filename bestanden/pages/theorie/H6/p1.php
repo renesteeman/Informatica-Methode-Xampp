@@ -62,6 +62,10 @@
 			<p>
 				De nazorgfase is de afronding van het project. In deze fase breng je het resultaat van het project uit, misschien gaat de website online of laat je jouw robot zien. Het kan ook zo zijn dat je nog kleine veranderingen aan het resultaat wilt maken, misschien wat fouten er uithalen of een paar dingen toevoegen. Deze fase bevat ook een evaluatie, hierbij kijk je naar wat goed en fout ging en wat je in de toekomst kunt veranderen.
 			</p>
+			<!-- NEWLY ADDED, TODO check -->
+			<p>
+				Bij ICT-projecten kun je meerdere soorten onderdelen herkennen. Het ontleden van een 'product' in deze soorten onderdelen heet  decompositie. De soorten onderdelen die je moet kunnen herkennen zijn: fysiek, logisch en toepassingen. Fysiek betekent simpelweg tastbaar, je kunt het aanraken. Een voorbeeld hiervan zijn kabels. Logisch verwijst naar de berederenering achter de keuzes. Toepassingen verwijst naar software.
+			</p>
 		</div>
 
 		<div class="bar-s">

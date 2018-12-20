@@ -48,7 +48,7 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content">
-			<p>Kunstmatige intelligentie is een wetenschappelijk veld waarin het creëren en gebruik van AI wordt besproken. Je hebt vast wel van films zoals The Matrix en Terminator gehoord, maar hoe heeft dit met informatica en met jou te maken? In deze paragraaf ga je kennismaken met AI en de basis ervan leren. AI brengt veel filosofische met zich mee en is een snel veranderd veld.</p>
+			<p>Kunstmatige intelligentie is een wetenschappelijk veld waarin het creëren en gebruik van software dat beslissingen kan maken wordt besproken. Je hebt vast wel van films zoals The Matrix en Terminator gehoord, maar hoe heeft dit met informatica en met jou te maken? In deze paragraaf ga je kennismaken met AI en de basis ervan leren. AI brengt veel filosofische met zich mee en is een snel veranderd veld.</p>
 
 			<p>AI wordt vaak verdeeld in twee soorten, “strong” AI en “weak” AI.</p>
 

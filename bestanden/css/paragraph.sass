@@ -46,7 +46,10 @@
 		margin-left: 0.2em
 
 		a:hover
-			color: darken($white, 50%)
+			color: $black
+
+	.ptile:hover
+		background: linear-gradient(to bottom right, $secondary2, lighten($secondary2, 15%))
 
 	.ptile.folded
 		width: 2.5em
@@ -132,6 +135,7 @@
 
 				th
 					text-align: left
+					padding-right: .5rem
 
 				tr
 					height: 3em

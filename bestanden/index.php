@@ -389,7 +389,7 @@
 		echo '
 		<div class="tile-content">
 			<div class="tile-chapter">
-				B5 UI en UX
+				B6 UI en UX
 			</div>
 			<div class="tile-paragraphs">
 				<span class="closeTile">X</span>

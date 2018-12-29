@@ -32,7 +32,7 @@ include('../../../components/headerChapter.php');
 			</div>
 
 			<div class="ptile">
-				<span class="ptile-content"><a href="p3.php">
+				<span class="ptile-content"><a href="p4.php">
 					§4
 				</a></span>
 			</div>

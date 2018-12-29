@@ -122,7 +122,7 @@ Er wordt hier dus steeds gekeken of i, dat eerst gelijk is aan 5 nog minder is d
 
 		<div class="bar-s">
 			<h3>
-				Vragen
+				Opdrachten
 			</h3>
 		</div>
 

@@ -168,7 +168,7 @@ document.getElementById('element').addEventListener("click", function(){
 
 		<div class="bar-s">
 			<h3>
-				Vragen
+				Opdrachten
 			</h3>
 		</div>
 

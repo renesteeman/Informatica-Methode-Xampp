@@ -161,7 +161,7 @@ main();</code></pre>
 
 		<div class="bar-s">
 			<h3>
-				Vragen
+				Opdrachten
 			</h3>
 		</div>
 

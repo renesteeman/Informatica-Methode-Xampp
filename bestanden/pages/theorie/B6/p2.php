@@ -31,6 +31,12 @@ include('../../../components/headerChapter.php');
 				</a></span>
 			</div>
 
+			<div class="ptile">
+				<span class="ptile-content"><a href="p3.php">
+					§4
+				</a></span>
+			</div>
+
 		</div>
 	</div>
 
@@ -61,7 +67,7 @@ include('../../../components/headerChapter.php');
 
 		<div class="bar-s">
 			<h3>
-				Vragen
+				Opdrachten
 			</h3>
 		</div>
 

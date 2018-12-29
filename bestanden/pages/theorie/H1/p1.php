@@ -77,7 +77,7 @@ include('../../../components/headerChapter.php');
 
 		<div class="bar-s">
 			<h3>
-				Vragen
+				Opdrachten
 			</h3>
 		</div>
 

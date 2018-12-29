@@ -6,7 +6,7 @@ include('../../../components/headerChapter.php');
 
 	<div class="title-small">
 		<h2>
-			B6 §3 UX
+			B6 §3 UI vervolg
 		</h2>
 	 </div>
 
@@ -31,6 +31,12 @@ include('../../../components/headerChapter.php');
 				</a></span>
 			</div>
 
+			<div class="ptile">
+				<span class="ptile-content"><a href="p3.php">
+					§4
+				</a></span>
+			</div>
+
 		</div>
 	</div>
 
@@ -43,64 +49,78 @@ include('../../../components/headerChapter.php');
 
 		<div class="theorie-content">
 
-			<p>In deze paragraaf ga je leren hoe je de UX kunt ontwerpen. Bij het ontwerpen van de UX zul je vooral kijken naar hoe een gebruiker de applicatie doorloopt. Je kijkt naar de flow tussen pagina's en processen die een gebruiker kan doorlopen. Een UX designer zorgt ervoor dat de gebruiker zo makkelijk mogelijk zijn doel kan bereiken.</p>
+			<p>In deze paragraaf gaan we verder in op UI, je zult zien hoe je cognitieve en biologische modellen kunt gebruiken voor het ontwikkelen van een UI en hoe je UI kunt evalueren aan de hand van een gebruikersonderzoek.</p>
 
-			<p>Om een goede UX te realiseren moet de designer aan een paar eisen voldoen:</p>
+			<p>Als een persoon kijkt zien ze maar een klein deel scherp, door hier rekening mee te houden bij het ontwerpen zorg je voor een betere ervaring voor de gebruiker. Zo is het bijvoorbeeld fijn als zaken die met elkaar te maken hebben ook bij elkaar staan, zo kan in een oogopslag alle nodige informatie gevonden worden. Het is soms erg lastig om dit bereiken, maar zorg er op z'n minst voor dat de gebruiker dan wel de juiste kant op wordt gestuurd. Beweging kan hierbij helpen, dit valt namelijk erg op en trekt dus de aandacht. Een voorbeeld hiervan is een foutmelding die even trilt, het valt dan meteen op, zonder dat het erg stoort. Een handige regel hiervoor is dat een animatie in een gebied waar de gebruiker op gefocust is kort duurt (bv 300 ms) en een animatie verder weg langer (bv 600 ms). De reden hierachter is dat een mens minder snel reageert op iets dat buiten het gebied ligt waar hij op focust.</p>
 
-			<ul>
-				<li>
-					Je moet de gebruiker kennen. Als je iets ontwerpt voor kinderen zal je het anders moeten maken dan als je het ontwierp voor ouderen.
-				</li>
-				<li>
-					Je moet vanuit de gebruiker kunnen kijken. Ga het programma door alsof je een gebruiker bent en kijk naar wat nog beter zou kunnen.
-				</li>
-				<li>
-					Je moet zaken simpel kunnen houden. Een UI moet zo eenvoudig en duidelijk mogelijk zijn.
-				</li>
-			</ul>
+			<p>
+				Het voldoen aan de verwachtingen van gebruikers is ook erg belangrijk, zorg ervoor dat je je zoveel mogelijk aan conventies houdt. Denk hierbij aan zaken zoals een rode kleur voor foutmeldingen en groen om aangegeven dat iets gelukt is. Het gevolg hiervan is dat de gebruiker de UI zal ervaren als duidelijk en natuurlijk. Het gebruik van icoontjes kan om dezelfde reden helpen.
+			</p>
 
-			<p>Er zijn een paar manieren waarop tewerk kunt gaan, deze zijn handig in verschillende fases van een project.</p>
-
-			<p>Ter voorbereiding</p>
-
-			<ol>
-				<li>
-					Je begint met te onderzoeken welke problemen gebruikers hebben die je met jouw applicatie probeert op te lossen. Je maakt een overzicht van hoe je die problemen op wilt lossen.
-				</li>
-				<li>
-					Je gaat kijken naar hoe anderen proberen deze problemen op te lossen en kijk naar wat ze goed en niet goed doen.
-				</li>
-				<li>
-					Beschrijf de stappen die een gebruiker moet uitvoeren om een bepaald doel te bereiken binnen de applicatie, dit gebruik je om gefocust te blijven op wat je wilt bereiken en niet teveel eromheen gaat maken.
-				</li>
-			</ol>
-
-			<p>Tijdens het ontwikkelen</p>
-
-			<ol>
-				<li>
-					Ga door de applicatie heen en kijk welke onderdelen nog verbeterd zouden kunnen worden. Je wilt ervoor zorgen dat alles zo makkelijk mogelijk te gebruiken is en het duidelijk is hoe je iets kunt gebruiken of vinden.
-				</li>
-				<li>
-					Je kunt een wijziging maken en dan gebruikers de nieuwe en oude versie laten testen. Aan de hand van de resultaten kun je zien wat beter werkt en wat misschien een goede volgende stap zou zijn.
-				</li>
-				<li>
-					Laat echte gebruikers jouw applicatie testen. Je geeft ze opdrachten en kijkt hoe ze deze uitvoeren. Het is handig om opnames te maken, zodat je beter kunt zien wat de gebruiker doet. Je kunt op deze manier zien waar de gebruiker moeite mee heeft. Deze vorm van testen is een usability test.
-				</li>
-			</ol>
+			<p>
+				Op het moment dat je een UI gemaakt hebt en er een werkend prototype is kun je (nog meer) gaan testen. Een handige methode hiervoor is het gebruiken van mensen die in de doelgroep van jouw applicatie vallen, denk aan: interviews, vragenlijst en experimenten. Je zou mensen kunnen vragen om te kiezen tussen meerdere varianten, bijvoorbeeld kleurcombinaties en afmetingen. Als experiment zou je mensen jouw applicatie kunnen laten gebruiken en controleren hoe ze met de applicatie omgaan en waar ze vast blijven hangen.
+			</p>
 
 		</div>
 
 		<div class="bar-s">
 			<h3>
-				Vragen
+				Opdrachten
 			</h3>
 		</div>
 
 		<div class="theorie-content">
-			<ol>
-				<li>Bezoek een (bekende) website en bekijk welke stappen je moet uitvoeren om een bepaald doel te bereiken. Je kunt denken aan inloggen, iets bestellen of contact opnemen.</li>
-				<li>Probeer een alternatieve manier te verzinnen om een doel van opdracht 1 te bereiken, bedenk dus zelf een andere manier waarop de website zou kunnen werken.</li>
+			<ol class="MLquestion">
+				<li>
+					Welk icoontje zou goed om de volgende zaken weer te geven:
+					<ol>
+						<li>
+							Instellingen
+						</li>
+						<li>
+							Let op
+						</li>
+						<li>
+							Pauzeren
+						</li>
+					</ol>
+				</li>
+				<li>
+					Ontwerp 3 verschillende UI's, als je er geen kunt bedenken kun je kiezen voor: een pagina van een social media site, een programma om boeken mee te lezen, een programma om muziek af te spelen.
+				</li>
+				<li>
+					Vraag aan een klasgenoot of die kan aangeven waar op geklikt moet worden voor een bepaalde actie uit te voeren. Denk aan: het bekijken van een profiel, het omslaan van een bladzijde of het starten van muziek.
+				</li>
+			</ol>
+		</div>
+
+		<div class="bar-s">
+			<h3>
+				Antwoorden
+			</h3>
+		</div>
+
+		<div class="theorie-content theorie-answers">
+			<ol class="MLquestion">
+				<li>
+					<ol>
+						<li>
+							Tandwiel
+						</li>
+						<li>
+							Driehoek met uitroepteken
+						</li>
+						<li>
+							Twee verticale balken naast elkaar
+						</li>
+					</ol>
+				</li>
+				<li>
+					Eigen antwoord
+				</li>
+				<li>
+					-
+				</li>
 			</ol>
 		</div>
 	</div>

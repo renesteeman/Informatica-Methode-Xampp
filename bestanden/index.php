@@ -396,7 +396,8 @@
 				<ol>
 					<ul><a href="pages/theorie/B6/p1.php">§1 introductie</a></ul>
 					<ul><a href="pages/theorie/B6/p2.php">§2 UI</a></ul>
-					<ul><a href="pages/theorie/B6/p3.php">§3 UX</a></ul>
+					<ul><a href="pages/theorie/B6/p3.php">§3 UI vervolg</a></ul>
+					<ul><a href="pages/theorie/B6/p4.php">§4 UX</a></ul>
 				</ol>
 			</div>
 		</div>

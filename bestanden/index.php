@@ -357,28 +357,50 @@
 		</div>
 	</div>';
 
-		if(chapterIsFinished('B4')){
-			echo '<div class="tile completed">';
-		} else {
-			echo '<div class="tile">';
-		}
+	if(chapterIsFinished('B5')){
+		echo '<div class="tile completed">';
+	} else {
+		echo '<div class="tile">';
+	}
 
-			echo '
-			<div class="tile-content">
-				<div class="tile-chapter">
-					B5 Netwerken
-				</div>
-				<div class="tile-paragraphs">
-					<span class="closeTile">X</span>
-					<ol>
-						<ul><a href="pages/theorie/B5/p1.php">§1 OSI</a></ul>
-						<ul><a href="pages/theorie/B5/p2.php">§2 Topologie</a></ul>
-						<ul><a href="pages/theorie/B5/p3.php">§3 Werking en gevaren</a></ul>
-						<ul><a href="pages/theorie/B5/p4.php">§4 Cloud</a></ul>
-					</ol>
-				</div>
+		echo '
+		<div class="tile-content">
+			<div class="tile-chapter">
+				B5 Netwerken
 			</div>
-		</div>';
+			<div class="tile-paragraphs">
+				<span class="closeTile">X</span>
+				<ol>
+					<ul><a href="pages/theorie/B5/p1.php">§1 OSI</a></ul>
+					<ul><a href="pages/theorie/B5/p2.php">§2 Topologie</a></ul>
+					<ul><a href="pages/theorie/B5/p3.php">§3 Werking en gevaren</a></ul>
+					<ul><a href="pages/theorie/B5/p4.php">§4 Cloud</a></ul>
+				</ol>
+			</div>
+		</div>
+	</div>';
+
+	if(chapterIsFinished('B6')){
+		echo '<div class="tile completed">';
+	} else {
+		echo '<div class="tile">';
+	}
+
+		echo '
+		<div class="tile-content">
+			<div class="tile-chapter">
+				B5 UI en UX
+			</div>
+			<div class="tile-paragraphs">
+				<span class="closeTile">X</span>
+				<ol>
+					<ul><a href="pages/theorie/B6/p1.php">§1 introductie</a></ul>
+					<ul><a href="pages/theorie/B6/p2.php">§2 UI</a></ul>
+					<ul><a href="pages/theorie/B6/p3.php">§3 UX</a></ul>
+				</ol>
+			</div>
+		</div>
+	</div>';
 	?>
 
 	<!-- end page content / start footer -->

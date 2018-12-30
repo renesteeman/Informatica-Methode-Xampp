@@ -120,7 +120,7 @@
 				}
 
 			} else {
-				echo "\nWrong password";
+				echo "\nVerkeerd wachtwoord";
 			}
 
 		} else {

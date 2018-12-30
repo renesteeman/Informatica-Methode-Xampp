@@ -79,6 +79,7 @@ $(document).ready(function(){
 		}
 	});
 
+	//Toggle item
 	$(document).on('click', '.Arrow', function(){
 		$(this).parent().parent().next().slideToggle();
 		$(this).parent().parent().next().toggleClass("active");

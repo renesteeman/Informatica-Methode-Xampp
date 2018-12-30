@@ -52,7 +52,7 @@
 				echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 			}
 		} else {
-			echo "\nWrong password";
+			echo "\nVerkeerd wachtwoord";
 		}
 	} else {
 		echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";

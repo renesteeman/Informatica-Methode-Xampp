@@ -155,9 +155,14 @@ $(document).ready(function(){
 				data: {password:password}
 			});
 
-			jqXHR.done(function(msg) {
-				window.alert(msg);
-				window.location.href = '../pages/planner.php';
+			jqXHR.done(function(response) {
+				response = JSON.parse(response);
+				window.alert(response.msg);
+	      //if there isn't an error, redirect, else stay on page
+	      if(!response.error){
+	        window.location.href = '../pages/planner.php';
+				}
+
 			});
 
 			jqXHR.fail(function(jqXHR) {

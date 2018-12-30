@@ -2,6 +2,9 @@
 	include('DB_connect.php');
 	session_start();
 
+	$error = false;
+	$msg = "";
+
 	//function to check and clean input
 	function check_input($data) {
 		$data = trim($data, " ");
@@ -38,19 +41,30 @@
 				$sql = "DELETE FROM planner WHERE titel='$Inaam' AND school='$school' AND datum='$Idatum' AND klas='$Iklas'";
 
 				if (mysqli_query($conn, $sql)) {
-					echo $Inaam." is verwijderd";
+					$msg .= $Inaam." is verwijderd";
 				} else {
-					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					$error = 1;
 				}
 
 			} else {
-				echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+				$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+				$error = 1;
 			}
 		} else {
-			echo "Wrong password";
+			$msg .= "\nVerkeerd wachtwoord";
+			$error = 1;
 		}
 	} else {
-		echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+		$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+		$error = 1;
 	}
+
+	$toReturn = array('msg' => $msg, 'error' => $error);
+	$toReturn = json_encode($toReturn);
+
+	echo $toReturn;
+
+	mysqli_close($conn);
 
 ?>

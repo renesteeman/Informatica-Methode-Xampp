@@ -12,7 +12,7 @@
 					}
 				}
 			?>
-			<a id="mail" href="mailto:koffieandcode@gmail.com?SUBJECT=Inforca">koffieandcode@gmail.com</a>
+			<a id="mail" href="mailto:info@inforca.nl">info@inforca.nl</a>
 		</div>
 	</div>
 </footer>

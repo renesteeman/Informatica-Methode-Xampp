@@ -61,7 +61,7 @@
 				$school = $result['school'];
 
 			} else {
-				$msg .=  "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 1";
+				$msg .=  "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 1";
 			}
 
 			if($NInaam!=""){
@@ -73,7 +73,7 @@
 					$CInaam = $_SESSION["itemnaam"];
 
 				} else {
-					$msg .=  "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 2";
+					$msg .=  "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 2";
 					$error = 1;
 				}
 			}
@@ -84,7 +84,7 @@
 				if (mysqli_query($conn, $sql)) {
 					$msg .=  "\nNieuwe beschrijving voor opdracht is succesvol ingesteld";
 				} else {
-					$msg .=  "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 3";
+					$msg .=  "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 3";
 					$error = 1;
 				}
 			}
@@ -97,7 +97,7 @@
 					$_SESSION["itemklas"] = $NIklas;
 					$CIklas = $_SESSION["itemklas"];
 				} else {
-					$msg .=  "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 4";
+					$msg .=  "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 4";
 					$error = 1;
 				}
 			}
@@ -110,7 +110,7 @@
 					$_SESSION["itemdatum"] = $NIdatum;
 					$CIdatum = $_SESSION["itemdatum"];
 				} else {
-					$msg .=  "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 5";
+					$msg .=  "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 5";
 					$error = 1;
 				}
 			}
@@ -138,7 +138,7 @@
 					$msg .=  "\nNieuwe hoofdstuk(ken) voor opdracht is succesvol ingesteld";
 
 				} else {
-					$msg .=  "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 6";
+					$msg .=  "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 6";
 					$error = 1;
 				}
 
@@ -149,7 +149,7 @@
 		}
 
 	} else {
-		$msg .=  "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 7";
+		$msg .=  "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 7";
 	}
 
 	$toReturn = array('msg' => $msg, 'error' => $error);

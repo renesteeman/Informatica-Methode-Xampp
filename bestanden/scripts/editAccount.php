@@ -31,7 +31,7 @@
 			$rightpsw = $result['password'];
 
 		} else {
-			$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+			$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 		}
 
 		//check password
@@ -73,7 +73,7 @@
 							    $msg .= "\nNaam succesvol bijgewerkt";
 									$_SESSION["name"] = $Nnaam;
 								} else {
-							    $msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							    $msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 									$error = 1;
 								}
 
@@ -82,7 +82,7 @@
 								$error = 1;
 							}
 						} else {
-							$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							$error = 1;
 						}
 					}
@@ -112,7 +112,7 @@
 										$_SESSION["username"] = $Nusername;
 
 									} else {
-								    $msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+								    $msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 										$error = 1;
 									}
 								}
@@ -121,7 +121,7 @@
 								$error = 1;
 							}
 						} else {
-							$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							$error = 1;
 						}
 					}	else {
@@ -146,7 +146,7 @@
 							if (mysqli_query($conn, $sql)) {
 						    $msg .= "\nWachtwoord succesvol bijgewerkt";
 							} else {
-						    $msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+						    $msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 								$error = 1;
 							}
 						} else {
@@ -177,7 +177,7 @@
 							if (mysqli_query($conn, $sql)) {
 							    $msg .= "\nEmail succesvol bijgewerkt";
 							} else {
-							    $msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							    $msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 									$error = 1;
 							}
 						} else {
@@ -198,7 +198,7 @@
 					if (mysqli_query($conn, $sql)) {
 					    $msg .= "\nGroupsrol succesvol bijgewerkt";
 					} else {
-					    $msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					    $msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							$error = 1;
 					}
 				}

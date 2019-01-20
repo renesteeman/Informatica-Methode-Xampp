@@ -31,7 +31,7 @@
 			$Gschool = $result['school'];
 
 		} else {
-			$return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+			$return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 			$error = 1;
 		}
 
@@ -92,7 +92,7 @@
 			$rightpsw = $result['password'];
 
 		} else {
-			$return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+			$return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 			$error = 1;
 		}
 
@@ -106,7 +106,7 @@
 				if (mysqli_query($conn, $sql)) {
 					$return_msg .= "\nGroep succesvol toegevoegd";
 				} else {
-					$return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					$return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					$error = 1;
 				}
 
@@ -124,7 +124,7 @@
 						if (mysqli_query($conn, $sql)) {
 							$return_msg .= "\n".$studentName." succesvol toegevoegd aan groep";
 						} else {
-							$return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							$return_msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							$error = 1;
 						}
 					} else {

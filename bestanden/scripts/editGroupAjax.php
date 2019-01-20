@@ -52,7 +52,7 @@
 				$school = $result['school'];
 
 			} else {
-				$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+				$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 			}
 
 			if($NGnaam!=""){
@@ -70,7 +70,7 @@
 						$_SESSION["groupname"] = $NGnaam;
 						$CGnaam = $_SESSION["groupname"];
 					} else {
-						$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+						$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 						$error = 1;
 					}
 			   }
@@ -83,7 +83,7 @@
 				if (mysqli_query($conn, $sql)) {
 					$msg .= "\nNieuwe groepsbeschrijving is succesvol ingesteld";
 				} else {
-					$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					$error = 1;
 				}
 			}
@@ -94,7 +94,7 @@
 				if (mysqli_query($conn, $sql)) {
 					$msg .= "\nNieuwe groepslink is succesvol ingesteld";
 				} else {
-					$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					$error = 1;
 				}
 			}
@@ -107,7 +107,7 @@
 				if (mysqli_query($conn, $sql)) {
 					$msg .= "\nOude leden succesvol verwijderd";
 				} else {
-					$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					$error = 1;
 				}
 
@@ -124,7 +124,7 @@
 						if (mysqli_query($conn, $sql)) {
 							$msg .= "\n".$lid." is nu lid van de groep";
 						} else {
-							$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							$error = 1;
 						}
 					} else {
@@ -139,7 +139,7 @@
 		}
 
 	} else {
-		$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+		$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 	}
 
 	$toReturn = array('msg' => $msg, 'error' => $error);

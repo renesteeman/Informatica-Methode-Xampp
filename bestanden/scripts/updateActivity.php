@@ -20,7 +20,7 @@
 		$sql = "UPDATE users SET LFailedLogin='$now' WHERE id='$id'";
 
 		if(!mysqli_query($conn, $sql)) {
-			echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met koffieandcode@gmail.com en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+			echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 		}
   }
 

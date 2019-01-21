@@ -67,9 +67,16 @@ $(document).ready(function(){
 			url: "requestAccounts.php",
 			data: {schoolNaam:schoolNaam, schoolAdres:schoolAdres, schoolPostcode:schoolPostcode, schoolPlaats:schoolPlaats, schoolTelefoonnummer:schoolTelefoonnummer, docentNaam:docentNaam, docentTelefoonnummer:docentTelefoonnummer, Ndocenten:Ndocenten, klassen:klassen},
 		});
-		jqXHR.done(function(msg){
-			//TODO
-			$('.main').html(msg);
+		jqXHR.done(function(response){
+			response = JSON.parse(response);
+
+      window.alert(response.msg);
+
+      //if there isn't an error, redirect, else stay on page
+      if(!response.error){
+        window.location.href = '../index.php';
+      }
+
 		});
 		jqXHR.fail(function(jqXHR) {
 			alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");

@@ -15,6 +15,7 @@
 	$klassen = [];
 
 	$msg = "";
+	$error = false;
 
 	//function to check and clean input
 	function check_input($data) {
@@ -29,42 +30,49 @@
 		$schoolNaam = mysqli_real_escape_string($conn, check_input($_POST['schoolNaam']));
 	} else {
 		$msg .= "\nU heeft geen geldige naam voor de school ingevuld.";
+		$error = true;
 	}
 
 	if(isset ($_POST['schoolAdres']) & $_POST['schoolAdres']!=""){
 		$schoolAdres = mysqli_real_escape_string($conn, check_input($_POST['schoolAdres']));
 	} else {
 		$msg .= "\nU heeft geen geldig adres van de school ingevuld.";
+		$error = true;
 	}
 
 	if(isset ($_POST['schoolPostcode']) & $_POST['schoolPostcode']!=""){
 		$schoolPostcode = mysqli_real_escape_string($conn, check_input($_POST['schoolPostcode']));
 	} else {
 		$msg .= "\nU heeft geen geldige postcode van de school ingevuld.";
+		$error = true;
 	}
 
 	if(isset ($_POST['schoolPlaats']) & $_POST['schoolPlaats']!=""){
 		$schoolPlaats = mysqli_real_escape_string($conn, check_input($_POST['schoolPlaats']));
 	} else {
 		$msg .= "\nU heeft geen geldige plaats van de school ingevuld.";
+		$error = true;
 	}
 
 	if(isset ($_POST['schoolTelefoonnummer']) & $_POST['schoolTelefoonnummer']!=""){
 		$schoolTelefoonnummer = mysqli_real_escape_string($conn, check_input($_POST['schoolTelefoonnummer']));
 	} else {
 		$msg .= "\nU heeft geen geldig telefoonnummer van de school ingevuld.";
+		$error = true;
 	}
 
 	if(isset ($_POST['docentNaam']) & $_POST['docentNaam']!=""){
 		$docentNaam = mysqli_real_escape_string($conn, check_input($_POST['docentNaam']));
 	} else {
 		$msg .= "\nU heeft geen geldige naam van de docent ingevuld.";
+		$error = true;
 	}
 
 	if(isset ($_POST['docentTelefoonnummer']) & $_POST['docentTelefoonnummer']!=""){
 		$docentTelefoonnummer = mysqli_real_escape_string($conn, check_input($_POST['docentTelefoonnummer']));
 	} else {
 		$msg .= "\nU heeft geen geldige naam van de docent ingevuld.";
+		$error = true;
 	}
 
 	if(isset ($_POST['Ndocenten']) & $_POST['Ndocenten']!=""){
@@ -75,6 +83,7 @@
 		}
 	} else {
 		$msg .= "\nU heeft geen geldig aantal docenten ingevuld";
+		$error = true;
 	}
 
 	if(isset ($_POST['klassen'])){
@@ -154,7 +163,19 @@
 		</html>
 		";
 
-		$msg .= $emailContent;
+		//send mail
+		$email = "bestellen@inforca.nl"
+		$subject = "Aanvraag voor accounts";
+		$header = "From: inforca.nl";
+
+		if (mail($email, $subject, $emailContent, $header)) {
+			$msg = "Uw aanvraag was succesvol en er zal spoedig contact worden opgenomen ter bevestiging.";
+		} else {
+			$msg .= "\nEr is een fout opgetreden bij het verzenden van uw aanvraag, u kunt contact opnemen met info@inforca.nl";
+			$error = 1;
+		}
+
+
 	};
 
 	/*
@@ -375,7 +396,9 @@
 	echo $emailContent1;
 	*/
 
-	echo $msg;
+	$toReturn = array('msg' => $msg, 'error' => $error);
+	$toReturn = json_encode($toReturn);
+	echo $toReturn;
 
 	$conn->close();
 ?>

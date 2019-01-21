@@ -10,7 +10,7 @@
 
 	<link rel="stylesheet" href="../css/create.min.css">
 	<link rel="stylesheet" href="../css/requestAccounts.min.css">
-	<script src="createAccount.js"></script>
+	<script src="requestAccount.js"></script>
 </head>
 
 <body>
@@ -84,7 +84,7 @@
 				</li>
 
 				<div class="priceOverview">
-					
+
 				</div>
 
 				<li>

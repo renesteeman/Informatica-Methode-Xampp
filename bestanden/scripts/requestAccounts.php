@@ -1,8 +1,18 @@
 <?php
 	include('DB_connect.php');
 
-	#allow to script to continue for a maximum of 5m
-	ini_set('max_execution_time', '300');
+	#allow to script to continue for a maximum of 10m
+	ini_set('max_execution_time', '600');
+
+	$schoolNaam = "";
+	$schoolAdres = "";
+	$schoolPostcode = "";
+	$schoolPlaats = "";
+	$schoolTelefoonnmmer = "";
+	$docentNaam = "";
+	$docentTelefoonnummer = "";
+	$Ndocenten = 0;
+	$klassen[] = "";
 
 	$msg = "";
 
@@ -14,12 +24,47 @@
 		return $data;
 	}
 
-	//password checks out
 	//get given data
-	if(isset ($_POST['schoolnaam']) & $_POST['schoolnaam']!=""){
-		$schoolnaam = mysqli_real_escape_string($conn, check_input($_POST['schoolnaam']));
+	if(isset ($_POST['schoolNaam']) & $_POST['schoolNaam']!=""){
+		$schoolNaam = mysqli_real_escape_string($conn, check_input($_POST['schoolNaam']));
 	} else {
-		$msg .= "\nU heeft geen geldige schoolnaam ingevuld";
+		$msg .= "\nU heeft geen geldige naam voor de school ingevuld.";
+	}
+
+	if(isset ($_POST['schoolAdres']) & $_POST['schoolAdres']!=""){
+		$schoolAdres = mysqli_real_escape_string($conn, check_input($_POST['schoolAdres']));
+	} else {
+		$msg .= "\nU heeft geen geldig adres van de school ingevuld.";
+	}
+
+	if(isset ($_POST['schoolPostcode']) & $_POST['schoolPostcode']!=""){
+		$schoolPostcode = mysqli_real_escape_string($conn, check_input($_POST['schoolPostcode']));
+	} else {
+		$msg .= "\nU heeft geen geldige postcode van de school ingevuld.";
+	}
+
+	if(isset ($_POST['schoolPlaats']) & $_POST['schoolPlaats']!=""){
+		$schoolPlaats = mysqli_real_escape_string($conn, check_input($_POST['schoolPlaats']));
+	} else {
+		$msg .= "\nU heeft geen geldige plaats van de school ingevuld.";
+	}
+
+	if(isset ($_POST['schoolTelefoonnummer']) & $_POST['schoolTelefoonnummer']!=""){
+		$schoolTelefoonnummer = mysqli_real_escape_string($conn, check_input($_POST['schoolTelefoonnummer']));
+	} else {
+		$msg .= "\nU heeft geen geldig telefoonnummer van de school ingevuld.";
+	}
+
+	if(isset ($_POST['docentNaam']) & $_POST['docentNaam']!=""){
+		$docentNaam = mysqli_real_escape_string($conn, check_input($_POST['docentNaam']));
+	} else {
+		$msg .= "\nU heeft geen geldige naam van de docent ingevuld.";
+	}
+
+	if(isset ($_POST['docentTelefoonnummer']) & $_POST['docentTelefoonnummer']!=""){
+		$docentTelefoonnummer = mysqli_real_escape_string($conn, check_input($_POST['docentTelefoonnummer']));
+	} else {
+		$msg .= "\nU heeft geen geldige naam van de docent ingevuld.";
 	}
 
 	if(isset ($_POST['Ndocenten']) & $_POST['Ndocenten']!=""){
@@ -51,6 +96,62 @@
 
 	}
 
+	//send mail to Inforca
+	$requestDate = date("Y-m-d");
+
+	//send mail to school
+	if(strlen($msg) == 0){
+		$emailContent = "
+		<!DOCTYPE html>
+		<html>
+		<body style='margin: 0;'>
+			<div class='email-background' style='background-color: #eee;font-family: roboto, sans-serif;height: 100%;width: 100%;padding: 2em;'>
+
+				<div>
+					<ul>
+						<li>
+							schoolNaam = ".$schoolNaam."
+						</li>
+						<li>
+							schoolAdres = ".$schoolAdres."
+						</li>
+						<li>
+							schoolPostcode = ".$schoolPostcode."
+						</li>
+						<li>
+							schoolPlaats = ".$schoolPlaats."
+						</li>
+						<li>
+							schoolTelefoonnmmer = ".$schoolTelefoonnmmer."
+						</li>
+						<li>
+							docentNaam = ".$docentNaam."
+						</li>
+						<li>
+							docentTelefoonnummer = ".$docentTelefoonnummer."
+						</li>
+						<li>
+							Ndocenten = ".$Ndocenten."
+						</li>
+						<li>
+							klassen = ".implode("|",$klassen)."
+						</li>
+					</ul>
+				</div>
+			</div>
+		</body>
+		</html>
+		";
+
+		$msg .= $emailContent;
+	};
+
+
+
+
+
+	/*
+
 	$creation_date = date("Y-m-d");
 	$expire_date = date('Y-m-d',strtotime(date("Y-m-d", mktime()) . " +1 year"));
 
@@ -60,7 +161,7 @@
 	$specials = array("!","@","#","$","%","?");
 
 	function createAccountDetails(){
-		global $letters, $numbers, $specials, $schoolnaam, $conn;
+		global $letters, $numbers, $specials, $schoolNaam, $conn;
 
 		$password = "";
 
@@ -89,13 +190,13 @@
 		$Hpassword = password_hash($password, PASSWORD_DEFAULT);
 
 		//create username
-		$username = $schoolnaam.rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
+		$username = $schoolNaam.rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
 
 		//check if username is already in use
 		$sql = mysqli_query($conn, "SELECT username FROM users WHERE username='$username'");
 
 		while(mysqli_num_rows($sql) != 0){
-			$username = $schoolnaam.rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
+			$username = $schoolNaam.rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
 		}
 
 		$accountDetails = [$username, $password, $Hpassword];
@@ -130,7 +231,7 @@
 		$Cusername = $Caccount[0];
 		$CHpassword = $Caccount[2];
 
-		$sql = "INSERT INTO users (username, password, school, functie, creation_date, expire_date, naam) VALUES ('$Cusername', '$CHpassword' , '$schoolnaam', 'docent', '$creation_date', '$expire_date', '$Cusername')";
+		$sql = "INSERT INTO users (username, password, school, functie, creation_date, expire_date, naam) VALUES ('$Cusername', '$CHpassword' , '$schoolNaam', 'docent', '$creation_date', '$expire_date', '$Cusername')";
 
 		if (mysqli_query($conn, $sql)) {
 			$accountsCreated++;
@@ -151,7 +252,7 @@
 			$Cusername = $Caccount[0];
 			$CHpassword = $Caccount[2];
 
-			$sql = "INSERT INTO users (username, password, school, functie, creation_date, expire_date, klas, naam) VALUES ('$Cusername', '$CHpassword' , '$schoolnaam', 'leerling', '$creation_date', '$expire_date', '$Cklas', '$Cusername')";
+			$sql = "INSERT INTO users (username, password, school, functie, creation_date, expire_date, klas, naam) VALUES ('$Cusername', '$CHpassword' , '$schoolNaam', 'leerling', '$creation_date', '$expire_date', '$Cklas', '$Cusername')";
 
 			if (mysqli_query($conn, $sql)) {
 				$accountsCreated++;
@@ -265,6 +366,7 @@
 	";
 
 	echo $emailContent1;
+	*/
 
 	$conn->close();
 ?>

@@ -30,45 +30,71 @@
 	<div class="main">
 		<form class="requestAccounts" method="post" action="../scripts/requestAccounts.php" accept-charset="UTF-8">
 
-		<ul>
-			<li>
-				Schoolnaam</br>
-				<input type="text" class="schoolnaam" name="schoolnaam" maxlength="50" required/>
-			</li>
-			<li>
-				Aantal docenten</br>
-				<input class="Ndocenten" name="Ndocenten" type="number" min="0" required/>
-			</li>
-			<li>
+			<ul>
+				<li>
+					Naam van de school</br>
+					<input type="text" name="schoolNaam" maxlength="50" required/>
+				</li>
+				<li>
+					Adres van de school</br>
+					<input type="text" name="schoolAdres" maxlength="50" required/>
+				</li>
+				<li>
+					Postcode van de school</br>
+					<input type="text"name="schoolPostcode" maxlength="50" required/>
+				</li>
+				<li>
+					Plaats van de school</br>
+					<input type="text" name="schoolPlaats" maxlength="50" required/>
+				</li>
+				<li>
+					Telefoonnummer van de school</br>
+					<input type="text" name="schoolTelefoonnummer" maxlength="50" required/>
+				</li>
+				<li>
+					Naam van de docent</br>
+					<input type="text" name="docentNaam" maxlength="50" required/>
+				</li>
+				<li>
+					Telefoonnummer van de docent</br>
+					<input type="text" name="docentTelefoonnummer" maxlength="50" required/>
+				</li>
+				<li>
+					Aantal docenten</br>
+					<input type="number" name="Ndocenten" min="0" required/>
+				</li>
+				<li>
 
-				<label>Klassen</label>
-				<div class="list">
-					<ul>
+					<label>Klassen</label>
+					<div class="list">
+						<ul>
 
-					</ul>
+						</ul>
+					</div>
+
+					<div class="add-item">
+						<span class="addKlas add-item">
+							<input type="text" placeholder="klas" name="Aklas" maxlength="20" autocomplete="off" class="medium">
+						</span>
+						<span class="addLeerlingen add-item">
+							<input type="text" placeholder="aantal leerlingen" name="ANleerlingen" maxlength="3" autocomplete="off" class="small">
+						</span>
+						<span class="plus-sign addklasButton">+</span>
+					</div>
+				</li>
+
+				<div class="priceOverview">
+					
 				</div>
 
-				<div class="add-item">
-					<span class="addKlas add-item">
-						<input type="text" placeholder="klas" name="Aklas" maxlength="20" autocomplete="off" class="medium">
-					</span>
-					<span class="addLeerlingen add-item">
-						<input type="text" placeholder="aantal leerlingen" name="ANleerlingen" maxlength="3" autocomplete="off" class="small">
-					</span>
-					<span class="plus-sign addklasButton">+</span>
-				</div>
-			</li>
+				<li>
+					<input type="submit" value="verzend">
+				</li>
+			</ul>
 
-			<li>
-				<input type="submit" value="verzend">
-			</li>
-		</ul>
-
-	</form>
+		</form>
 
 	</div>
-
-
 
 	<?php
 	include('../components/footerGeneral.php');

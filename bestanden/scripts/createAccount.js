@@ -39,8 +39,14 @@ $(document).ready(function(){
 		event.preventDefault();
 
 		//get data to send via AJAX
-		var schoolnaam = $('.schoolnaam').val();
-		var Ndocenten = $('.Ndocenten').val();
+		var schoolNaam = $('input[name=schoolNaam]').val();
+		var schoolAdres = $('input[name=schoolAdres]').val();
+		var schoolPostcode = $('input[name=schoolPostcode]').val();
+		var schoolPlaats = $('input[name=schoolPlaats]').val();
+		var schoolTelefoonnummer = $('input[name=schoolTelefoonnummer]').val();
+		var docentNaam = $('input[name=docentNaam]').val();
+		var docentTelefoonnummer = $('input[name=docentTelefoonnummer]').val();
+		var Ndocenten = $('input[name=Ndocenten]').val();
 
 		var klassen = [];
 		var klasElementen = $('.klas');
@@ -59,7 +65,7 @@ $(document).ready(function(){
 		jqXHR = $.ajax({
 			method: "POST",
 			url: "requestAccounts.php",
-			data: {schoolnaam:schoolnaam, Ndocenten:Ndocenten, klassen:klassen},
+			data: {schoolNaam:schoolNaam, schoolAdres:schoolAdres, schoolPostcode:schoolPostcode, schoolPlaats:schoolPlaats, schoolTelefoonnummer:schoolTelefoonnummer, docentNaam:docentNaam, docentTelefoonnummer:docentTelefoonnummer, Ndocenten:Ndocenten, klassen:klassen},
 		});
 		jqXHR.done(function(msg){
 			$('.main').html(msg);
@@ -70,52 +76,38 @@ $(document).ready(function(){
 	});
 
 	function updatePrice(){
-		var docenten = $('.Ndocenten').val();
-		var leerlingen = 0;
+		var Ndocenten = $('input[name=Ndocenten]').val();
+		var Nleerlingen = 0;
 
 		var leerlingenItems = $('.leerlingen');
 
 		for(var i=0; i<leerlingenItems.length; i++){
-			leerlingen += parseInt(leerlingenItems.eq(i).text());
+			Nleerlingen += parseInt(leerlingenItems.eq(i).text());
 		}
 
-		var Pdocenten = docenten * 30;
-		var Pleerlingen = leerlingen * 15;
+		var Pdocenten = Ndocenten * 30;
+		var Pleerlingen = Nleerlingen * 10;
 		var Ptotaal = Pdocenten + Pleerlingen;
 
-		if(docenten>=0){
-			$('.Pdocenten').removeClass('hide');
-			$('.Pdocenten').children('.aantal').text(docenten);
-			$('.Pdocenten').children('.prijs').text('€' + Pdocenten);
-		} else {
-			$('.Pdocenten').addClass('hide');
-			Pdocenten = 0;
-		}
-
-		if(leerlingen>=0){
-			$('.Pleerlingen').removeClass('hide');
-			$('.Pleerlingen').children('.aantal').text(leerlingen);
-			$('.Pleerlingen').children('.prijs').text('€' + Pleerlingen);
-		} else {
-			$('.Pleerlingen').addClass('hide');
-			Pleerlingen = 0;
-		}
-
 		if(Ptotaal>0){
-			$('.totaal').removeClass('hide');
-			$('.totaal').children('.Tprijs').text('Totaalprijs: €' + Ptotaal);
+			$('.priceOverview').removeClass('hide');
+			$('.priceOverview').text('Totaalprijs: €' + Ptotaal);
 		} else {
-			$('.totaal').addClass('hide');
+			$('.priceOverview').addClass('hide');
 			Ptotaal = 0;
 		}
 
 	}
 
-	$('.Ndocenten').keyup(function(){
+	$('input[name=Ndocenten]').keyup(function(){
 		updatePrice();
 	});
 
 	$(document).on('click',".delete", function(){
+		updatePrice();
+	});
+
+	$(document).on('click',".add-item", function(){
 		updatePrice();
 	});
 

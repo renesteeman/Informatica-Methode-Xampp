@@ -8,11 +8,11 @@
 	$schoolAdres = "";
 	$schoolPostcode = "";
 	$schoolPlaats = "";
-	$schoolTelefoonnmmer = "";
+	$schoolTelefoonnummer = "";
 	$docentNaam = "";
 	$docentTelefoonnummer = "";
 	$Ndocenten = 0;
-	$klassen[] = "";
+	$klassen = [];
 
 	$msg = "";
 
@@ -110,31 +110,42 @@
 				<div>
 					<ul>
 						<li>
-							schoolNaam = ".$schoolNaam."
+							Naam van de school: ".$schoolNaam."
 						</li>
 						<li>
-							schoolAdres = ".$schoolAdres."
+							Adres van de school: ".$schoolAdres."
 						</li>
 						<li>
-							schoolPostcode = ".$schoolPostcode."
+							Postcode van de school: ".$schoolPostcode."
 						</li>
 						<li>
-							schoolPlaats = ".$schoolPlaats."
+							Plaats van de schoolNaam: ".$schoolPlaats."
 						</li>
 						<li>
-							schoolTelefoonnmmer = ".$schoolTelefoonnmmer."
+							Telefoonnummer van de school: ".$schoolTelefoonnummer."
 						</li>
 						<li>
-							docentNaam = ".$docentNaam."
+							Naam van de docent: ".$docentNaam."
 						</li>
 						<li>
-							docentTelefoonnummer = ".$docentTelefoonnummer."
+							Telefoonnummer van de docent: ".$docentTelefoonnummer."
 						</li>
 						<li>
-							Ndocenten = ".$Ndocenten."
+							Aantal docenten: ".$Ndocenten."
 						</li>
 						<li>
-							klassen = ".implode("|",$klassen)."
+							Klassen </br>";
+
+		for($i=0; $i<count($klassen); $i++){
+			$emailContent .= "Nummer: ".$i."\t";
+			$currentClass = $klassen[$i];
+			$klasNaam = $currentClass[0];
+			$emailContent .= "Naam van de klas: ".$klasNaam."\t";
+			$klasGrote = $currentClass[1];
+			$emailContent .= "Grote van de klas: ".$klasGrote."</br>";
+		}
+
+		$emailContent .= "
 						</li>
 					</ul>
 				</div>
@@ -145,10 +156,6 @@
 
 		$msg .= $emailContent;
 	};
-
-
-
-
 
 	/*
 
@@ -367,6 +374,8 @@
 
 	echo $emailContent1;
 	*/
+
+	echo $msg;
 
 	$conn->close();
 ?>

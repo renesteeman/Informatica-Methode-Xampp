@@ -68,6 +68,7 @@ $(document).ready(function(){
 			data: {schoolNaam:schoolNaam, schoolAdres:schoolAdres, schoolPostcode:schoolPostcode, schoolPlaats:schoolPlaats, schoolTelefoonnummer:schoolTelefoonnummer, docentNaam:docentNaam, docentTelefoonnummer:docentTelefoonnummer, Ndocenten:Ndocenten, klassen:klassen},
 		});
 		jqXHR.done(function(msg){
+			//TODO
 			$('.main').html(msg);
 		});
 		jqXHR.fail(function(jqXHR) {

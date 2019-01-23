@@ -20,13 +20,28 @@
 
 	<div class="row">
 		<div class="box">
-			Modern
+			<div class="box-title">
+				Modern
+			</div>
+			<div class="box-content">
+				Uitleg
+			</div>
 		</div>
 		<div class="box">
-			Voorbereiding
+			<div class="box-title">
+				Modern
+			</div>
+			<div class="box-content">
+				Uitleg
+			</div>
 		</div>
 		<div class="box">
-			Overzichtelijk
+			<div class="box-title">
+				Modern
+			</div>
+			<div class="box-content">
+				Uitleg
+			</div>
 		</div>
 	</div>
 
@@ -38,15 +53,7 @@
 	</div>
 
 	<div class="row">
-		<div class="box">
-			Modern
-		</div>
-		<div class="box">
-			Voorbereiding
-		</div>
-		<div class="box">
-			Overzichtelijk
-		</div>
+
 	</div>
 
 	<div class="bar-alt">
@@ -56,15 +63,7 @@
 	</div>
 
 	<div class="row">
-		<div class="box">
-			Modern
-		</div>
-		<div class="box">
-			Voorbereiding
-		</div>
-		<div class="box">
-			Overzichtelijk
-		</div>
+
 	</div>
 
 	<?php

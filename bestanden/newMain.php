@@ -12,10 +12,20 @@
 
 <body>
 
-	<div class="bar-alt">
+	<div class="title">
+		<h2>
+			Informatie over Inforca
+		</h2>
+	</div>
+
+	<div class="bar">
 		<h3>
 			Wat is Inforca?
 		</h3>
+	</div>
+
+	<div class="info">
+		Inforca is een informatica lesmethode gericht op havo en vwo.
 	</div>
 
 	<div class="row">
@@ -46,7 +56,7 @@
 	</div>
 
 
-	<div class="bar-alt">
+	<div class="bar">
 		<h3>
 			Waarom Inforca?
 		</h3>
@@ -56,7 +66,7 @@
 
 	</div>
 
-	<div class="bar-alt">
+	<div class="bar">
 		<h3>
 			Inforca gebruiken
 		</h3>

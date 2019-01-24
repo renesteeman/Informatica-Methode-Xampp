@@ -109,6 +109,33 @@
 		</div>
 	</div>
 
+	<div class="row">
+		<div class="box">
+			<div class="box-title">
+				Flexibel
+			</div>
+			<div class="box-content">
+				Inforca staat open voor al uw feedback en heeft geen moeite met het aanpassen van de methode aan de hand van uw wensen.
+			</div>
+		</div>
+		<div class="box">
+			<div class="box-title">
+				Open
+			</div>
+			<div class="box-content">
+				Bijna alle code van Inforca is open-source en terug te vinden op <a href="https://github.com/renesteeman/Informatica-Methode-Xampp">https://github.com/renesteeman/Informatica-Methode-Xampp</a>. Het enigste dat niet openbaar is zijn onderdelen die de beveiliging garanderen.
+			</div>
+		</div>
+		<div class="box">
+			<div class="box-title">
+				Ondersteuning
+			</div>
+			<div class="box-content">
+				Inforca levert gratis ondersteuning aan docenten op zowel technisch als onderwijskundig vlak.
+			</div>
+		</div>
+	</div>
+
 	<div class="bar">
 		<h3>
 			Inforca gebruiken

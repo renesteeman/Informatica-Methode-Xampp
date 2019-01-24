@@ -142,35 +142,17 @@
 		</h3>
 	</div>
 
-	<div class="info">
-		Inforca is een informatica lesmethode gericht op havo en vwo. Quisque facilisis tempor leo et aliquam. Aliquam nisi massa, pulvinar rutrum ultricies sit amet, eleifend in erat. In facilisis mollis enim vitae lacinia. Proin viverra posuere massa vitae suscipit. Nulla sollicitudin consectetur suscipit. Praesent eget felis quis ex ultrices luctus. Vivamus non consectetur lorem. Curabitur cursus enim quis justo tempus rutrum. Phasellus at nulla velit. Quisque a lorem sit amet nibh ultrices tincidunt in sit amet nisi. Vivamus vitae quam massa. Sed fringilla mi eu porta pellentesque. Proin laoreet rutrum erat, non maximus lorem. Cras ut quam ut ex ullamcorper lacinia eu laoreet diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam euismod metus a elit sagittis consectetur.
-	</div>
+	<div class="info inforcaGebruiken">
+		<p>
+			Als u interesse hebt in het gebruiken van Inforca kunt u contact opnemen met <a href="mailto:info@inforca.nl">info@inforca.nl</a> om al uw vragen te beantwoorden en u te helpen bij het bestellen van accounts.
+		</p>
+		<p>
+			Als u nog niet volledig overtuigd bent kunt u ook vragen voor een testaccount waarmee u toegang krijgt tot alle functies van Inforca.
+		</p>
+		<p>
+			Als u besluit accounts te bestellen zult u deze direct na het aanvragen ontvangen en kunt u een uitlegles krijgen om te leren hoe alle systemen werken, dit kan voor zowel docenten als leerlingen.
+		</p>
 
-	<div class="row">
-		<div class="box">
-			<div class="box-title">
-				Modern
-			</div>
-			<div class="box-content">
-				Uitleg
-			</div>
-		</div>
-		<div class="box">
-			<div class="box-title">
-				Modern
-			</div>
-			<div class="box-content">
-				Uitleg
-			</div>
-		</div>
-		<div class="box">
-			<div class="box-title">
-				Modern
-			</div>
-			<div class="box-content">
-				Uitleg
-			</div>
-		</div>
 	</div>
 
 	<?php

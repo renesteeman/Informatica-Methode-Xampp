@@ -25,6 +25,13 @@
 	</div>
 
 	<div class="info">
+		<div>
+			<video controls>
+				<source src="./video/InforcaDemo.mp4">
+			</video>
+		</div>
+
+
 		<p>
 			Inforca is een moderne informatica lesmethode die volledig digitaal beschikbaar is. Het bevat 13 hoofdstukken die ingedeeld zijn in kern- en verdiepingshoofdstukken. Leerlingen kunnen zich hiermee ontwikkelen in verschillende gebieden, zo komen onderwerpen zoals: logica, programmeren, arduino, web development, projecten en databases aan bod.
 		</p>

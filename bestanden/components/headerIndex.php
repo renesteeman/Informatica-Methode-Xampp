@@ -39,6 +39,7 @@ if(isset($_SESSION['ErrorInvalidAccount'])){
 
 	<!-- internal includes -->
 	<link rel="stylesheet" href="css/main.min.css">
+	<link rel="stylesheet" href="css/sales.min.css">
 
 	<!-- external includes -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">

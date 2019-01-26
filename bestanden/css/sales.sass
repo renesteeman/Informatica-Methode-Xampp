@@ -6,18 +6,21 @@
 	margin-right: 20%
 	margin-top: 30px
 
-	video
-		width: 100%
-		height: auto
-
-.row
+video
+	width: 60%
+	height: auto
 	margin-left: 20%
 	margin-right: 20%
 	margin-top: 30px
+
+.tiles
+	margin-left: 20%
+	margin-right: 20%
+	margin-top: 40px
 	margin-bottom: 40px
 	display: grid
 	grid-template-columns: auto auto auto
-	grid-gap: 4em
+	grid-gap: 2em
 
 	.box
 		height: 15rem
@@ -37,5 +40,42 @@
 		.box-content
 			padding: 1rem
 
-.info.inforcaGebruiken
-	padding-bottom: 20em
+@media (max-width: $large)
+	.info
+		margin-left: 0
+		width: 100%
+		padding: 1em 0.5em
+
+	video
+		margin-left: 0
+		margin-right: 0
+		width: 100vw
+
+	.tiles
+		margin-left: 5%
+		margin-right: 5%
+		margin-top: 40px
+		margin-bottom: 40px
+		display: grid
+		grid-template-columns: auto auto auto
+		grid-gap: 2em
+
+		.box
+			height: 15rem
+			width: 100%
+			font-size: 110%
+
+@media (max-width: $medium)
+	.tiles
+		margin-left: 5%
+		margin-right: 5%
+		margin-top: 40px
+		margin-bottom: 40px
+		display: grid
+		grid-template-columns: auto
+		grid-gap: 2em
+
+		.box
+			height: auto
+			width: 100%
+			font-size: 125%

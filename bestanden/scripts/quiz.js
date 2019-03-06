@@ -42,10 +42,20 @@ $(document).ready(function(){
 		var aantalVragenBeantwoord = $('input[type=checkbox]:checked').length;
 		var aantalVragen = $('.vraagBalk').length;
 		var antwoorden = [];
+		var typeOfChapter = "";
 
 		var url = window.location.href;
+
 		var chapterLocation = url.search("H") + 1;
-		var chapter = url.charAt(chapterLocation);
+
+		if(chapterLocation == 0){
+			var chapterLocation = url.search("B") + 1;
+			typeOfChapter = "B";
+		} else {
+			typeOfChapter = "H";
+		}
+
+		var chapter = typeOfChapter + url.charAt(chapterLocation);
 
 		for(i=0; i<aantalVragenBeantwoord;i++){
 			var antwoord = $(this).prev().children('.antwoorden').find('input[type="checkbox"]:checked').parent().eq(i).text();

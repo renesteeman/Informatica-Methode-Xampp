@@ -88,7 +88,7 @@ include('../../../components/headerChapter.php');
 
 			<ol class="MLquestion">
 				<li>
-					Neem als waarden 0 en 1 (in die volgorde).
+					Neem als input de waarden 0 en 1 (in die volgorde).
 
 					<ol>
 						<li>Welk resultaat zal dit geven bij een AND-gate?</li>

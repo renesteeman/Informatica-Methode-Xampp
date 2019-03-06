@@ -65,13 +65,13 @@ include('../../../components/headerChapter.php');
 
 			<p>Getallen met elkaar verminderen</p>
 
-			<p>Ook dit is niet ingewikkeld. Je haalt steeds het onderste getal van het bovenste getal af. Als je op -1 uitkomt ‘leen’ je van het volgende getal.</p>
+			<p>Ook dit is niet ingewikkeld. Je haalt steeds het onderste getal van het bovenste getal af. Als je op -1 uitkomt ‘leen’ je van het volgende nummer.</p>
 
 			<img src="./afbeeldingen/aftrekken.svg" class="theorieImage" />
 
 			<p>Vermenigvuldigen</p>
 
-			<p>Vermenigvuldigen lijkt wat moeilijker, maar dit valt mee. Dit doe je door steeds het meest rechtste nummer van onder te vermenigvuldigen met de nummers van de bovenste rij. Dit gaat dus van rechts naar links. Als de rij af is ga je bij de onderste rij de stappen herhalen voor het getal dat een plek verder naar links staat. Je zet steeds de uitkomsten onder elkaar en telt ze op het einde bij elkaar op. Denk eraan om het antwoord per rij ook steeds een plek op te laten schuiven naar links, je kunt er ook steeds een nul naast zetten om dit te verduidelijken.</p>
+			<p>Vermenigvuldigen lijkt wat moeilijker, maar dit valt mee. Dit doe je door steeds het meest rechtste nummer van onder te vermenigvuldigen met de nummers van de bovenste rij. Dit gaat dus van rechts naar links. Als de rij af is ga je bij de onderste rij de stappen herhalen voor het getal dat een plek verder naar links staat. Je zet steeds de uitkomsten onder elkaar en telt ze op het einde bij elkaar op. Denk eraan om het antwoord per rij ook steeds een plek op te laten schuiven naar links, je kunt er ook steeds een nul achter zetten om dit te verduidelijken.</p>
 
 			<img src="./afbeeldingen/multiplicatie.svg" class="theorieImage" />
 

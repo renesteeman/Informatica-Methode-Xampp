@@ -23,6 +23,7 @@ $(document).ready(function(){
 
 	if (isIE()){
 		$('.chapter-tiles').addClass("IE");
+		$('.tiles').addClass("IE");
 	}
 
 	//chapter tiles

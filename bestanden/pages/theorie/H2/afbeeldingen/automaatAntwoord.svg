@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="293.12137mm"
+   height="71.006996mm"
+   viewBox="0 0 293.12137 71.006996"
+   version="1.1"
+   id="svg889"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="automaatAntwoord1.svg">
+  <defs
+     id="defs883">
+    <pattern
+       y="0"
+       x="0"
+       height="6"
+       width="6"
+       patternUnits="userSpaceOnUse"
+       id="EMFhbasepattern" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="563.03183"
+     inkscape:cy="169.02995"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata886">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(78.133196,11.592277)">
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.33276662;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4504-4"
+       cx="33.186012"
+       cy="23.660601"
+       rx="25.391399"
+       ry="11.147619" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444447px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="17.345171"
+       y="21.845068"
+       id="text4508-6"><tspan
+         sodipodi:role="line"
+         x="17.345171"
+         y="21.845068"
+         style="stroke-width:0.26458332"
+         id="tspan4510-6">Ga naar de </tspan><tspan
+         sodipodi:role="line"
+         x="17.345171"
+         y="28.900623"
+         style="stroke-width:0.26458332"
+         id="tspan4542">wasstraat</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 58.798827,22.989776 12.425971,-0.04725"
+       id="path4609-4"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 66.263858,20.438437 2.929319,2.409598 -2.55134,2.315104"
+       id="path4611-5"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444447px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-78.50251"
+       y="38.626305"
+       id="text4514"><tspan
+         sodipodi:role="line"
+         id="tspan4512"
+         x="-78.50251"
+         y="38.626305"
+         style="stroke-width:0.26458332">START</tspan></text>
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.29850301;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4504-4-9"
+       cx="91.84095"
+       cy="22.985777"
+       rx="20.400347"
+       ry="11.164752" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444447px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="81.008286"
+       y="21.170244"
+       id="text4508-6-8"><tspan
+         sodipodi:role="line"
+         x="81.008286"
+         y="21.170244"
+         style="stroke-width:0.26458332"
+         id="tspan4542-4">Kies een </tspan><tspan
+         sodipodi:role="line"
+         x="81.008286"
+         y="28.2258"
+         style="stroke-width:0.26458332"
+         id="tspan1500">pakket</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 112.1621,22.409448 12.42597,-0.04725"
+       id="path4609-4-1"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 119.62713,19.858109 2.92932,2.409598 -2.55134,2.315104"
+       id="path4611-5-5"
+       inkscape:connector-curvature="0" />
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.33276665;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4504-4-8"
+       cx="-25.895515"
+       cy="35.440475"
+       rx="25.391399"
+       ry="11.14762" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444447px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-45.478127"
+       y="33.892212"
+       id="text4508-6-3"><tspan
+         sodipodi:role="line"
+         x="-45.478127"
+         y="33.892212"
+         style="stroke-width:0.26458332"
+         id="tspan1520">Controleer of</tspan><tspan
+         sodipodi:role="line"
+         x="-45.478127"
+         y="40.947769"
+         style="stroke-width:0.26458332"
+         id="tspan1524">de auto vuil is</tspan></text>
+    <g
+       id="g1596"
+       transform="rotate(-30,-10.289434,37.981016)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4609-4-18"
+         d="M -0.28269968,34.769652 12.143272,34.722402"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4611-5-7"
+         d="m 7.1823315,32.218313 2.9293195,2.409598 -2.5513405,2.315104"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -4.3393753,41.576696 8.8199,8.753078"
+       id="path4609-4-18-9"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 2.7432677,45.051201 0.367499,3.775184 -3.44109565,-0.167044"
+       id="path4611-5-7-3"
+       inkscape:connector-curvature="0" />
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.19984081;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4504-4-2"
+       cx="21.922619"
+       cy="50.843002"
+       rx="17.236881"
+       ry="5.9224162" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444447px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="9.5780563"
+       y="52.523746"
+       id="text4508-6-5"><tspan
+         sodipodi:role="line"
+         x="9.5780563"
+         y="52.523746"
+         style="stroke-width:0.26458332"
+         id="tspan4542-1">Doe niks</tspan></text>
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.29850301;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4504-4-9-5"
+       cx="146.03639"
+       cy="-0.27827388"
+       rx="20.400347"
+       ry="11.164752" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444447px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="135.20374"
+       y="-2.0938067"
+       id="text4508-6-8-8"><tspan
+         sodipodi:role="line"
+         x="135.20374"
+         y="-2.0938067"
+         style="stroke-width:0.26458332"
+         id="tspan1636">Werp 2</tspan><tspan
+         sodipodi:role="line"
+         x="135.20374"
+         y="4.9617491"
+         style="stroke-width:0.26458332"
+         id="tspan1712">euro in </tspan></text>
+    <text
+       id="text1677"
+       y="2.5558031"
+       x="158.15172"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.88606763px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"><tspan
+         id="tspan1675"
+         y="5.9561124"
+         x="158.15172"
+         sodipodi:role="line"
+         style="stroke-width:0.26458332" /></text>
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.29850301;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4504-4-9-5-7"
+       cx="145.14285"
+       cy="22.872768"
+       rx="20.400347"
+       ry="11.164752" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444447px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="134.3102"
+       y="21.057236"
+       id="text4508-6-8-8-3"><tspan
+         sodipodi:role="line"
+         x="134.3102"
+         y="21.057236"
+         style="stroke-width:0.26458332"
+         id="tspan1636-3">Werp 1</tspan><tspan
+         sodipodi:role="line"
+         x="134.3102"
+         y="28.112791"
+         style="stroke-width:0.26458332"
+         id="tspan1712-6">euro in </tspan></text>
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.29850301;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4504-4-9-5-7-7"
+       cx="144.9519"
+       cy="48.100712"
+       rx="20.400347"
+       ry="11.164752" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444447px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="134.11925"
+       y="46.285179"
+       id="text4508-6-8-8-3-4"><tspan
+         sodipodi:role="line"
+         x="134.11925"
+         y="46.285179"
+         style="stroke-width:0.26458332"
+         id="tspan1636-3-5">Werp 50</tspan><tspan
+         sodipodi:role="line"
+         x="134.11925"
+         y="53.340736"
+         style="stroke-width:0.26458332"
+         id="tspan1712-6-2">cent in </tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.35978234px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 109.19727,17.195385 125.74067,0.58648619"
+       id="path4609-4-1-0"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 116.38164,6.5623393 3.77519,-0.367501 -0.16705,3.4410982"
+       id="path4611-5-5-8"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.35978234px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 108.09143,29.67731 16.6089,16.5434"
+       id="path4609-4-1-0-5"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 118.72448,36.86168 0.3675,3.77519 -3.4411,-0.16705"
+       id="path4611-5-5-8-5"
+       inkscape:connector-curvature="0" />
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.29850301;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4504-4-9-5-4"
+       cx="194.43857"
+       cy="24.251446"
+       rx="20.400347"
+       ry="11.164752" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444447px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="179.6637"
+       y="22.502731"
+       id="text4508-6-8-8-1"><tspan
+         sodipodi:role="line"
+         x="179.6637"
+         y="22.502731"
+         style="stroke-width:0.26458332"
+         id="tspan1849">Rij door de</tspan><tspan
+         sodipodi:role="line"
+         x="179.6637"
+         y="29.558287"
+         style="stroke-width:0.26458332"
+         id="tspan1853">wasstraat</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.35978234px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 164.67479,45.762305 20.2784,-11.761218"
+       id="path4609-4-1-0-8"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 174.3664,37.351023 3.74166,0.622112 -1.05197,3.28061"
+       id="path4611-5-5-8-52"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.35978234px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 166.50954,-1.3684265 16.6089,16.5433995"
+       id="path4609-4-1-0-5-4"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 177.14259,5.8159436 0.3675,3.7751896 -3.4411,-0.167049"
+       id="path4611-5-5-8-5-3"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.22130242px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 165.5782,22.686091 8.61536,-0.04768"
+       id="path4609-4-1-1"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 168.76591,20.167948 2.92932,2.409598 -2.55134,2.315104"
+       id="path4611-5-5-3"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

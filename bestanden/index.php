@@ -119,6 +119,8 @@
 								<ul><a href="pages/theorie/H2/p2.php">§2 Visuele logica</a></ul>
 								<ul><a href="pages/theorie/H2/p3.php">§3 Binair?</a></ul>
 								<ul><a href="pages/theorie/H2/p4.php">§4 Logica en programmeren</a></ul>
+								<ul><a href="pages/theorie/H2/p5.php">§5 Automaten</a></ul>
+								<ul><a href="pages/theorie/H2/p6.php">§6 Grammatica</a></ul>
 								<ul><a href="pages/theorie/H2/quiz.php">Quiz</a></ul>
 							</ol>
 						</div>
@@ -145,7 +147,8 @@
 								<ul><a href="pages/theorie/H3/p4.php">§4 Rekenen met variabelen</a></ul>
 								<ul><a href="pages/theorie/H3/p5.php">§5 Condities</a></ul>
 								<ul><a href="pages/theorie/H3/p6.php">§6 Loops</a></ul>
-								<ul><a href="pages/theorie/H3/p7.php">§7 Uitdaging: mini-game</a></ul>
+								<ul><a href="pages/theorie/H3/p7.php">§7 Soorten structuren</a></ul>
+								<ul><a href="pages/theorie/H3/p8.php">§8 Uitdaging: mini-game</a></ul>
 								<ul><a href="pages/theorie/H3/quiz.php">Quiz</a></ul>
 							</ol>
 						</div>
@@ -212,7 +215,7 @@
 					echo '
 					<div class="tile-content">
 						<div class="tile-chapter">
-							H6 Project Management
+							H6 Project management
 						</div>
 						<div class="tile-paragraphs">
 							<span class="closeTile">X</span>

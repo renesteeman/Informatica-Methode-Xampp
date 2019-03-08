@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H3 §7 Uitdaging: mini-game
+			H3 §7 Soorten structuren
 		</h2>
 	</div>
 
@@ -37,14 +37,19 @@
 					§5
 				</a></span>
 			</div>
-			<div class="ptile">
+			<div class="ptile active">
 				<span class="ptile-content"><a href="p6.php">
 					§6
 				</a></span>
 			</div>
-			<div class="ptile active">
+			<div class="ptile">
 				<span class="ptile-content"><a href="p7.php">
 					§7
+				</a></span>
+			</div>
+			<div class="ptile">
+				<span class="ptile-content"><a href="p8.php">
+					§8
 				</a></span>
 			</div>
 
@@ -59,79 +64,71 @@
 		</div>
 
 		<div class="theorie-content">
-			<p>Deze paragraaf is een uitdaging, maak je geen zorgen als het je niet meteen lukt of als je iets niet weet. Deze paragraaf is bedoeld om je te leren hoe het is om te programmeren, inclusief de irritante problemen en de vele vragen die je in het begin zult tegenkomen. Je moet waarschijnlijk ook zelf dingen opzoeken, net zoals een echte programmeur.</p>
 
-			<p>Goede sites hiervoor zijn:</p>
+			<p>
+				Er zijn verschillende soorten structuren voor programmeren. Het kiezen van een taal bepaald al voor een groot deel welke structuur je zult gebruiken. Het is erg handig om te weten welke structuren er zijn en waar welke structuur handig voor is.
+			</p>
 
-			<p><a href="https://docs.python.org/3/tutorial/index.html ">https://docs.python.org/3/tutorial/index.html </a></p>
+			<p>
+				Er zijn 4 erg belangrijke soorten structuren die je moet kennen.
+			</p></br>
 
-			<p><a href="https://stackoverflow.com/ ">https://stackoverflow.com/ </a></p>
+			<p>
+				Imperatief
+			</p>
 
-			<p>Kijk ook onderaan de pagina voor een paar tips die zeker goed van pas komen.</p>
+			<p>
+				Imperatief programmeren is de eenvoudigste vorm. Je schrijft regel voor regel de code en het wordt van boven naar onder uitgevoerd. De code die je zover hebt geschreven is imperatief.
+			</p></br>
 
-			<p>De opdracht</p>
+			<p>
+				Functioneel
+			</p>
 
-			<p>Maak een tekstgame in python. Hierbij mag je zelf kiezen wat je precies wilt maken en hoe je dat gaat doen. Maak het jezelf niet te moeilijk en samenwerken en vragenstellen is aanbevolen.</p>
+			<p>
+				Bij functioneel programmeren maak je gebruik van functies. Functies zijn blokken code die hergebruikt kunnen worden. Een voorbeeld is een functie zoals kwadrateer, die een waarde aanneemt (input) en een resultaat geeft (output), in dit geval is dat het kwadraat van de ingevoerde waarde.
+				Functioneel programmeren zal in de theorie vaker tegenkomen.
+			</p></br>
 
-			<p>Ideeën voor als je echt niks kunt bedenken:</p>
+			<p>
+				Object-georiënteerd
+			</p>
 
-			<ul>
-				<li>
-					Een wiskunde quiz waar zolang je het goede antwoord hebt punten blijft scoren.
-				</li>
-				<li>
-					Een mysterieus verhaal waar je als speler moet bepalen wie de dader is van een misdrijf.
-				</li>
-			</ul>
+			<p>
+				Object-georiënteerd programmeren is een uitbereiding op het imperatief programmeren. Je gaat zoveel denken in objecten, deze werken net zoals in de echte wereld. Een voorbeeld is een boom als object, deze boom heeft bepaalde kenmerken oftewel properties. Een property kan bijvoorbeeld het aantal bladeren zijn of de hoeveelheid water dat de boom vast kan houden.
+			</p>
 
-			<p>Een paar tips</p>
+			<p>
+				Je kunt ook overerving hebben oftewel inheritance. Dit betekent dat een object een soort van ander object is. Een voorbeeld is dat een Amerikaanse eik een soort boom is. Deze eik zal dan veel in gemeen hebben met bomen in het algemeen en kan dan gebruikmaken van de omschrijvingen van bomen.
+			</p>
+
+			<p>
+				Object-georiënteerd programmeren is al lastiger en zal niet verder behandeld worden in deze methode.
+			</p></br>
+
+			<p>
+				Logisch
+			</p>
+
+			<p>
+				Bij logisch programmeren geef je feiten en regels die gebruikt worden om een bepaald antwoord te geven. Deze structuur komt maar heel weinig voor en zal daarom ook niet verder behandeld worden.
+			</p>
+
+		</div>
+
+		<div class="bar-s">
+			<h3>
+				Opdrachten
+			</h3>
+		</div>
+
+		<div class="theorie-content">
 
 			<ol>
 				<li>
-					Schijf het idee eerst op op papier, anders raak je het overzicht kwijt.
-				</li>
-				<li>
-					Begin in het Nederlands of in het Engels de logica uit te werken.
-				</li>
-				<li>
-					Voeg stukje voor stukje code toe en test steeds opnieuw, gebruik hiervoor print().
-				</li>
-				<li>
-					Heb je bepaalde logica nodig waarvan je verwacht dat het al bestaat, zoek het dan gerust op (je hebt een grote kans op resultaat als je het in het Engels opzoekt).
+					Omschrijf in eigen woorden de 4 besproken structuren.
 				</li>
 			</ol>
-
-			<p>Een paar stukken code die je waarschijnlijk nodig hebt:</p>
-
-			<p>Voor (pseudo)random getallen:</p>
-
-<pre>
-<code>
-import random #import voegt al bestaande code toe zodat er meer functies zijn
-
-random.randint(MINIMALE GROTE,MAXIMALE GROTE)
-</code>
-</pre>
-
-			<p>Voor het krijgen van input van een gebruiker:</p>
-
-			<p><code>input()</code></p>
-
-			<p>bijvoorbeeld als</p>
-
-<pre><code>antwoord = input()
-
-print(antwoord)
-
-#NB de input wordt als tekst gezien, vandaar de accolades bij de IF-statement:
-
-if antwoord == "1":
-
-print("juist geantwoord")
-
-else:
-
-print("verkeerd geantwoord")</code></pre>
 
 		</div>
 

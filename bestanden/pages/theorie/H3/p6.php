@@ -47,6 +47,11 @@
 					§7
 				</a></span>
 			</div>
+			<div class="ptile">
+				<span class="ptile-content"><a href="p8.php">
+					§8
+				</a></span>
+			</div>
 
 		</div>
 	</div>
@@ -116,6 +121,10 @@ Er wordt hier dus steeds gekeken of i, dat eerst gelijk is aan 5 nog minder is d
 
 			<p>
 				Noties zoals hierboven zijn erg belangrijk om de code goed leesbaar te maken en houden. Ze worden vooral gebruikt voor uitleg en zijn erg handig voor code die gedeeld wordt en voor als je na een tijdje terug gaat naar de code. Het is zo duidelijk wat de code eigenlijk doet en waarom het zo in elkaar zit.
+			</p>
+
+			<p>
+				Hou er ook rekening mee dat een programma langzamer wordt naar mate er meer en lastigere code wordt uitgevoerd. Probeer dus om programma's die je gaat schrijven zo efficiënt mogelijk te maken. Je kunt dit doen door onnodige herhaling te vermijden en problemen zo eenvoudig mogelijk aan te pakken.
 			</p>
 
 		</div>

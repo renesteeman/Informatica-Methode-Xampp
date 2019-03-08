@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H2 §2 visuele logica
+			H2 §4 logica en programmeren
 		</h2>
 	</div>
 
@@ -17,7 +17,7 @@
 					§1
 				</a></span>
 			</div>
-			<div class="ptile active">
+			<div class="ptile">
 				<span class="ptile-content"><a href="p2.php">
 					§2
 				</a></span>
@@ -27,7 +27,7 @@
 					§3
 				</a></span>
 			</div>
-			<div class="ptile">
+			<div class="ptile active">
 				<span class="ptile-content"><a href="p4.php">
 					§4
 				</a></span>
@@ -54,21 +54,7 @@
 		</div>
 
 		<div class="theorie-content">
-			<p>
-				De verbanden tussen sets kunnen ook visueel worden weergeven, bijvoorbeeld in de vorm van cirkels. Stel set 1 bevat 27, 3, 8, 21 en 6. Set 2 bevat 3, 0, 20, 8 en 4.
-			</p>
-			<p>
-				Set 1 &cap; 2 is dan:
-				<img src="./afbeeldingen/logic2Mul.svg" class="theorieImage" />
-			</p>
-			<p>
-				Set 1 ∪ set 2 is dan weer te geven als:
-				<img src="./afbeeldingen/logic2Add.svg" class="theorieImage" />
-			</p>
-			<p>
-				Of:
-				<img src="./afbeeldingen/logic2MulCom.svg" class="theorieImage" />
-			</p>
+
 
 		</div>
 
@@ -80,14 +66,7 @@
 
 		<div class="theorie-content">
 
-			<ol class="MLquestion">
-				<li>
-					<ol>
-						<li>Teken set 1 ∪ set 2 inclusief de getallen</li>
-						<li>Teken set 1 ꓵ set 2 inclusief de getallen</li>
-					</ol>
-				</li>
-			</ol>
+
 
 		</div>
 
@@ -99,15 +78,7 @@
 
 		<div class="theorie-content theorie-answers">
 
-			<ol class="MLquestion">
-				<li>
-					Stel set 1 bevat 1, 3, 20, 6 en 400. Set 2 bevat 1, 6, 200, 8 en 4.
-					<ol>
-						<li><img src="./afbeeldingen/logic2Ans1.svg" class="theorieImage" /></li>
-						<li><img src="./afbeeldingen/logic2Ans2.svg" class="theorieImage" /></li>
-					</ol>
-				</li>
-			</ol>
+
 
 		</div>
 	</div>

@@ -32,6 +32,16 @@
 					§4
 				</a></span>
 			</div>
+			<div class="ptile active">
+				<span class="ptile-content"><a href="p5.php">
+					§5
+				</a></span>
+			</div>
+			<div class="ptile active">
+				<span class="ptile-content"><a href="p6.php">
+					§6
+				</a></span>
+			</div>
 
 		</div>
 	</div>

@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H2 §4 logica en programmeren
+			H2 §6 Grammatica
 		</h2>
 	</div>
 

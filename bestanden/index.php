@@ -95,6 +95,7 @@
 								<ul><a href="pages/theorie/H1/p3.php">§3 Gates</a></ul>
 								<ul><a href="pages/theorie/H1/p4.php">§4 Onderdelen van de computer</a></ul>
 								<ul><a href="pages/theorie/H1/p5.php">§5 Software en het OS</a></ul>
+								<ul><a href="pages/theorie/H1/p6.php">§6 standaardrepresentaties</a></ul>
 								<ul><a href="pages/theorie/H1/quiz.php">Quiz</a></ul>
 							</ol>
 						</div>

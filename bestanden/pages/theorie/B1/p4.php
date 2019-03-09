@@ -37,6 +37,12 @@ include('../../../components/headerChapter.php');
 				</a></span>
 			</div>
 
+			<div class="ptile active">
+				<span class="ptile-content"><a href="p5.php">
+					§5
+				</a></span>
+			</div>
+
 		</div>
 	</div>
 
@@ -62,17 +68,24 @@ include('../../../components/headerChapter.php');
 
 			<p>Strong AI bestaat nog niet voor ons, maar in theorie zal het een programma zijn dat de volledig het diepte van menselijk begrip en logica kan volgen, waaronder dus ook emoties. Het verschil tussen deze vorm van AI en een mens is dat de AI veranderingen kan aanbrengen in zijn code. Een mens doet miljoenen jaren erover om zijn brein significant te verbeteren, een computer kan makkelijk een nieuw cpu toevoegen en nog sneller denken.</p>
 
-			<!--added recently TODO check-->
 			<p>
 				Een korte uitleg van de werking van AI
 			</p>
 
 			<p>
-				AI is een veld met daarin meerdere subvelden, zo valt machine learning er ook onder en onder machine learning valt deep learning. Machine learning wordt gebruikt om data te voorspellen door het kunnen maken van een formule dat zo accuraat mogelijk verschillende datapunten benaderd. Datapunten zijn waardes die de data die wordt ingevoerd weergeven. Deze ingevoerde data kan bijvoorbeeld een lijst van cijfers zijn van een leerling waarmee zijn volgende cijfer voorspelt kan worden. Deep learning gaat nog een stap verder, hierbij worden modellen (programma's) gemaakt die imiteren wat in de hersenen gebeurt bij het maken van keuzes. Zo'n model ook neural network genoemd begint met verschillende waardes die aangeven hoe zwaar een waarde vanuit de gegeven data meegeteld moet worden in een soort grote formule. Het model levert dan een waarde als resultaat, dit kan bijvoorbeeld een percentage zijn dat aangeeft hoe zeker het is dat een bepaald object getoond is of een getal dat aangeeft wat een student als cijfer gaat halen. Het gaat dan steeds meer data door en corrigeert zichzelf waardoor het steeds zijn gewichten, de waardes die bepalen hoeveel iets meetelt in de 'formule', kan verbeteren. Een voorbeeld van zo'n neural network is een programma dat 'geleerd' heeft te voorspellen of iets een kat of hond is. Een AI is dus een programma dat probeert een waarde te voorspellen, dit kan een getal zijn (bijvoorbeeld een cijfer voor een toets) of een categorie (bijvoorbeeld hond of kat).
+				AI is een veld met daarin meerdere subvelden, zo valt machine learning er ook onder en onder machine learning valt deep learning. Machine learning wordt gebruikt om data te voorspellen door het kunnen maken van een formule dat zo accuraat mogelijk verschillende waardes benaderd. Deze ingevoerde data kan bijvoorbeeld een lijst van cijfers zijn van een leerling waarmee zijn volgende cijfer voorspelt kan worden.
 			</p>
 
 			<p>
-				Misschien denk je nu dat AI de oplossing is voor alle problemen, maar dat is het zeker niet. AI is goed voor het voorspellen van waardes, maar voor andere zaken zijn ze vaak niet nodig of handig. Het kost ook vaak veel moeite om een AI te ontwikkelen en het is niet altijd efficient om een AI te gebruiken. Je gaat bijvoorbeeld geen AI maken om een .pdf om te zetten naar een .docx. Het zou wel handig kunnen zijn voor het voorspellen of een student een studie gaat halen en misschien aan de hand daarvan bijles te regelen. Een AI is over het algemeen goed als snel en vaak een keuze of voorspelling gemaakt moet worden.
+				Deep learning gaat nog een stap verder, hierbij worden modellen (programma's) gemaakt die imiteren wat in de hersenen gebeurt bij het maken van keuzes. Zo'n model ook neural network genoemd begint met verschillende waardes die aangeven hoe zwaar een waarde vanuit de gegeven data meegeteld moet worden in een soort grote formule. Het model levert dan een waarde als resultaat, dit kan bijvoorbeeld een percentage zijn dat aangeeft hoe zeker het is dat een bepaald object getoond is of een getal dat aangeeft wat een student als cijfer gaat halen. Het gaat dan steeds meer data door en corrigeert zichzelf waardoor het steeds zijn gewichten, de waardes die bepalen hoeveel iets meetelt in de 'formule', kan verbeteren.
+			</p>
+
+			<p>
+				Een simpel voorbeeld van zo'n neural network is een programma dat 'geleerd' heeft te voorspellen of in een foto een kat of hond zichtbaar is. Een nural network is dus een programma dat probeert een waarde te voorspellen, dit kan een getal zijn (bijvoorbeeld een cijfer voor een toets) of een categorie (bijvoorbeeld hond of kat).
+			</p>
+
+			<p>
+				Misschien denk je nu dat AI de oplossing is voor alle problemen, maar dat is het zeker niet. AI is goed voor het voorspellen van waardes, maar voor veel zaken zijn ze vaak niet nodig. Het kost ook vaak veel moeite om een AI te ontwikkelen en het is niet altijd efficient om een AI te gebruiken. Je gaat bijvoorbeeld geen AI maken om een .pdf om te zetten naar een .docx. Het zou wel handig kunnen zijn voor het voorspellen of een student een studie gaat halen en misschien aan de hand daarvan bijles te regelen. Een AI is over het algemeen goed als snel en vaak een keuze of voorspelling gemaakt moet worden.
 			</p>
 
 		</div>

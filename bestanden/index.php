@@ -277,7 +277,7 @@
 					echo '
 					<div class="tile-content">
 						<div class="tile-chapter">
-							B1 Filosofie
+							B1 Filosofie en AI
 						</div>
 						<div class="tile-paragraphs">
 							<span class="closeTile">X</span>
@@ -286,6 +286,7 @@
 								<ul><a href="pages/theorie/B1/p2.php">§2 Wat is ethiek?</a></ul>
 								<ul><a href="pages/theorie/B1/p3.php">§3 Het trein probleem</a></ul>
 								<ul><a href="pages/theorie/B1/p4.php">§4 Kunstmatige intelligentie</a></ul>
+								<ul><a href="pages/theorie/B1/p5.php">§4 Machine learning voorbeeld</a></ul>
 							</ol>
 						</div>
 					</div>

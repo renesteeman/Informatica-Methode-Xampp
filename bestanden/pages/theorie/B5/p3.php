@@ -71,6 +71,10 @@ include('../../../components/headerChapter.php');
 
 			<p>Een ander probleem is beveiliging. Het is mogelijk om gegevens op een netwerk te onderscheppen en deze voor kwaadaardige doeleinden te gebruiken. Een maatregel hiervoor zou encryptie (het versleutelen van data) kunnen zijn of het verifiëren van verbonden apparaten (controleren of ze wel op het netwerk thuishoren). Het is ook belangrijk om werknemers in een bedrijf alleen toegang te geven tot de delen van een netwerk dat ze nodig hebben. Iemand die bij human resources werkt heeft geen toegang nodig de documenten van de CEO. Naast digitale beveiliging is physieke beveiliging ook belangrijk. Denk hierbij aan een deur die alleen opengaat met een pasje, vingerpintscanner of dergelijke die toegang tot een serverruimte blokkeert voor onbevoegde. </p>
 
+			<p>
+				Als de beveiliging niet goed geregeld zou zijn kunnen er allerlei problemen optreden, zoals het offline gaan van een netwerk, diefstal van gegevens of zelfs een aanval op apparaten die met het netwerk verbonden zijn.
+			</p>
+
 		</div>
 
 		<div class="bar-s">

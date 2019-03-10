@@ -216,7 +216,7 @@
 					echo '
 					<div class="tile-content">
 						<div class="tile-chapter">
-							H6 Project management
+							H6 Projectmanagement
 						</div>
 						<div class="tile-paragraphs">
 							<span class="closeTile">X</span>
@@ -285,8 +285,9 @@
 								<ul><a href="pages/theorie/B1/p1.php">§1 Wat is filosofie?</a></ul>
 								<ul><a href="pages/theorie/B1/p2.php">§2 Wat is ethiek?</a></ul>
 								<ul><a href="pages/theorie/B1/p3.php">§3 Het trein probleem</a></ul>
-								<ul><a href="pages/theorie/B1/p4.php">§4 Kunstmatige intelligentie</a></ul>
-								<ul><a href="pages/theorie/B1/p5.php">§4 Machine learning voorbeeld</a></ul>
+								<ul><a href="pages/theorie/B1/p4.php">§4 Informatica en de maatschappij</a></ul>
+								<ul><a href="pages/theorie/B1/p5.php">§5 Kunstmatige intelligentie</a></ul>
+								<ul><a href="pages/theorie/B1/p6.php">§6 Machine learning voorbeeld</a></ul>
 							</ol>
 						</div>
 					</div>

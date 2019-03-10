@@ -17,7 +17,7 @@
 					§1
 				</a></span>
 			</div>
-			<div class="ptile active">
+			<div class="ptile">
 				<span class="ptile-content"><a href="p2.php">
 					§2
 				</a></span>
@@ -32,12 +32,12 @@
 					§4
 				</a></span>
 			</div>
-			<div class="ptile active">
+			<div class="ptile">
 				<span class="ptile-content"><a href="p5.php">
 					§5
 				</a></span>
 			</div>
-			<div class="ptile active">
+			<div class="ptile">
 				<span class="ptile-content"><a href="p6.php">
 					§6
 				</a></span>

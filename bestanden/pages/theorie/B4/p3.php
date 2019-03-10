@@ -24,7 +24,7 @@ include('../../../components/headerChapter.php');
         </a></span>
       </div>
 
-      <div class="ptile active">
+      <div class="ptile">
         <span class="ptile-content"><a href="p3.php">
         §3
         </a></span>

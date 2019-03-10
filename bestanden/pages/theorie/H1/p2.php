@@ -19,7 +19,7 @@ include('../../../components/headerChapter.php');
 				</a></span>
 			</div>
 
-			<div class="ptile active">
+			<div class="ptile">
 				<span class="ptile-content"><a href="p2.php">
 					§2
 				</a></span>
@@ -43,7 +43,7 @@ include('../../../components/headerChapter.php');
 				</a></span>
 			</div>
 
-			<div class="ptile active">
+			<div class="ptile">
 				<span class="ptile-content"><a href="p6.php">
 					§6
 				</a></span>

@@ -42,7 +42,7 @@
 					§6
 				</a></span>
 			</div>
-			<div class="ptile active">
+			<div class="ptile">
 				<span class="ptile-content"><a href="p7.php">
 					§7
 				</a></span>

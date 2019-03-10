@@ -6,7 +6,7 @@ include('../../../components/headerChapter.php');
 
 	<div class="title-small">
 		<h2>
-			B1 §5 Machine learning voorbeeld
+			B1 §5 Kunstmatige intelligentie
 		</h2>
 	 </div>
 
@@ -31,15 +31,21 @@ include('../../../components/headerChapter.php');
 				</a></span>
 			</div>
 
-			<div class="ptile active">
+			<div class="ptile">
 				<span class="ptile-content"><a href="p4.php">
 					§4
 				</a></span>
 			</div>
 
-      <div class="ptile active">
+			<div class="ptile">
 				<span class="ptile-content"><a href="p5.php">
 					§5
+				</a></span>
+			</div>
+
+			<div class="ptile">
+				<span class="ptile-content"><a href="p6.php">
+					§6
 				</a></span>
 			</div>
 
@@ -54,17 +60,38 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content">
+			<p>Kunstmatige intelligentie is een wetenschappelijk veld waarin het creëren en gebruik van software dat beslissingen kan maken wordt besproken. Je hebt vast wel van films zoals The Matrix en Terminator gehoord, maar hoe heeft dit met informatica en met jou te maken? In deze paragraaf ga je kennismaken met AI en de basis ervan leren. AI brengt veel filosofische met zich mee en is een snel veranderd veld.</p>
+
+			<p>AI wordt vaak verdeeld in twee soorten, “strong” AI en “weak” AI.</p>
+
+			<p>Weak AI</p>
+
+			<p>Weak AI bestaat al in onze maatschappij, een Tesla auto berekent wat het ziet en probeert niet ergens tegen te botsen, het programma is gemaakt om de de auto te besturen en het kan niks anders. Dit is gebaseerd op technologieën zoals machine learning. Een weak AI is dus een AI met maar één doel. Wanneer je de opdracht geeft aan een weak AI om zo veel mogelijk ijsjes te maken kan het alle mensen vermoorden, veranderen naar een pasta en zo vlees ijsjes maken. Het heeft dus wel duidelijke regels nodig! Deze regels worden verwerkt in een score systeem, des te beter het resultaat, des te meer punten. Een AI kan hiermee getraind worden en zich zo 'goed gaan gedragen'.</p>
+
+			<p>In onze samenleving wordt weak AI toegepast op verschillende industrieën, omdat een weak AI sneller en efficiënter is dan een mens, kan het gemakkelijk simpele taken en banen vervangen. Dit heeft gevolgen voor allerlei industrieën, de mensen die hun banen verliezen zijn vaak niet in staat om betere opleidingen te zoeken. Het kan resulteren in massale werkloosheid en daardoor economische crisis. Het kan er ook voor zorgen dat de mens niet meer of minder hoeft te werken en meer vakantie heeft.</p>
+
+			<p>Strong AI</p>
+
+			<p>Strong AI bestaat nog niet voor ons, maar in theorie zal het een programma zijn dat de volledig het diepte van menselijk begrip en logica kan volgen, waaronder dus ook emoties. Het verschil tussen deze vorm van AI en een mens is dat de AI veranderingen kan aanbrengen in zijn code. Een mens doet miljoenen jaren erover om zijn brein significant te verbeteren, een computer kan makkelijk een nieuw cpu toevoegen en nog sneller denken.</p>
 
 			<p>
-        In deze paragraaf ga je leren een simpel machine learning programma te maken. We zullen het zo eenvoudig mogelijk houden, want het wordt al snel erg lastig en zou niet meer geschikt zijn voor de middelbare school.
+				Een korte uitleg van de werking van AI
 			</p>
 
 			<p>
-        Voordat we kunnen beginnen is het nodig om anaconda geïnstalleerd te hebben (zie hoofdstuk 3 paragraaf 2). We zullen alle code gaan schrijven in jupyter notebook. Het notebook voor deze paragraaf is te krijgen via <a href="../../../downloads/Machine learning.ipynb" download>deze link</a> en de dataset die erbij hoort via <a href="../../../downloads/dataset.csv" download>deze link</a>. Het notebook geeft een voorbeeld van lineaire regressie, dat is het opstellen van een rechte lijn aan de hand van een aantal gegeven waardes. Het lees prijzen in uit een soort excel bestand waar een huis met een bepaalde grote bij hoort. Het model gaat vervolgens uitrekenen welke rechte lijn het dichtbij alle gegeven punten ligt. Je zou dan kunnen voorspellen welke waarde bij een gegeven prijs of grote van een huis past door het af te lezen uit de grafiek.
+				AI is een veld met daarin meerdere subvelden, zo valt machine learning er ook onder en onder machine learning valt deep learning. Machine learning wordt gebruikt om data te voorspellen door het kunnen maken van een formule dat zo accuraat mogelijk verschillende waardes benaderd. Deze ingevoerde data kan bijvoorbeeld een lijst van cijfers zijn van een leerling waarmee zijn volgende cijfer voorspelt kan worden.
 			</p>
 
 			<p>
-        Je kunt dezelfde code vrij gemakkelijk aanpassen voor een eigen dataset. De dataset moet dan wel voldoen aan een lineaire relatie, oftewel er moet een rechte lijn zijn die dicht bij de waardes in de dataset moet kunnen komen. Om het model aan te passen hoef je dan alleen maar de variabele ‘data’ gelijk te zetten jouw dataset als je deze een andere naam wilt geven dan ‘dataset.csv’. Let op dat het wel een .csv (comma seperated values) bestand moet zijn, je kunt ook een excel bestand omzetten naar een csv bestand. Je moet dan de waardes voor de x- en y-as kiezen en de naam ervan veranderen op de plekken waar nu x en y staat, denk ook de namen voor de assen in de grafieken. Vervolgens moet je dan nog de waardes voor de coëfficiënt van const en jouw gekozen variabele aflezen en deze invoeren in de formule yhat (yhat betekent de voorspelde y waarde).
+				Deep learning gaat nog een stap verder, hierbij worden modellen (programma's) gemaakt die imiteren wat in de hersenen gebeurt bij het maken van keuzes. Zo'n model ook neural network genoemd begint met verschillende waardes die aangeven hoe zwaar een waarde vanuit de gegeven data meegeteld moet worden in een soort grote formule. Het model levert dan een waarde als resultaat, dit kan bijvoorbeeld een percentage zijn dat aangeeft hoe zeker het is dat een bepaald object getoond is of een getal dat aangeeft wat een student als cijfer gaat halen. Het gaat dan steeds meer data door en corrigeert zichzelf waardoor het steeds zijn gewichten, de waardes die bepalen hoeveel iets meetelt in de 'formule', kan verbeteren.
+			</p>
+
+			<p>
+				Een simpel voorbeeld van zo'n neural network is een programma dat 'geleerd' heeft te voorspellen of in een foto een kat of hond zichtbaar is. Een nural network is dus een programma dat probeert een waarde te voorspellen, dit kan een getal zijn (bijvoorbeeld een cijfer voor een toets) of een categorie (bijvoorbeeld hond of kat).
+			</p>
+
+			<p>
+				Misschien denk je nu dat AI de oplossing is voor alle problemen, maar dat is het zeker niet. AI is goed voor het voorspellen van waardes, maar voor veel zaken zijn ze vaak niet nodig. Het kost ook vaak veel moeite om een AI te ontwikkelen en het is niet altijd efficient om een AI te gebruiken. Je gaat bijvoorbeeld geen AI maken om een .pdf om te zetten naar een .docx. Het zou wel handig kunnen zijn voor het voorspellen of een student een studie gaat halen en misschien aan de hand daarvan bijles te regelen. Een AI is over het algemeen goed als snel en vaak een keuze of voorspelling gemaakt moet worden.
 			</p>
 
 		</div>
@@ -76,23 +103,38 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content">
-      <ol>
-        <li>
-          Wat is een dataset?
-        </li>
-        <li>
-          Wat is lineaire regressie? (niet te ingewikkeld denken)
-        </li>
-        <li>
-          Hoeveel zou een huis met grote 800 waarschijnlijk kosten?
-        </li>
-        <li>
-          Hoe groot zal een huis met als prijs 400000 waarschijnlijk zijn?
-        </li>
-        <li>
-          Dan nu een uitdaging. Maak zelf een dataset (verzin hiervoor wat waardes of zoek er een op) en pas het model aan zodat het werkt voor jouw nieuwe data.
-        </li>
-      </ol>
+
+			<ol class="MLquestionAlt2">
+				<li>
+					Geef bij de volgende problemen aan of deze geschikt zijn om opgelost te worden met AI.
+					<ol>
+						<li>Het automatisch dimmen van lichten aan de hand van de lichtintensiteit.</li>
+						<li>Het voorspellen hoeveel persoon veganist zullen zijn in 2030.</li>
+						<li>Voorspellen of een foto een kat of hond bevat voor 5000000 foto's.</li>
+						<li>Het bepalen van de locatie van een overvaller door de politie aan de hand van zijn geschiedenis.</li>
+					</ol>
+				</li>
+
+				<li>
+					De volgende vragen hebben geen concrete antwoorden, ze zijn reflecties van wie je bent en hoe je denkt. De antwoorden hieronder zijn dus maar voorbeelden. Probeer het standpunt van jouw antwoord te nemen en het te discussiëren met iemand met een verschillend standpunt.
+
+					<ol>
+						<li>
+							Wat is een utopia die zich kan voldoen door AI?
+						</li>
+						<li>
+							Wat is een dystopia die zich kan voldoen door AI?
+						</li>
+						<li>
+							Hoe moet je AI controleren?
+						</li>
+						<li>
+							Vanaf wanneer is AI gelijkwaardig aan een mens?
+						</li>
+					</ol>
+				</li>
+			</ol>
+
 		</div>
 
 		<div class="bar-s">
@@ -102,23 +144,57 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content theorie-answers">
-      <ol>
-        <li>
-          Een aantal gegeven waardes die een bestand stand.
-        </li>
-        <li>
-          Lineaire regressie is een methode om een rechte lijn op te stellen dat zo dicht mogelijk langs alle gegeven punten komt.
-        </li>
-        <li>
-          300000
-        </li>
-        <li>
-          1300
-        </li>
-        <li>
-          Tip: pas regel 9 (optioneel), 12, 13, 17, 18, 32 (blok 2 regel 3), 34 en 35 aan. Het precieze antwoord ligt af van hoe je het hebt aangepakt.
-        </li>
-      </ol>
+			<ol class="MLquestionAlt2">
+				<li>
+					<ol>
+						<li>
+							AI is hiervoor overbodig en dus niet erg geschikt.
+						</li>
+						<li>
+							Dit is een voorspelling die niet vaak plaats zal vinden en het maken van AI is waarschijnlijk niet de moeite waard, dit kan beter met een 'handmatige' voorspelling worden gedaan.
+						</li>
+						<li>
+							Een AI is hiervoor geschikt, het gaat namelijk om een voorspelling die vaak gedaan moet worden. Het zou heel veel tijd kosten voor een mens om elke foto na te gaan.
+						</li>
+						<li>
+							Een AI is hiervoor geschikt, want het gaat om lastige voorspellingen die vaak gedaan moeten worden. Een dief zal zich namelijk (kunnen) blijven voorplaatsen en er zijn best veel dieven. De AI is dus nuttig en kan best moeite waard zijn.
+						</li>
+					</ol>
+				</li>
+				<li>
+					<ol>
+						<li>
+							In een wereld waarin de mensheid succesvol AI leert te controleren zal AI wetenschappelijke velden zoals natuurkunde en wiskunde ondersteunen of zelfs overnemen, hierdoor zal de kwaliteit van menselijk leven omhoog gaan.
+						</li>
+						<li>
+							In een wereld waarin de mensheid AI heeft gemaakt zonder het te kunnen controleren zal de AI de mensheid kunnen manipuleren tot het punt waarbij we allemaal moeten buigen aan een AI overlord. Niet een onbekend probleem.
+						</li>
+						<li>
+							Dus, de sleutel tot een AI utopia is het controleren van de AI. Hoe kunnen we dit doen? Volgens de populaire science fiction schrijver “Isaac Asimov” kan je door middel van drie wetten een AI controleren.
+
+							Een robot mag een mens geen letsel toebrengen, noch, door passief te blijven, een mens letsel laten overkomen.
+
+							Een robot moet de door mensen gegeven orders gehoorzamen behalve wanneer die orders in strijd zijn met de Eerste Wet.
+
+							Een robot moet zichzelf beschermen zolang of voor zover dat niet met de Eerste of Tweede Wet in strijd is.
+
+							Hoewel deze wetten de grootste problemen oplossen, heeft het toch loopholes. Zo kan een AI een de politiek in gaan, het kan nog steeds mensen besturen zonder dat de drie wetten worden verbroken.
+						</li>
+						<li>
+							In het geval van strong AI kan een robot zelfbewustzijn claimen, maar waar kunnen we de lijn van zelfbewustzijn neerzetten?
+
+							In het gedachte-experiment van Frank Jackson wordt de volgende situatie beschreven.
+
+							Mary is meisje dat is opgegroeid in een zwart en witte kamer. Er is een TV in zwart-wit. Mary kan zichzelf niet zien. Ze besteedt haar hele leven om kleuren te bestuderen, wat is blauw, wat is rood etc. Ze ontdekt de golflengtes dat de menselijke oog kan innemen en hoe de brein dit opneemt. Op haar 18e verjaardag krijgt ze als cadeau een rode appel, leert Mary nu iets nieuws?
+
+							De vraag achter dit gedachte-experiment is of er een verschil is tussen het leren van iets en het ervaren van iets. Dit is ook appliceerbaar op het idee van bewustzijn. Als een strong AI (we noemen hem Karel) alles leert over het brein en het brein kan simuleren, heeft Karel dan bewustzijn bereikt? En zo ja, is hij dan gelijkwaardig aan een mens?
+						</li>
+
+					</ol>
+				</li>
+			</ol>
+
+
 		</div>
 	</div>
 

@@ -115,7 +115,6 @@ $(document).ready(function(){
         for(i=0; i<progressionResultsLength; i++){
           CprogressionResultsChapters = progressionResultsChapters[i];
           CprogressionResultsCompletion = progressionResultsProgression[i];
-          CprogressionResultsCompletion = CprogressionResultsCompletion.substr(1);
 
           //show Chapters
           if(CprogressionResultsChapters!='userid' && CprogressionResultsCompletion!=null){

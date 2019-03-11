@@ -29,13 +29,11 @@
 				//if user has no progression at all
 				//insert progress
 				$progressionContent = str_repeat("0", $paragraph-1).'1';
-				$progressionPrefix = $Nparagraphs;
-
-				$progression = $progressionPrefix.$progressionContent;
+				$progression = $progressionContent;
 
 				$i = strlen($progression);
 
-				while($i<($Nparagraphs+1)){
+				while($i<($Nparagraphs)){
 					$progression .= '0';
 					$i++;
 				}
@@ -56,9 +54,8 @@
 					//if user has no progression for this chapter
 					//insert progress
 					$progressionContent = str_repeat("0", $paragraph-1).'1';
-					$progressionPrefix = $Nparagraphs;
 
-					$progression = $progressionPrefix.$progressionContent;
+					$progression = $progressionContent;
 
 					$i = strlen($progression);
 
@@ -79,7 +76,7 @@
 					//if progress is found
 					//update progress
 					$progression = $Cprogression;
-					$progression[$paragraph] = '1';
+					$progression[$paragraph-1] = '1';
 
 					$sql = "UPDATE progressie SET $kind$chapter = '$progression' WHERE userid='$id'";
 

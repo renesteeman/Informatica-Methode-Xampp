@@ -345,7 +345,6 @@
 													$hoofdstuk = $hoofdstukken[$hoofstukkenKeys[$i]];
 													//TODO remove length char at start of string
 													$hoofdstukLength = $hoofdstuk[0];
-													$hoofdstuk = substr($hoofdstuk, 1);
 													$hoofdstukAfTotaal = 0;
 													for($j=0; $j<$hoofdstukLength; $j++){
 														if($hoofdstuk[$j] == '1'){
@@ -381,7 +380,7 @@
 										$count3 = count($chapterToBeMade);
 										for($i=0; $i<$count3-1;$i++){
 											$shouldBeComplete = $chapterToBeMade[$i];
-											
+
 											if(!array_key_exists($shouldBeComplete, $hoofdstukkenAf)){
 												$onSchedule = 0;
 											}

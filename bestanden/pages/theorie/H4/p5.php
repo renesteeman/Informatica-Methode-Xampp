@@ -32,7 +32,7 @@
 					§4
 				</a></span>
 			</div>
-			<div class="ptile active">
+			<div class="ptile">
 				<span class="ptile-content"><a href="p5.php">
 					§5
 				</a></span>
@@ -59,8 +59,8 @@ int sensorValue = 0;
 int ledValue = 0;
 
 void setup() {
-  Serial.begin(9600); //zet snelheid
-  pinMode(sensorPin, INPUT); //zet de sensorPin op aflees modus
+  Serial.begin(9600); //stel de snelheid van dataoverdracht in
+  pinMode(sensorPin, INPUT); //zet de sensorPin op input modus
   pinMode(ledPin, OUTPUT); //zet de ledPin op output modus
 }
 void loop() {
@@ -99,9 +99,8 @@ void loop() {
 
 				<img src="./afbeeldingen/LDR_LED.png" />
 			</p>
-			<!-- newly added TODO check -->
 			<p>
-				Het voorbeeld dat je net hebt doorgenomen maakt gebruik van modelleren. Modelleren is het vereenvoudigen van een verschijnsel. Hier gebruik je het verschijnsel licht(sterkte) voor het besturen van een led aan de hand van een waarde die een sensor geeft, de waarde van de sensor is dus een vereenvoudiging voor hoe donker het is, de lichtsterkte. 
+				Het voorbeeld dat je net hebt doorgenomen maakt gebruik van modelleren. Modelleren is het vereenvoudigen van een verschijnsel. Hier gebruik je het verschijnsel licht(sterkte) voor het besturen van een led aan de hand van een waarde die een sensor geeft, de waarde van de sensor is dus een vereenvoudiging voor hoe donker het is, de lichtsterkte.
 			</p>
 			<p>
 				Dan nu de uitdaging voor dit hoofdstuk. Laat een servo naar links draaien in het donker en naar rechts als het licht is. Er volgt nog een stukje uitleg.
@@ -110,9 +109,38 @@ void loop() {
 				De rode kabel bij de servo is +, verbindt dit met een 5V pin. De zwarte of bruine draad is de -, verbindt dit met grond (de GND pin). De andere draad (meestal geel) is voor het signaal door te sturen, verbindt deze met een analoge pin, dus een van de pinnen met A ernaast (bijvoorbeeld A5).
 			</p>
 			<p>
-				Voordat je gaat programmeren moet je eerst de servo library (uitbreiding) toevoegen, dit maakt het geven van commando’s voor de servo veel makkelijker. Ga hiervoor naar de arduino software, dan sketch, dan include library en klik op servo. Voor de rest van de uitleg ga je als een echte programmeur zelf dingen zoeken. De pagina voor de library is <a href="https://playground.arduino.cc/ComponentLib/Servo">https://playground.arduino.cc/ComponentLib/Servo</a> hier vind je al een belangrijk deel van de code die je nodig zult hebben. Probeer het daadwerkelijk op te lossen en samenwerken is aanbevolen. Succes!
+				Voordat je gaat programmeren moet je eerst de servo library (uitbreiding) toevoegen, dit maakt het geven van commando’s voor de servo veel makkelijker. Ga hiervoor naar de arduino software, dan sketch, dan include library en klik op servo. Voor de rest van de uitleg ga je als een echte programmeur zelf dingen zoeken. De pagina voor de library is <a href="https://playground.arduino.cc/ComponentLib/Servo">https://playground.arduino.cc/ComponentLib/Servo</a> hier vind je al een belangrijk deel van de code die je nodig zult hebben. Probeer het daadwerkelijk op te lossen en samenwerken is aanbevolen. Vraag aan jouw docent of jouw stroomcircuit klopt voordat je het aanzet, het zou zonde zijn als een onderdeel doorbrandt doordat een kabel verkeerd is aangesloten.
+			</p>
+			<p>
+				Succes!
 			</p>
 
+		</div>
+
+		<div class="bar-s">
+			<h3>
+				Opdrachten
+			</h3>
+		</div>
+
+		<div class="theorie-content">
+			<ol>
+				<li>Voor de uitdaging uit</li>
+				<li>Stel je wilt een (grote) windmolen laten draaien naar de kant waar de meeste wind vandaan komt. Je wilt weten welke kant dat is en hebt hiervoor een arduino met wat al het gewenste materiaal tot jouw beschikking. Wat zou je dan moeten meten en hoe pak je dat aan?</li>
+			</ol>
+		</div>
+
+		<div class="bar-s">
+			<h3>
+				Antwoorden
+			</h3>
+		</div>
+
+		<div class="theorie-content theorie-answers">
+			<ol class="MLquestionAlt">
+				<li>Succes</li>
+				<li>Je wilt eerst meten van welke kant de windsnelheid het groots is. Je kunt dit doen door een mini-windmolen aan een servo te bevestigen en (langzaam) rond te laten draaien, terwijl je dit doet meet je de spanning die de windmolen geeft. Je achterhaald naar welke kant de windmolen/servo gedraaid is wanneer de meeste spanning gemeten wordt. </li>
+			</ol>
 		</div>
 
 	</div>

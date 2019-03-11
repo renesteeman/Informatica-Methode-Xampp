@@ -13,7 +13,7 @@ include('../../../components/headerChapter.php');
 	<div class="bar-par-overview">
 		<div class="paragraph-tiles">
 
-			<div class="ptile active">
+			<div class="ptile">
 				<span class="ptile-content"><a href="p1.php">
 					§1
 				</a></span>

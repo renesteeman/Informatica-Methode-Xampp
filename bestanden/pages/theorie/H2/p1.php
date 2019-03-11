@@ -12,7 +12,7 @@
 
 	<div class="bar-par-overview">
 		<div class="paragraph-tiles">
-			<div class="ptile active">
+			<div class="ptile">
 				<span class="ptile-content"><a href="p1.php">
 					§1
 				</a></span>
@@ -30,6 +30,16 @@
 			<div class="ptile">
 				<span class="ptile-content"><a href="p4.php">
 					§4
+				</a></span>
+			</div>
+			<div class="ptile">
+				<span class="ptile-content"><a href="p5.php">
+					§5
+				</a></span>
+			</div>
+			<div class="ptile">
+				<span class="ptile-content"><a href="p6.php">
+					§6
 				</a></span>
 			</div>
 
@@ -69,7 +79,7 @@
 			</p>
 
 			<p>
-				Stel we hebben nu 5 witte, 2 grijze, 6 bruine en 0 rode katten. W+G of W ∪ G bevat dus 7 katten (5+2). Van de 5 witte katten zijn 3 man (M) en 2 vrouw (V). M x W of M ꓵ W bevat dus 3 katten, want 3 witte katten zijn man. 
+				Stel we hebben nu 5 witte, 2 grijze, 6 bruine en 0 rode katten. W+G of W ∪ G bevat dus 7 katten (5+2). Van de 5 witte katten zijn 3 man (M) en 2 vrouw (V). M x W of M ꓵ W bevat dus 3 katten, want 3 witte katten zijn man.
 			</p>
 
 		</div>

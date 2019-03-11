@@ -25,7 +25,7 @@ include('../../../components/headerChapter.php');
 				</a></span>
 			</div>
 
-			<div class="ptile active">
+			<div class="ptile">
 				<span class="ptile-content"><a href="p3.php">
 					§3
 				</a></span>
@@ -40,6 +40,12 @@ include('../../../components/headerChapter.php');
 			<div class="ptile">
 				<span class="ptile-content"><a href="p5.php">
 					§5
+				</a></span>
+			</div>
+			
+			<div class="ptile">
+				<span class="ptile-content"><a href="p6.php">
+					§6
 				</a></span>
 			</div>
 
@@ -88,7 +94,7 @@ include('../../../components/headerChapter.php');
 
 			<ol class="MLquestion">
 				<li>
-					Neem als waarden 0 en 1 (in die volgorde).
+					Neem als input de waarden 0 en 1 (in die volgorde).
 
 					<ol>
 						<li>Welk resultaat zal dit geven bij een AND-gate?</li>

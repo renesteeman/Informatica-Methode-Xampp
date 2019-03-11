@@ -18,7 +18,7 @@ include('../../../components/headerChapter.php');
         </a></span>
       </div>
 
-      <div class="ptile active">
+      <div class="ptile">
         <span class="ptile-content"><a href="p2.php">
         §2
         </a></span>
@@ -112,6 +112,10 @@ include('../../../components/headerChapter.php');
 	<p>De andere opties zijn nu niet van belang, dus we klikken op “Save” om het aanmaken definitief te maken.</p>
 
 	<p>We hebben nu een database met een structuur, maar er staat nog niks in. Hier gaan we in de volgende paragraaf aan werken.</p>
+
+  <p>
+    Je kunt ook een voorbeeld database downloaden via <a href="../../../downloads/inforcaV12.sql" download>deze link</a>. Als je dan een nieuwe lege database hebt aangemaakt kun je naar het tabblad 'Importeren' gaan, dan naar "Bladeren...", het bestand selecteren en "Starten". Je hebt nu de (publieke) versie van de Inforca database en kunt deze gebruiken om mee te oefenen.
+  </p>
 
 	</div>
 

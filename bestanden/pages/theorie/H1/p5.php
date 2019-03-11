@@ -37,9 +37,15 @@ include('../../../components/headerChapter.php');
 				</a></span>
 			</div>
 
-			<div class="ptile active">
+			<div class="ptile">
 				<span class="ptile-content"><a href="p5.php">
 					§5
+				</a></span>
+			</div>
+
+			<div class="ptile">
+				<span class="ptile-content"><a href="p6.php">
+					§6
 				</a></span>
 			</div>
 
@@ -61,9 +67,9 @@ include('../../../components/headerChapter.php');
 
 			<p>Verder komt er ook veel herhaling voor, een voorbeeld is het verversen van het beeldscherm. Dit gebeurt door pixel voor pixel van links naar rechts en van boven naar onder de kleur aan te passen (in RGBA*) en dat vaak 60 keer of meer per seconde! Door deze variabelen en herhaling te combineren samen met anderen instructies, kan een computer taken uitvoeren.</p>
 
-			<p>Het belangrijkste programma dat op een computer werkt is het OS (Operating System), oftewel het besturingssysteem. Dit zorgt ervoor dat het geluid, het bewegen van de cursor op het scherm, en het toetsenbord allemaal werken.</p>
+			<p>Het belangrijkste programma dat op een computer werkt is het OS (Operating System), oftewel het besturingssysteem. Dit zorgt ervoor dat het geluid, het bewegen van de cursor op het scherm en het toetsenbord allemaal werken.</p>
 
-			<p>Verder geeft het OS de mogelijkheid om andere programma’s te laten werken die opdrachten kunnen geven aan het besturingssysteem. Ook zorgt het OS ervoor dat de rekenkracht goed wordt verdeeld over deze processen. Het werkt dus als een soort laag tussen de hardware (het fysieke deel) en de software (de code). De belangrijkste taak is misschien wel het registreren van input (data dat de gebruiker aan de computer geeft) en het terug kunnen geven van output, bijvoorbeeld het beeld of geluid. De vorm van de output wordt dan meestal wel weer door andere software geregeld, maar de OS maakt het mogelijk dat deze processen allemaal worden doorgegeven.</p>
+			<p>Verder geeft het OS de mogelijkheid om andere programma’s te laten werken die opdrachten kunnen geven aan het besturingssysteem. Ook zorgt het OS ervoor dat de rekenkracht goed wordt verdeeld over verschillende processen. Het werkt dus als een soort laag tussen de hardware (het fysieke deel) en de software (de code). De belangrijkste taak is misschien wel het registreren van input (data dat de gebruiker aan de computer geeft) en het terug kunnen geven van output, bijvoorbeeld het beeld of geluid. De vorm van de output wordt dan meestal wel weer door andere software geregeld, maar de OS maakt het mogelijk dat deze processen allemaal uitgevoerd kunnen worden.</p>
 
 			<p>*RGBA staat voor Red Green Blue Alpha. Alpha geeft aan hoe 'sterk' de kleur moet zijn en is een waarde van 0 tot 1.</p>
 

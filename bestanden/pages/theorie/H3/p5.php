@@ -32,7 +32,7 @@
 					§4
 				</a></span>
 			</div>
-			<div class="ptile active">
+			<div class="ptile">
 				<span class="ptile-content"><a href="p5.php">
 					§5
 				</a></span>
@@ -45,6 +45,11 @@
 			<div class="ptile">
 				<span class="ptile-content"><a href="p7.php">
 					§7
+				</a></span>
+			</div>
+			<div class="ptile">
+				<span class="ptile-content"><a href="p8.php">
+					§8
 				</a></span>
 			</div>
 

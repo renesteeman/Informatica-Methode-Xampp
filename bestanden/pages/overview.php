@@ -289,7 +289,6 @@
 							if (mysqli_num_rows($result) > 0) {
 						    // output data of each row of names with class
 
-
 						    while($row = mysqli_fetch_assoc($result)) {
 									$Cid = $row["id"];
 									$Cnaam = $row["naam"];
@@ -304,7 +303,7 @@
 									$userinfo = ['naam'=>$Cnaam, 'klas'=>$Cklas, 'group_role'=>$group_role, 'group_name'=>$group_name];
 
 									//get more info cijfer
-									$sql2 = "SELECT cijfer FROM `quiz` WHERE userid='$Cid'";
+									$sql2 = "SELECT cijfer FROM quiz WHERE userid='$Cid'";
 
 									//get info from other tables
 									if (mysqli_query($conn, $sql2)) {

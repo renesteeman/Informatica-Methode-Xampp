@@ -30,7 +30,7 @@ include('../../../components/headerChapter.php');
         </a></span>
       </div>
 
-      <div class="ptile active">
+      <div class="ptile">
         <span class="ptile-content"><a href="p4.php">
         §4
         </a></span>
@@ -49,11 +49,15 @@ include('../../../components/headerChapter.php');
 
   		<p>SQL heeft nog veel meer mogelijkheden en we gaan er dan ook nog een paar van doornemen.</p>
 
-  		<p>Als eerste het ordenen met SQL, dit kun je doen met ORDER BY data. Er zijn dan twee opties, ASC en DESC, bij ASC lopen de waardes omhoog van boven naar onder en bij DESC gaan ze andersom. Het wordt gebruikt in combinatie met SELECT en gebruikt ASC als standaard. Stel we willen de gebruikers ordenen op hun gebruikersnaam op alfabetische volgorde, we gebruiken dan SELECT gebruikersnaam FROM  gebruikers ORDER BY gebruikersnaam ASC. Je kunt ASC ook weglaten, aangezien het de standaard is.</p>
+      <p>
+        Het is mogelijk om data uit meerdere tabellen te combineren in een SQL 'commando'. Je gebruikt dan tabel.kolom in plaats van alleen de naam van de kolom. Als je de voorbeeld database van paragraaf 2 hebt ingesteld kun je nu het commando "SELECT users.naam, quiz.cijfer FROM users, quiz WHERE quiz.userid = users.id" gebruiken om als resulaat de namen van 'personen' te krijgen met het punt dat ze voor een quiz hebben gehaald. De naam komt uit de tabel 'users' en het cijfer uit de tabel 'quiz'.
+      </p>
 
-  		<p>Je kunt ook ‘zoeken’ met SQL, hiervoor gebruik je LIKE patroon. Je kunt hiermee bijvoorbeeld zoeken naar mensen met een bepaalde naam. Een patroon zou dan R_N% kunnen zijn, een _ betekent dat daar elk karakter mag staan en % betekent dat er meerdere karakters mogen staan of zelfs geen. Je gebruikt LIKE in combinatie met WHERE en een opdracht naar keuze (zoals SELECT, UPDATE of DELETE). Een voorbeeld is: SELECT gebruikersnaam FROM gebruikers WHERE gebruikersnaam LIKE ‘%3’. Als antwoord krijg je (bij gebruik van het voorbeeld) gebruiker3.</p>
+  		<p>Nu volgen nog een paar handige SQL commando's. Als eerste het ordenen met SQL, dit kun je doen met ORDER BY data. Er zijn dan twee opties, ASC en DESC, bij ASC lopen de waardes omhoog van boven naar onder en bij DESC gaan ze andersom. Het wordt gebruikt in combinatie met SELECT en gebruikt ASC als standaard. Stel we willen de gebruikers ordenen op hun gebruikersnaam op alfabetische volgorde, we gebruiken dan SELECT gebruikersnaam FROM  gebruikers ORDER BY gebruikersnaam ASC. Je kunt ASC ook weglaten, aangezien het de standaard is.</p>
 
-  		<p>Dan nog een paar kleine functies, deze zijn: COUNT(), AVG() en SUM(). COUNT() kun je gebruiken met SELECT en tussen de haakjes kan een kolom zetten die je wilt tellen, dit kan handig zijn als je bijvoorbeeld wilt weten hoeveel mensen een email-adres hebben ingevoerd. AVG() werkt hetzelfde, maar dan om het gemiddelde van een reeks waardes te berekenen. Met SUM() kun je de waardes optellen. Stel je wilt weten wat de som is van alle id’s bij elkaar, dan kun je gebruikmaken van SELECT SUM(id) FROM gebruikers.</p>
+  		<p>Je kunt ook 'zoeken' met SQL, hiervoor gebruik je LIKE patroon. Je kunt hiermee bijvoorbeeld zoeken naar mensen met een bepaalde naam. Een patroon zou dan R_N% kunnen zijn, een _ betekent dat daar elk karakter mag staan en % betekent dat er meerdere karakters mogen staan of zelfs geen. Je gebruikt LIKE in combinatie met WHERE en een opdracht naar keuze (zoals SELECT, UPDATE of DELETE). Een voorbeeld is: SELECT gebruikersnaam FROM gebruikers WHERE gebruikersnaam LIKE '%3'. Als antwoord krijg je (bij gebruik van het voorbeeld) gebruiker3.</p>
+
+  		<p>Dan nog een paar kleine functies, deze zijn: COUNT(), AVG() en SUM(). COUNT() kun je gebruiken met SELECT en de naam van een kolom tussen de haaken om te tellen hoevaak er een waarde voorkomt, dit kan handig zijn als je bijvoorbeeld wilt weten hoeveel mensen een email-adres hebben ingevoerd. AVG() werkt hetzelfde, maar dan om het gemiddelde van een reeks waardes te berekenen. Met SUM() kun je de waardes optellen. Stel je wilt weten wat de som is van alle id’s bij elkaar, dan kun je gebruikmaken van SELECT SUM(id) FROM gebruikers.</p>
 
   		<p>SQL wordt meestal in combinatie met een programmeertaal gebruikt, zoals voor deze website gedaan is. In dit geval is PHP gecombineerd met SQL en hiermee kan bijvoorbeeld ingelogd worden en kan de docent een overzicht zien van de klassen.</p>
 

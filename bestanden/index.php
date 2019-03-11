@@ -182,6 +182,7 @@
 					</div>
 				</div>';
 
+					//TODO move chapter and update others
 					if(chapterIsFinished('H5')){
 						echo '<div class="tile completed">';
 					} else {
@@ -207,6 +208,32 @@
 					</div>
 				</div>';
 
+					//TODO update paragraph locations
+					if(chapterIsFinished('H5')){
+						echo '<div class="tile completed">';
+					} else {
+						echo '<div class="tile">';
+					}
+
+					echo '
+					<div class="tile-content">
+						<div class="tile-chapter">
+							H5 Projectmanagement
+						</div>
+						<div class="tile-paragraphs">
+							<span class="closeTile">X</span>
+							<ol>
+								<ul><a href="pages/theorie/H5/p1.php">§1 Introductie en onderdelen</a></ul>
+								<ul><a href="pages/theorie/H5/p2.php">§2 Rollen</a></ul>
+								<ul><a href="pages/theorie/H5/p3.php">§3 Communicatie</a></ul>
+								<ul><a href="pages/theorie/H5/p4.php">§4 Agile en Scrum</a></ul>
+								<ul><a href="pages/theorie/H5/quiz.php">Quiz</a></ul>
+							</ol>
+						</div>
+					</div>
+				</div>';
+
+					//TODO update paragraph locations
 					if(chapterIsFinished('H6')){
 						echo '<div class="tile completed">';
 					} else {
@@ -216,43 +243,19 @@
 					echo '
 					<div class="tile-content">
 						<div class="tile-chapter">
-							H6 Projectmanagement
+							H6 Project uitvoeren
 						</div>
 						<div class="tile-paragraphs">
 							<span class="closeTile">X</span>
 							<ol>
-								<ul><a href="pages/theorie/H6/p1.php">§1 Introductie en onderdelen</a></ul>
-								<ul><a href="pages/theorie/H6/p2.php">§2 Rollen</a></ul>
-								<ul><a href="pages/theorie/H6/p3.php">§3 Communicatie</a></ul>
-								<ul><a href="pages/theorie/H6/p4.php">§4 Agile en Scrum</a></ul>
+								<ul><a href="pages/theorie/H6/p1.php">§1 Plannen en Trello</a></ul>
+								<ul><a href="pages/theorie/H6/p2.php">§2 Github</a></ul>
+								<ul><a href="pages/theorie/H6/p3.php">§3 Verslag</a></ul>
+								<ul><a href="pages/theorie/H6/p4.php">§4 Voorbeeld projecten</a></ul>
+								<ul><a href="pages/theorie/H6/installerenTrello.php">Trello installeren</a></ul>
+								<ul><a href="pages/theorie/H6/installerenGithub.php">Github installeren</a></ul>
+								<ul><a href="pages/theorie/H6/verslag.docx" download>Voorbeeld verslag</a></ul>
 								<ul><a href="pages/theorie/H6/quiz.php">Quiz</a></ul>
-							</ol>
-						</div>
-					</div>
-				</div>';
-
-					if(chapterIsFinished('H7')){
-						echo '<div class="tile completed">';
-					} else {
-						echo '<div class="tile">';
-					}
-
-					echo '
-					<div class="tile-content">
-						<div class="tile-chapter">
-							H7 Project uitvoeren
-						</div>
-						<div class="tile-paragraphs">
-							<span class="closeTile">X</span>
-							<ol>
-								<ul><a href="pages/theorie/H7/p1.php">§1 Plannen en Trello</a></ul>
-								<ul><a href="pages/theorie/H7/p2.php">§2 Github</a></ul>
-								<ul><a href="pages/theorie/H7/p3.php">§3 Verslag</a></ul>
-								<ul><a href="pages/theorie/H7/p4.php">§4 Voorbeeld projecten</a></ul>
-								<ul><a href="pages/theorie/H7/installerenTrello.php">Trello installeren</a></ul>
-								<ul><a href="pages/theorie/H7/installerenGithub.php">Github installeren</a></ul>
-								<ul><a href="pages/theorie/H7/verslag.docx" download>Voorbeeld verslag</a></ul>
-								<ul><a href="pages/theorie/H7/quiz.php">Quiz</a></ul>
 							</ol>
 						</div>
 					</div>

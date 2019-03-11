@@ -424,10 +424,6 @@
 		</div>
 	</div>';
 
-
-
-			////////////////////////////
-
 			//if not loged in, show 'sales page'
 		} else {
 			echo '

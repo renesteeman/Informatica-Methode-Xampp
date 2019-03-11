@@ -177,8 +177,9 @@ input[type="checkbox"]
 	margin-top: 40px
 	margin-bottom: 40px
 	display: grid
-	grid-template-columns: auto auto auto auto
-	grid-gap: 2em
+	grid-template-columns: repeat(auto-fill, 20em)
+	grid-gap: 3rem
+	justify-content: space-between
 
 	.tile
 		background: $secondary2
@@ -491,7 +492,6 @@ textarea:hover
 //responsiveness
 @media (max-width: $xlarge)
 	.chapter-tiles
-		grid-template-columns: auto auto auto
 
 		.tile
 			width: 100%
@@ -625,7 +625,6 @@ textarea:hover
 
 
 	.chapter-tiles
-		grid-template-columns: auto auto
 
 		.tile
 			width: 100%

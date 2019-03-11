@@ -343,15 +343,14 @@
 												for($i=1; $i<$count2; $i++){
 													$hoofstukkenKeys = array_keys($hoofdstukken);
 													$hoofdstuk = $hoofdstukken[$hoofstukkenKeys[$i]];
-													//TODO remove length char at start of string
-													$hoofdstukLength = $hoofdstuk[0];
+													$hoofdstukLength = strlen($hoofdstuk);
 													$hoofdstukAfTotaal = 0;
 													for($j=0; $j<$hoofdstukLength; $j++){
 														if($hoofdstuk[$j] == '1'){
 															$hoofdstukAfTotaal++;
 														}
 													}
-													if($hoofdstukAfTotaal == $hoofdstukLength){
+													if($hoofdstukAfTotaal == $hoofdstukLength && $hoofdstukLength != 0){
 														$hoofdstukkenAf[$hoofstukkenKeys[$i]] = 1;
 													}
 												}

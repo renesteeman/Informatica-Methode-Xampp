@@ -37,15 +37,7 @@
 
       if(mysqli_num_rows($result) == 1){
         //get the right info for the containers
-        $result = mysqli_fetch_assoc($result);
-
-        $info['id'] = $result['id'];
-        $info['naam'] = $result['naam'];
-        $info['klas'] = $result['klas'];
-        $info['group_name'] = $result['group_name'];
-        $info['group_role'] = $result['group_role'];
-        $info['email'] = $result['email'];
-        $info['LActivity'] = $result['LActivity'];
+        $info = mysqli_fetch_assoc($result);
 
         //if the person is in a group, get his groupmates
         $sqlGroupName = $info['group_name'];

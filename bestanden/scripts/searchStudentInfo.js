@@ -87,6 +87,7 @@ $(document).ready(function(){
         append = "";
 
         for(i=0; i<quizResultsLength; i++){
+          //TODO rewrite
           CquizResults = info['quizResults'][i];
           CquizResultsArray = [];
           CquizResultsArray[0] = parseFloat(Object.keys(CquizResults));
@@ -114,6 +115,7 @@ $(document).ready(function(){
         for(i=0; i<progressionResultsLength; i++){
           CprogressionResultsChapters = progressionResultsChapters[i];
           CprogressionResultsCompletion = progressionResultsProgression[i];
+          CprogressionResultsCompletion = CprogressionResultsCompletion.substr(1);
 
           //show Chapters
           if(CprogressionResultsChapters!='userid' && CprogressionResultsCompletion!=null){

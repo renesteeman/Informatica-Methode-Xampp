@@ -1,51 +1,40 @@
 <?php
-include('../../../components/headerChapter.php');
+	include('../../../components/headerChapter.php');
 ?>
 
 <body>
 
 	<div class="title-small">
 		<h2>
-			B1 §2 Wat is ethiek?
+			B1 §2 De basis van HTML
 		</h2>
-	 </div>
+	</div>
 
 	<div class="bar-par-overview">
 		<div class="paragraph-tiles">
-
 			<div class="ptile">
 				<span class="ptile-content"><a href="p1.php">
 					§1
 				</a></span>
 			</div>
-
 			<div class="ptile">
 				<span class="ptile-content"><a href="p2.php">
 					§2
 				</a></span>
 			</div>
-
 			<div class="ptile">
 				<span class="ptile-content"><a href="p3.php">
 					§3
 				</a></span>
 			</div>
-
 			<div class="ptile">
 				<span class="ptile-content"><a href="p4.php">
 					§4
 				</a></span>
 			</div>
-
 			<div class="ptile">
 				<span class="ptile-content"><a href="p5.php">
 					§5
-				</a></span>
-			</div>
-
-			<div class="ptile">
-				<span class="ptile-content"><a href="p6.php">
-					§6
 				</a></span>
 			</div>
 
@@ -60,34 +49,64 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content">
-			<p>In de vorige paragraaf heb je de vraag, “Wat is een goede daad?” beantwoord. Dit is een van de ingewikkeldste vragen in de filosofie en vormt een stroming in de filosofie genaamd ethiek. Ethiek is de studie waarin men de concepten van goed en slecht systematiseert en verdedigd.</p>
+			<p>
+				Zoals eerder genoemd bestaat een webpagina vaak uit 3 belangrijke onderdelen: de header, de body en de footer. Een HTML bestand zonder inhoud ziet er dan als volgt uit:
+			</p>
 
-			<p>Digitale technologieën zoals het internet, mobieltjes en programmeren zijn relatief nieuw en de regels hiervan zijn vaak onduidelijk. Daarom is het belangrijk om, wanneer je een programma schrijft, rekening te houden met wat voor een invloed het heeft op jouw omgeving.</p>
+<pre><code>&lt;html>
+&lt;head>
+&lt;/head>
 
-			<p>Een paar vragen die je je kunt afvragen zijn:</p>
+&lt;header>
+&lt;/header>
 
-			<ul>
-				<li>Mag je een programma schrijven dat data van gebruikers vertaalt naar mogelijke reclames?</li>
+&lt;body>
+&lt;/body>
 
-				<li>Mag je iets maken dat in staat is om mensen te bespioneren via hun microfoons?</li>
-			</ul>
+&lt;footer>
+&lt;/footer>
+&lt;/html></code></pre>
 
-			<p>Verschillende groepen mensen hebben een richtlijn hierover gecreëerd, zo heeft de ACM (Association for Computing Machinery) een ethische code gemaakt:</p>
+			<p>
+				Het valt misschien op dat er ook &lt;head> bij staat, hierin zet je normaal algemene dingen die de pagina nodig heeft om te werken, al wordt dit tegenwoordig ook vaak in de &lt;footer> gezet zodat eerst de inhoud van de pagina geladen wordt en daarna pas de rest, dan lijkt de pagina sneller te zijn. Zo kan er verwezen worden naar een css bestand of een andere code.
+			</p>
+			<p>
+				Je ziet ook dat onderdelen beginnen met &lt;TAG> en eindigen met &lt;TAG/>, dit komt bij bijna elk element (onderdeel) in HTML voor. Tussen deze 'tags' kun je de inhoud zetten. In plaats van de tekst "TAG" komt er natuurlijk de naam van het element.
+			</p>
+			<p>
+				Deze 'tags' vormen samen de webpagina. Een website is dus eigenlijk een verzameling van blokken met eventueel opmaak (css) en logica.
+			</p>
+			<p>
+				Een pagina met als inhoud "Hello HTML" zou er als volgt uit kunnen zien.
+			</p>
 
-			<ul>
-				<li>Draag bij aan de maatschappij en menselijk welzijn.</li>
+<pre><code>&lt;html>
+&lt;head>
+&lt;/head>
 
-				<li>Doe geen schade aan anderen.</li>
+&lt;header>
+&lt;/header>
 
-				<li>Wees eerlijk en betrouwbaar.</li>
+&lt;body>
+Hello HTML
+&lt;/body>
 
-				<li>Waardeer intellectueel eigendommen van anderen.</li>
+&lt;footer>
+&lt;/footer>
+&lt;/html></code></pre>
 
-				<li>Respecteer privacy van anderen.</li>
-
-				<li>Behoud de geheimplicht en deel dus geen informatie onnodig met anderen.</li>
-			</ul>
-
+			<p>
+				Je zou in dit geval head, header en footer weg kunnen laten, ze worden hier toch niet gebruikt. Aangezien je ze vaak nodig hebt is wel standaard om ze te gebruiken.
+			</p>
+			<p>
+				Stel je wilt gewoon tekst hebben, dan kun je &lt;p> gebruiken. De p staat voor paragraph. Of om een ‘blok’ te defineren kun je &lt;div> gebruiken, dit staat voor divisie. Dit kun je later met css bijvoorbeeld een achtergrondkleur geven.
+			</p>
+			<p>
+				Als je HTML gaat schrijven kan dit in word, maar het is beter om een gespecialiseerd programma voor te gebruiken. Zelf (als maker van deze website) gebruik ik atom. Dit is een gratis tekstbewerker waar je zelf veel aan kunt aanpassen en toevoegen. Je kunt het vinden op <a href="https://atom.io/">https://atom.io/</a>.
+			</p>
+			<p>
+				 Je kunt een bestand dan opslaan met de extensie HTML (dus je eindigt de naam van het bestand met .html). Dit kun je dan openen met de browser. Ik adviseer om als browser geen gebruik te maken van internet explorer, aangezien dit slechte ondersteuning heeft. Als je meer informatie wilt hebben over browsersupport dan kun je kijken op <a href="https://caniuse.com/">https://caniuse.com/</a>, hier staan wel veel dingen op die je nog niet kent.
+			</p>
 		</div>
 
 		<div class="bar-s">
@@ -97,16 +116,13 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content">
-			<ol class="MLquestion">
-				<li>
-					Deze vragen hebben geen concrete antwoorden, ze zijn reflecties van wie je bent en hoe je denkt. Probeer het standpunt van jouw antwoord in te nemen en erover te discussiëren met iemand met een ander standpunt.
 
-					<ol>
-						<li>Mag je iets maken dat intelligentie van mensen kan berekenen?</li>
-						<li>Mag je iets maken dat vrije wil van mensen mag overschrijven?</li>
-					</ol>
+			<ol>
+				<li>
+					Maak een pagina met daarin minimaal een paragraaf en een divisie.
 				</li>
 			</ol>
+
 		</div>
 
 		<div class="bar-s">
@@ -116,56 +132,38 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content theorie-answers">
-			<ol class="MLquestionAlt2">
+
+			<ol>
 				<li>
-					Hier zijn mogelijke antwoorden met verschillende filosofische richtingen:
+					<pre>
+						<code>
+&lt;html>
+&lt;head>
+&lt;/head>
 
-					<ol>
-						<li>
-							<ol>
-								<li>
-									Voorbeeld wel: Binnen educatie is personalisatie belangrijk, kinderen appreciëren het wanneer een leraar ze beter kent, een programma dat intelligentie kan berekenen kan er voor zorgen dat kinderen betere educatie krijgt en niet constant van niveaus veranderen.
-								</li>
-								<li>
-									Voorbeeld niet: Hoewel een programma dat in staat is om intelligentie op massale schaal kan berekenen niet direct een van de ACM richtlijnen overschrijdt betekent niet dat het ethisch goed is. Gebruik logica om te voorspellen wat een programma als dit kan doen. Wanneer mensen in staat zijn om anderen te onderscheiden gebaseerd op een zichtbaar verschil zullen extremere groepen mensen kunnen categoriseren. Mensen kunnen privileges en banen krijgen gebaseerd op IQ.
-								</li>
-								<li>
-									Richting gevolgenethiek: We baseren ethiek op het resultaat, wanneer een actie meer positieve dan negatieve gevolgen heeft dat is het ethisch goed. Een positief gevolg is gebaseerd op hoeveel goed het brengt in de wereld. Een actie zoals dit zal meer kans hebben om misbruikt te worden en is ethisch niet goed.
-								</li>
-								<li>
-									Richting plichtethiek: Kant geloofde in het categorische imperatief. Dit betekent dat wanneer een actie door iedereen in een samenleving wordt uitgevoerd en de maatschappij blijft neutraal of wordt hier beter op, dan is de actie ethisch goed. Bijvoorbeeld: Als iedereen in een maatschappij zou liegen, dan zal de maatschappij niet beter ervan worden, het zal juist uit elkaar vallen. Daarom is liegen nooit ethisch goed in de ogen van Kant. Een programma om intelligentie te berekenen heeft een grote risico op de samenleving en is dus ethisch niet goed.
-								</li>
-								<li>
-									Richting nihilisme: Friedrich Nietzsche geloofde in het nihilisme. Nihilisme is wanneer je denkt dat mensen zo onbelangrijk zijn in het universum dat het leven al zijn betekenis heeft verloren. Nietzsche geloofde ook dat de mens moet proberen een betekenis en een doel voor zichzelf moet creëren, de mens moet proberen een doel in het leven te vinden en zo een hogere mens worden. De hogere mens kan dan de normale mens achterlaten en verder evolueren. Een programma dat intelligentie kan berekenen kan dit process versnellen en de mensheid “verbeteren”, daarom is dit ethisch wel een goed doel om te hebben.
-								</li>
-							</ol>
-						</li>
-						<li>
-							<ol>
-								<li>
-									Voorbeeld wel: Geheimen kunnen gevaarlijk zijn voor een samenleving. Wanneer je het vrije wil van een terrorist overschrijft kan je verdere aanvallen voorkomen.
-								</li>
-								<li>
-									Voorbeeld niet: We leven in een liberale samenleving waarin menselijke vrijheid centraal staat. Om vrijheid te overschrijven is gelijk aan fundamentele rechten van de mens te verbreken.
-								</li>
-								<li>
-									Richting gevolgenethiek: Hoewel er goede gevolgen kunnen komen van een machine zoals dit, zijn de negatieve gevolgen veel te extreem. Dit is een ethisch slechte actie.
-								</li>
-								<li>
-									Plichtsethiek: Als in een samenleving de vrije wil van iedereen kan worden overschreven zal dit resulteren in een samenleving waarin iedereen veilig is in de ruil voor vrijheid. Als je veiligheid over vrijheid prioriteert zal dit een goede actie zijn, als je vrijheid ziet als een belangrijke recht voor de mens dan is dit een slechte actie.
-								</li>
-							</ol>
-						</li>
-					</ol>
+&lt;header>
+&lt;/header>
+
+&lt;body>
+&lt;p> INHOUD &lt;/p>
+&lt;div> INHOUD &lt;/div>
+&lt;/body>
+
+&lt;footer>
+&lt;/footer>
+&lt;/html>
+
+						</code>
+					</pre>
 				</li>
-			</ol>
 
+			</ol>
 
 		</div>
 	</div>
 
 	<?php
-		include('../../../components/footerChapter.php');
+	include('../../../components/footerChapter.php');
 	?>
 
 </body>

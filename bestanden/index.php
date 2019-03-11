@@ -182,33 +182,6 @@
 					</div>
 				</div>';
 
-					//TODO move chapter and update others
-					if(chapterIsFinished('H5')){
-						echo '<div class="tile completed">';
-					} else {
-						echo '<div class="tile">';
-					}
-
-					echo '
-					<div class="tile-content">
-						<div class="tile-chapter">
-							H5 Web development
-						</div>
-						<div class="tile-paragraphs">
-							<span class="closeTile">X</span>
-							<ol>
-								<ul><a href="pages/theorie/H5/p1.php">§1 Introductie</a></ul>
-								<ul><a href="pages/theorie/H5/p2.php">§2 De basis van HTML</a></ul>
-								<ul><a href="pages/theorie/H5/p3.php">§3 HTML deel 2</a></ul>
-								<ul><a href="pages/theorie/H5/p4.php">§4 De basis van CSS</a></ul>
-								<ul><a href="pages/theorie/H5/p5.php">§5 CSS deel 2</a></ul>
-								<ul><a href="pages/theorie/H5/quiz.php">Quiz</a></ul>
-							</ol>
-						</div>
-					</div>
-				</div>';
-
-					//TODO update paragraph locations
 					if(chapterIsFinished('H5')){
 						echo '<div class="tile completed">';
 					} else {
@@ -233,7 +206,6 @@
 					</div>
 				</div>';
 
-					//TODO update paragraph locations
 					if(chapterIsFinished('H6')){
 						echo '<div class="tile completed">';
 					} else {
@@ -271,7 +243,7 @@
 
 			<div class="chapter-tiles">';
 
-				if(chapterIsFinished('B1')){
+				if(chapterIsFinished('V1')){
 					echo '<div class="tile completed">';
 				} else {
 					echo '<div class="tile">';
@@ -280,23 +252,23 @@
 					echo '
 					<div class="tile-content">
 						<div class="tile-chapter">
-							B1 Filosofie en AI
+							V1 Filosofie en AI
 						</div>
 						<div class="tile-paragraphs">
 							<span class="closeTile">X</span>
 							<ol>
-								<ul><a href="pages/theorie/B1/p1.php">§1 Wat is filosofie?</a></ul>
-								<ul><a href="pages/theorie/B1/p2.php">§2 Wat is ethiek?</a></ul>
-								<ul><a href="pages/theorie/B1/p3.php">§3 Het trein probleem</a></ul>
-								<ul><a href="pages/theorie/B1/p4.php">§4 Informatica en de maatschappij</a></ul>
-								<ul><a href="pages/theorie/B1/p5.php">§5 Kunstmatige intelligentie</a></ul>
-								<ul><a href="pages/theorie/B1/p6.php">§6 Machine learning voorbeeld</a></ul>
+								<ul><a href="pages/theorie/V1/p1.php">§1 Wat is filosofie?</a></ul>
+								<ul><a href="pages/theorie/V1/p2.php">§2 Wat is ethiek?</a></ul>
+								<ul><a href="pages/theorie/V1/p3.php">§3 Het trein probleem</a></ul>
+								<ul><a href="pages/theorie/V1/p4.php">§4 Informatica en de maatschappij</a></ul>
+								<ul><a href="pages/theorie/V1/p5.php">§5 Kunstmatige intelligentie</a></ul>
+								<ul><a href="pages/theorie/V1/p6.php">§6 Machine learning voorbeeld</a></ul>
 							</ol>
 						</div>
 					</div>
 				</div>';
 
-				if(chapterIsFinished('B2')){
+				if(chapterIsFinished('V2')){
 					echo '<div class="tile completed">';
 				} else {
 					echo '<div class="tile">';
@@ -305,45 +277,21 @@
 					echo '
 					<div class="tile-content">
 						<div class="tile-chapter">
-							B2 Privacy
+							V2 Privacy
 						</div>
 						<div class="tile-paragraphs">
 							<span class="closeTile">X</span>
 							<ol>
-								<ul><a href="pages/theorie/B2/p1.php">§1 Wat wordt bijgehouden?</a></ul>
-								<ul><a href="pages/theorie/B2/p2.php">§2 Hoe worden gegevens bijgehouden?</a></ul>
-								<ul><a href="pages/theorie/B2/p3.php">§3 Hoe kun je jouw privacy verbeteren?</a></ul>
-								<ul><a href="pages/theorie/B2/p4.php">§4 Wie beschermt jouw privacy?</a></ul>
+								<ul><a href="pages/theorie/V2/p1.php">§1 Wat wordt bijgehouden?</a></ul>
+								<ul><a href="pages/theorie/V2/p2.php">§2 Hoe worden gegevens bijgehouden?</a></ul>
+								<ul><a href="pages/theorie/V2/p3.php">§3 Hoe kun je jouw privacy verbeteren?</a></ul>
+								<ul><a href="pages/theorie/V2/p4.php">§4 Wie beschermt jouw privacy?</a></ul>
 							</ol>
 						</div>
 					</div>
 				</div>';
 
-				if(chapterIsFinished('B3')){
-					echo '<div class="tile completed">';
-				} else {
-					echo '<div class="tile">';
-				}
-
-				echo '
-				<div class="tile-content">
-					<div class="tile-chapter">
-						B3 Web logic
-					</div>
-					<div class="tile-paragraphs">
-						<span class="closeTile">X</span>
-						<ol>
-							<ul><a href="pages/theorie/B3/p1.php">§1 JS introductie</a></ul>
-							<ul><a href="pages/theorie/B3/p2.php">§2 JS basis deel 1</a></ul>
-							<ul><a href="pages/theorie/B3/p3.php">§3 JS basis deel 2</a></ul>
-							<ul><a href="pages/theorie/B3/p4.php">§4 JS basis deel 3</a></ul>
-							<ul><a href="pages/theorie/B3/p5.php">§5 JS advanced</a></ul>
-						</ol>
-					</div>
-				</div>
-			</div>';
-
-			if(chapterIsFinished('B4')){
+			if(chapterIsFinished('V3')){
 				echo '<div class="tile completed">';
 			} else {
 				echo '<div class="tile">';
@@ -352,22 +300,22 @@
 				echo '
 				<div class="tile-content">
 					<div class="tile-chapter">
-						B4 Databases
+						V3 Databases
 					</div>
 					<div class="tile-paragraphs">
 						<span class="closeTile">X</span>
 						<ol>
-							<ul><a href="pages/theorie/B4/p1.php">§1 Wat is een database?</a></ul>
-							<ul><a href="pages/theorie/B4/p2.php">§2 Een database aanmaken</a></ul>
-							<ul><a href="pages/theorie/B4/p3.php">§3 Communiceren met een database</a></ul>
-							<ul><a href="pages/theorie/B4/p4.php">§4 Verder met SQL</a></ul>
-							<ul><a href="pages/theorie/B4/installatieXAMPP.php">installatie XAMPP</a></ul>
+							<ul><a href="pages/theorie/V3/p1.php">§1 Wat is een database?</a></ul>
+							<ul><a href="pages/theorie/V3/p2.php">§2 Een database aanmaken</a></ul>
+							<ul><a href="pages/theorie/V3/p3.php">§3 Communiceren met een database</a></ul>
+							<ul><a href="pages/theorie/V3/p4.php">§4 Verder met SQL</a></ul>
+							<ul><a href="pages/theorie/V3/installatieXAMPP.php">installatie XAMPP</a></ul>
 						</ol>
 					</div>
 				</div>
 			</div>';
 
-			if(chapterIsFinished('B5')){
+			if(chapterIsFinished('V4')){
 				echo '<div class="tile completed">';
 			} else {
 				echo '<div class="tile">';
@@ -376,21 +324,21 @@
 				echo '
 				<div class="tile-content">
 					<div class="tile-chapter">
-						B5 Netwerken
+						V4 Netwerken
 					</div>
 					<div class="tile-paragraphs">
 						<span class="closeTile">X</span>
 						<ol>
-							<ul><a href="pages/theorie/B5/p1.php">§1 OSI</a></ul>
-							<ul><a href="pages/theorie/B5/p2.php">§2 Topologie</a></ul>
-							<ul><a href="pages/theorie/B5/p3.php">§3 Werking en gevaren</a></ul>
-							<ul><a href="pages/theorie/B5/p4.php">§4 Cloud</a></ul>
+							<ul><a href="pages/theorie/V4/p1.php">§1 OSI</a></ul>
+							<ul><a href="pages/theorie/V4/p2.php">§2 Topologie</a></ul>
+							<ul><a href="pages/theorie/V4/p3.php">§3 Werking en gevaren</a></ul>
+							<ul><a href="pages/theorie/V4/p4.php">§4 Cloud</a></ul>
 						</ol>
 					</div>
 				</div>
 			</div>';
 
-			if(chapterIsFinished('B6')){
+			if(chapterIsFinished('V5')){
 				echo '<div class="tile completed">';
 			} else {
 				echo '<div class="tile">';
@@ -399,20 +347,86 @@
 				echo '
 				<div class="tile-content">
 					<div class="tile-chapter">
-						B6 UI en UX
+						V5 UI en UX
 					</div>
 					<div class="tile-paragraphs">
 						<span class="closeTile">X</span>
 						<ol>
-							<ul><a href="pages/theorie/B6/p1.php">§1 introductie</a></ul>
-							<ul><a href="pages/theorie/B6/p2.php">§2 UI</a></ul>
-							<ul><a href="pages/theorie/B6/p3.php">§3 UI vervolg</a></ul>
-							<ul><a href="pages/theorie/B6/p4.php">§4 UX</a></ul>
-						</ol>
+							<ul><a href="pages/theorie/V5/p1.php">§1 introductie</a></ul>
+							<ul><a href="pages/theorie/V5/p2.php">§2 UI</a></ul>
+							<ul><a href="pages/theorie/V5/p3.php">§3 UI vervolg</a></ul>
+							<ul><a href="pages/theorie/V5/p4.php">§4 UX</a></ul>
+							</ol>
+						</div>
 					</div>
+				</div>
+
+			</div>
+
+			<div class="bar">
+				<h3>
+					Bonus
+				</h3>
+			</div>
+
+			<div class="chapter-tiles">';
+
+
+
+			//////////////////////////////
+
+			if(chapterIsFinished('B1')){
+				echo '<div class="tile completed">';
+			} else {
+				echo '<div class="tile">';
+			}
+
+			echo '
+			<div class="tile-content">
+				<div class="tile-chapter">
+					B1 Web development
+				</div>
+				<div class="tile-paragraphs">
+					<span class="closeTile">X</span>
+					<ol>
+						<ul><a href="pages/theorie/B1/p1.php">§1 Introductie</a></ul>
+						<ul><a href="pages/theorie/B1/p2.php">§2 De basis van HTML</a></ul>
+						<ul><a href="pages/theorie/B1/p3.php">§3 HTML deel 2</a></ul>
+						<ul><a href="pages/theorie/B1/p4.php">§4 De basis van CSS</a></ul>
+						<ul><a href="pages/theorie/B1/p5.php">§5 CSS deel 2</a></ul>
+						<ul><a href="pages/theorie/B1/quiz.php">Quiz</a></ul>
+					</ol>
 				</div>
 			</div>
-			</div>';
+		</div>';
+
+		if(chapterIsFinished('B2')){
+			echo '<div class="tile completed">';
+		} else {
+			echo '<div class="tile">';
+		}
+
+		echo '
+		<div class="tile-content">
+			<div class="tile-chapter">
+				B2 Web logic
+			</div>
+			<div class="tile-paragraphs">
+				<span class="closeTile">X</span>
+				<ol>
+					<ul><a href="pages/theorie/B2/p1.php">§1 JS introductie</a></ul>
+					<ul><a href="pages/theorie/B2/p2.php">§2 JS basis deel 1</a></ul>
+					<ul><a href="pages/theorie/B2/p3.php">§3 JS basis deel 2</a></ul>
+					<ul><a href="pages/theorie/B2/p4.php">§4 JS basis deel 3</a></ul>
+					<ul><a href="pages/theorie/B2/p5.php">§5 JS advanced</a></ul>
+				</ol>
+			</div>
+		</div>
+	</div>';
+
+
+
+			////////////////////////////
 
 			//if not loged in, show 'sales page'
 		} else {

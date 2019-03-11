@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H5 §4 De basis van CSS
+			H5 §4 Agile en Scrum
 		</h2>
 	</div>
 
@@ -32,11 +32,6 @@
 					§4
 				</a></span>
 			</div>
-			<div class="ptile">
-				<span class="ptile-content"><a href="p5.php">
-					§5
-				</a></span>
-			</div>
 
 		</div>
 	</div>
@@ -50,53 +45,37 @@
 
 		<div class="theorie-content">
 			<p>
-				In deze paragraaf ga je de basis van CSS (cascading style sheets) leren. CSS zorgt voor de opmaak van de pagina, dus hoe het eruit ziet. Het is het beste om een apart css bestand aan te maken die bij de html gaat.
+				In deze paragraaf ga je leren wat agile is. Agile is een groep waardes en principies. Dat klinkt vrij vaag en dat is het in zichzelf ook, daarom zijn er verschillende agile systemen die een stuk concreter zijn. Agile heeft als doel het flexibiel uitvoeren van een project. In de kern heeft agile een paar belangrijke punten, deze zijn:
+			</p>
+			<ol>
+				<li>
+					Een groep goed moet samenwerken en zelfstandigheid hebben.
+				</li>
+				<li>
+					Een planning moet niet teveel vast leggen, zodat er ruimte is voor veranderingen.
+				</li>
+				<li>
+					De klant en gebruiker veel contact moeten hebben.
+				</li>
+				<li>
+					Producten moeten niet in een keer worden gemaakt en getoond, maar in stappen. Updates moeten klein en regelmatig zijn, in plaats van ver uit elkaar en groot. Zo kan de gebruiker feedback geven en gaat minder tijd verloren aan onnodige zaken.
+				</li>
+				<li>
+					Er moet regelmatig een meeting zijn waarbij terug wordt gekeken en verbeterpunten worden gevormd.
+				</li>
+			</ol>
+
+			<p>
+				Een van de systemen die agile gebruikt is Scrum. Bij scrum wordt elke feature (onder de naam 'user-story') in een zogenaamde backlog gezet, dit is een soort grote te doen lijst van opdrachten. Er wordt vervolgens een planning voor enkele weken gemaakt en hiervoor worden opdrachten uit de backlog uitgekozen. In de komende weken wordt aan deze opdrachten gewerkt en ze komen op het agile board te staan, dit is gebruikelijk een bord met post-it notes die worden verdeeld over: to do, dev, test en release. Er is dus een lijst van dingen waar nog aan begonnen moet worden, een waar aan gewerkt wordt, een waarvoor getest wordt en een met de opdrachten die af zijn.
 			</p>
 			<p>
-				Om te leren hoe je CSS kunt gebruiken is het het makkelijkst om in HTML een paar &lt;div> te gebruiken. Bij de CSS verwijs je hierna terug naar die &lt;div>.  Om ze apart ‘aan te spreken’ geven we de &lt;div> een id, dit is naam die alleen voor dat element wordt gebruikt. Een voorbeeld is: &lt;div id=”div1”>&lt;/div>. Om naar de CSS te verwijzen in het HTML-bestand (zodat de CSS geladen wordt) kun je in de &lt;head> &lt;link rel="stylesheet" href="test.css"> te plaatsen. Als nu het HTML bestand geladen wordt, wordt ook de CSS geladen en toegepast. Het CSS bestand noemen we test.css.
+				De periode waarin deze backlog weggewerkt wordt heet 'sprint' en duurt meestal twee weken. Op het eind van een sprint wordt een nieuwe versie van het project uitgegeven en wordt teruggekeken naar hoe de sprint is verlopen en wat beter kon. Er is ook op elke dag een kort gesprek tussen de teamleden waarin kort wordt gezegd wat die dag gedaan wordt en eventueel nog wat belangrijke mededelingen, dit is een 'daily scrum meeting'. De persoon die zorgt dat dit allemaal in goede banen wordt geleid heet 'scrum master'.
 			</p>
 			<p>
-				Om in de CSS naar een id te verwijzen (van de HTML) gebruik je # en voor een class '.' (alleen de punt) .Een class gebruik je als een element vaker op een pagina hebt en het steeds dezelfde stijl wilt geven. In de HTML kun je dan i.p.v. id=”” class=”” gebruiken.
+				Het is ook mogelijk om aan dit proces een ‘burn-down chart’ toe te voegen, dit is een grafiek waarop elke dag wordt weergegeven hoeveel werk er nog grofweg over is voor de huidige sprint. Des te meer werk, des te hoger het punt op de grafiek. Elke dag komt er weer een nieuw punt bij op de grafiek en op het eind kan dan gekeken worden naar wanneer het goed en wanneer het minder goed ging.
 			</p>
 			<p>
-				In de CSS gaan we nu de eerste div aanpassen. Het is momenteel nog niet te zien (als er geen tekst in staat), dit kunnen we veranderen door de volgende code als CSS te gebruiken:
-			</p>
-			<p>
-<pre><code>#div1
-	Background-color: red;
-	Width: 200px;
-	Height: 200px;
-</code></pre>
-			</p>
-			<p>
-				Dit zal de div een rode (achtergrond) kleur geven en een breedte en hoogte van 200px. Het is ook mogelijk om een kleur preciezer in te stellen met RGB of hex waarden een paar voorbeelden hiervan zijn te vinden op <a href="https://www.w3schools.com/css/css_colors.asp">https://www.w3schools.com/css/css_colors.asp</a>.
-			  Zelf maak ik vooral gebruik van %, em en rem. % gebruikt een percentage van het element waar het onder valt en 'em' kijkt naar de grote van de tekst. Rem staat voor root em, het gebruikt dus de tekstgrote van de 'root', oftewel het HTML element zelf.
-			</p>
-			<p>
-				Er zijn ook meerdere manier om maten aan te duiden, px is een manier, maar dit werkt niet goed als je een site zou willen maken die zich aanpast op verschillende apparaten. Voor meer informatie hierover kun je op <a href="https://www.w3schools.com/cssref/css_units.asp">https://www.w3schools.com/cssref/css_units.asp</a>.
-			</p>
-			<p>
-				Stel je hebt wat tekst in de div staan en vindt het iets te klein, dan kun je de tekst vergroten met de volgende code:
-			</p>
-			<p>
-<pre><code>#div
-	Background-color: red;
-	Width: 200px;
-	Height: 200px;
-	Font-size: 200%;
-</code></pre>
-			</p>
-			<p>
-				Om een afgeronde rand aan de &lt;div> te krijgen kun je gebruik maken van border-radius zoals in het voorbeeld:
-			</p>
-			<p>
-<pre><code>#div
-	Background-color: red;
-	Width: 200px;
-	Height: 200px;
-	Font-size: 200%;
-	Border-radius: 6px;
-</code></pre>
+				Voor een korte samenvatting (in het Engels) kun je <a href=" https://www.youtube.com/watch?v=1PBln3dyaPs&list=PLngnoZX8cAn9zw-9wKg6HiHV4TJkUrdGW">https://www.youtube.com/watch?v=1PBln3dyaPs&list=PLngnoZX8cAn9zw-9wKg6HiHV4TJkUrdGW</a> bekijken.
 			</p>
 
 		</div>
@@ -111,12 +90,39 @@
 
 			<ol>
 				<li>
-					Ga verder met de pagina van de vorige paragraaf. Maak nu de &lt;div> zo breed als de pagina en zet er tekst in, verander de kleur van de link, voeg een rand toe aan de &lt;img> en zet voor de &lt;li> een ander teken.
+					Wat wordt er aan het eind van een sprint gedaan?
+				</li>
+				<li>
+					Wat is een backlog?
+				</li>
+				<li>
+					Waar of niet waar? Een planning moet alles in detail vast leggen, op die manier weet iedereen wat wanneer gedaan moet worden.
 				</li>
 			</ol>
 
 		</div>
 
+		<div class="bar-s">
+			<h3>
+				Antwoorden
+			</h3>
+		</div>
+
+		<div class="theorie-content theorie-answers">
+
+			<ol>
+				<li>
+					Er wordt gekeken naar verbeteringen en er komt een nieuwe versie uit van het product.
+				</li>
+				<li>
+					Een lijst van opdrachten die nog uitgevoerd moeten worden.
+				</li>
+				<li>
+					Niet waar, de planning moet juist flexibel zijn.
+				</li>
+			</ol>
+
+		</div>
 	</div>
 
 	<?php

@@ -19,24 +19,30 @@
 	<div class="vragen">
 		<!-- vraag 1-->
 		<div class="vraagBalk">
-			Waarvoor wordt het SMART-model gebruikt?
+			Trello is bedoeld voor …
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">Om de specificaties van een project op te stellen.
+					<label class="container">het maken van een planning
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Om een site te ontwerpen.
+					<label class="container">het sturen van berichten
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Om een product te ontwerpen.
+					<label class="container">bestanden op te slaan
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">een overzicht te houden bij een project
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -49,30 +55,30 @@
 
 		<!-- vraag 2-->
 		<div class="vraagBalk">
-			Wat gebeurt niet in de nazorgfase?
+			Wat is het verschil tussen een push en commit?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">Fouten worden uit het product gehaald.
+					<label class="container">Een push zet de bestanden online.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Nieuwe features worden toegevoegd aan het product.
+					<label class="container">Een push overschrijft alle bestanden.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">De klant wordt uitgelegd hoe het product werkt.
+					<label class="container">Een push slaat de bestanden op, terwijl een commit de bestanden alleen klaar zet.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Er wordt gecontroleerd of alles werkt.
+					<label class="container">Een commit zet de bestanden online.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -85,30 +91,30 @@
 
 		<!-- vraag 3-->
 		<div class="vraagBalk">
-			Wat is geen taak van de leider (in een klein project)?
+			Welk onderdeel is niet cruciaal in een verslag?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">Mensen informeren over hun werk.
+					<label class="container">een logboek
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Geld en tijd regelen.
+					<label class="container">de resultaten
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Zorgen dat iedereen relevant werk heeft.
+					<label class="container">een filmpje
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Het project documenteren.
+					<label class="container">de werking van het product
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -121,30 +127,30 @@
 
 		<!-- vraag 4-->
 		<div class="vraagBalk">
-			Agile gaat niet over …
+			Wat is geen goed project voor informatica (op school)?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">kosten besparen
+					<label class="container">een website maken
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">een beter product realiseren
+					<label class="container">een arduino voertuig maken
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">zorgen voor duidelijkheid
+					<label class="container">onderzoeken hoe een CPU werkt
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">op schema blijven
+					<label class="container">zelf een programma schrijven
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -154,79 +160,6 @@
 		<div class="uitleg">
 
 		</div>
-
-		<!-- vraag 5-->
-		<div class="vraagBalk">
-			User stories zijn …
-		</div>
-		<div class="antwoorden">
-			<ul>
-				<li>
-					<label class="container">feedbackberichten van de klant
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">features
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">dingen die nog gedaan moeten worden
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">verhalen van tevreden klanten
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-			</ul>
-		</div>
-		<div class="uitleg">
-
-		</div>
-
-		<!-- vraag 6-->
-		<div class="vraagBalk">
-			Wat is een burn-down chart?
-		</div>
-		<div class="antwoorden">
-			<ul>
-				<li>
-					<label class="container">een te doen lijst
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">een overzicht van hoeveel werk nog over is
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">de hoeveelheid geld dat over is
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">een hulpmiddel om af te vallen
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-			</ul>
-		</div>
-		<div class="uitleg">
-
-		</div>
-
 	</div>
 
 	<input type="submit" value="controleer" class="controleerAntwoordButton"/>

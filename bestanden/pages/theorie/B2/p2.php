@@ -6,7 +6,7 @@ include('../../../components/headerChapter.php');
 
 	<div class="title-small">
 		<h2>
-			B2 §2 Hoe worden gegevens bijgehouden?
+			B2 §2 JS basis deel 1
 		</h2>
 	 </div>
 
@@ -37,6 +37,12 @@ include('../../../components/headerChapter.php');
 				</a></span>
 			</div>
 
+			<div class="ptile">
+				<span class="ptile-content"><a href="p5.php">
+					§5
+				</a></span>
+			</div>
+
 		</div>
 	</div>
 
@@ -48,14 +54,79 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content">
+			<p>In deze paragraaf ga je kennismaken met JS. Om JS te kunnen gebruiken heb je niet meer nodig dan een tekstbewerker en een browser. Als je al Atom gebruikt is het ook hier erg handig voor. Als je meer wilt weten dan dat hier behandeld wordt kun je altijd zoeken op <a href="https://www.w3schools.com/js/default.asp.">https://www.w3schools.com/js/default.asp</a>.</p>
 
-			<p>Hoe worden gegevens van jou eigenlijk bijgehouden?</p>
+			<p>Er zijn meerdere manieren om de JS code toe te voegen aan een webpagina. De standard is een vorm van een external include, dit betekent dat het in een apart bestand staat, los van eventuele HTML. Het liefst zetten we deze external include ook nog op het eind van een pagina. Op die manier kan de gebruiker eerst al de inhoud van de pagina zien en na even te wachten ook de interactie gebruiken. De pagina lijkt dan sneller te zijn, terwijl het eigenlijk even lang zal laden. Een voorbeeld van zo’n soort include is:</p>
 
-			<p>De meeste gegevens worden opgeslagen in (tabellen van) een database. Het voordeel daarvan is dat de eigenaar van een site altijd bij de gegevens kan en zo veel kan opslaan als gewenst is. Het opslaan op een database is ook erg goedkoop, de meeste informatie is niet meer dan een beetje tekst. Je kunt dus makkelijk gegevens bijhouden van duizenden en misschien wel miljoenen mensen op een schijf van €100. Het ligt er natuurlijk ook aan hoeveel je op wilt slaan en voor hoelang. De gegevens van een database zijn gebruikelijk gekoppeld aan een account.</p>
+			<pre><code>&lt;html>
+  &lt;head>
+    &lt;meta charset="UTF-8" />
+  &lt;/head>
+  &lt;body>
+    &lt;header>
 
-			<p>Een andere mogelijkheid is het gebruik van cookies. Cookies zijn kleine tekstbestanden die bij de gebruiker van een site opgeslagen worden. De meeste informatie die op een database staat zou ook op een cookie kunnen staan. Een nadeel van het gebruik van cookies is dat de gebruiker ze zelf kan verwijderen en aanpassen. Een cookie is immers gewoon een tekst bestandje dat op een apparaat staat. De inhoud ervan kan dus gemanipuleerd worden. Het voordeel van cookies is dat het per apparaat gegevens opslaat en niet per account. Je hoeft dus niet in te loggen om de gegevens te ‘delen’. Verder heeft een cookie een maximum grote (nu 4093bytes), je kunt er dus niet heel veel in opslaan. Het is wel weer mogelijk om eer meerdere aan te maken.</p>
+    &lt;/header>
+    &lt;p>
+      JS external include
+    &lt;/p>
 
-			<p>Cookies en databases worden ook vaak gecombineerd. Zo combineer je de voordelen van beide systemen. Je kunt bijvoorbeeld een cookie maken die gekoppeld is aan de database, op die manier kun je het apparaat en account herkennen zonder beveiligingsproblemen. De cookie slaat dan bijvoorbeeld het volgende op: de aanmaakdatum, een ID en het IP-adres.</p>
+    &lt;footer>
+
+    &lt;/footer>
+
+    &lt;script src="JS_LOCATIE">&lt;/script>
+  &lt;/body>
+&lt;/html></code></pre>
+
+			<p>Je ziet onderdaan <code>&lt;script src="JS_LOCATIE">&lt;/script></code> staan, dit is de regel die zorgt voor het inladen van de JS code. Je kunt vervolgens een apart bestand aanmaken dat eindigd met .js en hierin jouw JS gaan schrijven.</p>
+
+			<p>Je kunt testen of jouw include werkt door in het JS bestand <code>alert('test');</code> te plaatsen. Dit zou moeten zorgen voor een pop-up bericht.</p>
+
+			<p>Een van de belangrijkste onderdelen van JS is DOM traversal, dit is eigenlijk het selecteren van HTML onderdelen. DOM staat voor document object model. De DOM is de hiërarchie van de HTML pagina inclusief de attributen van elementen met hun waardes.</p>
+
+			<p>Een voorbeeld van een (simpel) DOM is het volgende:</p>
+
+			<p>Je ziet dat het document zelf boven staat, met daarin <html>, alle andere elementen vallen daar weer onder. Alles dat in &lt;body> staat zal daar dus ook in de DOM te vinden zijn. Veel elementen hebben ook nog inhoud of attributen en deze zijn ook weer terug te vinden in het DOM.</p>
+
+			<img src="afbeeldingen/DOM.svg" />
+
+			<p>Met JS ga je gebruik maken van het DOM om elementen te veranderen of informatie eruit te halen. Dit kan op verschillende manieren. De makkelijkste manieren zijn via het ID en de class, deze ken je hopelijk nog van jouw gebruik van CSS.</p>
+
+			<p>Om via een ID een element op te halen gebruik je:</p>
+
+			<pre><code>document.getElementById(“ID”)</code></pre>
+
+			<p>Om het via een class te doen gebruik je:</p>
+
+			<pre><code>document.getElementByClass(“CLASS”)</code></pre>
+
+			<p>Als je het gewenste element hebt opgehaald kun je hier informatie uithalen of aanpassen. Per attribuut van een HTML element vereist dit andere code. Een paar veel gebruikte volgen.</p>
+
+			<p>Het ophalen van tekst via:</p>
+
+			<p>innerText</p>
+
+			<p>Een voorbeeld is:</p>
+
+			<pre><code>Content = document.getElementById(“formulier”).innerText;</code></pre>
+
+			<p>Het toevoegen van een class via:</p>
+
+			<p>classList.add(‘CLASS’)</p>
+
+			<p>Een voorbeeld is:</p>
+
+			<pre><code>document.getElementById(“element”).classList.add(‘Class’);</code></pre>
+
+			<p>Het verwijderen van een class via:</p>
+
+			<p>classList.remove(‘CLASS’)</p>
+
+			<p>Een voorbeeld is:</p>
+
+			<pre><code>document.getElementById(“element”).classList.remove(‘Class’);</code></pre>
+
+			<p>Je ziet dus steeds ELEMENT.METHODE als je met het DOM werkt in JS. Let er ook op dat bij JS op het eind van de regel een ; gebruikt wordt.</p>
 
 		</div>
 
@@ -67,7 +138,11 @@ include('../../../components/headerChapter.php');
 
 		<div class="theorie-content">
 			<ol>
-				<li>Maak een overzicht van minimaal 4 kenmerken/eigenschappen van cookies en databases.</li>
+				<li>Wat staat in het DOM?</li>
+				<li>Hoe voeg je JS het beste toe aan jouw HTML bestand?</li>
+				<li>Hoe haal je een element met als ID de waarde 3 op met JS?</li>
+				<li>Hoe pas je de inhoud van een &lt;p> met als ID de waarde p aan naar “JS”?</li>
+				<li>Maak een HTML bestand met daarin 3 &lt;p> en stel de inhoud ervan in met JS.</li>
 			</ol>
 		</div>
 
@@ -79,47 +154,11 @@ include('../../../components/headerChapter.php');
 
 		<div class="theorie-content theorie-answers">
 			<ol>
-				<li>Een mogelijk antwoord is:
-					<div class="table-wrapper">
-						<table>
-							<tr>
-								<th>Eigenschap</th>
-								<th>Database</th>
-								<th>Cookie</th>
-							</tr>
-							<tr>
-								<td>Opslagcapaciteit</td>
-								<td>Groot</td>
-								<td>Klein</td>
-							</tr>
-							<tr>
-								<td>Veiligheid</td>
-								<td>Goed</td>
-								<td>Slecht</td>
-							</tr>
-							<tr>
-								<td>Beschikbaarheid</td>
-								<td>Goed</td>
-								<td>Slecht</td>
-							</tr>
-							<tr>
-								<td>Manier van herkenning</td>
-								<td>Account</td>
-								<td>Apparaat</td>
-							</tr>
-							<tr>
-								<td>Opslagstructuur</td>
-								<td>Tabellen</td>
-								<td>Tekst</td>
-							</tr>
-							<tr>
-								<td>Opslaglocatie</td>
-								<td>Server</td>
-								<td>Apparaat van gebruiker</td>
-							</tr>
-
-						</table>
-					</div>
+				<li>De hiërarchie van de HTML element, inclusief attributen en hun waardes.</li>
+				<li>Met <code>&lt;script src=”JS_LOCATION”>&lt;/script></code> net voor &lt;/body>.</li>
+				<li><code>document.getElementById(‘3’);</code></li>
+				<li><code>document.getElementById(‘3’).innerText = “JS”;</code></li>
+				<li>Eigen antwoord</li>
 			</ol>
 		</div>
 	</div>

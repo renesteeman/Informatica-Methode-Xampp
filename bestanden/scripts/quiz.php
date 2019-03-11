@@ -37,18 +37,18 @@
 	}
 
 	if($hoofdstuk == "H5"){
-		$juisteAntwoorden = ['<p>', 'links naar andere bestanden', '<a href=”LOCATIE”>LINK</a>', '../', '<!-- COMMENT -->', 'font-size:', 'background-color:', ':hover'];
-		$uitleg = ['&lt;p> is een onderdeel van de &lt;header>, &lt;body> en/of &lt;footer>', '&lt;head> wordt gebruikt om andere bestanden op te roepen en te laden en om algemene gegevens op te slaan. Er kan CSS in staat, maar dit hoort eigenlijk in een apart bestand.', 'Om een link toe te voegen gebruik je &lt;a href=”LOCATIE”>LINK&lt;/a>, met in de plaats van LINK een tekst naar keuze die iemand doorstuurt naar de pagina waar de link naar wijst.', 'Met ../ ga je een map omhoog.', 'In HTML gebruik je &lt;!-- COMMENT --> gebruik je voor zowel een single- als multiline comment.', 'Met font-size stel je de tekstgrote in.', 'De achtergrondkleur kun je instellen met background-color of background, maar background-color is het gebruikelijkst.', 'Met :hover verandert de stijl als je met de cursor over het element gaat.'];
-	}
-
-if($hoofdstuk == "H6"){
 		$juisteAntwoorden = ['Om de specificaties van een project op te stellen.', 'Er wordt gecontroleerd of alles werkt.', 'Het project documenteren.', 'kosten besparen', 'features', 'een overzicht van hoeveel werk nog over is'];
 		$uitleg = ['Het wordt gebruikt om de specificaties van een project op te stellen en het plannen voor te bereiden.', 'De controle van het product vind plaats op het eind van de ontwikkelfase, voordat de klant het product ontvangt.', 'De documentatie wordt door de administrateur geregeld.', 'Agile gaat om beter werken en een beter product maken, het is vaak goedkoper of winstgevender, maar dit is niet het doel van Agile.', 'User stories zijn de functies van het product, deze hoeven nog niet af te zijn.', 'Een burn-down chart geeft weer hoeveel werk (in uren) er nog over is en hoe dit (is) veranderd over een bepaalde tijd. Het is mogelijk dat dit als hulpmiddel om af te vallen werkt als de grafiek niet daalt.'];
 	}
 
-	if($hoofdstuk == "H7"){
+	if($hoofdstuk == "H6"){
 		$juisteAntwoorden = ['een overzicht te houden bij een project', 'Een push zet de bestanden online.', 'een filmpje', 'onderzoeken hoe een CPU werkt'];
 		$uitleg = ['Met Trello kun je lijsten maken van wat gedaan moet worden en je kunt er ook eventueel mee plannen, maar het is er niet voor bedoeld. Het kan ook gebruikt worden om anderen te informeren over de status van het project.', 'Een push zet de bestanden van de commits online.', 'De visie is optioneel, al is het wel aan te bevelen, eventueel als onderdeel van de inleiding.', 'Bij het onderzoeken van de werking van de CPU is er geen eindproduct en de omvang van het project is al snel of erg klein of het wordt te complex om goed uit te leggen wat je hebt geleerd. Het is wel een goed project om voor jezelf uit te voeren.'];
+	}
+
+	if($hoofdstuk == "B1"){
+		$juisteAntwoorden = ['<p>', 'links naar andere bestanden', '<a href=”LOCATIE”>LINK</a>', '../', '<!-- COMMENT -->', 'font-size:', 'background-color:', ':hover'];
+		$uitleg = ['&lt;p> is een onderdeel van de &lt;header>, &lt;body> en/of &lt;footer>', '&lt;head> wordt gebruikt om andere bestanden op te roepen en te laden en om algemene gegevens op te slaan. Er kan CSS in staat, maar dit hoort eigenlijk in een apart bestand.', 'Om een link toe te voegen gebruik je &lt;a href=”LOCATIE”>LINK&lt;/a>, met in de plaats van LINK een tekst naar keuze die iemand doorstuurt naar de pagina waar de link naar wijst.', 'Met ../ ga je een map omhoog.', 'In HTML gebruik je &lt;!-- COMMENT --> gebruik je voor zowel een single- als multiline comment.', 'Met font-size stel je de tekstgrote in.', 'De achtergrondkleur kun je instellen met background-color of background, maar background-color is het gebruikelijkst.', 'Met :hover verandert de stijl als je met de cursor over het element gaat.'];
 	}
 
 	$count = count($antwoorden);

@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H6 §3 Communicatie
+			H6 §3 Verslag
 		</h2>
 	</div>
 
@@ -45,17 +45,13 @@
 
 		<div class="theorie-content">
 			<p>
-				Communicatie in een project is zeer belangrijk. Als dit niet goed verloopt, zal de rest van het project ook vaak verkeerd gaan. Het is daarom het beste om een groep te maken in een chatapplicatie zodat iedereen op de hoogte gehouden kan worden. De leider van de groep zou dan elke week een korte samenvatting van de progressie samen met de volgende stappen kunnen sturen, op die manier weet iedereen wat er is gebeurd en wat gedaan moet worden. Zorg er wel voor dat deze groep strikt voor het project wordt gebruik, niet voor berichten die niks met het project te maken hebben.
+				Het maken van het verslag is misschien niet erg leuk, maar wel belangrijk (dit is de laatste keer dat je dit woord hoeft te verdragen). Er zijn een paar cruciale onderdelen van een verslag. Deze zijn: het logboek, het plan van aanpak, resultaten, de bronnenlijst en uitleg over jouw project. De aanvulling hierop zal erg afhankelijk zijn van het soort project dat je uitvoert.
 			</p>
 			<p>
-				Het is ook belangrijk dat de definitiefase goed is verlopen en iedereen ook een rol heeft in de groep. Samen met een goede planning weet dan iedereen wat de bedoeling is. Zorg dus ook ervoor dat alle groepsgenoten de bestanden kunnen inzien. In het volgende hoofdstuk zullen nog wat tips komen over hoe je dit het beste kunt doen voor projecten met veel bestanden, waar ook code bij zit. Bij een eenvoudig project kan er ook een gedeelde folder worden aangemaakt in bijvoorbeeld google drive of onedrive.
+				Je kunt bij het verslag een stuk maken over: wat er mis ging, wat je hebt geleerd, hoe de werkverdeling was, wat de termen beteken of welke programmeertalen zijn er gebruikt bij. Probeer op tijd aan het verslag te beginnen, vooral aan onderdelen zoals het plan van aanpak en het logboek. Probeer ook waar mogelijk afbeeldingen, grafieken en tabellen te gebruiken, dit zorgt ervoor dat het project er interessant uit ziet en duidelijk wordt. Zorg ervoor dat als het project code bevat dit terug te vinden is in het verslag of dat er een link staat naar de bestanden.
 			</p>
 			<p>
-				Als je een opdrachtgever hebt moet je natuurlijk daarmee goed contact onderhouden, zowel voor als tijdens het project.
-			</p>
-			<!-- newly added TODO check-->
-			<p>
-				Naast de communicatie met de personen waarmee je het project uitvoert is het bij een commercieel product ook erg belangrijk om (potentiele) klanten te informeren. Zorg ervoor dat zaken omtrend privacy en voorwaarden duidelijk zijn, hou hierbij rekening met de wet en regelgeving (zoals GDPR).
+				Voor een voorbeeldverslag kun je kijken bij de bonus van dit hoofdstuk, hierin staat een verslag over een neural network dat de toekomst kan voorspellen. Het project dat hierin beschreven gaat misschien een beetje ver voor de gemiddelde leerling, al is dit wel een (zelfstandig uitgevoerd) 5 havo project (en profiel werkstuk). NB: normaalgesproken staat bij het PvA (plan van aanpak) ook een datum bij elk item.
 			</p>
 		</div>
 	</div>

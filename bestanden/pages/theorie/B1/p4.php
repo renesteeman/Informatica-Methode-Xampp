@@ -1,51 +1,40 @@
 <?php
-include('../../../components/headerChapter.php');
+	include('../../../components/headerChapter.php');
 ?>
 
 <body>
 
 	<div class="title-small">
 		<h2>
-			B1 §4 Informatica en de maatschappij
+			B1 §4 De basis van CSS
 		</h2>
-	 </div>
+	</div>
 
 	<div class="bar-par-overview">
 		<div class="paragraph-tiles">
-
 			<div class="ptile">
 				<span class="ptile-content"><a href="p1.php">
 					§1
 				</a></span>
 			</div>
-
 			<div class="ptile">
 				<span class="ptile-content"><a href="p2.php">
 					§2
 				</a></span>
 			</div>
-
 			<div class="ptile">
 				<span class="ptile-content"><a href="p3.php">
 					§3
 				</a></span>
 			</div>
-
 			<div class="ptile">
 				<span class="ptile-content"><a href="p4.php">
 					§4
 				</a></span>
 			</div>
-
 			<div class="ptile">
 				<span class="ptile-content"><a href="p5.php">
 					§5
-				</a></span>
-			</div>
-
-			<div class="ptile">
-				<span class="ptile-content"><a href="p6.php">
-					§6
 				</a></span>
 			</div>
 
@@ -60,18 +49,54 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content">
-
 			<p>
-				Je hebt nu gezien dat ook bij informatica keuzes gemaakt moeten worden die een invloed hebben op de maatschappij. Deze paragraaf gaan we verder met dit onderwerp aan de hand van een paar voorbeelden.
+				In deze paragraaf ga je de basis van CSS (cascading style sheets) leren. CSS zorgt voor de opmaak van de pagina, dus hoe het eruit ziet. Het is het beste om een apart css bestand aan te maken die bij de html gaat.
 			</p>
 			<p>
-				Het internet heeft de wereld flink veranderd en is mogelijk geweest door de vele ontwikkelingen op het gebied van informatica. Waar voorheen mensen nog zaken moesten opzoeken in boeken of iemand moesten bellen is er vandaag het internet. Het zorgt ervoor dat je makkelijker met mensen kunt communiceren en snel iets kunt opzoeken.
+				Om te leren hoe je CSS kunt gebruiken is het het makkelijkst om in HTML een paar &lt;div> te gebruiken. Bij de CSS verwijs je hierna terug naar die &lt;div>.  Om ze apart ‘aan te spreken’ geven we de &lt;div> een id, dit is naam die alleen voor dat element wordt gebruikt. Een voorbeeld is: &lt;div id=”div1”>&lt;/div>. Om naar de CSS te verwijzen in het HTML-bestand (zodat de CSS geladen wordt) kun je in de &lt;head> &lt;link rel="stylesheet" href="test.css"> te plaatsen. Als nu het HTML bestand geladen wordt, wordt ook de CSS geladen en toegepast. Het CSS bestand noemen we test.css.
 			</p>
 			<p>
-				Social media hebben ook een grote invloed op de maatschappij. Je kunt nu zien waar iemand vorige week geweest is, hoe zijn laatste vakantie was of wat er nu actueel is. Aan een kant zorgt het ervoor dat mensen beter met elkaar verbonden zijn en informatie meer mensen kan bereiken. Aan de andere kant raken er mensen verslaafd aan of worden er depresief door en ook privacy heeft er flink onder te leiden. De cultuur is ook veranderd door sociale media. Sommige mensen maken bijvoorbeeld een foto en delen deze online als ze ergen heen gaan of ze delen verhalen over wat ze hebben meegemaakt met miljarden mensen. Sociale media kan ook gebruikt worden om jouw mening te delen en actie te voeren, denk bijvoorbeeld aan de 'me too' beweging.
+				Om in de CSS naar een id te verwijzen (van de HTML) gebruik je # en voor een class '.' (alleen de punt) .Een class gebruik je als een element vaker op een pagina hebt en het steeds dezelfde stijl wilt geven. In de HTML kun je dan i.p.v. id=”” class=”” gebruiken.
 			</p>
 			<p>
-				Je ziet dat informatica grote invloed kan hebben op de maatschappij en dat dit zowel goed als slecht kan zijn. Het is dus belangrijk om goed na te denken over wat de gevolgen kunnen zijn van ontwikkelingen waar jij misschien wel aan gaat meewerken.
+				In de CSS gaan we nu de eerste div aanpassen. Het is momenteel nog niet te zien (als er geen tekst in staat), dit kunnen we veranderen door de volgende code als CSS te gebruiken:
+			</p>
+			<p>
+<pre><code>#div1
+	Background-color: red;
+	Width: 200px;
+	Height: 200px;
+</code></pre>
+			</p>
+			<p>
+				Dit zal de div een rode (achtergrond) kleur geven en een breedte en hoogte van 200px. Het is ook mogelijk om een kleur preciezer in te stellen met RGB of hex waarden een paar voorbeelden hiervan zijn te vinden op <a href="https://www.w3schools.com/css/css_colors.asp">https://www.w3schools.com/css/css_colors.asp</a>.
+			  Zelf maak ik vooral gebruik van %, em en rem. % gebruikt een percentage van het element waar het onder valt en 'em' kijkt naar de grote van de tekst. Rem staat voor root em, het gebruikt dus de tekstgrote van de 'root', oftewel het HTML element zelf.
+			</p>
+			<p>
+				Er zijn ook meerdere manier om maten aan te duiden, px is een manier, maar dit werkt niet goed als je een site zou willen maken die zich aanpast op verschillende apparaten. Voor meer informatie hierover kun je op <a href="https://www.w3schools.com/cssref/css_units.asp">https://www.w3schools.com/cssref/css_units.asp</a>.
+			</p>
+			<p>
+				Stel je hebt wat tekst in de div staan en vindt het iets te klein, dan kun je de tekst vergroten met de volgende code:
+			</p>
+			<p>
+<pre><code>#div
+	Background-color: red;
+	Width: 200px;
+	Height: 200px;
+	Font-size: 200%;
+</code></pre>
+			</p>
+			<p>
+				Om een afgeronde rand aan de &lt;div> te krijgen kun je gebruik maken van border-radius zoals in het voorbeeld:
+			</p>
+			<p>
+<pre><code>#div
+	Background-color: red;
+	Width: 200px;
+	Height: 200px;
+	Font-size: 200%;
+	Border-radius: 6px;
+</code></pre>
 			</p>
 
 		</div>
@@ -83,30 +108,19 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content">
+
 			<ol>
 				<li>
-					Wat vind je zelf van de invloed van informatica op de cultuur?
+					Ga verder met de pagina van de vorige paragraaf. Maak nu de &lt;div> zo breed als de pagina en zet er tekst in, verander de kleur van de link, voeg een rand toe aan de &lt;img> en zet voor de &lt;li> een ander teken.
 				</li>
 			</ol>
+
 		</div>
 
-		<div class="bar-s">
-			<h3>
-				Antwoorden
-			</h3>
-		</div>
-
-		<div class="theorie-content theorie-answers">
-			<ol>
-				<li>
-					Eigen antwoord
-				</li>
-			</ol>
-		</div>
 	</div>
 
 	<?php
-		include('../../../components/footerChapter.php');
+	include('../../../components/footerChapter.php');
 	?>
 
 </body>

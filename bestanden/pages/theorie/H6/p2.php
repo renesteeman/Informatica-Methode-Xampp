@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H6 §2 Rollen
+			H6 §2 Github
 		</h2>
 	</div>
 
@@ -45,13 +45,101 @@
 
 		<div class="theorie-content">
 			<p>
-				Als je een project uitvoert in een team, dan zullen er rollen moeten worden verdeeld. Dit zal bij een klein project meestal: developer, leider, designer of administrateur zijn. De developer is de persoon die voornamelijk zal programmeren, de leider stuurt iedereen aan en zorgt voor een planning, de designer zorgt voor hoe het product eruit zal zien en de administrateur doet al het papierwerk (denk aan verslagen).
+				Git is een handige tool voor versiebeheer van code. Het is het makkelijkst te gebruiken met github in combinatie met een GUI (graphical user interface). Je kunt via dit systeem bestanden opslaan en ook terug gaan naar hoe bestanden in het verleden uitzagen (of hoe verwijderde bestanden eruit zagen). Zo raak je nooit meer iets kwijt en kunnen anderen makkelijk de bestanden vinden en samenwerken. Een voorbeeld van een github pagina is <a href="https://github.com/renesteeman/Informatica-Methode-Xampp">https://github.com/renesteeman/Informatica-Methode-Xampp</a>, dit is de pagina dat voor het maken van deze methode is gebruikt. In de bonusparagrafen is weer te vinden hoe dit geïnstalleerd kan worden. Als het geïnstalleerd is kun je nu verder gaan.
 			</p>
 			<p>
-				Bij een groter project komen er meer dingen bij kijken en zijn er dus ook meer rollen nodig, mensen zullen meer gespecialiseerd werken in plaats van aan een groep kleinere taken. Rollen die er dan nodig zijn zullen ook: tester, brononderzoeker, marketer (persoon die de marketing regelt), human resource manager, enz. kunnen omvatten.
+				<ol>
+					<li>
+						Ga naar jouw  github pagina
+					</li>
+					<li>
+						Klik op Repositories (bovenaan)
+					</li>
+					<li>
+						Klik op New
+					</li>
+					<li>
+						Vul de gegevens voor jouw repo in
+					</li>
+					<li>
+						Klik op create
+					</li>
+					<li>
+						Ga naar sourcetree
+					</li>
+					<li>
+						Klik op Remote
+					</li>
+					<li>
+						Klik op add ccount
+					</li>
+					<li>
+						Kies GitHub als hosting service
+					</li>
+					<li>
+						Kies basic authentication
+					</li>
+					<li>
+						Vul jouw Github username in
+					</li>
+					<li>
+						Klik op refresh password en vul jouw Github wachtwoord in
+					</li>
+					<li>
+						Klik op oke
+					</li>
+					<li>
+						Selecteer het aangemaakte project (dat je via GitHub hebt aangemaakt)
+					</li>
+					<li>
+						Klik op Clone
+					</li>
+					<li>
+						Voer een locatie in en Clone (deze folder moet leeg zijn)
+					</li>
+					<li>
+						Vul nu de details in voor jouw commits (de ‘updates’ voor het project). Op het moment waarop deze handleiding is geschreven was er een bug waardoor je na de foutmelding ‘Wrong email format’ nog eens op ok moest klikken (zonder iets te hoeven wijzigen).
+					</li>
+					<li>
+						Maak een bestand aan in de geselecteerde folder (het maakt niet uit wat voor een bestand).
+					</li>
+					<li>
+						Ga terug naar het project in sourcetree en klik op ‘Stage All’ (terwijl je in het File Status tab zit). Dit zet het bestand klaar om als update bij het project te komen.
+					</li>
+					<li>
+						Maak een beschrijving voor jouw commit (de update), dit kun je invoeren in het tekstveld onderaan.
+					</li>
+					<li>
+						Klik op commit
+					</li>
+					<li>
+						De update staat nu klaar voor het project en is lokaal opgeslagen. De update staat dus op dit apparaat.
+					</li>
+					<li>
+						Om de update live te zetten op github.com moet je op Push klikken, dit staat in de balk bovenaan.
+					</li>
+					<li>
+						Klik op de checkbox onder ‘Push?’
+					</li>
+					<li>
+						Klik op Push
+					</li>
+					<li>
+						Log in met GitHub
+					</li>
+					<li>
+						De nieuwe versie van het project staat nu online!
+					</li>
+				</ol>
 			</p>
 			<p>
-				Een rol die altijd zeer belangrijk is, is de leider. Deze persoon zal moeten zorgen dat iedereen in het team weet wat gedaan moet worden en voor wanneer. De leider moet ook de grote beslissingen maken en proberen de groep bij elkaar te houden. Het is niet altijd een baan die in dank af zal worden genomen, maar zonder leider is een project haast onmogelijk.
+				Je kunt via het tabblad Log/History (onderaan) de geschiedenis van het project zien per commit (update). Om weer een Push uit te voeren moet je dan terug gaan naar het tabblad File Status. Om de handeling voor te pushen over te slaan kun je ook bij de commit op ‘Push changes immediately to x’ aanvinken (x is standaard origin/master). De commit wordt dan automatisch gepushed.
+			</p>
+			<p>
+				Als het project wordt bijgewerkt door iemand anders of via een andere manier moet je voor de push een pull uitvoeren. Dit haalt de nieuwe eerst op (zorg dus ervoor dat je een kopie maakt van jouw aanpassingen zodat ze niet verloren gaan).
+			</p>
+			<p>
+				Als je met een groep het project deelt is het handig om via de github pagina van het project de groepsleider collaborators (‘leden’) toe te laten voegen. Dit kan door naar settings te gaan en dan collaborators. Hier kun je een collaborator toevoegen (deze moet eerst een account hebben). Deze persoon ontvangt dan een mail waarmee hij toegang krijgt tot het project.
 			</p>
 		</div>
 
@@ -65,15 +153,11 @@
 
 			<ol>
 				<li>
-					Welke rol past het best bij jou?
-				</li>
-				<li>
-					Welke rol vinden anderen het best bij jou passen?
+					Maak zelf een github project aan en zet er een bestand in.
 				</li>
 			</ol>
 
 		</div>
-
 	</div>
 
 	<?php

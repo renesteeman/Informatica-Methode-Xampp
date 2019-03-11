@@ -331,7 +331,7 @@
 									}
 
 									//get more info progression
-									$sql3 = "SELECT H1, H2, H3, H4, H5, H6, H7 FROM `progressie` WHERE userid='$Cid'";
+									$sql3 = "SELECT * FROM `progressie` WHERE userid='$Cid'";
 
 									//get/calculate completed chapters
 									if (mysqli_query($conn, $sql3)) {
@@ -341,13 +341,22 @@
 											$hoofdstukken = [];
 
 											while($row3 = mysqli_fetch_assoc($result3)) {
+												//TODO make more flexible
 												$hoofdstukken['H1'] = $row3["H1"];
 												$hoofdstukken['H2'] = $row3["H2"];
 												$hoofdstukken['H3'] = $row3["H3"];
 												$hoofdstukken['H4'] = $row3["H4"];
 												$hoofdstukken['H5'] = $row3["H5"];
 												$hoofdstukken['H6'] = $row3["H6"];
-												$hoofdstukken['H7'] = $row3["H7"];
+
+												$hoofdstukken['V1'] = $row3["V1"];
+												$hoofdstukken['V2'] = $row3["V2"];
+												$hoofdstukken['V3'] = $row3["V3"];
+												$hoofdstukken['V4'] = $row3["V4"];
+												$hoofdstukken['V5'] = $row3["V5"];
+
+												$hoofdstukken['B1'] = $row3["B1"];
+												$hoofdstukken['B2'] = $row3["B2"];
 											}
 
 											$count2 = count($hoofdstukken);

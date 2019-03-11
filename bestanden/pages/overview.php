@@ -338,31 +338,12 @@
 										$result3 = mysqli_query($conn, $sql3);
 
 										if(mysqli_num_rows($result3)>0){
-											$hoofdstukken = [];
-
-											while($row3 = mysqli_fetch_assoc($result3)) {
-												//TODO make more flexible
-												$hoofdstukken['H1'] = $row3["H1"];
-												$hoofdstukken['H2'] = $row3["H2"];
-												$hoofdstukken['H3'] = $row3["H3"];
-												$hoofdstukken['H4'] = $row3["H4"];
-												$hoofdstukken['H5'] = $row3["H5"];
-												$hoofdstukken['H6'] = $row3["H6"];
-
-												$hoofdstukken['V1'] = $row3["V1"];
-												$hoofdstukken['V2'] = $row3["V2"];
-												$hoofdstukken['V3'] = $row3["V3"];
-												$hoofdstukken['V4'] = $row3["V4"];
-												$hoofdstukken['V5'] = $row3["V5"];
-
-												$hoofdstukken['B1'] = $row3["B1"];
-												$hoofdstukken['B2'] = $row3["B2"];
-											}
-
-											$count2 = count($hoofdstukken);
-											for($i=1; $i<$count2; $i++){
-												if($hoofdstukken['H'.$i]){
-													$hoofdstuk = $hoofdstukken['H'.$i];
+											while($hoofdstukken = mysqli_fetch_assoc($result3)) {
+												$count2 = count($hoofdstukken);
+												for($i=1; $i<$count2; $i++){
+													$hoofstukkenKeys = array_keys($hoofdstukken);
+													$hoofdstuk = $hoofdstukken[$hoofstukkenKeys[$i]];
+													//TODO remove length char at start of string
 													$hoofdstukLength = $hoofdstuk[0];
 													$hoofdstuk = substr($hoofdstuk, 1);
 													$hoofdstukAfTotaal = 0;
@@ -372,7 +353,7 @@
 														}
 													}
 													if($hoofdstukAfTotaal == $hoofdstukLength){
-														$hoofdstukkenAf['H'.$i] = 1;
+														$hoofdstukkenAf[$hoofstukkenKeys[$i]] = 1;
 													}
 												}
 											}
@@ -400,9 +381,11 @@
 										$count3 = count($chapterToBeMade);
 										for($i=0; $i<$count3-1;$i++){
 											$shouldBeComplete = $chapterToBeMade[$i];
-											$shouldBeComplete = substr($shouldBeComplete, 1);
 
-											if(!array_key_exists("H".$shouldBeComplete, $hoofdstukkenAf)){
+											print $shouldBeComplete;
+											print_r($hoofdstukkenAf);
+
+											if(!array_key_exists($shouldBeComplete, $hoofdstukkenAf)){
 												$onSchedule = 0;
 											}
 										}

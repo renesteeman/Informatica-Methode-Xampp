@@ -72,7 +72,6 @@ $(document).ready(function(){
 			});
 
 			jqXHR.done(function(msg) {
-				console.log(msg);
 				msg = JSON.parse(msg);
 				var result = msg.result;
 				var right = msg.right;

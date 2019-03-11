@@ -18,9 +18,7 @@ $(document).ready(function(){
     });
 
     jqXHR.done(function(response) {
-      console.log(response);
       response = JSON.parse(response);
-
       window.alert(response.msg);
 
       //if there isn't an error, redirect, else stay on page

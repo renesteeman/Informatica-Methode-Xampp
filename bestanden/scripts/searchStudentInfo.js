@@ -25,14 +25,12 @@ $(document).ready(function(){
     }
 
 		jqXHR.done(function(response) {
-      console.log(response);
       response = JSON.parse(response);
       if(response.error.length > 0){
         alert(response.error);
       }
 
       info = response.info;
-      console.log(info);
       if(info['naam'] != ""){
         $('.searchResultNaam').text(info['naam']);
       } else {

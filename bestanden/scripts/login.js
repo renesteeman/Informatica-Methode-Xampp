@@ -31,9 +31,6 @@ $(document).ready(function(){
 		});
 
 		jqXHR.done(function(msg) {
-
-			console.log(msg);
-
 			if(msg.length == 0){
 				window.location.href = '../index.php';
 			} else if (includes(msg, 'updated attempts')){

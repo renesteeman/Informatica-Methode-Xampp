@@ -381,10 +381,7 @@
 										$count3 = count($chapterToBeMade);
 										for($i=0; $i<$count3-1;$i++){
 											$shouldBeComplete = $chapterToBeMade[$i];
-
-											print $shouldBeComplete;
-											print_r($hoofdstukkenAf);
-
+											
 											if(!array_key_exists($shouldBeComplete, $hoofdstukkenAf)){
 												$onSchedule = 0;
 											}

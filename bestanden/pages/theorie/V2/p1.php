@@ -53,7 +53,7 @@ include('../../../components/headerChapter.php');
 
 			<p>Wat wordt bijgehouden?</p>
 
-			<p>Op het internet wordt heel veel informatie over jouw opgeslagen, het hangt erg af van de websites die bezoekt wat er precies bijgehouden wordt. Een voorbeeld is jouw Inforca account, daarop wordt het volgende bijgehouden (soms als ‘lege’ waarde): ID, naam, gebruikersnaam, school, functie, klas, account aanmaakdatum, account verloopdatum, groepsnaam, groepsrol, email, mislukte inlogpogingen, quiz resultaten en theorie progressie. Deze gegevens zijn allemaal aan jouw account gekoppeld en staan op een database.</p>
+			<p>Op het internet wordt heel veel informatie over jouw opgeslagen, het hangt erg af van de websites die bezoekt wat er precies bijgehouden wordt. Een voorbeeld is jouw Inforca account, daarop wordt het volgende bijgehouden (soms als ‘lege’ waarde): ID, naam, gebruikersnaam, school, functie, klas, account aanmaakdatum, account verloopdatum, groepsnaam, groepsrol, email, mislukte inlogpogingen, quiz resultaten en theorie progressie. Deze gegevens zijn allemaal aan jouw account gekoppeld en staan in een database.</p>
 
 			<p>Andere sites houden bijvoorbeeld bij: wat je leuk vind, welke apparaat je gebruikt, waar je bent, hoe oud je bent en hoelang je online actief bent. Er is nog veel meer te bedenken en het kan soms best eng zijn wat allemaal bijgehouden wordt. Je weet vaak niet wie het bijhoudt, hoe en waarom.</p>
 

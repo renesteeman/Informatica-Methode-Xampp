@@ -46,6 +46,16 @@
 		$uitleg = ['Met Trello kun je lijsten maken van wat gedaan moet worden en je kunt er ook eventueel mee plannen, maar het is er niet voor bedoeld. Het kan ook gebruikt worden om anderen te informeren over de status van het project.', 'Een push zet de bestanden van de commits online.', 'De visie is optioneel, al is het wel aan te bevelen, eventueel als onderdeel van de inleiding.', 'Bij het onderzoeken van de werking van de CPU is er geen eindproduct en de omvang van het project is al snel of erg klein of het wordt te complex om goed uit te leggen wat je hebt geleerd. Het is wel een goed project om voor jezelf uit te voeren.'];
 	}
 
+	if($hoofdstuk == "V1"){
+		$juisteAntwoorden = ['Zelfbewust zijn', 'Ja', 'Ja', 'Het berekenen van statisch relevante informatie.', 'Een verzameling van bekende gegevens', 'Y = 100x + 1*10^5'];
+		$uitleg = ['Zodra een AI zelfbewust wordt is het een strong AI en geen weak AI.', 'Deep learning valt onder machine learning.', 'Een neural network valt onder deep learning en dus ook onder machine learning.', 'Het berekenen van statisch relevante informatie kan ook goed zonder AI. Een AI zal hier geen toegevoegde waarde hebben.', 'Een dataset is een verzameling van bekende gegevens', 'Y=ax+b, met a als richtingscoëfficiënt en b als startpunt. Const is hier b en size is hier a'];
+	}
+
+	if($hoofdstuk == "V2"){
+		$juisteAntwoorden = ['Een tekstbestand op een apparaat dat via een website aangemaakt en opgehaald kan worden.', 'Ze nemen veel ruimte in beslag', 'Het blokkeren van reclame'];
+		$uitleg = ['Een cookie is een tekstbestandje dat op een apparaat kan worden opgeslagen en gelezen door websites.', 'Een cookie is een heel klein bestand, zo klein zelfs dat de grote ervan verwaarloosbaar is.', 'Zelfs als reclame geblokkeerd wordt houdt dit het afstaan van informatie over jou en jouw apparaat niet tegen.'];
+	}
+
 	if($hoofdstuk == "B1"){
 		$juisteAntwoorden = ['<p>', 'links naar andere bestanden', '<a href=”LOCATIE”>LINK</a>', '../', '<!-- COMMENT -->', 'font-size:', 'background-color:', ':hover'];
 		$uitleg = ['&lt;p> is een onderdeel van de &lt;header>, &lt;body> en/of &lt;footer>', '&lt;head> wordt gebruikt om andere bestanden op te roepen en te laden en om algemene gegevens op te slaan. Er kan CSS in staat, maar dit hoort eigenlijk in een apart bestand.', 'Om een link toe te voegen gebruik je &lt;a href=”LOCATIE”>LINK&lt;/a>, met in de plaats van LINK een tekst naar keuze die iemand doorstuurt naar de pagina waar de link naar wijst.', 'Met ../ ga je een map omhoog.', 'In HTML gebruik je &lt;!-- COMMENT --> gebruik je voor zowel een single- als multiline comment.', 'Met font-size stel je de tekstgrote in.', 'De achtergrondkleur kun je instellen met background-color of background, maar background-color is het gebruikelijkst.', 'Met :hover verandert de stijl als je met de cursor over het element gaat.'];

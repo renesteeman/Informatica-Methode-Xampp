@@ -19,24 +19,30 @@
 	<div class="vragen">
 		<!-- vraag 1-->
 		<div class="vraagBalk">
-
+			Wat kan weak AI niet?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">6 ohm
+					<label class="container">Een auto zelfstandig besturen
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">0,2 ohm
+					<label class="container">Samenhang tussen data ontdekken
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">24 ohm
+					<label class="container">Zelfbewust zijn
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">Processen optimaliseren
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -49,30 +55,18 @@
 
 		<!-- vraag 2-->
 		<div class="vraagBalk">
-
+			Is deep learning een onderdeel van machine learning?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">8 ohm
+					<label class="container">Ja
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">2 ohm
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">4 ohm
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">0,5 ohm
+					<label class="container">Nee
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -85,18 +79,18 @@
 
 		<!-- vraag 3-->
 		<div class="vraagBalk">
-
+			Is een neural network een vorm van machine learning?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">waar
+					<label class="container">Ja
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">niet waar
+					<label class="container">Nee
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -109,18 +103,30 @@
 
 		<!-- vraag 4-->
 		<div class="vraagBalk">
-
+			Waar is een AI niet geschikt voor?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">waar
+					<label class="container">Het analyseren van beelden van beveiligingscamera’s om gevaarlijke situaties te ontdekken.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">niet waar
+					<label class="container">Het voorspellen van toekomstige waardes aan de hand van bekende data.
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">Het zo efficiënt mogelijk toepassen van compressie.
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">Het berekenen van statisch relevante informatie.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -133,30 +139,30 @@
 
 		<!-- vraag 5-->
 		<div class="vraagBalk">
-
+			Wat is de beste omschrijving van een dataset?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">0-100
+					<label class="container">Een verzameling van bekende gegevens
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">0-1
+					<label class="container">Een overzicht van belangrijke kenmerken
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">0-255
+					<label class="container">Een reeks getallen
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">-255-255
+					<label class="container">Een verzameling van bestanden
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -169,60 +175,30 @@
 
 		<!-- vraag 6-->
 		<div class="vraagBalk">
-
+			Welke rechte lijn kun je opstellen met de volgende gegevens: coef const = 1*10^5 en coef size = 100 met size als onafhankelijke variabele?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">met digitalWrite(pinNummer, HIGH)
+					<label class="container">Y = 1*10^5 + 100
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">digitalWrite(pinNummer, 1)
+					<label class="container">Y = 1*10^5x + 100x
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">digitalWrite(pinNummer, OUTPUT)
+					<label class="container">Y = 10^5x + 100
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">digitalWrite(pinNummer, 5)
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-			</ul>
-		</div>
-		<div class="uitleg">
-
-		</div>
-
-		<!-- vraag 7-->
-		<div class="vraagBalk">
-			
-		</div>
-		<div class="antwoorden">
-			<ul>
-				<li>
-					<label class="container">waar
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">niet waar
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">Dat ligt aan het arduino model.
+					<label class="container">Y = 100x + 1*10^5
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>

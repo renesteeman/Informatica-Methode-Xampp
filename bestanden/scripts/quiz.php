@@ -22,8 +22,8 @@
 	}
 
 	if($hoofdstuk == "H2"){
-		$juisteAntwoorden = ['S (schoon) ∩ bus = 1', 'M ∪ G', 7];
-		$uitleg = ['Alle schonen voertuigen en de bus samen vormen alle voertuigen en dus 1 (alles in de set).', 'Het moet zowel modulus = 0 opleveren als groter zijn dan 20. Het kan dus niet altijd een van de getallen zijn die voldoet aan modulus = 0 of groter is dan 20.', 'Het patroon is X, X, 5, Y, Y, 5. Als er dus iets achter de 5 komt wordt het daarna meteen herhaald.'];
+		$juisteAntwoorden = ['S (schoon) ∩ bus = 1', 'M ∪ G', 7, 'Een systeem waarmee processen worden vastgelegd.', 'Een structuur waaraan een geschreven iets moet voldoen om geldig te zijn.'];
+		$uitleg = ['Alle schonen voertuigen en de bus samen vormen alle voertuigen en dus 1 (alles in de set).', 'Het moet zowel modulus = 0 opleveren als groter zijn dan 20. Het kan dus niet altijd een van de getallen zijn die voldoet aan modulus = 0 of groter is dan 20.', 'Het patroon is X, X, 5, Y, Y, 5. Als er dus iets achter de 5 komt wordt het daarna meteen herhaald.', 'Zie paragraaf 5 voor de uitleg.', 'Grammatica is een groep regels die zowel de volgorde van tekens als de toegestaande tekens bepaald.'];
 	}
 
 	if($hoofdstuk == "H3"){

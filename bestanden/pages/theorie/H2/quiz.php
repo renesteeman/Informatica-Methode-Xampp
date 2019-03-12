@@ -79,7 +79,8 @@
 
 		<!-- vraag 3-->
 		<div class="vraagBalk">
-			6, 6, 5, 6, 6, 5, 7, x  Welk hoort in plaats van de x te staan?
+			Welk getal hoort in plaats van de x te staan in de reeks?
+			6, 6, 5, 6, 6, 5, 7, x
 		</div>
 		<div class="antwoorden">
 			<ul>
@@ -112,6 +113,80 @@
 		<div class="uitleg">
 
 		</div>
+
+		<!-- vraag 4-->
+		<div class="vraagBalk">
+			Wat is de beste omschrijving van een automaat zoals in dit hoofdstuk behandeld is?
+		</div>
+		<div class="antwoorden">
+			<ul>
+				<li>
+					<label class="container">Een apparaat dat nadat het in werking is gezet zonder tussenkomst handelingen verricht.
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">Een programma dat zelf taken kan uitvoeren.
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">Een systeem waarmee processen worden vastgelegd.
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">Een systeem dat zelf handelingen kan verrichten.
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+			</ul>
+		</div>
+		<div class="uitleg">
+
+		</div>
+
+		<!-- vraag 5-->
+		<div class="vraagBalk">
+			Wat is de beste omschrijving van grammatica zoals in dit hoofdstuk behandeld is?
+		</div>
+		<div class="antwoorden">
+			<ul>
+				<li>
+					<label class="container">Een afgesproken schrijfwijze van een taal.
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">Een structuur waaraan een geschreven iets moet voldoen om geldig te zijn.
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">Spelling
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">De volgorde waarin tekens moeten staan.
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+			</ul>
+		</div>
+		<div class="uitleg">
+
+		</div>
+
+
 	</div>
 
 	<input type="submit" value="controleer" class="controleerAntwoordButton"/>

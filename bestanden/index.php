@@ -263,6 +263,7 @@
 								<ul><a href="pages/theorie/V1/p4.php">§4 Informatica en de maatschappij</a></ul>
 								<ul><a href="pages/theorie/V1/p5.php">§5 Kunstmatige intelligentie</a></ul>
 								<ul><a href="pages/theorie/V1/p6.php">§6 Machine learning voorbeeld</a></ul>
+								<ul><a href="pages/theorie/V1/quiz.php">Quiz</a></ul>
 							</ol>
 						</div>
 					</div>
@@ -286,6 +287,7 @@
 								<ul><a href="pages/theorie/V2/p2.php">§2 Hoe worden gegevens bijgehouden?</a></ul>
 								<ul><a href="pages/theorie/V2/p3.php">§3 Hoe kun je jouw privacy verbeteren?</a></ul>
 								<ul><a href="pages/theorie/V2/p4.php">§4 Wie beschermt jouw privacy?</a></ul>
+								<ul><a href="pages/theorie/V2/quiz.php">Quiz</a></ul>
 							</ol>
 						</div>
 					</div>
@@ -310,6 +312,7 @@
 							<ul><a href="pages/theorie/V3/p3.php">§3 Communiceren met een database</a></ul>
 							<ul><a href="pages/theorie/V3/p4.php">§4 Verder met SQL</a></ul>
 							<ul><a href="pages/theorie/V3/installatieXAMPP.php">installatie XAMPP</a></ul>
+							<ul><a href="pages/theorie/V3/quiz.php">Quiz</a></ul>
 						</ol>
 					</div>
 				</div>
@@ -333,6 +336,7 @@
 							<ul><a href="pages/theorie/V4/p2.php">§2 Topologie</a></ul>
 							<ul><a href="pages/theorie/V4/p3.php">§3 Werking en gevaren</a></ul>
 							<ul><a href="pages/theorie/V4/p4.php">§4 Cloud</a></ul>
+							<ul><a href="pages/theorie/V4/quiz.php">Quiz</a></ul>
 						</ol>
 					</div>
 				</div>
@@ -356,6 +360,7 @@
 							<ul><a href="pages/theorie/V5/p2.php">§2 UI</a></ul>
 							<ul><a href="pages/theorie/V5/p3.php">§3 UI vervolg</a></ul>
 							<ul><a href="pages/theorie/V5/p4.php">§4 UX</a></ul>
+							<ul><a href="pages/theorie/V5/quiz.php">Quiz</a></ul>
 							</ol>
 						</div>
 					</div>
@@ -370,10 +375,6 @@
 			</div>
 
 			<div class="chapter-tiles">';
-
-
-
-			//////////////////////////////
 
 			if(chapterIsFinished('B1')){
 				echo '<div class="tile completed">';
@@ -419,6 +420,7 @@
 					<ul><a href="pages/theorie/B2/p3.php">§3 JS basis deel 2</a></ul>
 					<ul><a href="pages/theorie/B2/p4.php">§4 JS basis deel 3</a></ul>
 					<ul><a href="pages/theorie/B2/p5.php">§5 JS advanced</a></ul>
+					<ul><a href="pages/theorie/B2/quiz.php">Quiz</a></ul>
 				</ol>
 			</div>
 		</div>

@@ -215,6 +215,42 @@
 
 		</div>
 
+		<!-- vraag 7-->
+		<div class="vraagBalk">
+			Wat is de beste omschrijving van hoe video door een computer wordt ‘begrepen’?
+		</div>
+		<div class="antwoorden">
+			<ul>
+				<li>
+					<label class="container">Als een reeks RGB-waardes
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">Als een reeks afbeeldingen
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">Als een reeks letters
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">Als een reeks getallen uit het decimale stelsel
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+			</ul>
+		</div>
+		<div class="uitleg">
+
+		</div>
+
 	</div>
 
 	<input type="submit" value="controleer" class="controleerAntwoordButton"/>

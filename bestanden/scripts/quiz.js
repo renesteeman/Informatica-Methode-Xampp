@@ -32,7 +32,7 @@ $(document).ready(function(){
 
 		//klap uitleg niet uit als het nog niet getoond is, anders wel
 		$uitleg = $(this).nextAll(".uitleg").first();
-		if(uitleg.css("display") != "none"){
+		if($uitleg.css("display") != "none"){
 			$uitleg.slideToggle();
 		}
 

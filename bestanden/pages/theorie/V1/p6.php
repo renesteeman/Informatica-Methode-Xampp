@@ -110,7 +110,7 @@ include('../../../components/headerChapter.php');
 		<div class="theorie-content theorie-answers">
       <ol>
         <li>
-          Een aantal gegeven waardes die een bestand stand.
+          Een aantal gegeven waardes die een bestand staan.
         </li>
         <li>
           Lineaire regressie is een methode om een rechte lijn op te stellen dat zo dicht mogelijk langs alle gegeven punten komt.

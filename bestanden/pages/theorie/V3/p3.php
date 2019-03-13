@@ -52,9 +52,9 @@ include('../../../components/headerChapter.php');
   		<p>Laten we beginnen! We willen eerst iets in onze database zetten. Hiervoor gebruik je INSERT INTO tabel (veld1, veld2, veld3) VALUES (waarde1, waarde2, waarde3). Stel dat we in onze database iemand willen zetten met als gebruikersnaam “gebruiker” en als wachtwoord “wachtwoord” en geen email. We gebruiken dan INSERT INTO gebruikers (gebruikersnaam, wachtwoord) VALUES ('gebruiker', 'wachtwoord'). Je kunt dit uitvoeren door in phpMyAdmin naar jouw database te gaan en dan te klikken op SQL</p>
       <img src="./afbeeldingen/ExecuteSQL.png" />
 
-  		<p>en dan de query (de SQL opdracht) in te voeren</p>
+  		<p>en dan de query (de SQL opdracht) in te voeren.</p>
 
-  		<p>als je dan op “Go” klikt wordt er een rij aan jouw database toegevoegd. De code zet dus in de gebruikers tabel een rij met voor gebruikersnaam de waarde “gebruiker” en als wachtwoord de waarde “wachtwoord”. Er staan enkele aanhalingstekens om de waardes in SQL omdat het tekst is.</p>
+  		<p>Als je dan op “Go” klikt wordt er een rij aan jouw database toegevoegd. De code zet dus in de gebruikers tabel een rij met voor gebruikersnaam de waarde “gebruiker” en als wachtwoord de waarde “wachtwoord”. Er staan enkele aanhalingstekens om de waardes in SQL omdat het tekst is.</p>
 
   		<p>Het resultaat van de opdracht is te zien onder “Browse”.</p>
       <img src="./afbeeldingen/QueryResult.png" />
@@ -66,6 +66,10 @@ include('../../../components/headerChapter.php');
   		<p>Stel je wilt nu iemand terugvinden in jouw database, dan kun je hiervoor gebruikmaken van SELECT kolom FROM tabel WHERE voorwaarde. De kolom die na SELECT komt is dus het ‘antwoord’ dat je krijgt, het kunnen ook meerdere kolommen zijn. Als je alles van een rij wilt terugkrijgen kun je ook * invullen, dat staat voor ‘alles’. Als je iemand zoekt met als id de waarde 5 en je alles van die persoon wilt zien, dan gebruik je dus SELECT * FROM gebruikers WHERE id = 5. 5 is hier geen tekst, maar een getal, er hoeven dus geen aanhalingstekens omheen. Je kunt het * ook uitspreken als all of alles.</p>
 
   		<p>Om deze paragraaf af te sluiten gaan we een rij verwijderen. Dit doe je met: DELETE FROM tabel WHERE voorwaarde. Als we de gebruiker met id 5 willen verwijderen doen we dat met DELETE FROM gebruikers WHERE id = 5. Het is trouwens ook mogelijk om de keywords, oftewel de commando’s zoals SELECT, UPDATE en WHERE te schrijven zonder hoofdletters, al maken de hoofdletters duidelijker wat er gebeurt.</p>
+
+      <p>
+        Tip: SQL keywords, zoals SELECT en UPDATE zijn niet hoofdletter gevoelig.
+      </p>
 
     </div>
 

@@ -6,7 +6,7 @@ include('../../../components/headerChapter.php');
 
   <div class="title-small">
     <h2>
-    B4 §4 Verder met SQL
+      V3 §4 Verder met SQL
     </h2>
   </div>
 

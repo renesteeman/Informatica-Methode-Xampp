@@ -56,6 +56,11 @@
 		$uitleg = ['Een cookie is een tekstbestandje dat op een apparaat kan worden opgeslagen en gelezen door websites.', 'Een cookie is een heel klein bestand, zo klein zelfs dat de grote ervan verwaarloosbaar is.', 'Zelfs als reclame geblokkeerd wordt houdt dit het afstaan van informatie over jou en jouw apparaat niet tegen.'];
 	}
 
+	if($hoofdstuk == "V3"){
+		$juisteAntwoorden = ['Een database waar delen informatie wiskundig aan elkaar gekoppeld zijn', 'Het heeft geen waarde', 'Wat is niet geschikt om als primairy key te gebruiken in een database?', 'Nee', 'Ja'];
+		$uitleg = ['Een blockchain is een database die bestaat uit aan wiskundig elkaar gekoppelde blokken van informatie.', 'Het is blanco, dus heeft geen waarde.', 'De naam van een persoon is niet gegarandeerd uniek.', 'Om iets te verwijderen met behulp van SQL wordt de syntax DELETE FROM tabel WHERE voorwaarde', 'Het is geldig, want de SQL keywords zijn niet hoofdlettergevoelig.'];
+	}
+
 	if($hoofdstuk == "B1"){
 		$juisteAntwoorden = ['<p>', 'links naar andere bestanden', '<a href=”LOCATIE”>LINK</a>', '../', '<!-- COMMENT -->', 'font-size:', 'background-color:', ':hover'];
 		$uitleg = ['&lt;p> is een onderdeel van de &lt;header>, &lt;body> en/of &lt;footer>', '&lt;head> wordt gebruikt om andere bestanden op te roepen en te laden en om algemene gegevens op te slaan. Er kan CSS in staat, maar dit hoort eigenlijk in een apart bestand.', 'Om een link toe te voegen gebruik je &lt;a href=”LOCATIE”>LINK&lt;/a>, met in de plaats van LINK een tekst naar keuze die iemand doorstuurt naar de pagina waar de link naar wijst.', 'Met ../ ga je een map omhoog.', 'In HTML gebruik je &lt;!-- COMMENT --> gebruik je voor zowel een single- als multiline comment.', 'Met font-size stel je de tekstgrote in.', 'De achtergrondkleur kun je instellen met background-color of background, maar background-color is het gebruikelijkst.', 'Met :hover verandert de stijl als je met de cursor over het element gaat.'];

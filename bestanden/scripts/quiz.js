@@ -46,16 +46,15 @@ $(document).ready(function(){
 
 		var url = window.location.href;
 
-		var chapterLocation = url.search("H") + 1;
+		var chapterLocation = window.location.href;
+		chapterLocation = chapterLocation.replace('/quiz.php', '');
+		chapterLocation = chapterLocation.substr(chapterLocation.length - 3);
 
-		if(chapterLocation == 0){
-			var chapterLocation = url.search("B") + 1;
-			typeOfChapter = "B";
-		} else {
-			typeOfChapter = "H";
+		if(chapterLocation.indexOf('/') !== -1){
+			chapterLocation = chapterLocation.replace('/', '');
 		}
 
-		var chapter = typeOfChapter + url.charAt(chapterLocation);
+		var chapter = chapterLocation;
 
 		for(i=0; i<aantalVragenBeantwoord;i++){
 			var antwoord = $(this).prev().children('.antwoorden').find('input[type="checkbox"]:checked').parent().eq(i).text();

@@ -61,6 +61,11 @@
 		$uitleg = ['Een blockchain is een database die bestaat uit aan wiskundig elkaar gekoppelde blokken van informatie.', 'Het is blanco, dus heeft geen waarde.', 'De naam van een persoon is niet gegarandeerd uniek.', 'Om iets te verwijderen met behulp van SQL wordt de syntax DELETE FROM tabel WHERE voorwaarde', 'Het is geldig, want de SQL keywords zijn niet hoofdlettergevoelig.'];
 	}
 
+	if($hoofdstuk == "V4"){
+		$juisteAntwoorden = ['Niet waar', 'Niet waar', 'Niet waar', 'Encryptie', 'Een systeem voor het omzetten vaan een IP-adres in een MAC-adres', 'De controle over het systeem'];
+		$uitleg = ['Het heeft er 7.', 'Elk apparaat is met elkaar verbonden via een centrale verbinding, maar dus niet direct.', 'Bij een lagere laag wordt er meer data bij het originele bericht toegevoegd om het te kunnen verzenden.', 'Encryptie zorgt ervoor dat een verbinding beveiligd is door het onleesbaar maken van de data die erover vervoerd wordt voor iedereen die het niet kan terugvertalen.', 'DHCP zorgt voor het omzetten van IP- naar MAC-adressen en andersom', 'Bij het gebruik van de cloud heb je geen volledige controle over de hardware en soms ook niet over de software.'];
+	}
+
 	if($hoofdstuk == "B1"){
 		$juisteAntwoorden = ['<p>', 'links naar andere bestanden', '<a href=”LOCATIE”>LINK</a>', '../', '<!-- COMMENT -->', 'font-size:', 'background-color:', ':hover'];
 		$uitleg = ['&lt;p> is een onderdeel van de &lt;header>, &lt;body> en/of &lt;footer>', '&lt;head> wordt gebruikt om andere bestanden op te roepen en te laden en om algemene gegevens op te slaan. Er kan CSS in staat, maar dit hoort eigenlijk in een apart bestand.', 'Om een link toe te voegen gebruik je &lt;a href=”LOCATIE”>LINK&lt;/a>, met in de plaats van LINK een tekst naar keuze die iemand doorstuurt naar de pagina waar de link naar wijst.', 'Met ../ ga je een map omhoog.', 'In HTML gebruik je &lt;!-- COMMENT --> gebruik je voor zowel een single- als multiline comment.', 'Met font-size stel je de tekstgrote in.', 'De achtergrondkleur kun je instellen met background-color of background, maar background-color is het gebruikelijkst.', 'Met :hover verandert de stijl als je met de cursor over het element gaat.'];

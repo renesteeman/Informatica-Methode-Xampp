@@ -48,9 +48,6 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content">
-
-			<p>OSI</p>
-
 			<p>Een netwerk is een verzameling van apparaten die met elkaar kan communiceren. Je kunt hierbij denken aan het netwerk dat je waarschijnlijk thuis hebt, dat netwerk bestaat uit bijvoorbeeld een laptop, een router (het kastje van de provider) en twee telefoons. Via een netwerk kunnen apparaten data uitwisselen door het sturen van pakketjes met gegevens. Zo’n pakketje bevat de data die je wilt sturen in binaire vorm samen met instructies over waar het heen zou moeten en hoe het gelezen zou moeten worden samen met nog wat andere gegevens.</p>
 
 			<p>Het verzenden van gegevens maakt gebruikt van het OSI-model, dit model toont hoe data wordt omgezet in een pakket en hoe dit pakket weer door kan gaan naar een ontvanger. Het OSI-model is een door ISO gestandaardiseerd referentiemodel voor datacommunicatiestandaarden, met als doel om de interoperabiliteit tussen netwerktoepassingen te vergroten. Je zou dus kunnen zeggen dat het aangeeft hoe verschillende onderdelen van netwerkcommunicatie eruitzien.</p>

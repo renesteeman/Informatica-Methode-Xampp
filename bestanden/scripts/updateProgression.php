@@ -1,4 +1,5 @@
 <?php
+	session_save_path('../tmp');
 	session_start();
 	include('DB_connect.php');
 

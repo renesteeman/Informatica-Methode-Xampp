@@ -19,34 +19,21 @@
 	<div class="vragen">
 		<!-- vraag 1-->
 		<div class="vraagBalk">
-			Wat is geen eis voor een goede UI?
+			Klopt het dat JS in elke browser hetzelfde werkt?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">Het is intuïtief
+					<label class="container">Ja
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Het is flexibel
+					<label class="container">Nee
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
-				</li>
-				<li>
-					<label class="container">Het is kleurrijk
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">Tekst is leesbaar
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
 			</ul>
 		</div>
 		<div class="uitleg">
@@ -55,28 +42,21 @@
 
 		<!-- vraag 2-->
 		<div class="vraagBalk">
-			Wat is de beste omschrijving van een wireframe?
+			Klopt het dat JS-code standaard wordt uitgevoerd op de server?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">Een schets van een pagina
+					<label class="container">Ja
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Een ontwerp van een pagina met zowel de lay-out als details
+					<label class="container">Nee
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
-				</li>
-				<li>
-					<label class="container">Een overzicht van de lay-out van de elementen op een pagina
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
 			</ul>
 		</div>
 		<div class="uitleg">
@@ -85,34 +65,21 @@
 
 		<!-- vraag 3-->
 		<div class="vraagBalk">
-			Wat is het belangrijkste voordeel van svg bestanden over bitmaps?
+			Klopt het dat <script href="JS_LOCATIE"></script> geldige code is? Je mag ervan uitgaan dat het JS bestand bestaat en geen fouten bevat.
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">Het gebruikt minder opslag
+					<label class="container">Ja
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Het geeft meer mogelijkheden om iets vorm te geven
+					<label class="container">Nee
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
-				</li>
-				<li>
-					<label class="container">Het behandelt een afbeelding als vormen
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">Het is sneller
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
 			</ul>
 		</div>
 		<div class="uitleg">
@@ -121,30 +88,30 @@
 
 		<!-- vraag 4-->
 		<div class="vraagBalk">
-			Welke uitspraak over UI is niet waar?
+			Welke code kan gebruikt worden om de breedte van een element genaamd ‘el’ te veranderen naar 500 pixels?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">De UI moet volledig uniek zijn
+					<label class="container">el.style.width = '500px';
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">De UI moet duidelijk zijn
+					<label class="container">el.width = '500px';
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">De UI moet goed uitzien
+					<label class="container">el.width = 500;
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">De UI moet consistent zijn
+					<label class="container">el.style.width = 500;
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
@@ -157,30 +124,66 @@
 
 		<!-- vraag 5-->
 		<div class="vraagBalk">
-			Waar is niet nodig voor een goede UX?
+			Welke if-statement voldoet aan de JS-syntax?
 		</div>
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">Het begrijpen van de gebruikers
+					<label class="container">if(x AND y){};
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Vanuit de gebruikers naar een product kunnen kijken
+					<label class="container">if(x & y){};
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Zaken zo eenvoudig mogelijk houden
+					<label class="container">if(x && y){};
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Het product zo mooi mogelijk maken
+					<label class="container">if x AND y
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+			</ul>
+		</div>
+		<div class="uitleg">
+
+		</div>
+
+		<!-- vraag 6-->
+		<div class="vraagBalk">
+			Wat is de beste omschrijving van een framework?
+		</div>
+		<div class="antwoorden">
+			<ul>
+				<li>
+					<label class="container">Een stuk kant-en-klare code dat je alleen maar hoeft te knippen en plakken
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">Een manier om code te schrijven
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">Een manier om over code te denken
+						<input type="checkbox" class="single-select-checkbox">
+						<span class="checkmark"></span>
+					</label>
+				</li>
+				<li>
+					<label class="container">Een pakket van code met bepaalde functies die samenwerken volgens een bepaalde structuur
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>

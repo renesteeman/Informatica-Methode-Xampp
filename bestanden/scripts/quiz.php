@@ -76,6 +76,11 @@
 		$uitleg = ['&lt;p> is een onderdeel van de &lt;header>, &lt;body> en/of &lt;footer>', '&lt;head> wordt gebruikt om andere bestanden op te roepen en te laden en om algemene gegevens op te slaan. Er kan CSS in staat, maar dit hoort eigenlijk in een apart bestand.', 'Om een link toe te voegen gebruik je &lt;a href=”LOCATIE”>LINK&lt;/a>, met in de plaats van LINK een tekst naar keuze die iemand doorstuurt naar de pagina waar de link naar wijst.', 'Met ../ ga je een map omhoog.', 'In HTML gebruik je &lt;!-- COMMENT --> gebruik je voor zowel een single- als multiline comment.', 'Met font-size stel je de tekstgrote in.', 'De achtergrondkleur kun je instellen met background-color of background, maar background-color is het gebruikelijkst.', 'Met :hover verandert de stijl als je met de cursor over het element gaat.'];
 	}
 
+	if($hoofdstuk == "B2"){
+		$juisteAntwoorden = ['Nee', 'Nee', 'Nee', "el.style.width = '500px';", 'if(x && y){};', 'Een pakket van code met bepaalde functies die samenwerken volgens een bepaalde structuur'];
+		$uitleg = ['Niet alle browsers ondersteunen de nieuwe versie van JS en soms worden alleen delen ervan ondersteund.', 'JS werkt standaard in de browser aan de kant van de client', 'In plaats van href zou het src moeten zijn', 'De breedte wordt bepaald met css, dus het attribuut style moet worden aangepast. De nieuwe breedte wordt 500px, dus het wordt ook aan 500px gelijk gesteld.', 'Om meerdere voorwaarden in een if-statement te gebruiken die allemaal waar moeten zijn gebruik je &&. Een enkele & werkt ook, maar het is niet volgens de officiële  syntax.'];
+	}
+
 	$count = count($antwoorden);
 	for($i=0; $i<$count; $i++){
 		if($antwoorden[$i] == $juisteAntwoorden[$i]){

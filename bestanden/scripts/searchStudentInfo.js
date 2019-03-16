@@ -85,13 +85,13 @@ $(document).ready(function(){
         append = "";
 
         for(i=0; i<quizResultsLength; i++){
-          //TODO rewrite
           CquizResults = info['quizResults'][i];
-          CquizResultsArray = [];
-          CquizResultsArray[0] = parseFloat(Object.keys(CquizResults));
-          CquizResultsArray[1] = parseFloat(Object.values(CquizResults));
 
-          append += "<div class='searchResultQuizInhoudItem'><span class='searchResultQuizInhoudHoofdstuk'>H"+CquizResultsArray[0]+"</span><span class='searchResultQuizInhoudCijfer'>"+CquizResultsArray[1]+"</span></div>";
+          CquizResultsArray = [];
+          CquizResultsArray[0] = Object.keys(CquizResults);
+          CquizResultsArray[1] = Object.values(CquizResults);
+
+          append += "<div class='searchResultQuizInhoudItem'><span class='searchResultQuizInhoudHoofdstuk'>"+CquizResultsArray[0]+"</span><span class='searchResultQuizInhoudCijfer'>"+CquizResultsArray[1]+"</span></div>";
         }
 
         $('.searchResultQuizInhoud').append(append);

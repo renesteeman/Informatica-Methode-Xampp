@@ -77,21 +77,21 @@
 
 			<p>Additie</p>
 
-			<p><code>waarde3 = waarde1 + waarde2 (=30)</code></p>
+			<p><code>waarde3 = waarde1 + waarde2</code> (=30)</p>
 
 			<p>Substractie</p>
 
-			<p><code>waarde3 = waarde1 - waarde2 (=10)</code></p>
+			<p><code>waarde3 = waarde1 - waarde2</code> (=10)</p>
 
 			<p>Multiplicatie</p>
 
-			<p><code>waarde3 = waarde1 * waarde2 (=200)</code></p>
+			<p><code>waarde3 = waarde1 * waarde2</code> (=200)</p>
 
 			<p>Delen</p>
 
-			<p><code>waarde3 = waarde1 / waarde2 (=2.0)</code></p>
+			<p><code>waarde3 = waarde1 / waarde2</code> (=2.0)</p>
 
-			<p>De modules, ook bekend als rest</p>
+			<p>De modulus, ook bekend als rest</p>
 
 			<p><code>waarde1 = 20</code></p>
 
@@ -99,7 +99,7 @@
 
 			<p><code>waarde3 = waarde1 % waarde2</code> (=2, want 20/3 = 6 met rest 2 (of 2/3))</p>
 
-			<p>Er zijn veel meer mogelijkheden en deze zijn terug te vinden op https://docs.python.org/3/tutorial/introduction.html#numbers</p>
+			<p>Er zijn veel meer mogelijkheden en deze zijn terug te vinden op <a href="https://docs.python.org/3/tutorial/introduction.html#numbers">https://docs.python.org/3/tutorial/introduction.html#numbers</a></p>
 
 			<p>NB de rekenregels die je gewend bent gelden ook in python.</p>
 

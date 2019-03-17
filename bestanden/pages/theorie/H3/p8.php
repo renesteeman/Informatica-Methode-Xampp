@@ -76,7 +76,7 @@
 
 			<p>De opdracht</p>
 
-			<p>Maak een tekstgame in python. Hierbij mag je zelf kiezen wat je precies wilt maken en hoe je dat gaat doen. Maak het jezelf niet te moeilijk en samenwerken en vragenstellen is aanbevolen.</p>
+			<p>Maak een tekstgame in python. Hierbij mag je zelf kiezen wat je precies wilt maken en hoe je dat gaat doen. Maak het jezelf niet te moeilijk en samenwerken en het stellen van vragen is aanbevolen.</p>
 
 			<p>Ideeën voor als je echt niks kunt bedenken:</p>
 
@@ -102,7 +102,7 @@
 					Voeg stukje voor stukje code toe en test steeds opnieuw, gebruik hiervoor print().
 				</li>
 				<li>
-					Heb je bepaalde logica nodig waarvan je verwacht dat het al bestaat, zoek het dan gerust op (je hebt een grote kans op resultaat als je het in het Engels opzoekt).
+					Heb je bepaalde logica nodig waarvan je verwacht dat het al bestaat, zoek het dan gerust op (in het Engels).
 				</li>
 			</ol>
 

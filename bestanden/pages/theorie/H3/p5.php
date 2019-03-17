@@ -64,7 +64,7 @@
 		</div>
 
 		<div class="theorie-content">
-			<p>Als je programmeert wil je vaak kijken of een waarde aan een bepaalde eis voldoet en vervolgens iets uitvoeren als het aan die eis voldoet. Een voorbeeld is: als de koffie op is, dan hervul kop met koffie. Hier wordt gebruikt gemaakt van een IF-statement, er staat namelijk als x, dan y. Het kan ook andersom zijn, als de koffie niet op is, dan drink koffie. Stel je plakt deze twee aan elkaar, dan krijg je:</p>
+			<p>Als je programmeert wil je vaak kijken of een waarde aan een bepaalde eis voldoet en vervolgens iets uitvoeren als het aan die eis voldoet. Een voorbeeld is: als de koffie op is, dan hervul de kop met koffie. Hier wordt gebruikt gemaakt van een IF-statement, er staat namelijk als x, dan y. Het kan ook andersom zijn, als de koffie niet op is, dan drink koffie. Stel je plakt deze twee aan elkaar, dan krijg je:</p>
 
 			<p>Als de koffie op is, dan</p>
 

@@ -70,13 +70,13 @@
 
 			<p><code>print(droomAuto)</code></p>
 
-			<p>En je voert het uit (toetsencombinatie ctrl+enter) dan zie je onder het hokje Tesla model S verschijnen.</p>
+			<p>en uitvoert (toetsencombinatie ctrl+enter) dan zie je onder het hokje Tesla model S verschijnen.</p>
 
 			<p>Er zijn verschillende type variabelen, in python hoef je deze niet zelf te definiëren, omdat de programmeertaal dit namelijk voor jou doet.</p>
 
 			<p>Een paar belangrijkste types zijn: int, float, string, bool en array.</p>
 
-			<p>Een int (staat voor integer) is een geheel getal, het kan positief of negatief zijn. String is een stuk tekst, in python geef je dit aan door er " " omheen te zetten. Bool staat voor boolean en kan als waarde true of false hebben, 1 of 0, waar of niet waar. Een array is een lijst van waardes, zoals: "Tesla", "koffie", 20.</p>
+			<p>Een int (staat voor integer) is een geheel getal, het kan positief of negatief zijn. Een string is een stuk tekst, in python geef je dit aan door er " " omheen te zetten. Bool staat voor boolean en kan als waarde true of false hebben, 1 of 0, waar of niet waar. Een array is een lijst van waardes, zoals: "Tesla", "koffie", 20.</p>
 
 			<p>Voorbeelden van de types in python</p>
 

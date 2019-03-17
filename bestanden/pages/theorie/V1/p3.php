@@ -136,7 +136,7 @@ include('../../../components/headerChapter.php');
 
 			<p>Zoals je waarschijnlijk al hebt gemerkt zijn sommige keuzes makkelijker dan de andere. De vraag is natuurlijk wat dit te maken heeft met programmeren.</p>
 
-			<p>Stel, Elon Musk is een grote fan van jouw programma's en neemt jou aan als een developer voor de zelfrijdende Tesla auto’s. Hoewel het doel van een Tesla is om menselijke fouten te vermijden zijn sommige fouten onvermijdelijk. Als een Tesla rond aan het rijden is met een familie die net terugkomt van Disneyland gebeurt het volgende: twee straten voordat ze thuiskomen steekt een groep kinderen van groep 4 over. De Tesla kan nu of:</p>
+			<p>Stel, Elon Musk is een grote fan van jouw programma's en neemt jou aan als een developer voor de zelfrijdende Tesla auto's. Hoewel het doel van een Tesla is om menselijke fouten te vermijden zijn sommige fouten onvermijdelijk. Als een Tesla rond aan het rijden is met een familie die net terugkomt van Disneyland gebeurt het volgende: twee straten voordat ze thuiskomen steekt een groep kinderen van groep 4 over. De Tesla kan nu of:</p>
 
 			<ol>
 				<li>

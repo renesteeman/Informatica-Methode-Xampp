@@ -81,7 +81,7 @@ include('../../../components/headerChapter.php');
   //DOE …
 }</code></pre>
 
-			<p>Je kunt ook uitgebreidere voorwaarden opstellen, dit kan met AND en OR oftewel ‘en’ en ‘of’. In JS schrijf je AND als && en OR als ||.</p>
+			<p>Je kunt ook uitgebreidere voorwaarden opstellen, dit kan met AND en OR oftewel 'en' en 'of'. In JS schrijf je AND als && en OR als ||.</p>
 
 			<p>Een voorbeeld kan zijn:</p>
 
@@ -112,7 +112,7 @@ for(i=0; i&lt;items.length; i++){
   alert(items[i]);
 }</code></pre>
 
-			<p>Dit ‘programma’ zal elk item uit ‘items’ laten zien. Het is ook te schrijven als:</p>
+			<p>Dit 'programma' zal elk item uit 'items' laten zien. Het is ook te schrijven als:</p>
 
 			<pre><code>items = ['PHP', 'python', 'JS', 'HTML', 'CSS', 'C++', 'C#', 'C'];
 
@@ -130,7 +130,7 @@ while(i < amount){
   i++;
 }</code></pre>
 
-			<p>Dit ‘programma’ zal aan het element met id ‘element’ de getallen 0 tm 9 toevoegen. Let erop dat je de iterator (het getal dat steeds vergeleken wordt) steeds aanpast als je het niet voor altijd door wilt laten gaan. De loop stopt namelijk pas wanneer de conditie niet meer waar is.</p>
+			<p>Dit 'programma' zal aan het element met id 'element' de getallen 0 tm 9 toevoegen. Let erop dat je de iterator (het getal dat steeds vergeleken wordt) steeds aanpast als je het niet voor altijd door wilt laten gaan. De loop stopt namelijk pas wanneer de conditie niet meer waar is.</p>
 
 			<p>Als laatste onderdeel van deze paragraaf behandelen we functies. Functies zijn stukken code die gegroepeerd zijn. Dit wordt vaak gebruikt voor herhaling, maar kan ook handig zijn voor een duidelijkere structuur. De syntax van een functie is:</p>
 
@@ -138,7 +138,7 @@ while(i < amount){
   //doe iets
 }</code></pre>
 
-			<p>Je kunt een functie ‘aanroepen’ doormiddel van FUNCTIE_NAAM(NODIGE_DATA); De functie zal dan worden uitgevoerd. Op de plek van NODIGE_DATA kan data staan die de functie nodig heeft, denk aan variabelen die in de rest van de code voorkomen. Een voorbeeld van een kort programma met functies is:</p>
+			<p>Je kunt een functie 'aanroepen' doormiddel van FUNCTIE_NAAM(NODIGE_DATA); De functie zal dan worden uitgevoerd. Op de plek van NODIGE_DATA kan data staan die de functie nodig heeft, denk aan variabelen die in de rest van de code voorkomen. Een voorbeeld van een kort programma met functies is:</p>
 
 			<pre><code>function updateTime(DoorTeSturenInfo){
   datum = new Date();
@@ -155,7 +155,7 @@ function main(){
 
 main();</code></pre>
 
-			<p>Dit programma zal de inhoud van het element met id ‘element’ vervangen met het aantal milliseconde sinds 1 januari en dit om de seconde verversen. Je hoeft niet de hele code te snappen, maar wel hoe de functie geschreven is en wordt opgeroepen ( updateTime(DoorTeSturenInfo); en main(); ). De ‘DoorTeSturenInfo’ is hier als voorbeeld gebruikt voor data dat buiten de functie bestaat. Een functie kan die data anders niet lezen (tenzij je global variables gebruikt, dit is buiten het bereik van de theorie).</p>
+			<p>Dit programma zal de inhoud van het element met id 'element' vervangen met het aantal milliseconde sinds 1 januari en dit om de seconde verversen. Je hoeft niet de hele code te snappen, maar wel hoe de functie geschreven is en wordt opgeroepen ( updateTime(DoorTeSturenInfo); en main(); ). De 'DoorTeSturenInfo' is hier als voorbeeld gebruikt voor data dat buiten de functie bestaat. Een functie kan die data anders niet lezen (tenzij je global variables gebruikt, dit is buiten het bereik van de theorie).</p>
 
 		</div>
 

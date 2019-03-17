@@ -53,7 +53,7 @@
 				Om een signaal te geven dat meer informatie bevat dan 0 of 1 kun je analogWrite() gebruiken. Dit geeft een waarde van 0 tm 255, het werkt op de arduino door snel te wisselen tussen 0 en 1. Dit kan bijvoorbeeld gebruikt worden om een led langzaam van helderheid te veranderen. Deze functie werkt alleen op de pinnen met het ~ ernaast.
 			</p>
 			<p>
-				Om een ‘random’ getal te krijgen kun je random() gebruiken. Een voorbeeld is int intensiteit = random(500); Dit zal intensiteit een waarde van 0 tm 500 geven.
+				Om een 'random' getal te krijgen kun je random() gebruiken. Een voorbeeld is int intensiteit = random(500); Dit zal intensiteit een waarde van 0 tm 500 geven.
 			</p>
 			<p>
 				Voor comments (uitleg) kun je // gebruiken voor één regel of /* aan het begin en */ aan het eind van een comment van meerdere regels.
@@ -75,7 +75,7 @@
 				Verder biedt arduino ook nog libraries, dit zijn een soort uitbereidingen om meer functies toe te voegen, de voorgaande link geeft hier ook informatie over.
 			</p>
 			<p>
-				Er zijn ook nog andere (krachtigere en compactere) arduino’s die voor het grootste deel hetzelfde werken als de uno.
+				Er zijn ook nog andere (krachtigere en compactere) arduino's die voor het grootste deel hetzelfde werken als de uno.
 			</p>
 			<p>
 				Om de rest van de mogelijkheden te bekijken kun je naar <a href="https://www.arduino.cc/reference/en/">https://www.arduino.cc/reference/en/</a> gaan.

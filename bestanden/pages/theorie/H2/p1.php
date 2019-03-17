@@ -63,11 +63,11 @@
 			</p>
 
 			<p>
-				Een van de andere regels bij logica is dat het ‘+-teken’ union (samenvoeging) betekent. Dit wordt gebruikt bij de sets. Je kunt met ‘+’ dus sets samenvoegen.  X (maal) betekent intersection (overlap). Dit kan ook voor sets gebruikt worden.  Verder betekent 1 alles, zoals in een set met auto’s, hier betekent 1 alle auto’s.
+				Een van de andere regels bij logica is dat het +-teken union (samenvoeging) betekent. Dit wordt gebruikt bij de sets. Je kunt met + dus sets samenvoegen.  X (maal) betekent intersection (overlap). Dit kan ook voor sets gebruikt worden.  Verder betekent 1 alles, zoals in een set met auto's, hier betekent 1 alle auto's.
 			</p>
 
 			<p>
-				Een andere notatie voor ‘+’ is ∪ en voor maal is ꓵ. ∪ kun je zien als bij elkaar en ꓵ als ‘en’.
+				Een andere notatie voor + is ∪ en voor maal is ꓵ. ∪ kun je zien als bij elkaar en ꓵ als 'en'.
 			</p>
 
 			<p>

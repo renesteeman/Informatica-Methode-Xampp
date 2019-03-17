@@ -108,7 +108,7 @@
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">Het analyseren van beelden van beveiligingscamera’s om gevaarlijke situaties te ontdekken.
+					<label class="container">Het analyseren van beelden van beveiligingscamera's om gevaarlijke situaties te ontdekken.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>

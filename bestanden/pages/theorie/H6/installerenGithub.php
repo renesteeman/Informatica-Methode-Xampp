@@ -46,10 +46,10 @@
 					Installeer git en mercurial
 				</li>
 				<li>
-					Klik ‘no’ als gevraagd wordt voor een global ignore file
+					Klik 'no' als gevraagd wordt voor een global ignore file
 				</li>
 				<li>
-					Klik ‘no’ voor de SSH key
+					Klik 'no' voor de SSH key
 				</li>
 				<li>
 					Het is succesvol geïnstalleerd!

@@ -59,11 +59,11 @@
 			</p>
 
 			<p>
-				Stel je wilt een website gaan maken, dan moet je eerst bedenken wat voor soort website het moet worden: hoe het gaat heten, wat wordt de structuur en hoe moet het eruit gaan zien, enz. Daarna kun je de logica van de site in stukken hakken. Stel je de flow van het programma op, oftewel hoe dingen met elkaar verbonden zijn en wat wanneer gebeurt. Een flow kan bijvoorbeeld zijn: ga naar de startpagina, klik op login, vul gegevens in, klik op submit, laat een script de gegevens analyseren, controleer de gegevens en bepaal of iemand ingelogd moet worden. Je kunt ook de taken indelen onder bepaalde talen, sommige talen zijn namelijk beter voor bepaalde problemen dan andere.
+				Stel je wilt een website gaan maken, dan moet je eerst bedenken wat voor soort website het moet worden: hoe het gaat heten, wat wordt de structuur en hoe moet het eruit gaan zien, enz. Daarna kun je de logica van de site in stukken hakken. Stel je de flow van het programma op, oftewel hoe dingen met elkaar verbonden zijn en wat wanneer gebeurt. Een flow kan bijvoorbeeld zijn: ga naar de startpagina, klik op login, vul gegevens in, klik op submit, laat een script de gegevens analyseren, controleer de gegevens en bepaal of iemand ingelogd moet worden. Je kunt ook de taken indelen onder bepaalde programmeertalen, sommige talen zijn namelijk beter voor bepaalde problemen dan andere.
 			</p>
 
 			<p>
-				Als je vervolgens gaat programmeren kun je het beste eerst de logica van het programma opstellen. Een voorbeeld kan zijn: lees de informatie die ontvangen is, controleer of er genoeg informatie is, controleer of de gegevens kloppen, laat iemand toe tot de website. Je kunt daarna deze onderdelen van het programma gaan uitwerken, op deze manier hou je overzicht en krijg je dus meer gedaan.
+				Als je vervolgens gaat programmeren kun je de stappen die je al bedacht hebt makkelijker omzetten in code. Je weet namelijk al wat de structuur van het programma gaat worden en hoeft niet steeds iets aan te passen door een veranderende structuur. Het is dus handig om eerst na te denken over hoe jouw programma in elkaar moet zitten voordat je het daadwerkelijk gaat ontwikkelen.
 			</p>
 
 		</div>

@@ -57,7 +57,7 @@ include('../../../components/headerChapter.php');
 
 			<p>In deze paragraaf ga je leren wat events zijn, een stukje geschiedenis van JS en wat frameworks zijn.</p>
 
-			<p>Als je wilt controleren of een bepaalde actie uitgevoerd wordt kunnen events erg van pas komen. Een paar veel gebruikte events zijn: onchange, onclick, onmouseover, onmouseout, onkeydown en onload. Dit zijn allemaal acties die kunnen voorkomen bij elementen. Als zo’n actie plaatsvindt wordt dit als ‘trigger’ gebruikt voor het uitvoeren van code. Je kunt bijvoorbeeld andere informatie geven als iemand op een knop klikt.</p>
+			<p>Als je wilt controleren of een bepaalde actie uitgevoerd wordt kunnen events erg van pas komen. Een paar veel gebruikte events zijn: onchange, onclick, onmouseover, onmouseout, onkeydown en onload. Dit zijn allemaal acties die kunnen voorkomen bij elementen. Als zo'n actie plaatsvindt wordt dit als 'trigger' gebruikt voor het uitvoeren van code. Je kunt bijvoorbeeld andere informatie geven als iemand op een knop klikt.</p>
 
 			<div class="table-wrapper">
 				<table>
@@ -94,7 +94,7 @@ include('../../../components/headerChapter.php');
 				</table>
 			</div>
 
-			<p>Deze events kun je koppelen aan een element. Zo kun je een actie in de browser koppelen aan een stuk JS code. Om deze events ‘op te vangen’ kun je een event listener gebruiken, dit is een stuk code dat controleert wat er met het element gebeurt. Een voorbeeld is:</p>
+			<p>Deze events kun je koppelen aan een element. Zo kun je een actie in de browser koppelen aan een stuk JS code. Om deze events 'op te vangen' kun je een event listener gebruiken, dit is een stuk code dat controleert wat er met het element gebeurt. Een voorbeeld is:</p>
 
 			<p>HTML</p>
 
@@ -135,7 +135,7 @@ document.getElementById('element').addEventListener("click", function(){
 })
 </code></pre>
 
-			<p>Als de &lt;p> met id ‘element’ aangeklikt wordt zal de tekst ervan veranderen. De event listener wordt dus toegevoegd aan het element en voert een functie uit als het event plaatsvindt.</p>
+			<p>Als de &lt;p> met id 'element' aangeklikt wordt zal de tekst ervan veranderen. De event listener wordt dus toegevoegd aan het element en voert een functie uit als het event plaatsvindt.</p>
 
 			<p>JS kent verschillende versies en deze werken niet allemaal op elke browser. Als je nieuwe mogelijkheden wilt gebruiken moet je hier dus op letten. JS, ook ECMAScript genoemd kwam uit in 1997 en heeft meerdere updates gehad. De latere versies voegen vooral handige functies toe om het leven van een programmeur te verfijnen.</p>
 
@@ -158,7 +158,7 @@ document.getElementById('element').addEventListener("click", function(){
 
 			<p>Op dit moment (2018) worden versies na ES6 nog nauwelijks ondersteund. De recentere updates hebben vooral verbeteringen voor performance.</p>
 
-			<p>JS kent ook nog uitbereidingen/aanpassingen oftewel frameworks en libraries. Dit zijn systemen die gemaakt zijn met JS om het schrijven van JS makkelijker te maken. Ze voegen vaak functies toe en zorgen voor minder schrijfwerk. Het verschil tussen een framework en library is dat een framework een ‘skelet’ vormt voor jouw applicatie, terwijl een library een verzameling is van afkortingen.</p>
+			<p>JS kent ook nog uitbereidingen/aanpassingen oftewel frameworks en libraries. Dit zijn systemen die gemaakt zijn met JS om het schrijven van JS makkelijker te maken. Ze voegen vaak functies toe en zorgen voor minder schrijfwerk. Het verschil tussen een framework en library is dat een framework een 'skelet' vormt voor jouw applicatie, terwijl een library een verzameling is van afkortingen.</p>
 
 			<p>Bekende frameworks zijn: Angular en Vue. Bekende libraries zijn: jQuery en React.</p>
 
@@ -190,7 +190,7 @@ document.getElementById('element').addEventListener("click", function(){
 			<ol>
 				<li>Eigen antwoord</li>
 				<li>Nee, dit duurt een aantal jaar en sommige browsers zullen nauwelijks bijwerken.</li>
-				<li>Een mogelijk antwoord is: “Een framework is een schrijfwijze en een library is een verzameling afkortingen.”.</li>
+				<li>Een mogelijk antwoord is: "Een framework is een schrijfwijze en een library is een verzameling afkortingen.".</li>
 			</ol>
 		</div>
 	</div>

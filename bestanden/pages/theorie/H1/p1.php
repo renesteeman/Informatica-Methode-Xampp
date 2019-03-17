@@ -61,7 +61,7 @@ include('../../../components/headerChapter.php');
 
 		<div class="theorie-content">
 
-			<p>Een computer ‘begrijpt’ alleen nullen en enen. Informatie wordt in een computer altijd door middel van deze twee getallen opgeslagen. Of het nou gaat om letters, programma's of het beeld, het zijn allemaal nullen en enen.</p>
+			<p>Een computer 'begrijpt' alleen nullen en enen. Informatie wordt in een computer altijd door middel van deze twee getallen opgeslagen. Of het nou gaat om letters, programma's of het beeld, het zijn allemaal nullen en enen.</p>
 
 			<p>Een bit heeft twee mogelijke waardes: 1 en 0. Een 1 geeft de aanwezigheid en 0 de afwezigheid van stroom aan. Er kan met dit binair systeem, een systeem met twee waarden, van alles worden weergegeven.</p>
 
@@ -96,7 +96,7 @@ include('../../../components/headerChapter.php');
 					Hoe wordt een nul en een één door een computer begrepen?
 				</li>
 				<li>
-					Vertaal 001, 011, 1001001 naar het decimale systeem (‘normale’ getallen)
+					Vertaal 001, 011, 1001001 naar het decimale systeem ('normale' getallen)
 				</li>
 				<li>
 					Vertaal 5, 20 en 40 naar binair

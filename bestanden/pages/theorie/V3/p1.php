@@ -61,11 +61,11 @@ include('../../../components/headerChapter.php');
         Het voordeel van blockchain is dat de data betrouwbaarder is, het kan namelijk niet eenvoudig zijn 'geschiedenis' veranderen. Een nadeel is dat het meer rekenkracht vereist en een stuk complexer is. Het wordt dus vooral gebruikt voor data dat erg betrouwbaar moet zijn.
       </p>
 
-  		<p>Een database staat vaak op een server. Dat is een soort computer die voornamelijk gebruikt wordt om informatie uit te wisselen met gebruikers en een applicatie. Bijvoorbeeld voor het inloggen op een website, hier stuurt de gebruiker tekst door naar een server en ‘reageert’ de applicatie door bijvoorbeeld de code te activeren die toegang geeft tot bepaalde functies.</p>
+  		<p>Een database staat vaak op een server. Dat is een soort computer die voornamelijk gebruikt wordt om informatie uit te wisselen met gebruikers en een applicatie. Bijvoorbeeld voor het inloggen op een website, hier stuurt de gebruiker tekst door naar een server en 'reageert' de applicatie door bijvoorbeeld de code te activeren die toegang geeft tot bepaalde functies.</p>
 
   		<p>In een database zijn vaak meerdere tabellen te vinden, zoals: groepen, planner en gebruikers. Elke tabel heeft dan zijn eigen overzicht van gegevens. Zo kan er bij gebruikers bijvoorbeeld een gebruikersnaam en wachtwoorden kolom zijn. Elke gebruiker heeft dan zijn eigen rij waar deze kolommen zijn ingevuld.</p>
 
-  		<p>Een voorbeeld van zo’n database is:</p>
+  		<p>Een voorbeeld van zo'n database is:</p>
       <img src="./afbeeldingen/VoorbeeldDatabase.png" />
 
   		<p>In een database is het belangrijk dat er een primary key in voorkomt. Dit is een waarde die voor elke rij uniek is. In dit voorbeeld is dat het ID, dit is een uniek nummer voor elke gebruiker en kan gebruikt worden om mensen uit elkaar te houden.</p>

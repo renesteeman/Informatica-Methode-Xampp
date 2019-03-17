@@ -115,7 +115,7 @@ Er wordt hier dus steeds gekeken of i, dat eerst gelijk is aan 5 nog minder is d
 </pre>
 
 
-			<p>Je kunt meerdere eisen maken voor de while loop. Stel je hebt twee eisen die beide vervuld moeten zijn, dan kun je ‘&’ tussen de eisen zetten.</p>
+			<p>Je kunt meerdere eisen maken voor de while loop. Stel je hebt twee eisen die beide vervuld moeten zijn, dan kun je '&' tussen de eisen zetten.</p>
 
 			<p>Je kunt de code voor rekenwerk nog iets makkelijker opschrijven. Zo is variabele = variabele + 1 ook te schrijven als variabele++. Net zoals variabele2 = variabele2 + variabele te schrijven is als variabele2 += variabele.</p>
 

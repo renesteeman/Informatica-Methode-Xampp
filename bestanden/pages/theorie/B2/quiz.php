@@ -88,7 +88,7 @@
 
 		<!-- vraag 4-->
 		<div class="vraagBalk">
-			Welke code kan gebruikt worden om de breedte van een element genaamd ‘el’ te veranderen naar 500 pixels?
+			Welke code kan gebruikt worden om de breedte van een element genaamd 'el' te veranderen naar 500 pixels?
 		</div>
 		<div class="antwoorden">
 			<ul>

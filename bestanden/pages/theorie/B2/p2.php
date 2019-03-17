@@ -56,7 +56,7 @@ include('../../../components/headerChapter.php');
 		<div class="theorie-content">
 			<p>In deze paragraaf ga je kennismaken met JS. Om JS te kunnen gebruiken heb je niet meer nodig dan een tekstbewerker en een browser. Als je al Atom gebruikt is het ook hier erg handig voor. Als je meer wilt weten dan dat hier behandeld wordt kun je altijd zoeken op <a href="https://www.w3schools.com/js/default.asp.">https://www.w3schools.com/js/default.asp</a>.</p>
 
-			<p>Er zijn meerdere manieren om de JS code toe te voegen aan een webpagina. De standard is een vorm van een external include, dit betekent dat het in een apart bestand staat, los van eventuele HTML. Het liefst zetten we deze external include ook nog op het eind van een pagina. Op die manier kan de gebruiker eerst al de inhoud van de pagina zien en na even te wachten ook de interactie gebruiken. De pagina lijkt dan sneller te zijn, terwijl het eigenlijk even lang zal laden. Een voorbeeld van zo’n soort include is:</p>
+			<p>Er zijn meerdere manieren om de JS code toe te voegen aan een webpagina. De standard is een vorm van een external include, dit betekent dat het in een apart bestand staat, los van eventuele HTML. Het liefst zetten we deze external include ook nog op het eind van een pagina. Op die manier kan de gebruiker eerst al de inhoud van de pagina zien en na even te wachten ook de interactie gebruiken. De pagina lijkt dan sneller te zijn, terwijl het eigenlijk even lang zal laden. Een voorbeeld van zo'n soort include is:</p>
 
 			<pre><code>&lt;html>
   &lt;head>
@@ -94,11 +94,11 @@ include('../../../components/headerChapter.php');
 
 			<p>Om via een ID een element op te halen gebruik je:</p>
 
-			<pre><code>document.getElementById(“ID”)</code></pre>
+			<pre><code>document.getElementById("ID")</code></pre>
 
 			<p>Om het via een class te doen gebruik je:</p>
 
-			<pre><code>document.getElementByClass(“CLASS”)</code></pre>
+			<pre><code>document.getElementByClass("CLASS")</code></pre>
 
 			<p>Als je het gewenste element hebt opgehaald kun je hier informatie uithalen of aanpassen. Per attribuut van een HTML element vereist dit andere code. Een paar veel gebruikte volgen.</p>
 
@@ -108,23 +108,23 @@ include('../../../components/headerChapter.php');
 
 			<p>Een voorbeeld is:</p>
 
-			<pre><code>Content = document.getElementById(“formulier”).innerText;</code></pre>
+			<pre><code>Content = document.getElementById("formulier").innerText;</code></pre>
 
 			<p>Het toevoegen van een class via:</p>
 
-			<p>classList.add(‘CLASS’)</p>
+			<p>classList.add('CLASS')</p>
 
 			<p>Een voorbeeld is:</p>
 
-			<pre><code>document.getElementById(“element”).classList.add(‘Class’);</code></pre>
+			<pre><code>document.getElementById("element").classList.add('Class');</code></pre>
 
 			<p>Het verwijderen van een class via:</p>
 
-			<p>classList.remove(‘CLASS’)</p>
+			<p>classList.remove('CLASS')</p>
 
 			<p>Een voorbeeld is:</p>
 
-			<pre><code>document.getElementById(“element”).classList.remove(‘Class’);</code></pre>
+			<pre><code>document.getElementById("element").classList.remove('Class');</code></pre>
 
 			<p>Je ziet dus steeds ELEMENT.METHODE als je met het DOM werkt in JS. Let er ook op dat bij JS op het eind van de regel een ; gebruikt wordt.</p>
 
@@ -141,7 +141,7 @@ include('../../../components/headerChapter.php');
 				<li>Wat staat in het DOM?</li>
 				<li>Hoe voeg je JS het beste toe aan jouw HTML bestand?</li>
 				<li>Hoe haal je een element met als ID de waarde 3 op met JS?</li>
-				<li>Hoe pas je de inhoud van een &lt;p> met als ID de waarde p aan naar “JS”?</li>
+				<li>Hoe pas je de inhoud van een &lt;p> met als ID de waarde p aan naar "JS"?</li>
 				<li>Maak een HTML bestand met daarin 3 &lt;p> en stel de inhoud ervan in met JS.</li>
 			</ol>
 		</div>
@@ -155,9 +155,9 @@ include('../../../components/headerChapter.php');
 		<div class="theorie-content theorie-answers">
 			<ol>
 				<li>De hiërarchie van de HTML element, inclusief attributen en hun waardes.</li>
-				<li>Met <code>&lt;script src=”JS_LOCATION”>&lt;/script></code> net voor &lt;/body>.</li>
-				<li><code>document.getElementById(‘3’);</code></li>
-				<li><code>document.getElementById(‘3’).innerText = “JS”;</code></li>
+				<li>Met <code>&lt;script src="JS_LOCATION">&lt;/script></code> net voor &lt;/body>.</li>
+				<li><code>document.getElementById('3');</code></li>
+				<li><code>document.getElementById('3').innerText = "JS";</code></li>
 				<li>Eigen antwoord</li>
 			</ol>
 		</div>

@@ -69,13 +69,13 @@ include('../../../components/headerChapter.php');
 
 			<p>De CPU heeft namelijk niet alleen de onderdelen voor het rekenen, maar daarnaast ook andere onderdelen. Een voorbeeld hiervan zijn cache opslag en de nodige structuren om data door te kunnen sturen.</p>
 
-			<p>Cache is een vorm van hele snelle opslag, maar vaak met een kleine capaciteit (enkele MB’s). Data dat snel verwerkt moet worden kan hierin worden opgeslagen, vaak is dat code om programma's te laten werken.</p>
+			<p>Cache is een vorm van hele snelle opslag, maar vaak met een kleine capaciteit (enkele MB's). Data dat snel verwerkt moet worden kan hierin worden opgeslagen, vaak is dat code om programma's te laten werken.</p>
 
 			<p>De snelheid van een CPU hangt af van meerdere factoren, voornamelijk: de IPC, frequentie, cache en de hoeveelheid kernen. De IPC is het aantal instructies dat per clock uitgevoerd kan worden. Een clock is een cyclus van instructies, bijvoorbeeld haal waardes van x naar y of voeg x toe aan y. De frequentie geeft aan hoeveel clocks er in een seconde uitgevoerd worden. Des te groter de cache, des te meer code snel uitgevoerd kan worden. De code hoeft dan niet meer gezocht te worden in langzamere vormen van opslag. Bij meer kernen kan er meer code tegelijk uitgevoerd worden.</p>
 
 			<img src="./afbeeldingen/CPU.png" class="theorieImage small" />
 
-			<p>RAM, Random Accessible Memory, slaat data op dat snel beschikbaar moet zijn. Zaken als het OS (bestuuringssysteem) en actieve programma’s worden hierop gezet, zodat de CPU niet steeds verzoeken hoeft te sturen om gegevens van een schijf te krijgen en er dus veel sneller bij kan. Des te meer ram, des te meer informatie snel beschikbaar kan zijn.</p>
+			<p>RAM, Random Accessible Memory, slaat data op dat snel beschikbaar moet zijn. Zaken als het OS (bestuuringssysteem) en actieve programma's worden hierop gezet, zodat de CPU niet steeds verzoeken hoeft te sturen om gegevens van een schijf te krijgen en er dus veel sneller bij kan. Des te meer ram, des te meer informatie snel beschikbaar kan zijn.</p>
 
 			<img src="./afbeeldingen/RAM.png" class="theorieImage small" />
 
@@ -83,7 +83,7 @@ include('../../../components/headerChapter.php');
 
 			<img src="./afbeeldingen/MOBO.png" class="theorieImage small" />
 
-			<p>De GPU heeft heel veel kernen, maar weer een lagere frequentie ten opzichte van de CPU. Tevens is het lastiger om er bepaalde instructies op uit te voeren. De GPU kan dus vooral veel eenvoudige taken tegelijkertijd uitvoeren. Dit maakt het erg handig voor bijvoorbeeld het laden van beelden en het spelen van spellen. Het zorgt ervoor dat er een beeld is dat een aangesloten scherm kan weergeven. De GPU kan echter ook andere taken uitvoeren, maar deze zijn vrij geavanceerd. Denk hierbij aan het trainen van zelflerende programma’s.</p>
+			<p>De GPU heeft heel veel kernen, maar weer een lagere frequentie ten opzichte van de CPU. Tevens is het lastiger om er bepaalde instructies op uit te voeren. De GPU kan dus vooral veel eenvoudige taken tegelijkertijd uitvoeren. Dit maakt het erg handig voor bijvoorbeeld het laden van beelden en het spelen van spellen. Het zorgt ervoor dat er een beeld is dat een aangesloten scherm kan weergeven. De GPU kan echter ook andere taken uitvoeren, maar deze zijn vrij geavanceerd. Denk hierbij aan het trainen van zelflerende programma's.</p>
 
 			<img src="./afbeeldingen/GPU.png" class="theorieImage small" />
 

@@ -217,7 +217,7 @@
 
 		<!-- vraag 7-->
 		<div class="vraagBalk">
-			Wat is de beste omschrijving van hoe video door een computer wordt ‘begrepen’?
+			Wat is de beste omschrijving van hoe video door een computer wordt 'begrepen'?
 		</div>
 		<div class="antwoorden">
 			<ul>

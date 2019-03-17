@@ -60,7 +60,7 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content">
-			<p>In de vorige paragraaf heb je de vraag, “Wat is een goede daad?” beantwoord. Dit is een van de ingewikkeldste vragen in de filosofie en vormt een stroming in de filosofie genaamd ethiek. Ethiek is de studie waarin men de concepten van goed en slecht systematiseert en verdedigd.</p>
+			<p>In de vorige paragraaf heb je de vraag, "Wat is een goede daad?" beantwoord. Dit is een van de ingewikkeldste vragen in de filosofie en vormt een stroming in de filosofie genaamd ethiek. Ethiek is de studie waarin men de concepten van goed en slecht systematiseert en verdedigd.</p>
 
 			<p>Digitale technologieën zoals het internet, mobieltjes en programmeren zijn relatief nieuw en de regels hiervan zijn vaak onduidelijk. Daarom is het belangrijk om, wanneer je een programma schrijft, rekening te houden met wat voor een invloed het heeft op jouw omgeving.</p>
 
@@ -136,7 +136,7 @@ include('../../../components/headerChapter.php');
 									Richting plichtethiek: Kant geloofde in het categorische imperatief. Dit betekent dat wanneer een actie door iedereen in een samenleving wordt uitgevoerd en de maatschappij blijft neutraal of wordt hier beter op, dan is de actie ethisch goed. Bijvoorbeeld: Als iedereen in een maatschappij zou liegen, dan zal de maatschappij niet beter ervan worden, het zal juist uit elkaar vallen. Daarom is liegen nooit ethisch goed in de ogen van Kant. Een programma om intelligentie te berekenen heeft een grote risico op de samenleving en is dus ethisch niet goed.
 								</li>
 								<li>
-									Richting nihilisme: Friedrich Nietzsche geloofde in het nihilisme. Nihilisme is wanneer je denkt dat mensen zo onbelangrijk zijn in het universum dat het leven al zijn betekenis heeft verloren. Nietzsche geloofde ook dat de mens moet proberen een betekenis en een doel voor zichzelf moet creëren, de mens moet proberen een doel in het leven te vinden en zo een hogere mens worden. De hogere mens kan dan de normale mens achterlaten en verder evolueren. Een programma dat intelligentie kan berekenen kan dit process versnellen en de mensheid “verbeteren”, daarom is dit ethisch wel een goed doel om te hebben.
+									Richting nihilisme: Friedrich Nietzsche geloofde in het nihilisme. Nihilisme is wanneer je denkt dat mensen zo onbelangrijk zijn in het universum dat het leven al zijn betekenis heeft verloren. Nietzsche geloofde ook dat de mens moet proberen een betekenis en een doel voor zichzelf moet creëren, de mens moet proberen een doel in het leven te vinden en zo een hogere mens worden. De hogere mens kan dan de normale mens achterlaten en verder evolueren. Een programma dat intelligentie kan berekenen kan dit process versnellen en de mensheid "verbeteren", daarom is dit ethisch wel een goed doel om te hebben.
 								</li>
 							</ol>
 						</li>

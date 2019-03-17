@@ -98,13 +98,13 @@
 						Voer een locatie in en Clone (deze folder moet leeg zijn)
 					</li>
 					<li>
-						Vul nu de details in voor jouw commits (de ‘updates’ voor het project). Op het moment waarop deze handleiding is geschreven was er een bug waardoor je na de foutmelding ‘Wrong email format’ nog eens op ok moest klikken (zonder iets te hoeven wijzigen).
+						Vul nu de details in voor jouw commits (de 'updates' voor het project). Op het moment waarop deze handleiding is geschreven was er een bug waardoor je na de foutmelding 'Wrong email format' nog eens op ok moest klikken (zonder iets te hoeven wijzigen).
 					</li>
 					<li>
 						Maak een bestand aan in de geselecteerde folder (het maakt niet uit wat voor een bestand).
 					</li>
 					<li>
-						Ga terug naar het project in sourcetree en klik op ‘Stage All’ (terwijl je in het File Status tab zit). Dit zet het bestand klaar om als update bij het project te komen.
+						Ga terug naar het project in sourcetree en klik op 'Stage All' (terwijl je in het File Status tab zit). Dit zet het bestand klaar om als update bij het project te komen.
 					</li>
 					<li>
 						Maak een beschrijving voor jouw commit (de update), dit kun je invoeren in het tekstveld onderaan.
@@ -119,7 +119,7 @@
 						Om de update live te zetten op github.com moet je op Push klikken, dit staat in de balk bovenaan.
 					</li>
 					<li>
-						Klik op de checkbox onder ‘Push?’
+						Klik op de checkbox onder 'Push?'
 					</li>
 					<li>
 						Klik op Push
@@ -133,13 +133,13 @@
 				</ol>
 			</p>
 			<p>
-				Je kunt via het tabblad Log/History (onderaan) de geschiedenis van het project zien per commit (update). Om weer een Push uit te voeren moet je dan terug gaan naar het tabblad File Status. Om de handeling voor te pushen over te slaan kun je ook bij de commit op ‘Push changes immediately to x’ aanvinken (x is standaard origin/master). De commit wordt dan automatisch gepushed.
+				Je kunt via het tabblad Log/History (onderaan) de geschiedenis van het project zien per commit (update). Om weer een Push uit te voeren moet je dan terug gaan naar het tabblad File Status. Om de handeling voor te pushen over te slaan kun je ook bij de commit op 'Push changes immediately to x' aanvinken (x is standaard origin/master). De commit wordt dan automatisch gepushed.
 			</p>
 			<p>
 				Als het project wordt bijgewerkt door iemand anders of via een andere manier moet je voor de push een pull uitvoeren. Dit haalt de nieuwe eerst op (zorg dus ervoor dat je een kopie maakt van jouw aanpassingen zodat ze niet verloren gaan).
 			</p>
 			<p>
-				Als je met een groep het project deelt is het handig om via de github pagina van het project de groepsleider collaborators (‘leden’) toe te laten voegen. Dit kan door naar settings te gaan en dan collaborators. Hier kun je een collaborator toevoegen (deze moet eerst een account hebben). Deze persoon ontvangt dan een mail waarmee hij toegang krijgt tot het project.
+				Als je met een groep het project deelt is het handig om via de github pagina van het project de groepsleider collaborators ('leden') toe te laten voegen. Dit kan door naar settings te gaan en dan collaborators. Hier kun je een collaborator toevoegen (deze moet eerst een account hebben). Deze persoon ontvangt dan een mail waarmee hij toegang krijgt tot het project.
 			</p>
 		</div>
 

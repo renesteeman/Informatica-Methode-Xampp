@@ -115,7 +115,7 @@
 
 		<!-- vraag 5-->
 		<div class="vraagBalk">
-			Er is een list met als waarden [0, 2, 5, ‘tesla’, ‘koffie’, 6]. Wat gebeurt er als je indexnummer 4 van deze list oproept?
+			Er is een list met als waarden [0, 2, 5, 'tesla', 'koffie', 6]. Wat gebeurt er als je indexnummer 4 van deze list oproept?
 		</div>
 		<div class="antwoorden">
 			<ul>
@@ -126,13 +126,13 @@
 					</label>
 				</li>
 				<li>
-					<label class="container">Je krijgt ‘tesla’.
+					<label class="container">Je krijgt 'tesla'.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">Je krijgt ‘koffie’.
+					<label class="container">Je krijgt 'koffie'.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>

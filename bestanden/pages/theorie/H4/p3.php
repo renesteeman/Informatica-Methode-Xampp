@@ -96,7 +96,7 @@ void loop() {
 						Klik op het pijltje in de donker blauwe balk (naast het check teken en onder de witte balk), dit uploadt de code naar de arduino.
 					</li>
 					<li>
-						Kijk in de serial console of er “het werkt” komt te staan.
+						Kijk in de serial console of er "het werkt" komt te staan.
 					</li>
 					<li>
 						Als het niet werkt controleer of de arduino wel goed ingestoken is en of de serial monitor wel of 9600 Baud is ingesteld.
@@ -110,10 +110,10 @@ void loop() {
 				De structuur van de code bestaat uit twee grote delen, de setup en de loop. De setup wordt maar een keer uitgevoerd en na de setup wordt de loop constant herhaald. Je kunt hierboven in de code zien hoe dit in elkaar zit.
 			</p>
 			<p>
-				Dan nu een paar basis commando’s voor de arduino.
+				Dan nu een paar basis commando's voor de arduino.
 			</p>
 			<p>
-				Met Serial.print() kun je waardes en tekst weergeven in de serial console, als je tekst wilt weergeven, vergeet dan niet om “ ” toe te voegen.
+				Met Serial.print() kun je waardes en tekst weergeven in de serial console, als je tekst wilt weergeven, vergeet dan niet om " " toe te voegen.
 			</p>
 			<p>
 				Met pinMode() kun je een van de pinnen op de arduino in een bepaalde stand zetten, de opties zijn INPUT en OUTPUT. Wil je een signaal ontvangen, gebruik dan INPUT, wil je iets versturen, gebruik dan OUTPUT. Gebruik pinMode() als volgt, zet als eerste het nummer van de pin tussen de haakjes, deze kun je aflezen op de arduino. Blijf voorlopig bij de nummers 2 tm 13. Als tweede zet je de stand erin. Een voorbeeld is pinMode(13, OUTPUT);

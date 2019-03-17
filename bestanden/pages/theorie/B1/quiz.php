@@ -96,19 +96,19 @@
 		<div class="antwoorden">
 			<ul>
 				<li>
-					<label class="container">&lt;a href=”LOCATIE”>LINK&lt;/a>
+					<label class="container">&lt;a href="LOCATIE">LINK&lt;/a>
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">&lt;a href=”LOCATIE”>
+					<label class="container">&lt;a href="LOCATIE">
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>
 				</li>
 				<li>
-					<label class="container">&lt;link href=”LOCATIE”>TEKST&lt;/link>
+					<label class="container">&lt;link href="LOCATIE">TEKST&lt;/link>
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>

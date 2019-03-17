@@ -72,7 +72,7 @@
 			</p>
 			<ol>
 				<li>
-					Download anaconda via <a href='https://www.anaconda.com/download/'>https://www.anaconda.com/download/</a>. Click op windows installer python 3.6 en bij de pop-up klik je op ‘no thanks’.
+					Download anaconda via <a href='https://www.anaconda.com/download/'>https://www.anaconda.com/download/</a>. Click op windows installer python 3.6 en bij de pop-up klik je op 'no thanks'.
 				</li>
 				<li>
 					Volg de stappen van de installer.
@@ -97,10 +97,10 @@
 				</li>
 				<li>
 					Type in het eerste hokje (achter In[])</br>
-					<code>print(“Hello world”)</code>
+					<code>print("Hello world")</code>
 				</li>
 				<li>
-					Gebruik de toetsencombinatie ctrl+enter terwijl het hokje geselecteerd is, dit voert de code in het hokje uit. Als alles juist geïnstalleerd is komt er nu onder het hokje ‘Hello world’ te staan.
+					Gebruik de toetsencombinatie ctrl+enter terwijl het hokje geselecteerd is, dit voert de code in het hokje uit. Als alles juist geïnstalleerd is komt er nu onder het hokje 'Hello world' te staan.
 				</li>
 			</ol>
 

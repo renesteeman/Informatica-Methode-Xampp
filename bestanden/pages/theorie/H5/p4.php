@@ -72,7 +72,7 @@
 				De periode waarin deze backlog weggewerkt wordt heet 'sprint' en duurt meestal twee weken. Op het eind van een sprint wordt een nieuwe versie van het project uitgegeven en wordt teruggekeken naar hoe de sprint is verlopen en wat beter kon. Er is ook op elke dag een kort gesprek tussen de teamleden waarin kort wordt gezegd wat die dag gedaan wordt en eventueel nog wat belangrijke mededelingen, dit is een 'daily scrum meeting'. De persoon die zorgt dat dit allemaal in goede banen wordt geleid heet 'scrum master'.
 			</p>
 			<p>
-				Het is ook mogelijk om aan dit proces een ‘burn-down chart’ toe te voegen, dit is een grafiek waarop elke dag wordt weergegeven hoeveel werk er nog grofweg over is voor de huidige sprint. Des te meer werk, des te hoger het punt op de grafiek. Elke dag komt er weer een nieuw punt bij op de grafiek en op het eind kan dan gekeken worden naar wanneer het goed en wanneer het minder goed ging.
+				Het is ook mogelijk om aan dit proces een 'burn-down chart' toe te voegen, dit is een grafiek waarop elke dag wordt weergegeven hoeveel werk er nog grofweg over is voor de huidige sprint. Des te meer werk, des te hoger het punt op de grafiek. Elke dag komt er weer een nieuw punt bij op de grafiek en op het eind kan dan gekeken worden naar wanneer het goed en wanneer het minder goed ging.
 			</p>
 			<p>
 				Voor een korte samenvatting (in het Engels) kun je <a href=" https://www.youtube.com/watch?v=1PBln3dyaPs&list=PLngnoZX8cAn9zw-9wKg6HiHV4TJkUrdGW">https://www.youtube.com/watch?v=1PBln3dyaPs&list=PLngnoZX8cAn9zw-9wKg6HiHV4TJkUrdGW</a> bekijken.

@@ -49,7 +49,7 @@
 
 		<!-- vraag 2-->
 		<div class="vraagBalk">
-			Wat is de totale weerstand bij een parallelschakeling met twee ‘takken’ die elk een weerstand van 4 ohm hebben?
+			Wat is de totale weerstand bij een parallelschakeling met twee 'takken' die elk een weerstand van 4 ohm hebben?
 		</div>
 		<div class="antwoorden">
 			<ul>

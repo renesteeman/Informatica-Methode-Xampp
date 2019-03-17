@@ -50,7 +50,7 @@
 
 		<div class="theorie-content">
 			<p>
-				De arduino is een soort minicomputer die simpele berekeningen kan uitvoeren en daarmee andere elektronica kan aansturen door het sturen van elektriciteit. De ‘basis’ arduino heet Arduino Uno en ziet er als volgt uit. (Dit is niet het originele model, maar functioneel hetzelfde)
+				De arduino is een soort minicomputer die simpele berekeningen kan uitvoeren en daarmee andere elektronica kan aansturen door het sturen van elektriciteit. De 'basis' arduino heet Arduino Uno en ziet er als volgt uit. (Dit is niet het originele model, maar functioneel hetzelfde)
 				<img src="./afbeeldingen/arduino.png" />
 			</p>
 			<p>

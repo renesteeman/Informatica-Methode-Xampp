@@ -109,9 +109,9 @@
 
 			<p>De nieuwe waarden zijn:</p>
 
-			<p><code>string1 = “eerste”</code></p>
+			<p><code>string1 = "eerste"</code></p>
 
-			<p><code>string2 = “tweede”</code></p>
+			<p><code>string2 = "tweede"</code></p>
 
 			<p>Additie:</p>
 
@@ -135,7 +135,7 @@
 					Maak zelf 10 rekensommen met minimaal: 1 met een int, 1 met een string, 1 met een float, 1 met een list en 1 zonder variabele.
 				</li>
 				<li>
-					Stel ik heb een list met als waarden [“Tesla”,”Koffie”,”Programmeren”], welk index nummer (nummer dat de plaats in de lijst aangeeft) heb je nodig als je koffie wilt?
+					Stel ik heb een list met als waarden ["Tesla","Koffie","Programmeren"], welk index nummer (nummer dat de plaats in de lijst aangeeft) heb je nodig als je koffie wilt?
 				</li>
 			</ol>
 

@@ -19,7 +19,7 @@
 	<div class="vragen">
 		<!-- vraag 1-->
 		<div class="vraagBalk">
-			Er zijn 5 vervoersmiddelen, waaronder 2 elektrische auto’s, een bus die op benzine rijdt, een elektrische motor en een fiets. Ze worden allemaal als ‘schoon’ gezien, met uitzondering van de bus. Welke bewering is wel waar?
+			Er zijn 5 vervoersmiddelen, waaronder 2 elektrische auto's, een bus die op benzine rijdt, een elektrische motor en een fiets. Ze worden allemaal als 'schoon' gezien, met uitzondering van de bus. Welke bewering is wel waar?
 		</div>
 		<div class="antwoorden">
 			<ul>

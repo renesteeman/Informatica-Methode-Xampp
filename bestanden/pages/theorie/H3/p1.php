@@ -75,7 +75,7 @@
 				Er zijn hoge en lage programmeertalen. Hoe hoger de taal, des te verder het van machinetaal af staat en des te dichter bij bijvoorbeeld het Engels. Een hogere taal is over het algemeen minder efficiënt voor de computer, maar efficiënter voor de programmeur. Er kan vaak meer gedaan worden met minder code en is dus geschikt om mee te leren programmeren. De taal zorgt zelfs voor de details van de code.
 			</p>
 			<p>
-				De taal die je in dit hoofdstuk zult gaan leren is Python. Python is een relatief eenvoudige taal om mee te beginnen en wordt toch voor veel dingen gebruikt. Het kan o.a. gebruikt worden voor algemene programma’s, websites, games en data science.
+				De taal die je in dit hoofdstuk zult gaan leren is Python. Python is een relatief eenvoudige taal om mee te beginnen en wordt toch voor veel dingen gebruikt. Het kan o.a. gebruikt worden voor algemene programma's, websites, games en data science.
 			</p>
 			<p>
 				Er zijn momenteel 2 grote versies in gebruik. 2.x en 3.x. In dit hoofdstuk wordt 3.x gebruikt aangezien dit de modernere variant is en op het moment van schrijven het best ondersteund is. In de volgende paragraaf leer je hoe je Python kunt installeren en hoe je kunt beginnen met het programmeren van Python.

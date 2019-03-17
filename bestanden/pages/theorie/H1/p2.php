@@ -71,7 +71,7 @@ include('../../../components/headerChapter.php');
 
 			<p>Getallen met elkaar verminderen</p>
 
-			<p>Ook dit is niet ingewikkeld. Je haalt steeds het onderste getal van het bovenste getal af. Als je op -1 uitkomt ‘leen’ je van het volgende nummer.</p>
+			<p>Ook dit is niet ingewikkeld. Je haalt steeds het onderste getal van het bovenste getal af. Als je op -1 uitkomt 'leen' je van het volgende nummer.</p>
 
 			<img src="./afbeeldingen/aftrekken.svg" class="theorieImage" />
 

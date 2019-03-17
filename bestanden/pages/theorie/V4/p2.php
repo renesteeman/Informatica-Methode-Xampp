@@ -74,7 +74,7 @@ include('../../../components/headerChapter.php');
 				</table>
 			</div>
 
-			<p>De topologie van een netwerk is eigenlijk de structuur dat apparaten in een netwerk verbind. Er zijn een paar duidelijk herkenbare vormen die behandeld zullen worden, je zult niet hoeven te weten hoe je zelf precies zo’n topologie hoeft te maken. Je kunt de blauwe bollen zien als een apparaat dat data kan doorgeven en de lijnen als de fysieke verbinding.</p>
+			<p>De topologie van een netwerk is eigenlijk de structuur dat apparaten in een netwerk verbind. Er zijn een paar duidelijk herkenbare vormen die behandeld zullen worden, je zult niet hoeven te weten hoe je zelf precies zo'n topologie hoeft te maken. Je kunt de blauwe bollen zien als een apparaat dat data kan doorgeven en de lijnen als de fysieke verbinding.</p>
 
 			<p>Bus</p>
 

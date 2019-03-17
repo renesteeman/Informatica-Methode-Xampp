@@ -87,7 +87,7 @@
 
 			<ol>
 				<li>
-					Ga verder met de HTML van de vorige paragraaf. Laat de <div> nu van kleur veranderen als je erover gaat met de cursor. Voeg aan de pagina een ‘tegel’ toe zoals op de hoofdpagina van de theorie (de groene blokken), de kleur, tekstgrote, afronding en andere eigenschappen mag je zelf bedenken.
+					Ga verder met de HTML van de vorige paragraaf. Laat de <div> nu van kleur veranderen als je erover gaat met de cursor. Voeg aan de pagina een 'tegel' toe zoals op de hoofdpagina van de theorie (de groene blokken), de kleur, tekstgrote, afronding en andere eigenschappen mag je zelf bedenken.
 				</li>
 			</ol>
 

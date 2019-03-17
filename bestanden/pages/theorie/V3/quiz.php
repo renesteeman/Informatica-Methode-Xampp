@@ -55,7 +55,7 @@
 
 		<!-- vraag 2-->
 		<div class="vraagBalk">
-			Wat betekent het als een waarde in een database ‘Null’ is?
+			Wat betekent het als een waarde in een database 'Null' is?
 		</div>
 		<div class="antwoorden">
 			<ul>
@@ -66,7 +66,7 @@
 					</label>
 				</li>
 				<li>
-					<label class="container">Het is gelijk aan de tekst ‘’
+					<label class="container">Het is gelijk aan de tekst ''
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>

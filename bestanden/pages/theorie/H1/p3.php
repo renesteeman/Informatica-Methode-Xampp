@@ -60,7 +60,7 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content">
-			<p>‘Gates’, oftewel poortjes in het Nederlands, zijn kleine schakelingen. De eenvoudigste (en tevens ook de belangrijkste) zijn AND en OR. Een gate ontvangt twee binaire waarden als input en vergelijkt deze twee bits.</p>
+			<p>'Gates', oftewel poortjes in het Nederlands, zijn kleine schakelingen. De eenvoudigste (en tevens ook de belangrijkste) zijn AND en OR. Een gate ontvangt twee binaire waarden als input en vergelijkt deze twee bits.</p>
 
 			<p>Afhankelijk van welke gate en welke input het heeft ontvangen komt er een bepaalde output. Deze output is wederom een bit, het antwoord eigenlijk dus met ja of nee.</p>
 

@@ -61,7 +61,7 @@ include('../../../components/headerChapter.php');
 
 			<p>Er zijn naast JS nog veel andere talen die je kunt gebruiken voor websites. JS is wel een van de meest gebruikte en wordt als een van de standaarden van het internet gezien. PHP is ook een belangrijke taal voor websites en kun je leren in web logic+. PHP wordt gebruikt om logica uit te voeren op een server en is een erg krachtige, maar soms lastige taal.</p>
 
-			<p>Talen die worden uitgevoerd aan de kant van de gebruiker heten ‘client-side’. Een voorbeeld hiervan is JS, aangezien de browser aan de kant van de gebruiker wordt gebruikt. Talen die aan de kant van de server worden gebruikt heten ‘server-side’. Een voorbeeld hiervan is PHP. Het voordeel van een client-side taal is dat het weinig rekenkracht vereist van een centrale server. Het voordeel van een server-side taal is dat het vaak sneller uitgevoerd wordt (de snelheid van het apparaat van de gebruiker is niet erg belangrijk) en het is vaak krachtiger.</p>
+			<p>Talen die worden uitgevoerd aan de kant van de gebruiker heten 'client-side'. Een voorbeeld hiervan is JS, aangezien de browser aan de kant van de gebruiker wordt gebruikt. Talen die aan de kant van de server worden gebruikt heten 'server-side'. Een voorbeeld hiervan is PHP. Het voordeel van een client-side taal is dat het weinig rekenkracht vereist van een centrale server. Het voordeel van een server-side taal is dat het vaak sneller uitgevoerd wordt (de snelheid van het apparaat van de gebruiker is niet erg belangrijk) en het is vaak krachtiger.</p>
 
 			<p>NB: JS kan ook server-side gebruikt worden, maar dat is niet standard.</p>
 

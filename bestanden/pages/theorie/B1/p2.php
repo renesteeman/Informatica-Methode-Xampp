@@ -99,7 +99,7 @@ Hello HTML
 				Je zou in dit geval head, header en footer weg kunnen laten, ze worden hier toch niet gebruikt. Aangezien je ze vaak nodig hebt is wel standaard om ze te gebruiken.
 			</p>
 			<p>
-				Stel je wilt gewoon tekst hebben, dan kun je &lt;p> gebruiken. De p staat voor paragraph. Of om een ‘blok’ te defineren kun je &lt;div> gebruiken, dit staat voor divisie. Dit kun je later met css bijvoorbeeld een achtergrondkleur geven.
+				Stel je wilt gewoon tekst hebben, dan kun je &lt;p> gebruiken. De p staat voor paragraph. Of om een 'blok' te defineren kun je &lt;div> gebruiken, dit staat voor divisie. Dit kun je later met css bijvoorbeeld een achtergrondkleur geven.
 			</p>
 			<p>
 				Als je HTML gaat schrijven kan dit in word, maar het is beter om een gespecialiseerd programma voor te gebruiken. Zelf (als maker van deze website) gebruik ik atom. Dit is een gratis tekstbewerker waar je zelf veel aan kunt aanpassen en toevoegen. Je kunt het vinden op <a href="https://atom.io/">https://atom.io/</a>.

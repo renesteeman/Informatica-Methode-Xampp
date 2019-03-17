@@ -50,15 +50,15 @@ include('../../../components/headerChapter.php');
 	<p>Je kunt waardes opvragen, aanpassen en toevoegen met SQL (Structured Query Language). SQL is een taal die erg lijkt op het Engels en waarmee je opdrachten kunt aanmaken om met de database te communiceren. Om hiermee te oefenen kun je gebruik maken van het programma XAMPP. Hoe je dit installeert kun je terugvinden bij de extra bestanden bij dit hoofdstuk. XAMPP is een programma dat je kunt gebruiken om te doen alsof een computer een server is. Zo kun je gebruikmaken van bepaalde talen en mogelijkheden. We gaan nu met XAMPP een eerste database aanmaken.
   </p>
 
-	<p>Ga nu naar de browser en dan naar <a href="http://localhost/phpmyadmin/">http://localhost/phpmyadmin/</a> . Je krijgt hier een overzicht van een databasebeheer systeem. Om een database aan te maken klik je linksboven op “New”.</p>
+	<p>Ga nu naar de browser en dan naar <a href="http://localhost/phpmyadmin/">http://localhost/phpmyadmin/</a> . Je krijgt hier een overzicht van een databasebeheer systeem. Om een database aan te maken klik je linksboven op "New".</p>
   <img src="./afbeeldingen/CreateDatabase.png" />
 
-	<p>Dan vul je een naam in, collation kun je voor nu negeren. Het geeft aan met welke karakterset je wilt werken, oftewel hoe je tekens (tekst) wilt opslaan. Klik dan op “Create”. Je hebt nu een eigen database gemaakt!</p>
+	<p>Dan vul je een naam in, collation kun je voor nu negeren. Het geeft aan met welke karakterset je wilt werken, oftewel hoe je tekens (tekst) wilt opslaan. Klik dan op "Create". Je hebt nu een eigen database gemaakt!</p>
 
 	<p>Het heeft alleen nog geen inhoud, maar daar gaan we verandering in brengen. Klik links op de door jouw aangemaakte database.</p>
   <img src="./afbeeldingen/FillinDB.png" />
 
-	<p>Om een tabel toe te voegen vul je een naam in en dan het aantal kolommen, dit zijn het aantal vakken dat per rij beschikbaar zal zijn. Een vak kan dan bijvoorbeeld “gebruikersnaam” of “wachtwoord” zijn. Als naam van de tabel kun je bijvoorbeeld ‘gebruikers’ kiezen. Klik vervolgens op “Go” om de database aan te maken.</p>
+	<p>Om een tabel toe te voegen vul je een naam in en dan het aantal kolommen, dit zijn het aantal vakken dat per rij beschikbaar zal zijn. Een vak kan dan bijvoorbeeld "gebruikersnaam" of "wachtwoord" zijn. Als naam van de tabel kun je bijvoorbeeld 'gebruikers' kiezen. Klik vervolgens op "Go" om de database aan te maken.</p>
 
 	<p>Als het goed is krijg je nu het volgende te zien:</p>
   <img src="./afbeeldingen/FillinOverview.png" />
@@ -98,18 +98,18 @@ include('../../../components/headerChapter.php');
 
 	<p>Je mag nu zelf een database bedenken of het voorbeeld blijven volgen.</p>
 
-	<p>We willen eerst een primaire sleutel, deze gaan we “id” noemen. Het wordt een INT met A_I ingeschakeld. Als index kiezen we dus PRIMARY.</p>
+	<p>We willen eerst een primaire sleutel, deze gaan we "id" noemen. Het wordt een INT met A_I ingeschakeld. Als index kiezen we dus PRIMARY.</p>
 
 	<p>Dan willen we vervolgens een gebruikersnaam, dit is een stuk tekst. Een gebruikersnaam van 20 karakters lang zou lang genoeg moeten zijn voor dit voorbeeld, dus Length = 20. Als je speciale tekens wilt opslaan, zoals een é, dan kun je onder Collation gebruikmaken van bijvoorbeeld utf8_bin. Deze optie zorgt ervoor dat een é niet opeens iets anders wordt als je het invoert in de database.</p>
 
 	<p>Nu komt het wachtwoord, dit is weer tekst en kun je zelf proberen in te vullen. In een goede database zet je wachtwoorden niet als standaard tekst erin, maar in dit voorbeeld gaan we dat wel doen omdat het anders te complex wordt. Normaal zou je hiervoor encryptie gebruiken, dan is het wachtwoord namelijk niet direct af te lezen uit een (gehackte) database.</p>
 
-	<p>Als laatste zetten we er email-adres bij, dit is weer tekst en mag in dit voorbeeld leeg blijven. We zetten “Null” dus aan.</p>
+	<p>Als laatste zetten we er email-adres bij, dit is weer tekst en mag in dit voorbeeld leeg blijven. We zetten "Null" dus aan.</p>
 
 	<p>Het ziet er nu als volgt uit:</p>
   <img src="./afbeeldingen/FillinDBFilled.png" />
 
-	<p>De andere opties zijn nu niet van belang, dus we klikken op “Save” om het aanmaken definitief te maken.</p>
+	<p>De andere opties zijn nu niet van belang, dus we klikken op "Save" om het aanmaken definitief te maken.</p>
 
 	<p>We hebben nu een database met een structuur, maar er staat nog niks in. Hier gaan we in de volgende paragraaf aan werken.</p>
 

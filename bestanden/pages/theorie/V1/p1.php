@@ -117,7 +117,7 @@ include('../../../components/headerChapter.php');
 									Hedonisme: Een daad is goed wanneer ik er blij van word. Genot is het belangrijkste doel in het leven en is hetgeen waar iedereen naar moet streven.
 								</li>
 								<li>
-									Immanuel Kant: Een daad is goed wanneer een maatschappij er beter van wordt als iedereen dit doet. Bijvoorbeeld: “Liegen is niet een goede daad omdat een maatschappij niet kan bestaan als iedereen tegen elkaar zou liegen.
+									Immanuel Kant: Een daad is goed wanneer een maatschappij er beter van wordt als iedereen dit doet. Bijvoorbeeld: "Liegen is niet een goede daad omdat een maatschappij niet kan bestaan als iedereen tegen elkaar zou liegen.
 								</li>
 								<li>
 									Utilitarisme (Jeremy Bentham): Het is een goede daad wanneer het resultaat positief is.

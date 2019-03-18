@@ -60,10 +60,7 @@ include('../../../components/headerChapter.php');
 		</div>
 
 		<div class="theorie-content">
-
-			<p>Nieuwe filosofen hebben vast iets hierover gehoord. Stel je voor:</p>
-
-			<p>Je zit in een treinwagon, voor je gaat de spoor op in twee kanten, op spoor A staat één mens, op spoor B staan vijf mensen. Je kunt de trein niet stoppen. Wat doe je?</p>
+			<p>Stel je voor dat je in een treinwagon zit en op het spoor voor je zit een wissel, op spoor A staat één mens, op spoor B staan vijf mensen. Je kunt de trein niet stoppen. Wat doe je?</p>
 
 			<ol>
 				<li>
@@ -79,7 +76,7 @@ include('../../../components/headerChapter.php');
 
 			<p>Voor de meeste mensen is dit een makkelijke keuze, wanneer je het (mensen)leven waardeert zal je willen dat zo min mogelijk mensen dood gaan. Volgens de gevolgenethiek van Bentham en Mill zou je dus spoor A volgen en de vijf mensen redden.</p>
 
-			<p>Er zijn meerdere varianten van dit denk-experiment, wat nou als er anderen mesen/aantallen gebruikt worden? Wat zou je kiezen wanneer:</p>
+			<p>Er zijn meerdere varianten van dit denk-experiment, wat nou als er anderen mensen en aantallen gebruikt worden? Wat zou je kiezen als je moest kiezen tussen:</p>
 
 			<ol class="MLquestion">
 				<li>
@@ -140,20 +137,20 @@ include('../../../components/headerChapter.php');
 
 			<ol>
 				<li>
-					Tegen een boom aan botsen en  de familie riskeren en de kinderen redden.
+					Tegen een boom aan botsen en het leven van de familie riskeren en de kinderen van groep 4 redden.
 				</li>
 				<li>
 					Proberen uit te wijken en riskeren om tegen de kinderen te botsen.
 				</li>
 			</ol>
 
-			<p>Een computer is niet in staat om dit probleem op te lossen. Wat moet jij als programmeur hier aan doen? Als mens heb je een set normen en waarden, regels die jou zijn aangeleerd vanaf dat je geboren bent. Je mag bijvoorbeeld niet zomaar stelen of liegen. Een algoritme heeft dat niet. Wanneer een computer moet bepalen wie het moet aanrijden denkt het niet aan interpersoonlijke relaties, het denkt niet aan de waardes die mensen nog hebben in de samenleving, dat is jouw taak.</p>
+			<p>Een computer is niet in staat om dit probleem op te lossen. Wat moet jij als programmeur hier aan doen? Als mens heb je een set normen en waarden, regels die jou zijn aangeleerd vanaf dat je geboren bent. Je mag bijvoorbeeld niet zomaar stelen of liegen. Een algoritme heeft dat niet. Wanneer een computer moet bepalen wie het moet aanrijden denkt het niet aan interpersoonlijke relaties, het denkt niet aan de waarde die mensen hebben in de samenleving, dat is jouw taak.</p>
 
 			<p>Dus, je krijgt nu de onmogelijke taak, je moet waardes geven aan mensen. Hoe kun je dat doen? Sommige mensen zullen claimen dat alle mensen gelijk aan elkaar staan, dat is geen slecht begin. We beginnen we met de regel:</p>
 
 			<p>-Probeer zo weinig mogelijk mensen te verwonden.</p>
 
-			<p>We hebben natuurlijk meer regels nodig, we kunnen bijvoorbeeld zorgen dat mensen boven de 68 jaar minder meetellen. Ze contribueren tenslotte minder aan een maatschappij. Dus:</p>
+			<p>We hebben natuurlijk meer regels nodig, want soms moet je een keuze maken waarbij evenveel mensen bij keuze A of B benadeeld worden. We kunnen bijvoorbeeld zeggen dat mensen boven de 68 jaar minder meetellen. Ze contribueren tenslotte minder aan een maatschappij. Dus:</p>
 
 			<p>-Mensen boven de 68 jaar worden niet geprioriteerd.</p>
 

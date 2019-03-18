@@ -66,13 +66,13 @@ include('../../../components/headerChapter.php');
 
 			<p>Weak AI</p>
 
-			<p>Weak AI bestaat al in onze maatschappij, een Tesla auto berekent wat het ziet en probeert niet ergens tegen te botsen, het programma is gemaakt om de de auto te besturen en het kan niks anders. Dit is gebaseerd op technologieën zoals machine learning. Een weak AI is dus een AI met maar één doel. Wanneer je de opdracht geeft aan een weak AI om zo veel mogelijk ijsjes te maken kan het alle mensen vermoorden, veranderen naar een pasta en zo vlees ijsjes maken. Het heeft dus wel duidelijke regels nodig! Deze regels worden verwerkt in een score systeem, des te beter het resultaat, des te meer punten. Een AI kan hiermee getraind worden en zich zo 'goed gaan gedragen'.</p>
+			<p>Weak AI bestaat al in onze maatschappij, een Tesla analyseert wat er om zich heen is en probeert niet ergens tegen te botsen, het programma is gemaakt om de de auto te besturen en het kan niks anders. Dit is gebaseerd op technologieën zoals machine learning. Een weak AI is dus een AI met maar één doel. Wanneer je de opdracht geeft aan een weak AI om zo veel mogelijk ijsjes te maken kan het alle mensen vermoorden, veranderen naar een pasta en zo vlees ijsjes maken. Het heeft dus wel duidelijke regels nodig! Deze regels worden verwerkt in een score systeem, des te beter het resultaat, des te meer punten. Een AI kan hiermee getraind worden en zich zo goed mogelijk te 'gedragen'.</p>
 
-			<p>In onze samenleving wordt weak AI toegepast op verschillende industrieën, omdat een weak AI sneller en efficiënter is dan een mens, kan het gemakkelijk simpele taken en banen vervangen. Dit heeft gevolgen voor allerlei industrieën, de mensen die hun banen verliezen zijn vaak niet in staat om betere opleidingen te zoeken. Het kan resulteren in massale werkloosheid en daardoor economische crisis. Het kan er ook voor zorgen dat de mens niet meer of minder hoeft te werken en meer vakantie heeft.</p>
+			<p>In onze samenleving wordt weak AI toegepast op verschillende industrieën, omdat een weak AI sneller en efficiënter is dan een mens, kan het gemakkelijk simpele taken en banen vervangen. Dit heeft gevolgen voor allerlei industrieën De mensen die hun banen verliezen zijn vaak niet in staat om een nieuwe opleiding te gaan volgen. Het kan resulteren in massale werkloosheid en daardoor een economische of sociale crisis. Het kan er ook voor zorgen dat de mens niet meer of minder hoeft te werken en meer vakantie heeft.</p>
 
 			<p>Strong AI</p>
 
-			<p>Strong AI bestaat nog niet voor ons, maar in theorie zal het een programma zijn dat de volledig het diepte van menselijk begrip en logica kan volgen, waaronder dus ook emoties. Het verschil tussen deze vorm van AI en een mens is dat de AI veranderingen kan aanbrengen in zijn code. Een mens doet miljoenen jaren erover om zijn brein significant te verbeteren, een computer kan makkelijk een nieuw cpu toevoegen en nog sneller denken.</p>
+			<p>Strong AI bestaat nog niet voor ons, maar in theorie zal het een programma zijn dat de volledig het diepte van menselijk begrip en logica kan volgen, waaronder dus ook emoties. Het verschil tussen deze vorm van AI en een mens is dat de AI veranderingen kan aanbrengen in zijn code. Een mens doet miljoenen jaren erover om zijn brein significant te verbeteren, een computer kan makkelijk een nieuw cpu krijgen en nog sneller 'denken'.</p>
 
 			<p>
 				Een korte uitleg van de werking van AI
@@ -83,11 +83,11 @@ include('../../../components/headerChapter.php');
 			</p>
 
 			<p>
-				Deep learning gaat nog een stap verder, hierbij worden modellen (programma's) gemaakt die imiteren wat in de hersenen gebeurt bij het maken van keuzes. Zo'n model ook neural network genoemd begint met verschillende waardes die aangeven hoe zwaar een waarde vanuit de gegeven data meegeteld moet worden in een soort grote formule. Het model levert dan een waarde als resultaat, dit kan bijvoorbeeld een percentage zijn dat aangeeft hoe zeker het is dat een bepaald object getoond is of een getal dat aangeeft wat een student als cijfer gaat halen. Het gaat dan steeds meer data door en corrigeert zichzelf waardoor het steeds zijn gewichten, de waardes die bepalen hoeveel iets meetelt in de 'formule', kan verbeteren.
+				Deep learning gaat nog een stap verder, hierbij worden modellen (programma's) gemaakt die imiteren wat in de hersenen gebeurt bij het maken van keuzes. Zo'n model, een neural network genoemd begint met verschillende waardes die aangeven hoe zwaar een waarde vanuit de gegeven data meegeteld moet worden in een soort grote formule. Het model levert dan een waarde als resultaat, dit kan bijvoorbeeld een percentage zijn dat aangeeft hoe zeker het is dat een bepaald object getoond is of een getal dat aangeeft wat een student als cijfer gaat halen. Het gaat dan steeds meer data door en corrigeert zichzelf waardoor het steeds zijn gewichten, de waardes die bepalen hoeveel iets meetelt in de 'formule' kan verbeteren.
 			</p>
 
 			<p>
-				Een simpel voorbeeld van zo'n neural network is een programma dat 'geleerd' heeft te voorspellen of in een foto een kat of hond zichtbaar is. Een nural network is dus een programma dat probeert een waarde te voorspellen, dit kan een getal zijn (bijvoorbeeld een cijfer voor een toets) of een categorie (bijvoorbeeld hond of kat).
+				Een simpel voorbeeld van zo'n neural network is een programma dat 'geleerd' heeft te voorspellen of in een foto een kat of hond zichtbaar is. Een neural network is dus een programma dat probeert een waarde te voorspellen, dit kan een getal zijn (bijvoorbeeld een cijfer voor een toets) of een categorie (bijvoorbeeld hond of kat).
 			</p>
 
 			<p>

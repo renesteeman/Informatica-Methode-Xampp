@@ -45,7 +45,7 @@
 
 		<div class="theorie-content">
 			<p>
-				Bij de projecten ga in een groep aan de slag om iets te doen dat jullie (hopelijk) interessant vinden en iets van kunnen leren. Dit is jouw kans om iets te doen dat je zelf wilt, in plaats van het uitvoeren van een verplichting. Als je een erg goed project maakt kan het zelfs op jouw CV.
+				Bij projecten ga je in een groep aan de slag om iets te doen dat jullie (hopelijk) interessant vinden en iets van kunnen leren. Dit is jouw kans om iets te doen dat je zelf wilt, in plaats van het uitvoeren van een verplichting. Als je een erg goed project maakt kan het zelfs op jouw CV.
 			</p>
 			<p>
 				Probeer bij het project gebruik te maken van alles dat je hebt geleerd en zorg ervoor dat iedereen iets te doen heeft waar ze interesse in hebben. Het is het leukste om zelf een project te verzinnen, maar als je echt niks kunt bedenken kun je de volgende ideeën (als inspiratie) gebruiken.
@@ -65,7 +65,7 @@
 					Een led-strip die automatisch aangaat in de ochtend, eventueel afhankelijk van het lesrooster.
 				</li>
 				<li>
-					Een systeem dat automatisch planten bevocht via een arduino.
+					Een systeem dat automatisch planten bevochtigd via een arduino.
 				</li>
 				<li>
 					Het bouwen van een eigen computer (niet aanbevolen voor groepen).

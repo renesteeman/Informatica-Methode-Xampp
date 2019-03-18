@@ -78,7 +78,7 @@
 				Er zijn ook nog andere (krachtigere en compactere) arduino's die voor het grootste deel hetzelfde werken als de uno.
 			</p>
 			<p>
-				Om de rest van de mogelijkheden te bekijken kun je naar <a href="https://www.arduino.cc/reference/en/">https://www.arduino.cc/reference/en/</a> gaan.
+				Om meer van de taal te leren kun je terecht op <a href="https://www.arduino.cc/reference/en/">https://www.arduino.cc/reference/en/</a>. Kijk ook eens naar <a href="https://www.arduino.cc/en/Main/Products">https://www.arduino.cc/en/Main/Products</a> om te zien wat de verschillen tussen de modellen zijn.
 			</p>
 
 		</div>

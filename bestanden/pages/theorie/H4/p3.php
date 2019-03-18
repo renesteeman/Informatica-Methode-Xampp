@@ -52,7 +52,6 @@
 			<p>
 				Als eerste gaan we de software klaar maken voor de arduino, zorg eerst ervoor dat alles geïnstalleerd is. Als de software niet geïnstalleerd is, dan kun je dit doen volgens de installatie pagina van dit hoofdstuk (onder het menu voor dit hoofdstuk). Volg voor het klaar maken van de software (na de installatie) de volgende stappen:
 			</p>
-
 			<p>
 				<ol>
 					<li>
@@ -125,7 +124,7 @@ void loop() {
 				Om een signaal te sturen gebruik je digitalWrite(). Je voert eerst het nummer van de pin in en dan de waarde. Mogelijke waardes zijn HIGH en LOW. HIGH kun je zien als 1 en LOW 0, dus aan en uit.
 			</p>
 			<p>
-				Je kunt ook variabelen gebruiken, dit zijn waardes met een naam. Als je een waarde vaker in jouw code nodig hebt komen deze erg van pas, ze helpen je het overzicht te bewaren en snel dingen aan te passen. Als je een geheel getal als variabele wilt gebruiken, dan gebruik je int. Een voorbeeld is int ledPin = 13; Dit zet ledPin gelijk aan de waarde 13. Als je in de code nu ledPin gebruikt wordt dit vervangen door 13. Je kunt ook tekst als waarde geven door het type String te gebruiken. Een voorbeeld van een programma dat een string uitprint is:
+				Je kunt ook variabelen gebruiken, dit zijn namen waar een waarde aan gekoppeld is. Als je een waarde vaker in jouw code nodig hebt komen deze erg van pas, ze helpen je het overzicht te bewaren en snel dingen aan te passen. Als je een geheel getal als variabele wilt gebruiken, dan gebruik je int. Een voorbeeld is int ledPin = 13; Dit zet ledPin gelijk aan de waarde 13. Als je in de code nu ledPin gebruikt wordt dit vervangen door 13. Je kunt ook tekst als waarde geven door het type String te gebruiken. Een voorbeeld van een programma dat een string uitprint is:
 			</p>
 			<p>
 

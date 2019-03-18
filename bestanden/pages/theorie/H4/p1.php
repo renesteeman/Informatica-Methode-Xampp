@@ -53,7 +53,7 @@
 				Voordat we beginnen met de arduino en het programmeren ervan, gaan we eerst elektriciteit herhalen. Dit is namelijk de basis van de arduino (en eigenlijk alle computers).
 			</p>
 			<p>
-				Elektriciteit is het verplaatsen van een elektrische lading, doormiddel van het transport van elektronen. Oftewel het bewegen van deeltjes met een negatieve lading, elektronen. Deze elektronen gaan door een stroomkring, oftewel door een materiaal dat stroom geleidt ('door laat') en waarin het begin en eindpunt samenvallen. Het 'stroomcircuit' moet namelijk gesloten zijn.
+				Elektriciteit gaat over het verplaatsen van een elektrische lading, doormiddel van het transport van elektronen. Oftewel het bewegen van deeltjes met een negatieve lading. Deze elektronen gaan door een stroomkring, oftewel door een materiaal dat stroom geleidt (door laat) en waarin het begin en eindpunt samenvallen. Het 'stroomcircuit' moet namelijk gesloten zijn.
 			</p>
 			<p>
 				Deze bewegende elektronen verplaatsen energie. Energie wordt in de natuurkunde als 'E' weergeven en de hoeveelheid energie per seconde is 'P', power. De hoeveelheid energie per seconde is gelijk aan een bepaald aantal bewegende elektronen maal de lading die ze hebben. De hoeveelheid bewegende elektronen wordt beschreven met de stroomsterkte, oftewel 'I' (intensiteit). De lading wordt spanning, 'U' genoemd. Dus P=U*I. De energie per seconde is gelijk aan de energie per groep elektronen maal het aantal groepen elektronen per seconde.
@@ -71,7 +71,7 @@
 				Er zijn een paar manier om een elektrisch circuit te maken. Er bestaan twee 'hoofdstructuren', dit zijn serie en parallel. Het is ook mogelijk om deze te combineren.
 			</p>
 			<p>
-				Bij serie staan de onderdelen van het circuit 'aan elkaar' en bij parallel 'naast elkaar'. Bij serie gaat de stroom dus over een 'weg' en bij parallel wordt het over meerdere 'wegen' verdeeld. In de afbeeldingen staan voorbeelden van stroomkringen en geven de pijlen de richting van de elektronen aan, er is geen spanningsbron getekend om het te versimpelen, maar deze zou overal geplaats kunnen worden.
+				Bij serie staan de onderdelen van het circuit achter elkaar en bij parallel naast elkaar. Bij serie gaat de stroom dus over één weg en bij parallel wordt het over meerdere wegen verdeeld. In de afbeeldingen staan voorbeelden van stroomkringen en geven de pijlen de richting van de elektronen aan, er is geen spanningsbron getekend om het te versimpelen, maar deze zou overal geplaats kunnen worden.
 			</p>
 			<p>
 				Series

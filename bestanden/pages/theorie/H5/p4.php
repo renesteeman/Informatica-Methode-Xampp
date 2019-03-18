@@ -49,16 +49,16 @@
 			</p>
 			<ol>
 				<li>
-					Een groep goed moet samenwerken en zelfstandigheid hebben.
+					Leden van een groep moeten goed samenwerken en zelfstandigheid hebben.
 				</li>
 				<li>
 					Een planning moet niet teveel vast leggen, zodat er ruimte is voor veranderingen.
 				</li>
 				<li>
-					De klant en gebruiker veel contact moeten hebben.
+					De klant en gebruiker moeten regelmatig contact hebben.
 				</li>
 				<li>
-					Producten moeten niet in een keer worden gemaakt en getoond, maar in stappen. Updates moeten klein en regelmatig zijn, in plaats van ver uit elkaar en groot. Zo kan de gebruiker feedback geven en gaat minder tijd verloren aan onnodige zaken.
+					Producten moeten niet in een keer worden gemaakt en getoond, maar in stappen. Updates moeten klein en regelmatig zijn, in plaats van ver uit elkaar en groot. Zo kan de gebruiker feedback geven en gaat minder tijd verloren aan onnodige zaken. Het zorgt er ook voor dat problemen sneller opgelost kunnen worden.
 				</li>
 				<li>
 					Er moet regelmatig een meeting zijn waarbij terug wordt gekeken en verbeterpunten worden gevormd.
@@ -66,10 +66,10 @@
 			</ol>
 
 			<p>
-				Een van de systemen die agile gebruikt is Scrum. Bij scrum wordt elke feature (onder de naam 'user-story') in een zogenaamde backlog gezet, dit is een soort grote te doen lijst van opdrachten. Er wordt vervolgens een planning voor enkele weken gemaakt en hiervoor worden opdrachten uit de backlog uitgekozen. In de komende weken wordt aan deze opdrachten gewerkt en ze komen op het agile board te staan, dit is gebruikelijk een bord met post-it notes die worden verdeeld over: to do, dev, test en release. Er is dus een lijst van dingen waar nog aan begonnen moet worden, een waar aan gewerkt wordt, een waarvoor getest wordt en een met de opdrachten die af zijn.
+				Een van de systemen die agile gebruikt is Scrum. Bij Scrum wordt elke feature (onder de naam 'user-story') in een zogenaamde backlog gezet, dit is een soort grote te doen lijst van opdrachten. Er wordt vervolgens een planning voor enkele weken gemaakt en hiervoor worden opdrachten uit de backlog uitgekozen. In de komende weken wordt aan deze opdrachten gewerkt en ze komen op het agile board te staan. Dit is gebruikelijk een bord met post-it notes die worden verdeeld over: to do, dev, test en release. Er is dus een lijst van dingen waar nog aan begonnen moet worden, een waar aan gewerkt wordt, een waarvoor getest wordt en een met de opdrachten die af zijn.
 			</p>
 			<p>
-				De periode waarin deze backlog weggewerkt wordt heet 'sprint' en duurt meestal twee weken. Op het eind van een sprint wordt een nieuwe versie van het project uitgegeven en wordt teruggekeken naar hoe de sprint is verlopen en wat beter kon. Er is ook op elke dag een kort gesprek tussen de teamleden waarin kort wordt gezegd wat die dag gedaan wordt en eventueel nog wat belangrijke mededelingen, dit is een 'daily scrum meeting'. De persoon die zorgt dat dit allemaal in goede banen wordt geleid heet 'scrum master'.
+				De periode waarin deze backlog weggewerkt wordt heet 'sprint' en duurt meestal twee weken. Op het eind van een sprint wordt een nieuwe versie van het project uitgegeven en wordt teruggekeken naar hoe de sprint is verlopen en wat beter kon. Er is ook op elke dag een kort gesprek tussen de teamleden waarin kort wordt gezegd wat die dag gedaan wordt en eventueel nog wat belangrijke mededelingen, dit is een 'daily Scrum meeting'. De persoon die zorgt dat dit allemaal in goede banen wordt geleid heet 'Scrum master'.
 			</p>
 			<p>
 				Het is ook mogelijk om aan dit proces een 'burn-down chart' toe te voegen, dit is een grafiek waarop elke dag wordt weergegeven hoeveel werk er nog grofweg over is voor de huidige sprint. Des te meer werk, des te hoger het punt op de grafiek. Elke dag komt er weer een nieuw punt bij op de grafiek en op het eind kan dan gekeken worden naar wanneer het goed en wanneer het minder goed ging.

@@ -30,7 +30,7 @@
 					</label>
 				</li>
 				<li>
-					<label class="container">Om een site te ontwerpen.
+					<label class="container">Om zaken zo duidelijk mogelijk te verwoorden.
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>

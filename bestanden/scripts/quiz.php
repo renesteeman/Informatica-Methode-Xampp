@@ -57,7 +57,7 @@
 	}
 
 	if($hoofdstuk == "V3"){
-		$juisteAntwoorden = ['Een database waar delen informatie wiskundig aan elkaar gekoppeld zijn', 'Het heeft geen waarde', 'Wat is niet geschikt om als primairy key te gebruiken in een database?', 'Nee', 'Ja'];
+		$juisteAntwoorden = ['Een database waar delen informatie wiskundig aan elkaar gekoppeld zijn', 'Het heeft geen waarde', 'De naam van een persoon', 'Nee', 'Ja'];
 		$uitleg = ['Een blockchain is een database die bestaat uit aan wiskundig elkaar gekoppelde blokken van informatie.', 'Het is blanco, dus heeft geen waarde.', 'De naam van een persoon is niet gegarandeerd uniek.', 'Om iets te verwijderen met behulp van SQL wordt de syntax DELETE FROM tabel WHERE voorwaarde', 'Het is geldig, want de SQL keywords zijn niet hoofdlettergevoelig.'];
 	}
 

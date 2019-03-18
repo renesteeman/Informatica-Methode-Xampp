@@ -161,42 +161,6 @@
 
 		</div>
 
-		<!-- vraag 6-->
-		<div class="vraagBalk">
-			Welke rechte lijn kun je opstellen met de volgende gegevens: coef const = 1*10^5 en coef size = 100 met size als onafhankelijke variabele?
-		</div>
-		<div class="antwoorden">
-			<ul>
-				<li>
-					<label class="container">Y = 1*10^5 + 100
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">Y = 1*10^5x + 100x
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">Y = 10^5x + 100
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-				<li>
-					<label class="container">Y = 100x + 1*10^5
-						<input type="checkbox" class="single-select-checkbox">
-						<span class="checkmark"></span>
-					</label>
-				</li>
-			</ul>
-		</div>
-		<div class="uitleg">
-
-		</div>
-
 	</div>
 
 	<input type="submit" value="controleer" class="controleerAntwoordButton"/>

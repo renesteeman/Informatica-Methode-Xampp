@@ -49,7 +49,7 @@ include('../../../components/headerChapter.php');
 
     <div class="theorie-content">
 
-  		<p>Een database is een manier om data op te slaan voor applicaties. Het lijkt op een grote tabel waar onder andere getallen, datums en tekst in kan worden opgeslagen. Het is vooral handig om gegevens van gebruikers bij te houden, zoals de gebruikersnaam, het wachtwoord (niet in tekst) en een email-adres.</p>
+  		<p>Een database is een manier om data op te slaan voor applicaties. Het lijkt op een grote tabel waar onder andere getallen, datums en tekst in kan worden opgeslagen. Het is vooral handig om gegevens van gebruikers bij te houden, zoals de gebruikersnaam, het wachtwoord (niet in tekst) en een email-adres of om andere grote hoeveelheden data bij te houden dat via meerdere apparaten benaderd kan worden.</p>
 
       <p>Er zijn meerdere soorten databases, in dit hoofdstuk zullen werken met relationele databases. Bij een relationele database wordt data uit verschillende tabellen aan elkaar gekoppeld door een unieke waarde die bij een rij hoord, zoals een leerlingennummer of BSN (burger service nummer).</p>
 

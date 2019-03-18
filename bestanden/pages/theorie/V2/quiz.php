@@ -55,7 +55,7 @@
 
 		<!-- vraag 2-->
 		<div class="vraagBalk">
-			Wat is geen nadeel van cookies?
+			Wat is een nadeel van cookies?
 		</div>
 		<div class="antwoorden">
 			<ul>

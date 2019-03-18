@@ -52,7 +52,7 @@
 	}
 
 	if($hoofdstuk == "V2"){
-		$juisteAntwoorden = ['Een tekstbestand op een apparaat dat via een website aangemaakt en opgehaald kan worden.', 'Ze nemen veel ruimte in beslag', 'Het blokkeren van reclame'];
+		$juisteAntwoorden = ['Een tekstbestand op een apparaat dat via een website aangemaakt en opgehaald kan worden.', 'Ze zijn niet betrouwbaar', 'Het blokkeren van reclame'];
 		$uitleg = ['Een cookie is een tekstbestandje dat op een apparaat kan worden opgeslagen en gelezen door websites.', 'Een cookie is een heel klein bestand, zo klein zelfs dat de grote ervan verwaarloosbaar is.', 'Zelfs als reclame geblokkeerd wordt houdt dit het afstaan van informatie over jou en jouw apparaat niet tegen.'];
 	}
 

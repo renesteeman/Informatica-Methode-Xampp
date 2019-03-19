@@ -56,7 +56,7 @@
 				Als je in HTML een link wilt toevoegen kan dit via &lt;a>, in de tag zelf zet je ook de locatie van de afbeelding via href="", dus <code>&lt;a href="LOCATIE">TEKST&lt;/a></code>.
 			</p>
 			<p>
-				Er zijn een paar manieren om de locatie aan te geven: het kan een link zijn, een relatief pad of een absoluut pad. Een relatief pad (oftewel relative path) geeft de 'weg' aan vanaf de huidige locatie in de bestandsstructuur. Om een map omhoog te gaan gebruik ../ om naar een onderliggende map te gaan gebruik je / of ./ als het in de 'startmap' zit. Een absoluut pad geeft de volledige route aan vanaf het hoogste niveau in de bestandstructuur, oftewel vanaf de gehele schijf.
+				Er zijn een paar manieren om de locatie aan te geven: het kan een link zijn, een relatief pad of een absoluut pad. Een relatief pad (oftewel relative path) geeft de 'weg' aan vanaf de huidige locatie in de bestandsstructuur. Om een map omhoog te gaan gebruik je '../' om naar een onderliggende map te gaan gebruik je '/' of './'. Een absoluut pad geeft de volledige route aan vanaf het hoogste niveau in de bestandstructuur, oftewel vanaf de start van een schijf.
 			</p>
 			<p>
 				Stel ik heb een bestand genaamd index.php (dit is de pagina die automatisch geladen wordt als die in een map staat voor de website)(voor deze site is php gebruikt, vandaar .php, normaal zou dit .html zijn). Dit bestaand is te vinden in: F:/xampp/htdocs/InformaticaMethode/design V2/pages/index.php. Als relatief pad naar een icoontje kan ik dan ../icons/edit.svg gebruiken, als absoluut pad zou dit F:\xampp\htdocs\InformaticaMethode\design V2\icons\edit.svg zijn. Als url zou ik <a href="https://inforca.nl/icons/edit.svg">https://inforca.nl/icons/edit.svg</a> kunnen gebruiken.
@@ -99,7 +99,7 @@
 				</ul>
 			</p>
 			<p>
-				Als je ergens extra belangrijke tekst wilt plaatsen, dan kan dat met 'headings'. Deze zijn &lt;h1> tm &lt;h6>, des te groter het nummer, des te kleiner de tekst. Je zult bijna nooit gebruikmaken van &lt;h3> tm &lt;h6>. Een goede pagina heeft namelijk niet zoveel belangrijke stukken tekst. Gebruik ze dus als volgt: <h1>ZEER BELANGRIJK</h1> <h2>IETS MINDER BELANGRIJK</h2>
+				Als je ergens extra belangrijke tekst wilt plaatsen, dan kan dat met 'headings'. Deze zijn &lt;h1> tm &lt;h6>, des te groter het nummer, des te kleiner de tekst. Je zult bijna nooit gebruikmaken van &lt;h3> tm &lt;h6>. Een goede pagina heeft namelijk niet zoveel belangrijke stukken tekst. Gebruik ze dus als volgt: <h1>H1 ZEER BELANGRIJK</h1> <h2>H2 IETS MINDER BELANGRIJK</h2>
 			</p>
 			<p>
 				Stel je wilt een vragenlijst maken. Dit kun je niet met alleen maar HTML, maar om de velden te maken waar de data ingevoerd moet worden kun je gebruik maken van &lt;form>, &lt;input> en &lt;textarea>. &lt;form> geeft aan dat er een lijst komt waar iets wordt ingevuld. &lt;input> geeft een klein tekstveld waar iemand iets kan invoeren en &lt;textarea> geeft een groter veld.

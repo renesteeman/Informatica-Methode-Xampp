@@ -50,10 +50,10 @@
 
 		<div class="theorie-content">
 			<p>
-				In dit hoofdstuk ga je leren hoe je een (eenvoudige) website kunt maken. Hiervoor leer je HTML en CSS. HTML is voornamelijk gebruikt voor de inhoud en structuur van de pagina en CSS voor de opmaak (het goed uit laten zien van de site).
+				In dit hoofdstuk ga je leren hoe je een (eenvoudige) website kunt maken. Hiervoor leer je HTML en CSS. HTML wordt voornamelijk gebruikt voor de inhoud en structuur van de pagina en CSS voor de opmaak (het goed uit laten zien van de site).
 			</p>
 			<p>
-				Er zijn heel veel verschillende technologieën en talen die gebruikt kunnen worden voor websites. Ze worden onderverdeeld tussen front-end en back-end. Front-end is wat de gebruiker ziet of aan de kant van de gebruiker werkt en back-end is wat op de server wordt gebruikt. In dit hoofdstuk richten we ons dus tot front-end.
+				Er zijn heel veel verschillende technologieën en talen die gebruikt kunnen worden voor websites. Ze worden onderverdeeld tussen front-end en back-end. Front-end is wat de gebruiker ziet of aan de kant van de gebruiker werkt en back-end is wat op de server wordt gebruikt. In dit hoofdstuk richten we ons tot front-end.
 			</p>
 			<p>
 				Een webpagina heeft 3 'hoofdonderdelen': een head, body en footer. Head is meestal de navigatiebalk, body is de 'inhoud' en de footer is meestal een balk onderaan met algemene info. Het meeste zul je dus bezig zijn met de body. Hierin heb je dingen zoals tekstblokken en afbeeldingen.

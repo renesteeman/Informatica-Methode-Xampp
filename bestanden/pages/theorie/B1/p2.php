@@ -54,6 +54,7 @@
 			</p>
 
 <pre><code>&lt;html>
+
 &lt;head>
 &lt;/head>
 
@@ -65,6 +66,7 @@
 
 &lt;footer>
 &lt;/footer>
+
 &lt;/html></code></pre>
 
 			<p>
@@ -96,7 +98,7 @@ Hello HTML
 &lt;/html></code></pre>
 
 			<p>
-				Je zou in dit geval head, header en footer weg kunnen laten, ze worden hier toch niet gebruikt. Aangezien je ze vaak nodig hebt is wel standaard om ze te gebruiken.
+				Je zou in dit geval head, header en footer weg kunnen laten, ze worden hier toch niet gebruikt.
 			</p>
 			<p>
 				Stel je wilt gewoon tekst hebben, dan kun je &lt;p> gebruiken. De p staat voor paragraph. Of om een 'blok' te defineren kun je &lt;div> gebruiken, dit staat voor divisie. Dit kun je later met css bijvoorbeeld een achtergrondkleur geven.

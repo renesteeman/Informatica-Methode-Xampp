@@ -101,7 +101,7 @@ x.style.height = '500px';</code></pre>
 
 			<pre><code>document.getElementById('getChildren').children</code></pre>
 
-			<p>Om het aantal children te krijgen gebruik je <pre><code>.length</code></pre>, dit werkt hetzelfde voor alle arrays. NAAM.length zal je het aantal elementen terug geven. Variabelen komen later in deze paragraaf nog aan bod.</p>
+			<p>Om het aantal children te krijgen gebruik je <pre><code>.length</code></pre>Deze manier werkt voor alle arrays. NAAM.length zal je het aantal elementen terug geven. Variabelen komen later in deze paragraaf nog aan bod.</p>
 
 			<p>Bijvoorbeeld <pre><code>document.getElementById('getChildren').children.length</code></pre></p>
 

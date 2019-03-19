@@ -65,7 +65,7 @@
 
 		<!-- vraag 3-->
 		<div class="vraagBalk">
-			Klopt het dat <script href="JS_LOCATIE"></script> geldige code is? Je mag ervan uitgaan dat het JS bestand bestaat en geen fouten bevat.
+			Klopt het dat &lt;script href="JS_LOCATIE">&lt;/script> geldige code is? Je mag ervan uitgaan dat het JS bestand bestaat en geen fouten bevat.
 		</div>
 		<div class="antwoorden">
 			<ul>

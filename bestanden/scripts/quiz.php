@@ -78,7 +78,7 @@
 
 	if($hoofdstuk == "B2"){
 		$juisteAntwoorden = ['Nee', 'Nee', 'Nee', "el.style.width = '500px';", 'if(x && y){};', 'Een pakket van code met bepaalde functies die samenwerken volgens een bepaalde structuur'];
-		$uitleg = ['Niet alle browsers ondersteunen de nieuwe versie van JS en soms worden alleen delen ervan ondersteund.', 'JS werkt standaard in de browser aan de kant van de client', 'In plaats van href zou het src moeten zijn', 'De breedte wordt bepaald met css, dus het attribuut style moet worden aangepast. De nieuwe breedte wordt 500px, dus het wordt ook aan 500px gelijk gesteld.', 'Om meerdere voorwaarden in een if-statement te gebruiken die allemaal waar moeten zijn gebruik je &&. Een enkele & werkt ook, maar het is niet volgens de officiële  syntax.'];
+		$uitleg = ['Niet alle browsers ondersteunen de nieuwe versie van JS en soms worden alleen delen ervan ondersteund.', 'JS werkt standaard in de browser aan de kant van de client', 'In plaats van href zou het src moeten zijn', 'De breedte wordt bepaald met css, dus het attribuut style moet worden aangepast. De nieuwe breedte wordt 500px, dus het wordt ook aan 500px gelijk gesteld.', 'Om meerdere voorwaarden in een if-statement te gebruiken die allemaal waar moeten zijn gebruik je &&. Een enkele & werkt ook, maar het is niet volgens de officiële  syntax.', 'Een framework is een verzameling van code dat volgens een bepaalde structuur gebruikt kan worden.'];
 	}
 
 	$count = count($antwoorden);

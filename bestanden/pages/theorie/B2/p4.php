@@ -61,13 +61,13 @@ include('../../../components/headerChapter.php');
 
 			<p>Condities vind je in JS voornamelijk in de vorm van if statements. Deze zien er als volgt uit:</p>
 
-			<pre><code>If (VOORWAARDE){
+			<pre><code>if (VOORWAARDE){
   //DOE …
 }</code></pre>
 
 			<p>Het is ook mogelijk om een if-else statement te gebruiken, dat ziet er als volgt uit:</p>
 
-			<pre><code>If (VOORWAARDE){
+			<pre><code>if (VOORWAARDE){
   //DOE …
 } else {
   //Doe …
@@ -75,7 +75,7 @@ include('../../../components/headerChapter.php');
 
 			<p>Een andere optie is else if, dan kan er als volgt uitzien:</p>
 
-			<pre><code>If (VOORWAARDE){
+			<pre><code>if (VOORWAARDE){
   //DOE …
 } else if (VOORWAARDE){
   //DOE …
@@ -104,7 +104,7 @@ if (uur > 12 && uur < 18){
   //doe iets
 }</code></pre>
 
-			<p>Het wordt vaak gebruikt om een door een lijst van waardes te gaan en iets met die waardes te doen. Een voorbeeld is:</p>
+			<p>Het wordt vaak gebruikt om door een lijst van waardes te gaan en iets met die waardes te doen. Een voorbeeld is:</p>
 
 			<pre><code>items = ['PHP', 'python', 'JS', 'HTML', 'CSS', 'C++', 'C#', 'C'];
 
@@ -147,7 +147,7 @@ while(i < amount){
 }
 
 function main(){
-  DoorTeSturenInfo = "Stuur door naar functie.";
+  DoorTeSturenInfo = "Stuur door naar functie";
   setInterval(function(){
     updateTime(DoorTeSturenInfo);
   }, 1000);

@@ -57,7 +57,7 @@ include('../../../components/headerChapter.php');
 
 			<img src="./afbeeldingen/wire-frame.svg" />
 
-			<p>Naast de structuur zul je moeten bepalen welke kleuren, effecten en lettertype(s)  je wilt gebruiken. Deze beslissingen leg je vast in een design document of design language, je kunt het zo uitgebreid maken als je wilt. Voorbeelden van design documents zijn Google's material design <a href="https://material.io/design/">https://material.io/design/</a> en het design van duolingo (een site waar je talen op kunt leren) <a href="https://www.duolingo.com/design/">https://www.duolingo.com/design/</a>. In het design document leg je dus alle zaken wat design betreft vast, denk aan: kleuren, vormen, lettertypes, icoontjes en ontwerpen voor standaard onderdelen.</p>
+			<p>Naast de structuur zul je moeten bepalen welke kleuren, effecten en lettertype(s) je wilt gebruiken. Deze beslissingen leg je vast in een design document of design language, je kunt het zo uitgebreid maken als je wilt. Voorbeelden van design documents zijn Google's material design <a href="https://material.io/design/">https://material.io/design/</a> en het design van duolingo (een site waar je talen op kunt leren) <a href="https://www.duolingo.com/design/">https://www.duolingo.com/design/</a>. In het design document leg je dus alle zaken wat design betreft vast, denk aan: kleuren, vormen, lettertypes, icoontjes en ontwerpen voor standaard onderdelen.</p>
 
 			<p>Op het moment dat je de basis van het ontwerp af hebt, dus als je: de structuur, de kleuren, het lettertype en dergelijken hebt vastgesteld, kun je een gedetailleerd ontwerp maken. Het is vaak handig om dit digitaal te maken, aangezien je dan makkelijk dingen kunt aanpassen en vaak meer detail kan weergeven. Een programma dat hier handig voor is is inkscape (<a href="https://inkscape.org/">https://inkscape.org/</a>), hiermee kun je SVG's (scalable vector graphics) maken. </p>
 
@@ -65,7 +65,7 @@ include('../../../components/headerChapter.php');
 				Het voordeel hiervan is dat alles als objecten wordt gezien en je ze kan blijven verplaatsen en aanpassen, bij een programma zoals paint.net zou het veel moeilijker zijn om halverwege de structuur aan te passen.  Programma's zoals paint.net gebruiken bitmaps, dit is een manier van opslaan waarbij alleen gekeken wordt naar welke pixel welke kleur heeft en niet naar vormen. Het nadeel van inkscape is dat het vrij lastig kan zijn om mee te beginnen, de UX had beter gekund. Als je de basis van inkscape wilt leren kun je op <a href="https://inkscape.org/doc/tutorials/basic/tutorial-basic.html">https://inkscape.org/doc/tutorials/basic/tutorial-basic.html</a> beginnen. Dit is een voorbeeld van een ontwerp in inkscape.
 			</p>
 
-			<p>Tip: als je tekst wilt toevoegen, maar nog geen teksten hebt kun je gebruiken van Lorem Ipsum (<a href="https://nl.lipsum.com/">https://nl.lipsum.com/</a>) als placeholder.</p>
+			<p>Tip: als je tekst wilt toevoegen, maar nog geen teksten hebt kun je Lorem Ipsum (<a href="https://nl.lipsum.com/">https://nl.lipsum.com/</a>) gebruiken als placeholder.</p>
 
 		</div>
 

@@ -49,7 +49,7 @@ include('../../../components/headerChapter.php');
 
 		<div class="theorie-content">
 
-			<p>In dit hoofdstuk ga je leren wat een UI is en wat UX is en hoe je deze goed kunt maken. UI staat voor user interface, dit is hoe je het apparaat of een programma bediend. UX staat voor user experience, dit is hoe fijn iemand het vind om iets te gebruiken. </p>
+			<p>In dit hoofdstuk ga je leren wat een UI is en wat UX is en hoe je deze goed kunt maken. UI staat voor user interface, oftewel het deel van een applicatie dat je kunt zien. UX staat voor user experience, dit is de manier waarop iemand ergens van gebruik maakt. UX hoeft dus niet alleen over software te gaan.</p>
 
 			<p>In dit hoofdstuk zullen we ons beperken tot software. Deze website heeft ook een UI, het is eigenlijk alles dat zichtbaar is voor de gebruiker. Je zou de UI zelfs in onderdelen kunnen opdelen: een navigatiebalk, loginveld, theorieblok, enz. </p>
 
@@ -88,7 +88,7 @@ include('../../../components/headerChapter.php');
 					Het is nuttig - de software lost een probleem op
 				</li>
 				<li>
-					Het is bruikbaar - de software is makkelijk in gebruik
+					Het is bruikbaar - de software is goed te gebruiken
 				</li>
 				<li>
 					Het is toegankelijk - de software is goed te begrijpen en kan gemakkelijk worden opgepakt

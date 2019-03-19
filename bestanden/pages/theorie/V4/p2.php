@@ -61,11 +61,11 @@ include('../../../components/headerChapter.php');
 					</tr>
 					<tr>
 						<td>Switch</td>
-						<td>Een apparaat dat fysieke verbinding kan maken met andere apparaten en data kan doorsturen tussen apparaten op een netwerk. </td>
+						<td>Een apparaat dat fysieke verbinding kan maken met andere apparaten en data kan doorsturen tussen apparaten op een netwerk.</td>
 					</tr>
 					<tr>
 						<td>Router</td>
-						<td>Een apparaat dat fysieke aansluitingen heeft waarmee het data tussen netwerken kan sturen. Het kan dus netwerk A en B verbinden</td>
+						<td>Een apparaat dat fysieke aansluitingen heeft waarmee het data tussen netwerken kan sturen. Het kan dus netwerk A en B verbinden.</td>
 					</tr>
 					<tr>
 						<td>Acces-point</td>
@@ -84,7 +84,7 @@ include('../../../components/headerChapter.php');
 
 			<p>Ster</p>
 
-			<p>De apparaten buiten de kern verbinden via de 'kern' met de ontvanger en alle data zal dus door de 'kern' zal gaan.</p>
+			<p>De apparaten buiten de kern verbinden via de 'kern' met de ontvanger en alle data zal dus door de 'kern' gaan.</p>
 
 			<img src="./afbeeldingen/ster.svg" />
 

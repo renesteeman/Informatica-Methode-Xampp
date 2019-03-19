@@ -157,7 +157,7 @@
 
 		<!-- vraag 5-->
 		<div class="vraagBalk">
-			Waar is niet nodig voor een goede UX?
+			Wat is niet nodig voor een goede UX?
 		</div>
 		<div class="antwoorden">
 			<ul>

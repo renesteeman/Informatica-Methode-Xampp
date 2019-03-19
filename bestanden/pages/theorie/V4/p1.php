@@ -69,7 +69,7 @@ include('../../../components/headerChapter.php');
 					<tr>
 						<td>6</td>
 						<td>Presentatie laag</td>
-						<td>De presentatie van de laag (het soort formaat en eventueel met beveiliging)</td>
+						<td>Het vertalen van de data naar een bruikbaar formaat waarbij ook rekening wordt gehouden met compressie en encryptie.</td>
 					</tr>
 					<tr>
 						<td>5</td>
@@ -94,16 +94,20 @@ include('../../../components/headerChapter.php');
 					<tr>
 						<td>1</td>
 						<td>Fysieke laag</td>
-						<td>Het pakket versturen</td>
+						<td>Het pakket omzetten in een fysiek signaal en dit versturen</td>
 					</tr>
 				</table>
 			</div>
 
-			<p>Je kunt het onthouden door te denken aan 'Anton Piek schildert tofu naast duikende Friezen'.</p>
+			<p>Je kunt het onthouden door te denken aan "Anton Piek schildert tofu naast duikende Friezen".</p>
 
-			<p>Hoe verder naar onder je gaat in het model, des te meer informatie er in een 'pakket' zit, er komen namelijk steeds meer details bij om de data te kunnen versturen.</p>
+			<p>
+				Je zou het OSI-model ook nog kunnen opdelen in toepassingsgeoriënteerde lagen en transportgeoriënteerde lagen. Laag 1 tm 4 valt onder transportgeoriënteerd en 5 tm 7 onder toepassingsgeoriënteerd.
+			</p>
 
-			<p>Het versturen van informatie via een netwerk zal gaan door op een apparaat van laag 7 naar 1 van het OSI-model te gaan en vervolgens de ontvanger van de data van laag 1 naar 7 te laten gaan. Zo kan de data weer worden 'uitgepakt' door de ontvanger.</p>
+			<p>Hoe verder naar onder je gaat in het model, des te meer informatie er in een 'pakket' zit, er komen namelijk steeds meer details bij om de data goed te kunnen versturen.</p>
+
+			<p>Het versturen van informatie via een netwerk zal gaan door op een apparaat van laag 7 naar 1 van het OSI-model te gaan en vervolgens de ontvanger van de data van laag 1 naar 7 te laten gaan. Zo kan de data weer worden 'opgebouwd' door de ontvanger.</p>
 
 		</div>
 

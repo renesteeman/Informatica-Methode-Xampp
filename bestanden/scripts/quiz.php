@@ -62,7 +62,7 @@
 	}
 
 	if($hoofdstuk == "V4"){
-		$juisteAntwoorden = ['Niet waar', 'Niet waar', 'Niet waar', 'Encryptie', 'Een systeem voor het omzetten vaan een IP-adres in een MAC-adres', 'De controle over het systeem'];
+		$juisteAntwoorden = ['Niet waar', 'Niet waar', 'Niet waar', 'Encryptie', 'Een systeem voor het omzetten van een IP-adres in een MAC-adres en andersom', 'De controle over het systeem'];
 		$uitleg = ['Het heeft er 7.', 'Elk apparaat is met elkaar verbonden via een centrale verbinding, maar dus niet direct.', 'Bij een lagere laag wordt er meer data bij het originele bericht toegevoegd om het te kunnen verzenden.', 'Encryptie zorgt ervoor dat een verbinding beveiligd is door het onleesbaar maken van de data die erover vervoerd wordt voor iedereen die het niet kan terugvertalen.', 'DHCP zorgt voor het omzetten van IP- naar MAC-adressen en andersom', 'Bij het gebruik van de cloud heb je geen volledige controle over de hardware en soms ook niet over de software.'];
 	}
 

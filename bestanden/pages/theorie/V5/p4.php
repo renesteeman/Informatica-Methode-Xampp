@@ -55,7 +55,7 @@ include('../../../components/headerChapter.php');
 
 			<ul>
 				<li>
-					Je moet de gebruiker kennen. Als je iets ontwerpt voor kinderen zal je het anders moeten maken dan als je het ontwierp voor ouderen.
+					Je moet de gebruiker kennen. Als je iets ontwerpt voor kinderen zal je het anders moeten maken dan als je het voor ouderen zou maken.
 				</li>
 				<li>
 					Je moet vanuit de gebruiker kunnen kijken. Ga het programma door alsof je een gebruiker bent en kijk naar wat nog beter zou kunnen.
@@ -65,7 +65,7 @@ include('../../../components/headerChapter.php');
 				</li>
 			</ul>
 
-			<p>Er zijn een paar manieren waarop tewerk kunt gaan, deze zijn handig in verschillende fases van een project.</p>
+			<p>Er zijn een paar manieren waarop te werk kunt gaan, deze zijn handig in verschillende fases van een project.</p>
 
 			<p>Ter voorbereiding</p>
 

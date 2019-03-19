@@ -132,7 +132,7 @@
 					</label>
 				</li>
 				<li>
-					<label class="container">Een systeem voor het omzetten vaan een IP-adres in een MAC-adres
+					<label class="container">Een systeem voor het omzetten van een IP-adres in een MAC-adres en andersom
 						<input type="checkbox" class="single-select-checkbox">
 						<span class="checkmark"></span>
 					</label>

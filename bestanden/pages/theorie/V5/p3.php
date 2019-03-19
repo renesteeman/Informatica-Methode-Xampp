@@ -51,14 +51,18 @@ include('../../../components/headerChapter.php');
 
 			<p>In deze paragraaf gaan we verder in op UI, je zult zien hoe je cognitieve en biologische modellen kunt gebruiken voor het ontwikkelen van een UI en hoe je UI kunt evalueren aan de hand van een gebruikersonderzoek.</p>
 
-			<p>Als een persoon kijkt zien ze maar een klein deel scherp, door hier rekening mee te houden bij het ontwerpen zorg je voor een betere ervaring voor de gebruiker. Zo is het bijvoorbeeld fijn als zaken die met elkaar te maken hebben ook bij elkaar staan, zo kan in een oogopslag alle nodige informatie gevonden worden. Het is soms erg lastig om dit bereiken, maar zorg er op z'n minst voor dat de gebruiker dan wel de juiste kant op wordt gestuurd. Beweging kan hierbij helpen, dit valt namelijk erg op en trekt dus de aandacht. Een voorbeeld hiervan is een foutmelding die even trilt, het valt dan meteen op, zonder dat het erg stoort. Een handige regel hiervoor is dat een animatie in een gebied waar de gebruiker op gefocust is kort duurt (bv 300 ms) en een animatie verder weg langer (bv 600 ms). De reden hierachter is dat een mens minder snel reageert op iets dat buiten het gebied ligt waar hij op focust.</p>
+			<p>Als je ergens naar kijkt zie je maar een klein deel scherp, door hier rekening mee te houden bij het ontwerpen zorg je voor een betere ervaring voor de gebruiker. Zo is het bijvoorbeeld fijn als zaken die met elkaar te maken hebben ook bij elkaar staan, zo kan in een oogopslag alle nodige informatie gevonden worden. Het is soms erg lastig om dit bereiken, maar zorg er op z'n minst voor dat de gebruiker dan wel de juiste kant op wordt gestuurd. </p>
+
+			<p>
+				Beweging kan ook helpen, dit valt namelijk erg op en trekt dus de aandacht. Een voorbeeld hiervan is een foutmelding die even trilt, het valt dan meteen op, zonder dat het erg stoort. Een handige regel hiervoor is dat een animatie in een gebied waar de gebruiker op gefocust is kort duurt (bv 300 ms) en een animatie verder weg langer (bv 600 ms). De reden hierachter is dat een mens minder snel reageert op iets dat buiten het gebied ligt waar hij op focust.
+			</p>
 
 			<p>
 				Het voldoen aan de verwachtingen van gebruikers is ook erg belangrijk, zorg ervoor dat je je zoveel mogelijk aan conventies houdt. Denk hierbij aan zaken zoals een rode kleur voor foutmeldingen en groen om aangegeven dat iets gelukt is. Het gevolg hiervan is dat de gebruiker de UI zal ervaren als duidelijk en natuurlijk. Het gebruik van icoontjes kan om dezelfde reden helpen.
 			</p>
 
 			<p>
-				Op het moment dat je een UI gemaakt hebt en er een werkend prototype is kun je (nog meer) gaan testen. Een handige methode hiervoor is het gebruiken van mensen die in de doelgroep van jouw applicatie vallen, denk aan: interviews, vragenlijst en experimenten. Je zou mensen kunnen vragen om te kiezen tussen meerdere varianten, bijvoorbeeld kleurcombinaties en afmetingen. Als experiment zou je mensen jouw applicatie kunnen laten gebruiken en controleren hoe ze met de applicatie omgaan en waar ze vast blijven hangen.
+				Op het moment dat je een UI gemaakt hebt en er een werkend prototype is kun je (nog meer) gaan testen. Een handige methode hiervoor is het gebruiken van mensen die in de doelgroep van jouw applicatie vallen, denk aan: interviews, een vragenlijst en experimenten. Je zou mensen kunnen vragen om te kiezen tussen meerdere varianten, bijvoorbeeld kleurcombinaties en afmetingen. Als experiment zou je mensen jouw applicatie kunnen laten gebruiken en controleren hoe ze met de applicatie omgaan en waar ze vast blijven hangen.
 			</p>
 
 		</div>

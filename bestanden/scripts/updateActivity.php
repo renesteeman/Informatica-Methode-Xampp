@@ -17,7 +17,7 @@
     $id = mysqli_real_escape_string($conn, check_input($_SESSION['id']));
 
 		//save failed logins
-		$sql = "UPDATE users SET LFailedLogin='$now' WHERE id='$id'";
+		$sql = "UPDATE users SET LActivity='$now' WHERE id='$id'";
 
 		if(!mysqli_query($conn, $sql)) {
 			echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";

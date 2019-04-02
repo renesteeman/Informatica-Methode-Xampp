@@ -187,7 +187,7 @@ input[type="checkbox"]
 		height: 10em
 		line-height: 10em
 		width: 15em
-		box-shadow: 2px 5px $dark-grey
+		box-shadow: 2px 2px $dark-grey
 		-webkit-backface-visibility: hidden
 		overflow: hidden
 		border-radius: 2px
@@ -210,10 +210,10 @@ input[type="checkbox"]
 					color: darken($white, 45%)
 
 	.tile:hover
-		box-shadow: 1px 3px $dark-grey
+		box-shadow: none
 
 	.tile.active:hover
-		box-shadow: 1px 3px $dark-grey
+		box-shadow: none
 
 	.tile.active
 		width: 58.5vw
@@ -476,6 +476,7 @@ textarea:hover
 	.completed
 		background: linear-gradient(to bottom right, lighten($secondary2, 5%), lighten($secondary2, 10%))
 		color: rgba($black, 0.8)
+		box-shadow: 2px 2px lighten($dark-grey, 10%)
 
 //search bar
 .searchInput

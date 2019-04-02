@@ -44,8 +44,8 @@
 							$chapterData = $chapters[$chapter];
 							if($chapterData != ""){
 
-								$amountOfParagraphsThatShouldBeFinished = $chapterData[0];
-								$finishedParagraphs = substr($chapterData, 1);
+								$amountOfParagraphsThatShouldBeFinished = strlen($chapterData);
+								$finishedParagraphs = $chapterData;
 								$finishedParagraphs = str_replace('0', '', $finishedParagraphs);
 								$amountOfParagraphsFinished = strlen($finishedParagraphs);
 

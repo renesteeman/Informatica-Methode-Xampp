@@ -442,7 +442,7 @@
 			</div>
 
 			<div>
-				<video controls>
+				<video controls poster="./video/thumbnail.png">
 					<source src="./video/InforcaDemo.mp4">
 				</video>
 			</div>

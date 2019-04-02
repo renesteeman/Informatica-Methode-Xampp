@@ -102,7 +102,6 @@
 			}
 			$klassen[] = $klasinfo;
 		}
-
 	}
 
 	//send mail to Inforca

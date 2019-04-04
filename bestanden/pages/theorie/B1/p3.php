@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			B1 §3 HTML deel 2
+			B1 Web development §3 HTML deel 2
 		</h2>
 	</div>
 

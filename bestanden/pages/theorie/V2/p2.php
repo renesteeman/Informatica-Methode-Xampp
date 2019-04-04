@@ -6,7 +6,7 @@ include('../../../components/headerChapter.php');
 
 	<div class="title-small">
 		<h2>
-			V2 §2 Hoe worden gegevens bijgehouden?
+			V2 Privacy §2 Hoe worden gegevens bijgehouden?
 		</h2>
 	 </div>
 

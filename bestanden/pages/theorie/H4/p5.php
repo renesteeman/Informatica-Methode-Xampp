@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H4 §5 LED met LDR
+			H4 Arduino §5 LED met LDR
 		</h2>
 	</div>
 

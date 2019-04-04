@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H4 §3 De basis van programmeren voor arduino
+			H4 Arduino §3 De basis van programmeren voor arduino
 		</h2>
 	</div>
 

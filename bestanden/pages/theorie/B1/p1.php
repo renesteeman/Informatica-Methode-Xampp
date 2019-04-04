@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			B1 §1 Introductie
+			B1 Web development §1 Introductie
 		</h2>
 	</div>
 

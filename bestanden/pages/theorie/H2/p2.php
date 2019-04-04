@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H2 §2 visuele logica
+			H2 Logica §2 visuele logica
 		</h2>
 	</div>
 

@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H5 §3 Communicatie
+			H5 Projectmanagement §3 Communicatie
 		</h2>
 	</div>
 

@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H3 §7 Soorten structuren
+			H3 Programmeren §7 Soorten structuren
 		</h2>
 	</div>
 

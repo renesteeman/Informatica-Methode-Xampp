@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H2 §5 Automaten
+			H2 Logica §5 Automaten
 		</h2>
 	</div>
 

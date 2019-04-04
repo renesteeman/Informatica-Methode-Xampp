@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H5 §2 Rollen
+			H5 Projectmanagement §2 Rollen
 		</h2>
 	</div>
 

@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H3 §4 Rekenen met variabelen
+			H3 Programmeren §4 Rekenen met variabelen
 		</h2>
 	</div>
 

@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H3 §8 Uitdaging: mini-game
+			H3 Programmeren §8 Uitdaging: mini-game
 		</h2>
 	</div>
 

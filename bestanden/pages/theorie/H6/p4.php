@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H6 §4 Voorbeeld projecten
+			H6 Project uitvoeren §4 Voorbeeld projecten
 		</h2>
 	</div>
 

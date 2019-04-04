@@ -6,7 +6,7 @@ include('../../../components/headerChapter.php');
 
   <div class="title-small">
     <h2>
-      V3 §3 Communiceren met een database
+      V3 Databases §3 Communiceren met een database
     </h2>
   </div>
 

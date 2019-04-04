@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H6 §1 Plannen en Trello
+			H6 Project uitvoeren §1 Plannen en Trello
 		</h2>
 	</div>
 

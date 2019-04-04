@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H5 §1 Introductie en onderdelen
+			H5 Projectmanagement Projectmanagement Projectmanagement §1 Introductie en onderdelen
 		</h2>
 	</div>
 

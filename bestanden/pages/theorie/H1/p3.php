@@ -6,7 +6,7 @@ include('../../../components/headerChapter.php');
 
 	<div class="title-small">
 		<h2>
-			H1 §3 Gates
+			H1 Werking computer §3 Gates
 		</h2>
 	 </div>
 
@@ -42,7 +42,7 @@ include('../../../components/headerChapter.php');
 					§5
 				</a></span>
 			</div>
-			
+
 			<div class="ptile">
 				<span class="ptile-content"><a href="p6.php">
 					§6

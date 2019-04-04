@@ -6,7 +6,7 @@ include('../../../components/headerChapter.php');
 
 	<div class="title-small">
 		<h2>
-			V2 §3 Hoe kun je jouw privacy verbeteren?
+			V2 Privacy §3 Hoe kun je jouw privacy verbeteren?
 		</h2>
 	 </div>
 

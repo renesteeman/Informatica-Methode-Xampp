@@ -6,7 +6,7 @@ include('../../../components/headerChapter.php');
 
 	<div class="title-small">
 		<h2>
-			H1 §5 Software en het OS
+			H1 Werking computer §5 Software en het OS
 		</h2>
 	 </div>
 

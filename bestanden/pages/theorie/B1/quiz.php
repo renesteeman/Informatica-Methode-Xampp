@@ -8,7 +8,7 @@
 
 	<div class="title-small">
 		<h2>
-			B1 quiz
+			B1 Web development quiz
 		</h2>
 	</div>
 

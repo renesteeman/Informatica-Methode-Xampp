@@ -6,7 +6,7 @@ include('../../../components/headerChapter.php');
 
   <div class="title-small">
     <h2>
-      V3 §2 Een database aanmaken
+      V3 Databases §2 Een database aanmaken
     </h2>
   </div>
 

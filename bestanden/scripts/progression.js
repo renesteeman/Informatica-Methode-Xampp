@@ -43,7 +43,7 @@ $(document).ready(function(){
 			completed = 1;
 
 			var chapter = title[1];
-			var paragraph = title[4];
+			var paragraph = title.split('§')[1][0];
 
 			var Nparagraphs = $('.ptile').length;
 

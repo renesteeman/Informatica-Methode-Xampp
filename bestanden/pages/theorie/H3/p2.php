@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H3 §2 Installatie
+			H3 Programmeren §2 Installatie
 		</h2>
 	</div>
 

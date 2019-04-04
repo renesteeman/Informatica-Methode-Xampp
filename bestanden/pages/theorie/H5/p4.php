@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H5 §4 Agile en Scrum
+			H5 Projectmanagement §4 Agile en Scrum
 		</h2>
 	</div>
 

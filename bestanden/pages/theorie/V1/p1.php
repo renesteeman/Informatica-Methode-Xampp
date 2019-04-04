@@ -6,7 +6,7 @@ include('../../../components/headerChapter.php');
 
 	<div class="title-small">
 		<h2>
-			V1 §1 Wat is filosofie?
+			V1 Filosofie en AI §1 Wat is filosofie?
 		</h2>
 	 </div>
 

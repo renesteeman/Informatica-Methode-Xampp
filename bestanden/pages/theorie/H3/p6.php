@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H3 §6 Loops
+			H3 Programmeren §6 Loops
 		</h2>
 	</div>
 

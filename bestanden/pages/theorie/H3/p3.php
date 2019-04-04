@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H3 §3 Variabelen
+			H3 Programmeren §3 Variabelen
 		</h2>
 	</div>
 

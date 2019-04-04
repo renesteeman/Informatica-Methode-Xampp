@@ -6,7 +6,7 @@ include('../../../components/headerChapter.php');
 
 	<div class="title-small">
 		<h2>
-			V1 §3 Het trein probleem
+			V1 Filosofie en AI §3 Het trein probleem
 		</h2>
 	 </div>
 

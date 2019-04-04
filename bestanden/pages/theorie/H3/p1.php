@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H3 §1 Introductie tot programmeertalen
+			H3 Programmeren §1 Introductie tot programmeertalen
 		</h2>
 	</div>
 

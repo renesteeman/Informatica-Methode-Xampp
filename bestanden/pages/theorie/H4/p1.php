@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H4 §1 Elektriciteit
+			H4 Arduino §1 Elektriciteit
 		</h2>
 	</div>
 

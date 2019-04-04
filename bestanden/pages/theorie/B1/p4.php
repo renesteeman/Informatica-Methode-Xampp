@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			B1 §4 De basis van CSS
+			B1 Web development §4 De basis van CSS
 		</h2>
 	</div>
 

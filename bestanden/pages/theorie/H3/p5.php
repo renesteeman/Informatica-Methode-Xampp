@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H3 §5 Condities
+			H3 Programmeren §5 Condities
 		</h2>
 	</div>
 

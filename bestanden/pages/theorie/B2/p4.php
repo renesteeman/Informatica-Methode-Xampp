@@ -6,7 +6,7 @@ include('../../../components/headerChapter.php');
 
 	<div class="title-small">
 		<h2>
-			B2 §4 JS basis deel 3
+			B2 Web logic §4 JS basis deel 3
 		</h2>
 	 </div>
 

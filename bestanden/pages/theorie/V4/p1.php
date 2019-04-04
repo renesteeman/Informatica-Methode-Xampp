@@ -6,7 +6,7 @@ include('../../../components/headerChapter.php');
 
 	<div class="title-small">
 		<h2>
-			V4 §1 OSI
+			V4 Netwerken §1 OSI
 		</h2>
 	 </div>
 

@@ -6,7 +6,7 @@ include('../../../components/headerChapter.php');
 
 	<div class="title-small">
 		<h2>
-			V5 §2 UI
+			V5 UI en UX §2 UI
 		</h2>
 	 </div>
 

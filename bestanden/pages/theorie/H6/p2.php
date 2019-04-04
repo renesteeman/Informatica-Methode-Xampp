@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H6 §2 Github
+			H6 Project uitvoeren §2 Github
 		</h2>
 	</div>
 

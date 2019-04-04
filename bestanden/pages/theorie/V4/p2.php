@@ -6,7 +6,7 @@ include('../../../components/headerChapter.php');
 
 	<div class="title-small">
 		<h2>
-			V4 §2 Topologie
+			V4 Netwerken §2 Topologie
 		</h2>
 	 </div>
 

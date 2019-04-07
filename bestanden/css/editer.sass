@@ -1,21 +1,44 @@
 @import "variables.sass"
 
-.editor
-	height: auto
-	margin-left: 20%
-	margin-top: 40px
-	margin-bottom: 3rem
-	width: 60%
-  font-size: 2em
-	padding-top: 1em
-	padding-bottom: .5em
-	padding-left: 1em
-
-
 select
-  box-shadow: none
+	margin-top: 0
 
-option
-	font-size: 1em
-	height: 1em
-	padding: 12px 12px
+.line-block
+	width: 8em
+	display: inline-block
+
+.html-tile:first-child
+	margin-left: 0
+
+.html-tile
+	background-color: $white
+	display: inline-block
+	width: auto
+	padding: 6px 6px
+	box-shadow: 0 3px 2px darken($darker-grey, 5%)
+	margin-left: 0.2em
+
+	a:hover
+		color: $black
+
+.html-tile:hover
+	background: $grey
+
+.hover-dropdown:hover ul
+	display: list-item
+
+.hover-dropdown ul
+	padding: 0
+	display: none
+	list-style: none
+	position: fixed
+	margin: 0
+	margin-left: -6px
+	background: $white
+
+.hover-dropdown ul li
+	box-sizing: border-box
+	padding: 6px
+
+.hover-dropdown ul li:hover
+	background: $grey

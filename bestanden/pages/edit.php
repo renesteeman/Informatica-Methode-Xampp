@@ -24,14 +24,67 @@
 		</h3>
 	</div>
 
-	<div class="editor">
-    Hoofdstuk
-    <div class="selector">
-      <select>
-        <option value=""></option>
-        <option value="'.$CurrentClass.'">'.$CurrentClass.'</option>
-      </select>
-    </div>
+	<div class="main">
+		<div>
+			<span class="line-block">Hoofdstuk</span>
+	    <span class="selector">
+	      <select>
+	        <option value=""></option>
+	        <option value="'.$CurrentClass.'">'.$CurrentClass.'</option>
+					<option value="'.$CurrentClass.'">+ aanmaken</option>
+	      </select>
+	    </span>
+		</div>
+
+		<div>
+			If aanmaken, show</br>
+			<span class="line-block">Naam hoofdstuk</span>
+			<input type="text" class="Nclass" name="Nclass"/>
+		</div>
+
+		<div>
+			<span class="line-block">Paragraaf</span>
+	    <span class="selector">
+	      <select>
+	        <option value=""></option>
+	        <option value="'.$CurrentClass.'">'.$CurrentClass.'</option>
+					<option value="'.$CurrentClass.'">+ aanmaken</option>
+	      </select>
+	    </span>
+		</div>
+
+		<div>
+			If aanmaken, show</br>
+			<span class="line-block">Naam paragraaf</span>
+			<input type="text" class="Nclass" name="Nclass"/>
+		</div>
+
+		<div class="html-tiles">
+			<span class="html-tile">
+				url
+			</span>
+			<span class="html-tile hover-dropdown">
+				ol
+        <ul>
+          <li>1.</li>
+          <li>1.a</li>
+          <li>1.1.</li>
+        </ul>
+			</span>
+			<span class="html-tile">
+				ul
+			</span>
+			<span class="html-tile">
+				code
+			</span>
+			<span class="html-tile">
+				img
+			</span>
+			<span class="html-tile">
+				html
+			</span>
+		</div>
+
   </div>
 
 	<?php

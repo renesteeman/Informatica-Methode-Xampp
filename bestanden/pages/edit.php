@@ -85,6 +85,29 @@
 			</span>
 		</div>
 
+		<div>
+			<div>
+				Theorie
+			</div>
+			<textarea id="theorie"></textarea>
+		</div>
+
+		<div>
+			<div>
+				Vragen
+			</div>
+			<textarea id="vragen"></textarea>
+		</div>
+
+		<div>
+			<div>
+				Antwoorden
+			</div>
+			<textarea id="antwoorden"></textarea>
+		</div>
+
+		<button type="submit">Opslaan</button>
+
   </div>
 
 	<?php

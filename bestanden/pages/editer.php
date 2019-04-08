@@ -36,11 +36,12 @@
 	    </span>
 		</div>
 
+		<!--
 		<div>
-			If aanmaken, show</br>
 			<span class="line-block">Naam hoofdstuk</span>
 			<input type="text" class="Nclass" name="Nclass"/>
 		</div>
+		-->
 
 		<div>
 			<span class="line-block">Paragraaf</span>
@@ -53,11 +54,12 @@
 	    </span>
 		</div>
 
+		<!--
 		<div>
-			If aanmaken, show</br>
 			<span class="line-block">Naam paragraaf</span>
 			<input type="text" class="Nclass" name="Nclass"/>
 		</div>
+		-->
 
 		<div class="html-tiles">
 			<span class="html-tile">
@@ -116,4 +118,4 @@
 
 </body>
 
-<!--<script src="../scripts/editer.js"></script>-->
+<script src="../scripts/editer.js"></script>

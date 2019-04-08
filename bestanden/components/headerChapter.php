@@ -107,7 +107,7 @@ if (!isset($_SESSION["id"])){
 								<a href="../../../index.php">HOME</a>
 								<a href="../../../pages/overview.php">OVERZICHT</a>
 								<a href="../../../pages/planner.php">PLANNER</a>
-								<a href="../../../pages/edit.php">AANPASSEN</a>
+								<a href="../../../pages/editer.php">AANPASSEN</a>
 							</div>
 							';
 						} else {
@@ -166,7 +166,7 @@ if (!isset($_SESSION["id"])){
 						<a href="../../../index.php">HOME</a>
 						<a href="../../../pages/overview.php">OVERZICHT</a>
 						<a href="../../../pages/planner.php">PLANNER</a>
-						<a href="../../../pages/edit.php">AANPASSEN</a>
+						<a href="../../../pages/editer.php">AANPASSEN</a>
 					</div>
 					';
 				} else {

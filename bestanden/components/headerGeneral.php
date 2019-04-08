@@ -125,7 +125,7 @@ if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF
 								<a href="../index.php">HOME</a>
 								<a href="../pages/overview.php">OVERZICHT</a>
 								<a href="../pages/planner.php">PLANNER</a>
-								<a href="../pages/edit.php">AANPASSEN</a>
+								<a href="../pages/editer.php">AANPASSEN</a>
 							</div>
 							';
 						} else {
@@ -183,7 +183,7 @@ if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF
 							<a href="../index.php">HOME</a>
 							<a href="../pages/overview.php">OVERZICHT</a>
 							<a href="../pages/planner.php">PLANNER</a>
-							<a href="../pages/edit.php">AANPASSEN</a>
+							<a href="../pages/editer.php">AANPASSEN</a>
 						</div>
 						';
 					} else {

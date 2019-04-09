@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 16 mrt 2019 om 09:47
+-- Gegenereerd op: 09 apr 2019 om 10:04
 -- Serverversie: 10.1.28-MariaDB
 -- PHP-versie: 7.1.11
 
@@ -30,10 +30,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `groepen` (
   `id` int(11) NOT NULL,
-  `naam` text COLLATE utf8_bin NOT NULL,
+  `naam` tinytext COLLATE utf8_bin NOT NULL,
   `beschrijving` text COLLATE utf8_bin NOT NULL,
-  `link` text COLLATE utf8_bin NOT NULL,
-  `school` text COLLATE utf8_bin NOT NULL
+  `link` tinytext COLLATE utf8_bin NOT NULL,
+  `school` tinytext COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -51,11 +51,11 @@ INSERT INTO `groepen` (`id`, `naam`, `beschrijving`, `link`, `school`) VALUES
 
 CREATE TABLE `planner` (
   `id` int(11) NOT NULL,
-  `titel` text COLLATE utf8_bin NOT NULL,
+  `titel` tinytext COLLATE utf8_bin NOT NULL,
   `beschrijving` text COLLATE utf8_bin NOT NULL,
-  `progressie` text COLLATE utf8_bin,
-  `school` text COLLATE utf8_bin NOT NULL,
-  `klas` text COLLATE utf8_bin,
+  `progressie` tinytext COLLATE utf8_bin,
+  `school` tinytext COLLATE utf8_bin NOT NULL,
+  `klas` tinytext COLLATE utf8_bin,
   `datum` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -79,19 +79,19 @@ INSERT INTO `planner` (`id`, `titel`, `beschrijving`, `progressie`, `school`, `k
 
 CREATE TABLE `progressie` (
   `userid` int(11) NOT NULL,
-  `H1` text COLLATE utf8_bin,
-  `H2` text COLLATE utf8_bin,
-  `H3` text COLLATE utf8_bin,
-  `H4` text COLLATE utf8_bin,
-  `H5` text COLLATE utf8_bin,
-  `H6` text COLLATE utf8_bin,
-  `V1` text COLLATE utf8_bin,
-  `V2` text COLLATE utf8_bin,
-  `V3` text COLLATE utf8_bin,
-  `V4` text COLLATE utf8_bin,
-  `V5` text COLLATE utf8_bin,
-  `B1` text COLLATE utf8_bin,
-  `B2` text COLLATE utf8_bin
+  `H1` tinytext COLLATE utf8_bin,
+  `H2` tinytext COLLATE utf8_bin,
+  `H3` tinytext COLLATE utf8_bin,
+  `H4` tinytext COLLATE utf8_bin,
+  `H5` tinytext COLLATE utf8_bin,
+  `H6` tinytext COLLATE utf8_bin,
+  `V1` tinytext COLLATE utf8_bin,
+  `V2` tinytext COLLATE utf8_bin,
+  `V3` tinytext COLLATE utf8_bin,
+  `V4` tinytext COLLATE utf8_bin,
+  `V5` tinytext COLLATE utf8_bin,
+  `B1` tinytext COLLATE utf8_bin,
+  `B2` tinytext COLLATE utf8_bin
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -102,8 +102,9 @@ INSERT INTO `progressie` (`userid`, `H1`, `H2`, `H3`, `H4`, `H5`, `H6`, `V1`, `V
 (341, '11111', '1001', NULL, '1111', '111011', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (345, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, '1010', '000100', NULL),
 (353, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(359, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '10101', NULL),
 (361, '1000010', '0001110', NULL, NULL, NULL, NULL, '1    1', '11110', '11110', NULL, '1111', '000100', '011110'),
-(953, '110000', NULL, NULL, NULL, NULL, NULL, '1100000', NULL, NULL, NULL, NULL, '101000', NULL),
+(953, '110000', '1000000', '000110000', '111100', NULL, NULL, '1100000', NULL, NULL, NULL, NULL, '111000', '011110'),
 (960, '111111', NULL, NULL, NULL, NULL, NULL, '1111111', NULL, NULL, NULL, NULL, '111111', NULL);
 
 -- --------------------------------------------------------
@@ -115,7 +116,7 @@ INSERT INTO `progressie` (`userid`, `H1`, `H2`, `H3`, `H4`, `H5`, `H6`, `V1`, `V
 CREATE TABLE `quiz` (
   `id` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
-  `hoofdstuk` text COLLATE utf8_bin NOT NULL,
+  `hoofdstuk` tinytext COLLATE utf8_bin NOT NULL,
   `cijfer` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -130,7 +131,40 @@ INSERT INTO `quiz` (`id`, `userid`, `hoofdstuk`, `cijfer`) VALUES
 (11, 361, 'V4', 4),
 (12, 958, 'H1', 10),
 (13, 953, 'H1', 2.5),
-(14, 960, 'H3', 9);
+(14, 960, 'H3', 9),
+(15, 960, 'H1', 9),
+(16, 960, 'V1', 9),
+(17, 960, 'B1', 9),
+(18, 953, 'H5', 10),
+(19, 953, 'H4', 10),
+(20, 953, 'V2', 10),
+(21, 953, 'V3', 10),
+(22, 953, 'B2', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `theorie`
+--
+
+CREATE TABLE `theorie` (
+  `theory_id` int(11) NOT NULL,
+  `school` tinytext COLLATE utf8_bin NOT NULL,
+  `hoofdstuk` tinytext COLLATE utf8_bin NOT NULL,
+  `paragraaf` tinytext COLLATE utf8_bin NOT NULL,
+  `main_theory` text COLLATE utf8_bin NOT NULL,
+  `questions_theory` text COLLATE utf8_bin,
+  `answers_theory` text COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `theorie`
+--
+
+INSERT INTO `theorie` (`theory_id`, `school`, `hoofdstuk`, `paragraaf`, `main_theory`, `questions_theory`, `answers_theory`) VALUES
+(1, 'Inforca', 'H1', '1', '<p>Een computer \'begrijpt\' alleen nullen en enen. Informatie wordt in een computer altijd door middel van deze twee getallen opgeslagen. Of het nou gaat om letters, programma\'s of het beeld, het zijn allemaal nullen en enen.</p>\r\n\r\n			<p>Een bit heeft twee mogelijke waardes: 1 en 0. Een 1 geeft de aanwezigheid en 0 de afwezigheid van stroom aan. Er kan met dit binair systeem, een systeem met twee waarden, van alles worden weergegeven.</p>\r\n\r\n			<p>Dit binaire systeem werkt het beste als er meerdere 0\'en en 1\'en elkaar opvolgen, om zo voor veel mogelijkheden te zorgen. Hiermee kunnen dus ook grote hoeveelheden gegevens, oftewel data worden opgeslagen.</p>\r\n\r\n			<p>In het binair stelsel wordt van rechts naar links geteld. De waarde van een 1 wordt steeds groter als het verder links staat. In dit voorbeeld kun je zien hoe je in het binair stelsel tot 10 telt (met stappen van 1) en beginnend bij 0.</p>\r\n\r\n			<p>0, 1, 10, 11, 100, 101, 110, 111, 1000, 1001, 1010.</p>\r\n\r\n			<p>Alle 1\'en en 0\'en geven een volledige waarde weer. De waarde van de 1 wordt bepaald door de plek die deze binnen de reeks heeft. Helemaal rechts is het 1 waard en voor elke plek dat deze verder naar links staat verdubbeld zijn waarde. Een paar voorbeelden zijn:</p>\r\n\r\n			<p>Een 1 op de tweede plek van rechts is 2 waard, dus 10 in binair stelsel is 2 in het decimaal systeem.</p>\r\n\r\n			<p>Een 1 op de derde plek is 4 waard, dus een 100 in het binair stelsel is 4 in het decimaal systeem.</p>\r\n\r\n			<p>Een 1 op de vierde plek is 8 waard, dus een 1000 in het binair stelsel is 8 in het decimaal systeem.</p>\r\n\r\n			<p>Je kunt ook een 0 hieraan toevoegen. Dit hebt je bijvoorbeeld nodig om 5 weer te geven in decimaal, 101. Een vijf in binair is dus eigenlijk een vier en een, zoals twaalf in decimaal eigenlijk tien en twee is. Een 0 kan dus de waarde van een 1 verhogen, door de 1 naar links te \'duwen\'.</p>', '<ol>\r\n				<li>\r\n					Hoe wordt een nul en een één door een computer begrepen?\r\n				</li>\r\n				<li>\r\n					Vertaal 001, 011, 1001001 naar het decimale systeem (\'normale\' getallen)\r\n				</li>\r\n				<li>\r\n					Vertaal 5, 20 en 40 naar binair\r\n				</li>\r\n			</ol>', '<ol>\r\n				<li>\r\n					Wel stroom = 1, geen stroom = 0\r\n				</li>\r\n				<li>\r\n					1, 3, 73\r\n				</li>\r\n				<li>\r\n					101, 10100, 101000\r\n				</li>\r\n			</ol>'),
+(2, 'Inforca', 'H1', '2', '<p>Optellen</p>\r\n\r\n			<p>Optellen in binair is niet ingewikkeld. Je telt het bovenste en het onderste getal bij elkaar op en in het geval van 1+1 krijg je dan 10 als uitkomst. Het is alleen zo dat je bij het optellen van binaire getallen vaker iets moet onthouden, omdat het vaker boven de grenswaarde (meer dan 1) uitkomt.</p>\r\n\r\n			<img src=\"./afbeeldingen/additie.svg\" class=\"theorieImage\" />\r\n\r\n			<p>Decimaal: 108+49 = 157, dus het klopt.</p>\r\n\r\n			<p>Getallen met elkaar verminderen</p>\r\n\r\n			<p>Ook dit is niet ingewikkeld. Je haalt steeds het onderste getal van het bovenste getal af. Als je op -1 uitkomt \'leen\' je van het volgende nummer.</p>\r\n\r\n			<img src=\"./afbeeldingen/aftrekken.svg\" class=\"theorieImage\" />\r\n\r\n			<p>Vermenigvuldigen</p>\r\n\r\n			<p>Vermenigvuldigen lijkt wat moeilijker, maar dit valt mee. Dit doe je door steeds het meest rechtste nummer van onder te vermenigvuldigen met de nummers van de bovenste rij. Dit gaat dus van rechts naar links. Als de rij af is ga je bij de onderste rij de stappen herhalen voor het getal dat een plek verder naar links staat. Je zet steeds de uitkomsten onder elkaar en telt ze op het einde bij elkaar op. Denk eraan om het antwoord per rij ook steeds een plek op te laten schuiven naar links, je kunt er ook steeds een nul achter zetten om dit te verduidelijken.</p>\r\n\r\n			<img src=\"./afbeeldingen/multiplicatie.svg\" class=\"theorieImage\" />\r\n\r\n			<p>\r\n				Binair delen is ook mogelijk, maar dit is vrij lastig (voor een mens) om te doen. We zullen dit dus niet gaan uitvoeren, omdat het simpelweg te complex wordt.\r\n			</p>', 'Binair rekenen\r\n			<ol class=\"MLquestion\">\r\n				<li>\r\n					Tel op\r\n\r\n					<ol>\r\n						<li>10111+01100</li>\r\n						<li>01111+1110101</li>\r\n						<li>001100111+01111100</li>\r\n					</ol>\r\n				</li>\r\n\r\n\r\n				<li>\r\n					Trek af\r\n\r\n					<ol>\r\n						<li>10110-11</li>\r\n						<li>10110-0110</li>\r\n						<li>110011-101110</li>\r\n					</ol>\r\n				</li>\r\n\r\n				<li>\r\n					Vermenigvuldig\r\n\r\n					<ol>\r\n						<li>111*000</li>\r\n						<li>101*101</li>\r\n						<li>11011*101111 </li>\r\n					</ol>\r\n				</li>\r\n\r\n			</ol>', '<ol class=\"MLquestion\">\r\n				<li>\r\n					Tel op\r\n\r\n					<ol>\r\n						<li>100011</li>\r\n						<li>10000100</li>\r\n						<li>11100011</li>\r\n					</ol>\r\n				</li>\r\n\r\n				<li>\r\n					Trek af\r\n\r\n					<ol>\r\n						<li>10011</li>\r\n						<li>10000</li>\r\n						<li>100</li>\r\n					</ol>\r\n				</li>\r\n\r\n				<li>\r\n					Vermenigvuldig\r\n\r\n					<ol>\r\n						<li>0</li>\r\n						<li>11001</li>\r\n						<li>1001010</li>\r\n					</ol>\r\n				</li>\r\n\r\n			</ol>'),
+(3, 'Inforca', 'H1', '3', '<p>\'Gates\', oftewel poortjes in het Nederlands, zijn kleine schakelingen. De eenvoudigste (en tevens ook de belangrijkste) zijn AND en OR. Een gate ontvangt twee binaire waarden als input en vergelijkt deze twee bits.</p>\r\n\r\n			<p>Afhankelijk van welke gate en welke input het heeft ontvangen komt er een bepaalde output. Deze output is wederom een bit, het antwoord eigenlijk dus met ja of nee.</p>\r\n\r\n			<p>Bij AND is de output 1 als de twee bits in de input beide 1 zijn, dan kan de stroom namelijk erdoorheen (zie afbeelding). De naam AND is dus eigenlijk best logisch, want het heeft 1 en 1 nodig.</p>\r\n\r\n			<p>Bij OR moet minimaal een van de twee bits in de input 1 zijn om vervolgens een output van 1 uit te krijgen, maar twee keer 1 geeft ook de output 1. Alleen als de output twee keer 0 is zal de output bij een OR gate 0 zijn. De stroom kan dus doorgaan als er minimaal één keer een 1 als input is.</p>\r\n\r\n			<p>Als je deze poorten in een stroomcircuit gebruikt geld dat wanneer de output 1 is, de kring gesloten is (en er dus wel stroom kan circuleren), en bij 0 de kring open is (en er dus geen stroom kan circuleren).</p>\r\n\r\n			<p>Een voorbeeld van deze gates in een circuit is:</p>\r\n\r\n			<p>AND</p>\r\n\r\n			<img src=\"./afbeeldingen/AND.svg\" class=\"theorieImage\" />\r\n\r\n			<p>OR</p>\r\n\r\n			<img src=\"./afbeeldingen/OR.svg\" class=\"theorieImage\" />\r\n\r\n			<p>De grijze strepen zijn de mogelijke posities van de schakelaars. Als ze dicht zijn kan er stroom doorheen en als ze open zijn niet, 1 of 0.</p>', '<ol class=\"MLquestion\">\r\n				<li>\r\n					Neem als input de waarden 0 en 1 (in die volgorde).\r\n\r\n					<ol>\r\n						<li>Welk resultaat zal dit geven bij een AND-gate?</li>\r\n						<li>En bij een OR-gate?</li>\r\n						<li>Teken de AND- en OR-gates als een elektrisch circuit.</li>\r\n					</ol>\r\n				</li>\r\n			</ol>', '<ol class=\"MLquestion\">\r\n				<li>\r\n					<ol>\r\n						<li>0</li>\r\n						<li>1</li>\r\n						<li>\r\n							AND\r\n							<img src=\"./afbeeldingen/vraagAND.svg\" class=\"theorieImage\" />\r\n\r\n							OR\r\n							<img src=\"./afbeeldingen/vraagOR.svg\" class=\"theorieImage\" />\r\n\r\n						</li>\r\n					</ol>\r\n				</li>\r\n			</ol>');
 
 -- --------------------------------------------------------
 
@@ -140,17 +174,17 @@ INSERT INTO `quiz` (`id`, `userid`, `hoofdstuk`, `cijfer`) VALUES
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `naam` text COLLATE utf8_bin,
-  `username` text COLLATE utf8_bin NOT NULL,
+  `naam` tinytext COLLATE utf8_bin,
+  `username` tinytext COLLATE utf8_bin NOT NULL,
   `password` text COLLATE utf8_bin NOT NULL,
-  `school` text COLLATE utf8_bin,
-  `functie` text COLLATE utf8_bin,
-  `klas` text COLLATE utf8_bin,
+  `school` tinytext COLLATE utf8_bin,
+  `functie` tinytext COLLATE utf8_bin,
+  `klas` tinytext COLLATE utf8_bin,
   `creation_date` date NOT NULL,
   `expire_date` date DEFAULT NULL,
-  `group_name` text COLLATE utf8_bin,
-  `group_role` text COLLATE utf8_bin,
-  `email` text COLLATE utf8_bin,
+  `group_name` tinytext COLLATE utf8_bin,
+  `group_role` tinytext COLLATE utf8_bin,
+  `email` tinytext COLLATE utf8_bin,
   `NFailedLogins` int(11) DEFAULT NULL,
   `LFailedLogin` datetime DEFAULT NULL,
   `LActivity` datetime DEFAULT NULL
@@ -161,7 +195,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `naam`, `username`, `password`, `school`, `functie`, `klas`, `creation_date`, `expire_date`, `group_name`, `group_role`, `email`, `NFailedLogins`, `LFailedLogin`, `LActivity`) VALUES
-(336, 'test982267', 'test982267', '$2y$10$xFpjIMouA.qUnjr4iID5YOY5knT9H5YLR/77O373avW2IdcWvYA5m', 'test', 'docent', NULL, '2018-08-26', '2019-08-26', NULL, NULL, NULL, NULL, NULL, NULL),
+(336, 'test982267', 'test982267', '$2y$10$xFpjIMouA.qUnjr4iID5YOY5knT9H5YLR/77O373avW2IdcWvYA5m', 'test', 'docent', NULL, '2018-08-26', '2019-08-26', NULL, NULL, NULL, 1, '2019-04-03 20:54:28', NULL),
 (337, 'test675547', 'test675547', '$2y$10$WlkywhNPbN0kjCiivvDemeZgWqoXzy7u5j5DSbfdU4zvkBLzFKKSy', 'test', 'docent', NULL, '2018-08-26', '2019-08-26', NULL, NULL, NULL, NULL, NULL, NULL),
 (338, 'test340631', 'test340631', '$2y$10$zmiDwPjtfHXoWliH2nLBTudMlruRs/ZBmhpxv.ZPHiMr/2.Acs8ce', 'test', 'docent', NULL, '2018-08-26', '2019-08-26', NULL, NULL, NULL, NULL, NULL, NULL),
 (339, 'test016805', 'test016805', '$2y$10$EmBa0o.Cx4A9605km5nnL.srTiFE.QUOTV82BmHxmOwaJzvctj3Me', 'test', 'docent', NULL, '2018-08-26', '2019-08-26', NULL, NULL, NULL, NULL, NULL, NULL),
@@ -182,11 +216,11 @@ INSERT INTO `users` (`id`, `naam`, `username`, `password`, `school`, `functie`, 
 (355, 'test755983', 'test755983', '$2y$10$Zu5tv01ANnvvf53pLKpBDOe.zRYGVSPzGpVq3JYSfkzXKmpHTMiNG', 'test', 'leerling', 'A', '2018-08-26', '2019-08-26', NULL, NULL, NULL, NULL, NULL, NULL),
 (356, 'test709058', 'test709058', '$2y$10$RhWDn2cn9o1KtOrc9IzYBeGJ9AGOPSgd9/3FBaSG.lY/G2I95dTiu', 'test', 'leerling', 'A', '2018-08-26', '2019-08-26', NULL, NULL, NULL, NULL, NULL, NULL),
 (357, 'test307924', 'test307924', '$2y$10$.3EPmhd3sztVw7DiBsczoOoY1h03zMOXPFVr9XxQYht3y0W/7oMi6', 'test', 'leerling', 'A', '2018-08-26', '2019-08-26', NULL, NULL, NULL, NULL, NULL, NULL),
-(359, 'leerling', 'leerling', '$2y$10$z4aq1c.uHaqblMzojmK/4eDTJ17N/tH6E4OQYerxnxdlOKzYhoEPK', 'test', 'leerling', 'klas1', '2018-08-26', '2019-08-26', NULL, 'test_rol', NULL, 0, '2018-09-27 18:23:46', NULL),
+(359, 'leerling', 'leerling', '$2y$10$z4aq1c.uHaqblMzojmK/4eDTJ17N/tH6E4OQYerxnxdlOKzYhoEPK', 'test', 'leerling', 'klas1', '2018-08-26', '2019-08-26', NULL, 'test_rol', NULL, 0, '2018-09-27 18:23:46', '2019-04-03 21:24:25'),
 (361, 'docent', 'docent', '$2y$10$Rkw/QL9pTeesIlXwtZ2li.MBLZqLyHcaXEDZ.mSo8uMC7zk9LWp86', 'test', 'docent', NULL, '2018-09-01', '2019-09-01', NULL, NULL, NULL, 0, '2019-03-16 09:47:02', NULL),
 (362, 'test441173', 'test441173', '$2y$10$El.nAocP0IDMrtWuV0A8mu17RDBbJcgk.cw55oLnPi.tMO3JbfSF6', 'test', 'docent', NULL, '2018-09-09', '2015-09-09', NULL, NULL, NULL, 0, NULL, NULL),
 (363, 'test956641', 'test956641', '$2y$10$oJASR1zKZrmZTnVDRVsRqeAdAqm6G1N.e9zD8rufD4UVDSZCJj2de', 'test', 'leerling', '1', '2018-09-09', '2019-09-09', NULL, NULL, NULL, NULL, NULL, NULL),
-(953, 'test_docent1', 'test_docent1', '$2y$10$ZcugOZs9Ds3r9UQuO8efrOlu2/BSszWuQ5Jo6O9cC0LwfI02Rdgfe', 'test_school', 'docent', NULL, '2018-08-26', '2025-08-26', NULL, NULL, NULL, 0, '2019-03-16 09:47:19', NULL),
+(953, 'test_docent1', 'test_docent1', '$2y$10$ZcugOZs9Ds3r9UQuO8efrOlu2/BSszWuQ5Jo6O9cC0LwfI02Rdgfe', 'test_school', 'docent', NULL, '2018-08-26', '2025-08-26', NULL, NULL, NULL, 0, '2019-03-30 19:37:13', '2019-04-08 11:40:20'),
 (954, 'test_docent2', 'test_docent2', '$2y$10$GCMhSHaNor6GNOtwOIhACOP1bIggWmoyjcBiMDUS5Kx4OAznDkJZe', 'test_school', 'docent', NULL, '2018-08-26', '2019-08-26', NULL, NULL, NULL, 0, '2018-08-26 09:39:01', NULL),
 (955, 'test_docent3', 'test_docent3', '$2y$10$Qvpw8AE2urtJWEoyD4oy4OgDmA6ptjAwOijy.F..hJKhmHo4YEYlO', 'test_school', 'docent', NULL, '2018-08-26', '2019-08-26', NULL, NULL, NULL, 0, NULL, NULL),
 (956, 'test_docent4', 'test_docent4', '$2y$10$5C2wkOUJ4wEHEQisGBh7z.4aOiQifmS1rLbcuiR4ojLv/FJSQiI12', 'test_school', 'docent', NULL, '2018-08-26', '2019-08-26', NULL, NULL, NULL, 0, NULL, NULL),
@@ -373,6 +407,12 @@ ALTER TABLE `quiz`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexen voor tabel `theorie`
+--
+ALTER TABLE `theorie`
+  ADD PRIMARY KEY (`theory_id`);
+
+--
 -- Indexen voor tabel `users`
 --
 ALTER TABLE `users`
@@ -398,7 +438,13 @@ ALTER TABLE `planner`
 -- AUTO_INCREMENT voor een tabel `quiz`
 --
 ALTER TABLE `quiz`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT voor een tabel `theorie`
+--
+ALTER TABLE `theorie`
+  MODIFY `theory_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT voor een tabel `users`

@@ -6,12 +6,14 @@ $(document).ready(function(){
     data: {}
   });
 
-  jqXHR.done(function(msg) {
-    //$('.leerlingSelector').html(msg);
-    //TODO CHECK FOR ERRORS
-    alert(msg);
+  jqXHR.done(function(response) {
+    response = JSON.parse(response);
 
-    $('#chapter_selector').html(msg);
+    if(response.error){
+      window.alert(response.msg);
+    } else {
+      $('#chapter_selector').html(response.msg);
+    }
   });
 
   jqXHR.fail(function(jqXHR) {

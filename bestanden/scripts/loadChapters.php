@@ -5,6 +5,8 @@
 	$id = $_SESSION["id"];
   //TODO CHANGE TO ACTUAL SCHOOL
 	$school = 'Inforca';
+  $error = 0;
+  $msg = "";
 
 	//function to check and clean input
 	function check_input($data) {
@@ -24,27 +26,29 @@
         $hoofdstuk = $row["hoofdstuk"];
         $hoofdstukNaam = $row["hoofdstuk_naam"];
 
-        echo '
+        $msg .= '
           <option value="'.$hoofdstuk.'">'.$hoofdstukNaam.'</option>
         ';
 
       }
     } else {
-      echo '
+      $msg .= '
         <option value=""></option>
       ';
     }
 
-    echo '
+    $msg .= '
       <option value="Aanmaken">Aanmaken</option>
     ';
 
-
-
-
-
 	} else {
-		echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+		$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+    $error = 1;
 	}
+
+  $toReturn = array('msg' => $msg, 'error' => $error);
+	$toReturn = json_encode($toReturn);
+
+	echo $toReturn;
 
 ?>

@@ -37,6 +37,7 @@ $(document).ready(function(){
         window.alert(response.msg);
       } else {
         $('#paragraph_selector').html(response.msg);
+        updateParagraphContent();
       }
     });
 
@@ -49,8 +50,8 @@ $(document).ready(function(){
 		updateParagraphSelection();
 	})
 
-  $('#paragraph_selector').change(function() {
-		var chapter = $('#chapter_selector option:selected').val();
+  function updateParagraphContent(){
+    var chapter = $('#chapter_selector option:selected').val();
     var paragraph = $('#paragraph_selector option:selected').val();
 
 		jqXHR = $.ajax({
@@ -66,12 +67,19 @@ $(document).ready(function(){
         window.alert(response.msg);
       } else {
         //show content
+        $('#theorie').html(response.main);
+        $('#vragen').html(response.questions);
+        $('#antwoorden').html(response.answers);
       }
     });
 
 		jqXHR.fail(function(jqXHR) {
 			alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
 	  });
+  }
+
+  $('#paragraph_selector').change(function() {
+		updateParagraphContent();
 	})
 
   $('.editTheory').submit(function(event){

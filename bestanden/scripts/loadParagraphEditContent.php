@@ -17,6 +17,7 @@
 	}
 
   $chapter = mysqli_real_escape_string($conn, check_input($_POST['chapter']));
+	$paragraph = mysqli_real_escape_string($conn, check_input($_POST['paragraph']));
 
 	$sql = "SELECT school, functie FROM users WHERE id='$id'";
 
@@ -28,20 +29,16 @@
 		$functie = $result['functie'];
 
 		if($functie=='docent'){
-			$sql = "SELECT DISTINCT paragraaf, paragraaf_naam FROM theorie WHERE (school='$school' OR school='Inforca') AND hoofdstuk='$chapter'";
+			$sql = "SELECT main, questions, answers FROM theorie WHERE (school='$school' OR school='Inforca') AND hoofdstuk='$chapter' AND paragraaf='$paragraph'";
 
 			if (mysqli_query($conn, $sql)) {
 				$result = mysqli_query($conn, $sql);
 
 		    if (mysqli_num_rows($result) > 0) {
 		      while($row = mysqli_fetch_assoc($result)) {
-		        $paragraaf = $row["paragraaf"];
-		        $paragraaf_naam = $row["paragraaf_naam"];
-
-		        $msg .= '
-		          <option value="'.$paragraaf.'">'.$paragraaf_naam.'</option>
-		        ';
-
+		        $main = $row["main"];
+		        $questions = $row["questions"];
+						$answers = $row["answers"];
 		      }
 		    } else {
 		      $msg .= '
@@ -67,7 +64,7 @@
 		$error = 1;
 	}
 
-  $toReturn = array('msg' => $msg, 'error' => $error);
+  $toReturn = array('main'=> $main, 'questions'=>$questions, 'answers'=>$answers, 'msg' => $msg, 'error' => $error);
 	$toReturn = json_encode($toReturn);
 
 	echo $toReturn;

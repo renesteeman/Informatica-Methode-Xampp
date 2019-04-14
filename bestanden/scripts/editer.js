@@ -1,25 +1,27 @@
 $(document).ready(function(){
-  //load available chapters
-  jqXHR = $.ajax({
-    method: "POST",
-    url: '../scripts/loadChapters.php',
-    data: {}
-  });
+  function loadChapters(){
+    //load available chapters
+    jqXHR = $.ajax({
+      method: "POST",
+      url: '../scripts/loadChapters.php',
+      data: {}
+    });
 
-  jqXHR.done(function(response) {
-    response = JSON.parse(response);
+    jqXHR.done(function(response) {
+      response = JSON.parse(response);
 
-    if(response.error){
-      window.alert(response.msg);
-    } else {
-      $('#chapter_selector').html(response.msg);
-      updateParagraphSelection();
-    }
-  });
+      if(response.error){
+        window.alert(response.msg);
+      } else {
+        $('#chapter_selector').html(response.msg);
+        updateParagraphSelection();
+      }
+    });
 
-  jqXHR.fail(function(jqXHR) {
-    alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
-  });
+    jqXHR.fail(function(jqXHR) {
+      alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
+    });
+  }
 
   function updateParagraphSelection(){
     var chapter = $('#chapter_selector option:selected').val();
@@ -46,18 +48,13 @@ $(document).ready(function(){
 	  });
   }
 
-  $('#chapter_selector').change(function() {
-		updateParagraphSelection();
-	})
-
   function updateParagraphContent(){
-    var chapter = $('#chapter_selector option:selected').val();
-    var paragraph = $('#paragraph_selector option:selected').val();
+    var theory_id = $('#paragraph_selector option:selected').val();
 
 		jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/loadParagraphEditContent.php',
-			data: {chapter: chapter, paragraph:paragraph}
+			data: {theory_id: theory_id}
 		});
 
     jqXHR.done(function(response) {
@@ -78,6 +75,12 @@ $(document).ready(function(){
 	  });
   }
 
+  loadChapters();
+
+  $('#chapter_selector').change(function() {
+		updateParagraphSelection();
+	})
+
   $('#paragraph_selector').change(function() {
 		updateParagraphContent();
 	})
@@ -85,12 +88,32 @@ $(document).ready(function(){
   $('.editTheory').submit(function(event){
     event.preventDefault();
 
-    var chapter = $('#chapter_selector option:selected').text();
-    var paragraph = $('#paragraph_selector option:selected').text();
+    var chapter = $('#chapter_selector option:selected').val();
+    var paragraph = $('#paragraph_selector option:selected').val();
+    var main = $('#theorie').html();
+    var questions = $('#vragen').html();
+    var answers = $('#antwoorden').html();
+
+    jqXHR = $.ajax({
+			method: "POST",
+			url: '../scripts/saveEditContent.php',
+			data: {chapter: chapter, paragraph:paragraph, main:main, questions:questions, answers:answers}
+		});
+
+    jqXHR.done(function(response) {
+      response = JSON.parse(response);
+
+      if(response.error){
+        window.alert(response.msg);
+      } else {
+        window.alert('Succesvol opgeslagen')
+      }
+    });
+
+		jqXHR.fail(function(jqXHR) {
+			alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
+	  });
   })
-
-
-
 
 
 });

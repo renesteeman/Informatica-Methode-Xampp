@@ -4,12 +4,16 @@
 	session_start();
 
 	$id = $_SESSION["id"];
-	$school = '';
+	$school = "";
+  $functie = "";
   $error = 0;
-  $msg = "";
-	$main="";
-	$questions="";
-	$answers="";
+	$msg = "";
+
+	$theory_id = "";
+
+  $main = "";
+	$questions = "";
+	$answers = "";
 
 	//function to check and clean input
 	function check_input($data) {
@@ -19,8 +23,7 @@
 		return $data;
 	}
 
-  $chapter = mysqli_real_escape_string($conn, check_input($_POST['chapter']));
-	$paragraph = mysqli_real_escape_string($conn, check_input($_POST['paragraph']));
+  $theory_id = mysqli_real_escape_string($conn, check_input($_POST['theory_id']));
 
 	$sql = "SELECT school, functie FROM users WHERE id='$id'";
 
@@ -32,7 +35,7 @@
 		$functie = $result['functie'];
 
 		if($functie=='docent'){
-			$sql = "SELECT main, questions, answers FROM theorie WHERE (school='$school' OR school='Inforca') AND hoofdstuk='$chapter' AND paragraaf='$paragraph'";
+			$sql = "SELECT main, questions, answers FROM theorie WHERE theory_id='$theory_id'";
 
 			if (mysqli_query($conn, $sql)) {
 				$result = mysqli_query($conn, $sql);

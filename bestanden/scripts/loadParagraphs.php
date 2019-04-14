@@ -4,7 +4,8 @@
 	session_start();
 
 	$id = $_SESSION["id"];
-	$school = '';
+	$school = "";
+  $functie = "";
   $error = 0;
   $msg = "";
 

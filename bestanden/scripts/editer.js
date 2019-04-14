@@ -88,26 +88,22 @@ $(document).ready(function(){
   $('.editTheory').submit(function(event){
     event.preventDefault();
 
-    var chapter = $('#chapter_selector option:selected').val();
-    var paragraph = $('#paragraph_selector option:selected').val();
-    var main = $('#theorie').html();
-    var questions = $('#vragen').html();
-    var answers = $('#antwoorden').html();
+    var theory_id = $('#paragraph_selector option:selected').val();
+
+    var main = $('#theorie').val();
+    var questions = $('#vragen').val();
+    var answers = $('#antwoorden').val();
 
     jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/saveEditContent.php',
-			data: {chapter: chapter, paragraph:paragraph, main:main, questions:questions, answers:answers}
+			data: {theory_id: theory_id, main:main, questions:questions, answers:answers}
 		});
 
     jqXHR.done(function(response) {
       response = JSON.parse(response);
 
-      if(response.error){
-        window.alert(response.msg);
-      } else {
-        window.alert('Succesvol opgeslagen')
-      }
+      window.alert(response.msg);
     });
 
 		jqXHR.fail(function(jqXHR) {

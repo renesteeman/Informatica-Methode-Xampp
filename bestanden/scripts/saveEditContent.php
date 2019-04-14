@@ -9,8 +9,7 @@
   $error = 0;
   $msg = "";
 
-  $chapter = "";
-  $paragraph = "";
+  $theory_id = "";
 
   $main = "";
 	$questions = "";
@@ -24,8 +23,7 @@
 		return $data;
 	}
 
-  $chapter = mysqli_real_escape_string($conn, check_input($_POST['chapter']));
-	$paragraph = mysqli_real_escape_string($conn, check_input($_POST['paragraph']));
+  $theory_id = mysqli_real_escape_string($conn, check_input($_POST['theory_id']));
   $main = mysqli_real_escape_string($conn, check_input($_POST['main']));
   $questions = mysqli_real_escape_string($conn, check_input($_POST['questions']));
   $answers = mysqli_real_escape_string($conn, check_input($_POST['answers']));
@@ -40,10 +38,11 @@
 		$functie = $result['functie'];
 
 		if($functie=='docent'){
-      //TODO
-			$sql = "";
+			$sql = "UPDATE theorie SET main='$main', questions='$questions', answers='$answers' WHERE theory_id='$theory_id'";
 
-			if (!mysqli_query($conn, $sql)) {
+			if (mysqli_query($conn, $sql)) {
+				$msg .= "\nSuccesvol opgeslagen";
+			} else {
 				$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 		    $error = 1;
 			}

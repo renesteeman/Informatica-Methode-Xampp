@@ -7,6 +7,9 @@
 	$school = '';
   $error = 0;
   $msg = "";
+	$main="";
+	$questions="";
+	$answers="";
 
 	//function to check and clean input
 	function check_input($data) {
@@ -33,22 +36,11 @@
 
 			if (mysqli_query($conn, $sql)) {
 				$result = mysqli_query($conn, $sql);
+				$result = mysqli_fetch_assoc($result);
 
-		    if (mysqli_num_rows($result) > 0) {
-		      while($row = mysqli_fetch_assoc($result)) {
-		        $main = $row["main"];
-		        $questions = $row["questions"];
-						$answers = $row["answers"];
-		      }
-		    } else {
-		      $msg .= '
-		        <option value=""></option>
-		      ';
-		    }
-
-		    $msg .= '
-		      <option value="Aanmaken">Aanmaken</option>
-		    ';
+        $main = $result["main"];
+        $questions = $result["questions"];
+				$answers = $result["answers"];
 
 			} else {
 				$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";

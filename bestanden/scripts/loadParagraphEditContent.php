@@ -63,5 +63,4 @@
 	$toReturn = json_encode($toReturn);
 
 	echo $toReturn;
-
 ?>

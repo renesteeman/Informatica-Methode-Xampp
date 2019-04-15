@@ -64,9 +64,9 @@ $(document).ready(function(){
         window.alert(response.msg);
       } else {
         //show content
-        $('#theorie').html(response.main);
-        $('#vragen').html(response.questions);
-        $('#antwoorden').html(response.answers);
+        $('#theorie').val(response.main);
+        $('#vragen').val(response.questions);
+        $('#antwoorden').val(response.answers);
       }
     });
 

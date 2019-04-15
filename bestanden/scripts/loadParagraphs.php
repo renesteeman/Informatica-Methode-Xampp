@@ -26,8 +26,7 @@
 		return $data;
 	}
 
-  //TODO $chapter = mysqli_real_escape_string($conn, check_input($_POST['chapter']));
-	$chapter = "H1";
+  $chapter = mysqli_real_escape_string($conn, check_input($_POST['chapter']));
 
 	$sql = "SELECT school, functie FROM users WHERE id='$id'";
 

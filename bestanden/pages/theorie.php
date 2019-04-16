@@ -1,25 +1,47 @@
 <?php
   include('../components/headerTheory.php');
 
+  $chapter = "";
+  $chapter_name = "";
+  $paragraph = "";
+  $paragraph_name = "";
+  $amountOfParagraphs = "";
+
+  $theory_main = "";
+  $theory_questions = "";
+  $theory_answers = "";
+
+  //TODO set actual values
+  $chapter = "T1";
+  $chapter_name = "Test chapter";
+  $paragraph = "1";
+  $paragraph_name = "test paragraph";
+  $amountOfParagraphs = 3;
+
   echo "
   <body>
     <div class='title-small'>
       <h2>
-        Hoofstuk + hoofdstuk_naam + paragraaf + paragraaf_naam
+        ".$chapter." ".$chapter_name." ".$paragraph." ".$paragraph_name."
       </h2>
      </div>
 
     <div class='bar-par-overview'>
-      <div class='paragraph-tiles'>
+      <div class='paragraph-tiles'>";
 
-        Foreach paragraph
+        for($i=1; $i<=$amountOfParagraphs; $i++){
+          echo "
+          <div class='ptile'>
+            <span class='ptile-content'>
+              §"."$i"."
+            </a></span>
+          </div>
+          ";
+        }
 
-        <div class='ptile'>
-          <span class='ptile-content'>
-            §i
-          </a></span>
-        </div>
 
+
+      echo "
       </div>
     </div>
 

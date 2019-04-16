@@ -1,8 +1,8 @@
 <?php
-session_save_path('../../../tmp');
+session_save_path('../tmp');
 session_start();
 
-include('../../../scripts/DB_connect.php');
+include('../scripts/DB_connect.php');
 
 //check if account is still valid
 function AccountValid(){
@@ -36,14 +36,14 @@ function AccountValid(){
 //check if person is loged in
 if (!isset($_SESSION["id"])){
 	$_SESSION['ErrorNotLogedIn'] = 1;
-	header('Location: ../../../index.php');
+	header('Location: ../index.php');
 } else {
 	//check if the account hasn't expired and if it has, than redirect
 	if(AccountValid()){
 		$_SESSION['ErrorInvalidAccount'] = 0;
 	} else {
 		$_SESSION['ErrorInvalidAccount'] = 1;
-		header('Location: ../../../index.php');
+		header('Location: ../index.php');
 	}
 }
 
@@ -62,8 +62,8 @@ if (!isset($_SESSION["id"])){
 	<meta name="author" content="René Steeman" />
 
 	<!-- internal includes -->
-	<link rel="stylesheet" href="../../../css/main.min.css">
-	<link rel="stylesheet" href="../../../css/paragraph.min.css">
+	<link rel="stylesheet" href="../css/main.min.css">
+	<link rel="stylesheet" href="../css/paragraph.min.css">
 
 	<!-- external includes -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -72,14 +72,14 @@ if (!isset($_SESSION["id"])){
     <title>Inforca</title>
 
 	<!-- icon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="../../../icons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="../../../icons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="../../../icons/favicon-16x16.png">
-	<link rel="manifest" href="../../../icons/site.webmanifest">
-	<link rel="mask-icon" href="../../../icons/safari-pinned-tab.svg" color="#5bbad5">
-	<link rel="shortcut icon" href="../../../icons/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+	<link rel="manifest" href="../icons/site.webmanifest">
+	<link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="../icons/favicon.ico">
 	<meta name="msapplication-TileColor" content="#00aba9">
-	<meta name="msapplication-config" content="../../../icons/browserconfig.xml">
+	<meta name="msapplication-config" content="../icons/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
 
 <head>
@@ -104,18 +104,18 @@ if (!isset($_SESSION["id"])){
 							//if a teacher is logged in
 							echo '
 							<div class="nav-bar">
-								<a href="../../../index.php">HOME</a>
-								<a href="../../../pages/overview.php">OVERZICHT</a>
-								<a href="../../../pages/planner.php">PLANNER</a>
-								<a href="../../../pages/editer.php">AANPASSEN</a>
+								<a href="../index.php">HOME</a>
+								<a href="../pages/overview.php">OVERZICHT</a>
+								<a href="../pages/planner.php">PLANNER</a>
+								<a href="../pages/editer.php">AANPASSEN</a>
 							</div>
 							';
 						} else {
 							//if a student is logged in
 							echo '
 							<div class="nav-bar">
-								<a href="../../../index.php">HOME</a>
-								<a href="../../../pages/planner.php">PLANNER</a>
+								<a href="../index.php">HOME</a>
+								<a href="../pages/planner.php">PLANNER</a>
 							</div>
 							';
 						}
@@ -123,7 +123,7 @@ if (!isset($_SESSION["id"])){
 						//if user isn't logged in
 						echo '
 						<div class="nav-bar">
-							<a href="../../../index.php"></a>
+							<a href="../index.php"></a>
 						</div>
 						';
 
@@ -136,14 +136,14 @@ if (!isset($_SESSION["id"])){
 					if (isset($_SESSION["name"])){
 						echo
 							'<div>
-								Welkom <a href="../../account.php">'.$_SESSION["name"].'</a>
+								Welkom <a href="account.php">'.$_SESSION["name"].'</a>
 							</div>
 							<div>
-								<a href="../../../scripts/logout.php">Log uit</a>
+								<a href="../scripts/logout.php">Log uit</a>
 							</div>';
 
 					} else {
-						echo ' <div><a href="../../account.php"> login</a></div> ';
+						echo ' <div><a href="account.php"> login</a></div> ';
 					}
 					?>
 				</div>
@@ -151,7 +151,7 @@ if (!isset($_SESSION["id"])){
 		</div>
 
 		<h1 class="INFORCA">
-			<a href="../../../index.php">INFORCA</a>
+			<a href="../index.php">INFORCA</a>
 		</h1>
 
 		<div class="nav-wide">
@@ -163,18 +163,24 @@ if (!isset($_SESSION["id"])){
 					//if a teacher is logged in
 					echo '
 					<div class="nav-bar">
-						<a href="../../../index.php">HOME</a>
-						<a href="../../../pages/overview.php">OVERZICHT</a>
-						<a href="../../../pages/planner.php">PLANNER</a>
-						<a href="../../../pages/editer.php">AANPASSEN</a>
+						<a href="
+						../index.php">HOME</a>
+						<a href="
+						../pages/overview.php">OVERZICHT</a>
+						<a href="
+						../pages/planner.php">PLANNER</a>
+						<a href="
+						../pages/editer.php">AANPASSEN</a>
 					</div>
 					';
 				} else {
 					//if a student is logged in
 					echo '
 					<div class="nav-bar student">
-						<a href="../../../index.php">HOME</a>
-						<a href="../../../pages/planner.php">PLANNER</a>
+						<a href="
+						../index.php">HOME</a>
+						<a href="
+						../pages/planner.php">PLANNER</a>
 					</div>
 					';
 				}
@@ -182,7 +188,8 @@ if (!isset($_SESSION["id"])){
 				//if user isn't logged in
 				echo '
 				<div class="nav-bar">
-					<a href="../../../index.php"></a>
+					<a href="
+					../index.php"></a>
 				</div>
 				';
 			}
@@ -196,14 +203,16 @@ if (!isset($_SESSION["id"])){
 						if (isset($_SESSION["name"])){
 							echo
 								'<div>
-									Welkom <a href="../../account.php">'.$_SESSION["name"].'</a>
+									Welkom <a href="
+									account.php">'.$_SESSION["name"].'</a>
 								</div>
 								<div>
-									<a href="../../../scripts/logout.php">Log uit</a>
+									<a href="../scripts/logout.php">Log uit</a>
 								</div>';
 
 						} else {
-							echo '<div><a href="../../account.php">login</a></div>';
+							echo '<div><a href="
+							account.php">login</a></div>';
 						}
 					?>
 

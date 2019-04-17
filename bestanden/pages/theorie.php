@@ -18,6 +18,10 @@
   $paragraph_name = "test paragraph";
   $amountOfParagraphs = 3;
 
+  $theory_main = "theorie";
+  $theory_questions = "vragen";
+  $theory_answers = "antwoorden";
+
   echo "
   <body>
     <div class='title-small'>
@@ -39,8 +43,6 @@
           ";
         }
 
-
-
       echo "
       </div>
     </div>
@@ -54,7 +56,7 @@
 
       <div class='theorie-content'>
 
-        THEORY
+        ".$theory_main."
 
       </div>
 
@@ -66,7 +68,7 @@
 
       <div class='theorie-content'>
 
-        QUESTIONS
+        ".$theory_questions."
 
       </div>
 
@@ -78,7 +80,7 @@
 
       <div class='theorie-content theorie-answers'>
 
-        ANSWERS
+        ".$theory_answers."
 
       </div>
     </div>

@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H2 Logica §1 introductie tot logica
+			H2 Logica §1 Introductie tot logica
 		</h2>
 	</div>
 

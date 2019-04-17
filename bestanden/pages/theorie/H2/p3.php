@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H2 Logica §3 binair?
+			H2 Logica §3 Binair
 		</h2>
 	</div>
 

@@ -9,6 +9,87 @@
 		}
 	}
 
+	function loadParagraphs($conn, $school, $chapter, $chapter_name){
+		$theory_ids = [];
+		$theory_paragraphs = [];
+		$theory_paragraph_names = [];
+
+		$school_theory_ids = [];
+		$school_theory_paragraphs = [];
+		$school_theory_paragraph_names = [];
+
+		$inforca_theory_ids = [];
+		$inforca_theory_paragraphs = [];
+		$inforca_theory_paragraph_names = [];
+
+		$sql = "SELECT theory_id, paragraaf, paragraaf_naam FROM theorie WHERE school='$school' AND hoofdstuk='$chapter'";
+
+		if(mysqli_query($conn, $sql)) {
+			$result = mysqli_query($conn, $sql);
+
+			if (mysqli_num_rows($result) > 0) {
+				while($row = mysqli_fetch_assoc($result)) {
+					$theory_id = $row["theory_id"];
+					$paragraaf = $row["paragraaf"];
+					$paragraaf_naam = $row["paragraaf_naam"];
+
+					$school_theory_ids[] = $theory_id;
+					$school_theory_paragraphs[] = $paragraaf;
+					$school_theory_paragraph_names[] = $paragraaf_naam;
+				}
+			}
+
+			$sql = "SELECT theory_id, paragraaf, paragraaf_naam FROM theorie WHERE school='Inforca' AND hoofdstuk='$chapter'";
+
+			if (mysqli_query($conn, $sql)) {
+				$result = mysqli_query($conn, $sql);
+
+				if (mysqli_num_rows($result) > 0) {
+					while($row = mysqli_fetch_assoc($result)) {
+						$theory_id = $row["theory_id"];
+						$paragraaf = $row["paragraaf"];
+						$paragraaf_naam = $row["paragraaf_naam"];
+
+						$inforca_theory_ids[] = $theory_id;
+						$inforca_theory_paragraphs[] = $paragraaf;
+						$inforca_theory_paragraph_names[] = $paragraaf_naam;
+					}
+				}
+
+				$theory_ids = $inforca_theory_ids;
+				$theory_paragraphs = $inforca_theory_paragraphs;
+				$theory_paragraph_names = $inforca_theory_paragraph_names;
+
+				for($i=0; $i<count($school_theory_paragraphs);$i++){
+					$paragraphSchool = $school_theory_paragraphs[$i];
+					$array_found_index = array_search($paragraphSchool, $inforca_theory_paragraphs);
+
+					//check if a paragrpahs from the school is found and if so replace it by the school version
+					if($array_found_index !== False){
+						$theory_ids[$array_found_index] = $school_theory_ids[$i];
+						$theory_paragraphs[$array_found_index] = $school_theory_paragraphs[$i];
+						$theory_paragraph_names[$array_found_index] = $school_theory_paragraph_names[$i];
+					}
+				}
+
+				//TODO
+				for($i=0; $i<count($theory_ids); $i++) {
+
+					$theory_id = $theory_ids[$i];
+					$paragraaf = $theory_paragraphs[$i];
+					$paragraaf_naam = $theory_paragraph_names[$i];
+
+					echo $paragraaf_naam."</br>";
+				}
+
+			} else {
+				echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+			}
+		} else {
+			echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+		}
+	}
+
 ?>
 
 <head>
@@ -114,10 +195,6 @@
   				echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
   			}
 
-
-
-
-
 				$theory_chapters = $inforca_chapters;
 			  $theory_chapter_names = $inforca_chapter_names;
 
@@ -132,20 +209,25 @@
 			    }
 			  }
 
-				print_r($theory_chapters);
-				echo "\n";
-				print_r($theory_chapter_names);
-
-				//TODO is this needed?
 			  if(count($theory_chapters) > 0){
 			    for($i=0; $i<count($theory_chapters); $i++) {
-
 			      $theory_chapter = $theory_chapters[$i];
 			      $theory_chapter_name = $theory_chapter_names[$i];
-
-
 			    }
 			  }
+
+				for($i=0; $i<count($theory_chapters); $i++){
+					$chapter = $theory_chapters[$i];
+					$chapter_name = $theory_chapter_names[$i];
+					loadParagraphs($conn, $school, $chapter, $chapter_name);
+				}
+
+
+
+
+
+
+
 
 
 
@@ -156,26 +238,6 @@
     	} else {
     		echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
     	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       echo "
 			<div class='title'>

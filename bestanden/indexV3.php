@@ -249,6 +249,10 @@
 					$lastChapter = $chapter;
 				}
 
+				$hoofdstukken_kern = array_keys($theory_kern);
+				$hoofdstukken_verdieping = array_keys($theory_verdieping);
+				$hoofdstukken_bonus = array_keys($theory_bonus);
+
     	} else {
     		echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
     	}
@@ -267,10 +271,6 @@
 			</div>
 
 			<div class='chapter-tiles'>";
-
-			$hoofdstukken_kern = array_keys($theory_kern);
-			$hoofdstukken_verdieping = array_keys($theory_verdieping);
-			$hoofdstukken_bonus = array_keys($theory_bonus);
 
 			for($i=0; $i<count($hoofdstukken_kern); $i++){
 
@@ -296,7 +296,7 @@
 							<ol>";
 
 								for($j=1; $j<count($paragraven); $j++){
-									echo "<ul>§".$j." ".$paragraven[$j]."</ul>";
+									echo "<ul><span>§".$j." ".$paragraven[$j]."</span></ul>";
 								}
 
 						echo "
@@ -317,33 +317,39 @@
 
 			<div class='chapter-tiles'>";
 
-      //TODO for every chapter show tile
+			for($i=0; $i<count($hoofdstukken_verdieping); $i++){
 
-				if(chapterIsFinished('V1')){
+				$hoofdstuk = $hoofdstukken_verdieping[$i];
+				$hoofdstuk_naam = $theory_verdieping[$hoofdstuk][0];
+				$paragraven = $theory_verdieping[$hoofdstuk];
+				//verwijder de naam van het hoofdstuk
+				unset($paragraven[0]);
+
+				if(chapterIsFinished($hoofdstuk)){
 					echo "<div class='tile completed'>";
 				} else {
 					echo "<div class='tile'>";
 				}
 
-          echo "
+        echo "
 					<div class='tile-content'>
 						<div class='tile-chapter'>
-							V1 Filosofie en AI
+							".$hoofdstuk." ".$hoofdstuk_naam."
 						</div>
 						<div class='tile-paragraphs'>
 							<span class='closeTile'>X</span>
-							<ol>
-								<ul><a href='pages/theorie/V1/p1.php'>§1 Wat is filosofie?</a></ul>
-								<ul><a href='pages/theorie/V1/p2.php'>§2 Wat is ethiek?</a></ul>
-								<ul><a href='pages/theorie/V1/p3.php'>§3 Het trein probleem</a></ul>
-								<ul><a href='pages/theorie/V1/p4.php'>§4 Informatica en de maatschappij</a></ul>
-								<ul><a href='pages/theorie/V1/p5.php'>§5 Kunstmatige intelligentie</a></ul>
-								<ul><a href='pages/theorie/V1/p6.php'>§6 Machine learning voorbeeld</a></ul>
-								<ul><a href='pages/theorie/V1/quiz.php'>Quiz</a></ul>
+							<ol>";
+
+								for($j=1; $j<count($paragraven); $j++){
+									echo "<ul><span>§".$j." ".$paragraven[$j]."</span></ul>";
+								}
+
+						echo "
 							</ol>
 						</div>
 					</div>
 				</div>";
+			}
 
       echo "</div>";
 
@@ -356,31 +362,39 @@
 
 			<div class='chapter-tiles'>";
 
-      //TODO show a tile for each chapter
+			for($i=0; $i<count($hoofdstukken_bonus); $i++){
 
-			if(chapterIsFinished('B1')){
-				echo "<div class='tile completed'>";
-			} else {
-				echo "<div class='tile'>";
+				$hoofdstuk = $hoofdstukken_bonus[$i];
+				$hoofdstuk_naam = $theory_bonus[$hoofdstuk][0];
+				$paragraven = $theory_bonus[$hoofdstuk];
+				//verwijder de naam van het hoofdstuk
+				unset($paragraven[0]);
+
+				if(chapterIsFinished($hoofdstuk)){
+					echo "<div class='tile completed'>";
+				} else {
+					echo "<div class='tile'>";
+				}
+
+        echo "
+					<div class='tile-content'>
+						<div class='tile-chapter'>
+							".$hoofdstuk." ".$hoofdstuk_naam."
+						</div>
+						<div class='tile-paragraphs'>
+							<span class='closeTile'>X</span>
+							<ol>";
+
+								for($j=1; $j<count($paragraven); $j++){
+									echo "<ul><span>§".$j." ".$paragraven[$j]."</span></ul>";
+								}
+
+						echo "
+							</ol>
+						</div>
+					</div>
+				</div>";
 			}
-
-      echo "
-			<div class='tile-content'>
-				<div class='tile-chapter'>
-					B1 Web development
-				</div>
-				<div class='tile-paragraphs'>
-					<span class='closeTile'>X</span>
-					<ol>
-						<ul><a href='pages/theorie/B1/p1.php'>§1 Introductie</a></ul>
-						<ul><a href='pages/theorie/B1/p2.php'>§2 De basis van HTML</a></ul>
-						<ul><a href='pages/theorie/B1/p3.php'>§3 HTML deel 2</a></ul>
-						<ul><a href='pages/theorie/B1/p4.php'>§4 De basis van CSS</a></ul>
-						<ul><a href='pages/theorie/B1/p5.php'>§5 CSS deel 2</a></ul>
-						<ul><a href='pages/theorie/B1/quiz.php'>Quiz</a></ul>
-					</ol>
-				</div>
-			</div>";
 
     echo "
 		</div>

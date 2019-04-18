@@ -228,9 +228,6 @@
 				for($i=0; $i<count($theory_to_load); $i++){
 					$item = $theory_to_load[$i];
 					$chapter = $item[0];
-					//TODO remove
-					print_r($item);
-					print "</br>";
 
 					if($chapter[0] == 'H'){
 						if($chapter != $lastChapter){
@@ -251,12 +248,6 @@
 
 					$lastChapter = $chapter;
 				}
-
-				//TODO
-				echo "</br>";echo "</br>";echo "</br>";
-				print_r($theory_kern);
-				echo "</br>";echo "</br>";echo "</br>";
-				print_r(array_keys($theory_kern));
 
     	} else {
     		echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
@@ -281,13 +272,13 @@
 			$hoofdstukken_verdieping = array_keys($theory_verdieping);
 			$hoofdstukken_bonus = array_keys($theory_bonus);
 
-			print_r($hoofdstukken_kern);
-
 			for($i=0; $i<count($hoofdstukken_kern); $i++){
 
 				$hoofdstuk = $hoofdstukken_kern[$i];
-				//$hoofdstuk_naam = $hoofdstukken_kern[$hoofdstuk];
+				$hoofdstuk_naam = $theory_kern[$hoofdstuk][0];
 				$paragraven = $theory_kern[$hoofdstuk];
+				//verwijder de naam van het hoofdstuk
+				unset($paragraven[0]);
 
 				if(chapterIsFinished($hoofdstuk)){
 					echo "<div class='tile completed'>";
@@ -298,7 +289,7 @@
         echo "
 					<div class='tile-content'>
 						<div class='tile-chapter'>
-							".$chapter."
+							".$hoofdstuk." ".$hoofdstuk_naam."
 						</div>
 						<div class='tile-paragraphs'>
 							<span class='closeTile'>X</span>

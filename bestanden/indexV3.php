@@ -1,6 +1,15 @@
 <?php
 	include('components/headerIndex.php');
 	$completedChapters = [];
+	$theory_to_load = [];
+
+	//function to check and clean input
+	function check_input($data) {
+		$data = trim($data, " ");
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		return $data;
+	}
 
 	function chapterIsFinished($thisChapter){
 		global $completedChapters;
@@ -10,6 +19,8 @@
 	}
 
 	function loadParagraphs($conn, $school, $chapter, $chapter_name){
+		global $theory_to_load;
+
 		$theory_ids = [];
 		$theory_paragraphs = [];
 		$theory_paragraph_names = [];
@@ -72,14 +83,12 @@
 					}
 				}
 
-				//TODO
 				for($i=0; $i<count($theory_ids); $i++) {
-
 					$theory_id = $theory_ids[$i];
 					$paragraaf = $theory_paragraphs[$i];
 					$paragraaf_naam = $theory_paragraph_names[$i];
 
-					echo $paragraaf_naam."</br>";
+					$theory_to_load[] = [$chapter, $chapter_name, $paragraaf_naam];
 				}
 
 			} else {
@@ -142,17 +151,6 @@
       //load theory
       $school = "";
 
-			$school_chapters = [];
-			$school_chapter_names = [];
-
-    	//function to check and clean input
-    	function check_input($data) {
-    		$data = trim($data, " ");
-    		$data = stripslashes($data);
-    		$data = htmlspecialchars($data);
-    		return $data;
-    	}
-
     	$sql = "SELECT school FROM users WHERE id='$id'";
 
     	if (mysqli_query($conn, $sql)) {
@@ -161,7 +159,7 @@
     		$result = mysqli_fetch_assoc($result);
     		$school = $result['school'];
 
-  			$sql = "SELECT DISTINCT hoofdstuk, hoofdstuk_naam FROM theorie WHERE school='$school'";
+  			$sql = "SELECT DISTINCT hoofdstuk, hoofdstuk_naam FROM theorie WHERE school='$school' ORDER BY hoofdstuk";
 
   			if (mysqli_query($conn, $sql)) {
   				$result = mysqli_query($conn, $sql);
@@ -178,7 +176,7 @@
   				echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
   			}
 
-				$sql = "SELECT DISTINCT hoofdstuk, hoofdstuk_naam FROM theorie WHERE school='Inforca'";
+				$sql = "SELECT DISTINCT hoofdstuk, hoofdstuk_naam FROM theorie WHERE school='Inforca' ORDER BY hoofdstuk";
 
   			if (mysqli_query($conn, $sql)) {
   				$result = mysqli_query($conn, $sql);
@@ -222,18 +220,43 @@
 					loadParagraphs($conn, $school, $chapter, $chapter_name);
 				}
 
+				$theory_kern = [];
+				$theory_verdieping = [];
+				$theory_bonus = [];
 
+				$lastChapter = "";
+				for($i=0; $i<count($theory_to_load); $i++){
+					$item = $theory_to_load[$i];
+					$chapter = $item[0];
+					//TODO remove
+					print_r($item);
+					print "</br>";
 
+					if($chapter[0] == 'H'){
+						if($chapter != $lastChapter){
+							$theory_kern[$chapter][] = $item[1];
+						}
+						$theory_kern[$chapter][] = $item[2];
+					} else if($chapter[0] == 'V'){
+						if($chapter != $lastChapter){
+							$theory_verdieping[$chapter][] = $item[1];
+						}
+						$theory_verdieping[$chapter][] = $item[2];
+					} else if($chapter[0] == 'B'){
+						if($chapter != $lastChapter){
+							$theory_bonus[$chapter][] = $item[1];
+						}
+						$theory_bonus[$chapter][] = $item[2];
+					}
 
+					$lastChapter = $chapter;
+				}
 
-
-
-
-
-
-
-
-
+				//TODO
+				echo "</br>";echo "</br>";echo "</br>";
+				print_r($theory_kern);
+				echo "</br>";echo "</br>";echo "</br>";
+				print_r(array_keys($theory_kern));
 
     	} else {
     		echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
@@ -254,18 +277,28 @@
 
 			<div class='chapter-tiles'>";
 
-      //TODO for every chapter, show a tile
+			$hoofdstukken_kern = array_keys($theory_kern);
+			$hoofdstukken_verdieping = array_keys($theory_verdieping);
+			$hoofdstukken_bonus = array_keys($theory_bonus);
 
-				if(chapterIsFinished('H1')){
+			print_r($hoofdstukken_kern);
+
+			for($i=0; $i<count($hoofdstukken_kern); $i++){
+
+				$hoofdstuk = $hoofdstukken_kern[$i];
+				//$hoofdstuk_naam = $hoofdstukken_kern[$hoofdstuk];
+				$paragraven = $theory_kern[$hoofdstuk];
+
+				if(chapterIsFinished($hoofdstuk)){
 					echo "<div class='tile completed'>";
 				} else {
 					echo "<div class='tile'>";
 				}
 
-          echo "
+        echo "
 					<div class='tile-content'>
 						<div class='tile-chapter'>
-							H1 Werking computer
+							".$chapter."
 						</div>
 						<div class='tile-paragraphs'>
 							<span class='closeTile'>X</span>
@@ -281,6 +314,9 @@
 						</div>
 					</div>
 				</div>";
+			}
+
+
 
       echo "</div>";
 

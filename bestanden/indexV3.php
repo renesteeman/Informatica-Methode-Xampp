@@ -9,93 +9,6 @@
 		}
 	}
 
-  function loadParagraphs($chapter){
-    $school_theory_ids = [];
-    $school_theory_paragraphs = [];
-    $inforca_theory_ids = [];
-    $inforca_theory_paragraphs = [];
-
-    $theory_ids = [];
-    $theory_paragraphs = [];
-
-    //function to check and clean input
-    function check_input($data) {
-      $data = trim($data, " ");
-      $data = stripslashes($data);
-      $data = htmlspecialchars($data);
-      return $data;
-    }
-
-    $sql = "SELECT school FROM users WHERE id='$id'";
-
-    if (mysqli_query($conn, $sql)) {
-      //find school of teacher
-      $result = mysqli_query($conn, $sql);
-      $result = mysqli_fetch_assoc($result);
-      $school = $result['school'];
-
-      $sql = "SELECT theory_id, paragraaf FROM theorie WHERE school='$school' AND hoofdstuk='$chapter'";
-
-      if (mysqli_query($conn, $sql)) {
-        $result = mysqli_query($conn, $sql);
-
-        if (mysqli_num_rows($result) > 0) {
-          while($row = mysqli_fetch_assoc($result)) {
-            $theory_id = $row["theory_id"];
-            $paragraaf = $row["paragraaf"];
-
-            $school_theory_ids[] = $theory_id;
-            $school_theory_paragraphs[] = $paragraaf;
-          }
-        }
-
-        $sql = "SELECT theory_id, paragraaf FROM theorie WHERE school='Inforca' AND hoofdstuk='$chapter'";
-
-        if (mysqli_query($conn, $sql)) {
-          $result = mysqli_query($conn, $sql);
-
-          while($row = mysqli_fetch_assoc($result)) {
-            $theory_id = $row["theory_id"];
-            $paragraaf = $row["paragraaf"];
-
-            $inforca_theory_ids[] = $theory_id;
-            $inforca_theory_paragraphs[] = $paragraaf;
-          }
-
-          $theory_ids = $inforca_theory_ids;
-          $theory_paragraphs = $inforca_theory_paragraphs;
-
-          for($i=0; $i<count($school_theory_paragraphs);$i++){
-            $paragraphSchool = $school_theory_paragraphs[$i];
-            $array_found_index = array_search($paragraphSchool, $inforca_theory_paragraphs);
-
-            //check if a paragrpahs from the school is found and if so replace it by the school version
-            if($array_found_index !== False){
-              $theory_ids[$array_found_index] = $school_theory_ids[$i];
-              $theory_paragraphs[$array_found_index] = $school_theory_paragraphs[$i];
-            }
-          }
-
-          if(count($theory_ids) > 0){
-            for($i=0; $i<count($theory_ids); $i++) {
-              $theory_id = $theory_ids[$i];
-              $paragraaf_name = $theory_paragraphs[$i];
-
-              //TODO
-
-            }
-          }
-        } else {
-          echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
-        }
-      } else {
-        echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
-      }
-    } else {
-      echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
-    }
-  }
-
 ?>
 
 <head>
@@ -147,7 +60,9 @@
 
       //load theory
       $school = "";
-      $theory = [];
+
+			$school_chapters = [];
+			$school_chapter_names = [];
 
     	//function to check and clean input
     	function check_input($data) {
@@ -165,7 +80,7 @@
     		$result = mysqli_fetch_assoc($result);
     		$school = $result['school'];
 
-  			$sql = "SELECT DISTINCT hoofdstuk, hoofdstuk_naam FROM theorie WHERE school='$school' OR school='Inforca'";
+  			$sql = "SELECT DISTINCT hoofdstuk, hoofdstuk_naam FROM theorie WHERE school='$school'";
 
   			if (mysqli_query($conn, $sql)) {
   				$result = mysqli_query($conn, $sql);
@@ -174,44 +89,72 @@
 		        $hoofdstuk = $row["hoofdstuk"];
 		        $hoofdstukNaam = $row["hoofdstuk_naam"];
 
-		        $theory[] = [$hoofdstuk, $hoofdstukNaam];
+		        $school_chapters[] = $hoofdstuk;
+						$school_chapter_names[] = $hoofdstukNaam;
 		      }
-
-          //TODO remove
-          print_r($theory);
-
-          if(chapterIsFinished('H1')){
-  					echo "<div class='tile completed'>";
-  				} else {
-  					echo "<div class='tile'>";
-  				}
-
-            echo "
-  					<div class='tile-content'>
-  						<div class='tile-chapter'>
-  							".$hoofdstuk." ".$hoofdstukNaam."
-  						</div>
-  						<div class='tile-paragraphs'>
-  							<span class='closeTile'>X</span>
-  							<ol>
-  								<ul><a href='pages/theorie/H1/p1.php'>§1 Het binair systeem</a></ul>
-  								<ul><a href='pages/theorie/H1/p2.php'>§2 Binair rekenen</a></ul>
-  								<ul><a href='pages/theorie/H1/p3.php'>§3 Gates</a></ul>
-  								<ul><a href='pages/theorie/H1/p4.php'>§4 Onderdelen van de computer</a></ul>
-  								<ul><a href='pages/theorie/H1/p5.php'>§5 Software en het OS</a></ul>
-  								<ul><a href='pages/theorie/H1/p6.php'>§6 standaardrepresentaties</a></ul>
-  								<ul><a href='pages/theorie/H1/quiz.php'>Quiz</a></ul>
-  							</ol>
-  						</div>
-  					</div>
-  				</div>";
 
   			} else {
   				echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
   			}
+
+				$sql = "SELECT DISTINCT hoofdstuk, hoofdstuk_naam FROM theorie WHERE school='Inforca'";
+
+  			if (mysqli_query($conn, $sql)) {
+  				$result = mysqli_query($conn, $sql);
+
+		      while($row = mysqli_fetch_assoc($result)) {
+		        $hoofdstuk = $row["hoofdstuk"];
+		        $hoofdstukNaam = $row["hoofdstuk_naam"];
+
+		        $inforca_chapters[] = $hoofdstuk;
+						$inforca_chapter_names[] = $hoofdstukNaam;
+		      }
+
+  			} else {
+  				echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+  			}
+
+
+
+
+
+				$theory_chapters = $inforca_chapters;
+			  $theory_chapter_names = $inforca_chapter_names;
+
+			  for($i=0; $i<count($school_chapters);$i++){
+			    $school_chapter = $school_chapters[$i];
+			    $array_found_index = array_search($school_chapter, $theory_chapters);
+
+			    //check if a chapter from the school is found and if so replace it by the school version
+			    if($array_found_index !== False){
+			      $theory_chapters[$array_found_index] = $school_chapters[$i];
+			      $theory_chapter_names[$array_found_index] = $school_chapter_names[$i];
+			    }
+			  }
+
+				print_r($theory_chapters);
+				echo "\n";
+				print_r($theory_chapter_names);
+
+				//TODO is this needed?
+			  if(count($theory_chapters) > 0){
+			    for($i=0; $i<count($theory_chapters); $i++) {
+
+			      $theory_chapter = $theory_chapters[$i];
+			      $theory_chapter_name = $theory_chapter_names[$i];
+
+
+			    }
+			  }
+
+
+
+
+
+
+
     	} else {
     		echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
-
     	}
 
 

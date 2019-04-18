@@ -293,21 +293,18 @@
 						</div>
 						<div class='tile-paragraphs'>
 							<span class='closeTile'>X</span>
-							<ol>
-								<ul><a href='pages/theorie/H1/p1.php'>§1 Het binair systeem</a></ul>
-								<ul><a href='pages/theorie/H1/p2.php'>§2 Binair rekenen</a></ul>
-								<ul><a href='pages/theorie/H1/p3.php'>§3 Gates</a></ul>
-								<ul><a href='pages/theorie/H1/p4.php'>§4 Onderdelen van de computer</a></ul>
-								<ul><a href='pages/theorie/H1/p5.php'>§5 Software en het OS</a></ul>
-								<ul><a href='pages/theorie/H1/p6.php'>§6 standaardrepresentaties</a></ul>
-								<ul><a href='pages/theorie/H1/quiz.php'>Quiz</a></ul>
+							<ol>";
+
+								for($j=1; $j<count($paragraven); $j++){
+									echo "<ul>§".$j." ".$paragraven[$j]."</ul>";
+								}
+
+						echo "
 							</ol>
 						</div>
 					</div>
 				</div>";
 			}
-
-
 
       echo "</div>";
 

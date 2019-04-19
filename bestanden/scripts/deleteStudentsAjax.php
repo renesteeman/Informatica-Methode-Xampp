@@ -46,7 +46,7 @@
 
 					//delete other data (quiz results and progression)
 					if (mysqli_query($conn, $sql)) {
-						$sql = "DELETE FROM quiz WHERE userid='$toBeDeletedID'";
+						$sql = "DELETE FROM quiz_results WHERE userid='$toBeDeletedID'";
 
 						if (mysqli_query($conn, $sql)) {
 							$sql = "DELETE FROM progressie WHERE userid='$toBeDeletedID'";

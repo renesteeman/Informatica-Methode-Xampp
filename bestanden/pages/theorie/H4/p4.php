@@ -6,7 +6,7 @@
 
 	<div class="title-small">
 		<h2>
-			H4 Arduino §4 verder met de arduino
+			H4 Arduino §4 Verder met de arduino
 		</h2>
 	</div>
 

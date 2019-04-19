@@ -65,7 +65,7 @@
 
         //get test results
         $sqlID = $info['id'];
-        $sql = "SELECT hoofdstuk, cijfer FROM quiz WHERE userid='$sqlID'";
+        $sql = "SELECT hoofdstuk, cijfer FROM quiz_results WHERE userid='$sqlID'";
 
       	if (mysqli_query($conn, $sql)) {
           $result = mysqli_query($conn, $sql);

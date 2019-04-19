@@ -52,26 +52,26 @@
 			</p>
 			<p>
 				<ol>
-				<li>
-					Een website waarin je mensen met jou laat kennismaken, een soort visitekaartje
-				</li>
-				<li>
-					Maak een klein voertuig dat je met een arduino kan laten rijden. Eventueel op afstand bestuurbaar of zelfrijdend voor een echte uitdaging.
-				</li>
-				<li>
-					Een neural network dat objecten of personen kan herkennen.
-				</li>
-				<li>
-					Een led-strip die automatisch aangaat in de ochtend, eventueel afhankelijk van het lesrooster.
-				</li>
-				<li>
-					Een systeem dat automatisch planten bevochtigd via een arduino.
-				</li>
-				<li>
-					Het bouwen van een eigen computer (niet aanbevolen voor groepen).
-				</li>
-			</ol>
-		</p>
+					<li>
+						Een website waarin je mensen met jou laat kennismaken, een soort visitekaartje
+					</li>
+					<li>
+						Maak een klein voertuig dat je met een arduino kan laten rijden. Eventueel op afstand bestuurbaar of zelfrijdend voor een echte uitdaging.
+					</li>
+					<li>
+						Een neural network dat objecten of personen kan herkennen.
+					</li>
+					<li>
+						Een led-strip die automatisch aangaat in de ochtend, eventueel afhankelijk van het lesrooster.
+					</li>
+					<li>
+						Een systeem dat automatisch planten bevochtigd via een arduino.
+					</li>
+					<li>
+						Het bouwen van een eigen computer (niet aanbevolen voor groepen).
+					</li>
+				</ol>
+			</p>
 		</div>
 
 		<div class="bar-s">

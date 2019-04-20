@@ -1,7 +1,9 @@
 <?php
 	include('components/headerIndex.php');
 	$completedChapters = [];
-	$theory_to_load = [];
+	$theory_kern = [];
+	$theory_verdieping = [];
+	$theory_bonus = [];
 
 	//function to check and clean input
 	function check_input($data) {
@@ -19,13 +21,15 @@
 	}
 
 	function loadParagraphs($conn, $school, $chapter_id, $chapter, $chapter_name){
-		global $theory_to_load;
+		global $theory_kern;
+		global $theory_verdieping;
+		global $theory_bonus;
 
-		$theory_paragraph_ids = [];
-		$theory_paragraphs = [];
-		$theory_paragraph_names = [];
+		$paragraph_ids = [];
+		$paragraphs = [];
+		$paragraph_names = [];
 
-		$sql = "SELECT paragraaf_id, paragraaf, paragraaf_naam FROM theorie_paragrafen WHERE hoofdstuk_id='$chapter_id'";
+		$sql = "SELECT paragraaf_id, paragraaf_naam FROM theorie_paragrafen WHERE hoofdstuk_id='$chapter_id' ORDER BY paragraaf";
 
 		if(mysqli_query($conn, $sql)) {
 			$result = mysqli_query($conn, $sql);
@@ -33,21 +37,25 @@
 			if (mysqli_num_rows($result) > 0) {
 				while($row = mysqli_fetch_assoc($result)) {
 					$paragraaf_id = $row["paragraaf_id"];
-					$paragraaf = $row["paragraaf"];
 					$paragraaf_naam = $row["paragraaf_naam"];
 
-					$theory_paragraph_ids[] = $paragraaf_id;
-					$theory_paragraphs[] = $paragraaf;
-					$theory_paragraph_names[] = $paragraaf_naam;
+					$paragraph_ids[] = $paragraaf_id;
+					$paragraph_names[] = $paragraaf_naam;
 				}
 			}
 
-			for($i=0; $i<count($theory_paragraph_ids); $i++) {
-				$paragraph_ids = $theory_paragraph_ids[$i];
-				$paragraaf = $theory_paragraphs[$i];
-				$paragraaf_naam = $theory_paragraph_names[$i];
+			for($i=0; $i<count($paragraph_ids); $i++) {
+				$paragraph_id = $paragraph_ids[$i];
+				$paragraph_name = $paragraph_names[$i];
 
-				$theory_to_load[] = [$chapter, $chapter_name, $paragraaf_naam];
+				if($chapter[0] == 'H'){
+					$theory_kern[$chapter." ".$chapter_name][] = [$paragraph_id, $paragraph_name];
+				} else if($chapter[0] == 'V'){
+					$theory_verdieping[$chapter." ".$chapter_name][] = [$paragraph_id, $paragraph_name];
+				} else if($chapter[0] == 'B'){
+					$theory_bonus[$chapter." ".$chapter_name][] = [$paragraph_id, $paragraph_name];
+				}
+
 			}
 
 		} else {
@@ -176,6 +184,7 @@
 			    }
 			  }
 
+				//load the paragraphs that correspond to the chapters
 				for($i=0; $i<count($theory_chapters); $i++){
 					$chapter_id = $theory_chapters_ids[$i];
 					$chapter = $theory_chapters[$i];
@@ -183,38 +192,9 @@
 					loadParagraphs($conn, $school, $chapter_id, $chapter, $chapter_name);
 				}
 
-				$theory_kern = [];
-				$theory_verdieping = [];
-				$theory_bonus = [];
-
-				$lastChapter = "";
-				for($i=0; $i<count($theory_to_load); $i++){
-					$item = $theory_to_load[$i];
-					$chapter = $item[0];
-
-					if($chapter[0] == 'H'){
-						if($chapter != $lastChapter){
-							$theory_kern[$chapter][] = $item[1];
-						}
-						$theory_kern[$chapter][] = $item[2];
-					} else if($chapter[0] == 'V'){
-						if($chapter != $lastChapter){
-							$theory_verdieping[$chapter][] = $item[1];
-						}
-						$theory_verdieping[$chapter][] = $item[2];
-					} else if($chapter[0] == 'B'){
-						if($chapter != $lastChapter){
-							$theory_bonus[$chapter][] = $item[1];
-						}
-						$theory_bonus[$chapter][] = $item[2];
-					}
-
-					$lastChapter = $chapter;
-				}
-
-				$hoofdstukken_kern = array_keys($theory_kern);
-				$hoofdstukken_verdieping = array_keys($theory_verdieping);
-				$hoofdstukken_bonus = array_keys($theory_bonus);
+				$hoofdstuknamen_kern = array_keys($theory_kern);
+				$hoofdstuknamen_verdieping = array_keys($theory_verdieping);
+				$hoofdstuknamen_bonus = array_keys($theory_bonus);
 
     	} else {
     		echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
@@ -235,13 +215,9 @@
 
 			<div class='chapter-tiles'>";
 
-			for($i=0; $i<count($hoofdstukken_kern); $i++){
+			for($i=0; $i<count($hoofdstuknamen_kern); $i++){
 
-				$hoofdstuk = $hoofdstukken_kern[$i];
-				$hoofdstuk_naam = $theory_kern[$hoofdstuk][0];
-				$paragraven = $theory_kern[$hoofdstuk];
-				//verwijder de naam van het hoofdstuk
-				unset($paragraven[0]);
+				$hoofdstuk = $hoofdstuknamen_kern[$i];
 
 				if(chapterIsFinished($hoofdstuk)){
 					echo "<div class='tile completed'>";
@@ -252,14 +228,17 @@
         echo "
 					<div class='tile-content'>
 						<div class='tile-chapter'>
-							".$hoofdstuk." ".$hoofdstuk_naam."
+							".$hoofdstuk."
 						</div>
 						<div class='tile-paragraphs'>
 							<span class='closeTile'>X</span>
 							<ol>";
 
-								for($j=1; $j<count($paragraven); $j++){
-									echo "<ul><span>§".$j." ".$paragraven[$j]."</span></ul>";
+								for($j=1; $j<count($theory_kern[$hoofdstuk]); $j++){
+									//TODO use ID as link to paragraph content
+									$paragraph_id = $theory_kern[$hoofdstuk][$j][0];
+									$paragraph_name = $theory_kern[$hoofdstuk][$j][1];
+									echo "<ul><span>§".$j." ".$paragraph_name."</span></ul>";
 								}
 
 						echo "
@@ -280,13 +259,9 @@
 
 			<div class='chapter-tiles'>";
 
-			for($i=0; $i<count($hoofdstukken_verdieping); $i++){
+			for($i=0; $i<count($hoofdstuknamen_verdieping); $i++){
 
-				$hoofdstuk = $hoofdstukken_verdieping[$i];
-				$hoofdstuk_naam = $theory_verdieping[$hoofdstuk][0];
-				$paragraven = $theory_verdieping[$hoofdstuk];
-				//verwijder de naam van het hoofdstuk
-				unset($paragraven[0]);
+				$hoofdstuk = $hoofdstuknamen_verdieping[$i];
 
 				if(chapterIsFinished($hoofdstuk)){
 					echo "<div class='tile completed'>";
@@ -297,14 +272,17 @@
         echo "
 					<div class='tile-content'>
 						<div class='tile-chapter'>
-							".$hoofdstuk." ".$hoofdstuk_naam."
+							".$hoofdstuk."
 						</div>
 						<div class='tile-paragraphs'>
 							<span class='closeTile'>X</span>
 							<ol>";
 
-								for($j=1; $j<count($paragraven); $j++){
-									echo "<ul><span>§".$j." ".$paragraven[$j]."</span></ul>";
+								for($j=1; $j<count($theory_verdieping[$hoofdstuk]); $j++){
+									//TODO use ID as link to paragraph content
+									$paragraph_id = $theory_verdieping[$hoofdstuk][$j][0];
+									$paragraph_name = $theory_verdieping[$hoofdstuk][$j][1];
+									echo "<ul><span>§".$j." ".$paragraph_name."</span></ul>";
 								}
 
 						echo "
@@ -325,13 +303,9 @@
 
 			<div class='chapter-tiles'>";
 
-			for($i=0; $i<count($hoofdstukken_bonus); $i++){
+			for($i=0; $i<count($hoofdstuknamen_bonus); $i++){
 
-				$hoofdstuk = $hoofdstukken_bonus[$i];
-				$hoofdstuk_naam = $theory_bonus[$hoofdstuk][0];
-				$paragraven = $theory_bonus[$hoofdstuk];
-				//verwijder de naam van het hoofdstuk
-				unset($paragraven[0]);
+				$hoofdstuk = $hoofdstuknamen_bonus[$i];
 
 				if(chapterIsFinished($hoofdstuk)){
 					echo "<div class='tile completed'>";
@@ -342,14 +316,17 @@
         echo "
 					<div class='tile-content'>
 						<div class='tile-chapter'>
-							".$hoofdstuk." ".$hoofdstuk_naam."
+							".$hoofdstuk."
 						</div>
 						<div class='tile-paragraphs'>
 							<span class='closeTile'>X</span>
 							<ol>";
 
-								for($j=1; $j<count($paragraven); $j++){
-									echo "<ul><span>§".$j." ".$paragraven[$j]."</span></ul>";
+								for($j=1; $j<count($theory_bonus[$hoofdstuk]); $j++){
+									//TODO use ID as link to paragraph content
+									$paragraph_id = $theory_bonus[$hoofdstuk][$j][0];
+									$paragraph_name = $theory_bonus[$hoofdstuk][$j][1];
+									echo "<ul><span>§".$j." ".$paragraph_name."</span></ul>";
 								}
 
 						echo "

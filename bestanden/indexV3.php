@@ -20,7 +20,7 @@
 		}
 	}
 
-	function loadParagraphs($conn, $school, $chapter_id, $chapter, $chapter_name){
+	function loadParagraphs($conn, $chapter_id, $chapter, $chapter_name){
 		global $theory_kern;
 		global $theory_verdieping;
 		global $theory_bonus;
@@ -189,7 +189,7 @@
 					$chapter_id = $theory_chapters_ids[$i];
 					$chapter = $theory_chapters[$i];
 					$chapter_name = $theory_chapter_names[$i];
-					loadParagraphs($conn, $school, $chapter_id, $chapter, $chapter_name);
+					loadParagraphs($conn, $chapter_id, $chapter, $chapter_name);
 				}
 
 				$hoofdstuknamen_kern = array_keys($theory_kern);
@@ -240,6 +240,8 @@
 									$paragraph_name = $theory_kern[$hoofdstuk][$j][1];
 									echo "<ul><span>§".$j." ".$paragraph_name."</span></ul>";
 								}
+
+								echo "<ul><span>Quiz</span></ul>";
 
 						echo "
 							</ol>

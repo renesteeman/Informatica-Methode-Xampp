@@ -1,6 +1,17 @@
 <?php
 	include('components/headerIndex.php');
 	$completedChapters = [];
+	$theory_kern = [];
+	$theory_verdieping = [];
+	$theory_bonus = [];
+
+	//function to check and clean input
+	function check_input($data) {
+		$data = trim($data, " ");
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		return $data;
+	}
 
 	function chapterIsFinished($thisChapter){
 		global $completedChapters;
@@ -9,21 +20,67 @@
 		}
 	}
 
+	function loadParagraphs($conn, $chapter_id, $chapter, $chapter_name){
+		global $theory_kern;
+		global $theory_verdieping;
+		global $theory_bonus;
+
+		$paragraph_ids = [];
+		$paragraph_numbers = [];
+		$paragraph_names = [];
+
+		$sql = "SELECT paragraaf_id, paragraaf, paragraaf_naam FROM theorie_paragrafen WHERE hoofdstuk_id='$chapter_id' ORDER BY paragraaf";
+
+		if(mysqli_query($conn, $sql)) {
+			$result = mysqli_query($conn, $sql);
+
+			if (mysqli_num_rows($result) > 0) {
+				while($row = mysqli_fetch_assoc($result)) {
+					$paragraaf_id = $row["paragraaf_id"];
+					$paragraph_number = $row["paragraaf"];
+					$paragraaf_naam = $row["paragraaf_naam"];
+
+					$paragraph_ids[] = $paragraaf_id;
+					$paragraph_numbers[] = $paragraph_number;
+					$paragraph_names[] = $paragraaf_naam;
+				}
+			}
+
+			for($i=0; $i<count($paragraph_ids); $i++) {
+				$paragraph_id = $paragraph_ids[$i];
+				$paragraph_number = $paragraph_numbers[$i];
+				$paragraph_name = $paragraph_names[$i];
+
+				if($chapter[0] == 'H'){
+					$theory_kern[$chapter." ".$chapter_name][] = [$paragraph_id, $paragraph_name, $paragraph_number];
+				} else if($chapter[0] == 'V'){
+					$theory_verdieping[$chapter." ".$chapter_name][] = [$paragraph_id, $paragraph_name, $paragraph_number];
+				} else if($chapter[0] == 'B'){
+					$theory_bonus[$chapter." ".$chapter_name][] = [$paragraph_id, $paragraph_name, $paragraph_number];
+				}
+
+			}
+
+		} else {
+			echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+		}
+	}
+
 ?>
 
 <head>
-	<meta name="description" content="Een informatica methode met structuur en keuze. Voor docenten is er een duidelijk overzicht en leerlingen kunnen zich specialiseren in wat ze interessant vinden, zonder de basis te missen." />
-	<meta name="keywords" content="Informatica, lesmethode, betaalbaar, duidelijk" />
-	<meta name="author" content="René Steeman" />
+	<meta name='description' content='Een informatica methode met structuur en keuze. Voor docenten is er een duidelijk overzicht en leerlingen kunnen zich specialiseren in wat ze interessant vinden, zonder de basis te missen.' />
+	<meta name='keywords' content='Informatica, lesmethode, betaalbaar, duidelijk' />
+	<meta name='author' content='René Steeman' />
 </head>
 
 <body>
 
 	<?php
 		//show which chapters are completed
-		if (isset($_SESSION["id"])){
+		if (isset($_SESSION['id'])){
 
-			$id = $_SESSION["id"];
+			$id = $_SESSION['id'];
 			$chaptersAvailable = [];
 
 			//look for current values
@@ -42,7 +99,7 @@
 						for($i=1; $i<sizeof($availableChapters); $i++){
 							$chapter = $availableChapters[$i];
 							$chapterData = $chapters[$chapter];
-							if($chapterData != ""){
+							if($chapterData != ''){
 
 								$amountOfParagraphsThatShouldBeFinished = strlen($chapterData);
 								$finishedParagraphs = $chapterData;
@@ -58,396 +115,260 @@
 				}
 			}
 
-			//if logged in show theory
-			echo '
-			<div class="title">
+      //load theory
+      $school = "";
+
+			$inforca_chapters_ids = [];
+			$inforca_chapters = [];
+			$inforca_chapter_names = [];
+
+			$school_chapter_ids = [];
+
+    	$sql = "SELECT school FROM users WHERE id='$id'";
+
+    	if (mysqli_query($conn, $sql)) {
+    		//find school of teacher
+    		$result = mysqli_query($conn, $sql);
+    		$result = mysqli_fetch_assoc($result);
+    		$school = $result['school'];
+
+  			$sql = "SELECT hoofdstuk_id, hoofdstuk, hoofdstuk_naam FROM theorie_hoofdstukken WHERE school='$school' ORDER BY hoofdstuk";
+
+  			if (mysqli_query($conn, $sql)) {
+  				$result = mysqli_query($conn, $sql);
+
+		      while($row = mysqli_fetch_assoc($result)) {
+						$hoofdstuk_id = $row["hoofdstuk_id"];
+		        $hoofdstuk = $row["hoofdstuk"];
+		        $hoofdstukNaam = $row["hoofdstuk_naam"];
+
+						$school_chapter_ids[] = $hoofdstuk_id;
+		        $school_chapters[] = $hoofdstuk;
+						$school_chapter_names[] = $hoofdstukNaam;
+		      }
+
+  			} else {
+  				echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+  			}
+
+				$sql = "SELECT hoofdstuk_id, hoofdstuk, hoofdstuk_naam FROM theorie_hoofdstukken WHERE school='Inforca' ORDER BY hoofdstuk";
+
+  			if (mysqli_query($conn, $sql)) {
+  				$result = mysqli_query($conn, $sql);
+
+		      while($row = mysqli_fetch_assoc($result)) {
+						$hoofdstuk_id = $row["hoofdstuk_id"];
+		        $hoofdstuk = $row["hoofdstuk"];
+		        $hoofdstukNaam = $row["hoofdstuk_naam"];
+
+						$inforca_chapters_ids[] = $hoofdstuk_id;
+		        $inforca_chapters[] = $hoofdstuk;
+						$inforca_chapter_names[] = $hoofdstukNaam;
+		      }
+
+  			} else {
+  				echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+  			}
+
+				//save what will be used
+				$theory_chapters_ids = $inforca_chapters_ids;
+				$theory_chapters = $inforca_chapters;
+			  $theory_chapter_names = $inforca_chapter_names;
+
+			  for($i=0; $i<count($school_chapter_ids);$i++){
+			    $school_chapter = $school_chapters[$i];
+			    $array_found_index = array_search($school_chapter, $theory_chapters);
+
+			    //check if a chapter from the school is found and if so replace it by the school version
+			    if($array_found_index !== False){
+						$theory_chapters_ids[$array_found_index] = $school_chapter_ids[$i];
+			      $theory_chapters[$array_found_index] = $school_chapter;
+			      $theory_chapter_names[$array_found_index] = $school_chapter_names[$i];
+			    }
+			  }
+
+				//load the paragraphs that correspond to the chapters
+				for($i=0; $i<count($theory_chapters); $i++){
+					$chapter_id = $theory_chapters_ids[$i];
+					$chapter = $theory_chapters[$i];
+					$chapter_name = $theory_chapter_names[$i];
+					loadParagraphs($conn, $chapter_id, $chapter, $chapter_name);
+				}
+
+				$hoofdstuknamen_kern = array_keys($theory_kern);
+				$hoofdstuknamen_verdieping = array_keys($theory_verdieping);
+				$hoofdstuknamen_bonus = array_keys($theory_bonus);
+
+    	} else {
+    		echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+    	}
+
+      echo "
+			<div class='title'>
 				<h2>
 					Theorieoverzicht
 				</h2>
 			</div>
 
-			<div class="bar">
+			<div class='bar'>
 				<h3>
 					Kern
 				</h3>
 			</div>
-			';
 
-			echo '
+			<div class='chapter-tiles'>";
 
-			<div class="chapter-tiles">';
-				if(chapterIsFinished('H1')){
-					echo '<div class="tile completed">';
+			for($i=0; $i<count($hoofdstuknamen_kern); $i++){
+
+				$hoofdstuk = $hoofdstuknamen_kern[$i];
+
+				if(chapterIsFinished($hoofdstuk)){
+					echo "<div class='tile completed'>";
 				} else {
-					echo '<div class="tile">';
+					echo "<div class='tile'>";
 				}
 
-					echo '
-					<div class="tile-content">
-						<div class="tile-chapter">
-							H1 Werking computer
+        echo "
+					<div class='tile-content'>
+						<div class='tile-chapter'>
+							".$hoofdstuk."
 						</div>
-						<div class="tile-paragraphs">
-							<span class="closeTile">X</span>
-							<ol>
-								<ul><a href="pages/theorie/H1/p1.php">§1 Het binair systeem</a></ul>
-								<ul><a href="pages/theorie/H1/p2.php">§2 Binair rekenen</a></ul>
-								<ul><a href="pages/theorie/H1/p3.php">§3 Gates</a></ul>
-								<ul><a href="pages/theorie/H1/p4.php">§4 Onderdelen van de computer</a></ul>
-								<ul><a href="pages/theorie/H1/p5.php">§5 Software en het OS</a></ul>
-								<ul><a href="pages/theorie/H1/p6.php">§6 standaardrepresentaties</a></ul>
-								<ul><a href="pages/theorie/H1/quiz.php">Quiz</a></ul>
+						<div class='tile-paragraphs'>
+							<span class='closeTile'>X</span>
+							<ol>";
+
+								for($j=0; $j<count($theory_kern[$hoofdstuk]); $j++){
+									$paragraph_id = $theory_kern[$hoofdstuk][$j][0];
+									$paragraph_name = $theory_kern[$hoofdstuk][$j][1];
+									$paragraph_number = $theory_kern[$hoofdstuk][$j][2];
+									echo "<ul><span class='paragraph' id='".$paragraph_id."'>§"."$paragraph_number"." ".$paragraph_name."</span></ul>";
+								}
+
+								echo "<ul><span>Quiz</span></ul>";
+
+						echo "
 							</ol>
 						</div>
 					</div>
-				</div>';
+				</div>";
+			}
 
-					if(chapterIsFinished('H2')){
-						echo '<div class="tile completed">';
-					} else {
-						echo '<div class="tile">';
-					}
+      echo "</div>";
 
-					echo '
-					<div class="tile-content">
-						<div class="tile-chapter">
-							H2 Logica
-						</div>
-						<div class="tile-paragraphs">
-							<span class="closeTile">X</span>
-							<ol>
-								<ul><a href="pages/theorie/H2/p1.php">§1 Introductie tot logica</a></ul>
-								<ul><a href="pages/theorie/H2/p2.php">§2 Visuele logica</a></ul>
-								<ul><a href="pages/theorie/H2/p3.php">§3 Binair?</a></ul>
-								<ul><a href="pages/theorie/H2/p4.php">§4 Logica en programmeren</a></ul>
-								<ul><a href="pages/theorie/H2/p5.php">§5 Automaten</a></ul>
-								<ul><a href="pages/theorie/H2/p6.php">§6 Grammatica</a></ul>
-								<ul><a href="pages/theorie/H2/quiz.php">Quiz</a></ul>
-							</ol>
-						</div>
-					</div>
-				</div>';
+        echo "
+        <div class='bar'>
+  				<h3>
+  					Verdieping
+  				</h3>
+  			</div>
 
-					if(chapterIsFinished('H3')){
-						echo '<div class="tile completed">';
-					} else {
-						echo '<div class="tile">';
-					}
+			<div class='chapter-tiles'>";
 
-					echo '
-					<div class="tile-content">
-						<div class="tile-chapter">
-							H3 Programmeren
-						</div>
-						<div class="tile-paragraphs">
-							<span class="closeTile">X</span>
-							<ol>
-								<ul><a href="pages/theorie/H3/p1.php">§1 Introductie tot programmeertalen</a></ul>
-								<ul><a href="pages/theorie/H3/p2.php">§2 Installatie</a></ul>
-								<ul><a href="pages/theorie/H3/p3.php">§3 Variabelen</a></ul>
-								<ul><a href="pages/theorie/H3/p4.php">§4 Rekenen met variabelen</a></ul>
-								<ul><a href="pages/theorie/H3/p5.php">§5 Condities</a></ul>
-								<ul><a href="pages/theorie/H3/p6.php">§6 Loops</a></ul>
-								<ul><a href="pages/theorie/H3/p7.php">§7 Soorten structuren</a></ul>
-								<ul><a href="pages/theorie/H3/p8.php">§8 Uitdaging: mini-game</a></ul>
-								<ul><a href="pages/theorie/H3/quiz.php">Quiz</a></ul>
-							</ol>
-						</div>
-					</div>
-				</div>';
+			for($i=0; $i<count($hoofdstuknamen_verdieping); $i++){
 
-					if(chapterIsFinished('H4')){
-						echo '<div class="tile completed">';
-					} else {
-						echo '<div class="tile">';
-					}
+				$hoofdstuk = $hoofdstuknamen_verdieping[$i];
 
-					echo '
-					<div class="tile-content">
-						<div class="tile-chapter">
-							H4 Arduino
-						</div>
-						<div class="tile-paragraphs">
-							<span class="closeTile">X</span>
-							<ol>
-								<ul><a href="pages/theorie/H4/p1.php">§1 Elektriciteit</a></ul>
-								<ul><a href="pages/theorie/H4/p2.php">§2 Introductie tot arduino</a></ul>
-								<ul><a href="pages/theorie/H4/p3.php">§3 De basis van programmeren voor arduino</a></ul>
-								<ul><a href="pages/theorie/H4/p4.php">§4 Verder met arduino</a></ul>
-								<ul><a href="pages/theorie/H4/p5.php">§5 Een LED met LDR</a></ul>
-								<ul><a href="pages/theorie/H4/installatie.php">Installatie</a></ul>
-								<ul><a href="pages/theorie/H4/quiz.php">Quiz</a></ul>
-							</ol>
-						</div>
-					</div>
-				</div>';
-
-					if(chapterIsFinished('H5')){
-						echo '<div class="tile completed">';
-					} else {
-						echo '<div class="tile">';
-					}
-
-					echo '
-					<div class="tile-content">
-						<div class="tile-chapter">
-							H5 Projectmanagement
-						</div>
-						<div class="tile-paragraphs">
-							<span class="closeTile">X</span>
-							<ol>
-								<ul><a href="pages/theorie/H5/p1.php">§1 Introductie en onderdelen</a></ul>
-								<ul><a href="pages/theorie/H5/p2.php">§2 Rollen</a></ul>
-								<ul><a href="pages/theorie/H5/p3.php">§3 Communicatie</a></ul>
-								<ul><a href="pages/theorie/H5/p4.php">§4 Agile en Scrum</a></ul>
-								<ul><a href="pages/theorie/H5/quiz.php">Quiz</a></ul>
-							</ol>
-						</div>
-					</div>
-				</div>';
-
-					if(chapterIsFinished('H6')){
-						echo '<div class="tile completed">';
-					} else {
-						echo '<div class="tile">';
-					}
-
-					echo '
-					<div class="tile-content">
-						<div class="tile-chapter">
-							H6 Project uitvoeren
-						</div>
-						<div class="tile-paragraphs">
-							<span class="closeTile">X</span>
-							<ol>
-								<ul><a href="pages/theorie/H6/p1.php">§1 Plannen en Trello</a></ul>
-								<ul><a href="pages/theorie/H6/p2.php">§2 Github</a></ul>
-								<ul><a href="pages/theorie/H6/p3.php">§3 Verslag</a></ul>
-								<ul><a href="pages/theorie/H6/p4.php">§4 Voorbeeld projecten</a></ul>
-								<ul><a href="pages/theorie/H6/installerenTrello.php">Trello installeren</a></ul>
-								<ul><a href="pages/theorie/H6/installerenGithub.php">Github installeren</a></ul>
-								<ul><a href="pages/theorie/H6/verslag.docx" download>Voorbeeld verslag</a></ul>
-								<ul><a href="pages/theorie/H6/quiz.php">Quiz</a></ul>
-							</ol>
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="bar">
-				<h3>
-					Verdieping
-				</h3>
-			</div>
-
-			<div class="chapter-tiles">';
-
-				if(chapterIsFinished('V1')){
-					echo '<div class="tile completed">';
+				if(chapterIsFinished($hoofdstuk)){
+					echo "<div class='tile completed'>";
 				} else {
-					echo '<div class="tile">';
+					echo "<div class='tile'>";
 				}
 
-					echo '
-					<div class="tile-content">
-						<div class="tile-chapter">
-							V1 Filosofie en AI
+        echo "
+					<div class='tile-content'>
+						<div class='tile-chapter'>
+							".$hoofdstuk."
 						</div>
-						<div class="tile-paragraphs">
-							<span class="closeTile">X</span>
-							<ol>
-								<ul><a href="pages/theorie/V1/p1.php">§1 Wat is filosofie?</a></ul>
-								<ul><a href="pages/theorie/V1/p2.php">§2 Wat is ethiek?</a></ul>
-								<ul><a href="pages/theorie/V1/p3.php">§3 Het trein probleem</a></ul>
-								<ul><a href="pages/theorie/V1/p4.php">§4 Informatica en de maatschappij</a></ul>
-								<ul><a href="pages/theorie/V1/p5.php">§5 Kunstmatige intelligentie</a></ul>
-								<ul><a href="pages/theorie/V1/p6.php">§6 Machine learning voorbeeld</a></ul>
-								<ul><a href="pages/theorie/V1/quiz.php">Quiz</a></ul>
+						<div class='tile-paragraphs'>
+							<span class='closeTile'>X</span>
+							<ol>";
+
+								for($j=1; $j<count($theory_verdieping[$hoofdstuk]); $j++){
+									$paragraph_id = $theory_verdieping[$hoofdstuk][$j][0];
+									$paragraph_name = $theory_verdieping[$hoofdstuk][$j][1];
+									echo "<ul><span class='paragraph' id='".$paragraph_id."'>§".$j." ".$paragraph_name."</span></ul>";
+								}
+
+								echo "<ul><span>Quiz</span></ul>";
+
+						echo "
 							</ol>
 						</div>
 					</div>
-				</div>';
-
-				if(chapterIsFinished('V2')){
-					echo '<div class="tile completed">';
-				} else {
-					echo '<div class="tile">';
-				}
-
-					echo '
-					<div class="tile-content">
-						<div class="tile-chapter">
-							V2 Privacy
-						</div>
-						<div class="tile-paragraphs">
-							<span class="closeTile">X</span>
-							<ol>
-								<ul><a href="pages/theorie/V2/p1.php">§1 Wat wordt bijgehouden?</a></ul>
-								<ul><a href="pages/theorie/V2/p2.php">§2 Hoe worden gegevens bijgehouden?</a></ul>
-								<ul><a href="pages/theorie/V2/p3.php">§3 Hoe kun je jouw privacy verbeteren?</a></ul>
-								<ul><a href="pages/theorie/V2/p4.php">§4 Wie beschermt jouw privacy?</a></ul>
-								<ul><a href="pages/theorie/V2/quiz.php">Quiz</a></ul>
-							</ol>
-						</div>
-					</div>
-				</div>';
-
-			if(chapterIsFinished('V3')){
-				echo '<div class="tile completed">';
-			} else {
-				echo '<div class="tile">';
+				</div>";
 			}
 
-				echo '
-				<div class="tile-content">
-					<div class="tile-chapter">
-						V3 Databases
-					</div>
-					<div class="tile-paragraphs">
-						<span class="closeTile">X</span>
-						<ol>
-							<ul><a href="pages/theorie/V3/p1.php">§1 Wat is een database?</a></ul>
-							<ul><a href="pages/theorie/V3/p2.php">§2 Een database aanmaken</a></ul>
-							<ul><a href="pages/theorie/V3/p3.php">§3 Communiceren met een database</a></ul>
-							<ul><a href="pages/theorie/V3/p4.php">§4 Verder met SQL</a></ul>
-							<ul><a href="pages/theorie/V3/installatieXAMPP.php">installatie XAMPP</a></ul>
-							<ul><a href="pages/theorie/V3/quiz.php">Quiz</a></ul>
-						</ol>
-					</div>
-				</div>
-			</div>';
+      echo "</div>";
 
-			if(chapterIsFinished('V4')){
-				echo '<div class="tile completed">';
-			} else {
-				echo '<div class="tile">';
-			}
-
-				echo '
-				<div class="tile-content">
-					<div class="tile-chapter">
-						V4 Netwerken
-					</div>
-					<div class="tile-paragraphs">
-						<span class="closeTile">X</span>
-						<ol>
-							<ul><a href="pages/theorie/V4/p1.php">§1 OSI</a></ul>
-							<ul><a href="pages/theorie/V4/p2.php">§2 Topologie</a></ul>
-							<ul><a href="pages/theorie/V4/p3.php">§3 Werking en gevaren</a></ul>
-							<ul><a href="pages/theorie/V4/p4.php">§4 Cloud</a></ul>
-							<ul><a href="pages/theorie/V4/quiz.php">Quiz</a></ul>
-						</ol>
-					</div>
-				</div>
-			</div>';
-
-			if(chapterIsFinished('V5')){
-				echo '<div class="tile completed">';
-			} else {
-				echo '<div class="tile">';
-			}
-
-				echo '
-				<div class="tile-content">
-					<div class="tile-chapter">
-						V5 UI en UX
-					</div>
-					<div class="tile-paragraphs">
-						<span class="closeTile">X</span>
-						<ol>
-							<ul><a href="pages/theorie/V5/p1.php">§1 introductie</a></ul>
-							<ul><a href="pages/theorie/V5/p2.php">§2 UI</a></ul>
-							<ul><a href="pages/theorie/V5/p3.php">§3 UI vervolg</a></ul>
-							<ul><a href="pages/theorie/V5/p4.php">§4 UX</a></ul>
-							<ul><a href="pages/theorie/V5/quiz.php">Quiz</a></ul>
-							</ol>
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="bar">
+      echo "
+			<div class='bar'>
 				<h3>
 					Bonus
 				</h3>
 			</div>
 
-			<div class="chapter-tiles">';
+			<div class='chapter-tiles'>";
 
-			if(chapterIsFinished('B1')){
-				echo '<div class="tile completed">';
-			} else {
-				echo '<div class="tile">';
+			for($i=0; $i<count($hoofdstuknamen_bonus); $i++){
+
+				$hoofdstuk = $hoofdstuknamen_bonus[$i];
+
+				if(chapterIsFinished($hoofdstuk)){
+					echo "<div class='tile completed'>";
+				} else {
+					echo "<div class='tile'>";
+				}
+
+        echo "
+					<div class='tile-content'>
+						<div class='tile-chapter'>
+							".$hoofdstuk."
+						</div>
+						<div class='tile-paragraphs'>
+							<span class='closeTile'>X</span>
+							<ol>";
+
+								for($j=1; $j<count($theory_bonus[$hoofdstuk]); $j++){
+									$paragraph_id = $theory_bonus[$hoofdstuk][$j][0];
+									$paragraph_name = $theory_bonus[$hoofdstuk][$j][1];
+									echo "<ul><span class='paragraph' id='".$paragraph_id."'>§".$j." ".$paragraph_name."</span></ul>";
+								}
+
+								echo "<ul><span>Quiz</span></ul>";
+
+						echo "
+							</ol>
+						</div>
+					</div>
+				</div>";
 			}
 
-			echo '
-			<div class="tile-content">
-				<div class="tile-chapter">
-					B1 Web development
-				</div>
-				<div class="tile-paragraphs">
-					<span class="closeTile">X</span>
-					<ol>
-						<ul><a href="pages/theorie/B1/p1.php">§1 Introductie</a></ul>
-						<ul><a href="pages/theorie/B1/p2.php">§2 De basis van HTML</a></ul>
-						<ul><a href="pages/theorie/B1/p3.php">§3 HTML deel 2</a></ul>
-						<ul><a href="pages/theorie/B1/p4.php">§4 De basis van CSS</a></ul>
-						<ul><a href="pages/theorie/B1/p5.php">§5 CSS deel 2</a></ul>
-						<ul><a href="pages/theorie/B1/quiz.php">Quiz</a></ul>
-					</ol>
-				</div>
-			</div>
-		</div>';
-
-		if(chapterIsFinished('B2')){
-			echo '<div class="tile completed">';
-		} else {
-			echo '<div class="tile">';
-		}
-
-		echo '
-		<div class="tile-content">
-			<div class="tile-chapter">
-				B2 Web logic
-			</div>
-			<div class="tile-paragraphs">
-				<span class="closeTile">X</span>
-				<ol>
-					<ul><a href="pages/theorie/B2/p1.php">§1 JS introductie</a></ul>
-					<ul><a href="pages/theorie/B2/p2.php">§2 JS basis deel 1</a></ul>
-					<ul><a href="pages/theorie/B2/p3.php">§3 JS basis deel 2</a></ul>
-					<ul><a href="pages/theorie/B2/p4.php">§4 JS basis deel 3</a></ul>
-					<ul><a href="pages/theorie/B2/p5.php">§5 JS advanced</a></ul>
-					<ul><a href="pages/theorie/B2/quiz.php">Quiz</a></ul>
-				</ol>
-			</div>
+    echo "
 		</div>
-	</div>';
+	</div>";
 
 			//if not loged in, show 'sales page'
 		} else {
-			echo '
-			<div class="title">
+			echo "
+			<div class='title'>
 				<h2>
 					Informatie over Inforca
 				</h2>
 			</div>
 
-			<div class="bar">
+			<div class='bar'>
 				<h3>
 					Wat is Inforca?
 				</h3>
 			</div>
 
 			<div>
-				<video controls poster="./video/thumbnail.png">
-					<source src="./video/InforcaDemo.mp4">
+				<video controls poster='./video/thumbnail.png'>
+					<source src='./video/InforcaDemo.mp4'>
 				</video>
 			</div>
 
-			<div class="info">
+			<div class='info'>
 
 				<p>
 					Inforca is een moderne informatica lesmethode die volledig digitaal beschikbaar is. Het bevat 13 hoofdstukken die ingedeeld zijn in kern- en verdiepingshoofdstukken. Leerlingen kunnen zich hiermee ontwikkelen in verschillende gebieden, zo komen onderwerpen zoals: logica, programmeren, arduino, web development, projecten en databases aan bod.
@@ -461,13 +382,13 @@
 
 			</div>
 
-			<div class="bar">
+			<div class='bar'>
 				<h3>
 					Waarom Inforca?
 				</h3>
 			</div>
 
-			<div class="info">
+			<div class='info'>
 				<p>
 					Inforca zorgt ervoor dat leerlingen zo veel mogelijk kunnen leren en docenten de leerlingen zo goed mogelijk kan ondersteunen. Dit wordt bereikt door praktische theorie in combinatie met ruimte voor zelfstandige projecten en ondersteunende systemen voor de docenten.
 				</p>
@@ -479,90 +400,90 @@
 				</p>
 			</div>
 
-			<div class="tiles">
-				<div class="box">
-					<div class="box-title">
+			<div class='tiles'>
+				<div class='box'>
+					<div class='box-title'>
 						Modern
 					</div>
-					<div class="box-content">
+					<div class='box-content'>
 						Alle theorie is up-to-date en eenvoudig bereikbaar via een modern vormgegeven systeem met vele handige functies.
 					</div>
 				</div>
-				<div class="box">
-					<div class="box-title">
+				<div class='box'>
+					<div class='box-title'>
 						Uitgebreid
 					</div>
-					<div class="box-content">
+					<div class='box-content'>
 						Een wordt een groot aantal onderwerpen uitgebreid besproken en leerlingen krijgen de middelen om hun kennis uitgebreid te toetsen.
 					</div>
 				</div>
-				<div class="box">
-					<div class="box-title">
+				<div class='box'>
+					<div class='box-title'>
 						Overzichtelijk
 					</div>
-					<div class="box-content">
+					<div class='box-content'>
 						De docent kan eenvoudig het overzicht op de leerlingen bewaren door handige systemen die inbegrepen zijn voor docentenaccounts.
 					</div>
 				</div>
-				<div class="box">
-					<div class="box-title">
+				<div class='box'>
+					<div class='box-title'>
 						Praktisch
 					</div>
-					<div class="box-content">
+					<div class='box-content'>
 						Leerlingen leren niet alleen pure theorie, maar ook hoe ze de theorie in praktijk kunnen brengen. Het effect hiervan is dat leerlingen beter zijn voorbereid op vervolgopleidingen en informatica leuker gaan vinden.
 					</div>
 				</div>
-				<div class="box">
-					<div class="box-title">
+				<div class='box'>
+					<div class='box-title'>
 						Betaalbaar
 					</div>
-					<div class="box-content">
+					<div class='box-content'>
 						Inforca is een stuk goedkoper dan de concurenten, zo kost een account voor een leerling maar €10/jaar en voor een docent maar €30/jaar.
 					</div>
 				</div>
-				<div class="box">
-					<div class="box-title">
+				<div class='box'>
+					<div class='box-title'>
 						Privacy
 					</div>
-					<div class="box-content">
+					<div class='box-content'>
 						Inforca waardeert de privacy van leerlingen en docenten. Er wordt daarom alleen gevraagd voor informatie die nodig is voor de werking van de website en administratie. De informatie wordt nooit gedeeld met derden en wordt bijveiligd opgeslagen.
 					</div>
 				</div>
-				<div class="box">
-					<div class="box-title">
+				<div class='box'>
+					<div class='box-title'>
 						Flexibel
 					</div>
-					<div class="box-content">
+					<div class='box-content'>
 						Inforca staat open voor al uw feedback en heeft geen moeite met het aanpassen van de methode aan de hand van uw wensen.
 					</div>
 				</div>
-				<div class="box">
-					<div class="box-title">
+				<div class='box'>
+					<div class='box-title'>
 						Open
 					</div>
-					<div class="box-content">
-						Bijna alle code van Inforca is open-source en terug te vinden op <a href="https://github.com/renesteeman/Informatica-Methode-Xampp">https://github.com/renesteeman/Informatica-Methode-Xampp</a>. Het enigste dat niet openbaar is zijn onderdelen die de beveiliging garanderen.
+					<div class='box-content'>
+						Bijna alle code van Inforca is open-source en terug te vinden op <a href='https://github.com/renesteeman/Informatica-Methode-Xampp'>https://github.com/renesteeman/Informatica-Methode-Xampp</a>. Het enigste dat niet openbaar is zijn onderdelen die de beveiliging garanderen.
 					</div>
 				</div>
-				<div class="box">
-					<div class="box-title">
+				<div class='box'>
+					<div class='box-title'>
 						Ondersteuning
 					</div>
-					<div class="box-content">
+					<div class='box-content'>
 						Inforca levert gratis ondersteuning aan docenten op zowel technisch als onderwijskundig vlak.
 					</div>
 				</div>
 			</div>
 
-			<div class="bar">
+			<div class='bar'>
 				<h3>
 					Inforca gebruiken
 				</h3>
 			</div>
 
-			<div class="info inforcaGebruiken">
+			<div class='info inforcaGebruiken'>
 				<p>
-					Als u interesse hebt in het gebruiken van Inforca kunt u contact opnemen met <a href="mailto:info@inforca.nl">info@inforca.nl</a> om al uw vragen te beantwoorden en u te helpen bij het bestellen van accounts.
+					Als u interesse hebt in het gebruiken van Inforca kunt u contact opnemen met <a href='mailto:info@inforca.nl'>info@inforca.nl</a> om al uw vragen te beantwoorden en u te helpen bij het bestellen van accounts.
 				</p>
 				<p>
 					Als u nog niet volledig overtuigd bent kunt u ook vragen voor een testaccount waarmee u toegang krijgt tot alle functies van Inforca.
@@ -572,7 +493,7 @@
 				</p>
 
 			</div>
-			';
+			";
 		}
 	?>
 

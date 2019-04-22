@@ -32,9 +32,9 @@ function AccountValid(){
 	//needed to connect inside a function
 	global $conn;
 
-	if(isset($_SESSION["username"])){
-		$id = $_SESSION["username"];
-		$sql = "SELECT expire_date FROM users WHERE username='$id'";
+	if(isset($_SESSION["id"])){
+		$id = $_SESSION["id"];
+		$sql = "SELECT expire_date FROM users WHERE id='$id'";
 
 		if (mysqli_query($conn, $sql)) {
 			//find teacher info

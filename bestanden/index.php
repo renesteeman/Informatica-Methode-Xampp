@@ -283,10 +283,11 @@
 							<span class='closeTile'>X</span>
 							<ol>";
 
-								for($j=1; $j<count($theory_verdieping[$hoofdstuk]); $j++){
+								for($j=0; $j<count($theory_verdieping[$hoofdstuk]); $j++){
 									$paragraph_id = $theory_verdieping[$hoofdstuk][$j][0];
 									$paragraph_name = $theory_verdieping[$hoofdstuk][$j][1];
-									echo "<ul><span class='paragraph' id='".$paragraph_id."'>§".$j." ".$paragraph_name."</span></ul>";
+									$paragraph_number = $theory_verdieping[$hoofdstuk][$j][2];
+									echo "<ul><span class='paragraph' id='".$paragraph_id."'>§"."$paragraph_number"." ".$paragraph_name."</span></ul>";
 								}
 
 								echo "<ul><span>Quiz</span></ul>";
@@ -328,10 +329,11 @@
 							<span class='closeTile'>X</span>
 							<ol>";
 
-								for($j=1; $j<count($theory_bonus[$hoofdstuk]); $j++){
+								for($j=0; $j<count($theory_bonus[$hoofdstuk]); $j++){
 									$paragraph_id = $theory_bonus[$hoofdstuk][$j][0];
 									$paragraph_name = $theory_bonus[$hoofdstuk][$j][1];
-									echo "<ul><span class='paragraph' id='".$paragraph_id."'>§".$j." ".$paragraph_name."</span></ul>";
+									$paragraph_number = $theory_bonus[$hoofdstuk][$j][2];
+									echo "<ul><span class='paragraph' id='".$paragraph_id."'>§"."$paragraph_number"." ".$paragraph_name."</span></ul>";
 								}
 
 								echo "<ul><span>Quiz</span></ul>";

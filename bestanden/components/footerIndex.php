@@ -16,6 +16,7 @@
 </footer>
 
 <script src="scripts/UI.js" defer></script>
+<script src="scripts/theory_link.js" defer></script>
 <script src="scripts/updateActivityIndex.js" defer></script>
 
 </html>

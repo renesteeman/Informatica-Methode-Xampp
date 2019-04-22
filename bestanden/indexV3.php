@@ -235,10 +235,9 @@
 							<ol>";
 
 								for($j=1; $j<count($theory_kern[$hoofdstuk]); $j++){
-									//TODO use ID as link to paragraph content
 									$paragraph_id = $theory_kern[$hoofdstuk][$j][0];
 									$paragraph_name = $theory_kern[$hoofdstuk][$j][1];
-									echo "<ul><span>§".$j." ".$paragraph_name."</span></ul>";
+									echo "<ul><span class='paragraph' id='".$paragraph_id."'>§".$j." ".$paragraph_name."</span></ul>";
 								}
 
 								echo "<ul><span>Quiz</span></ul>";
@@ -281,10 +280,9 @@
 							<ol>";
 
 								for($j=1; $j<count($theory_verdieping[$hoofdstuk]); $j++){
-									//TODO use ID as link to paragraph content
 									$paragraph_id = $theory_verdieping[$hoofdstuk][$j][0];
 									$paragraph_name = $theory_verdieping[$hoofdstuk][$j][1];
-									echo "<ul><span>§".$j." ".$paragraph_name."</span></ul>";
+									echo "<ul><span class='paragraph' id='".$paragraph_id."'>§".$j." ".$paragraph_name."</span></ul>";
 								}
 
 						echo "
@@ -325,10 +323,9 @@
 							<ol>";
 
 								for($j=1; $j<count($theory_bonus[$hoofdstuk]); $j++){
-									//TODO use ID as link to paragraph content
 									$paragraph_id = $theory_bonus[$hoofdstuk][$j][0];
 									$paragraph_name = $theory_bonus[$hoofdstuk][$j][1];
-									echo "<ul><span>§".$j." ".$paragraph_name."</span></ul>";
+									echo "<ul><span class='paragraph' id='".$paragraph_id."'>§".$j." ".$paragraph_name."</span></ul>";
 								}
 
 						echo "

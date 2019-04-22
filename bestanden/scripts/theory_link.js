@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
   $(".paragraph").click(function(){
 		var paragraph_id = $(this).attr('id');
 

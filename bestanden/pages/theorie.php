@@ -15,8 +15,7 @@
 
   $user_school = "";
 
-  //TODO get amountOfParagraphs
-  $amountOfParagraphs = "";
+  $paragraphs = [];
 
   $paragraph_id = $_GET['paragraph_id'];
 
@@ -28,7 +27,7 @@
     $result = mysqli_fetch_assoc($result);
     $hoofdstuk_id = $result['hoofdstuk_id'];
     $paragraph = $result['paragraaf'];
-    $paragraph_name = $result['paragraaf'];
+    $paragraph_name = $result['paragraaf_naam'];
     $theory_main = $result['main'];
     $theory_questions = $result['questions'];
     $theory_answers = $result['answers'];
@@ -49,6 +48,23 @@
     echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
   }
 
+  $sql = "SELECT paragraaf_id, paragraaf FROM theorie_paragrafen WHERE hoofdstuk_id='$hoofdstuk_id' ORDER BY paragraaf";
+
+  if (mysqli_query($conn, $sql)) {
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+      while($row = mysqli_fetch_assoc($result)) {
+        $paragraaf = $row['paragraaf'];
+        $paragraaf_id = $row['paragraaf_id'];
+        $paragraphs[] = [$paragraaf_id, $paragraaf];
+      }
+    }
+
+  } else {
+    echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+  }
+
 
   if (isset($_SESSION['id'])){
     $id = $_SESSION['id'];
@@ -62,7 +78,6 @@
     }else {
       echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
     }
-
   }
 
   if($chapter_school == $user_school OR $chapter_school=="Inforca"){
@@ -70,18 +85,18 @@
     <body>
       <div class='title-small'>
         <h2>
-          ".$chapter." ".$chapter_name." ".$paragraph." ".$paragraph_name."
+          ".$chapter." ".$chapter_name." §".$paragraph." ".$paragraph_name."
         </h2>
        </div>
 
       <div class='bar-par-overview'>
         <div class='paragraph-tiles'>";
 
-          for($i=1; $i<=$amountOfParagraphs; $i++){
+          for($i=0; $i<count($paragraphs); $i++){
             echo "
             <div class='ptile'>
-              <span class='ptile-content'>
-                §"."$i"."
+              <span class='ptile-content' id='".$paragraphs[$i][0]."'>
+                §".$paragraphs[$i][1]."
               </a></span>
             </div>
             ";
@@ -102,31 +117,36 @@
 
           ".$theory_main."
 
-        </div>
+        </div>";
 
-        <div class='bar-s'>
-          <h3>
-            Opdrachten
-          </h3>
-        </div>
+        if(!is_null($theory_questions)){
+          echo "
+          <div class='bar-s'>
+            <h3>
+              Opdrachten
+            </h3>
+          </div>
 
-        <div class='theorie-content'>
+          <div class='theorie-content'>
+            ".$theory_questions."
+          </div>
+          ";
+        }
 
-          ".$theory_questions."
+        if(!is_null($theory_answers)){
+          echo "
+          <div class='bar-s'>
+            <h3>
+              Antwoorden
+            </h3>
+          </div>
 
-        </div>
+          <div class='theorie-content theorie-answers'>
+            ".$theory_answers."
+          </div>";
+        }
 
-        <div class='bar-s'>
-          <h3>
-            Antwoorden
-          </h3>
-        </div>
-
-        <div class='theorie-content theorie-answers'>
-
-          ".$theory_answers."
-
-        </div>
+      echo "
       </div>
     ";
 

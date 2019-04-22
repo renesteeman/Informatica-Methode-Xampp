@@ -21,6 +21,7 @@
 </footer>
 
 <script src="../scripts/UI.js" defer></script>
+<script src="../scripts/paragraph_link.js" defer></script>
 <!--<script src="../scripts/progression.js" defer></script>-->
 <!--<script src="../scripts/updateActivityChapter.js" defer></script>-->
 

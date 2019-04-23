@@ -1,6 +1,14 @@
 <?php
   include('../components/headerTheory.php');
 
+  //function to check and clean input
+	function check_input($data) {
+		$data = trim($data, " ");
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		return $data;
+	}
+
   $hoofdstuk_id = "";
   $paragraph = "";
   $paragraph_name = "";
@@ -64,7 +72,6 @@
   } else {
     echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
   }
-
 
   if (isset($_SESSION['id'])){
     $id = $_SESSION['id'];
@@ -154,10 +161,9 @@
 
   	include('../components/footerTheory.php');
 
-
-
   } else {
     echo "Deze pagina hoort niet bij uw school.";
+    header('Location: ../index.php');
   }
 
 ?>

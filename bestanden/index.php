@@ -38,11 +38,11 @@
 					$paragraph_name = $row["paragraaf_naam"];
 
 					if($chapter[0] == 'H'){
-						$theory_kern[$chapter." ".$chapter_name][] = [$paragraph_id, $paragraph_name, $paragraph_number];
+						$theory_kern[$chapter." ".$chapter_name." #".$chapter_id][] = [$paragraph_id, $paragraph_name, $paragraph_number];
 					} else if($chapter[0] == 'V'){
-						$theory_verdieping[$chapter." ".$chapter_name][] = [$paragraph_id, $paragraph_name, $paragraph_number];
+						$theory_verdieping[$chapter." ".$chapter_name." #".$chapter_id][] = [$paragraph_id, $paragraph_name, $paragraph_number];
 					} else if($chapter[0] == 'B'){
-						$theory_bonus[$chapter." ".$chapter_name][] = [$paragraph_id, $paragraph_name, $paragraph_number];
+						$theory_bonus[$chapter." ".$chapter_name." #".$chapter_id][] = [$paragraph_id, $paragraph_name, $paragraph_number];
 					}
 				}
 			}
@@ -65,7 +65,7 @@
 					$document_id = $row["document_id"];
 					$document_naam = $row["document_naam"];
 
-					$theory_documents[$chapter." ".$chapter_name][] = [$document_id, $document_naam];
+					$theory_documents[$chapter." ".$chapter_name." #".$chapter_id][] = [$document_id, $document_naam];
 				}
 			}
 		}
@@ -83,9 +83,9 @@
 
 	<?php
 		//show which chapters are completed
-		if (isset($_SESSION['id'])){
+		if(isset($_SESSION['id'])){
 
-			$id = $_SESSION['id'];
+			$id = check_input($_SESSION['id']);
 			$chaptersAvailable = [];
 
 			//look for current values
@@ -227,8 +227,9 @@
 			<div class='chapter-tiles'>";
 
 			for($i=0; $i<count($hoofdstuknamen_kern); $i++){
-
 				$hoofdstuk = $hoofdstuknamen_kern[$i];
+				$hoofdstuk_id = explode("#", $hoofdstuk)[1];
+				$hoofdstuk_titel = explode("#", $hoofdstuk)[0];
 
 				if(chapterIsFinished($hoofdstuk)){
 					echo "<div class='tile completed'>";
@@ -239,7 +240,7 @@
         echo "
 					<div class='tile-content'>
 						<div class='tile-chapter'>
-							".$hoofdstuk."
+							".$hoofdstuk_titel."
 						</div>
 						<div class='tile-paragraphs'>
 							<span class='closeTile'>X</span>
@@ -264,7 +265,7 @@
 								}
 
 								//show quiz
-								echo "<ul><span>Quiz</span></ul>";
+								echo "<ul><span class='quiz' id='".$hoofdstuk_id."'>Quiz</span></ul>";
 
 						echo "
 							</ol>
@@ -285,8 +286,9 @@
 			<div class='chapter-tiles'>";
 
 			for($i=0; $i<count($hoofdstuknamen_verdieping); $i++){
-
-				$hoofdstuk = $hoofdstuknamen_verdieping[$i];
+				$hoofdstuk = $hoofdstuknamen_kern[$i];
+				$hoofdstuk_id = explode("#", $hoofdstuk)[1];
+				$hoofdstuk_titel = explode("#", $hoofdstuk)[0];
 
 				if(chapterIsFinished($hoofdstuk)){
 					echo "<div class='tile completed'>";
@@ -297,7 +299,7 @@
         echo "
 					<div class='tile-content'>
 						<div class='tile-chapter'>
-							".$hoofdstuk."
+							".$hoofdstuk_titel."
 						</div>
 						<div class='tile-paragraphs'>
 							<span class='closeTile'>X</span>
@@ -320,7 +322,7 @@
 									}
 								}
 
-								echo "<ul><span>Quiz</span></ul>";
+								echo "<ul><span class='quiz'>Quiz</span></ul>";
 
 						echo "
 							</ol>
@@ -341,8 +343,9 @@
 			<div class='chapter-tiles'>";
 
 			for($i=0; $i<count($hoofdstuknamen_bonus); $i++){
-
-				$hoofdstuk = $hoofdstuknamen_bonus[$i];
+				$hoofdstuk = $hoofdstuknamen_kern[$i];
+				$hoofdstuk_id = explode("#", $hoofdstuk)[1];
+				$hoofdstuk_titel = explode("#", $hoofdstuk)[0];
 
 				if(chapterIsFinished($hoofdstuk)){
 					echo "<div class='tile completed'>";
@@ -350,10 +353,10 @@
 					echo "<div class='tile'>";
 				}
 
-        echo "
+				echo "
 					<div class='tile-content'>
 						<div class='tile-chapter'>
-							".$hoofdstuk."
+							".$hoofdstuk_titel."
 						</div>
 						<div class='tile-paragraphs'>
 							<span class='closeTile'>X</span>
@@ -376,7 +379,7 @@
 									}
 								}
 
-								echo "<ul><span>Quiz</span></ul>";
+								echo "<ul><span class='quiz'>Quiz</span></ul>";
 
 						echo "
 							</ol>

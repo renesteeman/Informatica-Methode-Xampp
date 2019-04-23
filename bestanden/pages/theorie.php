@@ -17,7 +17,7 @@
 
   $paragraphs = [];
 
-  $paragraph_id = $_GET['paragraph_id'];
+  $paragraph_id = check_input($_GET['paragraph_id']);
 
   $sql = "SELECT hoofdstuk_id, paragraaf, paragraaf_naam, main, questions, answers FROM theorie_paragrafen WHERE paragraaf_id='$paragraph_id'";
 

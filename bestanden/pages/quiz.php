@@ -55,9 +55,6 @@
               $questions[] = [$questionID, $vraag, $optie1, $optie2, $optie3, $optie4, $antwoord, $uitleg];
             }
           }
-
-          print_r($questions);
-
         } else {
           echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
         }
@@ -100,47 +97,69 @@
   		<!-- filled in with JS -->
   	</div>
 
-  	<div class='vragen'>
+  	<div class='vragen'>";
 
-      //TODO for each vraag, show vraag
+      for($i=0; $i<count($questions); $i++){
 
-      <div class='vraagBalk'>
-        Wat is de beste omschrijving van hoe video door een computer wordt 'begrepen'?
-      </div>
-      <div class='antwoorden'>
-        <ul>
-          <li>
-            <label class='container'>Als een reeks RGB-waardes
-              <input type='checkbox' class='single-select-checkbox'>
-              <span class='checkmark'></span>
-            </label>
-          </li>
-          <li>
-            <label class='container'>Als een reeks afbeeldingen
-              <input type='checkbox' class='single-select-checkbox'>
-              <span class='checkmark'></span>
-            </label>
-          </li>
-          <li>
-            <label class='container'>Als een reeks letters
-              <input type='checkbox' class='single-select-checkbox'>
-              <span class='checkmark'></span>
-            </label>
-          </li>
-          <li>
-            <label class='container'>Als een reeks getallen uit het decimale stelsel
-              <input type='checkbox' class='single-select-checkbox'>
-              <span class='checkmark'></span>
-            </label>
-          </li>
-        </ul>
-      </div>
-      <div class='uitleg'>
+        $vraag = $questions[$i][1];
+        $optie1 = $questions[$i][2];
+        $optie2 = $questions[$i][3];
+        $optie3 = $questions[$i][4];
+        $optie4 = $questions[$i][5];
+        //$antwoord = $questions[$i][6];
+        //$uitleg = $questions[$i][7];
 
-      </div>
+        echo "
+        <div class='vraagBalk'>
+          ".$vraag."
+        </div>
+        <div class='antwoorden'>
+          <ul>
+            <li>
+              <label class='container'>".$optie1."
+                <input type='checkbox' class='single-select-checkbox'>
+                <span class='checkmark'></span>
+              </label>
+            </li>
+            <li>
+              <label class='container'>".$optie2."
+                <input type='checkbox' class='single-select-checkbox'>
+                <span class='checkmark'></span>
+              </label>
+            </li>";
+
+            if(!is_null($optie3)){
+              echo "
+              <li>
+                <label class='container'>".$optie3."
+                  <input type='checkbox' class='single-select-checkbox'>
+                  <span class='checkmark'></span>
+                </label>
+              </li>";
+
+              if(!is_null($optie4)){
+                echo "
+                <li>
+                  <label class='container'>".$optie4."
+                    <input type='checkbox' class='single-select-checkbox'>
+                    <span class='checkmark'></span>
+                  </label>
+                </li>";
+              }
+            }
+
+          echo "
+          </ul>
+        </div>
+        <div class='uitleg'>
+
+        </div>";
+      }
 
 
 
+
+    echo "
   	</div>
 
   	<input type='submit' value='controleer' class='controleerAntwoordButton'/>
@@ -148,9 +167,7 @@
   	</div>
 
   	<script src='../scripts/quiz.js'></script>";
-	?>
 
-	<?php
 	include('../components/footerTheory.php');
 	?>
 

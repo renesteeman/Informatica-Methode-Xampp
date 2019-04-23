@@ -4,6 +4,7 @@
 	$theory_kern = [];
 	$theory_verdieping = [];
 	$theory_bonus = [];
+	$theory_documents = [];
 
 	//function to check and clean input
 	function check_input($data) {
@@ -25,10 +26,6 @@
 		global $theory_verdieping;
 		global $theory_bonus;
 
-		$paragraph_ids = [];
-		$paragraph_numbers = [];
-		$paragraph_names = [];
-
 		$sql = "SELECT paragraaf_id, paragraaf, paragraaf_naam FROM theorie_paragrafen WHERE hoofdstuk_id='$chapter_id' ORDER BY paragraaf";
 
 		if(mysqli_query($conn, $sql)) {
@@ -36,33 +33,41 @@
 
 			if (mysqli_num_rows($result) > 0) {
 				while($row = mysqli_fetch_assoc($result)) {
-					$paragraaf_id = $row["paragraaf_id"];
+					$paragraph_id = $row["paragraaf_id"];
 					$paragraph_number = $row["paragraaf"];
-					$paragraaf_naam = $row["paragraaf_naam"];
+					$paragraph_name = $row["paragraaf_naam"];
 
-					$paragraph_ids[] = $paragraaf_id;
-					$paragraph_numbers[] = $paragraph_number;
-					$paragraph_names[] = $paragraaf_naam;
+					if($chapter[0] == 'H'){
+						$theory_kern[$chapter." ".$chapter_name][] = [$paragraph_id, $paragraph_name, $paragraph_number];
+					} else if($chapter[0] == 'V'){
+						$theory_verdieping[$chapter." ".$chapter_name][] = [$paragraph_id, $paragraph_name, $paragraph_number];
+					} else if($chapter[0] == 'B'){
+						$theory_bonus[$chapter." ".$chapter_name][] = [$paragraph_id, $paragraph_name, $paragraph_number];
+					}
 				}
-			}
-
-			for($i=0; $i<count($paragraph_ids); $i++) {
-				$paragraph_id = $paragraph_ids[$i];
-				$paragraph_number = $paragraph_numbers[$i];
-				$paragraph_name = $paragraph_names[$i];
-
-				if($chapter[0] == 'H'){
-					$theory_kern[$chapter." ".$chapter_name][] = [$paragraph_id, $paragraph_name, $paragraph_number];
-				} else if($chapter[0] == 'V'){
-					$theory_verdieping[$chapter." ".$chapter_name][] = [$paragraph_id, $paragraph_name, $paragraph_number];
-				} else if($chapter[0] == 'B'){
-					$theory_bonus[$chapter." ".$chapter_name][] = [$paragraph_id, $paragraph_name, $paragraph_number];
-				}
-
 			}
 
 		} else {
 			echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+		}
+	}
+
+	function loadDocuments($conn, $chapter_id, $chapter, $chapter_name){
+		global $theory_documents;
+
+		$sql = "SELECT document_id, document_naam FROM theorie_documenten WHERE hoofdstuk_id='$chapter_id'";
+
+		if(mysqli_query($conn, $sql)) {
+			$result = mysqli_query($conn, $sql);
+
+			if (mysqli_num_rows($result) > 0) {
+				while($row = mysqli_fetch_assoc($result)) {
+					$document_id = $row["document_id"];
+					$document_naam = $row["document_naam"];
+
+					$theory_documents[$chapter." ".$chapter_name][] = [$document_id, $document_naam];
+				}
+			}
 		}
 	}
 
@@ -193,11 +198,14 @@
 					$chapter = $theory_chapters[$i];
 					$chapter_name = $theory_chapter_names[$i];
 					loadParagraphs($conn, $chapter_id, $chapter, $chapter_name);
+					loadDocuments($conn, $chapter_id, $chapter, $chapter_name);
 				}
 
 				$hoofdstuknamen_kern = array_keys($theory_kern);
 				$hoofdstuknamen_verdieping = array_keys($theory_verdieping);
 				$hoofdstuknamen_bonus = array_keys($theory_bonus);
+
+				$hoofdstuknamen_documenten = array_keys($theory_documents);
 
     	} else {
     		echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
@@ -237,6 +245,7 @@
 							<span class='closeTile'>X</span>
 							<ol>";
 
+								//show paragraphs
 								for($j=0; $j<count($theory_kern[$hoofdstuk]); $j++){
 									$paragraph_id = $theory_kern[$hoofdstuk][$j][0];
 									$paragraph_name = $theory_kern[$hoofdstuk][$j][1];
@@ -244,6 +253,17 @@
 									echo "<ul><span class='paragraph' id='".$paragraph_id."'>§"."$paragraph_number"." ".$paragraph_name."</span></ul>";
 								}
 
+								//show documents if they exist
+								if(in_array($hoofdstuk, $hoofdstuknamen_documenten)){
+									$documents = $theory_documents[$hoofdstuk];
+									for($j=0; $j<count($documents); $j++){
+										$document_id = $documents[$j][0];
+										$document_name = $documents[$j][1];
+										echo "<ul><span class='document' id='".$document_id."'>".$document_name."</span></ul>";
+									}
+								}
+
+								//show quiz
 								echo "<ul><span>Quiz</span></ul>";
 
 						echo "
@@ -290,6 +310,16 @@
 									echo "<ul><span class='paragraph' id='".$paragraph_id."'>§"."$paragraph_number"." ".$paragraph_name."</span></ul>";
 								}
 
+								//show documents if they exist
+								if(in_array($hoofdstuk, $hoofdstuknamen_documenten)){
+									$documents = $theory_documents[$hoofdstuk];
+									for($j=0; $j<count($documents); $j++){
+										$document_id = $documents[$j][0];
+										$document_name = $documents[$j][1];
+										echo "<ul><span class='document' id='".$document_id."'>".$document_name."</span></ul>";
+									}
+								}
+
 								echo "<ul><span>Quiz</span></ul>";
 
 						echo "
@@ -334,6 +364,16 @@
 									$paragraph_name = $theory_bonus[$hoofdstuk][$j][1];
 									$paragraph_number = $theory_bonus[$hoofdstuk][$j][2];
 									echo "<ul><span class='paragraph' id='".$paragraph_id."'>§"."$paragraph_number"." ".$paragraph_name."</span></ul>";
+								}
+
+								//show documents if they exist
+								if(in_array($hoofdstuk, $hoofdstuknamen_documenten)){
+									$documents = $theory_documents[$hoofdstuk];
+									for($j=0; $j<count($documents); $j++){
+										$document_id = $documents[$j][0];
+										$document_name = $documents[$j][1];
+										echo "<ul><span class='document' id='".$document_id."'>".$document_name."</span></ul>";
+									}
 								}
 
 								echo "<ul><span>Quiz</span></ul>";

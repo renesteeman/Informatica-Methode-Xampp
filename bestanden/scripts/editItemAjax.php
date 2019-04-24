@@ -22,10 +22,10 @@
 	$NIdatum = mysqli_real_escape_string($conn, check_input($_POST['NIdatum']));
 	$NIdatum = date("Y-m-d", strtotime($NIdatum));
 
-	$CInaam = $_SESSION["itemname"];
-	$CIid = $_SESSION["itemID"];
-	$CIklas = $_SESSION["itemklas"];
-	$CIdatum = $_SESSION["itemdatum"];
+	$CInaam = check_input($_SESSION["itemname"]);
+	$CIid = check_input($_SESSION["itemID"]);
+	$CIklas = check_input($_SESSION["itemklas"]);
+	$CIdatum = check_input($_SESSION["itemdatum"]);
 	$CIdatum = date("Y-m-d", $CIdatum);
 
 	$NIprogressie = [];

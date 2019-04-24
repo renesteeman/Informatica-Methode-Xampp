@@ -3,7 +3,15 @@
 	session_save_path('../tmp');
 	session_start();
 
-	$id = $_SESSION["id"];
+	//function to check and clean input
+	function check_input($data) {
+		$data = trim($data, " ");
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		return $data;
+	}
+
+	$id = check_input($_SESSION["id"]);
 	$school = "";
   $functie = "";
   $error = 0;

@@ -14,9 +14,9 @@
 	}
 
 	$id = $_SESSION["id"];
-	$Inaam = $_SESSION["itemname"];
-	$Iklas = $_SESSION["itemklas"];
-	$Idatum = $_SESSION["itemdatum"];
+	$Inaam = check_input($_SESSION["itemname"]);
+	$Iklas = check_input($_SESSION["itemklas"]);
+	$Idatum = check_input($_SESSION["itemdatum"]);
 	$Idatum = date("Y-m-d", strtotime($Idatum));
 
 	$password = mysqli_real_escape_string($conn, check_input($_POST['password']));

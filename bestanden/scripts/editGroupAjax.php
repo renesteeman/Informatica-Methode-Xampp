@@ -15,7 +15,7 @@
 	//get and filter data
 	$id = $_SESSION["id"];
 	$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
-	$CGnaam = $_SESSION["groupname"];
+	$CGnaam = check_input($_SESSION["groupname"]);
 	$NGnaam = mysqli_real_escape_string($conn, check_input($_POST['NGname']));
 	$NGbeschrijving = mysqli_real_escape_string($conn, check_input($_POST['NGbeschrijving']));
 	$NGlink = mysqli_real_escape_string($conn, check_input($_POST['NGlink']));

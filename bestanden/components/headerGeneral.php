@@ -4,9 +4,17 @@ session_start();
 
 include('../scripts/DB_connect.php');
 
+//function to check and clean input
+function check_input($data) {
+	$data = trim($data, " ");
+	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+	return $data;
+}
+
 //check for known problems
 if(isset($_SESSION['ErrorNotLogedIn'])){
-	if($_SESSION['ErrorNotLogedIn']){
+	if(check_input($_SESSION['ErrorNotLogedIn'])){
 		echo ("
 			<script>
 				alert('U bent niet ingelogd');
@@ -17,7 +25,7 @@ if(isset($_SESSION['ErrorNotLogedIn'])){
 }
 
 if(isset($_SESSION['ErrorInvalidAccount'])){
-	if($_SESSION['ErrorInvalidAccount']){
+	if(check_input($_SESSION['ErrorInvalidAccount'])){
 		echo ("
 			<script>
 				alert('Uw account is verlopen');
@@ -33,7 +41,7 @@ function AccountValid(){
 	global $conn;
 
 	if(isset($_SESSION["id"])){
-		$id = $_SESSION["id"];
+		$id = check_input($_SESSION["id"]);
 		$sql = "SELECT expire_date FROM users WHERE id='$id'";
 
 		if (mysqli_query($conn, $sql)) {
@@ -118,7 +126,7 @@ if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF
 				<?php
 					//if logged in say hello, else give the option to login
 					if (isset($_SESSION["functie"])){
-						if ($_SESSION["functie"] == 'docent'){
+						if (check_input($_SESSION["functie"]) == 'docent'){
 							//if a teacher is logged in
 							echo '
 							<div class="nav-bar">
@@ -153,7 +161,7 @@ if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF
 						if (isset($_SESSION["name"])){
 							echo
 								'<div>
-									Welkom <a href="../pages/account.php">'.$_SESSION["name"].'</a>
+									Welkom <a href="../pages/account.php">'.check_input($_SESSION["name"]).'</a>
 								</div>
 								<div>
 									<a href="../scripts/logout.php">Log uit</a>
@@ -176,7 +184,7 @@ if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF
 			<?php
 				//if logged in say hello, else give the option to login
 				if (isset($_SESSION["functie"])){
-					if ($_SESSION["functie"] == 'docent'){
+					if (check_input($_SESSION["functie"]) == 'docent'){
 						//if a teacher is logged in
 						echo '
 						<div class="nav-bar">
@@ -213,7 +221,7 @@ if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF
 						if (isset($_SESSION["name"])){
 							echo
 								'<div>
-									Welkom <a href="../pages/account.php">'.$_SESSION["name"].'</a>
+									Welkom <a href="../pages/account.php">'.check_input($_SESSION["name")].'</a>
 								</div>
 								<div>
 									<a href="../scripts/logout.php">Log uit</a>

@@ -4,6 +4,14 @@ session_start();
 
 include('../scripts/DB_connect.php');
 
+//function to check and clean input
+function check_input($data) {
+	$data = trim($data, " ");
+	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+	return $data;
+}
+
 //check if account is still valid
 function AccountValid(){
 
@@ -11,7 +19,7 @@ function AccountValid(){
 	global $conn;
 
 	if(isset($_SESSION["id"])){
-		$id = $_SESSION["id"];
+		$id = check_input($_SESSION["id"]);
 		$sql = "SELECT expire_date FROM users WHERE id='$id'";
 
 		if (mysqli_query($conn, $sql)) {
@@ -100,7 +108,7 @@ if (!isset($_SESSION["id"])){
 					<?php
 						//if logged in say hello, else give the option to login
 						if (isset($_SESSION["functie"])){
-							if ($_SESSION["functie"] == 'docent'){
+							if (check_input($_SESSION["functie"]) == 'docent'){
 								//if a teacher is logged in
 								echo '
 								<div class="nav-bar">
@@ -136,7 +144,7 @@ if (!isset($_SESSION["id"])){
 						if (isset($_SESSION["name"])){
 							echo
 								'<div>
-									Welkom <a href="account.php">'.$_SESSION["name"].'</a>
+									Welkom <a href="account.php">'.check_input($_SESSION["name"]).'</a>
 								</div>
 								<div>
 									<a href="../scripts/logout.php">Log uit</a>
@@ -159,7 +167,7 @@ if (!isset($_SESSION["id"])){
 				<?php
 				//if logged in say hello, else give the option to login
 				if (isset($_SESSION["functie"])){
-					if ($_SESSION["functie"] == 'docent'){
+					if (check_input($_SESSION["functie"]) == 'docent'){
 						//if a teacher is logged in
 						echo '
 						<div class="nav-bar">
@@ -204,7 +212,7 @@ if (!isset($_SESSION["id"])){
 								echo
 									'<div>
 										Welkom <a href="
-										account.php">'.$_SESSION["name"].'</a>
+										account.php">'.check_input($_SESSION["name"]).'</a>
 									</div>
 									<div>
 										<a href="../scripts/logout.php">Log uit</a>

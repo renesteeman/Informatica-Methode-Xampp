@@ -1,5 +1,13 @@
 <?php
 include('../components/headerGeneral.php');
+
+//function to check and clean input
+function check_input($data) {
+	$data = trim($data, " ");
+	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+	return $data;
+}
 ?>
 
 <link rel="stylesheet" href="../css/edit.min.css">
@@ -23,7 +31,7 @@ include('../components/headerGeneral.php');
 
 		<?php
 
-		$id = $_SESSION["id"];
+		$id = check_input($_SESSION["id"]);
 		$school = "";
 
 		$sql = "SELECT school FROM users WHERE id='$id'";

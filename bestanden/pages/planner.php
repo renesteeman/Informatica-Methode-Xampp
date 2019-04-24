@@ -1,5 +1,13 @@
 <?php
 	include('../components/headerGeneral.php');
+
+	//function to check and clean input
+	function check_input($data) {
+		$data = trim($data, " ");
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		return $data;
+	}
 ?>
 
 <link rel="stylesheet" href="../css/planner.min.css">
@@ -56,7 +64,7 @@
 		<?php
 			if (isset($_SESSION["id"])){
 
-				$id = $_SESSION["id"];
+				$id = check_input($_SESSION["id"]);
 
 				$klassen = [];
 				$klassen['klas'] = [];

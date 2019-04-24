@@ -2,7 +2,7 @@
 	include('DB_connect.php');
 	session_start();
 
-  $id = $_SESSION["id"];
+  $id = check_input($_SESSION["id"]);
   $school = '';
   $input = '';
   $error = '';

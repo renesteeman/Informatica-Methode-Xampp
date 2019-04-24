@@ -40,7 +40,7 @@ include('../components/headerGeneral.php');
 					</span>'
 				;
 
-				$id = $_SESSION["id"];
+				$id = check_input($_SESSION["id"]);
 				$sql = "SELECT school FROM users WHERE id='$id'";
 
 				//get current info in order to show a 'preview'

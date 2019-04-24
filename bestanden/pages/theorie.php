@@ -74,7 +74,7 @@
   }
 
   if (isset($_SESSION['id'])){
-    $id = $_SESSION['id'];
+    $id = check_input($_SESSION['id']);
 
     //look for current values
     $sql = "SELECT school FROM users WHERE id='$id'";

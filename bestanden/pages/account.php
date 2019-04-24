@@ -1,5 +1,13 @@
 <?php
 	include('../components/headerGeneral.php');
+
+	//function to check and clean input
+	function check_input($data) {
+		$data = trim($data, " ");
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		return $data;
+	}
 ?>
 
 <link rel="stylesheet" href="../css/account.min.css">
@@ -37,8 +45,8 @@
 		if (isset($_SESSION["id"])){
 			//if the user is loged in, display account settings
 
-			$id = $_SESSION["id"];
-			$functie = $_SESSION["functie"];
+			$id = check_input($_SESSION["id"]);
+			$functie = check_input($_SESSION["functie"]);
 
 			$sql = "SELECT * FROM users WHERE id='$id'";
 

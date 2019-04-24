@@ -3,8 +3,16 @@
 	session_save_path('../tmp');
 	session_start();
 
+	//function to check and clean input
+	function check_input($data) {
+		$data = trim($data, " ");
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		return $data;
+	}
+
 	//get and filter data
-	$id = $_SESSION["id"];
+	$id = check_input($_SESSION["id"]);
 	$hoofdstuk_id = $_POST['chapter_id'];
 	$antwoorden = $_POST['antwoorden'];
 

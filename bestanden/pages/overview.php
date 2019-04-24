@@ -1,6 +1,14 @@
 <?php
 	include('../components/headerGeneral.php');
 
+	//function to check and clean input
+	function check_input($data) {
+		$data = trim($data, " ");
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		return $data;
+	}
+
 	if($_SESSION['functie'] != 'docent'){
 		header('Location: ../index.php');
 	}
@@ -266,7 +274,7 @@
 				//if logged in show class
 				if (isset($_SESSION["id"])){
 
-					$id = $_SESSION["id"];
+					$id = check_input($_SESSION["id"]);
 
 					$klassen = [];
 					$klassen['klas'] = [];
@@ -524,7 +532,7 @@
 				//if logged in show class
 				if (isset($_SESSION["id"])){
 
-					$id = $_SESSION["id"];
+					$id = check_input($_SESSION["id"]);
 
 					$userSchool = "";
 

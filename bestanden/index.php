@@ -244,7 +244,7 @@
 						</div>
 						<div class='tile-paragraphs'>
 							<span class='closeTile'>X</span>
-							<ol>";
+							<ol id=".$hoofdstuk_id.">";
 
 								//show paragraphs
 								for($j=0; $j<count($theory_kern[$hoofdstuk]); $j++){

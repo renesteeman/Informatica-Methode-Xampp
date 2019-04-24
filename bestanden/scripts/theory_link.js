@@ -11,4 +11,11 @@ $(document).ready(function(){
 
     window.location.href = './pages/quiz.php?chapter_id='+chapter_id+'&chapter_name='+chapter_name;
 	});
+
+  $(".document").click(function(){
+    var chapter_id = $(this).parent().parent().attr('id');
+		var document_id = $(this).attr('id');
+
+    window.location.href = './pages/document.php?chapter_id='+chapter_id+'document_id='+document_id;
+	});
 });

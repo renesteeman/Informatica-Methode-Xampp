@@ -10,8 +10,8 @@
 		return $data;
 	}
 
-	$id = $_SESSION["id"];
-	$Gnaam = $_SESSION["groupname"];
+	$id = check_input($_SESSION["id"]);
+	$Gnaam = check_input($_SESSION["groupname"]);
 	$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
 
 	//get password for user

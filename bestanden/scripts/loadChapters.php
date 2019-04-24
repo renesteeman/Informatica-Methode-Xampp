@@ -3,7 +3,7 @@
 	session_save_path('../tmp');
 	session_start();
 
-	$id = $_SESSION["id"];
+	$id = check_input($_SESSION["id"]);
 	$school = "";
   $functie = "";
   $error = 0;

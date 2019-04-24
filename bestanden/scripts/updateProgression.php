@@ -13,7 +13,7 @@
 
 	//get and filter data
 	if(isset($_SESSION["id"])){
-		$id = $_SESSION["id"];
+		$id = check_input($_SESSION["id"]);
 
 		$kind = mysqli_real_escape_string($conn, check_input($_POST['kind']));
 		$chapter = mysqli_real_escape_string($conn, check_input($_POST['chapter']));

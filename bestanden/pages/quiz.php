@@ -88,7 +88,7 @@
   <body>
 
   	<div class='title-small'>
-  		<h2>
+  		<h2 class='quiz_title' id='".$chapter_id."'>
         ".$chapter_name." quiz
   		</h2>
   	</div>
@@ -116,13 +116,13 @@
         <div class='antwoorden'>
           <ul>
             <li>
-              <label class='container'>".$optie1."
+              <label class='container optie1'>".$optie1."
                 <input type='checkbox' class='single-select-checkbox'>
                 <span class='checkmark'></span>
               </label>
             </li>
             <li>
-              <label class='container'>".$optie2."
+              <label class='container optie2'>".$optie2."
                 <input type='checkbox' class='single-select-checkbox'>
                 <span class='checkmark'></span>
               </label>
@@ -131,7 +131,7 @@
             if(!is_null($optie3)){
               echo "
               <li>
-                <label class='container'>".$optie3."
+                <label class='container optie3'>".$optie3."
                   <input type='checkbox' class='single-select-checkbox'>
                   <span class='checkmark'></span>
                 </label>
@@ -140,7 +140,7 @@
               if(!is_null($optie4)){
                 echo "
                 <li>
-                  <label class='container'>".$optie4."
+                  <label class='container optie4'>".$optie4."
                     <input type='checkbox' class='single-select-checkbox'>
                     <span class='checkmark'></span>
                   </label>
@@ -156,17 +156,12 @@
         </div>";
       }
 
-
-
-
     echo "
   	</div>
 
   	<input type='submit' value='controleer' class='controleerAntwoordButton'/>
 
-  	</div>
-
-  	<script src='../scripts/quiz.js'></script>";
+  	<script src='../scripts/quiz.js' defer></script>";
 
 	include('../components/footerTheory.php');
 	?>

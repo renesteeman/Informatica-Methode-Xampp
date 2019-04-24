@@ -44,30 +44,20 @@ $(document).ready(function(){
 		var antwoorden = [];
 		var typeOfChapter = "";
 
-		var url = window.location.href;
-
-		var chapterLocation = window.location.href;
-		chapterLocation = chapterLocation.replace('/quiz.php', '');
-		chapterLocation = chapterLocation.substr(chapterLocation.length - 3);
-
-		if(chapterLocation.indexOf('/') !== -1){
-			chapterLocation = chapterLocation.replace('/', '');
-		}
-
-		var chapter = chapterLocation;
+		var chapter_id = $('.quiz_title').attr('id');
 
 		for(i=0; i<aantalVragenBeantwoord;i++){
-			var antwoord = $(this).prev().children('.antwoorden').find('input[type="checkbox"]:checked').parent().eq(i).text();
-			antwoord = $.trim(antwoord);
+			var antwoord = $(this).prev().children('.antwoorden').find('input[type="checkbox"]:checked').parent().eq(i).attr('class').split(' ')[1].slice(-1);
 			antwoorden.push(antwoord);
 		}
 
 		if(aantalVragen == aantalVragenBeantwoord){
+			/*
 			//sent the given answers to the quiz php
 			jqXHR = $.ajax({
 				method: "POST",
-				url: '../../../scripts/quiz.php',
-				data: {antwoorden: antwoorden, hoofdstuk: chapter}
+				url: '../scripts/quiz.php',
+				data: {antwoorden: antwoorden, chapter_id: chapter_id}
 			});
 
 			jqXHR.done(function(msg) {
@@ -120,7 +110,7 @@ $(document).ready(function(){
 
 			jqXHR.fail(function(jqXHR) {
 				alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
-		  });
+		  });*/
 
 		} else {
 			alert('Beantwoord eerst alle vragen');

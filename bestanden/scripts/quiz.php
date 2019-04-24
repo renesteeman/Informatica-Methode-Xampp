@@ -16,9 +16,6 @@
 	$error = '';
 
 	$juisteAntwoorden = [];
-	$uitleg = [];
-
-
 
 	$sql = "SELECT antwoord, uitleg FROM quiz_vragen WHERE hoofdstuk_id='$hoofdstuk_id'";
 	if (mysqli_query($conn, $sql)) {
@@ -35,10 +32,7 @@
 		}
 	}
 
-
-
-	$count = count($antwoorden);
-	for($i=0; $i<$count; $i++){
+	for($i=0; $i<count($antwoorden); $i++){
 		if($antwoorden[$i] == $juisteAntwoorden[$i]){
 			$punten++;
 			$correct[] = $i;
@@ -51,14 +45,14 @@
 	$cijfer = number_format(round(floatval($cijfer)), 1);
 
 	//check if user already has a score for the quiz
-	$sql = "SELECT cijfer FROM quiz_results WHERE userid=$id AND hoofdstuk='$hoofdstuk'";
+	$sql = "SELECT cijfer FROM quiz_results WHERE userid=$id AND hoofdstuk_id='$hoofdstuk_id'";
 
 	if (mysqli_query($conn, $sql)) {
 
 		$result = mysqli_query($conn, $sql);
 		//if no result is found than insert result
 		if (mysqli_num_rows($result) == 0){
-			$sql = "INSERT INTO quiz_results (userid, hoofdstuk, cijfer) VALUES ($id, '$hoofdstuk', $cijfer)";
+			$sql = "INSERT INTO quiz_results (userid, hoofdstuk_id, cijfer) VALUES ($id, '$hoofdstuk_id', $cijfer)";
 			if (mysqli_query($conn, $sql)) {
 
 			} else {
@@ -69,7 +63,7 @@
 			$Ccijfer = $result['cijfer'];
 
 			if($cijfer > $Ccijfer){
-				$sql = "UPDATE quiz_results SET cijfer=$cijfer WHERE userid=$id AND hoofdstuk='$hoofdstuk'";
+				$sql = "UPDATE quiz_results SET cijfer=$cijfer WHERE userid=$id AND hoofdstuk_id='$hoofdstuk_id'";
 				if (mysqli_query($conn, $sql)) {
 
 				} else {

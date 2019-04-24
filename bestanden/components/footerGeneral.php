@@ -6,15 +6,6 @@
 	<div class="contact-info">
 		<span id="mail">info@inforca.nl</span>
 		<?php
-
-			//function to check and clean input
-			function check_input($data) {
-				$data = trim($data, " ");
-				$data = stripslashes($data);
-				$data = htmlspecialchars($data);
-				return $data;
-			}
-
 			if (isset($_SESSION["functie"])){
 				if (check_input($_SESSION["functie"]) == 'docent'){
 					echo '<span id="phone">06-22155216</span>';

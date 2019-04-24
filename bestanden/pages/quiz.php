@@ -1,14 +1,6 @@
 <?php
 	include('../components/headerTheory.php');
 
-	//function to check and clean input
-	function check_input($data) {
-		$data = trim($data, " ");
-		$data = stripslashes($data);
-		$data = htmlspecialchars($data);
-		return $data;
-	}
-
   $chapter_id = check_input($_GET['chapter_id']);
   $chapter_name = check_input($_GET['chapter_name']);
   $questions = [];

@@ -14,8 +14,9 @@ $(document).ready(function(){
 
   $(".document").click(function(){
     var chapter_id = $(this).parent().parent().attr('id');
+    var chapter_name = $(this).parent().parent().parent().prev().text();
 		var document_id = $(this).attr('id');
 
-    window.location.href = './pages/document.php?chapter_id='+chapter_id+'document_id='+document_id;
+    window.location.href = './pages/document.php?chapter_id='+chapter_id+'&document_id='+document_id+'&chapter_name='+chapter_name;
 	});
 });

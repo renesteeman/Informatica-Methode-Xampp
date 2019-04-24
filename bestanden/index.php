@@ -6,14 +6,6 @@
 	$theory_bonus = [];
 	$theory_documents = [];
 
-	//function to check and clean input
-	function check_input($data) {
-		$data = trim($data, " ");
-		$data = stripslashes($data);
-		$data = htmlspecialchars($data);
-		return $data;
-	}
-
 	function chapterIsFinished($thisChapter){
 		global $completedChapters;
 		if(in_array($thisChapter, $completedChapters)){
@@ -55,7 +47,7 @@
 	function loadDocuments($conn, $chapter_id, $chapter, $chapter_name){
 		global $theory_documents;
 
-		$sql = "SELECT document_id, document_naam FROM theorie_documenten WHERE hoofdstuk_id='$chapter_id'";
+		$sql = "SELECT document_id, document_title FROM theorie_documenten WHERE hoofdstuk_id='$chapter_id'";
 
 		if(mysqli_query($conn, $sql)) {
 			$result = mysqli_query($conn, $sql);
@@ -63,9 +55,9 @@
 			if (mysqli_num_rows($result) > 0) {
 				while($row = mysqli_fetch_assoc($result)) {
 					$document_id = $row["document_id"];
-					$document_naam = $row["document_naam"];
+					$document_title = $row["document_title"];
 
-					$theory_documents[$chapter." ".$chapter_name." #".$chapter_id][] = [$document_id, $document_naam];
+					$theory_documents[$chapter." ".$chapter_name." #".$chapter_id][] = [$document_id, $document_title];
 				}
 			}
 		}

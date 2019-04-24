@@ -221,7 +221,7 @@ if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF
 						if (isset($_SESSION["name"])){
 							echo
 								'<div>
-									Welkom <a href="../pages/account.php">'.check_input($_SESSION["name")].'</a>
+									Welkom <a href="../pages/account.php">'.check_input($_SESSION["name"]).'</a>
 								</div>
 								<div>
 									<a href="../scripts/logout.php">Log uit</a>

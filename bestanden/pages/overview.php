@@ -108,11 +108,9 @@
 			<?php
 				//if logged in show class
 				if (isset($_SESSION["id"])){
-
 					$id = check_input($_SESSION["id"]);
-
 					$klassen = [];
-					$klassen['klas'] = [];
+					$teMakenKlassen = [];
 
 					$sql = "SELECT school, functie FROM users WHERE id='$id'";
 
@@ -123,6 +121,28 @@
 						$school = $result['school'];
 						$functie = $result['functie'];
 
+						//haal het huiswerk per klas op
+						//get more info about chapters that should have been completed
+						$sql = "SELECT progressie, klas, datum FROM `planner` WHERE school='$school'";
+
+						//get chapters that should be done
+						if (mysqli_query($conn, $sql)) {
+							$result = mysqli_query($conn, $sql);
+
+							if(mysqli_num_rows($result)>0){
+								while($row = mysqli_fetch_assoc($result)) {
+									$Cprogressie = $row['progressie'];
+									$Cklas = $row['klas'];
+									$Cdatum = $row['datum'];
+
+									$teMakenKlassen[$Cklas] = [$Cprogressie, $Cdatum];
+								}
+							}
+						} else {
+							echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+						}
+
+						//haal per leerling de data op
 						$sql = "SELECT id, naam, klas, group_role, group_name FROM `users` WHERE school='$school' AND functie='leerling'";
 
 						if (mysqli_query($conn, $sql)) {
@@ -139,10 +159,7 @@
 									$hoofdstukkenAf = [];
 									$onSchedule = 1;
 
-									//save info from user
-									$userinfo = ['naam'=>$Cnaam, 'klas'=>$Cklas, 'group_role'=>$group_role, 'group_name'=>$group_name];
-
-									//get more info cijfer
+									//get cijfers
 									$sql2 = "SELECT cijfer FROM quiz_results WHERE userid='$Cid'";
 
 									//get info from other tables
@@ -172,7 +189,7 @@
 									//get more info progression
 									$sql3 = "SELECT chapter_id, progress FROM `progressie` WHERE userid='$Cid'";
 
-									//get/calculate completed chapters
+									//get completed chapters
 									if (mysqli_query($conn, $sql3)) {
 										$result3 = mysqli_query($conn, $sql3);
 
@@ -218,40 +235,35 @@
 									}
 
 									//TODO continue updating
+									//check if the homework is done
+									$Chomework = "";
 
-									//get more info about chapters that should have been completed
-									$sql4 = "SELECT progressie FROM `planner` WHERE school='$school' AND klas='$Cklas'";
+									//check what should have been done
+									$teMakenKlassenKeys = array_keys($teMakenKlassen);
+									if(in_array($Cklas, $teMakenKlassenKeys)){
+										$Chomework = $teMakenKlassen[$Cklas];
+										print_r($Chomework); echo "</br>";
+									}
 
-									//get chapters that should be done
-									if (mysqli_query($conn, $sql4)) {
-										$result4 = mysqli_query($conn, $sql4);
-										$chapterToBeMade = [];
 
-										if(mysqli_num_rows($result4)>0){
-											while($row4 = mysqli_fetch_assoc($result4)) {
-												$progressie = $row4['progressie'];
-												$chapterToBeMade = explode(", ", $progressie );
-											}
-										}
 
-										$count3 = count($chapterToBeMade);
-										for($i=0; $i<$count3-1;$i++){
+
+
+
+										/*for($i=0; $i<count($chapterToBeMade)-1;$i++){
 											$shouldBeComplete = $chapterToBeMade[$i];
 
 											if(!array_key_exists($shouldBeComplete, $hoofdstukkenAf)){
 												$onSchedule = 0;
 											}
-										}
-
-									} else {
-										echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
-									}
+										}*/
 
 									//save the info
+									$userinfo = ['naam'=>$Cnaam, 'klas'=>$Cklas, 'group_role'=>$group_role, 'group_name'=>$group_name];
 									$userinfo['onSchedule'] = $onSchedule;
 									$userinfo['gemiddeldePunt'] = $gemiddeldePunt;
 
-									$klassen['klas'][$Cklas][] = $userinfo;
+									$klassen[$Cklas][] = $userinfo;
 
 						    }
 
@@ -260,18 +272,18 @@
 							}
 
 							//How many classes are there?
-							$Nclasses = count($klassen['klas']);
+							$Nclasses = count($klassen);
 
 							//put the classes in the right order
-							ksort($klassen['klas']);
+							ksort($klassen);
 
 							//Show me these (the nice way)
-							$AllClasses = array_keys($klassen['klas']);
+							$AllClasses = array_keys($klassen);
 
 							for($i=0; $i < $Nclasses; $i++){
 								$CurrentClass = $AllClasses[$i];
 
-								$StudentsCurrentClass[] = $klassen['klas'][$CurrentClass];
+								$StudentsCurrentClass[] = $klassen[$CurrentClass];
 
 								$NStudents = array_map("count", $StudentsCurrentClass);
 								$NStudentsCurrentClass = ($NStudents[$i]);

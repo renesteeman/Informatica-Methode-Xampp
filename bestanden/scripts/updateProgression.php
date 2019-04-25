@@ -20,7 +20,7 @@
 		$Nparagraphs = mysqli_real_escape_string($conn, check_input($_POST['Nparagraphs']));
 
 		//look for current values
-		$sql = "SELECT $chapter_id FROM progressie WHERE userid='$id'";
+		$sql = "SELECT progress_id, progress FROM progressie WHERE userid='$id' AND chapter_id='$chapter_id'";
 
 		if (mysqli_query($conn, $sql)) {
 			$result = mysqli_query($conn, $sql);
@@ -38,17 +38,16 @@
 					$i++;
 				}
 
-				$sql = "INSERT INTO `progressie` (`userid`, `chapter_id`) VALUES ('$id', '$progression');";
+				$sql = "INSERT INTO `progressie` (`userid`, `chapter_id`, `progress`) VALUES ($id, $chapter_id, '$progression')";
 
-				if (mysqli_query($conn, $sql)) {
-
-				} else {
+				if (!mysqli_query($conn, $sql)) {
 					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 				}
 
 			} else {
 				$result = mysqli_fetch_assoc($result);
-				$Cprogression = $result[$chapter_id];
+				$Cprogression = $result['progress'];
+				$progress_id = $result['progress_id'];
 
 				if(is_null($Cprogression)){
 					//if user has no progression for this chapter
@@ -64,11 +63,9 @@
 						$i++;
 					}
 
-					$sql = "UPDATE progressie SET $chapter_id = '$progression' WHERE userid='$id'";
+					$sql = "UPDATE progressie SET progress = '$progression' WHERE progress_id=$progress_id";
 
-					if (mysqli_query($conn, $sql)) {
-
-					} else {
+					if (!mysqli_query($conn, $sql)) {
 						echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					}
 
@@ -78,11 +75,9 @@
 					$progression = $Cprogression;
 					$progression[$paragraph-1] = '1';
 
-					$sql = "UPDATE progressie SET $chapter_id = '$progression' WHERE userid='$id'";
+					$sql = "UPDATE progressie SET progress = '$progression' WHERE progress_id=$progress_id";
 
-					if (mysqli_query($conn, $sql)) {
-
-					} else {
+					if (!mysqli_query($conn, $sql)) {
 						echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					}
 				}

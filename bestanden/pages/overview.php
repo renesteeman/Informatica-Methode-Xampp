@@ -126,12 +126,9 @@
 						$sql = "SELECT id, naam, klas, group_role, group_name FROM `users` WHERE school='$school' AND functie='leerling'";
 
 						if (mysqli_query($conn, $sql)) {
-
 							$result = mysqli_query($conn, $sql);
-
 							if (mysqli_num_rows($result) > 0) {
 						    // output data of each row of names with class
-
 						    while($row = mysqli_fetch_assoc($result)) {
 									$Cid = $row["id"];
 									$Cnaam = $row["naam"];
@@ -161,8 +158,7 @@
 												$punten[] = $punt;
 											}
 
-											$count = count($punten);
-											for($i=0; $i<$count; $i++){
+											for($i=0; $i<count($punten); $i++){
 												$totaalCijfers += $punten[$i];
 											}
 
@@ -174,27 +170,44 @@
 									}
 
 									//get more info progression
-									$sql3 = "SELECT * FROM `progressie` WHERE userid='$Cid'";
+									$sql3 = "SELECT chapter_id, progress FROM `progressie` WHERE userid='$Cid'";
 
 									//get/calculate completed chapters
 									if (mysqli_query($conn, $sql3)) {
 										$result3 = mysqli_query($conn, $sql3);
 
 										if(mysqli_num_rows($result3)>0){
-											while($hoofdstukken = mysqli_fetch_assoc($result3)) {
-												$count2 = count($hoofdstukken);
-												for($i=1; $i<$count2; $i++){
-													$hoofstukkenKeys = array_keys($hoofdstukken);
-													$hoofdstuk = $hoofdstukken[$hoofstukkenKeys[$i]];
-													$hoofdstukLength = strlen($hoofdstuk);
-													$hoofdstukAfTotaal = 0;
-													for($j=0; $j<$hoofdstukLength; $j++){
-														if($hoofdstuk[$j] == '1'){
-															$hoofdstukAfTotaal++;
-														}
+											while($hoofdstuk = mysqli_fetch_assoc($result3)) {
+												$hoofstukkenKeys = array_keys($hoofdstuk);
+
+												//get chapter_id
+												$Cchapter_id = $hoofdstuk[$hoofstukkenKeys[0]];
+
+												//get progress
+												$Cchapter_progress = $hoofdstuk[$hoofstukkenKeys[1]];
+
+												$hoofdstukLength = strlen($Cchapter_progress);
+
+												$paragrafenAf = 0;
+												for($j=0; $j<$hoofdstukLength; $j++){
+													if($Cchapter_progress[$j] == '1'){
+														$paragrafenAf++;
 													}
-													if($hoofdstukAfTotaal == $hoofdstukLength && $hoofdstukLength != 0){
-														$hoofdstukkenAf[$hoofstukkenKeys[$i]] = 1;
+												}
+
+												if($paragrafenAf == $hoofdstukLength && $hoofdstukLength != 0){
+													//als het hoofdstuk af is, voeg het dan toe aan afgemaakte hoofdstukken
+													$sql4 = "SELECT hoofdstuk FROM theorie_hoofdstukken WHERE hoofdstuk_id='$Cchapter_id'";
+
+													//get/calculate completed chapters
+													if (mysqli_query($conn, $sql4)) {
+														$result4 = mysqli_query($conn, $sql4);
+														$result4 = mysqli_fetch_assoc($result4);
+														$CchapterName = $result4['hoofdstuk'];
+
+														$hoofdstukkenAf[] = $CchapterName;
+													} else {
+														echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 													}
 												}
 											}
@@ -203,6 +216,8 @@
 									} else {
 										echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 									}
+
+									//TODO continue updating
 
 									//get more info about chapters that should have been completed
 									$sql4 = "SELECT progressie FROM `planner` WHERE school='$school' AND klas='$Cklas'";

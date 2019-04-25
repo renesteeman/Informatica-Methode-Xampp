@@ -15,13 +15,12 @@
 	if(isset($_SESSION["id"])){
 		$id = check_input($_SESSION["id"]);
 
-		$kind = mysqli_real_escape_string($conn, check_input($_POST['kind']));
-		$chapter = mysqli_real_escape_string($conn, check_input($_POST['chapter']));
+		$chapter_id = mysqli_real_escape_string($conn, check_input($_POST['chapter_id']));
 		$paragraph = mysqli_real_escape_string($conn, check_input($_POST['paragraph']));
 		$Nparagraphs = mysqli_real_escape_string($conn, check_input($_POST['Nparagraphs']));
 
 		//look for current values
-		$sql = "SELECT $kind$chapter FROM progressie WHERE userid='$id'";
+		$sql = "SELECT $chapter_id FROM progressie WHERE userid='$id'";
 
 		if (mysqli_query($conn, $sql)) {
 			$result = mysqli_query($conn, $sql);
@@ -39,7 +38,7 @@
 					$i++;
 				}
 
-				$sql = "INSERT INTO `progressie` (`userid`, `$kind$chapter`) VALUES ('$id', '$progression');";
+				$sql = "INSERT INTO `progressie` (`userid`, `chapter_id`) VALUES ('$id', '$progression');";
 
 				if (mysqli_query($conn, $sql)) {
 
@@ -49,7 +48,7 @@
 
 			} else {
 				$result = mysqli_fetch_assoc($result);
-				$Cprogression = $result[$kind.$chapter];
+				$Cprogression = $result[$chapter_id];
 
 				if(is_null($Cprogression)){
 					//if user has no progression for this chapter
@@ -65,7 +64,7 @@
 						$i++;
 					}
 
-					$sql = "UPDATE progressie SET $kind$chapter = '$progression' WHERE userid='$id'";
+					$sql = "UPDATE progressie SET $chapter_id = '$progression' WHERE userid='$id'";
 
 					if (mysqli_query($conn, $sql)) {
 
@@ -79,7 +78,7 @@
 					$progression = $Cprogression;
 					$progression[$paragraph-1] = '1';
 
-					$sql = "UPDATE progressie SET $kind$chapter = '$progression' WHERE userid='$id'";
+					$sql = "UPDATE progressie SET $chapter_id = '$progression' WHERE userid='$id'";
 
 					if (mysqli_query($conn, $sql)) {
 

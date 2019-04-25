@@ -15,16 +15,17 @@ $(document).ready(function(){
 	var timeSpent = 0;
 	var active = 1;
 	var completed = 0;
-	var tresholdSeconds = 60;
-	var kind = '';
+	//TODO
+	var tresholdSeconds = 6;
+	var theory = 0;
 
 	var title = $('.title-small').text();
-	title = title.trim();
-	kind = title[0];
 
-	//check if it's a quiz
-	if(includes(title, 'quiz')){
-		kind = 'quiz';
+	//check if it's theory
+	if(!includes(title, '§')){
+		theory = 0;
+	} else {
+		theory = 1;
 	}
 
 	function isReached(element) {
@@ -39,10 +40,11 @@ $(document).ready(function(){
 
 	function updateProgress(){
 		var element = $('.theorie-content');
+
 		if(isReached(element)){
 			completed = 1;
 
-			var chapter = title[1];
+			var chapter_id = $('.title-small').children().first().attr('id');
 			var paragraph = title.split('§')[1][0];
 
 			var Nparagraphs = $('.ptile').length;
@@ -50,8 +52,8 @@ $(document).ready(function(){
 			//sent values of group via ajax to editGroupFront.php
 			jqXHR = $.ajax({
 				method: "POST",
-				url: '../../../scripts/updateProgression.php',
-				data: {kind:kind, chapter:chapter, paragraph:paragraph, Nparagraphs: Nparagraphs}
+				url: '../scripts/updateProgression.php',
+				data: {chapter_id:chapter_id, paragraph:paragraph, Nparagraphs: Nparagraphs}
 			});
 
 			jqXHR.done(function(msg) {
@@ -85,7 +87,7 @@ $(document).ready(function(){
 				}
 			}
 
-			if(!completed && kind!='quiz'){
+			if(!completed && theory){
 				setTimeout(updateTimeSpent, 1000);
 			}
 		};

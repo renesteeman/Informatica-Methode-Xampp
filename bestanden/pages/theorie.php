@@ -1,14 +1,6 @@
 <?php
   include('../components/headerTheory.php');
 
-  //function to check and clean input
-	function check_input($data) {
-		$data = trim($data, " ");
-		$data = stripslashes($data);
-		$data = htmlspecialchars($data);
-		return $data;
-	}
-
   $hoofdstuk_id = "";
   $paragraph = "";
   $paragraph_name = "";
@@ -91,7 +83,7 @@
     echo "
     <body>
       <div class='title-small'>
-        <h2>
+        <h2 id=".$hoofdstuk_id.">
           ".$chapter." ".$chapter_name." §".$paragraph." ".$paragraph_name."
         </h2>
        </div>

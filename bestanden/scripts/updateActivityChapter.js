@@ -13,7 +13,7 @@ $(document).ready(function(){
     if(active){
       jqXHR = $.ajax({
     		method: "POST",
-    		url: '../../../scripts/updateActivity.php'
+    		url: '../scripts/updateActivity.php'
     	})
 
       jqXHR.done(function(msg) {

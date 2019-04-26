@@ -122,8 +122,9 @@
 						$functie = $result['functie'];
 
 						//haal het huiswerk per klas op
+						$now = date("Y-m-d");
 						//get more info about chapters that should have been completed
-						$sql = "SELECT progressie, klas, datum FROM `planner` WHERE school='$school'";
+						$sql = "SELECT progressie, klas FROM `planner` WHERE school='$school' AND datum<'$now'";
 
 						//get chapters that should be done
 						if (mysqli_query($conn, $sql)) {
@@ -133,9 +134,8 @@
 								while($row = mysqli_fetch_assoc($result)) {
 									$Cprogressie = $row['progressie'];
 									$Cklas = $row['klas'];
-									$Cdatum = $row['datum'];
 
-									$teMakenKlassen[$Cklas] = [$Cprogressie, $Cdatum];
+									$teMakenKlassen[$Cklas] = $Cprogressie;
 								}
 							}
 						} else {
@@ -236,35 +236,35 @@
 
 									//TODO continue updating
 									//check if the homework is done
-									$Chomework = "";
+									$Chomework = [];
 
 									//check what should have been done
 									$teMakenKlassenKeys = array_keys($teMakenKlassen);
 									if(in_array($Cklas, $teMakenKlassenKeys)){
+										//get text
 										$Chomework = $teMakenKlassen[$Cklas];
-										print_r($Chomework); echo "</br>";
+
+										//clean text up
+										$Chomework = trim($Chomework);
+										$Chomework = rtrim($Chomework, ",");
+
+										//transform text into an array
+										$Chomework = explode(",", $Chomework);
 									}
 
+									for($i=0; $i<count($Chomework);$i++){
+										$shouldBeComplete = $Chomework[$i];
+										$shouldBeComplete = trim($shouldBeComplete);
 
-
-
-
-
-										/*for($i=0; $i<count($chapterToBeMade)-1;$i++){
-											$shouldBeComplete = $chapterToBeMade[$i];
-
-											if(!array_key_exists($shouldBeComplete, $hoofdstukkenAf)){
-												$onSchedule = 0;
-											}
-										}*/
+										if(!in_array($shouldBeComplete, $hoofdstukkenAf)){
+											$onSchedule = 0;
+										}
+									}
 
 									//save the info
-									$userinfo = ['naam'=>$Cnaam, 'klas'=>$Cklas, 'group_role'=>$group_role, 'group_name'=>$group_name];
-									$userinfo['onSchedule'] = $onSchedule;
-									$userinfo['gemiddeldePunt'] = $gemiddeldePunt;
+									$userinfo = ['naam'=>$Cnaam, 'klas'=>$Cklas, 'group_role'=>$group_role, 'group_name'=>$group_name, 'onSchedule'=>$onSchedule, 'gemiddeldePunt'=>$gemiddeldePunt];
 
 									$klassen[$Cklas][] = $userinfo;
-
 						    }
 
 							} else {
@@ -316,7 +316,6 @@
 										}
 
 										echo '
-
 										<div class="row">
 											<span class="name">'.$CstudentName.'</span>
 											<span class="groepnaam">'.$CstudentGroupName.'</span>
@@ -467,7 +466,6 @@
 												if(!in_array($Cklas, $classesInGroup)){
 													array_push($classesInGroup, $Cklas);
 												}
-
 											}
 
 										} else {
@@ -476,7 +474,6 @@
 										}
 
 										echo'
-
 										<div class="headerRow groepen">
 											<!-- table header for this class-->
 											<div class="headerRowContent">
@@ -521,19 +518,15 @@
 												$CstudentRole = $studentInfoForGroup[$j]['group_role'];
 
 												echo '
-
 													<div class="row">
 														<span class="name">'.$CmemberName.'</span>
 														<span class="class">'.$CstudentClass.'</span>
 														<span class="role">'.$CstudentRole.'</span>
 													</div>
-
 												';
 
 											}
-
 										echo '</div></div>';
-
 									}
 
 								} else {
@@ -543,18 +536,15 @@
 											<span>Geen groepen gevonden</span>
 										</div>
 									</div>';
-
 								}
 
 							} else {
 								echo "Error with sql execution, please report to admin </br>";
 							}
 						}
-
 					} else {
 						echo "Error with sql execution, please report to admin </br>";
 					}
-
 				} else {
 					echo 'U bent niet ingelogd';
 				}

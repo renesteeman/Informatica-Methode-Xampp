@@ -79,7 +79,7 @@ $(document).ready(function(){
             info['groepsgenoten'][i][2] = "Geen groepsrol";
           }
 
-          append = "<div class='searchResultGroepInhoudItem' style='display: none;'><span class='searchResultGroepInhoudLeden'>"+info['groepsgenoten'][i][0]+"</span><span class='searchResultGroepInhoudKlas'>"+info['groepsgenoten'][i][1]+"</span><span class='searchResultGroepInhoudRollen'>"+info['groepsgenoten'][i][2]+"</span></div>";
+          append = "<div class='searchResultGroepInhoudItem'><span class='searchResultGroepInhoudLeden'>"+info['groepsgenoten'][i][0]+"</span><span class='searchResultGroepInhoudKlas'>"+info['groepsgenoten'][i][1]+"</span><span class='searchResultGroepInhoudRollen'>"+info['groepsgenoten'][i][2]+"</span></div>";
 
           $('.searchResultGroepInhoud').append(append);
         }
@@ -98,7 +98,7 @@ $(document).ready(function(){
         append = "";
 
         for(i=0; i<quizResultsLength; i++){
-          CquizResults = info['quizResults'][i];
+          CquizResults = info['quizresultaten'][i];
 
           CquizResultsArray = [];
           CquizResultsArray[0] = Object.keys(CquizResults);
@@ -114,13 +114,13 @@ $(document).ready(function(){
         $('.searchResultQuizHeader').text('Er zijn geen gemaakte quizes');
       }
 
-      if(info['progression'] != ""){
+      if(info['progressie'] != ""){
         $('.searchResultProgression').next().removeClass('hide');
         $('.searchResultProgression').text('Theorie progressie');
 
         $('.searchResultProgressionInhoud').html('');
-        progressionResultsProgression = Object.values(info['progression']);
-        progressionResultsChapters = Object.keys(info['progression']);
+        progressionResultsProgression = Object.values(info['progressie']);
+        progressionResultsChapters = Object.keys(info['progressie']);
         progressionResultsLength = progressionResultsProgression.length;
 
         for(i=0; i<progressionResultsLength; i++){

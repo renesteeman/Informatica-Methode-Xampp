@@ -111,6 +111,7 @@
 			$id = check_input($_SESSION["id"]);
 			$klassen = [];
 			$teMakenKlassen = [];
+			$groepen = [];
 
 			$sql = "SELECT school, functie FROM users WHERE id='$id'";
 
@@ -267,6 +268,47 @@
 								$klassen[$Cklas][] = $userinfo;
 					    }
 
+							//get group names at once, instead of per student
+							//TODO
+							$groepen = [];
+							$klassenKeys = array_keys($klassen);
+
+							//per class
+							for($j=0; $j<count($klassen); $j++){
+								//per student
+							  for($k=0; $k<count($klassen[$klassenKeys[$j]]); $k++){
+							    $Cstudent = $klassen[$klassenKeys[$j]][$k];
+									$Cgroup_id = $Cstudent['group_id'];
+									$groepenKeys = array_keys($groepen);
+
+									if(array_search($Cgroup_id, $groepenKeys) === False AND !is_null($Cgroup_id)){
+										//if the group isn't know, get it's info
+										$sql5 = "SELECT naam, beschrijving, link FROM groepen WHERE id='$Cgroup_id'";
+
+										if (mysqli_query($conn, $sql5)) {
+											$result5 = mysqli_query($conn, $sql5);
+											$result5 = mysqli_fetch_assoc($result5);
+											$CgroupNaam = $result5['naam'];
+											$CgroupBeschrijving = $result5['beschrijving'];
+											$CgroupLink = $result5['link'];
+
+											$groepen[$Cgroup_id] = [$CgroupNaam, $CgroupBeschrijving, $CgroupLink];
+
+											$klassen[$klassenKeys[$j]][$k]['group_name'] = $CgroupNaam;
+										} else {
+											echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+										}
+									} else if(!array_search($Cgroup_id, $groepenKeys) === False AND !is_null($Cgroup_id)){
+										//if the group is known, use that info
+										$index = array_search($Cgroup_id, $groepenKeys);
+										$klassen[$klassenKeys[$j]][$k]['group_name'] = $groepen[$index][0];
+									} else {
+										$klassen[$klassenKeys[$j]][$k]['group_name'] = "";
+									}
+
+							  }
+							}
+
 						} else {
 					    echo "0 results";
 						}
@@ -306,7 +348,7 @@
 								for($j=0; $j<$NStudentsCurrentClass; $j++){
 									$Cstudent = $StudentsCurrentClass[$i][$j];
 									$CstudentName = $Cstudent['naam'];
-									$CstudentGroupName = $Cstudent['group_id'];
+									$CstudentGroupName = $Cstudent['group_name'];
 									$CstudentGroupRole= $Cstudent['group_role'];
 									$ConSchedule = $Cstudent['onSchedule'];
 									$Caverage = $Cstudent['gemiddeldePunt'];
@@ -509,7 +551,7 @@
 
 
 			echo "</div>";
-			
+
 			echo '
 			<form class="addGroupButton" method="post" action="../scripts/createGroupFront.php">
 				<button type="submit">Nieuwe groep</button>

@@ -16,7 +16,7 @@ $(document).ready(function(){
 	var active = 1;
 	var completed = 0;
 	//TODO
-	var tresholdSeconds = 6;
+	var tresholdSeconds = 60;
 	var theory = 0;
 
 	var title = $('.title-small').text();

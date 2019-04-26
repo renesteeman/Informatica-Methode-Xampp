@@ -3,8 +3,8 @@ $(document).ready(function(){
 
   $('.searchInput').on('input', function(){
     input = $('.searchInput').val();
-    //CALL AJAX for DB search
 
+    //CALL AJAX for DB search
     jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/searchStudentName.php',

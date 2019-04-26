@@ -8,8 +8,16 @@
   $error = '';
   $info = [];
 
-  #get school and (part of a) name
-  #search DB for possible (student) matches
+	$studentID = "";
+	$studentName = "";
+	$studentClass = "";
+	$studentGroupId = "";
+	$studentGroupName = "";
+	$studentGroupRole = "";
+	$studentMail = "";
+	$studentLactivity = "";
+	$studentQuizResults = [];
+	$studentProgression = [];
 
 	//function to check and clean input
 	function check_input($data) {
@@ -19,10 +27,9 @@
 		return $data;
 	}
 
-	$input = mysqli_real_escape_string($conn, check_input($_POST['input']));
+	//$input = mysqli_real_escape_string($conn, check_input($_POST['input']));
 
 	$sql = "SELECT school FROM users WHERE id='$id'";
-
 	if (mysqli_query($conn, $sql)) {
 		//find school of teacher
 		$result = mysqli_query($conn, $sql);
@@ -30,156 +37,126 @@
 		$school = $result['school'];
 
     //check if there's a student with the given name and if so start to gather info
-    $sql = "SELECT id, naam, klas, group_name, group_role, email, LActivity FROM users WHERE school='$school' AND naam='$input' AND functie='leerling'";
+    $sql = "SELECT id, naam, klas, group_id, group_role, email, LActivity FROM users WHERE school='$school' AND naam='$input' AND functie='leerling'";
 
     if (mysqli_query($conn, $sql)) {
       $result = mysqli_query($conn, $sql);
+      $result = mysqli_fetch_assoc($result);
 
-      if(mysqli_num_rows($result) == 1){
-        //get the right info for the containers
-        $info = mysqli_fetch_assoc($result);
+			$studentID = $result['id'];
+			$studentName = $result['naam'];
+			$studentClass = $result['klas'];
+			$studentGroupId = $result['group_id'];
+			$studentGroupRole = $result['group_role'];
+			$studentMail = $result['email'];
+			$studentLactivity = $result['LActivity'];
 
-        //if the person is in a group, get his groupmates
-        $sqlGroupName = $info['group_name'];
-        $sqlNaam = $info['naam'];
-        if(strlen($sqlGroupName) > 0){
-          $sql = "SELECT naam, klas, group_role FROM users WHERE school='$school' AND group_name='$sqlGroupName' AND functie='leerling' AND naam!='$sqlNaam'";
+			//get groupname
+			//get test results
+      $sql = "SELECT naam FROM groepen WHERE id='$studentGroupId'";
 
-        	if (mysqli_query($conn, $sql)) {
-            $result = mysqli_query($conn, $sql);
+    	if (mysqli_query($conn, $sql)) {
+        $result = mysqli_query($conn, $sql);
+				$result = mysqli_fetch_assoc($result);
 
-            //add each name to the array of group_members
-            while($row = mysqli_fetch_assoc($result)) {
-              $Cnaam = $row['naam'];
-              $Cklas = $row['klas'];
-              $Cgroup_role= $row['group_role'];
+				$studentGroupName = $result['naam'];
+			} else {
+				$error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+			}
 
-              $add = [$Cnaam, $Cklas, $Cgroup_role];
-              $info['groepsgenoten'][] = $add;
-            }
+      //get test results
+      $sql = "SELECT hoofdstuk_id, cijfer FROM quiz_results WHERE userid='$studentID'";
 
-          } else {
-            $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 1";
-          }
-        }
+    	if (mysqli_query($conn, $sql)) {
+        $result = mysqli_query($conn, $sql);
 
-        //get test results
-        $sqlID = $info['id'];
-        $sql = "SELECT hoofdstuk, cijfer FROM quiz_results WHERE userid='$sqlID'";
+				if(mysqli_num_rows($result) > 0) {
+	        //add each name to the array of group_members
+	        while($row = mysqli_fetch_assoc($result)) {
+	          $CchapterID = $row['hoofdstuk_id'];
+						$Cgrade = $row['cijfer'];
 
-      	if (mysqli_query($conn, $sql)) {
-          $result = mysqli_query($conn, $sql);
+						$sql2 = "SELECT hoofdstuk, hoofdstuk_naam FROM theorie_hoofdstukken WHERE hoofdstuk_id='$CchapterID'";
 
-          //add each name to the array of group_members
-          while($row = mysqli_fetch_assoc($result)) {
-            $Cchapter = $row['hoofdstuk'];
-            $Cgrade = $row['cijfer'];
-            $add = [$Cchapter => $Cgrade];
-            $info['quizResults'][] = $add;
-          }
+						if (mysqli_query($conn, $sql2)) {
+							$result2 = mysqli_query($conn, $sql2);
+							$result2 = mysqli_fetch_assoc($result2);
 
-        } else {
-          $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 2";
-        }
+							$Cchapter = $result2['hoofdstuk'];
+							$CchapterName = $result2['hoofdstuk_naam'];
+						} else {
+			        $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+			      }
 
-        //get progression
-        $sqlID = $info['id'];
-        $sql = "SELECT * FROM progressie WHERE userid='$sqlID'";
+	          $add = [$Cchapter." ".$CchapterName => $Cgrade];
+	          $studentQuizResults[] = $add;
+	        }
+				}
 
-      	if (mysqli_query($conn, $sql)) {
-          $result = mysqli_query($conn, $sql);
-          $result = mysqli_fetch_assoc($result);
-
-          $info['progression'] = $result;
-        } else {
-          $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 3";
-        }
+      } else {
+        $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 2";
       }
 
+      //get progression
+      $sql = "SELECT chapter_id, progress FROM progressie WHERE userid='$studentID'";
+
+    	if (mysqli_query($conn, $sql)) {
+        $result = mysqli_query($conn, $sql);
+
+				if(mysqli_num_rows($result) > 0) {
+					while($row = mysqli_fetch_assoc($result)) {
+						$CchapterID = $result['chapter_id'];
+						$CchapterProgress = $result['progressie'];
+
+						$sql = "SELECT hoofdstuk, hoofdstuk_naam FROM theorie_hoofdstukken WHERE hoofdstuk_id='$CchapterID'";
+
+						if (mysqli_query($conn, $sql)) {
+							$result = mysqli_query($conn, $sql);
+							$result = mysqli_fetch_assoc($result);
+
+							$Cchapter = $result['hoofdstuk'];
+							$CchapterName = $result['hoofdstuk_naam'];
+
+							$studentProgression[$Cchapter." ".$CchapterName] = $CchapterProgress;
+						} else {
+							$error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+						}
+					}
+				}
+
+      } else {
+        $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 3";
+      }
     } else {
       $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 4";
     }
-
   } else {
     $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt! 5";
   }
 
-  //remove NULL values and empty values
-  if(isset($info['naam'])){
-    if(is_null($info['naam'])){
-      $info['naam'] = '';
-    }
-  } else {
-    $info['naam'] = '';
+	//clean null values
+  if(is_null($studentClass)){
+    $studentClass = '';
+  }
+	if(is_null($studentGroupName)){
+    $studentGroupName = '';
+  }
+	if(is_null($studentGroupRole)){
+    $studentGroupRole = '';
+  }
+	if(is_null($studentMail)){
+    $studentMail = '';
+  }
+	if(is_null($studentLactivity)){
+    $studentLactivity = '';
   }
 
-  if(isset($info['klas'])){
-    if(is_null($info['klas'])){
-      $info['klas'] = '';
-    }
-  } else {
-    $info['klas'] = '';
-  }
+	$info = ['id'=>$studentID, 'naam'=>$studentName,'klas'=>$studentClass, 'groepnaam'=>$studentGroupName, 'groep_rol'=>$studentGroupRole, 'mail'=>$studentMail, 'Lactiviteit'=>$studentLactivity, 'quizresultaten'=>$studentQuizResults, 'progressie'=>$studentProgression];
 
-  if(isset($info['group_name'])){
-    if(is_null($info['group_name'])){
-      $info['group_name'] = '';
-    }
-  } else {
-    $info['group_name'] = '';
-  }
-
-  if(isset($info['group_role'])){
-    if(is_null($info['group_role'])){
-      $info['group_role'] = '';
-    }
-  } else {
-    $info['group_role'] = '';
-  }
-
-  if(isset($info['email'])){
-    if(is_null($info['email'])){
-      $info['email'] = '';
-    }
-  } else {
-    $info['email'] = '';
-  }
-
-  if(isset($info['LActivity'])){
-    if(is_null($info['LActivity'])){
-      $info['LActivity'] = '';
-    }
-  }
-  else {
-    $info['LActivity'] = '';
-  }
-
-  if(isset($info['groepsgenoten'])){
-    if(empty($info['groepsgenoten'])){
-      $info['groepsgenoten'] = '';
-    }
-  } else {
-    $info['groepsgenoten'] = '';
-  }
-
-  if(isset($info['quizResults'])){
-    if(empty($info['quizResults'])){
-      $info['quizResults'] = '';
-    }
-  } else {
-    $info['quizResults'] = '';
-  }
-
-  if(isset($info['progression'])){
-    if(empty($info['progression'])){
-      $info['progression'] = '';
-    }
-  } else {
-    $info['progression'] = '';
-  }
+	$debug = "";
 
   //return data via json
-  $toReturn = array('info' => $info, 'error' => $error);
+  $toReturn = array('debug'=>$debug, 'info' => $info, 'error' => $error);
 	$toReturn = json_encode($toReturn, JSON_FORCE_OBJECT);
   echo $toReturn;
 

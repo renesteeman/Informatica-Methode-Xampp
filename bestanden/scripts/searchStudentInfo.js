@@ -6,12 +6,14 @@ $(document).ready(function(){
     //CALL AJAX for DB search
 
     if(input != ""){
+      //if the input isn't empty
       jqXHR = $.ajax({
   			method: "POST",
   			url: '../scripts/searchStudentInfo.php',
   			data: {input: input}
   		});
     } else {
+      //if the input is empty
       $('.searchResultNaam').text('Naam');
       $('.searchResultKlas').text('Klas');
       $('.searchResultMail').text('E-mail');
@@ -30,7 +32,11 @@ $(document).ready(function(){
         alert(response.error);
       }
 
+      debug = response.debug;
+      console.log(debug);
+
       info = response.info;
+      /*
       if(info['naam'] != ""){
         $('.searchResultNaam').text(info['naam']);
       } else {
@@ -150,7 +156,7 @@ $(document).ready(function(){
       } else {
         $('.searchResultProgression').next().addClass('hide');
         $('.searchResultProgression').text('Er is geen progressie');
-      }
+      } */
 
       //collapse 'menu'
       $(".barItem").parent().next().slideUp(0);

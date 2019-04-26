@@ -22,6 +22,7 @@ include('../components/headerGeneral.php');
 
 		<?php
 			$groupname = mysqli_real_escape_string($conn, check_input($_SESSION['groupname']));
+			$group_id = mysqli_real_escape_string($conn, check_input($_SESSION['group_id']));
 
 			if (isset($_SESSION["username"])){
 
@@ -40,7 +41,7 @@ include('../components/headerGeneral.php');
 					$result = mysqli_fetch_assoc($result);
 					$school = $result['school'];
 
-					$sql = "SELECT beschrijving, link FROM groepen WHERE naam='$groupname' AND school='$school'";
+					$sql = "SELECT beschrijving, link FROM groepen WHERE id='$group_id'";
 
 					//get current info in order to show a 'preview'
 					if (mysqli_query($conn, $sql)) {
@@ -50,7 +51,7 @@ include('../components/headerGeneral.php');
 						$Glink = $result['link'];
 
 						echo '
-						<form class="editGroupForm" method="post" action="../scripts/editGroup.php" accept-charset="UTF-8">
+						<form class="editGroupForm" id='.$group_id.' method="post" action="../scripts/editGroup.php" accept-charset="UTF-8">
 							<ul>
 								<li>
 									<label>Nieuwe naam</label>
@@ -70,7 +71,7 @@ include('../components/headerGeneral.php');
 										<ul>
 						';
 
-						$sql = "SELECT naam FROM users WHERE school='$school' AND group_name='$groupname' AND functie='leerling'";
+						$sql = "SELECT naam FROM users WHERE school='$school' AND group_id='$group_id'";
 
 						if (mysqli_query($conn, $sql)) {
 
@@ -110,19 +111,19 @@ include('../components/headerGeneral.php');
 									<input type="submit" value="Bevestig" id="editGroupConfirm" class="ConfirmButton">
 								</li>
 								<li>
-									<button class="redButton" type="submit">Verwijder groep</button>
+									<button class="redButton deleteGroupButton" type="submit">Verwijder groep</button>
 								</li>
 							</ul>
 						</form>
 						';
 						} else {
-							echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							echo "</br>1Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 						}
 					} else {
-						echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+						echo "</br>2Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					}
 				} else {
-					echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					echo "</br>3Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 				}
 			} else {
 				echo "Account not found";

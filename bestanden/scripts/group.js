@@ -1,4 +1,16 @@
 $(document).ready(function(){
+	//IE patch
+	function includes(container, value) {
+		var returnValue = false;
+		var pos = container.indexOf(value);
+
+		if (pos >= 0) {
+			returnValue = true;
+		}
+
+		return returnValue;
+	}
+	
   //create group
 	$('.createGroupForm').submit(function(event){
 		event.preventDefault();
@@ -42,6 +54,7 @@ $(document).ready(function(){
 
   //edit group
   $("#editGroupConfirm").click(function(){
+		var group_id = $('.editGroupForm').attr('id');
     var NGname = $("input[name='NGnaam']").val();
     var NGbeschrijving = $("textarea[name='NGomschrijving']").val();
     var NGlink = $("input[name='NGlink']").val();
@@ -56,7 +69,7 @@ $(document).ready(function(){
     jqXHR = $.ajax({
       method: "POST",
       url: '../scripts/editGroupAjax.php',
-      data: {NGname: NGname, NGbeschrijving:NGbeschrijving, NGlink:NGlink, NGleden:NGleden, password:password}
+      data: {group_id:group_id, NGname: NGname, NGbeschrijving:NGbeschrijving, NGlink:NGlink, NGleden:NGleden, password:password}
     });
 
     jqXHR.done(function(response) {
@@ -76,12 +89,12 @@ $(document).ready(function(){
   $('.deleteGroupButton').click(function(){
     if (confirm("Weet u zeker dat u de groep wilt verwijderen?")){
       var password = $("input[name='password']").val();
+			var group_id = $('.editGroupForm').attr('id');
 
-      //sent values of group via ajax to editGroupFront.php
       jqXHR = $.ajax({
         method: "POST",
         url: '../scripts/deleteGroupAjax.php',
-        data: {password:password}
+        data: {group_id:group_id, password:password}
       });
 
       jqXHR.done(function(msg) {

@@ -16,6 +16,7 @@
 	$id = $_SESSION["id"];
 	$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
 	$CGnaam = check_input($_SESSION["groupname"]);
+	$group_id = mysqli_real_escape_string($conn, check_input($_POST['group_id']));
 	$NGnaam = mysqli_real_escape_string($conn, check_input($_POST['NGname']));
 	$NGbeschrijving = mysqli_real_escape_string($conn, check_input($_POST['NGbeschrijving']));
 	$NGlink = mysqli_real_escape_string($conn, check_input($_POST['NGlink']));
@@ -35,25 +36,16 @@
 	}
 
 	//get password for user
-	$sql = "SELECT password FROM users WHERE id='$id'";
+	$sql = "SELECT password, school FROM users WHERE id='$id'";
 	if (mysqli_query($conn, $sql)) {
 
 		$result = mysqli_query($conn, $sql);
 		$result = mysqli_fetch_assoc($result);
 		$rightpsw = $result['password'];
+		$school = $result['school'];
 
 		//check psw
 		if(password_verify($password, $rightpsw)){
-			$sql = "SELECT school FROM users WHERE id='$id'";
-
-			if (mysqli_query($conn, $sql)) {
-				$result = mysqli_query($conn, $sql);
-				$result = mysqli_fetch_assoc($result);
-				$school = $result['school'];
-
-			} else {
-				$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
-			}
 
 			if($NGnaam!=""){
 				//check if Gnaam is already in use
@@ -63,38 +55,38 @@
 					$msg .= "\nGroepnaam is al in gebruik.";
 					$Gnaam = "";
 			   } else {
-					$sql = "UPDATE groepen SET naam='$NGnaam' WHERE naam='$CGnaam' AND school='$school'";
+					$sql = "UPDATE groepen SET naam='$NGnaam' WHERE id='$group_id' AND school='$school'";
 
 					if (mysqli_query($conn, $sql)) {
 						$msg .= "\nNieuwe groepnaam is succesvol ingesteld";
 						$_SESSION["groupname"] = $NGnaam;
 						$CGnaam = $_SESSION["groupname"];
 					} else {
-						$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+						$msg .= "\n1Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 						$error = 1;
 					}
 			   }
 			}
 
 			if($NGbeschrijving!=""){
-				$sql = "UPDATE groepen SET beschrijving='$NGbeschrijving' WHERE naam='$CGnaam' AND school='$school'";
+				$sql = "UPDATE groepen SET beschrijving='$NGbeschrijving' WHERE id='$group_id' AND school='$school'";
 				$msg .= $school;
 
 				if (mysqli_query($conn, $sql)) {
 					$msg .= "\nNieuwe groepsbeschrijving is succesvol ingesteld";
 				} else {
-					$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					$msg .= "\n2Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					$error = 1;
 				}
 			}
 
 			if($NGlink!=""){
-				$sql = "UPDATE groepen SET link='$NGlink' WHERE naam='$CGnaam' AND school='$school'";
+				$sql = "UPDATE groepen SET link='$NGlink' WHERE id='$group_id' AND school='$school'";
 
 				if (mysqli_query($conn, $sql)) {
 					$msg .= "\nNieuwe groepslink is succesvol ingesteld";
 				} else {
-					$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					$msg .= "\n3Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					$error = 1;
 				}
 			}
@@ -102,12 +94,12 @@
 			if($NGledenchecked!=""){
 
 				//delete group_name of current members
-				$sql = "UPDATE users SET group_name='' WHERE group_name='$CGnaam' AND school='$school'";
+				$sql = "UPDATE users SET group_id=Null WHERE group_id='$group_id' AND school='$school'";
 
 				if (mysqli_query($conn, $sql)) {
 					$msg .= "\nOude leden succesvol verwijderd";
 				} else {
-					$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					$msg .= "\n4Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					$error = 1;
 				}
 
@@ -119,12 +111,12 @@
 					$sql = mysqli_query($conn, "SELECT naam FROM users WHERE naam='$lid' AND school='$school'");
 
 					if (mysqli_num_rows($sql) != 0){
-						$sql = "UPDATE users SET group_name='$CGnaam' WHERE naam='$lid' AND school='$school'";
+						$sql = "UPDATE users SET group_id='$group_id' WHERE naam='$lid' AND school='$school'";
 
 						if (mysqli_query($conn, $sql)) {
 							$msg .= "\n".$lid." is nu lid van de groep";
 						} else {
-							$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							$msg .= "\n5Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							$error = 1;
 						}
 					} else {

@@ -65,7 +65,6 @@ $(document).ready(function(){
 		var itembeschrijving = $(this).parent().parent().parent().find('.itemBeschrijving').text();
 		itembeschrijving = itembeschrijving.trim();
 
-		//sent values of group via ajax to editGroupFront.php
 		jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/editItemSetSession.php',
@@ -148,7 +147,6 @@ $(document).ready(function(){
 		if (confirm("Weet u zeker dat u de opdracht wilt verwijderen?")){
 			var password = $("input[name='password']").val();
 
-			//sent values of group via ajax to editGroupFront.php
 			jqXHR = $.ajax({
 				method: "POST",
 				url: '../scripts/deleteItem.php',

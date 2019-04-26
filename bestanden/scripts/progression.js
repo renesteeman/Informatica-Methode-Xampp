@@ -49,7 +49,6 @@ $(document).ready(function(){
 
 			var Nparagraphs = $('.ptile').length;
 
-			//sent values of group via ajax to editGroupFront.php
 			jqXHR = $.ajax({
 				method: "POST",
 				url: '../scripts/updateProgression.php',

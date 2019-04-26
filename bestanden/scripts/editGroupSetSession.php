@@ -11,5 +11,5 @@
 	}
 
 	$_SESSION['groupname'] =  mysqli_real_escape_string($conn, check_input($_POST['groupname']));
-
+	$_SESSION['group_id'] =  mysqli_real_escape_string($conn, check_input($_POST['group_id']));
 ?>

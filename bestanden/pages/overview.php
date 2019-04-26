@@ -273,9 +273,7 @@
 					    }
 
 							//get group names at once, instead of per student
-							//TODO
 							$klassenKeys = array_keys($klassen);
-
 							//per class
 							for($j=0; $j<count($klassen); $j++){
 								//per student
@@ -405,7 +403,6 @@
 		';
 
 					//show groups
-
 		echo "
 		</div>
 
@@ -429,8 +426,8 @@
 					if(count($groepen) > 0){
 						$groepenKeys = array_keys($groepen);
 						for($i=0; $i<count($groepenKeys); $i++) {
-							$key = $groepenKeys[$i];
-							$groep = $groepen[$key];
+							$Gid = $groepenKeys[$i];
+							$groep = $groepen[$Gid];
 				      $Gnaam = $groep[0];
 				      $Gbeschrijving = $groep[1];
 				      $Glink = $groep[2];
@@ -461,7 +458,7 @@
 				        }
 
 								echo'
-						    <div class="headerRow groepen">
+						    <div class="headerRow groepen" id='.$Gid.'>
 						      <!-- table header for this class-->
 						      <div class="headerRowContent">
 						        <span class="groep">'.$Gnaam.'</span>

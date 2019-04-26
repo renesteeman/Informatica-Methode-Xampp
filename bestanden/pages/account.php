@@ -40,7 +40,7 @@
 			$id = check_input($_SESSION["id"]);
 			$functie = check_input($_SESSION["functie"]);
 
-			$sql = "SELECT * FROM users WHERE id='$id'";
+			$sql = "SELECT naam, username, email, group_role FROM users WHERE id='$id'";
 
 			//get current info in order to show a 'preview'
 			if (mysqli_query($conn, $sql)) {
@@ -49,7 +49,6 @@
 				//C stands for Current and N stands for New
 				$Cnaam = $result['naam'];
 				$Cusername = $result['username'];
-				$Cgroep = $result['group_name'];
 				$Cemail = $result['email'];
 				$Groepsrol = $result['group_role'];
 			}

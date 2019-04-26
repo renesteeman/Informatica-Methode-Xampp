@@ -21,15 +21,6 @@ include('../components/headerGeneral.php');
 	<div class="main top-header-main">
 
 		<?php
-
-			//function to check and clean input
-			function check_input($data) {
-				$data = trim($data, " ");
-				$data = stripslashes($data);
-				$data = htmlspecialchars($data);
-				return $data;
-			}
-
 			$groupname = mysqli_real_escape_string($conn, check_input($_SESSION['groupname']));
 
 			if (isset($_SESSION["username"])){

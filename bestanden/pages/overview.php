@@ -96,481 +96,445 @@
 		</div>
 	</div>
 
-	<div class="bar">
+	<?php
+	echo "
+	<div class='bar'>
 		<h3>
 			Klassen
 		</h3>
 	</div>
 
-	<div class="overzicht">
-		<div class="table">
+	<div class='overzicht'>
+		<div class='table'>";
+		//if logged in show class
+		if (isset($_SESSION["id"])){
+			$id = check_input($_SESSION["id"]);
+			$klassen = [];
+			$teMakenKlassen = [];
 
-			<?php
-				//if logged in show class
-				if (isset($_SESSION["id"])){
-					$id = check_input($_SESSION["id"]);
-					$klassen = [];
-					$teMakenKlassen = [];
+			$sql = "SELECT school, functie FROM users WHERE id='$id'";
 
-					$sql = "SELECT school, functie FROM users WHERE id='$id'";
+			if (mysqli_query($conn, $sql)) {
+				//find school of teacher
+				$result = mysqli_query($conn, $sql);
+				$result = mysqli_fetch_assoc($result);
+				$school = $result['school'];
+				$functie = $result['functie'];
+
+				if($functie=='docent'){
+					//haal het huiswerk per klas op
+					$now = date("Y-m-d");
+					//get more info about chapters that should have been completed
+					$sql = "SELECT progressie, klas FROM `planner` WHERE school='$school' AND datum<'$now'";
+
+					//get chapters that should be done
+					if (mysqli_query($conn, $sql)) {
+						$result = mysqli_query($conn, $sql);
+
+						if(mysqli_num_rows($result)>0){
+							while($row = mysqli_fetch_assoc($result)) {
+								$Cprogressie = $row['progressie'];
+								$Cklas = $row['klas'];
+
+								$teMakenKlassen[$Cklas] = $Cprogressie;
+							}
+						}
+					} else {
+						echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					}
+
+					//haal per leerling de data op
+					$sql = "SELECT id, naam, klas, group_role, group_id FROM `users` WHERE school='$school' AND functie='leerling'";
 
 					if (mysqli_query($conn, $sql)) {
-						//find school of teacher
 						$result = mysqli_query($conn, $sql);
-						$result = mysqli_fetch_assoc($result);
-						$school = $result['school'];
-						$functie = $result['functie'];
+						if (mysqli_num_rows($result) > 0) {
+					    // output data of each row of names with class
+					    while($row = mysqli_fetch_assoc($result)) {
+								$Cid = $row["id"];
+								$Cnaam = $row["naam"];
+								$Cklas = $row["klas"];
+								$group_role = $row["group_role"];
+								$group_id = $row["group_id"];
+								$gemiddeldePunt = 0;
+								$hoofdstukkenAf = [];
+								$onSchedule = 1;
 
-						//haal het huiswerk per klas op
-						$now = date("Y-m-d");
-						//get more info about chapters that should have been completed
-						$sql = "SELECT progressie, klas FROM `planner` WHERE school='$school' AND datum<'$now'";
+								//get cijfers
+								$sql2 = "SELECT cijfer FROM quiz_results WHERE userid='$Cid'";
 
-						//get chapters that should be done
-						if (mysqli_query($conn, $sql)) {
-							$result = mysqli_query($conn, $sql);
+								//get info from other tables
+								if (mysqli_query($conn, $sql2)) {
+									$result2 = mysqli_query($conn, $sql2);
 
-							if(mysqli_num_rows($result)>0){
-								while($row = mysqli_fetch_assoc($result)) {
-									$Cprogressie = $row['progressie'];
-									$Cklas = $row['klas'];
+									if(mysqli_num_rows($result2)>0){
+										$punten = [];
+										$totaalCijfers = 0;
 
-									$teMakenKlassen[$Cklas] = $Cprogressie;
+										while($row2 = mysqli_fetch_assoc($result2)) {
+											$punt = $row2["cijfer"];
+											$punten[] = $punt;
+										}
+
+										for($i=0; $i<count($punten); $i++){
+											$totaalCijfers += $punten[$i];
+										}
+
+										$gemiddeldePunt = $totaalCijfers/count($punten);
+									}
+
+								} else {
+									echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 								}
-							}
+
+								//get more info progression
+								$sql3 = "SELECT chapter_id, progress FROM `progressie` WHERE userid='$Cid'";
+
+								//get completed chapters
+								if (mysqli_query($conn, $sql3)) {
+									$result3 = mysqli_query($conn, $sql3);
+
+									if(mysqli_num_rows($result3)>0){
+										while($hoofdstuk = mysqli_fetch_assoc($result3)) {
+											$hoofstukkenKeys = array_keys($hoofdstuk);
+
+											//get chapter_id
+											$Cchapter_id = $hoofdstuk[$hoofstukkenKeys[0]];
+
+											//get progress
+											$Cchapter_progress = $hoofdstuk[$hoofstukkenKeys[1]];
+
+											$hoofdstukLength = strlen($Cchapter_progress);
+
+											$paragrafenAf = 0;
+											for($j=0; $j<$hoofdstukLength; $j++){
+												if($Cchapter_progress[$j] == '1'){
+													$paragrafenAf++;
+												}
+											}
+
+											if($paragrafenAf == $hoofdstukLength && $hoofdstukLength != 0){
+												//als het hoofdstuk af is, voeg het dan toe aan afgemaakte hoofdstukken
+												$sql4 = "SELECT hoofdstuk FROM theorie_hoofdstukken WHERE hoofdstuk_id='$Cchapter_id'";
+
+												//get/calculate completed chapters
+												if (mysqli_query($conn, $sql4)) {
+													$result4 = mysqli_query($conn, $sql4);
+													$result4 = mysqli_fetch_assoc($result4);
+													$CchapterName = $result4['hoofdstuk'];
+
+													$hoofdstukkenAf[] = $CchapterName;
+												} else {
+													echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+												}
+											}
+										}
+									}
+
+								} else {
+									echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+								}
+
+								//check if the homework is done
+								$Chomework = [];
+
+								//check what should have been done
+								$teMakenKlassenKeys = array_keys($teMakenKlassen);
+								if(in_array($Cklas, $teMakenKlassenKeys)){
+									//get text
+									$Chomework = $teMakenKlassen[$Cklas];
+
+									//clean text up
+									$Chomework = trim($Chomework);
+									$Chomework = rtrim($Chomework, ",");
+
+									//transform text into an array
+									$Chomework = explode(",", $Chomework);
+								}
+
+								for($i=0; $i<count($Chomework);$i++){
+									$shouldBeComplete = $Chomework[$i];
+									$shouldBeComplete = trim($shouldBeComplete);
+
+									if(!in_array($shouldBeComplete, $hoofdstukkenAf)){
+										$onSchedule = 0;
+									}
+								}
+
+								//save the info
+								$userinfo = ['naam'=>$Cnaam, 'klas'=>$Cklas, 'group_role'=>$group_role, 'group_id'=>$group_id, 'onSchedule'=>$onSchedule, 'gemiddeldePunt'=>$gemiddeldePunt];
+
+								$klassen[$Cklas][] = $userinfo;
+					    }
+
 						} else {
-							echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					    echo "0 results";
 						}
 
-						//haal per leerling de data op
-						$sql = "SELECT id, naam, klas, group_role, group_name FROM `users` WHERE school='$school' AND functie='leerling'";
+						//How many classes are there?
+						$Nclasses = count($klassen);
 
-						if (mysqli_query($conn, $sql)) {
-							$result = mysqli_query($conn, $sql);
-							if (mysqli_num_rows($result) > 0) {
-						    // output data of each row of names with class
-						    while($row = mysqli_fetch_assoc($result)) {
-									$Cid = $row["id"];
-									$Cnaam = $row["naam"];
-									$Cklas = $row["klas"];
-									$group_role = $row["group_role"];
-									$group_name = $row["group_name"];
-									$gemiddeldePunt = 0;
-									$hoofdstukkenAf = [];
-									$onSchedule = 1;
+						//put the classes in the right order
+						ksort($klassen);
 
-									//get cijfers
-									$sql2 = "SELECT cijfer FROM quiz_results WHERE userid='$Cid'";
+						//Show me these (the nice way)
+						$AllClasses = array_keys($klassen);
 
-									//get info from other tables
-									if (mysqli_query($conn, $sql2)) {
-										$result2 = mysqli_query($conn, $sql2);
+						for($i=0; $i < $Nclasses; $i++){
+							$CurrentClass = $AllClasses[$i];
 
-										if(mysqli_num_rows($result2)>0){
-											$punten = [];
-											$totaalCijfers = 0;
+							$StudentsCurrentClass[] = $klassen[$CurrentClass];
 
-											while($row2 = mysqli_fetch_assoc($result2)) {
-												$punt = $row2["cijfer"];
-												$punten[] = $punt;
-											}
+							$NStudents = array_map("count", $StudentsCurrentClass);
+							$NStudentsCurrentClass = ($NStudents[$i]);
 
-											for($i=0; $i<count($punten); $i++){
-												$totaalCijfers += $punten[$i];
-											}
+			echo'
+			<div class="headerRow klassen">
+				<!-- table header for this class-->
+				<div class="headerRowContent">
+					<span class="klas">'.$CurrentClass.'</span>
+					<span class="Nleerlingen">'.$NStudentsCurrentClass.' leerlingen </span>
+					<span class="icons">
+						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+					</span>
+				</div>
 
-											$gemiddeldePunt = $totaalCijfers/count($punten);
-										}
+				<!-- table content for this class-->
+				<div class="rowContent">';
 
+
+								for($j=0; $j<$NStudentsCurrentClass; $j++){
+									$Cstudent = $StudentsCurrentClass[$i][$j];
+									$CstudentName = $Cstudent['naam'];
+									$CstudentGroupName = $Cstudent['group_id'];
+									$CstudentGroupRole= $Cstudent['group_role'];
+									$ConSchedule = $Cstudent['onSchedule'];
+									$Caverage = $Cstudent['gemiddeldePunt'];
+
+									if($CstudentGroupName==""){
+										$CstudentGroupName = "zit niet in een groep";
+									}
+
+					echo '
+					<div class="row">
+						<span class="name">'.$CstudentName.'</span>
+						<span class="groepnaam">'.$CstudentGroupName.'</span>
+						<span class="groepsrol">'.$CstudentGroupRole.'</span>
+						<span class="gemiddelde">'.$Caverage.'</span>';
+
+									if($ConSchedule){
+						echo '
+						<span class="progressie">
+							<span class="onSchedule"></span>
+						</span>
+						';
 									} else {
-										echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+						echo '
+						<span class="progressie">
+							<span class="notOnSchedule"></span>
+						</span>
+						';
 									}
 
-									//get more info progression
-									$sql3 = "SELECT chapter_id, progress FROM `progressie` WHERE userid='$Cid'";
+					echo '</div>';
 
-									//get completed chapters
-									if (mysqli_query($conn, $sql3)) {
-										$result3 = mysqli_query($conn, $sql3);
-
-										if(mysqli_num_rows($result3)>0){
-											while($hoofdstuk = mysqli_fetch_assoc($result3)) {
-												$hoofstukkenKeys = array_keys($hoofdstuk);
-
-												//get chapter_id
-												$Cchapter_id = $hoofdstuk[$hoofstukkenKeys[0]];
-
-												//get progress
-												$Cchapter_progress = $hoofdstuk[$hoofstukkenKeys[1]];
-
-												$hoofdstukLength = strlen($Cchapter_progress);
-
-												$paragrafenAf = 0;
-												for($j=0; $j<$hoofdstukLength; $j++){
-													if($Cchapter_progress[$j] == '1'){
-														$paragrafenAf++;
-													}
-												}
-
-												if($paragrafenAf == $hoofdstukLength && $hoofdstukLength != 0){
-													//als het hoofdstuk af is, voeg het dan toe aan afgemaakte hoofdstukken
-													$sql4 = "SELECT hoofdstuk FROM theorie_hoofdstukken WHERE hoofdstuk_id='$Cchapter_id'";
-
-													//get/calculate completed chapters
-													if (mysqli_query($conn, $sql4)) {
-														$result4 = mysqli_query($conn, $sql4);
-														$result4 = mysqli_fetch_assoc($result4);
-														$CchapterName = $result4['hoofdstuk'];
-
-														$hoofdstukkenAf[] = $CchapterName;
-													} else {
-														echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
-													}
-												}
-											}
-										}
-
-									} else {
-										echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
-									}
-
-									//TODO continue updating
-									//check if the homework is done
-									$Chomework = [];
-
-									//check what should have been done
-									$teMakenKlassenKeys = array_keys($teMakenKlassen);
-									if(in_array($Cklas, $teMakenKlassenKeys)){
-										//get text
-										$Chomework = $teMakenKlassen[$Cklas];
-
-										//clean text up
-										$Chomework = trim($Chomework);
-										$Chomework = rtrim($Chomework, ",");
-
-										//transform text into an array
-										$Chomework = explode(",", $Chomework);
-									}
-
-									for($i=0; $i<count($Chomework);$i++){
-										$shouldBeComplete = $Chomework[$i];
-										$shouldBeComplete = trim($shouldBeComplete);
-
-										if(!in_array($shouldBeComplete, $hoofdstukkenAf)){
-											$onSchedule = 0;
-										}
-									}
-
-									//save the info
-									$userinfo = ['naam'=>$Cnaam, 'klas'=>$Cklas, 'group_role'=>$group_role, 'group_name'=>$group_name, 'onSchedule'=>$onSchedule, 'gemiddeldePunt'=>$gemiddeldePunt];
-
-									$klassen[$Cklas][] = $userinfo;
-						    }
-
-							} else {
-							    echo "0 results";
-							}
-
-							//How many classes are there?
-							$Nclasses = count($klassen);
-
-							//put the classes in the right order
-							ksort($klassen);
-
-							//Show me these (the nice way)
-							$AllClasses = array_keys($klassen);
-
-							for($i=0; $i < $Nclasses; $i++){
-								$CurrentClass = $AllClasses[$i];
-
-								$StudentsCurrentClass[] = $klassen[$CurrentClass];
-
-								$NStudents = array_map("count", $StudentsCurrentClass);
-								$NStudentsCurrentClass = ($NStudents[$i]);
-
-								echo'
-								<div class="headerRow klassen">
-									<!-- table header for this class-->
-									<div class="headerRowContent">
-										<span class="klas">'.$CurrentClass.'</span>
-										<span class="Nleerlingen">'.$NStudentsCurrentClass.' leerlingen </span>
-										<span class="icons">
-											<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
-										</span>
-									</div>
-
-									<!-- table content for this class-->
-									<div class="rowContent">';
-
-
-									for($j=0; $j<$NStudentsCurrentClass; $j++){
-										$Cstudent = $StudentsCurrentClass[$i][$j];
-										$CstudentName = $Cstudent['naam'];
-										$CstudentGroupName = $Cstudent['group_name'];
-										$CstudentGroupRole= $Cstudent['group_role'];
-										$ConSchedule = $Cstudent['onSchedule'];
-										$Caverage = $Cstudent['gemiddeldePunt'];
-
-										if($CstudentGroupName==""){
-											$CstudentGroupName = "zit niet in een groep";
-										}
-
-										echo '
-										<div class="row">
-											<span class="name">'.$CstudentName.'</span>
-											<span class="groepnaam">'.$CstudentGroupName.'</span>
-											<span class="groepsrol">'.$CstudentGroupRole.'</span>
-											<span class="gemiddelde">'.$Caverage.'</span>';
-
-										if($ConSchedule){
-											echo '
-											<span class="progressie">
-												<span class="onSchedule"></span>
-											</span>
-											';
-										} else {
-											echo '
-											<span class="progressie">
-												<span class="notOnSchedule"></span>
-											</span>
-											';
-										}
-
-										echo '</div>';
-
-									}
-							echo '</div></div>';
-							}
-
-						} else {
-							echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+								}
+				echo '</div>';
+			echo '</div>';
 						}
 
 					} else {
 						echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					}
 
-				} else {
-					echo 'U bent niet ingelogd';
-				}
+		echo '</div>';
 
-			?>
+					//show add group button
+		echo '
+		<form class="changeClassButton" method="post" action="../scripts/changeClassFront.php">
+			<button type="submit">Leerling(en) van klas veranderen</button>
+		</form>
+		<form class="deleteStudentsButton" method="post" action="../scripts/deleteStudentsFront.php">
+			<button type="submit">Account(s) van leerling(en) verwijderen</button>
+		</form>
+		';
 
+					//show groups
+
+		echo "
 		</div>
 
-		<?php
+		<div class='bar'>
+			<h3>
+				Groepen
+			</h3>
+		</div>
 
-			//if logged in show add group button
-			if (isset($_SESSION["functie"])){
+		<div class='overzicht'>
+			<!-- the table as a whole -->
+			<div class='table'>";
 
-				echo '
-				<form class="changeClassButton" method="post" action="../scripts/changeClassFront.php">
-					<button type="submit">Leerling(en) van klas veranderen</button>
-				</form>
-				<form class="deleteStudentsButton" method="post" action="../scripts/deleteStudentsFront.php">
-					<button type="submit">Account(s) van leerling(en) verwijderen</button>
-				</form>
-				';
+			//TODO
+			$groepen = [];
+
+			$sql = "SELECT naam, beschrijving, link FROM groepen WHERE school='$school'";
+
+			if (mysqli_query($conn, $sql)) {
+			  //load groups
+			  $result = mysqli_query($conn, $sql);
+
+			  if(mysqli_num_rows($result) > 0){
+
+			    while($row = mysqli_fetch_assoc($result)) {
+			      $Gnaam = $row["naam"];
+			      $Gbeschrijving = $row["beschrijving"];
+			      $Glink = $row["link"];
+
+			      //add group to array
+			      $groupInfo = ['beschrijving'=>$Gbeschrijving, 'link'=>$Glink];
+
+			      $groepen['groep'][$Gnaam][] = $groupInfo;
+			    }
+
+			    //number of groups
+			    $Ngroepen = count($groepen['groep']);
+
+			    //sort groups
+			    ksort($groepen['groep']);
+
+			    //get group names
+			    $AllGroups = array_keys($groepen['groep']);
+
+			    //show these groups
+			    for($i=0; $i<$Ngroepen; $i++){
+			      $CurrentGroupID = $AllGroups[$i];
+
+			      $sql = "SELECT naam, klas, group_role FROM users WHERE group_id='$CurrentGroupID'";
+
+			      if (mysqli_query($conn, $sql)) {
+			        $result = mysqli_query($conn, $sql);
+
+			        $NMembersCurrentGroup = mysqli_num_rows($result);
+			        $classesInGroup = [];
+
+			        $studentInfoForGroup = [];
+
+			        while ($row = mysqli_fetch_assoc($result)) {
+			          $Cklas = $row['klas'];
+			          $Cname = $row['naam'];
+			          $Cfunction = $row['group_role'];
+
+			          $CstudentInfoForGroup = ['naam'=>$Cname, 'klas'=>$Cklas, 'group_role'=>$Cfunction, 'functie'=>$Cfunction];
+
+			          array_push($studentInfoForGroup, $CstudentInfoForGroup);
+
+			          if(!in_array($Cklas, $classesInGroup)){
+			            array_push($classesInGroup, $Cklas);
+			          }
+			        }
+
+			      } else {
+			        $NMembersCurrentGroup = 0;
+			        echo "Geen groepsleden gevonden";
+			      }
+
+			      echo'
+			      <div class="headerRow groepen">
+			        <!-- table header for this class-->
+			        <div class="headerRowContent">
+			          <span class="groep">'.$CurrentGroupID.'</span>
+			          <span class="Nleden">'.$NMembersCurrentGroup.' groepsleden </span>
+			          <span class="klassen">';
+
+			          foreach ($classesInGroup as $class) {
+			              echo $class." ";
+			          };
+
+			      echo'
+			        </span>
+			          <span class="icons">
+			            <span class="Arrow image"><img src="../icons/arrow.svg"></span>
+			            <span class="editGroup image"><img src="../icons/edit.svg"></span>
+			          </span>
+			        </div>';
+
+			      $CGroupDescription = $groepen['groep'][$CurrentGroupID][0]['beschrijving'];
+			      $CGroupLink = $groepen['groep'][$CurrentGroupID][0]['link'];
+
+			      echo '
+			        <!-- table content for this class-->
+			        <div class="rowContent">
+
+			          <div class="groepInhoud">
+			            <span class="groepsBeschrijving">
+			              '.$CGroupDescription.'
+			            </span>
+			            <span class="groepsLink">
+			              <a href="'.$CGroupLink.'">
+			                '.$CGroupLink.'
+			              </a>
+			            </span>
+			          </div>';
+
+			        for($j=0; $j<$NMembersCurrentGroup; $j++){
+
+			          $CmemberName = $studentInfoForGroup[$j]['naam'];
+			          $CstudentClass = $studentInfoForGroup[$j]['klas'];
+			          $CstudentRole = $studentInfoForGroup[$j]['group_role'];
+
+			          echo '
+			            <div class="row">
+			              <span class="name">'.$CmemberName.'</span>
+			              <span class="class">'.$CstudentClass.'</span>
+			              <span class="role">'.$CstudentRole.'</span>
+			            </div>
+			          ';
+
+			        }
+			      echo '</div></div>';
+			    }
+
+			  } else {
+			    echo '
+			    <div class="headerRow groepen">
+			      <div class="headerRowContent">
+			        <span>Geen groepen gevonden</span>
+			      </div>
+			    </div>';
+			  }
+
+			} else {
+			  echo "Error with sql execution, please report to admin </br>";
 			}
 
-		?>
+
+			echo "</div>";
+			
+			echo '
+			<form class="addGroupButton" method="post" action="../scripts/createGroupFront.php">
+				<button type="submit">Nieuwe groep</button>
+			</form>
+			';
+
+		echo "</div>";
 
 
-	</div>
-
-	<div class="bar">
-		<h3>
-			Groepen
-		</h3>
-	</div>
-
-	<div class="overzicht">
-		<!-- the table as a whole -->
-		<div class="table">
-
-			<?php
-
-				//if logged in show class
-				if (isset($_SESSION["id"])){
-
-					$id = check_input($_SESSION["id"]);
-
-					$userSchool = "";
-
-					//get school from teacher
-					$sql = "SELECT school, functie FROM users WHERE id='$id'";
-
-					if (mysqli_query($conn, $sql)) {
-
-						$result = mysqli_query($conn, $sql);
-						$result = mysqli_fetch_assoc($result);
-						$userSchool = $result['school'];
-						$userFunctie = $result['functie'];
-
-						if($userFunctie != 'docent'){
-							echo "U bent geen docent";
-						} else {
-							$groepen = [];
-
-							$sql = "SELECT naam, beschrijving, link FROM groepen WHERE school='$userSchool'";
-
-							if (mysqli_query($conn, $sql)) {
-								//load groups
-								$result = mysqli_query($conn, $sql);
-
-								if(mysqli_num_rows($result) > 0){
-
-									while($row = mysqli_fetch_assoc($result)) {
-										$Gnaam = $row["naam"];
-										$Gbeschrijving = $row["beschrijving"];
-										$Glink = $row["link"];
-
-										//add group to array
-										$groupInfo = ['beschrijving'=>$Gbeschrijving, 'link'=>$Glink];
-
-										$groepen['groep'][$Gnaam][] = $groupInfo;
-									}
-
-									//number of groups
-									$Ngroepen = count($groepen['groep']);
-
-									//sort groups
-									ksort($groepen['groep']);
-
-									//get group names
-									$AllGroups = array_keys($groepen['groep']);
-
-									//show these groups
-									for($i=0; $i<$Ngroepen; $i++){
-										$CurrentGroupName = $AllGroups[$i];
-
-										$sql = "SELECT naam, klas, group_role FROM users WHERE group_name='$CurrentGroupName'";
-
-										if (mysqli_query($conn, $sql)) {
-											$result = mysqli_query($conn, $sql);
-
-											$NMembersCurrentGroup = mysqli_num_rows($result);
-											$classesInGroup = [];
-
-											$studentInfoForGroup = [];
-
-											while ($row = mysqli_fetch_assoc($result)) {
-												$Cklas = $row['klas'];
-												$Cname = $row['naam'];
-												$Cfunction = $row['group_role'];
-
-												$CstudentInfoForGroup = ['naam'=>$Cname, 'klas'=>$Cklas, 'group_role'=>$Cfunction, 'functie'=>$Cfunction];
-
-												array_push($studentInfoForGroup, $CstudentInfoForGroup);
-
-												if(!in_array($Cklas, $classesInGroup)){
-													array_push($classesInGroup, $Cklas);
-												}
-											}
-
-										} else {
-											$NMembersCurrentGroup = 0;
-											echo "Geen groepsleden gevonden";
-										}
-
-										echo'
-										<div class="headerRow groepen">
-											<!-- table header for this class-->
-											<div class="headerRowContent">
-												<span class="groep">'.$CurrentGroupName.'</span>
-												<span class="Nleden">'.$NMembersCurrentGroup.' groepsleden </span>
-												<span class="klassen">';
-
-												foreach ($classesInGroup as $class) {
-												    echo $class." ";
-												};
-
-										echo'
-											</span>
-												<span class="icons">
-													<span class="Arrow image"><img src="../icons/arrow.svg"></span>
-													<span class="editGroup image"><img src="../icons/edit.svg"></span>
-												</span>
-											</div>';
-
-										$CGroupDescription = $groepen['groep'][$CurrentGroupName][0]['beschrijving'];
-										$CGroupLink = $groepen['groep'][$CurrentGroupName][0]['link'];
-
-										echo '
-											<!-- table content for this class-->
-											<div class="rowContent">
-
-												<div class="groepInhoud">
-													<span class="groepsBeschrijving">
-														'.$CGroupDescription.'
-													</span>
-													<span class="groepsLink">
-														<a href="'.$CGroupLink.'">
-															'.$CGroupLink.'
-														</a>
-													</span>
-												</div>';
-
-											for($j=0; $j<$NMembersCurrentGroup; $j++){
-
-												$CmemberName = $studentInfoForGroup[$j]['naam'];
-												$CstudentClass = $studentInfoForGroup[$j]['klas'];
-												$CstudentRole = $studentInfoForGroup[$j]['group_role'];
-
-												echo '
-													<div class="row">
-														<span class="name">'.$CmemberName.'</span>
-														<span class="class">'.$CstudentClass.'</span>
-														<span class="role">'.$CstudentRole.'</span>
-													</div>
-												';
-
-											}
-										echo '</div></div>';
-									}
-
-								} else {
-									echo '
-									<div class="headerRow groepen">
-										<div class="headerRowContent">
-											<span>Geen groepen gevonden</span>
-										</div>
-									</div>';
-								}
-
-							} else {
-								echo "Error with sql execution, please report to admin </br>";
-							}
-						}
-					} else {
-						echo "Error with sql execution, please report to admin </br>";
-					}
 				} else {
-					echo 'U bent niet ingelogd';
+					echo "U bent geen docent";
 				}
 
-			?>
+			} else {
+				echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+			}
 
-		</div>
+		} else {
+			echo 'U bent niet ingelogd';
+		}
 
-			<?php
 
-				//if logged in show add group button
-				if (isset($_SESSION["functie"])){
-					if($functie != 'docent'){
-						echo "U bent geen docent";
-					} else {
-						echo '
-						<form class="addGroupButton" method="post" action="../scripts/createGroupFront.php">
-							<button type="submit">Nieuwe groep</button>
-						</form>
-						';
-					}
-				}
+	?>
 
-			?>
 
-	</div>
 
 	<?php
 		include('../components/footerGeneral.php');

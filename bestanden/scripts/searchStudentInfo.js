@@ -20,6 +20,8 @@ $(document).ready(function(){
       $('.searchResultActiviteit').text('Laatst actief');
       $('.searchResultGroupName').text('Groepnaam');
       $('.searchResultGroupName').next().addClass('hide');
+      $('.searchResultGroepsrol').text('Groepnaam');
+      $('.searchResultGroepsrol').next().addClass('hide');
       $('.searchResultQuizHeader').text('Quiz resultaten');
       $('.searchResultQuizHeader').next().addClass('hide');
       $('.searchResultProgression').text('Theorie progressie');
@@ -32,11 +34,8 @@ $(document).ready(function(){
         alert(response.error);
       }
 
-      debug = response.debug;
-      console.log(debug);
-
       info = response.info;
-      /*
+
       if(info['naam'] != ""){
         $('.searchResultNaam').text(info['naam']);
       } else {
@@ -47,8 +46,18 @@ $(document).ready(function(){
       } else {
         $('.searchResultKlas').text('Deze persoon bestaat niet');
       }
-      if(info['email'] != ""){
-        $('.searchResultMail').text(info['email']);
+      if(info['groepnaam'] != ""){
+        $('.searchResultGroupName').text(info['groepnaam']);
+      } else {
+        $('.searchResultGroupName').text('Zit niet in een groep');
+      }
+      if(info['groep_rol'] != ""){
+        $('.searchResultGroepsrol').text(info['groep_rol']);
+      } else {
+        $('.searchResultGroepsrol').text('Heeft geen groepsrol');
+      }
+      if(info['mail'] != ""){
+        $('.searchResultMail').text(info['mail']);
       } else {
         $('.searchResultMail').text('Geen email ingesteld');
       }
@@ -57,23 +66,20 @@ $(document).ready(function(){
       } else {
         $('.searchResultActiviteit').text('Nooit actief geweest');
       }
-      if(info['group_name'] != ""){
-        $('.searchResultGroupName').text(info['group_name']);
-      } else {
-        $('.searchResultGroupName').text('Zit niet in een groep');
-      }
+
       if(info['groepsgenoten'] != ""){
         $('.searchResultGroupName').next().removeClass('hide');
         $('.searchResultGroepInhoud').html("");
 
         info['groepsgenoten'] = Object.values(info['groepsgenoten']);
+        console.log(info['groepsgenoten']);
 
         for(i=0; i<info['groepsgenoten'].length; i++){
           if(info['groepsgenoten'][i][2] == null){
             info['groepsgenoten'][i][2] = "Geen groepsrol";
           }
 
-          append = "<div class='searchResultGroepInhoudItem'><span class='searchResultGroepInhoudLeden'>"+info['groepsgenoten'][i][0]+"</span><span class='searchResultGroepInhoudKlas'>"+info['groepsgenoten'][i][1]+"</span><span class='searchResultGroepInhoudRollen'>"+info['groepsgenoten'][i][2]+"</span></div>";
+          append = "<div class='searchResultGroepInhoudItem' style='display: none;'><span class='searchResultGroepInhoudLeden'>"+info['groepsgenoten'][i][0]+"</span><span class='searchResultGroepInhoudKlas'>"+info['groepsgenoten'][i][1]+"</span><span class='searchResultGroepInhoudRollen'>"+info['groepsgenoten'][i][2]+"</span></div>";
 
           $('.searchResultGroepInhoud').append(append);
         }
@@ -82,11 +88,12 @@ $(document).ready(function(){
         $('.searchResultGroupName').next().addClass('hide');
       }
 
-      if(info['quizResults'] != ""){
+      //TODO
+      if(info['quizresultaten'] != ""){
         $('.searchResultQuizHeader').next().removeClass('hide');
         $('.searchResultQuizHeader').text('Quiz resultaten');
         $('.searchResultQuizInhoud').html('');
-        quizResultsLength = (Object.values(info['quizResults'])).length;
+        quizResultsLength = (Object.values(info['quizresultaten'])).length;
 
         append = "";
 
@@ -156,7 +163,7 @@ $(document).ready(function(){
       } else {
         $('.searchResultProgression').next().addClass('hide');
         $('.searchResultProgression').text('Er is geen progressie');
-      } */
+      }
 
       //collapse 'menu'
       $(".barItem").parent().next().slideUp(0);

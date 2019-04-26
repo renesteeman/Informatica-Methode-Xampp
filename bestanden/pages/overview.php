@@ -53,6 +53,10 @@
 				Laatst actief
 			</div>
 
+			<div class="searchResultGroepsrol">
+				Groepsrol
+			</div>
+
 			<div class="searchResultGroep">
 				<div class="searchResultHeader">
 					<span class="barItem searchResultGroupName">Groepnaam</span>

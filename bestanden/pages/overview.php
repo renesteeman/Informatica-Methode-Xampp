@@ -270,7 +270,6 @@
 
 							//get group names at once, instead of per student
 							//TODO
-							$groepen = [];
 							$klassenKeys = array_keys($klassen);
 
 							//per class
@@ -416,139 +415,127 @@
 			<!-- the table as a whole -->
 			<div class='table'>";
 
-			//TODO
-			$groepen = [];
+			if(count($groepen) > 0){
+				$groepenKeys = array_keys($groepen);
+				for($i=0; $i<count($groepenKeys); $i++) {
+					$key = $groepenKeys[$i];
+					$groep = $groepen[$key];
+		      $Gnaam = $groep[0];
+		      $Gbeschrijving = $groep[1];
+		      $Glink = $groep[2];
 
-			$sql = "SELECT naam, beschrijving, link FROM groepen WHERE school='$school'";
+		      //add group to array
+		      $groupInfo = ['beschrijving'=>$Gbeschrijving, 'link'=>$Glink];
 
-			if (mysqli_query($conn, $sql)) {
-			  //load groups
-			  $result = mysqli_query($conn, $sql);
+		      $groepen['groep'][$Gnaam][] = $groupInfo;
+		    }
 
-			  if(mysqli_num_rows($result) > 0){
+		    //number of groups
+		    $Ngroepen = count($groepen['groep']);
 
-			    while($row = mysqli_fetch_assoc($result)) {
-			      $Gnaam = $row["naam"];
-			      $Gbeschrijving = $row["beschrijving"];
-			      $Glink = $row["link"];
+		    //sort groups
+		    ksort($groepen['groep']);
 
-			      //add group to array
-			      $groupInfo = ['beschrijving'=>$Gbeschrijving, 'link'=>$Glink];
+		    //get group names
+				//TODO update from here on, load students in group
+		    $AllGroups = array_keys($groepen['groep']);
 
-			      $groepen['groep'][$Gnaam][] = $groupInfo;
-			    }
+		    //show these groups
+		    for($i=0; $i<$Ngroepen; $i++){
+		      $CurrentGroupID = $AllGroups[$i];
 
-			    //number of groups
-			    $Ngroepen = count($groepen['groep']);
+		      $sql = "SELECT naam, klas, group_role FROM users WHERE group_id='$CurrentGroupID'";
 
-			    //sort groups
-			    ksort($groepen['groep']);
+		      if (mysqli_query($conn, $sql)) {
+		        $result = mysqli_query($conn, $sql);
 
-			    //get group names
-			    $AllGroups = array_keys($groepen['groep']);
+		        $NMembersCurrentGroup = mysqli_num_rows($result);
+		        $classesInGroup = [];
 
-			    //show these groups
-			    for($i=0; $i<$Ngroepen; $i++){
-			      $CurrentGroupID = $AllGroups[$i];
+		        $studentInfoForGroup = [];
 
-			      $sql = "SELECT naam, klas, group_role FROM users WHERE group_id='$CurrentGroupID'";
+		        while ($row = mysqli_fetch_assoc($result)) {
+		          $Cklas = $row['klas'];
+		          $Cname = $row['naam'];
+		          $Cfunction = $row['group_role'];
 
-			      if (mysqli_query($conn, $sql)) {
-			        $result = mysqli_query($conn, $sql);
+		          $CstudentInfoForGroup = ['naam'=>$Cname, 'klas'=>$Cklas, 'group_role'=>$Cfunction, 'functie'=>$Cfunction];
 
-			        $NMembersCurrentGroup = mysqli_num_rows($result);
-			        $classesInGroup = [];
+		          array_push($studentInfoForGroup, $CstudentInfoForGroup);
 
-			        $studentInfoForGroup = [];
+		          if(!in_array($Cklas, $classesInGroup)){
+		            array_push($classesInGroup, $Cklas);
+		          }
+		        }
 
-			        while ($row = mysqli_fetch_assoc($result)) {
-			          $Cklas = $row['klas'];
-			          $Cname = $row['naam'];
-			          $Cfunction = $row['group_role'];
+		      } else {
+		        $NMembersCurrentGroup = 0;
+		        echo "Geen groepsleden gevonden";
+		      }
 
-			          $CstudentInfoForGroup = ['naam'=>$Cname, 'klas'=>$Cklas, 'group_role'=>$Cfunction, 'functie'=>$Cfunction];
+		      echo'
+		      <div class="headerRow groepen">
+		        <!-- table header for this class-->
+		        <div class="headerRowContent">
+		          <span class="groep">'.$CurrentGroupID.'</span>
+		          <span class="Nleden">'.$NMembersCurrentGroup.' groepsleden </span>
+		          <span class="klassen">';
 
-			          array_push($studentInfoForGroup, $CstudentInfoForGroup);
+		          foreach ($classesInGroup as $class) {
+		              echo $class." ";
+		          };
 
-			          if(!in_array($Cklas, $classesInGroup)){
-			            array_push($classesInGroup, $Cklas);
-			          }
-			        }
+		      echo'
+		        </span>
+		          <span class="icons">
+		            <span class="Arrow image"><img src="../icons/arrow.svg"></span>
+		            <span class="editGroup image"><img src="../icons/edit.svg"></span>
+		          </span>
+		        </div>';
 
-			      } else {
-			        $NMembersCurrentGroup = 0;
-			        echo "Geen groepsleden gevonden";
-			      }
+		      $CGroupDescription = $groepen['groep'][$CurrentGroupID][0]['beschrijving'];
+		      $CGroupLink = $groepen['groep'][$CurrentGroupID][0]['link'];
 
-			      echo'
-			      <div class="headerRow groepen">
-			        <!-- table header for this class-->
-			        <div class="headerRowContent">
-			          <span class="groep">'.$CurrentGroupID.'</span>
-			          <span class="Nleden">'.$NMembersCurrentGroup.' groepsleden </span>
-			          <span class="klassen">';
+		      echo '
+		        <!-- table content for this class-->
+		        <div class="rowContent">
 
-			          foreach ($classesInGroup as $class) {
-			              echo $class." ";
-			          };
+		          <div class="groepInhoud">
+		            <span class="groepsBeschrijving">
+		              '.$CGroupDescription.'
+		            </span>
+		            <span class="groepsLink">
+		              <a href="'.$CGroupLink.'">
+		                '.$CGroupLink.'
+		              </a>
+		            </span>
+		          </div>';
 
-			      echo'
-			        </span>
-			          <span class="icons">
-			            <span class="Arrow image"><img src="../icons/arrow.svg"></span>
-			            <span class="editGroup image"><img src="../icons/edit.svg"></span>
-			          </span>
-			        </div>';
+		        for($j=0; $j<$NMembersCurrentGroup; $j++){
 
-			      $CGroupDescription = $groepen['groep'][$CurrentGroupID][0]['beschrijving'];
-			      $CGroupLink = $groepen['groep'][$CurrentGroupID][0]['link'];
+		          $CmemberName = $studentInfoForGroup[$j]['naam'];
+		          $CstudentClass = $studentInfoForGroup[$j]['klas'];
+		          $CstudentRole = $studentInfoForGroup[$j]['group_role'];
 
-			      echo '
-			        <!-- table content for this class-->
-			        <div class="rowContent">
+		          echo '
+		            <div class="row">
+		              <span class="name">'.$CmemberName.'</span>
+		              <span class="class">'.$CstudentClass.'</span>
+		              <span class="role">'.$CstudentRole.'</span>
+		            </div>
+		          ';
 
-			          <div class="groepInhoud">
-			            <span class="groepsBeschrijving">
-			              '.$CGroupDescription.'
-			            </span>
-			            <span class="groepsLink">
-			              <a href="'.$CGroupLink.'">
-			                '.$CGroupLink.'
-			              </a>
-			            </span>
-			          </div>';
-
-			        for($j=0; $j<$NMembersCurrentGroup; $j++){
-
-			          $CmemberName = $studentInfoForGroup[$j]['naam'];
-			          $CstudentClass = $studentInfoForGroup[$j]['klas'];
-			          $CstudentRole = $studentInfoForGroup[$j]['group_role'];
-
-			          echo '
-			            <div class="row">
-			              <span class="name">'.$CmemberName.'</span>
-			              <span class="class">'.$CstudentClass.'</span>
-			              <span class="role">'.$CstudentRole.'</span>
-			            </div>
-			          ';
-
-			        }
-			      echo '</div></div>';
-			    }
-
-			  } else {
-			    echo '
-			    <div class="headerRow groepen">
-			      <div class="headerRowContent">
-			        <span>Geen groepen gevonden</span>
-			      </div>
-			    </div>';
-			  }
-
+		        }
+		      echo '</div></div>';
+		    }
 			} else {
-			  echo "Error with sql execution, please report to admin </br>";
-			}
-
+		    echo '
+		    <div class="headerRow groepen">
+		      <div class="headerRowContent">
+		        <span>Geen groepen gevonden</span>
+		      </div>
+		    </div>';
+		  }
 
 			echo "</div>";
 

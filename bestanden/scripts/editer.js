@@ -88,11 +88,13 @@ $(document).ready(function(){
   $('.editTheory').submit(function(event){
     event.preventDefault();
 
-    var theory_id = $('#paragraph_selector option:selected').val();
-    var chapter = $('#chapter_selector option:selected').val();
+    var chapterID = $('#chapter_selector option:selected').val();
+    var pargraph_id = $('#paragraph_selector option:selected').val();
+
     var paragraph = $('#paragraph_selector option:selected').val();
     var chapter_name = $('#chapter_selector option:selected').text();
     var paragraph_name = $('#paragraph_selector option:selected').text();
+    var chapter = chapter_name.split(" ")[0];
 
     var main = $('#theorie').val();
     var questions = $('#vragen').val();
@@ -101,7 +103,7 @@ $(document).ready(function(){
     jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/saveEditContent.php',
-			data: {theory_id: theory_id, chapter:chapter, paragraph:paragraph, chapter_name:chapter_name, paragraph_name:paragraph_name, main:main, questions:questions, answers:answers}
+			data: {chapterID:chapterID, pargraph_id:pargraph_id, main:main, questions:questions, answers:answers, paragraph: paragraph, chapter_name:chapter_name, paragraph_name:paragraph_name, chapter:chapter}
 		});
 
     jqXHR.done(function(response) {

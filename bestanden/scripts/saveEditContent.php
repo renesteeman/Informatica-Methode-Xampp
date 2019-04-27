@@ -40,6 +40,17 @@
   $questions = mysqli_real_escape_string($conn, check_input(htmlentities($_POST['questions'], ENT_QUOTES)));
   $answers = mysqli_real_escape_string($conn, check_input(htmlentities($_POST['answers'], ENT_QUOTES)));
 
+	//when bugfixing
+	// $chapterID = 1;
+	// $pargraph_id = 2;
+	// $paragraph = 2;
+	// $chapter_name = 'Werking computer';
+	// $paragraph_name = 'Werking computer';
+	// $chapter = 'H1';
+	// $main = 'YEET main';
+	// $questions = 'YEET question';
+	// $answers = 'YEET answer';
+
 	$sql = "SELECT school, functie FROM users WHERE id='$id'";
 
 	if (mysqli_query($conn, $sql)) {
@@ -97,16 +108,16 @@
 					$result = mysqli_query($conn, $sql);
 					if (mysqli_num_rows($result) > 0) {
 						while($row = mysqli_fetch_assoc($result)) {
-							$Cparagraph = htmlentities($row["paragraaf"], ENT_QUOTES);
-							$CparagraphName = htmlentities($row["paragraaf_naam"], ENT_QUOTES);
-							$Cmain = htmlentities($row["main"], ENT_QUOTES);
-							$Cquestions = htmlentities($row["questions"], ENT_QUOTES);
-							$Canswers = htmlentities($row["answers"], ENT_QUOTES);
+							$Cparagraph = mysqli_real_escape_string($conn, check_input(htmlentities($row["paragraaf"], ENT_QUOTES)));
+							$CparagraphName = mysqli_real_escape_string($conn, check_input(htmlentities($row["paragraaf_naam"], ENT_QUOTES)));
+							$Cmain = mysqli_real_escape_string($conn, check_input(htmlentities($row["main"], ENT_QUOTES)));
+							$Cquestions = mysqli_real_escape_string($conn, check_input(htmlentities($row["questions"], ENT_QUOTES)));
+							$Canswers = mysqli_real_escape_string($conn, check_input(htmlentities($row["answers"], ENT_QUOTES)));
 
 							$sql = "INSERT INTO theorie_paragrafen(hoofdstuk_id, paragraaf, paragraaf_naam, main, questions, answers) VALUES ('$NewChapterID', '$Cparagraph', '$CparagraphName', '$Cmain', '$Cquestions', '$Canswers')";
 
 							if (mysqli_query($conn, $sql)) {
-								$msg .= "\nEr is een duplicaat hoofdstuk aangemaakt voor uw school.";
+								$msg .= "\nEr is een duplicaate paragraaf aangemaakt van dit hoofdstuk voor uw school.";
 							} else {
 								$msg .= "\n4Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 						    $error = 1;
@@ -114,9 +125,8 @@
 						}
 					}
 
-					$sql = "UPDATE theorie_paragrafen SET paragraaf='$paragraph', paragraaf_naam='$paragraph_name', main='$main', questions='$questions', answers='$answers' WHERE paragraaf_id='$paragraph_id'";
-
-					echo $sql;
+					//save the changes made to the previously duplicated paragraph
+					$sql = "UPDATE theorie_paragrafen SET paragraaf='$paragraph', paragraaf_naam='$paragraph_name', main='$main', questions='$questions', answers='$answers' WHERE hoofdstuk_id='$NewChapterID' AND paragraaf='$paragraph'";
 
 					if (mysqli_query($conn, $sql)) {
 						$msg .= "\nUw aangepaste paragraaf is succesvol opgeslagen";

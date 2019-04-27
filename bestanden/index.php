@@ -6,9 +6,9 @@
 	$theory_bonus = [];
 	$theory_documents = [];
 
-	function chapterIsFinished($thisChapter){
+	function chapterIsFinished($thisChapterID){
 		global $completedChapters;
-		if(in_array($thisChapter, $completedChapters)){
+		if(in_array($thisChapterID, $completedChapters)){
 			return true;
 		}
 	}
@@ -87,24 +87,21 @@
 
 				//if the user has progression stored
 				if(!mysqli_num_rows($result) == 0){
-					while($chapters = mysqli_fetch_assoc($result)){
-						//get the chapters that are being tracked
-						$availableChapters = array_keys($chapters);
-						unset($availableChapters[0]);
-
+					while($progression = mysqli_fetch_assoc($result)){
 						//check info from chapters
-						for($i=1; $i<sizeof($availableChapters); $i++){
-							$chapter = $availableChapters[$i];
-							$chapterData = $chapters[$chapter];
-							if($chapterData != ''){
+						for($i=0; $i<sizeof($progression); $i++){
+							$chapterID = $progression['chapter_id'];
+							$chapterProgress = $progression['progress'];
 
-								$amountOfParagraphsThatShouldBeFinished = strlen($chapterData);
-								$finishedParagraphs = $chapterData;
+							if($chapterProgress != ''){
+
+								$amountOfParagraphsThatShouldBeFinished = strlen($chapterProgress);
+								$finishedParagraphs = $chapterProgress;
 								$finishedParagraphs = str_replace('0', '', $finishedParagraphs);
 								$amountOfParagraphsFinished = strlen($finishedParagraphs);
 
 								if($amountOfParagraphsThatShouldBeFinished == $amountOfParagraphsFinished){
-									$completedChapters[] = $chapter;
+									$completedChapters[] = $chapterID;
 								}
 							}
 						}
@@ -223,7 +220,7 @@
 				$hoofdstuk_id = explode("#", $hoofdstuk)[1];
 				$hoofdstuk_titel = explode("#", $hoofdstuk)[0];
 
-				if(chapterIsFinished($hoofdstuk)){
+				if(chapterIsFinished($hoofdstuk_id)){
 					echo "<div class='tile completed'>";
 				} else {
 					echo "<div class='tile'>";
@@ -278,11 +275,11 @@
 			<div class='chapter-tiles'>";
 
 			for($i=0; $i<count($hoofdstuknamen_verdieping); $i++){
-				$hoofdstuk = $hoofdstuknamen_kern[$i];
+				$hoofdstuk = $hoofdstuknamen_verdieping[$i];
 				$hoofdstuk_id = explode("#", $hoofdstuk)[1];
 				$hoofdstuk_titel = explode("#", $hoofdstuk)[0];
 
-				if(chapterIsFinished($hoofdstuk)){
+				if(chapterIsFinished($hoofdstuk_id)){
 					echo "<div class='tile completed'>";
 				} else {
 					echo "<div class='tile'>";
@@ -335,11 +332,11 @@
 			<div class='chapter-tiles'>";
 
 			for($i=0; $i<count($hoofdstuknamen_bonus); $i++){
-				$hoofdstuk = $hoofdstuknamen_kern[$i];
+				$hoofdstuk = $hoofdstuknamen_bonus[$i];
 				$hoofdstuk_id = explode("#", $hoofdstuk)[1];
 				$hoofdstuk_titel = explode("#", $hoofdstuk)[0];
 
-				if(chapterIsFinished($hoofdstuk)){
+				if(chapterIsFinished($hoofdstuk_id)){
 					echo "<div class='tile completed'>";
 				} else {
 					echo "<div class='tile'>";

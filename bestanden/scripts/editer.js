@@ -93,6 +93,11 @@ $(document).ready(function(){
 
     var paragraph = $('#paragraph_selector option:selected').val();
     var chapter_name = $('#chapter_selector option:selected').text().split(/ (.+)/)[1];
+    //if the chapter is displayed with an * at the end, remove it (for edited paragraphs)
+    if (chapter_name.slice(-1) == '*'){
+      chapter_name.substring(0, chapter_name.length-1);
+    }
+
     var paragraph_name = $('#paragraph_selector option:selected').text().split(/ (.+)/)[1];
     var chapter = $('#chapter_selector option:selected').text().split(" ")[0];
 

@@ -27,7 +27,7 @@
 		$functie = $result['functie'];
 
 		if($functie=='docent'){
-			$sql = "SELECT DISTINCT hoofdstuk_id, hoofdstuk, hoofdstuk_naam FROM theorie_hoofdstukken WHERE school='$school' OR school='Inforca'";
+			$sql = "SELECT DISTINCT hoofdstuk_id, hoofdstuk, hoofdstuk_naam, school FROM theorie_hoofdstukken WHERE school='$school' OR school='Inforca' ORDER BY hoofdstuk";
 
 			if (mysqli_query($conn, $sql)) {
 				$result = mysqli_query($conn, $sql);
@@ -37,10 +37,17 @@
 						$hoofdstukID = $row['hoofdstuk_id'];
 		        $hoofdstuk = $row["hoofdstuk"];
 		        $hoofdstukNaam = $row["hoofdstuk_naam"];
+						$hoofdstukSchool = $row["school"];
 
-		        $msg .= '
-		          <option value="'.$hoofdstukID.'">'.$hoofdstuk.' '.$hoofdstukNaam.'</option>
-		        ';
+						if($hoofdstukSchool == 'Inforca'){
+							$msg .= '
+			          <option value="'.$hoofdstukID.'">'.$hoofdstuk.' '.$hoofdstukNaam.'</option>
+			        ';
+						} else {
+							$msg .= '
+			          <option value="'.$hoofdstukID.'">'.$hoofdstuk.' '.$hoofdstukNaam.'*</option>
+			        ';
+						}
 
 		      }
 		    } else {

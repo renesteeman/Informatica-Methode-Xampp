@@ -38,7 +38,7 @@
 		$functie = $result['functie'];
 
 		if($functie=='docent'){
-			$sql = "SELECT paragraaf_id, paragraaf FROM theorie_paragrafen WHERE hoofdstuk_id='$chapter'";
+			$sql = "SELECT paragraaf_id, paragraaf, paragraaf_naam FROM theorie_paragrafen WHERE hoofdstuk_id='$chapter'";
 
 			if (mysqli_query($conn, $sql)) {
 				$result = mysqli_query($conn, $sql);
@@ -47,13 +47,15 @@
 		      while($row = mysqli_fetch_assoc($result)) {
 		        $paragraph_id = $row["paragraaf_id"];
 		        $paragraaf = $row["paragraaf"];
+						$paragraaf_naam = $row["paragraaf_naam"];
 
 						$school_theory_ids[] = $paragraph_id;
 						$school_theory_paragraphs[] = $paragraaf;
+						$school_theory_paragraph_names[] = $paragraaf_naam;
 		      }
 				}
 
-				$sql = "SELECT paragraaf_id, paragraaf FROM theorie_paragrafen WHERE hoofdstuk_id='$chapterID'";
+				$sql = "SELECT paragraaf_id, paragraaf, paragraaf_naam FROM theorie_paragrafen WHERE hoofdstuk_id='$chapterID'";
 
 				if (mysqli_query($conn, $sql)) {
 					$result = mysqli_query($conn, $sql);
@@ -62,17 +64,21 @@
 						while($row = mysqli_fetch_assoc($result)) {
 							$paragraph_id = $row["paragraaf_id"];
 							$paragraaf = $row["paragraaf"];
+							$paragraaf_naam = $row["paragraaf_naam"];
 
 							$inforca_theory_ids[] = $paragraph_id;
 							$inforca_theory_paragraphs[] = $paragraaf;
+							$inforca_theory_paragraph_names[] = $paragraaf_naam;
 						}
 					}
 
 					$paragraph_ids = $inforca_theory_ids;
 					$theory_paragraphs = $inforca_theory_paragraphs;
+					$theory_paragraph_names = $inforca_theory_paragraph_names;
 
 					for($i=0; $i<count($school_theory_paragraphs);$i++){
 						$paragraphSchool = $school_theory_paragraphs[$i];
+						$paragraphSchoolName = $school_theory_paragraph_names[$i];
 						$array_found_index = array_search($paragraphSchool, $inforca_theory_paragraphs);
 
 						//check if a paragrpahs from the school is found and if so replace it by the school version
@@ -86,9 +92,10 @@
 						for($i=0; $i<count($paragraph_ids); $i++) {
 
 							$paragraph_id = $paragraph_ids[$i];
-							$paragraaf_name = $theory_paragraphs[$i];
+							$paragraaf = $theory_paragraphs[$i];
+							$paragraaf_name = $theory_paragraph_names[$i];
 
-							$msg .= '<option value="'.$paragraph_id.'">'.$paragraaf_name.'</option>';
+							$msg .= '<option value="'.$paragraph_id.'">§'.$paragraaf.' '.$paragraaf_name.'</option>';
 						}
 					}
 					//TODO remove when create option is added

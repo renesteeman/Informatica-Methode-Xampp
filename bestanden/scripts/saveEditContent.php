@@ -18,7 +18,7 @@
   $msg = "";
 
 	$chapterID = "";
-	$pargraph_id = "";
+	$paragraph_id = "";
 
 	$paragraph = "";
 	$chapter_name = "";
@@ -30,28 +30,15 @@
 	$answers = "";
 
 	$chapterID = mysqli_real_escape_string($conn, check_input($_POST['chapterID']));
-	$pargraph_id = mysqli_real_escape_string($conn, check_input($_POST['pargraph_id']));
+	$paragraph_id = mysqli_real_escape_string($conn, check_input($_POST['paragraph_id']));
+	$paragraph = mysqli_real_escape_string($conn, check_input(htmlentities($_POST['paragraph'], ENT_QUOTES)));
+	$chapter_name = mysqli_real_escape_string($conn, check_input(htmlentities($_POST['chapter_name'], ENT_QUOTES)));
+	$paragraph_name = mysqli_real_escape_string($conn, check_input(htmlentities($_POST['paragraph_name'], ENT_QUOTES)));
+	$chapter = mysqli_real_escape_string($conn, check_input(htmlentities($_POST['chapter'], ENT_QUOTES)));
 
-	$paragraph = mysqli_real_escape_string($conn, check_input($_POST['paragraph']));
-	$chapter_name = mysqli_real_escape_string($conn, check_input($_POST['chapter_name']));
-	$paragraph_name = mysqli_real_escape_string($conn, check_input($_POST['paragraph_name']));
-	$chapter = mysqli_real_escape_string($conn, check_input($_POST['chapter']));
-
-  $main = mysqli_real_escape_string($conn, check_input($_POST['main']));
-  $questions = mysqli_real_escape_string($conn, check_input($_POST['questions']));
-  $answers = mysqli_real_escape_string($conn, check_input($_POST['answers']));
-
-	//TODO
-	$chapterID = 1;
-	$pargraph_id = 1;
-	$paragraph = 1;
-	$chapter_name = 'YEET CHAPTER';
-	$paragraph_name = 'YEET paragraph';
-	$chapter = 'H1';
-	$main = 'YEET main';
-	$questions = 'YEET question';
-	$answers = 'YEET answer';
-
+  $main = mysqli_real_escape_string($conn, check_input(htmlentities($_POST['main'], ENT_QUOTES)));
+  $questions = mysqli_real_escape_string($conn, check_input(htmlentities($_POST['questions'], ENT_QUOTES)));
+  $answers = mysqli_real_escape_string($conn, check_input(htmlentities($_POST['answers'], ENT_QUOTES)));
 
 	$sql = "SELECT school, functie FROM users WHERE id='$id'";
 
@@ -72,7 +59,7 @@
 
 				//if the theory belong to the school itself and not to Inforca, than update the theory, else create a new row for the school
 				if($school == $theory_school){
-					$sql = "UPDATE theorie_paragrafen SET main='$main', questions='$questions', answers='$answers' WHERE paragraaf_id='$pargraph_id'";
+					$sql = "UPDATE theorie_paragrafen SET main='$main', questions='$questions', answers='$answers' WHERE paragraaf_id='$paragraph_id'";
 
 					if (mysqli_query($conn, $sql)) {
 						$msg .= "\nSuccesvol opgeslagen";
@@ -118,8 +105,6 @@
 
 							$sql = "INSERT INTO theorie_paragrafen(hoofdstuk_id, paragraaf, paragraaf_naam, main, questions, answers) VALUES ('$NewChapterID', '$Cparagraph', '$CparagraphName', '$Cmain', '$Cquestions', '$Canswers')";
 
-							echo $sql; echo "</br>";echo "</br>";echo "</br>";echo "</br>";echo "</br>";
-
 							if (mysqli_query($conn, $sql)) {
 								$msg .= "\nEr is een duplicaat hoofdstuk aangemaakt voor uw school.";
 							} else {
@@ -129,9 +114,9 @@
 						}
 					}
 
-					//TODO UPDATE SET WHERE
-					$sql = "INSERT INTO theorie_paragrafen(hoofdstuk_id, paragraaf, paragraaf_naam, main, questions, answers) VALUES (
-					'$NewChapterID', '$paragraph', '$paragraph_name', '$main', '$questions', '$answers')";
+					$sql = "UPDATE theorie_paragrafen SET paragraaf='$paragraph', paragraaf_naam='$paragraph_name', main='$main', questions='$questions', answers='$answers' WHERE paragraaf_id='$paragraph_id'";
+
+					echo $sql;
 
 					if (mysqli_query($conn, $sql)) {
 						$msg .= "\nUw aangepaste paragraaf is succesvol opgeslagen";

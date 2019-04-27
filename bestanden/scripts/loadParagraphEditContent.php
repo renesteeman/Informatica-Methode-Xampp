@@ -9,7 +9,7 @@
   $error = 0;
 	$msg = "";
 
-	$pargraph_id = "";
+	$paragraph_id = "";
 
   $main = "";
 	$questions = "";
@@ -23,7 +23,7 @@
 		return $data;
 	}
 
-  $pargraph_id = mysqli_real_escape_string($conn, check_input($_POST['pargraph_id']));
+  $paragraph_id = mysqli_real_escape_string($conn, check_input($_POST['paragraph_id']));
 
 	$sql = "SELECT school, functie FROM users WHERE id='$id'";
 
@@ -35,7 +35,7 @@
 		$functie = $result['functie'];
 
 		if($functie=='docent'){
-			$sql = "SELECT main, questions, answers FROM theorie_paragrafen WHERE paragraaf_id='$pargraph_id'";
+			$sql = "SELECT main, questions, answers FROM theorie_paragrafen WHERE paragraaf_id='$paragraph_id'";
 
 			if (mysqli_query($conn, $sql)) {
 				$result = mysqli_query($conn, $sql);

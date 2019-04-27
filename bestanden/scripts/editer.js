@@ -49,12 +49,12 @@ $(document).ready(function(){
   }
 
   function updateParagraphContent(){
-    var pargraph_id = $('#paragraph_selector option:selected').val();
+    var paragraph_id = $('#paragraph_selector option:selected').val();
 
 		jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/loadParagraphEditContent.php',
-			data: {pargraph_id: pargraph_id}
+			data: {paragraph_id: paragraph_id}
 		});
 
     jqXHR.done(function(response) {
@@ -89,21 +89,23 @@ $(document).ready(function(){
     event.preventDefault();
 
     var chapterID = $('#chapter_selector option:selected').val();
-    var pargraph_id = $('#paragraph_selector option:selected').val();
+    var paragraph_id = $('#paragraph_selector option:selected').val();
 
     var paragraph = $('#paragraph_selector option:selected').val();
-    var chapter_name = $('#chapter_selector option:selected').text();
-    var paragraph_name = $('#paragraph_selector option:selected').text();
-    var chapter = chapter_name.split(" ")[0];
+    var chapter_name = $('#chapter_selector option:selected').text().split(/ (.+)/)[1];
+    var paragraph_name = $('#paragraph_selector option:selected').text().split(/ (.+)/)[1];
+    var chapter = $('#chapter_selector option:selected').text().split(" ")[0];
 
     var main = $('#theorie').val();
     var questions = $('#vragen').val();
     var answers = $('#antwoorden').val();
 
+    console.log([chapterID, paragraph_id, paragraph,  paragraph_name, chapter_name, chapter, main, questions, answers]);
+
     jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/saveEditContent.php',
-			data: {chapterID:chapterID, pargraph_id:pargraph_id, main:main, questions:questions, answers:answers, paragraph: paragraph, chapter_name:chapter_name, paragraph_name:paragraph_name, chapter:chapter}
+			data: {chapterID:chapterID, paragraph_id:paragraph_id, main:main, questions:questions, answers:answers, paragraph: paragraph, chapter_name:chapter_name, paragraph_name:paragraph_name, chapter:chapter}
 		});
 
     jqXHR.done(function(response) {

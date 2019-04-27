@@ -9,7 +9,7 @@
   $error = 0;
 	$msg = "";
 
-	$theory_id = "";
+	$pargraph_id = "";
 
   $main = "";
 	$questions = "";
@@ -23,7 +23,7 @@
 		return $data;
 	}
 
-  $theory_id = mysqli_real_escape_string($conn, check_input($_POST['theory_id']));
+  $pargraph_id = mysqli_real_escape_string($conn, check_input($_POST['pargraph_id']));
 
 	$sql = "SELECT school, functie FROM users WHERE id='$id'";
 
@@ -35,7 +35,7 @@
 		$functie = $result['functie'];
 
 		if($functie=='docent'){
-			$sql = "SELECT main, questions, answers FROM theorie WHERE theory_id='$theory_id'";
+			$sql = "SELECT main, questions, answers FROM theorie_paragrafen WHERE paragraaf_id='$pargraph_id'";
 
 			if (mysqli_query($conn, $sql)) {
 				$result = mysqli_query($conn, $sql);
@@ -46,7 +46,7 @@
 				$answers = $result["answers"];
 
 			} else {
-				$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+				$msg .= "\n1Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 		    $error = 1;
 			}
 		} else {
@@ -55,7 +55,7 @@
 		}
 
 	} else {
-		$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+		$msg .= "\n2Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 		$error = 1;
 	}
 

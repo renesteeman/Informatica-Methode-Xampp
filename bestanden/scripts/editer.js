@@ -24,12 +24,12 @@ $(document).ready(function(){
   }
 
   function updateParagraphSelection(){
-    var chapter = $('#chapter_selector option:selected').val();
+    var chapterID = $('#chapter_selector option:selected').val();
 
 		jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/loadParagraphs.php',
-			data: {chapter: chapter}
+			data: {chapterID: chapterID}
 		});
 
     jqXHR.done(function(response) {
@@ -49,12 +49,12 @@ $(document).ready(function(){
   }
 
   function updateParagraphContent(){
-    var theory_id = $('#paragraph_selector option:selected').val();
+    var pargraph_id = $('#paragraph_selector option:selected').val();
 
 		jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/loadParagraphEditContent.php',
-			data: {theory_id: theory_id}
+			data: {pargraph_id: pargraph_id}
 		});
 
     jqXHR.done(function(response) {

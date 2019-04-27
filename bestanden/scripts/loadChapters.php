@@ -27,18 +27,19 @@
 		$functie = $result['functie'];
 
 		if($functie=='docent'){
-			$sql = "SELECT DISTINCT hoofdstuk, hoofdstuk_naam FROM theorie WHERE school='$school' OR school='Inforca'";
+			$sql = "SELECT DISTINCT hoofdstuk_id, hoofdstuk, hoofdstuk_naam FROM theorie_hoofdstukken WHERE school='$school' OR school='Inforca'";
 
 			if (mysqli_query($conn, $sql)) {
 				$result = mysqli_query($conn, $sql);
 
 		    if (mysqli_num_rows($result) > 0) {
 		      while($row = mysqli_fetch_assoc($result)) {
+						$hoofdstukID = $row['hoofdstuk_id'];
 		        $hoofdstuk = $row["hoofdstuk"];
 		        $hoofdstukNaam = $row["hoofdstuk_naam"];
 
 		        $msg .= '
-		          <option value="'.$hoofdstuk.'">'.$hoofdstukNaam.'</option>
+		          <option value="'.$hoofdstukID.'">'.$hoofdstuk.' '.$hoofdstukNaam.'</option>
 		        ';
 
 		      }
@@ -53,7 +54,7 @@
 		    ';
 
 			} else {
-				$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+				$msg .= "\n1Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 		    $error = 1;
 			}
 		} else {
@@ -62,7 +63,7 @@
 		}
 
 	} else {
-		$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+		$msg .= "\n2Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 		$error = 1;
 	}
 

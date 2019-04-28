@@ -170,7 +170,7 @@ $(document).ready(function(){
       if(item.hasClass("p")){
         insert = "<p>\n\tTEKST\n</p>";
       } else if(item.hasClass("url")){
-        insert = "<a href='LINK'>TEXT</a>";
+        insert = "<a href='LINK'>TEKST</a>";
       } else if (item.hasClass("ul")) {
         insert = "<ul>\n\t<li>ITEM</li>\n</ul>";
       } else if (item.hasClass("code")) {

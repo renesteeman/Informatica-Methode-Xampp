@@ -28,9 +28,9 @@
     $hoofdstuk_id = $result['hoofdstuk_id'];
     $paragraph = $result['paragraaf'];
     $paragraph_name = $result['paragraaf_naam'];
-    $theory_main = $result['main'];
-    $theory_questions = $result['questions'];
-    $theory_answers = $result['answers'];
+    $theory_main = html_entity_decode($result["main"], ENT_QUOTES);
+    $theory_questions = html_entity_decode($result["questions"], ENT_QUOTES);
+    $theory_answers = html_entity_decode($result["answers"], ENT_QUOTES);
   } else {
     echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
   }

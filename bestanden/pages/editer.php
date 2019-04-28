@@ -63,6 +63,9 @@
 			-->
 
 			<div class="html-tiles">
+				<span class="html-tile p">
+					p
+				</span>
 				<span class="html-tile url">
 					url
 				</span>
@@ -71,7 +74,6 @@
 	        <ul>
 	          <li class="html-tile-sub basic">1.</li>
 	          <li class="html-tile-sub ML">1.a</li>
-	          <li class="html-tile-sub MLalt">1.1.</li>
 	        </ul>
 				</span>
 				<span class="html-tile ul">
@@ -82,6 +84,9 @@
 				</span>
 				<span class="html-tile img">
 					img
+				</span>
+				<span class="html-tile table">
+					table
 				</span>
 				<!--<span class="html-tile html">
 					html

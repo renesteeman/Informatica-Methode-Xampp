@@ -118,7 +118,7 @@
 
         </div>";
 
-        if(!is_null($theory_questions)){
+        if(!is_null($theory_questions) AND $theory_questions!=""){
           echo "
           <div class='bar-s'>
             <h3>
@@ -132,7 +132,7 @@
           ";
         }
 
-        if(!is_null($theory_answers)){
+        if(!is_null($theory_answers) AND $theory_answers!=""){
           echo "
           <div class='bar-s'>
             <h3>

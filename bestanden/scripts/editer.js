@@ -165,16 +165,23 @@ $(document).ready(function(){
       let el = selectedTextArea;
       let elJS = selectedTextAreaJS;
       let item = $(this);
+      let insert = "";
 
-      if(item.hasClass("url")){
-        insertAtCaret(el, elJS, "<a href='LINK'> TEXT </a>");
+      if(item.hasClass("p")){
+        insert = "<p>\n\tTEKST\n</p>";
+      } else if(item.hasClass("url")){
+        insert = "<a href='LINK'>TEXT</a>";
       } else if (item.hasClass("ul")) {
-        insertAtCaret(el, elJS, "ul");
+        insert = "<ul>\n\t<li>ITEM</li>\n</ul>";
       } else if (item.hasClass("code")) {
-        insertAtCaret(el, elJS, "code");
+        insert = "<pre><code>\nCODE\n</code></pre>";
       } else if (item.hasClass("img")) {
-        insertAtCaret(el, elJS, "img");
+        insert = "<img class='small' src='LOCATIE'>";
+      } else if (item.hasClass("table")) {
+        insert = "<table><tbody>\n\t<tr>\n\t\t<th>KOLOM</th>\n\t</tr>\n\t<tr>\n\t\t<td>RIJ</tb>\n\t</td>\n</tbody></table>";
       }
+
+      insertAtCaret(el, elJS, insert);
 
     }
 
@@ -189,12 +196,12 @@ $(document).ready(function(){
       let item = $(this);
 
       if (item.hasClass("basic")) {
-        insertAtCaret(el, elJS, "basic");
+        insert = "<ol>\n\t<li>\n\t\tITEM\n\t</li>\n</ol>";
       } else if (item.hasClass("ML")) {
-        insertAtCaret(el, elJS, "ML");
-      } else if (item.hasClass("MLalt")) {
-        insertAtCaret(el, elJS, "MLalt");
+        insert = "<ol class='MLquestion'>\n\t<li>\n\t\tHOODFVRAAG\n\t\t<ol>\n\t\t\t<li>SUBVRAAG</li>\n\t\t</ol>\n\t</li>\n</ol>";
       }
+
+      insertAtCaret(el, elJS, insert);
     }
 
   })

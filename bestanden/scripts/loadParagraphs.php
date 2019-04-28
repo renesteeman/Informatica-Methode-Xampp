@@ -38,7 +38,7 @@
 		$functie = $result['functie'];
 
 		if($functie=='docent'){
-			$sql = "SELECT paragraaf_id, paragraaf, paragraaf_naam FROM theorie_paragrafen WHERE hoofdstuk_id='$chapter'";
+			$sql = "SELECT paragraaf_id, paragraaf, paragraaf_naam FROM theorie_paragrafen WHERE hoofdstuk_id='$chapter' ORDER BY paragraaf";
 
 			if (mysqli_query($conn, $sql)) {
 				$result = mysqli_query($conn, $sql);
@@ -55,7 +55,7 @@
 		      }
 				}
 
-				$sql = "SELECT paragraaf_id, paragraaf, paragraaf_naam FROM theorie_paragrafen WHERE hoofdstuk_id='$chapterID'";
+				$sql = "SELECT paragraaf_id, paragraaf, paragraaf_naam FROM theorie_paragrafen WHERE hoofdstuk_id='$chapterID' ORDER BY paragraaf";
 
 				if (mysqli_query($conn, $sql)) {
 					$result = mysqli_query($conn, $sql);

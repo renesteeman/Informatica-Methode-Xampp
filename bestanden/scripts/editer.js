@@ -59,6 +59,7 @@ $(document).ready(function(){
 
     jqXHR.done(function(response) {
       response = JSON.parse(response);
+      console.log(response.debug);
 
       if(response.error){
         window.alert(response.msg);
@@ -91,7 +92,7 @@ $(document).ready(function(){
     var chapterID = $('#chapter_selector option:selected').val();
     var paragraph_id = $('#paragraph_selector option:selected').val();
 
-    var paragraph = $('#paragraph_selector option:selected').val();
+    var paragraph = $('#paragraph_selector option:selected').text().split(/ (.+)/)[0][1];
     var chapter_name = $('#chapter_selector option:selected').text().split(/ (.+)/)[1];
     //if the chapter is displayed with an * at the end, remove it (for edited paragraphs)
     if (chapter_name.slice(-1) == '*'){
@@ -115,6 +116,7 @@ $(document).ready(function(){
 
     jqXHR.done(function(response) {
       response = JSON.parse(response);
+      console.log(response.debug);
 
       window.alert(response.msg);
 

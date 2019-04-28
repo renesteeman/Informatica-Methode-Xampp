@@ -8,6 +8,7 @@
   $functie = "";
   $error = 0;
 	$msg = "";
+	$debug = "";
 
 	$paragraph_id = "";
 
@@ -41,9 +42,12 @@
 				$result = mysqli_query($conn, $sql);
 				$result = mysqli_fetch_assoc($result);
 
-        $main = $result["main"];
-        $questions = $result["questions"];
-				$answers = $result["answers"];
+        $main = html_entity_decode($result["main"], ENT_QUOTES);
+        $questions = html_entity_decode($result["questions"], ENT_QUOTES);
+				$answers = html_entity_decode($result["answers"], ENT_QUOTES);
+
+				$debug .= $result["main"];
+				$debug .= $main;
 
 			} else {
 				$msg .= "\n1Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
@@ -59,7 +63,7 @@
 		$error = 1;
 	}
 
-  $toReturn = array('main'=> $main, 'questions'=>$questions, 'answers'=>$answers, 'msg' => $msg, 'error' => $error);
+  $toReturn = array('main'=> $main, 'questions'=>$questions, 'answers'=>$answers, 'msg' => $msg, 'error' => $error, 'debug'=>$debug);
 	$toReturn = json_encode($toReturn);
 
 	echo $toReturn;

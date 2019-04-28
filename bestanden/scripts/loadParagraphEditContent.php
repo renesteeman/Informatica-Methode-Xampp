@@ -46,9 +46,6 @@
         $questions = html_entity_decode($result["questions"], ENT_QUOTES);
 				$answers = html_entity_decode($result["answers"], ENT_QUOTES);
 
-				$debug .= $result["main"];
-				$debug .= $main;
-
 			} else {
 				$msg .= "\n1Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 		    $error = 1;

@@ -133,5 +133,71 @@ $(document).ready(function(){
 	  });
   })
 
+  //buttons
+  //TODO
+  var selectedTextArea;
+  var selectedTextAreaJS;
+
+  function insertAtCaret(el, elJS, insert) {
+    var caretPos = el[0].selectionStart;
+    var caretEnd = el[0].selectionEnd;
+    var textAreaTxt = el.val();
+
+    //replace selected and insert 'insert'
+    el.val(textAreaTxt.substring(0, caretPos) + insert + textAreaTxt.substring(caretEnd));
+
+    //return 'caret'
+    el.focus();
+    elJS.selectionStart = caretPos + insert.length;
+    console.log(caretPos + insert.length);
+    elJS.selectionEnd = caretPos + insert.length;
+  }
+
+  $(".html-tile").hover(function(){
+    selectedTextArea = $(document.activeElement);
+    selectedTextAreaJS = document.activeElement;
+  })
+
+  //insert on button click
+  $(".html-tile").click(function(){
+    //if a textbox was active when clicking the button
+    if (selectedTextArea.prop('nodeName') == "TEXTAREA") {
+      let el = selectedTextArea;
+      let elJS = selectedTextAreaJS;
+      let item = $(this);
+
+      if(item.hasClass("url")){
+        insertAtCaret(el, elJS, "<a href='LINK'> TEXT </a>");
+      } else if (item.hasClass("ul")) {
+        insertAtCaret(el, elJS, "ul");
+      } else if (item.hasClass("code")) {
+        insertAtCaret(el, elJS, "code");
+      } else if (item.hasClass("img")) {
+        insertAtCaret(el, elJS, "img");
+      }
+
+    }
+
+	})
+
+  //insert on 'sub-button' click
+  $(".html-tile-sub").click(function(){
+    //if a textbox was active when clicking the button
+    if (selectedTextArea.prop('nodeName') == "TEXTAREA") {
+      let el = selectedTextArea;
+      let elJS = selectedTextAreaJS;
+      let item = $(this);
+
+      if (item.hasClass("basic")) {
+        insertAtCaret(el, elJS, "basic");
+      } else if (item.hasClass("ML")) {
+        insertAtCaret(el, elJS, "ML");
+      } else if (item.hasClass("MLalt")) {
+        insertAtCaret(el, elJS, "MLalt");
+      }
+    }
+
+  })
+
 
 });

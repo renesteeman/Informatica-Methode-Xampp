@@ -37,12 +37,10 @@
 		    </span>
 			</div>
 
-			<!--
 			<div>
-				<span class="line-block">Naam hoofdstuk</span>
+				<span class="line-block">Nieuwe naam</span>
 				<input type="text" class="Nclass" name="Nclass"/>
 			</div>
-			-->
 
 			<div>
 				<span class="line-block">Paragraaf</span>

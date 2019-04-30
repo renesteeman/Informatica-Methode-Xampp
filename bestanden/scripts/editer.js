@@ -26,11 +26,18 @@ $(document).ready(function(){
   function updateParagraphSelection(){
     var chapterID = $('#chapter_selector option:selected').val();
 
-		jqXHR = $.ajax({
-			method: "POST",
-			url: '../scripts/loadParagraphs.php',
-			data: {chapterID: chapterID}
-		});
+    //if a new chapter is being created, give the option to give it a code
+    if(chapterID == "Aanmaken"){
+      $(".chapterCode").removeClass("hide");
+    } else {
+      $(".chapterCode").addClass("hide");
+    }
+
+    jqXHR = $.ajax({
+      method: "POST",
+      url: '../scripts/loadParagraphs.php',
+      data: {chapterID: chapterID}
+    });
 
     jqXHR.done(function(response) {
       response = JSON.parse(response);
@@ -43,9 +50,9 @@ $(document).ready(function(){
       }
     });
 
-		jqXHR.fail(function(jqXHR) {
-			alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
-	  });
+    jqXHR.fail(function(jqXHR) {
+      alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
+    });
   }
 
   function updateParagraphContent(){
@@ -92,29 +99,42 @@ $(document).ready(function(){
     var chapterID = $('#chapter_selector option:selected').val();
     var paragraph_id = $('#paragraph_selector option:selected').val();
 
-    var paragraph = $('#paragraph_selector option:selected').text().split(/ (.+)/)[0][1];
-    var chapter_name = $('#chapter_selector option:selected').text().split(/ (.+)/)[1];
+    if(chapterID != "Aanmaken"){
+      var chapter_name = $('#chapter_selector option:selected').text().split(/ (.+)/)[1];
+      var chapter = $('#chapter_selector option:selected').text().split(" ")[0];
+    } else {
+      var chapter_name = "";
+      var chapter = "";
+    }
+
+    if(paragraph_id != "Aanmaken"){
+      var paragraph = $('#paragraph_selector option:selected').text().split(/ (.+)/)[0][1];
+      var paragraph_name = $('#paragraph_selector option:selected').text().split(/ (.+)/)[1];
+    } else {
+      var paragraph = "";
+      var paragraph_name = "";
+    }
+
     //if the chapter is displayed with an * at the end, remove it (for edited paragraphs)
     if (chapter_name.slice(-1) == '*'){
       chapter_name.substring(0, chapter_name.length-1);
     }
-
-    var paragraph_name = $('#paragraph_selector option:selected').text().split(/ (.+)/)[1];
-    var chapter = $('#chapter_selector option:selected').text().split(" ")[0];
 
     var main = $('#theorie').val();
     var questions = $('#vragen').val();
     var answers = $('#antwoorden').val();
 
     var Nchapter_Name = $('#Nchapter_Name').val();
-    var Nparagraph_Name = $('#Nparagraph_Name').val()
+    var Nparagraph_Name = $('#Nparagraph_Name').val();
+
+    var Nchapter = $(".chapterCode").text();
 
     console.log([chapterID, paragraph_id, paragraph,  paragraph_name, chapter_name, chapter, main, questions, answers, Nchapter_Name, Nparagraph_Name]);
 
     jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/saveEditContent.php',
-			data: {chapterID:chapterID, paragraph_id:paragraph_id, main:main, questions:questions, answers:answers, paragraph: paragraph, chapter_name:chapter_name, paragraph_name:paragraph_name, chapter:chapter, Nchapter_Name:Nchapter_Name, Nparagraph_Name:Nparagraph_Name}
+			data: {chapterID:chapterID, paragraph_id:paragraph_id, main:main, questions:questions, answers:answers, paragraph: paragraph, chapter_name:chapter_name, paragraph_name:paragraph_name, chapter:chapter, Nchapter_Name:Nchapter_Name, Nparagraph_Name:Nparagraph_Name, Nchapter:Nchapter}
 		});
 
     jqXHR.done(function(response) {
@@ -137,7 +157,6 @@ $(document).ready(function(){
   })
 
   //buttons
-  //TODO
   var selectedTextArea;
   var selectedTextAreaJS;
 
@@ -185,7 +204,6 @@ $(document).ready(function(){
       }
 
       insertAtCaret(el, elJS, insert);
-
     }
 
 	})

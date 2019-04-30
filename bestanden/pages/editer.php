@@ -30,11 +30,14 @@
 				<span class="line-block">Hoofdstuk</span>
 		    <span class="selector">
 		      <select id="chapter_selector">
-		        <option value=""></option>
-		        <option value="'.$CurrentClass.'">'.$CurrentClass.'</option>
-						<option value="'.$CurrentClass.'">+ aanmaken</option>
+		        <!-- PHP -->
 		      </select>
 		    </span>
+			</div>
+
+			<div class="hide chapterCode">
+				<span class="line-block">Code (Hx, Bx of Vx)</span>
+				<input type="text" id="Nchapter_Name"/>
 			</div>
 
 			<div>
@@ -46,9 +49,7 @@
 				<span class="line-block">Paragraaf</span>
 		    <span class="selector">
 		      <select id="paragraph_selector">
-		        <option value=""></option>
-		        <option value="'.$CurrentClass.'">'.$CurrentClass.'</option>
-						<option value="'.$CurrentClass.'">+ aanmaken</option>
+		        <!-- PHP -->
 		      </select>
 		    </span>
 			</div>
@@ -84,9 +85,6 @@
 				<span class="html-tile table">
 					table
 				</span>
-				<!--<span class="html-tile html">
-					html
-				</span>-->
 			</div>
 
 			<div>

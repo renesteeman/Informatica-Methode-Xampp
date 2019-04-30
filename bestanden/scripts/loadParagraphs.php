@@ -55,63 +55,61 @@
 		      }
 				}
 
-				$sql = "SELECT paragraaf_id, paragraaf, paragraaf_naam FROM theorie_paragrafen WHERE hoofdstuk_id='$chapterID' ORDER BY paragraaf";
-
-				if (mysqli_query($conn, $sql)) {
-					$result = mysqli_query($conn, $sql);
-
-					if (mysqli_num_rows($result) > 0) {
-						while($row = mysqli_fetch_assoc($result)) {
-							$paragraph_id = $row["paragraaf_id"];
-							$paragraaf = $row["paragraaf"];
-							$paragraaf_naam = $row["paragraaf_naam"];
-
-							$inforca_theory_ids[] = $paragraph_id;
-							$inforca_theory_paragraphs[] = $paragraaf;
-							$inforca_theory_paragraph_names[] = $paragraaf_naam;
-						}
-					}
-
-					$paragraph_ids = $inforca_theory_ids;
-					$theory_paragraphs = $inforca_theory_paragraphs;
-					$theory_paragraph_names = $inforca_theory_paragraph_names;
-
-					for($i=0; $i<count($school_theory_paragraphs);$i++){
-						$paragraphSchool = $school_theory_paragraphs[$i];
-						$paragraphSchoolName = $school_theory_paragraph_names[$i];
-						$array_found_index = array_search($paragraphSchool, $inforca_theory_paragraphs);
-
-						//check if a paragrpahs from the school is found and if so replace it by the school version
-						if($array_found_index !== False){
-							$paragraph_ids[$array_found_index] = $school_theory_ids[$i];
-							$theory_paragraphs[$array_found_index] = $school_theory_paragraphs[$i];
-						}
-					}
-
-					if(count($paragraph_ids) > 0){
-						for($i=0; $i<count($paragraph_ids); $i++) {
-
-							$paragraph_id = $paragraph_ids[$i];
-							$paragraaf = $theory_paragraphs[$i];
-							$paragraaf_name = $theory_paragraph_names[$i];
-
-							$msg .= '<option value="'.$paragraph_id.'">§'.$paragraaf.' '.$paragraaf_name.'</option>';
-						}
-					}
-					//TODO remove when create option is added
-					else {
-						$msg .= '<option value=""></option>';
-					}
-
-					/*
+				//if the chapter is being created, don't search for it's paragragraphs since there are none
+				if($chapterID=="Aanmaken"){
 					$msg .= '<option value="Aanmaken">Aanmaken</option>';
-					*/
-
 				} else {
-					$msg .= "\n1Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
-					$error = 1;
-				}
+					$sql = "SELECT paragraaf_id, paragraaf, paragraaf_naam FROM theorie_paragrafen WHERE hoofdstuk_id='$chapterID' ORDER BY paragraaf";
 
+					if (mysqli_query($conn, $sql)) {
+						$result = mysqli_query($conn, $sql);
+
+						if (mysqli_num_rows($result) > 0) {
+							while($row = mysqli_fetch_assoc($result)) {
+								$paragraph_id = $row["paragraaf_id"];
+								$paragraaf = $row["paragraaf"];
+								$paragraaf_naam = $row["paragraaf_naam"];
+
+								$inforca_theory_ids[] = $paragraph_id;
+								$inforca_theory_paragraphs[] = $paragraaf;
+								$inforca_theory_paragraph_names[] = $paragraaf_naam;
+							}
+						}
+
+						$paragraph_ids = $inforca_theory_ids;
+						$theory_paragraphs = $inforca_theory_paragraphs;
+						$theory_paragraph_names = $inforca_theory_paragraph_names;
+
+						for($i=0; $i<count($school_theory_paragraphs);$i++){
+							$paragraphSchool = $school_theory_paragraphs[$i];
+							$paragraphSchoolName = $school_theory_paragraph_names[$i];
+							$array_found_index = array_search($paragraphSchool, $inforca_theory_paragraphs);
+
+							//check if a paragrpahs from the school is found and if so replace it by the school version
+							if($array_found_index !== False){
+								$paragraph_ids[$array_found_index] = $school_theory_ids[$i];
+								$theory_paragraphs[$array_found_index] = $school_theory_paragraphs[$i];
+							}
+						}
+
+						if(count($paragraph_ids) > 0){
+							for($i=0; $i<count($paragraph_ids); $i++) {
+
+								$paragraph_id = $paragraph_ids[$i];
+								$paragraaf = $theory_paragraphs[$i];
+								$paragraaf_name = $theory_paragraph_names[$i];
+
+								$msg .= '<option value="'.$paragraph_id.'">§'.$paragraaf.' '.$paragraaf_name.'</option>';
+							}
+						} else {
+							$msg .= '<option value="Aanmaken">Aanmaken</option>';
+						}
+
+					} else {
+						$msg .= "\n1Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+						$error = 1;
+					}
+				}
 			} else {
 				$msg .= "\n2Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 		    $error = 1;

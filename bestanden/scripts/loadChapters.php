@@ -9,6 +9,8 @@
   $error = 0;
   $msg = "";
 
+	$createNewChapter=0;
+
 	//function to check and clean input
 	function check_input($data) {
 		$data = trim($data, " ");
@@ -50,10 +52,6 @@
 						}
 
 		      }
-		    } else {
-		      $msg .= '
-		        <option value=""></option>
-		      ';
 		    }
 
 		    $msg .= '

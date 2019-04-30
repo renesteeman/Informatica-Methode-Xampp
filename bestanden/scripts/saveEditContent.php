@@ -41,6 +41,21 @@
   $questions = mysqli_real_escape_string($conn, check_input($_POST['questions']));
   $answers = mysqli_real_escape_string($conn, check_input($_POST['answers']));
 
+	//TODO use
+	$Nchapter_Name = mysqli_real_escape_string($conn, check_input($_POST['Nchapter_Name']));
+	$Nparagraph_Name = mysqli_real_escape_string($conn, check_input($_POST['Nparagraph_Name']));
+
+	if(is_null($Nchapter_Name) OR $Nchapter_Name == ""){
+		$Nchapter_Name = $chapter_name;
+	}
+
+	if(is_null($Nparagraph_Name) OR $Nparagraph_Name == ""){
+		$Nparagraph_Name = $paragraph_name;
+	}
+
+	$debug .= $Nchapter_Name;
+	$debug .= $Nparagraph_Name;
+
 	$sql = "SELECT school, functie FROM users WHERE id='$id'";
 
 	if (mysqli_query($conn, $sql)) {
@@ -51,6 +66,7 @@
 		$functie = $result['functie'];
 
 		if($functie=='docent'){
+			//get theory school
 			$sql = "SELECT school FROM theorie_hoofdstukken WHERE hoofdstuk_id='$chapterID'";
 
 			if (mysqli_query($conn, $sql)) {
@@ -60,10 +76,23 @@
 
 				//if the theory belong to the school itself and not to Inforca, than update the theory, else create a new row for the school
 				if($school == $theory_school){
-					$sql = "UPDATE theorie_paragrafen SET main='$main', questions='$questions', answers='$answers' WHERE paragraaf_id='$paragraph_id'";
+					//update the paragraph
+					$sql = "UPDATE theorie_paragrafen SET main='$main', questions='$questions', answers='$answers', paragraaf_naam='$Nparagraph_Name' WHERE paragraaf_id='$paragraph_id'";
 
 					if (mysqli_query($conn, $sql)) {
-						$msg .= "\nSuccesvol opgeslagen";
+						if($Nchapter_Name != $chapter_name){
+							//update the chapter's name if it's changed
+							$sql = "UPDATE theorie_hoofdstukken SET hoofdstuk_naam='$Nchapter_Name' WHERE hoofdstuk_id='$chapterID'";
+							if (mysqli_query($conn, $sql)){
+								$msg .= "\nSuccesvol opgeslagen";
+							} else {
+								$msg .= "\n1Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+						    $error = 1;
+							}
+						} else {
+							$msg .= "\nSuccesvol opgeslagen";
+						}
+
 					} else {
 						$msg .= "\n1Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 				    $error = 1;
@@ -74,9 +103,10 @@
 
 					if(mysqli_query($conn, $sql)) {
 						$result = mysqli_query($conn, $sql);
+						//if it does not
 						if(mysqli_num_rows($result) == 0){
 							//create new chapter
-							$sql = "INSERT INTO theorie_hoofdstukken(school, hoofdstuk, hoofdstuk_naam) VALUES ('$school', '$chapter', '$chapter_name')";
+							$sql = "INSERT INTO theorie_hoofdstukken(school, hoofdstuk, hoofdstuk_naam) VALUES ('$school', '$chapter', '$Nchapter_Name')";
 
 							if (mysqli_query($conn, $sql)) {
 								$msg .= "\nEen nieuw hoofdtuk is aangemaakt.";
@@ -86,7 +116,7 @@
 							}
 
 							//get the new chapter_id
-							$sql = "SELECT hoofdstuk_id FROM theorie_hoofdstukken WHERE school='$school' AND hoofdstuk='$chapter' AND hoofdstuk_naam='$chapter_name'";
+							$sql = "SELECT hoofdstuk_id FROM theorie_hoofdstukken WHERE school='$school' AND hoofdstuk='$chapter' AND hoofdstuk_naam='$Nchapter_Name'";
 
 							if (mysqli_query($conn, $sql)) {
 								$result = mysqli_query($conn, $sql);
@@ -124,7 +154,7 @@
 							}
 
 							//save the changes made to the previously duplicated paragraph
-							$sql = "UPDATE theorie_paragrafen SET paragraaf='$paragraph', paragraaf_naam='$paragraph_name', main='$main', questions='$questions', answers='$answers' WHERE hoofdstuk_id='$NewChapterID' AND paragraaf='$paragraph'";
+							$sql = "UPDATE theorie_paragrafen SET paragraaf='$paragraph', paragraaf_naam='$Nparagraph_Name', main='$main', questions='$questions', answers='$answers' WHERE hoofdstuk_id='$NewChapterID' AND paragraaf='$paragraph'";
 
 							if (mysqli_query($conn, $sql)) {
 								$msg .= "\nUw aangepaste paragraaf is succesvol opgeslagen";

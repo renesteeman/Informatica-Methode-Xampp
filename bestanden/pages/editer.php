@@ -39,7 +39,7 @@
 
 			<div>
 				<span class="line-block">Nieuwe naam</span>
-				<input type="text" class="Nclass" name="Nclass"/>
+				<input type="text" id="Nchapter_Name"/>
 			</div>
 
 			<div>
@@ -53,12 +53,10 @@
 		    </span>
 			</div>
 
-			<!--
 			<div>
-				<span class="line-block">Naam paragraaf</span>
-				<input type="text" class="Nclass" name="Nclass"/>
+				<span class="line-block">Nieuwe naam</span>
+				<input type="text" id="Nparagraph_Name"/>
 			</div>
-			-->
 
 			<div class="html-tiles">
 				<span class="html-tile p">

@@ -106,12 +106,15 @@ $(document).ready(function(){
     var questions = $('#vragen').val();
     var answers = $('#antwoorden').val();
 
-    console.log([chapterID, paragraph_id, paragraph,  paragraph_name, chapter_name, chapter, main, questions, answers]);
+    var Nchapter_Name = $('#Nchapter_Name').val();
+    var Nparagraph_Name = $('#Nparagraph_Name').val()
+
+    console.log([chapterID, paragraph_id, paragraph,  paragraph_name, chapter_name, chapter, main, questions, answers, Nchapter_Name, Nparagraph_Name]);
 
     jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/saveEditContent.php',
-			data: {chapterID:chapterID, paragraph_id:paragraph_id, main:main, questions:questions, answers:answers, paragraph: paragraph, chapter_name:chapter_name, paragraph_name:paragraph_name, chapter:chapter}
+			data: {chapterID:chapterID, paragraph_id:paragraph_id, main:main, questions:questions, answers:answers, paragraph: paragraph, chapter_name:chapter_name, paragraph_name:paragraph_name, chapter:chapter, Nchapter_Name:Nchapter_Name, Nparagraph_Name:Nparagraph_Name}
 		});
 
     jqXHR.done(function(response) {

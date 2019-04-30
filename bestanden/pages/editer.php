@@ -36,8 +36,8 @@
 			</div>
 
 			<div class="hide chapterCode">
-				<span class="line-block">Code (Hx, Bx of Vx)</span>
-				<input type="text" id="Nchapter_Name"/>
+				<span class="line-block">Code (Hx, Vx of Bx)</span>
+				<input type="text" id="chapterCode"/>
 			</div>
 
 			<div>

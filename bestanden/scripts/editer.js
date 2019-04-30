@@ -127,9 +127,9 @@ $(document).ready(function(){
     var Nchapter_Name = $('#Nchapter_Name').val();
     var Nparagraph_Name = $('#Nparagraph_Name').val();
 
-    var Nchapter = $(".chapterCode").text();
+    var Nchapter = $("#chapterCode").val();
 
-    console.log([chapterID, paragraph_id, paragraph,  paragraph_name, chapter_name, chapter, main, questions, answers, Nchapter_Name, Nparagraph_Name]);
+    console.log([chapterID, paragraph_id, paragraph,  paragraph_name, chapter_name, chapter, main, questions, answers, Nchapter_Name, Nparagraph_Name, Nchapter]);
 
     jqXHR = $.ajax({
 			method: "POST",

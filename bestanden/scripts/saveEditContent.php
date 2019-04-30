@@ -65,20 +65,74 @@
 			//check wheter a chapter is created or is edited
 			if($chapterID == "Aanmaken"){
 				//create a new blank chapter
-				$Nchapter = mysqli_real_escape_string($conn, check_input($_POST['Nchapter_Name']));
+				$Nchapter = mysqli_real_escape_string($conn, check_input($_POST['Nchapter']));
 
-				//create new chapter
-				$sql = "INSERT INTO theorie_hoofdstukken(school, hoofdstuk, hoofdstuk_naam) VALUES ('$school', '$Nchapter', '$Nchapter_Name')";
+				$debug .= $Nchapter[0];
 
-				if (mysqli_query($conn, $sql)) {
-					$msg .= "\nEen nieuw hoofdtuk is aangemaakt.";
+				//create new chapter if the chapter code is valid
+				if($Nchapter[0] == 'H' OR $Nchapter[0] == 'B' OR $Nchapter[0] == 'V'){
+					//controleer of dit hoofdstuk al bestaat
+					$sql = "SELECT hoofdstuk_id FROM theorie_hoofdstukken WHERE hoofdstuk='$Nchapter' AND school='$school'";
+
+					if(mysqli_query($conn, $sql)) {
+						$result = mysqli_query($conn, $sql);
+
+						if (mysqli_num_rows($result) > 0) {
+							$msg .= "Dit hoofdstuk bestaat al voor uw school.";
+							$error = 1;
+						} else {
+							$sql = "INSERT INTO theorie_hoofdstukken(school, hoofdstuk, hoofdstuk_naam) VALUES ('$school', '$Nchapter', '$Nchapter_Name')";
+
+							if (mysqli_query($conn, $sql)) {
+								$msg .= "\nEen nieuw hoofdtuk is aangemaakt.";
+
+								//get the new chapter_id
+								$sql = "SELECT hoofdstuk_id FROM theorie_hoofdstukken WHERE school='$school' AND hoofdstuk='$Nchapter' AND hoofdstuk_naam='$Nchapter_Name'";
+
+								if (mysqli_query($conn, $sql)) {
+									$result = mysqli_query($conn, $sql);
+									$result = mysqli_fetch_assoc($result);
+
+									$NewChapterID = $result['hoofdstuk_id'];
+
+									//create new paragraph
+									$sql = "INSERT INTO theorie_paragrafen(hoofdstuk_id, paragraaf, paragraaf_naam, main, questions, answers) VALUES ('$NewChapterID', '1', '$Nparagraph_Name', '$main', '$questions', '$answers')";
+
+									if (!mysqli_query($conn, $sql)) {
+										$msg .= "\n1Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+										$error = 1;
+									}
+
+								} else {
+									$msg .= "\n2Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+									$error = 1;
+								}
+							} else {
+								$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+								$error = 1;
+							}
+
+
+						}
+					} else {
+						$msg .= "\n3Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+						$error = 1;
+					}
+
+
+
+
+
+
+
+
 				} else {
-					$msg .= "\n2Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					$msg .= "\nDe hoofdstuk code is niet correct, gebruik hiervoor de volgende notatie: Hx, Vx of Bx.";
 					$error = 1;
 				}
 
-				//TODO
-				//create new paragraph
+
+
 
 
 
@@ -114,7 +168,7 @@
 							}
 
 						} else {
-							$msg .= "\n1Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					    $error = 1;
 						}
 					} else {
@@ -131,7 +185,7 @@
 								if (mysqli_query($conn, $sql)) {
 									$msg .= "\nEen nieuw hoofdtuk is aangemaakt.";
 								} else {
-									$msg .= "\n2Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+									$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							    $error = 1;
 								}
 
@@ -144,7 +198,7 @@
 
 									$NewChapterID = $result['hoofdstuk_id'];
 								} else {
-									$msg .= "\n3Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+									$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							    $error = 1;
 								}
 
@@ -164,7 +218,7 @@
 										if (mysqli_query($conn, $sql)) {
 											$msg .= "\nEr is een duplicaate paragraaf aangemaakt van dit hoofdstuk voor uw school.";
 										} else {
-											$msg .= "\n4Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+											$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 									    $error = 1;
 										}
 									}
@@ -179,7 +233,7 @@
 								if (mysqli_query($conn, $sql)) {
 									$msg .= "\nUw aangepaste paragraaf is succesvol opgeslagen";
 								} else {
-									$msg .= "\n5Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+									$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 							    $error = 1;
 								}
 							} else {
@@ -187,12 +241,12 @@
 								$error = 1;
 							}
 						} else {
-							$msg .= "\n1Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 					    $error = 1;
 						}
 					}
 				} else {
-					$msg .= "\n6Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+					$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 			    $error = 1;
 				}
 			}
@@ -207,7 +261,7 @@
 		}
 
 	} else {
-		$msg .= "\n7Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+		$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 		$error = 1;
 	}
 

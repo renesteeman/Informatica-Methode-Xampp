@@ -173,12 +173,16 @@
 			    $school_chapter = $school_chapters[$i];
 			    $array_found_index = array_search($school_chapter, $theory_chapters);
 
-			    //check if a chapter from the school is found and if so replace it by the school version
+			    //check if a chapter from the school is found and if so replace it by the school version if not add the chapter
 			    if($array_found_index !== False){
 						$theory_chapters_ids[$array_found_index] = $school_chapter_ids[$i];
 			      $theory_chapters[$array_found_index] = $school_chapter;
 			      $theory_chapter_names[$array_found_index] = $school_chapter_names[$i];
-			    }
+			    } else {
+						$theory_chapters_ids[] = $school_chapter_ids[$i];
+			      $theory_chapters[] = $school_chapter;
+			      $theory_chapter_names[] = $school_chapter_names[$i];
+					}
 			  }
 
 				//load the paragraphs that correspond to the chapters

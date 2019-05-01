@@ -59,8 +59,10 @@
 						$Cdate = date("Y-m-d");
 						$Cdate = strtotime($Cdate);
 
-						if(mysqli_num_rows($result) > 0) {
+						$length = mysqli_num_rows($result);
+						if($length > 0) {
 					    // output data of each row
+							$i = 1;
 					    while($row = mysqli_fetch_assoc($result)) {
 								$Ititel = $row['titel'];
 								$itemID = $row['id'];
@@ -82,20 +84,44 @@
 									';
 								}
 
-								if($Pfunctie == 'docent'){
-								echo '
-									<div class="itemHeader docent">
-								';
+								if($i == 1){
+									if($Pfunctie == 'docent'){
+									echo '
+										<div class="itemHeader docent first">
+									';
+									} else {
+									echo '
+										<div class="itemHeader leerling first">
+									';
+									}
+								} else if($i == $length){
+									if($Pfunctie == 'docent'){
+									echo '
+										<div class="itemHeader docent last">
+									';
+									} else {
+									echo '
+										<div class="itemHeader leerling last">
+									';
+									}
+
 								} else {
-								echo '
-									<div class="itemHeader leerling">
-								';
+									if($Pfunctie == 'docent'){
+									echo '
+										<div class="itemHeader docent">
+									';
+									} else {
+									echo '
+										<div class="itemHeader leerling">
+									';
+									}
 								}
+
+
 
 								$Idatum = substr($Idatum, 0, -3);
 
 								echo '
-
 										<!-- table header for this class-->
 										<div class="itemHeaderContent">
 											<span class="hide DateCompare">'.$IdatumCompare.'</span>
@@ -129,6 +155,8 @@
 									</div>
 								</div>
 								';
+
+								$i++;
 							}
 						} else {
 							//no 'items' found

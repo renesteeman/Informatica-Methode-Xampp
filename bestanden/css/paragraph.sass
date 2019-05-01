@@ -42,6 +42,7 @@
 		margin-left: 0.2em
 		color: $black
 		cursor: pointer
+		border-radius: $border-radius-xs
 
 	.ptile:hover
 		background: linear-gradient(to bottom right, $secondary2, lighten($secondary2, 15%))
@@ -67,6 +68,10 @@
 		margin: 0
 		font-size: 2em
 
+.bar-s:first-child
+	border-top-right-radius: $border-radius-m
+	border-top-left-radius: $border-radius-m
+
 .bar-s.folded
 	box-shadow: none
 
@@ -75,8 +80,6 @@
 	margin-left: 20%
 	margin-top: 2em
 	margin-bottom: 4em
-	box-shadow: $box-shadow
-	background-color: lighten($white, 5%)
 
 	p
 		margin-top: 0.5em
@@ -91,6 +94,7 @@
 		padding: 0.5em 2em
 		font-size: 1.5em
 		word-break: normal
+		background-color: lighten($white, 5%)
 
 		img
 			display: block
@@ -192,7 +196,7 @@
 	float: right
 	margin-right: 20%
 	background-color: mix($primairy2, $primairy1, 50%)
-	border-radius: 4%
+	border-radius: 50%
 	margin-bottom: 20rem
 	margin-top: 4em
 	box-shadow: $box-shadow
@@ -224,4 +228,3 @@
 
 	.goToTop
 		margin-right: 0
-		border-radius: 4% 0 0 4%

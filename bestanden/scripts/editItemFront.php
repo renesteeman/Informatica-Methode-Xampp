@@ -1,13 +1,5 @@
 <?php
 include('../components/headerGeneral.php');
-
-//function to check and clean input
-function check_input($data) {
-	$data = trim($data, " ");
-	$data = stripslashes($data);
-	$data = htmlentities($data, ENT_QUOTES);
-	return $data;
-}
 ?>
 
 <link rel="stylesheet" href="../css/edit.min.css">
@@ -41,14 +33,6 @@ function check_input($data) {
 			$result = mysqli_query($conn, $sql);
 			$result = mysqli_fetch_assoc($result);
 			$school = $result['school'];
-		}
-
-		//function to check and clean input
-		function check_input($data) {
-			$data = trim($data, " ");
-			$data = stripslashes($data);
-			$data = htmlentities($data, ENT_QUOTES);
-			return $data;
 		}
 
 		$Iid = mysqli_real_escape_string($conn, check_input($_SESSION['itemID']));

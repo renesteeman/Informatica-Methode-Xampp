@@ -14,8 +14,6 @@
 	width: 60%
 	margin-left: 20%
 	margin-top: 40px
-	background-color: lighten($white, 5%)
-	box-shadow: $box-shadow
 	margin-bottom: 40px
 
 	.vraagBalk
@@ -32,6 +30,10 @@
 		padding-left: 1em
 		padding-right: 1em
 
+	.vraagBalk:first-child
+		border-top-left-radius: $border-radius-m
+		border-top-right-radius: $border-radius-m
+
 	.vraagBalk.inactive
 		box-shadow: 0 0px 0px darken($white, 50%)
 
@@ -44,8 +46,9 @@
 		margin: 0
 
 	.antwoorden
-		margin-left: 2rem
-		padding-top: 1em
+		padding-left: 2rem
+		padding-top: 1rem
+		background-color: lighten($white, 5%)
 
 		ul
 			list-style-type: none

@@ -101,9 +101,9 @@
 
 								$msg .= '<option value="'.$paragraph_id.'">§'.$paragraaf.' '.$paragraaf_name.'</option>';
 							}
-						} else {
-							$msg .= '<option value="Aanmaken">Aanmaken</option>';
 						}
+
+						$msg .= '<option value="Aanmaken">Aanmaken</option>';
 
 					} else {
 						$msg .= "\n1Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";

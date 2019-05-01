@@ -139,6 +139,7 @@ $(document).ready(function(){
 
     jqXHR.done(function(response) {
       response = JSON.parse(response);
+      console.log('DEBUG');
       console.log(response.debug);
 
       window.alert(response.msg);

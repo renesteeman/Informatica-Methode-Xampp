@@ -244,6 +244,7 @@
 								$NewChapterID = getChapterId($school, $chapter, $Nchapter_Name);
 
 								//duplicate 'old' chapter
+								//paragraphs
 								$sql = "SELECT paragraaf, paragraaf_naam, main, questions, answers FROM theorie_paragrafen WHERE hoofdstuk_id='$chapterID'";
 
 								$result = mysqli_query($conn, $sql);
@@ -268,6 +269,76 @@
 							    $error = 1;
 								}
 
+								//duplicate docs
+								$sql = "SELECT document_title, document_subtitle, document_content FROM theorie_documenten WHERE hoofdstuk_id='$chapterID'";
+
+								$result = mysqli_query($conn, $sql);
+								if (mysqli_num_rows($result) > 0) {
+									while($row = mysqli_fetch_assoc($result)) {
+										$Cdocument_title = check_input($row["document_title"]);
+										$Cdocument_subtitle = check_input($row["document_subtitle"]);
+										$Cdocument_content = check_input($row["document_content"]);
+										$sql = "INSERT INTO theorie_documenten(hoofdstuk_id, document_title, document_subtitle, document_content) VALUES ('$NewChapterID', '$Cdocument_title', '$Cdocument_subtitle', '$Cdocument_content')";
+
+										if (mysqli_query($conn, $sql)) {
+											$msg .= "\nEr is een duplicaat document aangemaakt van dit hoofdstuk voor uw school.";
+										} else {
+											$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+									    $error = 1;
+										}
+									}
+								}
+
+								//duplicate quiz
+								$sql = "SELECT vraag, optie1, optie2, optie3, optie4, antwoord, uitleg FROM quiz_vragen WHERE hoofdstuk_id='$chapterID'";
+
+								$result = mysqli_query($conn, $sql);
+								if (mysqli_num_rows($result) > 0) {
+									while($row = mysqli_fetch_assoc($result)) {
+										$Cvraag = check_input($row["vraag"]);
+										$Coptie1 = check_input($row["optie1"]);
+										$Coptie2 = check_input($row["optie2"]);
+										$Coptie3 = check_input($row["optie3"]);
+										$Coptie4 = check_input($row["optie4"]);
+										$Cantwoord = check_input($row["antwoord"]);
+										$Cuitleg = check_input($row["uitleg"]);
+										$sql = "INSERT INTO quiz_vragen(hoofdstuk_id, vraag, optie1, optie2, optie3, optie4, antwoord, uitleg) VALUES ('$NewChapterID', '$Cvraag', '$Coptie1', '$Coptie2', '$Coptie3', '$Coptie4', '$Cantwoord', '$Cuitleg')";
+
+										if (mysqli_query($conn, $sql)) {
+											$msg .= "\nEr is een duplicaate quiz aangemaakt van dit hoofdstuk voor uw school.";
+										} else {
+											$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+									    $error = 1;
+										}
+									}
+								} else {
+									$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							    $error = 1;
+								}
+
+								//duplicate quiz results
+								$sql = "SELECT userid, cijfer FROM quiz_results WHERE hoofdstuk_id='$chapterID'";
+
+								$result = mysqli_query($conn, $sql);
+								if (mysqli_num_rows($result) > 0) {
+									while($row = mysqli_fetch_assoc($result)) {
+										$Cuserid = check_input($row["userid"]);
+										$Ccijfer = check_input($row["cijfer"]);
+										$sql = "INSERT INTO quiz_results(userid, hoofdstuk_id, cijfer) VALUES ('$Cuserid', '$NewChapterID', '$Ccijfer')";
+
+										if (mysqli_query($conn, $sql)) {
+											$msg .= "\nEr is een quiz resultaat gedupliceerd van dit hoofdstuk voor uw versie van dit hoofdstuk.";
+										} else {
+											$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+									    $error = 1;
+										}
+									}
+								} else {
+									$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+							    $error = 1;
+								}
+
+								//add chapter
 								if($paragraph_id == "Aanmaken"){
 									//find out what paragraph would come next in the chapter
 									$sql = "SELECT MAX(paragraaf) FROM theorie_paragrafen WHERE hoofdstuk_id='$chapterID'";

@@ -85,12 +85,12 @@
 
 							$Cchapter = $result2['hoofdstuk'];
 							$CchapterName = $result2['hoofdstuk_naam'];
+
+							$add = [$Cchapter." ".$CchapterName => $Cgrade];
+		          $studentQuizResults[] = $add;
 						} else {
 			        $error .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 			      }
-
-	          $add = [$Cchapter." ".$CchapterName => $Cgrade];
-	          $studentQuizResults[] = $add;
 	        }
 				}
 

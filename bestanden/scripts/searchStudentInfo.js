@@ -61,13 +61,14 @@ $(document).ready(function(){
       } else {
         $('.searchResultMail').text('Geen email ingesteld');
       }
-      if(info['LActivity'] != ""){
-        $('.searchResultActiviteit').text(info['LActivity']);
+      if(info['Lactiviteit'] != ""){
+        $('.searchResultActiviteit').text(info['Lactiviteit']);
       } else {
         $('.searchResultActiviteit').text('Nooit actief geweest');
       }
 
-      if(info['groepsgenoten'] != ""){
+      console.log(info['groepsgenoten']);
+      if(Object.values(info['groepsgenoten']).length > 0){
         $('.searchResultGroupName').next().removeClass('hide');
         $('.searchResultGroepInhoud').html("");
 
@@ -88,12 +89,11 @@ $(document).ready(function(){
         $('.searchResultGroupName').next().addClass('hide');
       }
 
-      //TODO
-      if(info['quizresultaten'] != ""){
+      quizResultsLength = Object.values(info['quizresultaten']).length;
+      if(quizResultsLength != 0){
         $('.searchResultQuizHeader').next().removeClass('hide');
         $('.searchResultQuizHeader').text('Quiz resultaten');
         $('.searchResultQuizInhoud').html('');
-        quizResultsLength = (Object.values(info['quizresultaten'])).length;
 
         append = "";
 
@@ -114,7 +114,8 @@ $(document).ready(function(){
         $('.searchResultQuizHeader').text('Er zijn geen gemaakte quizes');
       }
 
-      if(info['progressie'] != ""){
+      progressieLength = Object.values(info['progressie']).length;
+      if(progressieLength > 0){
         $('.searchResultProgression').next().removeClass('hide');
         $('.searchResultProgression').text('Theorie progressie');
 

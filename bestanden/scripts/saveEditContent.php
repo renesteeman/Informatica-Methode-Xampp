@@ -112,10 +112,6 @@
 		global $msg;
 		global $error;
 
-		//TODO
-		global $debug;
-		$debug .= $paragraph;
-
 		$sql = "INSERT INTO theorie_paragrafen(hoofdstuk_id, paragraaf, paragraaf_naam, main, questions, answers) VALUES ('$chapterID', '$paragraph', '$name', '$main', '$questions', '$answers')";
 
 		if (mysqli_query($conn, $sql)) {
@@ -274,7 +270,6 @@
 
 								if($paragraph_id == "Aanmaken"){
 									//find out what paragraph would come next in the chapter
-									//TODO
 									$sql = "SELECT MAX(paragraaf) FROM theorie_paragrafen WHERE hoofdstuk_id='$chapterID'";
 
 									$result = mysqli_query($conn, $sql);
@@ -324,5 +319,4 @@
 	$toReturn = json_encode($toReturn);
 
 	echo $toReturn;
-
 ?>

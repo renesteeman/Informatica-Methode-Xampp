@@ -157,6 +157,39 @@ $(document).ready(function(){
 	  });
   })
 
+  $('.redButton').click(function(){
+    //TODO are you sure?
+
+
+
+
+    var chapterID = $('#chapter_selector option:selected').val();
+    var paragraph_id = $('#paragraph_selector option:selected').val();
+
+    jqXHR = $.ajax({
+			method: "POST",
+			url: '../scripts/deleteParagraph.php',
+			data: {chapterID:chapterID, paragraph_id:paragraph_id}
+		});
+
+    jqXHR.done(function(response) {
+      response = JSON.parse(response);
+      console.log('DEBUG');
+      console.log(response.debug);
+
+      window.alert(response.msg);
+
+      if(!response.error){
+        loadChapters();
+      }
+
+    });
+
+		jqXHR.fail(function(jqXHR) {
+			alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
+	  });
+  })
+
   //buttons
   var selectedTextArea;
   var selectedTextAreaJS;

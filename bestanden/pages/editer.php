@@ -109,6 +109,7 @@
 			</div>
 
 			<button type="submit">Opslaan</button>
+			<button class="redButton" type="Button">Verwijder paragraaf</button>
 		</form>
   </div>
 

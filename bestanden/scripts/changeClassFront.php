@@ -1,13 +1,5 @@
 <?php
 	include('../components/headerGeneral.php');
-
-	//function to check and clean input
-	function check_input($data) {
-		$data = trim($data, " ");
-		$data = stripslashes($data);
-		$data = htmlentities($data, ENT_QUOTES);
-		return $data;
-	}
 ?>
 
 <link rel="stylesheet" href="../css/edit.min.css">

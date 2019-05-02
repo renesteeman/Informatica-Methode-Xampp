@@ -24,8 +24,6 @@
   $chapterID = mysqli_real_escape_string($conn, check_input($_POST['chapterID']));
 	$paragraph_id = mysqli_real_escape_string($conn, check_input($_POST['paragraph_id']));
 
-
-
   $sql = "SELECT school, functie FROM users WHERE id='$id'";
 
 	if (mysqli_query($conn, $sql)) {
@@ -76,6 +74,37 @@
             		$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
             		$error = 1;
               }
+
+              //delete associated quizes
+              $sql = "DELETE FROM quiz_vragen WHERE hoofdstuk_id='$chapterID'";
+
+              if (mysqli_query($conn, $sql)) {
+                $msg .= "\nBijbehorende quiz vragen zijn verwijderd.";
+              } else {
+            		$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+            		$error = 1;
+              }
+
+              //delete associated quiz results
+              $sql = "DELETE FROM quiz_results WHERE hoofdstuk_id='$chapterID'";
+
+              if (mysqli_query($conn, $sql)) {
+                $msg .= "\nBijbehorende quiz resultaten zijn verwijderd.";
+              } else {
+            		$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+            		$error = 1;
+              }
+
+              //delete associated docs
+              $sql = "DELETE FROM theorie_documenten WHERE hoofdstuk_id='$chapterID'";
+
+              if (mysqli_query($conn, $sql)) {
+                $msg .= "\nBijbehorende documenten zijn verwijderd.";
+              } else {
+            		$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+            		$error = 1;
+              }
+
             }
           } else {
         		$msg .= "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";

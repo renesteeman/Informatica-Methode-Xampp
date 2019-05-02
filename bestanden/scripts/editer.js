@@ -1,5 +1,7 @@
 $(document).ready(function(){
   function loadChapters(){
+    let oldChapter = $('#chapter_selector option:selected').val();
+
     //load available chapters
     jqXHR = $.ajax({
       method: "POST",
@@ -14,6 +16,10 @@ $(document).ready(function(){
         window.alert(response.msg);
       } else {
         $('#chapter_selector').html(response.msg);
+        //go back to the chapter that was being edited (except for the first load)
+        if(typeof oldChapter !== 'undefined' && oldChapter != null && oldChapter != "Aanmaken" && response.msg.indexOf("value=\""+oldParagraph+"\"") !== -1){
+          $('#chapter_selector').val(oldChapter).change();
+        }
         updateParagraphSelection();
       }
     });
@@ -24,6 +30,7 @@ $(document).ready(function(){
   }
 
   function updateParagraphSelection(){
+    let oldParagraph = $('#paragraph_selector option:selected').val();
     var chapterID = $('#chapter_selector option:selected').val();
 
     //if a new chapter is being created, give the option to give it a code
@@ -46,6 +53,10 @@ $(document).ready(function(){
         window.alert(response.msg);
       } else {
         $('#paragraph_selector').html(response.msg);
+        //stay at the paragraph that was edited
+        if(oldParagraph != null && oldParagraph != "Aanmaken" && response.msg.indexOf("value=\""+oldParagraph+"\"") !== -1){
+          $('#paragraph_selector').val(oldParagraph).change();
+        }
         updateParagraphContent();
       }
     });
@@ -66,7 +77,6 @@ $(document).ready(function(){
 
     jqXHR.done(function(response) {
       response = JSON.parse(response);
-      console.log(response.debug);
 
       if(response.error){
         window.alert(response.msg);
@@ -129,8 +139,6 @@ $(document).ready(function(){
 
     var Nchapter = $("#chapterCode").val();
 
-    console.log([chapterID, paragraph_id, paragraph,  paragraph_name, chapter_name, chapter, main, questions, answers, Nchapter_Name, Nparagraph_Name, Nchapter]);
-
     jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/saveEditContent.php',
@@ -139,13 +147,10 @@ $(document).ready(function(){
 
     jqXHR.done(function(response) {
       response = JSON.parse(response);
-      console.log('DEBUG');
-      console.log(response.debug);
 
       window.alert(response.msg);
 
       //refresh for when a new paragraph is created
-      //TODO get back to the paragraph that was being edited instead of to the first one of the chapter
       if(!response.error){
         loadChapters();
       }
@@ -159,35 +164,34 @@ $(document).ready(function(){
 
   $('.redButton').click(function(){
     //TODO are you sure?
+    if (confirm("Weet u zeker dat u deze paragraaf wilt verwijderen?")){
+      var chapterID = $('#chapter_selector option:selected').val();
+      var paragraph_id = $('#paragraph_selector option:selected').val();
 
+      jqXHR = $.ajax({
+  			method: "POST",
+  			url: '../scripts/deleteParagraph.php',
+  			data: {chapterID:chapterID, paragraph_id:paragraph_id}
+  		});
 
+      jqXHR.done(function(response) {
+        response = JSON.parse(response);
 
+        window.alert(response.msg);
 
-    var chapterID = $('#chapter_selector option:selected').val();
-    var paragraph_id = $('#paragraph_selector option:selected').val();
+        if(!response.error){
+          loadChapters();
+        }
 
-    jqXHR = $.ajax({
-			method: "POST",
-			url: '../scripts/deleteParagraph.php',
-			data: {chapterID:chapterID, paragraph_id:paragraph_id}
-		});
+      });
 
-    jqXHR.done(function(response) {
-      response = JSON.parse(response);
-      console.log('DEBUG');
-      console.log(response.debug);
+  		jqXHR.fail(function(jqXHR) {
+  			alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
+  	  });
+    } else {
+      alert("Het verwijderen van de paragraaf is geanuleerd.");
+    }
 
-      window.alert(response.msg);
-
-      if(!response.error){
-        loadChapters();
-      }
-
-    });
-
-		jqXHR.fail(function(jqXHR) {
-			alert("Er is iets mis gegaan met AJAX, de foutcode is " + jqXHR.status + " met als beschrijving " + jqXHR.statusText + ". Neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!");
-	  });
   })
 
   //buttons
@@ -205,7 +209,6 @@ $(document).ready(function(){
     //return 'caret'
     el.focus();
     elJS.selectionStart = caretPos + insert.length;
-    console.log(caretPos + insert.length);
     elJS.selectionEnd = caretPos + insert.length;
   }
 

@@ -92,13 +92,23 @@
         <div class='paragraph-tiles'>";
 
           for($i=0; $i<count($paragraphs); $i++){
-            echo "
-            <div class='ptile'>
-              <span class='ptile-content' id='".$paragraphs[$i][0]."'>
-                §".$paragraphs[$i][1]."
-              </a></span>
-            </div>
-            ";
+            if($i == $paragraph-1){
+              echo "
+              <div class='ptile active'>
+                <span class='ptile-content' id='".$paragraphs[$i][0]."'>
+                  §".$paragraphs[$i][1]."
+                </a></span>
+              </div>
+              ";
+            } else {
+              echo "
+              <div class='ptile'>
+                <span class='ptile-content' id='".$paragraphs[$i][0]."'>
+                  §".$paragraphs[$i][1]."
+                </a></span>
+              </div>
+              ";
+            }
           }
 
         echo "

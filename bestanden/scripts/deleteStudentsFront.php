@@ -105,14 +105,12 @@
 				<input type="password" placeholder="Password" name="password" maxlength="50" required>
 			</li>
 			<li>
-				<button type="submit">Verwijder</button>
+				<button type="submit" class="redButton">Verwijder</button>
 			</li>
 		</ul>
 	</form>
 
 	</div>
-
-
 
 	<?php
 	include('../components/footerGeneral.php');

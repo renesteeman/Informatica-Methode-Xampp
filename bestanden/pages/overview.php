@@ -398,7 +398,7 @@
 			<button type="submit">Leerling(en) van klas veranderen</button>
 		</form>
 		<form class="deleteStudentsButton" method="post" action="../scripts/deleteStudentsFront.php">
-			<button type="submit">Account(s) van leerling(en) verwijderen</button>
+			<button type="submit" class="redButton">Account(s) van leerling(en) verwijderen</button>
 		</form>
 		';
 

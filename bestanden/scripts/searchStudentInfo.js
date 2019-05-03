@@ -67,13 +67,11 @@ $(document).ready(function(){
         $('.searchResultActiviteit').text('Nooit actief geweest');
       }
 
-      console.log(info['groepsgenoten']);
       if(Object.values(info['groepsgenoten']).length > 0){
         $('.searchResultGroupName').next().removeClass('hide');
         $('.searchResultGroepInhoud').html("");
 
         info['groepsgenoten'] = Object.values(info['groepsgenoten']);
-        console.log(info['groepsgenoten']);
 
         for(i=0; i<info['groepsgenoten'].length; i++){
           if(info['groepsgenoten'][i][2] == null){

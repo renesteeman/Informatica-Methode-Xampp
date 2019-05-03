@@ -311,6 +311,7 @@ button
 	background-color: darken($white, 10%)
 	transition: background-color .2s ease-in-out, box-shadow .2s ease-in-out
 	box-shadow: $box-shadow
+	box-sizing: content-box
 
 button:hover
 	background-color: $secondary2
@@ -323,6 +324,12 @@ button[type=submit].redButton:hover
 	background-color: lighten($red, 10%)
 
 button.redButton:hover
+	background-color: lighten($red, 10%)
+
+input[type=submit].redButton:hover
+	background-color: lighten($red, 10%)
+
+input[type=submit].redButton:hover
 	background-color: lighten($red, 10%)
 
 select
@@ -423,6 +430,7 @@ textarea:hover
 	padding-top: 1em
 	padding-bottom: .5em
 	padding-left: 1em
+	box-sizing: border-box
 
 	input, textarea, select
 		box-shadow: $box-shadow-l2
@@ -498,7 +506,6 @@ textarea:hover
 //responsiveness
 @media (max-width: $xlarge)
 	.chapter-tiles
-
 		.tile
 			width: 100%
 

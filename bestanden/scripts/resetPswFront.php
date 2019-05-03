@@ -6,8 +6,6 @@
 	include('../components/headerGeneral.php');
 ?>
 
-<link rel="stylesheet" href="../css/resetPsw.min.css">
-
 <body>
 
 	<div class="title">
@@ -28,7 +26,8 @@
 			<label>Email</label>
 			<input type="email" placeholder="email adres" name="email" maxlength="50" required>
 
-			<input type="submit" value="reset wachtwoord"/>
+			</br>
+			<input type="submit" class="redButton" value="reset wachtwoord"/>
 
 		</form>
 	</div>

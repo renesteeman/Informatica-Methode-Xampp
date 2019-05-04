@@ -130,7 +130,7 @@ if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF
 							//if a teacher is logged in
 							echo '
 							<div class="nav-bar">
-								<a href="../index.php">HOME</a>
+								<a href="../index.php">THEORIE</a>
 								<a href="../pages/overview.php">OVERZICHT</a>
 								<a href="../pages/planner.php">PLANNER</a>
 								<a href="../pages/editer.php">AANPASSEN</a>
@@ -140,7 +140,7 @@ if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF
 							//if a student is logged in
 							echo '
 							<div class="nav-bar">
-								<a href="../index.php">HOME</a>
+								<a href="../index.php">THEORIE</a>
 								<a href="../pages/planner.php">PLANNER</a>
 							</div>
 							';
@@ -188,7 +188,7 @@ if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF
 						//if a teacher is logged in
 						echo '
 						<div class="nav-bar">
-							<a href="../index.php">HOME</a>
+							<a href="../index.php">THEORIE</a>
 							<a href="../pages/overview.php">OVERZICHT</a>
 							<a href="../pages/planner.php">PLANNER</a>
 							<a href="../pages/editer.php">AANPASSEN</a>
@@ -198,7 +198,7 @@ if(basename($_SERVER['PHP_SELF']) != 'index.php' AND basename($_SERVER['PHP_SELF
 						//if a student is logged in
 						echo '
 						<div class="nav-bar student">
-							<a href="../index.php">HOME</a>
+							<a href="../index.php">THEORIE</a>
 							<a href="../pages/planner.php">PLANNER</a>
 						</div>
 						';

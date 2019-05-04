@@ -240,25 +240,25 @@
 									echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 								}
 
-								//check if the homework is done
-								$Chomework = [];
+								//check if the THEORIEwork is done
+								$CTHEORIEwork = [];
 
 								//check what should have been done
 								$teMakenKlassenKeys = array_keys($teMakenKlassen);
 								if(in_array($Cklas, $teMakenKlassenKeys)){
 									//get text
-									$Chomework = $teMakenKlassen[$Cklas];
+									$CTHEORIEwork = $teMakenKlassen[$Cklas];
 
 									//clean text up
-									$Chomework = trim($Chomework);
-									$Chomework = rtrim($Chomework, ",");
+									$CTHEORIEwork = trim($CTHEORIEwork);
+									$CTHEORIEwork = rtrim($CTHEORIEwork, ",");
 
 									//transform text into an array
-									$Chomework = explode(",", $Chomework);
+									$CTHEORIEwork = explode(",", $CTHEORIEwork);
 								}
 
-								for($i=0; $i<count($Chomework);$i++){
-									$shouldBeComplete = $Chomework[$i];
+								for($i=0; $i<count($CTHEORIEwork);$i++){
+									$shouldBeComplete = $CTHEORIEwork[$i];
 									$shouldBeComplete = trim($shouldBeComplete);
 
 									if(!in_array($shouldBeComplete, $hoofdstukkenAf)){

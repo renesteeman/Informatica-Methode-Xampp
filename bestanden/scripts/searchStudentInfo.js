@@ -18,13 +18,14 @@ $(document).ready(function(){
       $('.searchResultKlas').text('Klas');
       $('.searchResultMail').text('E-mail');
       $('.searchResultActiviteit').text('Laatst actief');
-      $('.searchResultHeader').text('Groepnaam');
-      $('.searchResultHeader').next().addClass('hide');
-      $('.searchResultGroepsrol').text('Groepnaam');
-      $('.searchResultGroepsrol').next().addClass('hide');
+      $('.searchResultGroupName').text('Groepnaam');
+      $('.searchResultGroepsrol').text('Groepsrol');
       $('.searchResultQuizHeader').text('Quiz resultaten');
-      $('.searchResultQuizHeader').next().addClass('hide');
       $('.searchResultProgression').text('Theorie progressie');
+
+      $('.searchResultGroupName').next().addClass('hide');
+      $('.searchResultGroepsrol').next().addClass('hide');
+      $('.searchResultQuizHeader').next().addClass('hide');
       $('.searchResultProgression').next().addClass('hide');
     }
 

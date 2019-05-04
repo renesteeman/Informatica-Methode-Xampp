@@ -18,8 +18,8 @@ $(document).ready(function(){
       $('.searchResultKlas').text('Klas');
       $('.searchResultMail').text('E-mail');
       $('.searchResultActiviteit').text('Laatst actief');
-      $('.searchResultGroupName').text('Groepnaam');
-      $('.searchResultGroupName').next().addClass('hide');
+      $('.searchResultHeader').text('Groepnaam');
+      $('.searchResultHeader').next().addClass('hide');
       $('.searchResultGroepsrol').text('Groepnaam');
       $('.searchResultGroepsrol').next().addClass('hide');
       $('.searchResultQuizHeader').text('Quiz resultaten');

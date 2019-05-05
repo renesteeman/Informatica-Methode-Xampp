@@ -59,10 +59,6 @@
 					</div>
 				</li>
 				<li>
-					<label>Uw wachtwoord</label>
-					<input type="password" placeholder="Huidig wachtwoord" name="password" maxlength="50" required>
-				</li>
-				<li>
 					<button type="submit">Bevestig</button>
 				</li>
 			</ul>

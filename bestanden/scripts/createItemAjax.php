@@ -80,54 +80,28 @@
 			}
 		};
 
-		if(isset($_POST['password'])){
-			if($_POST['password'] != ""){
-				$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
-			}
-		};
 
-		//get password for user
-		$sql = "SELECT password FROM users WHERE id='$id'";
+		if($Inaam != "" & $Iomschrijving != "" & $Iklas != "" & $Idatum != ""){
 
-		if (mysqli_query($conn, $sql)) {
+			//check if data is unique
+			$sql = mysqli_query($conn, "SELECT * FROM planner WHERE titel='$Inaam' AND klas='$Iklas' AND datum='$Idatum'");
 
-			$result = mysqli_query($conn, $sql);
-			$result = mysqli_fetch_assoc($result);
-			$rightpsw = $result['password'];
-
-			//check psw
-			if(password_verify($password, $rightpsw)){
-				if($Inaam != "" & $Iomschrijving != "" & $Iklas != "" & $Idatum != ""){
-
-					//check if data is unique
-					$sql = mysqli_query($conn, "SELECT * FROM planner WHERE titel='$Inaam' AND klas='$Iklas' AND datum='$Idatum'");
-
-					if(mysqli_num_rows($sql) != 0){
-						echo "\nDeze opdracht bestaat al. Verander de naam, klas of datum";
-					} else {
-						//create group
-						$sql = "INSERT INTO planner (titel, beschrijving, progressie, school, klas, datum) VALUES ('$Inaam', '$Iomschrijving', '$Iprogressie', '$Ischool', '$Iklas', '$Idatum')";
-
-						if (mysqli_query($conn, $sql)) {
-							echo "Opdracht succesvol toegevoegd";
-						} else {
-							echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
-						}
-					}
-
-				} else {
-					echo "\nNiet alle informatie is ontvangen of de informatie is niet correct";
-				}
-
+			if(mysqli_num_rows($sql) != 0){
+				echo "\nDeze opdracht bestaat al. Verander de naam, klas of datum";
 			} else {
-				echo "\nVerkeerd wachtwoord";
+				//create group
+				$sql = "INSERT INTO planner (titel, beschrijving, progressie, school, klas, datum) VALUES ('$Inaam', '$Iomschrijving', '$Iprogressie', '$Ischool', '$Iklas', '$Idatum')";
+
+				if (mysqli_query($conn, $sql)) {
+					echo "Opdracht succesvol toegevoegd";
+				} else {
+					echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+				}
 			}
 
 		} else {
-			echo "\nEr is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+			echo "\nNiet alle informatie is ontvangen of de informatie is niet correct";
 		}
-
 	}
-
 
 ?>

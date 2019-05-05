@@ -116,16 +116,12 @@ include('../components/headerGeneral.php');
 									echo '
 								</ul>
 							</div>
-							<div class="addItem">
-								<span class="addItem">
-									<input type="text" placeholder="Nieuw items" name="NGleden" maxlength="50" autocomplete="off">
+							<div class="add-item">
+								<span class="add-item">
+									<input type="text" placeholder="Nieuw hoofdstuk" name="NGleden" maxlength="50" autocomplete="off">
 								</span>
-								<span class="plus-sign addItemButton">+</span>
+								<span class="plus-sign addLidButton">+</span>
 							</div>
-						</li>
-						<li>
-							<label>Uw wachtwoord</label>
-							<input type="password" placeholder="Huidig wachtwoord" name="password" maxlength="50">
 						</li>
 						<li>
 							<input type="submit" value="Bevestig" id="editItemConfirm" class="ConfirmButton">

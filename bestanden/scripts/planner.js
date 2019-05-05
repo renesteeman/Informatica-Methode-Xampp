@@ -38,13 +38,11 @@ $(document).ready(function(){
 			Iprogressie.push($(this).text());
 		});
 
-		var password = $('input[name=password]').val();
-
 		//Give php the info it needs (via AJAX)
 		jqXHR = $.ajax({
 			method: "POST",
 			url: "createItemAjax.php",
-			data: {Inaam: Inaam, Iomschrijving: Iomschrijving, Iklas: Iklas, Iprogressie: Iprogressie, Idatum: Idatum, password: password}
+			data: {Inaam: Inaam, Iomschrijving: Iomschrijving, Iklas: Iklas, Iprogressie: Iprogressie, Idatum: Idatum}
 		});
 		jqXHR.done(function(msg) {
 			window.alert(msg);
@@ -116,13 +114,11 @@ $(document).ready(function(){
 			NIprogressie.push($(this).text());
 		});
 
-		var password = $('input[name=password]').val();
-
 		//sent values of group via ajax to editItemFront.php
 		jqXHR = $.ajax({
 			method: "POST",
 			url: '../scripts/editItemAjax.php',
-			data: {NInaam: NInaam, NIomschrijving:NIomschrijving, NIklas:NIklas, NIdatum:NIdatum, NIprogressie:NIprogressie, password:password}
+			data: {NInaam: NInaam, NIomschrijving:NIomschrijving, NIklas:NIklas, NIdatum:NIdatum, NIprogressie:NIprogressie}
 		});
 
 		jqXHR.done(function(response) {
@@ -145,12 +141,11 @@ $(document).ready(function(){
 	//delete item data
 	$('.deleteItemButton').click(function(){
 		if (confirm("Weet u zeker dat u de opdracht wilt verwijderen?")){
-			var password = $("input[name='password']").val();
 
 			jqXHR = $.ajax({
 				method: "POST",
 				url: '../scripts/deleteItem.php',
-				data: {password:password}
+				data: {}
 			});
 
 			jqXHR.done(function(response) {
@@ -160,7 +155,6 @@ $(document).ready(function(){
 	      if(!response.error){
 	        window.location.href = '../pages/planner.php';
 				}
-
 			});
 
 			jqXHR.fail(function(jqXHR) {

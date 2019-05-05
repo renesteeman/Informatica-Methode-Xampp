@@ -89,13 +89,12 @@ NGlink);
   //delete group data
   $('.deleteGroupButton').click(function(){
     if (confirm("Weet u zeker dat u de groep wilt verwijderen?")){
-      var password = $("input[name='password']").val();
 			var group_id = $('.editGroupForm').attr('id');
 
       jqXHR = $.ajax({
         method: "POST",
         url: '../scripts/deleteGroupAjax.php',
-        data: {group_id:group_id, password:password}
+        data: {group_id:group_id}
       });
 
       jqXHR.done(function(msg) {

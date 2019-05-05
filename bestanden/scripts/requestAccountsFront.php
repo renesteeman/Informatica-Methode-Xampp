@@ -79,7 +79,7 @@
 						<span class="addLeerlingen add-item">
 							<input type="text" placeholder="aantal leerlingen" name="ANleerlingen" maxlength="3" autocomplete="off" class="small">
 						</span>
-						<span class="plus-sign addklasButton">+</span>
+						<span class="plus-sign plus-sign">+</span>
 					</div>
 				</li>
 

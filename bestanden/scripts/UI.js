@@ -115,16 +115,26 @@ $(document).ready(function(){
 		}
 	});
 
-	$(".add-item").children().first().keypress(function(event){
-		if(event.keyCode == 13){
-			$('.addLidButton').click();
-		}
-		return event.keyCode != 13;
-	});
-
 	$(document).on('click',".delete",function(){
 		$(this).parent().fadeOut();
 		$(this).parent().remove();
+	});
+
+	$(".plus-sign").click(function(){
+		var name = $(this).prev().children().val();
+		if(name!=""){
+			var paste = '<li><span class="list-item">'+ name +'</span><span class="delete">x</span></li>'
+			$(this).prev().children().val('');
+			$(this).parent().prev().children().first().append(paste);
+		}
+
+	});
+
+	$(".add-item").children().first().keypress(function(event){
+		if(event.keyCode == 13){
+			$('.plus-sign').click();
+		}
+		return event.keyCode != 13;
 	});
 
 	//edit group sent data for preperation and open the editing page

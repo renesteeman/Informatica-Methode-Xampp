@@ -8,7 +8,7 @@ $(document).ready(function(){
 		$('.addLeerlingen').children().val('');
 	}
 
-	$(".addklasButton").click(function(){
+	$(".plus-sign").click(function(){
 		var klas = $('.addKlas').children().val();
 		var leerlingen = $('.addLeerlingen').children().val();
 		if(klas!="" && leerlingen!=""){
@@ -25,7 +25,7 @@ $(document).ready(function(){
 
 	$(".add-item").children().keypress(function(event){
 		if(event.keyCode == 13){
-			$('.addklasButton').click();
+			$('.plus-sign').click();
 		}
 		return event.keyCode != 13;
 	});

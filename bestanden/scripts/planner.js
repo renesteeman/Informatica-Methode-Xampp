@@ -7,23 +7,6 @@ $(document).ready(function(){
 		$('.addChapter').children().val('');
 	}
 
-	$(".addChapterButton").click(function(){
-		var name = $(this).prev().children().val();
-		if(name!=""){
-			var paste = '<li><span class="list-item">'+ name +'</span><span class="delete">x</span></li>'
-			$(this).prev().children().val('');
-			$(this).parent().prev().children().first().append(paste);
-		}
-
-	});
-
-	$(".addChapter").children().first().keypress(function(event){
-		if(event.keyCode == 13){
-			$('.addChapterButton').click();
-		}
-		return event.keyCode != 13;
-	});
-
 	//create Item
 	$('.createItemForm').submit(function(event){
 		event.preventDefault();

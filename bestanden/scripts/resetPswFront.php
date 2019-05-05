@@ -27,7 +27,7 @@
 			<input type="email" placeholder="email adres" name="email" maxlength="50" required>
 
 			</br>
-			<input type="submit" class="redButton" value="reset wachtwoord"/>
+			<input type="submit" class="redButton" value="Reset wachtwoord"/>
 
 		</form>
 	</div>

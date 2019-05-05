@@ -272,27 +272,8 @@
 								$klassen[$Cklas][] = $userinfo;
 					    }
 
-							//get groups at once, instead of per student
+							//get group names at once, instead of per student
 							$klassenKeys = array_keys($klassen);
-
-
-
-
-							$sql5 = "SELECT id, naam, beschrijving, link FROM groepen WHERE school='$school'";
-							if (mysqli_query($conn, $sql5)) {
-								$result5 = mysqli_query($conn, $sql5);
-								while ($row = mysqli_fetch_assoc($result5)) {
-									$Cgroup_id = $row['id'];
-									$CgroupNaam = $row['naam'];
-									$CgroupBeschrijving = $row['beschrijving'];
-									$CgroupLink = $row['link'];
-
-									$groepen[$Cgroup_id] = [$CgroupNaam, $CgroupBeschrijving, $CgroupLink, $Cgroup_id];
-								}
-							} else {
-								echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
-							}
-
 							//per class
 							for($j=0; $j<count($klassen); $j++){
 								//per student
@@ -301,7 +282,24 @@
 									$Cgroup_id = $Cstudent['group_id'];
 									$groepenKeys = array_keys($groepen);
 
-									if(!array_search($Cgroup_id, $groepenKeys) === False AND !is_null($Cgroup_id)){
+									if(array_search($Cgroup_id, $groepenKeys) === False AND !is_null($Cgroup_id)){
+										//if the group isn't know, get it's info
+										$sql5 = "SELECT naam, beschrijving, link FROM groepen WHERE id='$Cgroup_id'";
+
+										if (mysqli_query($conn, $sql5)) {
+											$result5 = mysqli_query($conn, $sql5);
+											$result5 = mysqli_fetch_assoc($result5);
+											$CgroupNaam = $result5['naam'];
+											$CgroupBeschrijving = $result5['beschrijving'];
+											$CgroupLink = $result5['link'];
+
+											$groepen[$Cgroup_id] = [$CgroupNaam, $CgroupBeschrijving, $CgroupLink, $Cgroup_id];
+
+											$klassen[$klassenKeys[$j]][$k]['group_name'] = $CgroupNaam;
+										} else {
+											echo "</br>Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+										}
+									} else if(!array_search($Cgroup_id, $groepenKeys) === False AND !is_null($Cgroup_id)){
 										//if the group is known, use that info
 										$index = array_search($Cgroup_id, $groepenKeys);
 										$klassen[$klassenKeys[$j]][$k]['group_name'] = $groepen[$index][0];

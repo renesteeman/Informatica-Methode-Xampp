@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 		return returnValue;
 	}
-	
+
   //create group
 	$('.createGroupForm').submit(function(event){
 		event.preventDefault();
@@ -24,13 +24,11 @@ $(document).ready(function(){
 			Gleden.push($(this).text());
 		});
 
-		var password = $('input[name=password]').val();
-
 		//Give php the info it needs (via AJAX)
 		jqXHR = $.ajax({
 			method: "POST",
 			url: "createGroupAjax.php",
-			data: {Gnaam: Gnaam, Gomschrijving: Gomschrijving, Glink: Glink, Gleden: Gleden, password: password}
+			data: {Gnaam: Gnaam, Gomschrijving: Gomschrijving, Glink: Glink, Gleden: Gleden}
 		});
 		jqXHR.done(function(response) {
       response = JSON.parse(response);
@@ -58,7 +56,6 @@ $(document).ready(function(){
     var NGname = $("input[name='NGnaam']").val();
     var NGbeschrijving = $("textarea[name='NGomschrijving']").val();
     var NGlink = $("input[name='NGlink']").val();
-    var password = $("input[name='password']").val();
 
     var NGleden = [];
     $('.list>ul>li>.list-item').each(function(index){
@@ -66,10 +63,14 @@ $(document).ready(function(){
     });
 
     //sent values of group via ajax to editGroupFront.php
+		console.log(group_id,
+NGname,
+NGbeschrijving,
+NGlink);
     jqXHR = $.ajax({
       method: "POST",
       url: '../scripts/editGroupAjax.php',
-      data: {group_id:group_id, NGname: NGname, NGbeschrijving:NGbeschrijving, NGlink:NGlink, NGleden:NGleden, password:password}
+      data: {group_id:group_id, NGname: NGname, NGbeschrijving:NGbeschrijving, NGlink:NGlink, NGleden:NGleden}
     });
 
     jqXHR.done(function(response) {

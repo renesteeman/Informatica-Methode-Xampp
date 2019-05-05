@@ -104,10 +104,6 @@ include('../components/headerGeneral.php');
 									</div>
 								</li>
 								<li>
-									<label>Uw wachtwoord</label>
-									<input type="password" placeholder="Huidig wachtwoord" name="password" maxlength="50" required>
-								</li>
-								<li>
 									<input type="submit" value="Bevestig" id="editGroupConfirm" class="ConfirmButton">
 								</li>
 								<li>

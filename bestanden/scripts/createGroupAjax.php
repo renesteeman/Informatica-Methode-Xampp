@@ -77,81 +77,53 @@
 			$Gleden = [];
 		}
 
-		if(isset($_POST['password'])){
-			if($_POST['password'] != ""){
-				$password = mysqli_real_escape_string($conn, check_input($_POST['password']));
-			}
-		};
+		if($Gnaam != "" & $Gomschrijving != "" & $Gschool != "" & $Gleden !=""){
+			//create group
+			$sql = "INSERT INTO groepen (naam, beschrijving, link, school) VALUES ('$Gnaam', '$Gomschrijving', '$Glink', '$Gschool')";
 
-		//get password for user
-		$sql = "SELECT password FROM users WHERE id='$id'";
-
-		if (mysqli_query($conn, $sql)) {
-
-			$result = mysqli_query($conn, $sql);
-			$result = mysqli_fetch_assoc($result);
-			$rightpsw = $result['password'];
-
-		} else {
-			$return_msg .= "\n2Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
-			$error = 1;
-		}
-
-		//check psw
-		if(password_verify($password, $rightpsw)){
-
-			if($Gnaam != "" & $Gomschrijving != "" & $Gschool != "" & $Gleden !=""){
-				//create group
-				$sql = "INSERT INTO groepen (naam, beschrijving, link, school) VALUES ('$Gnaam', '$Gomschrijving', '$Glink', '$Gschool')";
-
-				if (mysqli_query($conn, $sql)) {
-					$return_msg .= "\nGroep succesvol toegevoegd";
-				} else {
-					$return_msg .= "\n3Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
-					$error = 1;
-				}
-
-				$sql = "SELECT id FROM groepen WHERE naam='$Gnaam' AND beschrijving='$Gomschrijving' AND link='$Glink' AND school='$Gschool'";
-
-				if (mysqli_query($conn, $sql)) {
-					//find teacher info
-					$result = mysqli_query($conn, $sql);
-					$result = mysqli_fetch_assoc($result);
-					$group_id = $result['id'];
-				} else {
-					echo "\n4Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
-				}
-
-				//link students to group
-				$count2 = count($Gleden);
-				for($i=0; $i < $count2; $i++){
-					//select student
-					$studentName = $Gleden[$i];
-
-					$sql = mysqli_query($conn, "SELECT naam FROM users WHERE naam='$studentName' AND school='$Gschool'");
-
-					if (mysqli_num_rows($sql) != 0){
-						$sql = "UPDATE users SET group_id='$group_id' WHERE naam='$studentName' and school='$Gschool'";
-
-						if (mysqli_query($conn, $sql)) {
-							$return_msg .= "\n".$studentName." succesvol toegevoegd aan groep";
-						} else {
-							$return_msg .= "\n5Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
-							$error = 1;
-						}
-					} else {
-						$return_msg .= "\n".$studentName." bestaat niet. De groep wordt niet aangemaakt, zodat u dit kunt aanpassen.";
-						$error = 1;
-					}
-				}
-
+			if (mysqli_query($conn, $sql)) {
+				$return_msg .= "\nGroep succesvol toegevoegd";
 			} else {
-				$return_msg .= "\nNiet alle informatie is ontvangen of de informatie is niet correct";
+				$return_msg .= "\n3Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
 				$error = 1;
 			}
 
+			$sql = "SELECT id FROM groepen WHERE naam='$Gnaam' AND beschrijving='$Gomschrijving' AND link='$Glink' AND school='$Gschool'";
+
+			if (mysqli_query($conn, $sql)) {
+				//find teacher info
+				$result = mysqli_query($conn, $sql);
+				$result = mysqli_fetch_assoc($result);
+				$group_id = $result['id'];
+			} else {
+				echo "\n4Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+			}
+
+			//link students to group
+			$count2 = count($Gleden);
+			for($i=0; $i < $count2; $i++){
+				//select student
+				$studentName = $Gleden[$i];
+
+				$sql = mysqli_query($conn, "SELECT naam FROM users WHERE naam='$studentName' AND school='$Gschool'");
+
+				if (mysqli_num_rows($sql) != 0){
+					$sql = "UPDATE users SET group_id='$group_id' WHERE naam='$studentName' and school='$Gschool'";
+
+					if (mysqli_query($conn, $sql)) {
+						$return_msg .= "\n".$studentName." succesvol toegevoegd aan groep";
+					} else {
+						$return_msg .= "\n5Er is een fout opgetreden met SQL, neem alstublieft contact op met info@inforca.nl en noem zowel de pagina als de inhoud van dit bericht. Alvast erg bedankt!";
+						$error = 1;
+					}
+				} else {
+					$return_msg .= "\n".$studentName." bestaat niet. De groep wordt niet aangemaakt, zodat u dit kunt aanpassen.";
+					$error = 1;
+				}
+			}
+
 		} else {
-			$return_msg .= "\nVerkeerd wachtwoord";
+			$return_msg .= "\nNiet alle informatie is ontvangen of de informatie is niet correct";
 			$error = 1;
 		}
 

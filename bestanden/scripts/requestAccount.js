@@ -99,7 +99,7 @@ $(document).ready(function(){
 
 		if(Ptotaal>0){
 			$('.priceOverview').removeClass('hide');
-			$('.priceOverview').text('Totaalprijs: €' + Ptotaal);
+			$('.priceOverview').text('Totaalprijs (exclusief btw): €' + Ptotaal);
 		} else {
 			$('.priceOverview').addClass('hide');
 			Ptotaal = 0;

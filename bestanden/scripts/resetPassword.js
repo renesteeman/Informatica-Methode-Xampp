@@ -10,6 +10,7 @@ jqXHR = $.ajax({
   url: "resetPassword.php",
   data: {email: email}
 });
+
 jqXHR.done(function(response) {
   response = JSON.parse(response);
   alert(response.msg);

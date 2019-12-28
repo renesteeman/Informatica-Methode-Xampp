@@ -131,11 +131,11 @@
 											<span class="naam">'.$Ititel.'</span>
 											<span class="hoofdstukken">'.$Ihoofdstukken.'</span>
 											<span class="icons">
-												<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>';
+												<span class="Arrow image"><img src="../icons2/arrow.svg" class="arrow"/></span>';
 
 												if($Pfunctie == 'docent'){
 												echo '
-												<span class="editItem image"><img src="../icons/edit.svg" class="edit"/></span>
+												<span class="editItem image"><img src="../icons2/edit.svg" class="edit"/></span>
 												';
 												}
 

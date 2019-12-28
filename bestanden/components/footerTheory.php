@@ -10,13 +10,8 @@
 	</div>
 	<div class="contact-info">
 		<span id="mail">info@inforca.nl</span>
-		<?php
-			if (isset($_SESSION["functie"])){
-				if (check_input($_SESSION["functie"]) == 'docent'){
-					echo '<span id="phone">06-22155216</span>';
-				}
-			}
-		?>
+		<span id="phone">06-22155216</span>
+		<span id="adres">Tongerseweg 139D03 Maastricht</span>
 	</div>
 </footer>
 

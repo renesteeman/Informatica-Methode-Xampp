@@ -105,11 +105,11 @@
 				<form class="loginForm" method="post" action="../scripts/login.php" accept-charset="UTF-8">
 					<ul>
 						<li>
-							<img class="person" src="../icons/person.svg">
+							<img class="person" src="../icons2/person.svg">
 							<input type="text" placeholder="gebruikersnaam" name="username" maxlength="50" required>
 						</li>
 						<li>
-							<img class="lock" src="../icons/lock.svg">
+							<img class="lock" src="../icons2/lock.svg">
 							<input type="password" placeholder="wachtwoord" name="password" maxlength="50" required>
 						</li>
 						<li>

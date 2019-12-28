@@ -61,7 +61,7 @@
 				<div class="searchResultHeader">
 					<span class="barItem searchResultGroupName">Groepnaam</span>
 					<span class="icons hide">
-						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+						<span class="Arrow image"><img src="../icons2/arrow.svg" class="arrow"/></span>
 					</span>
 				</div>
 
@@ -75,7 +75,7 @@
 				<div class="searchResultHeader">
 					<span class="barItem searchResultQuizHeader">Quiz resultaten</span>
 					<span class="icons hide">
-						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+						<span class="Arrow image"><img src="../icons2/arrow.svg" class="arrow"/></span>
 					</span>
 				</div>
 
@@ -89,7 +89,7 @@
 				<div class="searchResultHeader">
 					<span class="barItem searchResultProgression">Theorie progressie</span>
 					<span class="icons hide">
-						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+						<span class="Arrow image"><img src="../icons2/arrow.svg" class="arrow"/></span>
 					</span>
 				</div>
 
@@ -340,7 +340,7 @@
 					<span class="klas">'.$CurrentClass.'</span>
 					<span class="Nleerlingen">'.$NStudentsCurrentClass.' leerlingen </span>
 					<span class="icons">
-						<span class="Arrow image"><img src="../icons/arrow.svg" class="arrow"/></span>
+						<span class="Arrow image"><img src="../icons2/arrow.svg" class="arrow"/></span>
 					</span>
 				</div>
 
@@ -474,8 +474,8 @@
 								      echo'
 							        </span>
 							          <span class="icons">
-							            <span class="Arrow image"><img src="../icons/arrow.svg"></span>
-							            <span class="editGroup image"><img src="../icons/edit.svg"></span>
+							            <span class="Arrow image"><img src="../icons2/arrow.svg"></span>
+							            <span class="editGroup image"><img src="../icons2/edit.svg"></span>
 							          </span>
 							        </div>';
 
